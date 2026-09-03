@@ -507,6 +507,10 @@ subcollection: openshift
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
+    * [30 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3026)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
+
     * [27 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2726)
 
         * CLI version 1.0.843 is available.
@@ -5887,29 +5891,29 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
 
-* [Worker node fix pack 4.21.29_1529_openshift, released 25 August 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42129_1529_openshift_W)
+* [25 August 2026, Worker node fix pack 4.21.29_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42129_1529_openshift_W)
 
-* [Worker node fix pack 4.21.27_1528_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42127_1528_openshift_W)
+* [12 August 2026, Worker node fix pack 4.21.27_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42127_1528_openshift_W)
 
-* [Master fix pack 4.21.27_1527_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42127_1527_openshift_M)
+* [05 August 2026, Master fix pack 4.21.27_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42127_1527_openshift_M)
 
-* [Worker node fix pack 4.21.25_1526_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42125_1526_openshift_W)
+* [28 July 2026, Worker node fix pack 4.21.25_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42125_1526_openshift_W)
 
-* [Master fix pack 4.21.19_1525_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42119_1525_openshift_M)
+* [28 July 2026, Master fix pack 4.21.19_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42119_1525_openshift_M)
 
-* [Worker node fix pack 4.21.22_1524_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42122_1524_openshift_W)
+* [13 July 2026, Worker node fix pack 4.21.22_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42122_1524_openshift_W)
 
-* [Worker node fix pack 4.21.21_1522_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42121_1522_openshift_W)
+* [01 July 2026, Worker node fix pack 4.21.21_1522_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42121_1522_openshift_W)
 
-* [Master fix pack 4.21.18_1520_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42118_1520_openshift_M)
+* [26 June 2026, Master fix pack 4.21.18_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42118_1520_openshift_M)
 
-* [Worker node fix pack 4.21.19_1521_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42119_1521_openshift_W)
+* [15 June 2026, Worker node fix pack 4.21.19_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42119_1521_openshift_W)
 
-* [Worker node fix pack 4.21.17_1519_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42117_1519_openshift_W)
+* [03 June 2026, Worker node fix pack 4.21.17_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42117_1519_openshift_W)
 
-* [Master fix pack 4.21.15_1517_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42115_1517_openshift_M)
+* [22 May 2026, Master fix pack 4.21.15_1517_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42115_1517_openshift_M)
 
-* [Worker node fix pack 4.21.15_1518_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42115_1518_openshift_W)
+* [20 May 2026, Worker node fix pack 4.21.15_1518_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42115_1518_openshift_W)
 
 [4.21 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-421#cis-benchmark-421)
 
@@ -6026,45 +6030,45 @@ subcollection: openshift
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
 
-* [Worker node fix pack 4.20.34_1560_openshift, released 25 August 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42034_1560_openshift_W)
+* [25 August 2026, Worker node fix pack 4.20.34_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42034_1560_openshift_W)
 
-* [Worker node fix pack 4.20.32_1559_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42032_1559_openshift_W)
+* [12 August 2026, Worker node fix pack 4.20.32_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42032_1559_openshift_W)
 
-* [Master fix pack 4.20.32_1558_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42032_1558_openshift_M)
+* [05 August 2026, Master fix pack 4.20.32_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42032_1558_openshift_M)
 
-* [Worker node fix pack 4.20.30_1557_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42030_1557_openshift_W)
+* [28 July 2026, Worker node fix pack 4.20.30_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42030_1557_openshift_W)
 
-* [Master fix pack 4.20.25_1556_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42025_1556_openshift_M)
+* [28 July 2026, Master fix pack 4.20.25_1556_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42025_1556_openshift_M)
 
-* [Worker node fix pack 4.20.28_1555_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42028_1555_openshift_W)
+* [13 July 2026, Worker node fix pack 4.20.28_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42028_1555_openshift_W)
 
-* [Worker node fix pack 4.20.26_1553_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42026_1553_openshift_W)
+* [01 July 2026, Worker node fix pack 4.20.26_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42026_1553_openshift_W)
 
-* [Master fix pack 4.20.23_1551_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42023_1551_openshift_M)
+* [26 June 2026, Master fix pack 4.20.23_1551_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42023_1551_openshift_M)
 
-* [Worker node fix pack 4.20.24_1552_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42024_1552_openshift_W)
+* [15 June 2026, Worker node fix pack 4.20.24_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42024_1552_openshift_W)
 
-* [Worker node fix pack 4.20.23_1550_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42023_1550_openshift_W)
+* [03 June 2026, Worker node fix pack 4.20.23_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42023_1550_openshift_W)
 
-* [Master fix pack 4.20.21_1548_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42021_1548_openshift_M)
+* [22 May 2026, Master fix pack 4.20.21_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42021_1548_openshift_M)
 
-* [Worker node fix pack 4.20.22_1549_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42022_1549_openshift_W)
+* [20 May 2026, Worker node fix pack 4.20.22_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42022_1549_openshift_W)
 
-* [Worker node fix pack 4.20.19_1546_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42019_1546_openshift_W)
+* [04 May 2026, Worker node fix pack 4.20.19_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42019_1546_openshift_W)
 
-* [Master fix pack 4.20.18_1545_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42018_1545_openshift_M)
+* [27 April 2026, Master fix pack 4.20.18_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42018_1545_openshift_M)
 
-* [Worker node fix pack 4.20.18_1544_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42018_1544_openshift_W)
+* [20 April 2026, Worker node fix pack 4.20.18_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42018_1544_openshift_W)
 
-* [Worker node fix pack 4.20.17_1543_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42017_1543_openshift_W)
+* [06 April 2026, Worker node fix pack 4.20.17_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42017_1543_openshift_W)
 
-* [Worker node fix pack 4.20.16_1542_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42016_1542_openshift_W)
+* [24 March 2026, Worker node fix pack 4.20.16_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42016_1542_openshift_W)
 
-* [Worker node fix pack 4.20.15_1540_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42015_1540_openshift_W)
+* [11 March 2026, Worker node fix pack 4.20.15_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42015_1540_openshift_W)
 
-* [Worker node fix pack 4.20.14_1539_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42014_1539_openshift_W)
+* [24 February 2026, Worker node fix pack 4.20.14_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42014_1539_openshift_W)
 
-* [Worker node fix pack 4.20.13_1537_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42013_1537_openshift_W)
+* [09 February 2026, Worker node fix pack 4.20.13_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42013_1537_openshift_W)
 
 [4.20 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-420#cis-benchmark-420)
 
@@ -6173,77 +6177,77 @@ subcollection: openshift
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
 
-* [Worker node fix pack 4.19.43_1590_openshift, released 25 August 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41943_1590_openshift_W)
+* [25 August 2026, Worker node fix pack 4.19.43_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41943_1590_openshift_W)
 
-* [Worker node fix pack 4.19.41_1589_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41941_1589_openshift_W)
+* [12 August 2026, Worker node fix pack 4.19.41_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41941_1589_openshift_W)
 
-* [Master fix pack 4.19.41_1588_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41941_1588_openshift_M)
+* [05 August 2026, Master fix pack 4.19.41_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41941_1588_openshift_M)
 
-* [Worker node fix pack 4.19.39_1587_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41939_1587_openshift_W)
+* [28 July 2026, Worker node fix pack 4.19.39_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41939_1587_openshift_W)
 
-* [Master fix pack 4.19.34_1585_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41934_1585_openshift_M)
+* [28 July 2026, Master fix pack 4.19.34_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41934_1585_openshift_M)
 
-* [Worker node fix pack 4.19.37_1586_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41937_1586_openshift_W)
+* [13 July 2026, Worker node fix pack 4.19.37_1586_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41937_1586_openshift_W)
 
-* [Worker node fix pack 4.19.35_1584_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41935_1584_openshift_W)
+* [01 July 2026, Worker node fix pack 4.19.35_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41935_1584_openshift_W)
 
-* [Master fix pack 4.19.32_1582_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41932_1582_openshift_M)
+* [26 June 2026, Master fix pack 4.19.32_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41932_1582_openshift_M)
 
-* [Worker node fix pack 4.19.33_1583_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41933_1583_openshift_W)
+* [15 June 2026, Worker node fix pack 4.19.33_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41933_1583_openshift_W)
 
-* [Worker node fix pack 4.19.32_1581_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41932_1581_openshift_W)
+* [03 June 2026, Worker node fix pack 4.19.32_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41932_1581_openshift_W)
 
-* [Master fix pack 4.19.30_1579_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41930_1579_openshift_M)
+* [22 May 2026, Master fix pack 4.19.30_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41930_1579_openshift_M)
 
-* [Worker node fix pack 4.19.31_1580_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41931_1580_openshift_W)
+* [20 May 2026, Worker node fix pack 4.19.31_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41931_1580_openshift_W)
 
-* [Worker node fix pack 4.19.29_1577_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41929_1577_openshift_W)
+* [04 May 2026, Worker node fix pack 4.19.29_1577_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41929_1577_openshift_W)
 
-* [Master fix pack 4.19.25_1576_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41925_1576_openshift_M)
+* [27 April 2026, Master fix pack 4.19.25_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41925_1576_openshift_M)
 
-* [Worker node fix pack 4.19.28_1574_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41928_1574_openshift_W)
+* [20 April 2026, Worker node fix pack 4.19.28_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41928_1574_openshift_W)
 
-* [Worker node fix pack 4.19.27_1573_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41927_1573_openshift_W)
+* [06 April 2026, Worker node fix pack 4.19.27_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41927_1573_openshift_W)
 
-* [Worker node fix pack 4.19.26_1572_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41926_1572_openshift_W)
+* [24 March 2026, Worker node fix pack 4.19.26_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41926_1572_openshift_W)
 
-* [Worker node fix pack 4.19.24_1570_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41924_1570_openshift_W)
+* [11 March 2026, Worker node fix pack 4.19.24_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41924_1570_openshift_W)
 
-* [Worker node fix pack 4.19.24_1569_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41924_1569_openshift_W)
+* [24 February 2026, Worker node fix pack 4.19.24_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41924_1569_openshift_W)
 
-* [Worker node fix pack 4.19.23_1567_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41923_1567_openshift_W)
+* [09 February 2026, Worker node fix pack 4.19.23_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41923_1567_openshift_W)
 
-* [Worker node fix pack 4.19.22_1566_openshift, released 27 January 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41922_1566_openshift_W)
+* [27 January 2026, Worker node fix pack 4.19.22_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41922_1566_openshift_W)
 
 * [Master fix pack 4.19.21_1565_openshift, released 21 January 2026](/docs/openshift?topic=openshift-openshift_changelog_419#41921_1565_openshift_M)
 
-* [Worker node fix pack 4.19.21_1559_openshift, released 12 January 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41921_1559_openshift_W)
+* [12 January 2026, Worker node fix pack 4.19.21_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41921_1559_openshift_W)
 
-* [Worker node fix pack 4.19.21_1558_openshift, released 29 December 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41921_1558_openshift_W)
+* [29 December 2025, Worker node fix pack 4.19.21_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41921_1558_openshift_W)
 
-* [Worker node fix pack 4.19.21_1557_openshift, released 16 December 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41921_1557_openshift_W)
+* [16 December 2025, Worker node fix pack 4.19.21_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41921_1557_openshift_W)
 
 * [Master fix pack 4.19.19_1556_openshift, released 10 December 2025](/docs/openshift?topic=openshift-openshift_changelog_419#41919_1556_openshift_M)
 
-* [Worker node fix pack 4.19.19_1555_openshift, released 03 December 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41919_1555_openshift_W)
+* [03 December 2025, Worker node fix pack 4.19.19_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41919_1555_openshift_W)
 
-* [Worker node fix pack 4.19.18_1554_openshift, released 17 November 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41918_1554_openshift_W)
+* [17 November 2025, Worker node fix pack 4.19.18_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41918_1554_openshift_W)
 
 * [Master fix pack 4.19.17_1553_openshift, released 15 November 2025](/docs/openshift?topic=openshift-openshift_changelog_419#41917_1553_openshift_M)
 
-* [Worker node fix pack 4.19.17_1551_openshift, released 06 November 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41917_1551_openshift_W)
+* [06 November 2025, Worker node fix pack 4.19.17_1551_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41917_1551_openshift_W)
 
-* [Worker node fix pack 4.19.16_1550_openshift, released 21 October 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41916_1550_openshift_W)
+* [21 October 2025, Worker node fix pack 4.19.16_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41916_1550_openshift_W)
 
-* [Worker node fix pack 4.19.14_1549_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41914_1549_openshift_W)
+* [08 October 2025, Worker node fix pack 4.19.14_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41914_1549_openshift_W)
 
 * [Master fix pack 4.19.13_1548_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_419#41913_1548_openshift_M)
 
-* [Worker node fix pack 4.19.12_1545_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41912_1545_openshift_W)
+* [23 September 2025, Worker node fix pack 4.19.12_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41912_1545_openshift_W)
 
-* [Worker node fix pack 4.19.10_1543_openshift, released 15 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41910_1543_openshift_W)
+* [15 September 2025, Worker node fix pack 4.19.10_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41910_1543_openshift_W)
 
-* [Worker node fix pack 4.19.10_1542_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41910_1542_openshift_W)
+* [09 September 2025, Worker node fix pack 4.19.10_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41910_1542_openshift_W)
 
 * [Master fix pack 4.19.9_1541_openshift and worker node fix pack 4.19.9_1540_openshift, released 03 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#4199_15411M_and_4199_1540W)
 
@@ -6354,97 +6358,97 @@ subcollection: openshift
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
 
-* [Worker node fix pack 4.18.53_1602_openshift, released 25 August 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41853_1602_openshift_W)
+* [25 August 2026, Worker node fix pack 4.18.53_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41853_1602_openshift_W)
 
-* [Worker node fix pack 4.18.51_1601_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41851_1601_openshift_W)
+* [12 August 2026, Worker node fix pack 4.18.51_1601_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41851_1601_openshift_W)
 
-* [Master fix pack 4.18.51_1600_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41851_1600_openshift_M)
+* [05 August 2026, Master fix pack 4.18.51_1600_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41851_1600_openshift_M)
 
-* [Worker node fix pack 4.18.49_1598_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41849_1598_openshift_W)
+* [28 July 2026, Worker node fix pack 4.18.49_1598_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41849_1598_openshift_W)
 
-* [Master fix pack 4.18.45_1596_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41845_1596_openshift_M)
+* [28 July 2026, Master fix pack 4.18.45_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41845_1596_openshift_M)
 
-* [Worker node fix pack 4.18.47_1597_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41847_1597_openshift_W)
+* [13 July 2026, Worker node fix pack 4.18.47_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41847_1597_openshift_W)
 
-* [Worker node fix pack 4.18.45_1595_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41845_1595_openshift_W)
+* [01 July 2026, Worker node fix pack 4.18.45_1595_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41845_1595_openshift_W)
 
-* [Master fix pack 4.18.43_1593_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41843_1593_openshift_M)
+* [26 June 2026, Master fix pack 4.18.43_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41843_1593_openshift_M)
 
-* [Worker node fix pack 4.18.43_1594_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41843_1594_openshift_W)
+* [15 June 2026, Worker node fix pack 4.18.43_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41843_1594_openshift_W)
 
-* [Worker node fix pack 4.18.42_1591_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41842_1591_openshift_W)
+* [03 June 2026, Worker node fix pack 4.18.42_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41842_1591_openshift_W)
 
-* [Master fix pack 4.18.40_1589_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41840_1589_openshift_M)
+* [22 May 2026, Master fix pack 4.18.40_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41840_1589_openshift_M)
 
-* [Worker node fix pack 4.18.41_1590_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41841_1590_openshift_W)
+* [20 May 2026, Worker node fix pack 4.18.41_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41841_1590_openshift_W)
 
-* [Worker node fix pack 4.18.38_1587_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41838_1587_openshift_W)
+* [04 May 2026, Worker node fix pack 4.18.38_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41838_1587_openshift_W)
 
-* [Master fix pack 4.18.37_1586_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41837_1586_openshift_M)
+* [27 April 2026, Master fix pack 4.18.37_1586_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41837_1586_openshift_M)
 
-* [Worker node fix pack 4.18.37_1585_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41837_1585_openshift_W)
+* [20 April 2026, Worker node fix pack 4.18.37_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41837_1585_openshift_W)
 
-* [Worker node fix pack 4.18.36_1584_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41836_1584_openshift_W)
+* [06 April 2026, Worker node fix pack 4.18.36_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41836_1584_openshift_W)
 
-* [Worker node fix pack 4.18.35_1583_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41835_1583_openshift_W)
+* [24 March 2026, Worker node fix pack 4.18.35_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41835_1583_openshift_W)
 
-* [Worker node fix pack 4.18.34_1581_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41834_1581_openshift_W)
+* [11 March 2026, Worker node fix pack 4.18.34_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41834_1581_openshift_W)
 
-* [Worker node fix pack 4.18.33_1580_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41833_1580_openshift_W)
+* [24 February 2026, Worker node fix pack 4.18.33_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41833_1580_openshift_W)
 
-* [Worker node fix pack 4.18.32_1578_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41832_1578_openshift_W)
+* [09 February 2026, Worker node fix pack 4.18.32_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41832_1578_openshift_W)
 
-* [Worker node fix pack 4.18.31_1577_openshift, released 27 January 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41831_1577_openshift_W)
+* [27 January 2026, Worker node fix pack 4.18.31_1577_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41831_1577_openshift_W)
 
 * [Master fix pack 4.18.30_1576_openshift, released 21 January 2026](/docs/openshift?topic=openshift-openshift_changelog_418#41830_1576_openshift_M)
 
-* [Worker node fix pack 4.18.30_1574_openshift, released 12 January 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41830_1574_openshift_W)
+* [12 January 2026, Worker node fix pack 4.18.30_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41830_1574_openshift_W)
 
-* [Worker node fix pack 4.18.30_1573_openshift, released 29 December 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41830_1573_openshift_W)
+* [29 December 2025, Worker node fix pack 4.18.30_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41830_1573_openshift_W)
 
-* [Worker node fix pack 4.18.30_1572_openshift, released 16 December 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41830_1572_openshift_W)
+* [16 December 2025, Worker node fix pack 4.18.30_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41830_1572_openshift_W)
 
 * [Master fix pack 4.18.28_1571_openshift, released 10 December 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41828_1571_openshift_M)
 
-* [Worker node fix pack 4.18.29_1570_openshift, released 03 December 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41829_1570_openshift_W)
+* [03 December 2025, Worker node fix pack 4.18.29_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41829_1570_openshift_W)
 
-* [Worker node fix pack 4.18.27_1569_openshift, released 17 November 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41827_1569_openshift_W)
+* [17 November 2025, Worker node fix pack 4.18.27_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41827_1569_openshift_W)
 
 * [Master fix pack 4.18.27_1568_openshift, released 15 November 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41827_1568_openshift_M)
 
-* [Worker node fix pack 4.18.27_1566_openshift, released 06 November 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41827_1566_openshift_W)
+* [06 November 2025, Worker node fix pack 4.18.27_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41827_1566_openshift_W)
 
-* [Worker node fix pack 4.18.26_1565_openshift, released 21 October 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41826_1565_openshift_W)
+* [21 October 2025, Worker node fix pack 4.18.26_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41826_1565_openshift_W)
 
-* [Worker node fix pack 4.18.25_1564_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41825_1564_openshift_W)
+* [08 October 2025, Worker node fix pack 4.18.25_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41825_1564_openshift_W)
 
 * [Master fix pack 4.18.24_1563_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41824_1563_openshift_M)
 
-* [Worker node fix pack 4.18.24_1560_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41824_1560_openshift_W)
+* [23 September 2025, Worker node fix pack 4.18.24_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41824_1560_openshift_W)
 
-* [Worker node fix pack 4.18.23_1558_openshift, released 15 September 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41823_1558_openshift_W)
+* [15 September 2025, Worker node fix pack 4.18.23_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41823_1558_openshift_W)
 
-* [Worker node fix pack 4.18.23_1557_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41823_1557_openshift_W)
+* [09 September 2025, Worker node fix pack 4.18.23_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41823_1557_openshift_W)
 
-* [Worker node fix pack 4.18.22_1556_openshift, released 26 August 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41822_1556_openshift_W)
+* [26 August 2025, Worker node fix pack 4.18.22_1556_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41822_1556_openshift_W)
 
 * [Master fix pack 4.18.21_1555_openshift, released 20 August 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41821_1555_openshift_M)
 
-* [Worker node fix pack 4.18.21_1554_openshift, released 12 August 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41821_1554_openshift_W)
+* [12 August 2025, Worker node fix pack 4.18.21_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41821_1554_openshift_W)
 
 * [Master fix pack 4.18.19_1552_openshift, released 30 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41819_1552_openshift_M)
 
-* [Worker node fix pack 4.18.20_1553_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41820_1553_openshift_W)
+* [28 July 2025, Worker node fix pack 4.18.20_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41820_1553_openshift_W)
 
-* [Worker node fix pack 4.18.19_1539_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41819_1539_openshift_W)
+* [14 July 2025, Worker node fix pack 4.18.19_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41819_1539_openshift_W)
 
-* [Worker node fix pack 4.18.18_1539_openshift, released 01 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41818_1539_openshift_W)
+* [01 July 2025, Worker node fix pack 4.18.18_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41818_1539_openshift_W)
 
 * [Master fix pack 4.18.11_1547_openshift, released 18 June 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41811_1547_openshift_M)
 
-* [Worker node fix pack 4.18.17_1539_openshift, released 16 June 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41817_1539_openshift_W)
+* [16 June 2025, Worker node fix pack 4.18.17_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41817_1539_openshift_W)
 
-* [Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41815_1539_openshift_W)
+* [04 June 2025, Worker node fix pack 4.18.15_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41815_1539_openshift_W)
 
 * [Master fix pack 4.18.11_1543_openshift, released 28 May 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41811_1544_openshift_M)
 
@@ -6559,125 +6563,125 @@ subcollection: openshift
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
 
-* [Worker node fix pack 4.17.56_1597_openshift, released 25 August 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41756_1597_openshift_W)
+* [25 August 2026, Worker node fix pack 4.17.56_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41756_1597_openshift_W)
 
-* [Worker node fix pack 4.17.56_1596_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41756_1596_openshift_W)
+* [12 August 2026, Worker node fix pack 4.17.56_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41756_1596_openshift_W)
 
-* [Master fix pack 4.17.56_1595_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41756_1595_openshift_M)
+* [05 August 2026, Master fix pack 4.17.56_1595_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41756_1595_openshift_M)
 
-* [Worker node fix pack 4.17.55_1594_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1594_openshift_W)
+* [28 July 2026, Worker node fix pack 4.17.55_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1594_openshift_W)
 
-* [Master fix pack 4.17.54_1592_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1592_openshift_M)
+* [28 July 2026, Master fix pack 4.17.54_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1592_openshift_M)
 
-* [Worker node fix pack 4.17.55_1593_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1593_openshift_W)
+* [13 July 2026, Worker node fix pack 4.17.55_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1593_openshift_W)
 
-* [Worker node fix pack 4.17.54_1591_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1591_openshift_W)
+* [01 July 2026, Worker node fix pack 4.17.54_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1591_openshift_W)
 
-* [Master fix pack 4.17.54_1589_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1589_openshift_M)
+* [26 June 2026, Master fix pack 4.17.54_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1589_openshift_M)
 
-* [Worker node fix pack 4.17.54_1590_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1590_openshift_W)
+* [15 June 2026, Worker node fix pack 4.17.54_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1590_openshift_W)
 
-* [Worker node fix pack 4.17.54_1587_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1587_openshift_W)
+* [03 June 2026, Worker node fix pack 4.17.54_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1587_openshift_W)
 
-* [Master fix pack 4.17.52_1585_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1585_openshift_M)
+* [22 May 2026, Master fix pack 4.17.52_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1585_openshift_M)
 
-* [Worker node fix pack 4.17.53_1586_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41753_1586_openshift_W)
+* [20 May 2026, Worker node fix pack 4.17.53_1586_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41753_1586_openshift_W)
 
-* [Worker node fix pack 4.17.52_1583_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1583_openshift_W)
+* [04 May 2026, Worker node fix pack 4.17.52_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1583_openshift_W)
 
-* [Master fix pack 4.17.52_1582_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1582_openshift_M)
+* [27 April 2026, Master fix pack 4.17.52_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1582_openshift_M)
 
-* [Worker node fix pack 4.17.52_1580_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1580_openshift_W)
+* [20 April 2026, Worker node fix pack 4.17.52_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1580_openshift_W)
 
-* [Worker node fix pack 4.17.52_1579_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1579_openshift_W)
+* [06 April 2026, Worker node fix pack 4.17.52_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1579_openshift_W)
 
-* [Worker node fix pack 4.17.51_1578_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41751_1578_openshift_W)
+* [24 March 2026, Worker node fix pack 4.17.51_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41751_1578_openshift_W)
 
-* [Worker node fix pack 4.17.50_1575_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41750_1575_openshift_W)
+* [11 March 2026, Worker node fix pack 4.17.50_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41750_1575_openshift_W)
 
-* [Worker node fix pack 4.17.49_1574_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41749_1574_openshift_W)
+* [24 February 2026, Worker node fix pack 4.17.49_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41749_1574_openshift_W)
 
-* [Worker node fix pack 4.17.48_1572_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41748_1572_openshift_W)
+* [09 February 2026, Worker node fix pack 4.17.48_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41748_1572_openshift_W)
 
-* [Worker node fix pack 4.17.47_1571_openshift, released 27 January 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41747_1571_openshift_W)
+* [27 January 2026, Worker node fix pack 4.17.47_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41747_1571_openshift_W)
 
 * [Master fix pack 4.17.45_1570_openshift, released 21 January 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41745_1570_openshift_M)
 
-* [Worker node fix pack 4.17.46_1568_openshift, released 12 January 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41746_1568_openshift_W)
+* [12 January 2026, Worker node fix pack 4.17.46_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41746_1568_openshift_W)
 
-* [Worker node fix pack 4.17.45_1567_openshift, released 29 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41745_1567_openshift_W)
+* [29 December 2025, Worker node fix pack 4.17.45_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41745_1567_openshift_W)
 
-* [Worker node fix pack 4.17.45_1566_openshift, released 16 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41745_1566_openshift_W)
+* [16 December 2025, Worker node fix pack 4.17.45_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41745_1566_openshift_W)
 
 * [Master fix pack 4.17.44_1565_openshift, released 10 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41744_1565_openshift_M)
 
-* [Worker node fix pack 4.17.43_1564_openshift, released 03 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41743_1564_openshift_W)
+* [03 December 2025, Worker node fix pack 4.17.43_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41743_1564_openshift_W)
 
-* [Worker node fix pack 4.17.43_1563_openshift, released 17 November 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41743_1563_openshift_W)
+* [17 November 2025, Worker node fix pack 4.17.43_1563_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41743_1563_openshift_W)
 
 * [Master fix pack 4.17.42_1562_openshift, released 15 November 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41742_1562_openshift_M)
 
-* [Worker node fix pack 4.17.42_1560_openshift, released 06 November 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41742_1560_openshift_W)
+* [06 November 2025, Worker node fix pack 4.17.42_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41742_1560_openshift_W)
 
-* [Worker node fix pack 4.17.41_1559_openshift, released 21 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41741_1559_openshift_W)
+* [21 October 2025, Worker node fix pack 4.17.41_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41741_1559_openshift_W)
 
-* [Worker node fix pack 4.17.40_1558_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41740_1558_openshift_W)
+* [08 October 2025, Worker node fix pack 4.17.40_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41740_1558_openshift_W)
 
 * [Master fix pack 4.17.40_1557_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41740_1557_openshift_M)
 
-* [Worker node fix pack 4.17.39_1554_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41739_1554_openshift_W)
+* [23 September 2025, Worker node fix pack 4.17.39_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41739_1554_openshift_W)
 
-* [Worker node fix pack 4.17.38_1552_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41738_1552_openshift_W)
+* [09 September 2025, Worker node fix pack 4.17.38_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41738_1552_openshift_W)
 
-* [Worker node fix pack 4.17.37_1551_openshift, released 26 August 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41737_1551_openshift_W)
+* [26 August 2025, Worker node fix pack 4.17.37_1551_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41737_1551_openshift_W)
 
 * [Master fix pack 4.17.36_1550_openshift, released 20 August 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41736_1550_openshift_M)
 
-* [Worker node fix pack 4.17.37_1549_openshift, released 12 August 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41737_1549_openshift_W)
+* [12 August 2025, Worker node fix pack 4.17.37_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41737_1549_openshift_W)
 
 * [Master fix pack 4.17.35_1547_openshift, released 30 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41735_1547_openshift_M)
 
-* [Worker node fix pack 4.17.36_1548_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41736_1548_openshift_W)
+* [28 July 2025, Worker node fix pack 4.17.36_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41736_1548_openshift_W)
 
-* [Worker node fix pack 4.17.35_1546_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41735_1546_openshift_W)
+* [14 July 2025, Worker node fix pack 4.17.35_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41735_1546_openshift_W)
 
-* [Worker node fix pack 4.17.34_1545_openshift, released 01 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41734_1545_openshift_W)
+* [01 July 2025, Worker node fix pack 4.17.34_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41734_1545_openshift_W)
 
 * [Master fix pack 4.17.28_1543_openshift, released 18 June 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41728_1543_openshift_M)
 
-* [Worker node fix pack 4.17.33_1544_openshift, released 16 June 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41733_1544_openshift_W)
+* [16 June 2025, Worker node fix pack 4.17.33_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41733_1544_openshift_W)
 
-* [Worker node fix pack 4.17.31_1541_openshift, released 04 June 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41731_1541_openshift_W)
+* [04 June 2025, Worker node fix pack 4.17.31_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41731_1541_openshift_W)
 
 * [Master fix pack 4.17.28_1540_openshift, released 28 May 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41728_1540_openshift_M)
 
-* [Worker node fix pack 4.17.29_1539_openshift, released 19 May 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41729_1539_openshift_W)
+* [19 May 2025, Worker node fix pack 4.17.29_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41729_1539_openshift_W)
 
-* [Worker node fix pack 4.17.27_1538_openshift, released 07 May 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41727_1538_openshift_W)
+* [07 May 2025, Worker node fix pack 4.17.27_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41727_1538_openshift_W)
 
 * [Master fix pack 4.17.24_1537_openshift, released 30 April 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41724_1537_openshift_M)
 
-* [Worker node fix pack 4.17.25_1536_openshift, released 21 April 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41725_1536_openshift_W)
+* [21 April 2025, Worker node fix pack 4.17.25_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41725_1536_openshift_W)
 
-* [Worker node fix pack 4.17.23_1535_openshift, released 08 April 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41723_1535_openshift_W)
+* [08 April 2025, Worker node fix pack 4.17.23_1535_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41723_1535_openshift_W)
 
 * [Master fix pack 4.17.18_1533_openshift, released 26 March 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41718_1533_openshift_M)
 
-* [Worker node fix pack 4.17.21_1534_openshift, released 24 March 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41721_1534_openshift_W)
+* [24 March 2025, Worker node fix pack 4.17.21_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41721_1534_openshift_W)
 
-* [Worker node fix pack 4.17.19_1532_openshift, released 11 March 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41719_1532_openshift_W)
+* [11 March 2025, Worker node fix pack 4.17.19_1532_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41719_1532_openshift_W)
 
-* [Worker node fix pack 4.17.17_1531_openshift, released 24 February 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41717_1531_openshift_W)
+* [24 February 2025, Worker node fix pack 4.17.17_1531_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41717_1531_openshift_W)
 
 * [Master fix pack 4.17.14_1530_openshift, released 19 February 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41714_1530_openshift_M)
 
-* [Worker node fix pack 4.17.15_1527_openshift, released 11 February 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41715_1527_openshift_W)
+* [11 February 2025, Worker node fix pack 4.17.15_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41715_1527_openshift_W)
 
-* [Worker node fix pack 4.17.12_1526_openshift, released 29 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41712_1526_openshift_W)
+* [29 January 2025, Worker node fix pack 4.17.12_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41712_1526_openshift_W)
 
 * [Master fix pack 4.17.10_1522_openshift, released 22 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41710_1522_openshift_M)
 
-* [Worker node fix pack 4.17.11_1521_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41711_1521_openshift_W)
+* [13 January 2025, Worker node fix pack 4.17.11_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41711_1521_openshift_W)
 
 * [Worker node fix pack 4.17.9_1520_openshift, released 30 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4179_1520_openshift_W)
 
@@ -6800,125 +6804,125 @@ subcollection: openshift
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
 
-* [Worker node fix pack 4.16.68_1629_openshift, released 25 August 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41668_1629_openshift_W)
+* [25 August 2026, Worker node fix pack 4.16.68_1629_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41668_1629_openshift_W)
 
-* [Worker node fix pack 4.16.67_1628_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41667_1628_openshift_W)
+* [12 August 2026, Worker node fix pack 4.16.67_1628_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41667_1628_openshift_W)
 
-* [Master fix pack 4.16.68_1627_openshift, released 07 August 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41668_1627_openshift_M)
+* [07 August 2026, Master fix pack 4.16.68_1627_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41668_1627_openshift_M)
 
-* [Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41666_1626_openshift_W)
+* [28 July 2026, Worker node fix pack 4.16.66_1626_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41666_1626_openshift_W)
 
-* [Master fix pack 4.16.64_1624_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41664_1624_openshift_M)
+* [28 July 2026, Master fix pack 4.16.64_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41664_1624_openshift_M)
 
-* [Worker node fix pack 4.16.65_1625_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41665_1625_openshift_W)
+* [13 July 2026, Worker node fix pack 4.16.65_1625_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41665_1625_openshift_W)
 
-* [Worker node fix pack 4.16.64_1622_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41664_1622_openshift_W)
+* [01 July 2026, Worker node fix pack 4.16.64_1622_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41664_1622_openshift_W)
 
-* [Master fix pack 4.16.63_1620_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41663_1620_openshift_M)
+* [26 June 2026, Master fix pack 4.16.63_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41663_1620_openshift_M)
 
-* [Worker node fix pack 4.16.63_1621_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41663_1621_openshift_W)
+* [15 June 2026, Worker node fix pack 4.16.63_1621_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41663_1621_openshift_W)
 
-* [Worker node fix pack 4.16.62_1619_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1619_openshift_W)
+* [03 June 2026, Worker node fix pack 4.16.62_1619_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1619_openshift_W)
 
-* [Master fix pack 4.16.61_1617_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41661_1617_openshift_M)
+* [22 May 2026, Master fix pack 4.16.61_1617_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41661_1617_openshift_M)
 
-* [Worker node fix pack 4.16.62_1618_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1618_openshift_W)
+* [20 May 2026, Worker node fix pack 4.16.62_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1618_openshift_W)
 
-* [Worker node fix pack 4.16.60_1614_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41660_1614_openshift_W)
+* [04 May 2026, Worker node fix pack 4.16.60_1614_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41660_1614_openshift_W)
 
-* [Master fix pack 4.16.59_1613_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41659_1613_openshift_M)
+* [27 April 2026, Master fix pack 4.16.59_1613_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41659_1613_openshift_M)
 
-* [Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41659_1610_openshift_W)
+* [20 April 2026, Worker node fix pack 4.16.59_1610_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41659_1610_openshift_W)
 
-* [Worker node fix pack 4.16.58_1609_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1609_openshift_W)
+* [06 April 2026, Worker node fix pack 4.16.58_1609_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1609_openshift_W)
 
-* [Worker node fix pack 4.16.58_1608_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1608_openshift_W)
+* [24 March 2026, Worker node fix pack 4.16.58_1608_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1608_openshift_W)
 
-* [Worker node fix pack 4.16.57_1605_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41657_1605_openshift_W)
+* [11 March 2026, Worker node fix pack 4.16.57_1605_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41657_1605_openshift_W)
 
-* [Worker node fix pack 4.16.57_1604_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41657_1604_openshift_W)
+* [24 February 2026, Worker node fix pack 4.16.57_1604_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41657_1604_openshift_W)
 
-* [Worker node fix pack 4.16.56_1602_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41656_1602_openshift_W)
+* [09 February 2026, Worker node fix pack 4.16.56_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41656_1602_openshift_W)
 
-* [Worker node fix pack 4.16.55_1601_openshift, released 27 January 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41655_1601_openshift_W)
+* [27 January 2026, Worker node fix pack 4.16.55_1601_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41655_1601_openshift_W)
 
 * [Master fix pack 4.16.54_1600_openshift, released 21 January 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41654_1600_openshift_M)
 
-* [Worker node fix pack 4.16.54_1598_openshift, released 12 January 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1598_openshift_W)
+* [12 January 2026, Worker node fix pack 4.16.54_1598_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1598_openshift_W)
 
-* [Worker node fix pack 4.16.54_1597_openshift, released 29 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1597_openshift_W)
+* [29 December 2025, Worker node fix pack 4.16.54_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1597_openshift_W)
 
-* [Worker node fix pack 4.16.54_1596_openshift, released 16 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1596_openshift_W)
+* [16 December 2025, Worker node fix pack 4.16.54_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1596_openshift_W)
 
 * [Master fix pack 4.16.52_1595_openshift, released 10 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41652_1595_openshift_M)
 
-* [Worker node fix pack 4.16.52_1594_openshift, released 03 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41652_1594_openshift_W)
+* [03 December 2025, Worker node fix pack 4.16.52_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41652_1594_openshift_W)
 
-* [Worker node fix pack 4.16.52_1593_openshift, released 17 November 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41652_1593_openshift_W)
+* [17 November 2025, Worker node fix pack 4.16.52_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41652_1593_openshift_W)
 
 * [Master fix pack 4.16.51_1592_openshift, released 15 November 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41651_1592_openshift_M)
 
-* [Worker node fix pack 4.16.51_1588_openshift, released 06 November 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41651_1588_openshift_W)
+* [06 November 2025, Worker node fix pack 4.16.51_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41651_1588_openshift_W)
 
-* [Worker node fix pack 4.16.50_1587_openshift, released 21 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41650_1587_openshift_W)
+* [21 October 2025, Worker node fix pack 4.16.50_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41650_1587_openshift_W)
 
-* [Worker node fix pack 4.16.49_1586_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41649_1586_openshift_W)
+* [08 October 2025, Worker node fix pack 4.16.49_1586_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41649_1586_openshift_W)
 
 * [Master fix pack 4.16.48_1585_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41648_1585_openshift_M)
 
-* [Worker node fix pack 4.16.48_1582_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41648_1582_openshift_W)
+* [23 September 2025, Worker node fix pack 4.16.48_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41648_1582_openshift_W)
 
-* [Worker node fix pack 4.16.47_1580_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41647_1580_openshift_W)
+* [09 September 2025, Worker node fix pack 4.16.47_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41647_1580_openshift_W)
 
-* [Worker node fix pack 4.16.46_1579_openshift, released 26 August 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41646_1579_openshift_W)
+* [26 August 2025, Worker node fix pack 4.16.46_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41646_1579_openshift_W)
 
 * [Master fix pack 4.16.45_1578_openshift, released 20 August 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41645_1578_openshift_M)
 
-* [Worker node fix pack 4.16.45_1576_openshift, released 12 August 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41645_1576_openshift_W)
+* [12 August 2025, Worker node fix pack 4.16.45_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41645_1576_openshift_W)
 
 * [Master fix pack 4.16.43_1574_openshift, released 30 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41643_1574_openshift_M)
 
-* [Worker node fix pack 4.16.44_1575_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41644_1575_openshift_W)
+* [28 July 2025, Worker node fix pack 4.16.44_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41644_1575_openshift_W)
 
-* [Worker node fix pack 4.16.43_1573_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41643_1573_openshift_W)
+* [14 July 2025, Worker node fix pack 4.16.43_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41643_1573_openshift_W)
 
-* [Worker node fix pack 4.16.42_1572_openshift, released 01 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41642_1572_openshift_W)
+* [01 July 2025, Worker node fix pack 4.16.42_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41642_1572_openshift_W)
 
 * [Master fix pack 4.16.41_1570_openshift, released 18 June 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41641_1570_openshift_M)
 
-* [Worker node fix pack 4.16.41_1571_openshift, released 16 June 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41641_1571_openshift_W)
+* [16 June 2025, Worker node fix pack 4.16.41_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41641_1571_openshift_W)
 
-* [Worker node fix pack 4.16.41_1568_openshift, released 04 June 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41641_1568_openshift_W)
+* [04 June 2025, Worker node fix pack 4.16.41_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41641_1568_openshift_W)
 
 * [Master fix pack 4.16.40_1567_openshift, released 28 May 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41640_1567_openshift_M)
 
-* [Worker node fix pack 4.16.40_1566_openshift, released 19 May 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41640_1566_openshift_W)
+* [19 May 2025, Worker node fix pack 4.16.40_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41640_1566_openshift_W)
 
-* [Worker node fix pack 4.16.39_1565_openshift, released 07 May 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41639_1565_openshift_W)
+* [07 May 2025, Worker node fix pack 4.16.39_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41639_1565_openshift_W)
 
 * [Master fix pack 4.16.38_1564_openshift, released 30 April 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41638_1564_openshift_M)
 
-* [Worker node fix pack 4.16.38_1563_openshift, released 21 April 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41638_1563_openshift_W)
+* [21 April 2025, Worker node fix pack 4.16.38_1563_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41638_1563_openshift_W)
 
-* [Worker node fix pack 4.16.38_1562_openshift, released 08 April 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41638_1562_openshift_W)
+* [08 April 2025, Worker node fix pack 4.16.38_1562_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41638_1562_openshift_W)
 
 * [Master fix pack 4.16.36_1560_openshift, released 26 March 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41636_1560_openshift_M)
 
-* [Worker node fix pack 4.16.37_1561_openshift, released 24 March 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41637_1561_openshift_W)
+* [24 March 2025, Worker node fix pack 4.16.37_1561_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41637_1561_openshift_W)
 
-* [Worker node fix pack 4.16.37_1559_openshift, released 11 March 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41637_1559_openshift_W)
+* [11 March 2025, Worker node fix pack 4.16.37_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41637_1559_openshift_W)
 
-* [Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41635_1558_openshift_W)
+* [24 February 2025, Worker node fix pack 4.16.35_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41635_1558_openshift_W)
 
 * [Master fix pack 4.16.32_1557_openshift, released 19 February 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41632_1557_openshift_M)
 
-* [Worker node fix pack 4.16.32_1556_openshift, released 11 February 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41632_1556_openshift_W)
+* [11 February 2025, Worker node fix pack 4.16.32_1556_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41632_1556_openshift_W)
 
-* [Worker node fix pack 4.16.30_1554_openshift, released 29 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41630_1554_openshift_W)
+* [29 January 2025, Worker node fix pack 4.16.30_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41630_1554_openshift_W)
 
 * [Master fix pack 4.16.28_1550_openshift, released 22 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41628_1550_openshift_M)
 
-* [Worker node fix pack 4.16.29_1549_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41629_1549_openshift_W)
+* [13 January 2025, Worker node fix pack 4.16.29_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41629_1549_openshift_W)
 
 * [Worker node fix pack 4.16.27_1548_openshift, released 30 December 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41627_1548_openshift_W)
 
@@ -7955,665 +7959,693 @@ subcollection: openshift
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
+* [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
+
+    * [10 August 2026, Version 420 - v420.0.3_361259361](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42003_361259361)
+
+    * [04 August 2026, Version 420 - v420.0.2_360056330](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42002_360056330)
+
+    * [08 July 2026, Version 420 - 420.0.0_349689605](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42000_349689605)
+
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
 
-    * [v419.1.0_348058306, released 23 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41910_348058306)
+    * [10 August 2026, Version 419 - v419.1.2_361259372](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41912_361259372)
 
-    * [v419.0.2_340316372, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41902_340316372)
+    * [03 August 2026, Version 419 - v419.1.1_359492648](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41911_359492648)
 
-    * [v419.0.0_333601315, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41900_333601315)
+    * [23 June 2026, Version 419 - v419.1.0_348058306](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41910_348058306)
 
-    * [v419.0.3_346505061, released 09 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41903_346505061)
+    * [25 May 2026, Version 419 - v419.0.2_340316372](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41902_340316372)
+
+    * [26 April 2026, Version 419 - v419.0.0_333601315](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41900_333601315)
+
+    * [09 June 2025, Version 419 - v419.0.3_346505061](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41903_346505061)
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
 
-    * [418.1.2_346505318, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41812_346505318)
+    * [10 August 2026, Version 418 - v418.1.4_361259339](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41814_361259339)
 
-    * [v418.1.1_339109080, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41811_339109080)
+    * [03 August 2026, Version 418 - 418.1.3_359492573](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41813_359492573)
 
-    * [v418.1.0_320919095, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41810_320919095)
+    * [09 June 2026, Version 418 - 418.1.2_346505318](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41812_346505318)
 
-    * [v418.0.0_295927267, released 11 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
+    * [18 May 2026, Version 418 - v418.1.1_339109080](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41811_339109080)
+
+    * [03 March 2026, Version 418 - v418.1.0_320919095](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41810_320919095)
+
+    * [11 November 2025, Version 418 - v418.0.0_295927267](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
 
-    * [417.1.2_346505437, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41712_346505437)
+    * [10 August 2026, Version 417 - v417.1.4_361259329](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41714_361259329)
 
-    * [v417.1.1_339109167, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41711_339109167)
+    * [03 August 2026, Version 417 - 417.1.3_359492531](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41713_359492531)
 
-    * [v417.1.0_320919116, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41710_320919116)
+    * [09 June 2026, Version 417 - 417.1.2_346505437](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41712_346505437)
 
-    * [417.0.4_300761316, released 27 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41704_300761316)
+    * [18 May 2026, Version 417 - v417.1.1_339109167](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41711_339109167)
 
-    * [417.0.2_672, released 07 October 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41702_672)
+    * [03 March 2026, Version 417 - v417.1.0_320919116](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41710_320919116)
 
-    * [417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
+    * [27 November 2025, Version 417 - 417.0.4_300761316](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41704_300761316)
+
+    * [07 October 2025, Version 417 - 417.0.2_672](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41702_672)
+
+    * [19 August 2025, Version 417 - 417.0.0_533](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
 
-    * [v416.4.2_346505672, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41642_346505672)
+    * [10 August 2026, Version 416 - v416.4.4_361259301](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41644_361259301)
 
-    * [v416.4.1_339109233, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41641_339109233)
+    * [03 August 2026, Version 416 - v416.4.3_359492487](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41643_359492487)
 
-    * [416.3.1_300541549, released 27 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41631_300541549)
+    * [09 June 2026, Version 416 - v416.4.2_346505672](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41642_346505672)
 
-    * [416.3.0_671, released 07 October 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41630_671)
+    * [18 May 2026, Version 416 - v416.4.1_339109233](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41641_339109233)
 
-    * [416.2.5_598, released 12 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41625_598)
+    * [27 November 2025, Version 416 - 416.3.1_300541549](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41631_300541549)
 
-    * [416.2.3_543, released 17 July 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41623_543)
+    * [07 October 2025, Version 416 - 416.3.0_671](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41630_671)
 
-    * [416.2.2_537, released 23 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41622_537)
+    * [12 September 2025, Version 416 - 416.2.5_598](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41625_598)
 
-    * [416.1.2_495, released 25 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41612_495)
+    * [17 July 2025, Version 416 - 416.2.3_543](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41623_543)
 
-    * [416.1.1_491, released 16 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41611_491)
+    * [23 June 2025, Version 416 - 416.2.2_537](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41622_537)
 
-    * [416.1.0_486, released 27 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41610_486)
+    * [25 April 2025, Version 416 - 416.1.2_495](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41612_495)
 
-    * [416.0.1_474, released 05 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41601_474)
+    * [16 April 2025, Version 416 - 416.1.1_491](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41611_491)
 
-    * [v416.4.0_320919164, released 03 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41640_320919164)
+    * [27 March 2025, Version 416 - 416.1.0_486](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41610_486)
 
-    * [416.0.0_424, released 21 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
+    * [05 March 2025, Version 416 - 416.0.1_474](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41601_474)
+
+    * [03 March 2025, Version 416 - v416.4.0_320919164](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41640_320919164)
+
+    * [21 January 2025, Version 416 - 416.0.0_424](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
 [Cluster autoscaler add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler)
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
-    * [Version 2.0.0 - v200-12-0_351296784, released 07 July 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-12-0_351296784)
+    * [07 July 2026, Version 2.0.0 - v200-12-0_351296784](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-12-0_351296784)
 
-    * [Version 2.0.0 - v200-7-0_332133224, released 30 April 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-7-0_332133224)
+    * [30 April 2026, Version 2.0.0 - v200-7-0_332133224](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-7-0_332133224)
 
-    * [Version 2.0.0 - v200-6-0_326846817, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-6-0_326846817)
+    * [24 March 2026, Version 2.0.0 - v200-6-0_326846817](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-6-0_326846817)
 
-    * [Version 2.0.0 - v200-4_316755565, released 18 February 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-4_316755565)
+    * [18 February 2026, Version 2.0.0 - v200-4_316755565](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-4_316755565)
 
-    * [Version patch update 2.0.0-2_302959219, released 2 December 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#2.0.0-2_302959219_ca)
+    * [2 December 2025, Version patch update 2.0.0-2_302959219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#2.0.0-2_302959219_ca)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
 
-    * [Version 1.2.4 - v124-13-0_351834855, released 07 July 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-13-0_351834855)
+    * [07 July 2026, Version 1.2.4 - v124-13-0_351834855](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-13-0_351834855)
 
-    * [Version 1.2.4 - v124-8-0_326847250, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-8-0_326847250)
+    * [24 March 2026, Version 1.2.4 - v124-8-0_326847250](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-8-0_326847250)
 
-    * [Version 1.2.4 - v124-7_312863411, released 16 February 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-7_312863411)
+    * [16 February 2026, Version 1.2.4 - v124-7_312863411](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-7_312863411)
 
-    * [Version patch update 1.2.4_680, released 18 July 2025.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_680_ca)
+    * [18 July 2025, Version patch update 1.2.4_680.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_680_ca)
 
-    * [Version patch update 1.2.4_629, released 22 April 2025.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_629_ca)
+    * [22 April 2025, Version patch update 1.2.4_629.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_629_ca)
 
     * [Change log for patch update 1.2.4_793, released 18th September 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_793_ca)
 
 * [Version 1.2.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0123_ca_addon)
 
-    * [Version patch update 1.2.3_716, released 25 July 2025.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_716_ca)
+    * [25 July 2025, Version patch update 1.2.3_716.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_716_ca)
 
-    * [Version patch update 1.2.3_540, released 10 March 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_540_ca)
+    * [10 March 2025, Version patch update 1.2.3_540](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_540_ca)
 
-    * [Version patch update 1.2.3_512, released 31 October 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_512_ca)
+    * [31 October 2024, Version patch update 1.2.3_512](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_512_ca)
 
 * [Version 1.2.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0122_ca_addon)
 
-    * [Version patch update 1.2.2_466, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122_466_ca)
+    * [15 July 2024, Version patch update 1.2.2_466](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122_466_ca)
 
-    * [Version patch update 1.2.2_452, released 20 June 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122452_ca)
+    * [20 June 2024, Version patch update 1.2.2_452](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122452_ca)
 
 * [Version 1.2.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0121_ca_addon)
 
-    * [Version patch update 1.2.1_467, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121_467_ca)
+    * [15 July 2024, Version patch update 1.2.1_467](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121_467_ca)
 
-    * [Version patch update 1.2.1_444, released 21 June 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121444_ca)
+    * [21 June 2024, Version patch update 1.2.1_444](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121444_ca)
 
-    * [Version patch update 1.2.1_425, released 05 May 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121425_ca)
+    * [05 May 2024, Version patch update 1.2.1_425](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121425_ca)
 
-    * [Version patch update 1.2.1_418, released 02 April 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121418_ca)
+    * [02 April 2024, Version patch update 1.2.1_418](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121418_ca)
 
-    * [Version patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121395_ca)
+    * [28 February 2024, Version patch update 1.2.1_395](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121395_ca)
 
 * [Version 1.2.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0120_ca_addon)
 
-    * [Version patch update 1.2.0_468, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120_468_ca)
+    * [15 July 2024, Version patch update 1.2.0_468](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120_468_ca)
 
-    * [Version patch update 1.2.0_443, released 21 June 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120443_ca)
+    * [21 June 2024, Version patch update 1.2.0_443](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120443_ca)
 
-    * [Version patch update 1.2.0_426, released 05 May 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120426_ca)
+    * [05 May 2024, Version patch update 1.2.0_426](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120426_ca)
 
-    * [Version patch update 1.2.0_410, released 02 April 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120410_ca)
+    * [02 April 2024, Version patch update 1.2.0_410](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120410_ca)
 
-    * [Version patch update 1.2.0_365, released 21 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120365_ca)
+    * [21 February 2024, Version patch update 1.2.0_365](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120365_ca)
 
-    * [Version patch update 1.2.0_322, released 16 January 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120322_ca)
+    * [16 January 2024, Version patch update 1.2.0_322](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120322_ca)
 
-    * [Version patch update 1.2.0_290, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120290_ca)
+    * [27 November 2023, Version patch update 1.2.0_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120290_ca)
 
-    * [Version patch update 1.2.0_228, released 15 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120228_ca)
+    * [15 November 2023, Version patch update 1.2.0_228](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120228_ca)
 
 * [Version 1.0.9](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0109_ca_addon)
 
-    * [Version patch update 1.0.9_411, released 02 April 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109411_ca)
+    * [02 April 2024, Version patch update 1.0.9_411](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109411_ca)
 
-    * [Version patch update 1.0.9_377, released 21 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109377_ca)
+    * [21 February 2024, Version patch update 1.0.9_377](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109377_ca)
 
-    * [Version patch update 1.0.9_328, released 16 January 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109328_ca)
+    * [16 January 2024, Version patch update 1.0.9_328](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109328_ca)
 
-    * [Version patch update 1.0.9_290, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109290_ca)
+    * [27 November 2023, Version patch update 1.0.9_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109290_ca)
 
-    * [Version patch update 1.0.9_195, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109195_ca)
+    * [13 November 2023, Version patch update 1.0.9_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109195_ca)
 
-    * [Version patch update 1.0.9_134, released 04 October 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
+    * [04 October 2023, Version patch update 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
 
-    * [Version patch update 1.0.9_103, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109103_ca)
+    * [15 September 2023, Version patch update 1.0.9_103](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109103_ca)
 
-    * [Version patch update 1.1.0_362, released 16 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
+    * [07 August 2023, Version patch update 1.0.9_81](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10981_ca)
 
-    * [Version patch update 1.0.8_292, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
+    * [24 July 2023, Version patch update 1.0.9_70](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10970_ca)
 
-    * [Version patch update 1.0.8_233, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108233_ca)
+    * [22 June 2023, Version patch update 1.0.9_44](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10944_ca)
 
-    * [Version patch update 1.0.8_104, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108104_ca)
+* [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0110_ca_addon)
 
-    * [Version patch update 1.0.7_291, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
+    * [16 February 2024, Version patch update 1.1.0_362](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
 
-    * [Version patch update 1.0.7_185, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
+    * [15 May 2023, Version patch update 1.1.0_1066](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#111066_ca)
 
-    * [Version patch update 1.0.7_102, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
+    * [26 April 2023, Version patch update 1.1.0_1060](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#111060_ca)
+
+    * [16 March 2023, Version patch update 1.1.0_978](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110978_ca)
+
+    * [9 January 2023, Version patch update 1.1.0_897](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110897_ca)
+
+    * [22 September 2022, Version patch update 1.1.0_798](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110798_ca)
+
+    * [31 August 2022, Version patch update 1.1.0_776](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110776_ca)
+
+    * [21 July 2022, Version patch update 1.1.0_729](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110729_ca)
+
+    * [30 June 2022, Version patch update 1.1.0_682](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110682_ca)
+
+    * [16 May 2022, Version patch update 1.1.0_615](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110615_ca)
+
+    * [30 March 2022, Version patch update 1.1.0_475](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110475_ca)
+
+    * [16 March 2022, Version patch update 1.1.0_429](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110429_ca)
+
+* [Version 1.0.8](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0108_ca_addon)
+
+    * [27 November 2023, Version patch update 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
+
+    * [13 November 2023, Version patch update 1.0.8_233](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108233_ca)
+
+    * [15 September 2023, Version patch update 1.0.8_104](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108104_ca)
+
+    * [7 August 2023, Version patch update 1.0.8_82](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10882_ca)
+
+    * [6 July 2023, Version patch update 1.0.8_56](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10856_ca)
+
+    * [15 May 2023, Version patch update 1.0.8_1078](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1081078_ca)
+
+    * [5 April 2023, Version patch update 1.0.8_1016](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1081016_ca)
+
+    * [29 March 2023, Version patch update 1.0.8_987](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108987_ca)
+
+    * [9 March 2023, Version patch update 1.0.8_968](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108968_ca)
+
+    * [Change log for patch update 1.0.8_346, released 01 February  2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108346_ca)
+
+* [Version 1.0.7](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0107_ca_addon)
+
+    * [27 November 2023, Version patch update 1.0.7_291](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
+
+    * [13 November 2023, Version patch update 1.0.7_185](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
+
+    * [15 September 2023, Version patch update 1.0.7_102](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
+
+    * [7 August 2023, Version patch update 1.0.7_83](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10783_ca)
+
+    * [6 July 2023, Version patch update 1.0.7_57](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10757_ca)
+
+    * [15 May 2023, Version patch update 1.0.7_1076](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1071076_ca)
+
+    * [5 April 2023, Version patch update 1.0.7_1021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1071021_ca)
+
+    * [29 March 2023, Version patch update 1.0.7_988](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107988_ca)
+
+    * [7 March 2023, Version patch update 1.0.7_956](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107956_ca)
+
+    * [17 February 2023, Version patch update 1.0.7_944](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107944_ca)
+
+    * [24 January 2023, Version patch update 1.0.7_940:](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107940_ca)
+
+    * [9 January 2023, Version patch update 1.0.7_900](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107900_ca)
+
+    * [3 November 2022, Version patch update 1.0.7_883](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107883_ca)
+
+* [Version 1.0.6](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0106_ca_addon)
+
+    * [15 May 2023, Version patch update 1.0.6_1077](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1061077_ca)
+
+    * [5 April 2023, Version patch update 1.0.6_1010](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1061010_ca)
+
+    * [7 March 2023, Version patch update 1.0.6_955](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106955_ca)
+
+    * [9 January 2023, Version patch update 1.0.6_899](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106899_ca)
+
+    * [10 October 2022, Version patch update 1.0.6_828](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106828_ca)
+
+    * [22 September 2022, Version patch update 1.0.6_800](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106800_ca)
+
+    * [31 August 2022, Version patch update 1.0.6_774](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106774_ca)
+
+    * [17 August 2022, Version patch update 1.0.6_763](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106763_ca)
+
+    * [15 July 2022, Version patch update 1.0.6_742](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106742_ca)
+
+* [Version 1.0.5](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0105_ca_addon)
+
+    * [9 January 2023, Version patch update 1.0.5_898](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105898_ca)
+
+    * [22 September 2022, Version patch update 1.0.5_779](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105779_ca)
+
+    * [31 August 2022, Version patch update 1.0.5_775](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105775_ca)
+
+    * [17 August 2022, Version patch update 1.0.5_754](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105754_ca)
+
+    * [19 July 2022, Version patch update 1.0.5_728](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105728_ca)
+
+    * [30 June 2022, Version patch update 1.0.5_694](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105694_ca)
+
+    * [16 May 2022, Version patch update 1.0.5_628](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105628_ca)
+
+    * [28 February 2022, Version patch update 1.0.5_415](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104415_ca)
+
+* [Version 1.0.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0104_ca_addon)
+
+    * [23 February 2022, Version patch update 1.0.4_410](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104410_ca)
+
+    * [20 January 2022, Version patch update 1.0.4_403](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104403_ca)
+
+    * [22 November 2021, Version patch update 1.0.4_387](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104387_ca)
+
+    * [7 October 2021, Version patch update 1.0.4_374](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104374_ca)
+
+* [Version 1.0.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0103_ca_addon)
+
+    * [26 August 2021, Version patch update 1.0.3_360](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#103360_ca)
+
+    * [23 June 2021, Version patch update 1.0.3_352](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#103352_ca)
+
+* [Version 1.0.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0102_ca_addon)
+
+    * [10 May 2021, Version patch update 1.0.2_267](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102267_ca)
+
+    * [19 April 2021, Version patch update 1.0.2_256](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102256_ca)
+
+    * [01 April 2021, Version patch update 1.0.2_249](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102249_ca)
+
+    * [09 March 2021, Version patch update 1.0.2_224](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10224_ca)
+
+* [Version 1.0.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0101_ca_addon)
+
+    * [16 February 2021, Version patch update 1.0.1_219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101219_ca)
+
+    * [13 January 2021, Version patch update 1.0.1_210](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101210_ca)
+
+    * [15 December 2020, Version patch update 1.0.1_205](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101205_ca)
+
+    * [10 December 2020, Version patch update 1.0.1_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101195_ca)
+
+    * [03 December 2020, Version patch update 1.0.1_146](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101146_ca)
+
+    * [27 October 2020, Version patch update 1.0.1_128](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101128_ca)
+
+    * [16 October 2020, Version patch update 1.0.1_124](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101124_ca)
+
+    * [10 September 2020, Version patch update 1.0.1_114](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101114_ca)
+
+    * [](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#)
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
-    * [Version 1.0 - v1.0.58_365773320, released 02 September 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1058_365773320)
+    * [02 September 2026, Version 1.0 - v1.0.58_365773320](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1058_365773320)
 
-    * [Version 1.0 - v1.0.57_364066782, released 26 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1057_364066782)
+    * [26 August 2026, Version 1.0 - v1.0.57_364066782](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1057_364066782)
 
-    * [Version 1.0 - v1.0.56_362323509, released 18 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1056_362323509)
+    * [18 August 2026, Version 1.0 - v1.0.56_362323509](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1056_362323509)
 
-    * [Version 1.0 - v1.0.55_360965725, released 12 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1055_360965725)
+    * [12 August 2026, Version 1.0 - v1.0.55_360965725](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1055_360965725)
 
-    * [Version 1.0 - v1.0.53_359554333, released 05 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1053_359554333)
+    * [05 August 2026, Version 1.0 - v1.0.53_359554333](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1053_359554333)
 
-    * [Version 1.0 - v1.0.52_358395144, released 29 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1052_358395144)
+    * [29 July 2026, Version 1.0 - v1.0.52_358395144](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1052_358395144)
 
-    * [Version 1.0 - v1.0.45_349678516, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1045_349678516)
+    * [25 June 2026, Version 1.0 - v1.0.45_349678516](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1045_349678516)
 
-    * [Version 1.0 - v1.0.44_347952047, released 22 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1044_347952047)
+    * [22 June 2026, Version 1.0 - v1.0.44_347952047](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1044_347952047)
 
-    * [Version 1.0 - v1.0.43_345196902, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1043_345196902)
+    * [09 June 2026, Version 1.0 - v1.0.43_345196902](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1043_345196902)
 
-    * [Version 1.0 - v1.0.42_343448801, released 03 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1042_343448801)
+    * [03 June 2026, Version 1.0 - v1.0.42_343448801](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1042_343448801)
 
-    * [Version 1.0 - v1.0.40_340278420, released 19 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1040_340278420)
+    * [19 May 2026, Version 1.0 - v1.0.40_340278420](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1040_340278420)
 
-    * [Version 1.0 - v1.0.41_341664770, released 19 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1041_341664770)
+    * [19 May 2026, Version 1.0 - v1.0.41_341664770](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1041_341664770)
 
-    * [Version 1.0 - v1.0.39_338302625, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1039_338302625)
+    * [13 May 2026, Version 1.0 - v1.0.39_338302625](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1039_338302625)
 
-    * [Version 1.0 - v1.0.37_333899629, released 27 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1037_333899629)
+    * [27 April 2026, Version 1.0 - v1.0.37_333899629](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1037_333899629)
 
-    * [Version 1.0 - v1.0.36_328998949, released 07 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1036_328998949)
+    * [07 April 2026, Version 1.0 - v1.0.36_328998949](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1036_328998949)
 
-    * [Version 1.0 - v1.0.35_325672265, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1035_325672265)
+    * [24 March 2026, Version 1.0 - v1.0.35_325672265](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1035_325672265)
 
-    * [Version 1.0 - v1.0.34_321366482, released 02 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1034_321366482)
+    * [02 March 2026, Version 1.0 - v1.0.34_321366482](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1034_321366482)
 
-    * [Version 1.0 - v1.0.32_319681464, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1032_319681464)
+    * [26 February 2026, Version 1.0 - v1.0.32_319681464](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1032_319681464)
 
-    * [Version 1.0 - v1.0.31_316468084, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1031_316468084)
+    * [10 February 2026, Version 1.0 - v1.0.31_316468084](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1031_316468084)
 
-    * [Version 1.0 - v1.0.30_310464697, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1030_310464697)
+    * [21 January 2026, Version 1.0 - v1.0.30_310464697](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1030_310464697)
 
-    * [Version 1.0 - v1.0.29_301949998, released 05 December 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1029_301949998)
+    * [05 December 2025, Version 1.0 - v1.0.29_301949998](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1029_301949998)
 
-    * [Version 1.0 - 1.0.27_264, released 22 September 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1027_264)
+    * [22 September 2025, Version 1.0 - 1.0.27_264](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1027_264)
 
-    * [Version 1.0 - 1.0.26_258, released 18 August 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1026_258)
+    * [18 August 2025, Version 1.0 - 1.0.26_258](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1026_258)
 
-    * [Version 1.0 - 1.0.25_248, released 18 July 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1025_248)
+    * [18 July 2025, Version 1.0 - 1.0.25_248](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1025_248)
 
-    * [Version 1.0 - 1.0.23_230, released 16 June 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1023_230)
+    * [16 June 2025, Version 1.0 - 1.0.23_230](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1023_230)
 
-    * [Version 1.0 - 1.0.17_173, released 19 February 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1017_173)
+    * [19 February 2025, Version 1.0 - 1.0.17_173](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1017_173)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.0)
 
-    * [Version 1.0.16_169, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.16_169)
+    * [11 December 2024, Version 1.0.16_169](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.16_169)
 
-    * [Version 1.0.15_163, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.15_163)
+    * [3 October 2024, Version 1.0.15_163](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.15_163)
 
-    * [Version 1.0.13_151, released 26 August 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.13_151)
+    * [26 August 2024, Version 1.0.13_151](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.13_151)
 
-    * [Version 1.0.12_147, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.12_147)
+    * [15 July 2024, Version 1.0.12_147](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.12_147)
 
-    * [Version 1.0.10_141, released 03 July 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.0-initial)
+    * [03 July 2024, Version 1.0.10_141](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.0-initial)
 
 [VPC Block CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver)
 
-* [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
-
-    * [Version 5.2 - v5.2.59_362336000, released 19 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5259_362336000)
-
-    * [Version 5.2 - v5.2.58_359719682, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5258_359719682)
-
-    * [Version 5.2 - v5.2.57_356951284, released 29 July 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5257_356951284)
-
-    * [Version 5.2 - v5.2.55_349394850, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5255_349394850)
-
-    * [Version 5.2 - v5.2.54_345553805, released 10 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5254_345553805)
-
-    * [Version 5.2 - v5.2.52_342345117, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5252_342345117)
-
-    * [Version 5.2 - v5.2.51_340196278, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5251_340196278)
-
-    * [Version 5.2 - v5.2.50_338659383, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5250_338659383)
-
-    * [Version 5.2 - v5.2.49_335380306, released 30 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5249_335380306)
-
-    * [Version 5.2 - v5.2.48_330814432, released 14 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5248_330814432)
-
-    * [Version 5.2 - v5.2.47_326490882, released 25 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5247_326490882)
-
-    * [Version 5.2 - v5.2.46_321044202, released 02 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5246_321044202)
-
-    * [Version 5.2 - v5.2.45_319683178, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5245_319683178)
-
-    * [Version 5.2 - v5.2.44_316463149, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5244_316463149)
-
-    * [Version 5.2 - v5.2.43_313466999, released 02 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5243_313466999)
-
-    * [Version 5.2 - v5.2.42_310488886, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5242_310488886)
-
-    * [Version 5.2 - 5.2.41_296897820, released 12 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5241_296897820)
-
-    * [Version 5.2 - 5.2.40_293222012, released 05 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5240_293222012)
-
-    * [Version 5.2 - 5.2.38_828, released 14 July 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5238_828)
-
-    * [Version 5.2 - 5.2.36_778, released 30 May 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5236_778)
-
-    * [Version 5.2 - 5.2.33_735, released 09 May 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5233_735)
-
-    * [Version 5.2 - 5.2.31_687, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
-
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
 
-    * [Version 5.1 - v5.1.59_362336122, released 19 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5159_362336122)
-
-    * [Version 5.1 - v5.1.58_359720275, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5158_359720275)
-
-    * [Version 5.1 - v5.1.57_356951142, released 29 July 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5157_356951142)
-
-    * [Version 5.1 - v5.1.55_349394898, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5155_349394898)
-
-    * [Version 5.1 - v5.1.54_345553861, released 10 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5154_345553861)
-
-    * [Version 5.1 - v5.1.52_342345162, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5152_342345162)
-
-    * [Version 5.1 - v5.1.51_340196313, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5151_340196313)
-
-    * [Version 5.1 - v5.1.50_338876479, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5150_338876479)
-
-    * [Version 5.1 - v5.1.49_335379980, released 30 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5149_335379980)
-
-    * [Version 5.1 - v5.1.48_330814388, released 14 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5148_330814388)
-
-    * [Version 5.1 - v5.1.47_326491091, released 25 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5147_326491091)
-
-    * [Version 5.1 - v5.1.46_321044176, released 02 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5146_321044176)
-
-    * [Version 5.1 - v5.1.44_319682969, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5144_319682969)
-
-    * [Version 5.1 - v5.1.43_316462421, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5143_316462421)
-
-    * [Version 5.1 - v5.1.42_313460253, released 02 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5142_313460253)
-
-    * [Version 5.1 - v5.1.41_310494703, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5141_310494703)
-
-    * [Version 5.1 - 5.1.40_296898008, released 12 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5140_296898008)
-
-    * [Version 5.1 - 5.1.39_293222093, released 05 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5139_293222093)
-
-    * [Version 5.1 - 5.1.37_827, released 14 July 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5137_827)
-
-    * [Version 5.1 - 5.1.35_763, released 30 May 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5135_763)
-
-    * [Version 5.1 - 5.1.34_740, released 09 May 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5134_740)
-
-    * [Version 5.1 - 5.1.33_685, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5133_685)
-
-    * [Version 5.1.31_656, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.31_656_is_block_relnote)
-
-    * [Version 5.1.29_642, released 20 November 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.29_642_is_block_relnote)
-
-    * [Version 5.1.26_601, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.26_601_is_block_relnote)
-
-    * [Version 5.1.25_574, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.25_574_is_block_relnote)
-
-    * [Version 5.1.24_567, released 21 June 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.24_567_is_block_relnote)
-
-    * [Version 5.1.23_543, released 10 May 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.23_543_is_block_relnote)
-
-    * [Version 5.1.22_522, released 08 March 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.22_522_is_block_relnote)
-
-    * [Version 5.1.21_506, released 08 February 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.21_506_is_block_relnote)
-
-    * [Version 5.1.19_486, released 10 January 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.19_486_is_block_relnote)
+    * [10 January 2024, Version 5.1.19_486](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.19_486_is_block_relnote)
 
 * [Change log for version 5.1.16_446, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.16_446_is_block_relnote)
 
     * [Change log for version 5.1.15_419 released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.15_419_is_block_relnote)
 
-    * [Version 5.1.13_345, released 14 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.13_345_is_block_relnote)
+    * [19 August 2026, Version 5.1 - v5.1.59_362336122](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5159_362336122)
 
-    * [Version 5.0.23_437, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.23_437_is_block_relnote)
+    * [06 August 2026, Version 5.1 - v5.1.58_359720275](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5158_359720275)
 
-    * [Version 5.0.21_401, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.21_401_is_block_relnote)
+    * [29 July 2026, Version 5.1 - v5.1.57_356951142](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5157_356951142)
 
-    * [Version 5.0.19_358, released 14 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.19_358_is_block_relnote)
+    * [25 June 2026, Version 5.1 - v5.1.55_349394898](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5155_349394898)
+
+    * [10 June 2026, Version 5.1 - v5.1.54_345553861](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5154_345553861)
+
+    * [28 May 2026, Version 5.1 - v5.1.52_342345162](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5152_342345162)
+
+    * [20 May 2026, Version 5.1 - v5.1.51_340196313](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5151_340196313)
+
+    * [13 May 2026, Version 5.1 - v5.1.50_338876479](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5150_338876479)
+
+    * [30 April 2026, Version 5.1 - v5.1.49_335379980](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5149_335379980)
+
+    * [14 April 2026, Version 5.1 - v5.1.48_330814388](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5148_330814388)
+
+    * [25 March 2026, Version 5.1 - v5.1.47_326491091](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5147_326491091)
+
+    * [02 March 2026, Version 5.1 - v5.1.46_321044176](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5146_321044176)
+
+    * [26 February 2026, Version 5.1 - v5.1.44_319682969](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5144_319682969)
+
+    * [10 February 2026, Version 5.1 - v5.1.43_316462421](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5143_316462421)
+
+    * [02 February 2026, Version 5.1 - v5.1.42_313460253](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5142_313460253)
+
+    * [21 January 2026, Version 5.1 - v5.1.41_310494703](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5141_310494703)
+
+    * [12 November 2025, Version 5.1 - 5.1.40_296898008](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5140_296898008)
+
+    * [05 November 2025, Version 5.1 - 5.1.39_293222093](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5139_293222093)
+
+    * [14 July 2025, Version 5.1 - 5.1.37_827](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5137_827)
+
+    * [30 May 2025, Version 5.1 - 5.1.35_763](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5135_763)
+
+    * [09 May 2025, Version 5.1 - 5.1.34_740](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5134_740)
+
+    * [17 February 2025, Version 5.1 - 5.1.33_685](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5133_685)
+
+    * [11 December 2024, Version 5.1.31_656](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.31_656_is_block_relnote)
+
+    * [20 November 2024, Version 5.1.29_642](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.29_642_is_block_relnote)
+
+    * [3 October 2024, Version 5.1.26_601](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.26_601_is_block_relnote)
+
+    * [15 July 2024, Version 5.1.25_574](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.25_574_is_block_relnote)
+
+    * [21 June 2024, Version 5.1.24_567](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.24_567_is_block_relnote)
+
+    * [10 May 2024, Version 5.1.23_543](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.23_543_is_block_relnote)
+
+    * [08 March 2024, Version 5.1.22_522](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.22_522_is_block_relnote)
+
+    * [08 February 2024, Version 5.1.21_506](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.21_506_is_block_relnote)
+
+    * [14 September 2023, Version 5.1.13_345](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.13_345_is_block_relnote)
+
+    * [01 August 2023, Version 5.1.12_285](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.12_285_is_block_relnote)
+
+    * [21 June 2023, Version 5.1.11_126](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.11_126_is_block_relnote)
+
+    * [15 May 2023, Version 5.1.8_1970](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.8_1970_is_block_relnote)
+
+    * [05 April 2023, Version 5.1.6_1872](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.6_1872_is_block_relnote)
+
+    * [29 March 2023, Version 5.1.5_1857](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.5_1857_is_block_relnote)
+
+    * [07 March 2023, Version 5.1.4_1852](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.4_1852_is_block_relnote)
+
+    * [21 February 2023, Version 5.1.2_1828](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.2-1828_is_block_relnote)
+
+    * [9 February 2023, Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1_is_block_relnote)
+
+* [Version 4.3](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#043_is_block)
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
 
-    * [Version 2.0 - v2.0.51_365773339, released 02 September 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2051_365773339)
+    * [02 September 2026, Version 2.0 - v2.0.51_365773339](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2051_365773339)
 
-    * [Version 2.0 - v2.0.50_364067134, released 26 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2050_364067134)
+    * [26 August 2026, Version 2.0 - v2.0.50_364067134](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2050_364067134)
 
-    * [Version 2.0 - v2.0.49_362519752, released 18 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2049_362519752)
+    * [18 August 2026, Version 2.0 - v2.0.49_362519752](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2049_362519752)
 
-    * [Version 2.0 - v2.0.47_360961675, released 12 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2047_360961675)
+    * [12 August 2026, Version 2.0 - v2.0.47_360961675](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2047_360961675)
 
-    * [Version 2.0 - v2.0.45_359566968, released 05 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2045_359566968)
+    * [05 August 2026, Version 2.0 - v2.0.45_359566968](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2045_359566968)
 
-    * [Version 2.0 - v2.0.44_358039267, released 29 July 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2044_358039267)
+    * [29 July 2026, Version 2.0 - v2.0.44_358039267](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2044_358039267)
 
-    * [Version 2.0 - v2.0.37_349678441, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2037_349678441)
+    * [25 June 2026, Version 2.0 - v2.0.37_349678441](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2037_349678441)
 
-    * [Version 2.0 - v2.0.36_347951752, released 22 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2036_347951752)
+    * [22 June 2026, Version 2.0 - v2.0.36_347951752](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2036_347951752)
 
-    * [Version 2.0 - v2.0.34_345194711, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2034_345194711)
+    * [09 June 2026, Version 2.0 - v2.0.34_345194711](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2034_345194711)
 
-    * [Version 2.0 - v2.0.33_343448437, released 03 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2033_343448437)
+    * [03 June 2026, Version 2.0 - v2.0.33_343448437](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2033_343448437)
 
-    * [Version 2.0 - v2.0.32_341664893, released 29 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2032_341664893)
+    * [29 May 2026, Version 2.0 - v2.0.32_341664893](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2032_341664893)
 
-    * [Version 2.0 - v2.0.30_338302575, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2030_338302575)
+    * [13 May 2026, Version 2.0 - v2.0.30_338302575](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2030_338302575)
 
-    * [Version 2.0 - v2.0.28_333900419, released 27 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2028_333900419)
+    * [27 April 2026, Version 2.0 - v2.0.28_333900419](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2028_333900419)
 
-    * [Version 2.0 - v2.0.27_329001706, released 07 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2027_329001706)
+    * [07 April 2026, Version 2.0 - v2.0.27_329001706](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2027_329001706)
 
-    * [Version 2.0 - v2.0.26_325670948, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2026_325670948)
+    * [24 March 2026, Version 2.0 - v2.0.26_325670948](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2026_325670948)
 
-    * [Version 2.0 - v2.0.25_321043855, released 02 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2025_321043855)
+    * [02 March 2026, Version 2.0 - v2.0.25_321043855](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2025_321043855)
 
-    * [Version 2.0 - v2.0.24_319692587, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2024_319692587)
+    * [26 February 2026, Version 2.0 - v2.0.24_319692587](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2024_319692587)
 
-    * [Version 2.0 - v2.0.23_316463584, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2023_316463584)
+    * [10 February 2026, Version 2.0 - v2.0.23_316463584](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2023_316463584)
 
-    * [Version 2.0 - v2.0.22_310489003, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2022_310489003)
+    * [21 January 2026, Version 2.0 - v2.0.22_310489003](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2022_310489003)
 
-    * [Version 2.0 - v2.0.21_301434433, released 05 December 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2021_301434433)
+    * [05 December 2025, Version 2.0 - v2.0.21_301434433](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2021_301434433)
 
-    * [Version 2.0 - 2.0.20_296667134, released 12 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2020_296667134)
+    * [12 November 2025, Version 2.0 - 2.0.20_296667134](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2020_296667134)
 
-    * [Version 2.0 - 2.0.19_294159886, released 05 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2019_294159886)
+    * [05 November 2025, Version 2.0 - 2.0.19_294159886](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2019_294159886)
 
-    * [Version 2.0 - 2.0.16_443, released 22 September 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2016_443)
+    * [22 September 2025, Version 2.0 - 2.0.16_443](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2016_443)
 
-    * [Version 2.0 - 2.0.14_403, released 18 July 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2014_403)
+    * [18 July 2025, Version 2.0 - 2.0.14_403](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2014_403)
 
-    * [Version 2.0 - 2.0.15_431, released 18 July 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2015_431)
+    * [18 July 2025, Version 2.0 - 2.0.15_431](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2015_431)
 
-    * [Version 2.0 - 2.0.13_370, released 16 June 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2013_370)
+    * [16 June 2025, Version 2.0 - 2.0.13_370](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2013_370)
 
-    * [Version 2.0 - 2.0.10_334, released 19 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2010_334)
+    * [19 February 2025, Version 2.0 - 2.0.10_334](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2010_334)
 
 * [Version 1.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1.2)
 
-    * [Version 1.2 - 1.2.14_332, released 19 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1214_332)
+    * [19 February 2025, Version 1.2 - 1.2.14_332](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1214_332)
 
-    * [Version 1.2.13_326, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.13_326_is_file_relnote)
+    * [11 December 2024, Version 1.2.13_326](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.13_326_is_file_relnote)
 
-    * [Version 1.2.12_312, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.12_312_is_file_relnote)
+    * [3 October 2024, Version 1.2.12_312](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.12_312_is_file_relnote)
 
-    * [Version 1.2.10_254, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.10_254_is_file_relnote)
+    * [15 July 2024, Version 1.2.10_254](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.10_254_is_file_relnote)
 
-    * [Version 1.2.9_245, released 21 June 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.9_245_is_file_relnote)
+    * [21 June 2024, Version 1.2.9_245](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.9_245_is_file_relnote)
 
-    * [Version 1.2.8_174, released 10 May 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.8_174_is_file_relnote)
+    * [10 May 2024, Version 1.2.8_174](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.8_174_is_file_relnote)
 
-    * [Version 1.2.7_154, released 08 March 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.7_154_is_file_relnote)
+    * [08 March 2024, Version 1.2.7_154](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.7_154_is_file_relnote)
 
-    * [Version 1.2.6_130, released 08 February 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.6_130_is_file_relnote)
+    * [08 February 2024, Version 1.2.6_130](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.6_130_is_file_relnote)
 
-    * [Version 1.2.5_107, released 10 January 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.5_107_is_file_relnote)
+    * [10 January 2024, Version 1.2.5_107](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.5_107_is_file_relnote)
 
-    * [Version 1.2.3_97, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.3_97_is_file_relnote)
+    * [27 November 2023, Version 1.2.3_97](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.3_97_is_file_relnote)
 
-    * [Version version 1.2.0, released 31 October 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#0120_is_file)
+    * [31 October 2023, Version version 1.2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#0120_is_file)
 
 * [Version 1.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#011_is_file)
 
-    * [Version 1.1.10_93, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.10_93_is_file_relnote)
+    * [27 November 2023, Version 1.1.10_93](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.10_93_is_file_relnote)
 
-    * [Version 1.1.9_87, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.9_87_is_file_relnote)
+    * [13 November 2023, Version 1.1.9_87](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.9_87_is_file_relnote)
 
-    * [Version 1.1.7_49, released 14 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.7_is_file_relnote)
+    * [14 September 2023, Version 1.1.7_49](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.7_is_file_relnote)
+
+    * [3 July 2023, Version 1.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1_is_file_relnote)
+
+    * [15 May 2023, Version 1.1-beta](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1_beta_is_file_relnote)
+
+    * [Change log for version 1.1.6_41, release 28 July 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.6_is_file_relnote)
+
+* [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#01_is_file)
+
+    * [16 May 2023, Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.0_is_file_relnote)
 
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
-    * [Version 1.0 - v1.0.28_365471792, released 01 September 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1028_365471792)
+    * [01 September 2026, Version 1.0 - v1.0.28_365471792](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1028_365471792)
 
-    * [Version 1.0 - v1.0.27_360474192, released 20 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1027_360474192)
+    * [20 August 2026, Version 1.0 - v1.0.27_360474192](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1027_360474192)
 
-    * [Version 1.0 - v1.0.26_360474192, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1026_360474192)
+    * [10 August 2026, Version 1.0 - v1.0.26_360474192](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1026_360474192)
 
-    * [Version 1.0 - v1.0.25_357184891, released 28 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1025_357184891)
+    * [28 July 2026, Version 1.0 - v1.0.25_357184891](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1025_357184891)
 
-    * [Version 1.0 - v1.0.24_354254613, released 16 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1024_354254613)
+    * [16 July 2026, Version 1.0 - v1.0.24_354254613](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1024_354254613)
 
-    * [Version 1.0 - v1.0.23_349336907, released 03 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023_349336907)
+    * [03 July 2026, Version 1.0 - v1.0.23_349336907](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023_349336907)
 
-    * [Version 1.0 - v1.0.22_348679631, released 22 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1022_348679631)
+    * [22 June 2026, Version 1.0 - v1.0.22_348679631](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1022_348679631)
 
-    * [Version 1.0 - v1.0.21_333133599, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1021_333133599)
+    * [09 June 2026, Version 1.0 - v1.0.21_333133599](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1021_333133599)
 
-    * [Version 1.0 - v1.0.20_333133599, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1020_333133599)
+    * [25 May 2026, Version 1.0 - v1.0.20_333133599](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1020_333133599)
 
-    * [Version 1.0 - v1.0.19_333133599, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1019_333133599)
+    * [26 April 2026, Version 1.0 - v1.0.19_333133599](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1019_333133599)
 
-    * [Version 1.0 - v1.0.18_320539369, released 02 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
+    * [02 April 2026, Version 1.0 - v1.0.18_320539369](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
 
-    * [Version 1.0 - v1.0.17_320539369, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1017_320539369)
+    * [24 March 2026, Version 1.0 - v1.0.17_320539369](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1017_320539369)
 
-    * [Version 1.0 - v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
+    * [14 November 2025, Version 1.0 - v1.0.13_297764008](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [Object Storage plug in](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in)
 
 * [Version 2.2](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2.2)
 
-    * [Version 2.2 - 2.2.59, released 27 August 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2259)
+    * [27 August 2026, Version 2.2 - 2.2.59](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2259)
 
-    * [Version 2.2 - 2.2.58, released 15 August 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2258)
+    * [15 August 2026, Version 2.2 - 2.2.58](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2258)
 
-    * [Version 2.2 - 2.2.57, released 28 July 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2257)
+    * [28 July 2026, Version 2.2 - 2.2.57](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2257)
 
-    * [Version 2.2 - 2.2.56, released 03 July 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2256)
+    * [03 July 2026, Version 2.2 - 2.2.56](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2256)
 
-    * [Version 2.2 - 2.2.55, released 22 June 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2255)
+    * [22 June 2026, Version 2.2 - 2.2.55](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2255)
 
-    * [Version 2.2 - 2.2.54, released 05 June 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2254)
+    * [05 June 2026, Version 2.2 - 2.2.54](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2254)
 
 [Satellite Storage Operator](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1.0)
 
-    * [Version 1.0 - 1.0.87, released 31 July 2026](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1087)
+    * [31 July 2026, Version 1.0 - 1.0.87](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1087)
 
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
 
-    * [Version 1.0.0 - v1.0.0-342645253, released 23 May 2026](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-342645253)
+    * [23 May 2026, Version 1.0.0 - v1.0.0-342645253](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-342645253)
 
-    * [Version 1.0.0 - v1.0.0-1661, released 06 February 2025](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-1661)
+    * [06 February 2025, Version 1.0.0 - v1.0.0-1661](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-1661)
 
-    * [Version 1.0.0 - 1.0.0_1581, released 14 November 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
+    * [14 November 2024, Version 1.0.0 - 1.0.0_1581](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
+
+    * [17 July 2023, Version 1.0.0_1122](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
+
+    * [8 September 2021, Version 1.0.0_649](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
 
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
-* [Version 4.21.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.21.0)
+* [Version 4.10.0 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10-archive)
 
-    * [4.21.4, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4214)
-
-    * [4.21.1, released 11 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4211)
-
-* [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
-
-    * [4.20.9, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4209)
-
-    * [4.20.6, released 01 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4206)
-
-    * [4.20.3, released 16 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4203)
-
-    * [4.20.1, released 05 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4201)
-
-* [Version 4.19.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.19.0)
-
-    * [4.19.15, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41915)
-
-    * [4.19.11, released 01 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41911)
-
-    * [4.19.8, released 16 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4198)
-
-    * [4.19.7, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4197)
-
-    * [4.19.3, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4193)
-
-    * [4.19.1, released 09 October 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4191)
-
-* [Version 4.18.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.18.0)
-
-    * [4.18.18, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41818)
-
-    * [4.18.15, released 01 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41815)
-
-    * [4.18.12, released 16 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41812)
-
-    * [4.18.11, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41811)
-
-    * [4.18.7, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4187)
-
-    * [4.18.5, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4185)
-
-    * [4.18.3, released 25 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4183)
-
-    * [4.18.2, released 18 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4182)
-
-* [Version 4.17.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.17.0)
-
-    * [4.17.23, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41723)
-
-    * [4.17.20, released 01 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41720)
-
-    * [4.17.17, released 16 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41717)
-
-    * [4.17.16, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41716)
-
-    * [4.17.13, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41713)
-
-    * [4.17.11, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41711)
-
-    * [4.17.9, released 25 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4179)
-
-    * [4.17.5, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4175)
-
-    * [4.17.1, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4171)
-
-* [Version 4.16.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16.0)
-
-    * [4.16.30, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41630)
-
-    * [4.16.26, released 01 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41626)
-
-    * [4.16.23, released 16 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41623)
-
-    * [4.16.21, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41621)
-
-    * [4.16.18, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41618)
-
-    * [4.16.16, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41616)
-
-    * [4.16.14, released 25 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41614)
-
-    * [4.16.10, released 25 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
-
-    * [4.16.10, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
-
-    * [4.16.6, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4166)
-
-* [Version 4.15.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.0)
-
-    * [4.15.29, released 16 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41529)
-
-    * [4.15.26, released 01 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41526)
-
-    * [4.15.23, released 16 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41523)
-
-    * [4.15.22, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41522)
-
-    * [4.15.19, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41519)
-
-    * [4.15.17, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41517)
-
-    * [4.15.15, released 25 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41515)
-
-    * [4.15.11, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41511)
-
-    * [4.15.7, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4157)
-
-* [Version 4.14.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.0)
-
-    * [4.14.29, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41429)
-
-    * [4.14.27, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41427)
-
-    * [4.14.25, released 25 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41425)
-
-    * [4.14.21, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41421)
-
-    * [4.14.17, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41417)
-
-* [Version 4.13.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
-
-    * [4.13.32, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41332)
-
-    * [4.13.30, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41330)
-
-    * [4.13.24, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41324)
-
-    * [4.13.20, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41320)
+    * [4.10.30 released 20 October 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.30)
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
 
-    * [Version 4.21 - v1.0.9_4.21_366720299, released 31 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v109_421_366720299)
+    * [31 August 2026, Version 4.21 - v1.0.9_4.21_366720299](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v109_421_366720299)
 
-    * [Version 4.21 - v1.0.8_4.21, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v108_421)
+    * [10 August 2026, Version 4.21 - v1.0.8_4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v108_421)
 
-    * [Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v107_421_360518333)
+    * [06 August 2026, Version 4.21 - v1.0.7_4.21_360518333](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v107_421_360518333)
 
-    * [Version 4.21 - v1.0.5_4.21_351283493, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v105_421_351283493)
+    * [25 June 2026, Version 4.21 - v1.0.5_4.21_351283493](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v105_421_351283493)
 
-    * [Version 4.21 - v1.0.4_4.21_347026591, released 15 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_421_347026591)
+    * [15 June 2026, Version 4.21 - v1.0.4_4.21_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_421_347026591)
 
 * [Version 4.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.20)
 
-    * [Version 4.20 - v1.0.4_4.20_347026591, released 15 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_420_347026591)
+    * [15 June 2026, Version 4.20 - v1.0.4_4.20_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_420_347026591)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
@@ -8637,53 +8669,53 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
 
-    * [Version 1.0.0 - 1.0.0_364389711, released 31 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711)
+    * [31 August 2026, Version 1.0.0 - 1.0.0_364389711](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711)
 
-    * [Version 1.0.0 - 1.0.0_359585651, released 17 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_359585651)
+    * [17 August 2026, Version 1.0.0 - 1.0.0_359585651](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_359585651)
 
-    * [Version 1.0.0 - 1.0.0_351682779, released 09 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_351682779)
+    * [09 July 2026, Version 1.0.0 - 1.0.0_351682779](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_351682779)
 
-    * [Version 1.0.0 - 1.0.0_348708490, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_348708490)
+    * [25 June 2026, Version 1.0.0 - 1.0.0_348708490](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_348708490)
 
-    * [Version 1.0.0 - 1.0.0_345162128, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_345162128)
+    * [09 June 2026, Version 1.0.0 - 1.0.0_345162128](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_345162128)
 
-    * [Version 1.0.0 - 1.0.0_341829798, released 27 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
+    * [27 May 2026, Version 1.0.0 - 1.0.0_341829798](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
 
-    * [Version 1.0.0 - 1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
+    * [05 May 2026, Version 1.0.0 - 1.0.0_334950440](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
 
-    * [Version 1.0.0 - 1.0.0_325458899, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899)
+    * [24 March 2026, Version 1.0.0 - 1.0.0_325458899](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899)
 
-    * [Version 1.0.0 - 1.0.0_320394467, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467)
+    * [03 March 2026, Version 1.0.0 - 1.0.0_320394467](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467)
 
-    * [Version 1.0.0 - 1.0.0_318859798, released 23 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_318859798)
+    * [23 February 2026, Version 1.0.0 - 1.0.0_318859798](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_318859798)
 
-    * [Version 1.0.0 - 1.0.0_315380368, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_315380368)
+    * [10 February 2026, Version 1.0.0 - 1.0.0_315380368](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_315380368)
 
-    * [Version 1.0.0 - 1.0.0_302028792, released 04 December 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_302028792)
+    * [04 December 2025, Version 1.0.0 - 1.0.0_302028792](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_302028792)
 
-    * [Version 1.0.0 - 1.0.0_2983, released 08 September 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2983)
+    * [08 September 2025, Version 1.0.0 - 1.0.0_2983](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2983)
 
-    * [Version 1.0.0 - 1.0.0_2880, released 22 July 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2880)
+    * [22 July 2025, Version 1.0.0 - 1.0.0_2880](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2880)
 
-    * [Version 1.0.0 - 1.0.0_2824, released 23 June 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2824)
+    * [23 June 2025, Version 1.0.0 - 1.0.0_2824](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2824)
 
-    * [Version 1.0.0 - 1.0.0_2713, released 27 April 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713)
+    * [27 April 2025, Version 1.0.0 - 1.0.0_2713](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713)
 
-    * [Version 1.0.0 - 1.0.0_2640, released 13 March 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640)
+    * [13 March 2025, Version 1.0.0 - 1.0.0_2640](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640)
 
-    * [Version 1.0.0 - 1.0.0_2557, released 15 January 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557)
+    * [15 January 2025, Version 1.0.0 - 1.0.0_2557](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557)
 
-    * [Version 1.0.0 - 1.0.0_2450, released 30 October 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450)
+    * [30 October 2024, Version 1.0.0 - 1.0.0_2450](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450)
 
-    * [Version 1.0.0 - 1.0.0_2382, released 04 September 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382)
+    * [04 September 2024, Version 1.0.0 - 1.0.0_2382](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382)
 
-    * [Version 1.0.0 - 1.0.0_2308, released 09 July 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308)
+    * [09 July 2024, Version 1.0.0 - 1.0.0_2308](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308)
 
-    * [Version 1.0.0 - 1.0.0_2258, released 06 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258)
+    * [06 June 2024, Version 1.0.0 - 1.0.0_2258](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258)
 
-    * [Version 1.0.0 - 1.0.0_2244, released 04 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244)
+    * [04 June 2024, Version 1.0.0 - 1.0.0_2244](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244)
 
-    * [Version 1.0.0 - 1.0.0_2186, released 08 May 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186)
+    * [08 May 2024, Version 1.0.0 - 1.0.0_2186](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186)
 
     * [1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2111)
 
@@ -8753,31 +8785,31 @@ subcollection: openshift
 
 * [Version 20260822-01-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
 
-    * [Version 20260822-01-hardened, released 23 August 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
+    * [23 August 2026, Version 20260822-01-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
 
-    * [Version 20260822-01, released 23 August 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01)
+    * [23 August 2026, Version 20260822-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01)
 
 * [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
-    * [Version 20260604-05-hardened, released 04 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
+    * [04 June 2026, Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
-    * [Version 20260604-05, released 04 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
+    * [04 June 2026, Version 20260604-05](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
 
 * [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
 
-    * [Version 20260319-02, released 19 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
+    * [19 March 2026, Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
 
 * [Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
 
-    * [Version 20260318-10, released 18 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
+    * [18 March 2026, Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
 
 * [Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
 
-    * [Version 20260312-07-hardened, released 12 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
+    * [12 March 2026, Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
 
 * [Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
 
-    * [Version 20260303-01, released 03 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
+    * [03 March 2026, Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
 
 
 ## Service settings
@@ -9654,7 +9686,7 @@ subcollection: openshift
 
 * [Gathering more data](/docs/openshift?topic=openshift-debug_clusters#ts-5)
 
-* [Reach out in Slack or review user forums for similar issues](/docs/openshift?topic=openshift-debug_clusters#ts-6)
+* [Review user forums for similar issues](/docs/openshift?topic=openshift-debug_clusters#ts-6)
 
 * [Next steps](/docs/openshift?topic=openshift-debug_clusters#advanced-ts-next)
 

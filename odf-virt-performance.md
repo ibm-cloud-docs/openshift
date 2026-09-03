@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-07-09"
+lastupdated: "2026-09-03"
 
 keywords: openshift, odf, openshift data foundation, virtualization, performance, osd, ceph, bulk flag, resource limits
 
@@ -264,4 +264,4 @@ For a more detailed view of data distribution and OSD health, complete the follo
 - [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc)
 - [OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters)
 - [Managing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment)
-- [Red Hat OpenShift Data Foundation documentation](https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation){: external}
+- [Red Hat OpenShift Data Foundation documentation](https://docs.redhat.com/documentation/en-us/red_hat_openshift_data_foundation){: external}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-03"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -362,6 +362,3 @@ Now that you have a VPC cluster, learn more about what you can do.
 - [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 - [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 - [About the v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about)
-
-Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [Slack channel](https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}.
-{: tip}

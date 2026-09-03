@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-03"
 
 
 keywords: allowlist, openshift
@@ -70,5 +70,5 @@ Basic support accounts are limited in the types of support cases that can be cre
 
 1. After support processes the case, you receive a notification that your account is updated.
 
-Basic support is not intended for production use cases. If you require guaranteed response times and direct case routing, consider upgrading your support tier. For more information, see [Upgrading your account](https://cloud.ibm.com/docs/account?topic=account-upgrading-account){: external}.
+Basic support is not intended for production use cases. If you require guaranteed response times and direct case routing, consider upgrading your support tier. For more information, see [Upgrading your account](/docs/account?topic=account-upgrading-account).
 {: note}
