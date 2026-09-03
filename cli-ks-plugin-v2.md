@@ -10056,7 +10056,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 List Virtual Network Interfaces attached to a cluster or worker node
 
 ```sh
-ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud oc vni ls --after AFTER --first FIRST -q --cluster-id ID
 ```
 {: pre}
 
