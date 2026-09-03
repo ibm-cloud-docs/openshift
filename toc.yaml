@@ -20,6 +20,8 @@ toc:
         navtitle: Use cases
       - topic: overview.md
         navtitle: Understanding the service
+      - topic: openshift_tech.md
+        navtitle: Architecture and dependencies
       - topicgroup:
           label: Learning paths
           topics:
@@ -34,13 +36,13 @@ toc:
           - cluster-plan-network-classic.md
           - encryption.md
           - document-environment.md
+          - topic: secure.md
+            navtitle: Security overview
       - topicgroup:
           label: Your responsibilities
           topics:
           - responsibilities.md
           - satellite-resp.md
-      - topic: secure.md
-        navtitle: Security overview
       - topicgroup:
           label: Important notices
           topics:

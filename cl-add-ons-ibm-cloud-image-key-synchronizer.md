@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-03"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -43,128 +43,150 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0}
 
 
-### Version 1.0.0 - 1.0.0_364389711, released 31 August 2026
+### 31 August 2026, Version 1.0.0 - 1.0.0_364389711
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_359585651, released 17 August 2026
+
+### 17 August 2026, Version 1.0.0 - 1.0.0_359585651
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_359585651}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_351682779, released 09 July 2026
+
+### 09 July 2026, Version 1.0.0 - 1.0.0_351682779
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_351682779}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_348708490, released 25 June 2026
+
+### 25 June 2026, Version 1.0.0 - 1.0.0_348708490
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_348708490}
 
 - Resolves the following CVEs: [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}.
 
 
-### Version 1.0.0 - 1.0.0_345162128, released 09 June 2026
+### 09 June 2026, Version 1.0.0 - 1.0.0_345162128
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_345162128}
 
 - Updates Go to version `1.26`.
 
 
-### Version 1.0.0 - 1.0.0_341829798, released 27 May 2026
+### 27 May 2026, Version 1.0.0 - 1.0.0_341829798
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798}
 
 - Resolves the following CVEs: [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, and [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}.
 - Updates Go to version `1.26`.
 
 
-### Version 1.0.0 - 1.0.0_334950440, released 05 May 2026
+### 05 May 2026, Version 1.0.0 - 1.0.0_334950440
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440}
 
 - Updates Go to version `1.26`.
 
 
-### Version 1.0.0 - 1.0.0_325458899, released 24 March 2026
+### 24 March 2026, Version 1.0.0 - 1.0.0_325458899
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899}
 
 - Updates Go to version `1.25`.
 
 
-### Version 1.0.0 - 1.0.0_320394467, released 03 March 2026
+### 03 March 2026, Version 1.0.0 - 1.0.0_320394467
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467}
 
 - Updates Go to version `1.25`.
 
 
-### Version 1.0.0 - 1.0.0_318859798, released 23 February 2026
+### 23 February 2026, Version 1.0.0 - 1.0.0_318859798
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_318859798}
 
 - Resolves the following CVEs: [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}.
 
 
-### Version 1.0.0 - 1.0.0_315380368, released 10 February 2026
+### 10 February 2026, Version 1.0.0 - 1.0.0_315380368
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_315380368}
 
 - Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, and [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}.
 
 
-### Version 1.0.0 - 1.0.0_302028792, released 04 December 2025
+### 04 December 2025, Version 1.0.0 - 1.0.0_302028792
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_302028792}
 
 - Updates Go to version `1.25`.
 
 
-### Version 1.0.0 - 1.0.0_2983, released 08 September 2025
+### 08 September 2025, Version 1.0.0 - 1.0.0_2983
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2983}
 
 - Updates Go to version `1.24`.
 
 
-### Version 1.0.0 - 1.0.0_2880, released 22 July 2025
+### 22 July 2025, Version 1.0.0 - 1.0.0_2880
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2880}
 
 - Updates Go to version `1.24`.
 
 
-### Version 1.0.0 - 1.0.0_2824, released 23 June 2025
+### 23 June 2025, Version 1.0.0 - 1.0.0_2824
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2824}
 
 - Resolves the following CVEs: [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/cve-2025-22872){: external}.
 - Updates Go to version `1.24`.
 
 
-### Version 1.0.0 - 1.0.0_2713, released 27 April 2025
+### 27 April 2025, Version 1.0.0 - 1.0.0_2713
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713}
 
 - Resolves the following CVEs: [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/cve-2025-22870){: external}.
 
 
-### Version 1.0.0 - 1.0.0_2640, released 13 March 2025
+### 13 March 2025, Version 1.0.0 - 1.0.0_2640
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2557, released 15 January 2025
+
+### 15 January 2025, Version 1.0.0 - 1.0.0_2557
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2450, released 30 October 2024
+
+### 30 October 2024, Version 1.0.0 - 1.0.0_2450
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2382, released 04 September 2024
+
+### 04 September 2024, Version 1.0.0 - 1.0.0_2382
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2308, released 09 July 2024
+
+### 09 July 2024, Version 1.0.0 - 1.0.0_2308
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2258, released 06 June 2024
+
+### 06 June 2024, Version 1.0.0 - 1.0.0_2258
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2244, released 04 June 2024
+
+### 04 June 2024, Version 1.0.0 - 1.0.0_2244
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
 
-### Version 1.0.0 - 1.0.0_2186, released 08 May 2024
+
+### 08 May 2024, Version 1.0.0 - 1.0.0_2186
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
 
 
 ### 1.0.0_2111, released on 03 April 2024

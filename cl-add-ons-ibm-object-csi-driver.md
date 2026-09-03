@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-01"
+lastupdated: "2026-09-03"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,7 +43,7 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### Version 1.0 - v1.0.28_365471792, released 01 September 2026
+### 01 September 2026, Version 1.0 - v1.0.28_365471792
 {: #cl-add-ons-ibm-object-csi-driver-v1028_365471792}
 
 [Default version]{: tag-green}
@@ -53,7 +53,7 @@ Review the version history for IBM Object CSI Driver.
 - Fix cos-csi-mounter RPM package upgrade issue on RHCOS nodes 
 
 
-### Version 1.0 - v1.0.27_360474192, released 20 August 2026
+### 20 August 2026, Version 1.0 - v1.0.27_360474192
 {: #cl-add-ons-ibm-object-csi-driver-v1027_360474192}
 
 - Resolves the following CVEs: [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-71309](https://nvd.nist.gov/vuln/detail/cve-2026-71309){: external}, [CVE-2026-71312](https://nvd.nist.gov/vuln/detail/cve-2026-71312){: external}, [CVE-2026-71310](https://nvd.nist.gov/vuln/detail/cve-2026-71310){: external}, [CVE-2026-71311](https://nvd.nist.gov/vuln/detail/cve-2026-71311){: external}, [CVE-2026-71313](https://nvd.nist.gov/vuln/detail/cve-2026-71313){: external}, [GHSA-3x6r-wxxg-53vv](https://github.com/advisories/GHSA-3x6r-wxxg-53vv){: external}, [GHSA-8mxv-9xhp-86h4](https://github.com/advisories/GHSA-8mxv-9xhp-86h4){: external}, [GHSA-h4mf-4v27-hggj](https://github.com/advisories/GHSA-h4mf-4v27-hggj){: external}, and [GHSA-gwfq-86j8-7qhv](https://github.com/advisories/GHSA-gwfq-86j8-7qhv){: external}.
@@ -61,7 +61,7 @@ Review the version history for IBM Object CSI Driver.
 - Updates rclone mounter version to 1.75.0 
 
 
-### Version 1.0 - v1.0.26_360474192, released 10 August 2026
+### 10 August 2026, Version 1.0 - v1.0.26_360474192
 {: #cl-add-ons-ibm-object-csi-driver-v1026_360474192}
 
 - Updates Go to version `1.26.5`.
@@ -70,7 +70,7 @@ Review the version history for IBM Object CSI Driver.
 - Added the instance_name option to S3FS mount configurations. 
 
 
-### Version 1.0 - v1.0.25_357184891, released 28 July 2026
+### 28 July 2026, Version 1.0 - v1.0.25_357184891
 {: #cl-add-ons-ibm-object-csi-driver-v1025_357184891}
 
 - Resolves the following CVEs: [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/cve-2026-41178){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/cve-2026-33813){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/cve-2026-46601){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [GHSA-3fxj-6jh8-hvhx](https://github.com/advisories/GHSA-3fxj-6jh8-hvhx){: external}, [GHSA-9g5q-2w5x-hmxf](https://github.com/advisories/GHSA-9g5q-2w5x-hmxf){: external}, [GHSA-rjr7-jggh-pgcp](https://github.com/advisories/GHSA-rjr7-jggh-pgcp){: external}, and [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}.
@@ -79,7 +79,7 @@ Review the version history for IBM Object CSI Driver.
 - Skip cipher_suites=default when passed as mountOptions in CSI secret 
 
 
-### Version 1.0 - v1.0.24_354254613, released 16 July 2026
+### 16 July 2026, Version 1.0 - v1.0.24_354254613
 {: #cl-add-ons-ibm-object-csi-driver-v1024_354254613}
 
 - Resolves the following CVEs: [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/cve-2026-33813){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/cve-2026-46601){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}.
@@ -87,7 +87,7 @@ Review the version history for IBM Object CSI Driver.
 - Added support for additional bucket mounts in read-only mode
 
 
-### Version 1.0 - v1.0.23_349336907, released 03 July 2026
+### 03 July 2026, Version 1.0 - v1.0.23_349336907
 {: #cl-add-ons-ibm-object-csi-driver-v1023_349336907}
 
 - Resolves the following CVEs: [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/cve-2026-2303){: external}.
@@ -95,7 +95,7 @@ Review the version history for IBM Object CSI Driver.
 - Added support for Cross-Regional StorageClass
 
 
-### Version 1.0 - v1.0.22_348679631, released 22 June 2026
+### 22 June 2026, Version 1.0 - v1.0.22_348679631
 {: #cl-add-ons-ibm-object-csi-driver-v1022_348679631}
 
 - Resolves the following CVEs: [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/cve-2026-34182){: external}, [CVE-2026-34183](https://nvd.nist.gov/vuln/detail/cve-2026-34183){: external}, [CVE-2026-45445](https://nvd.nist.gov/vuln/detail/cve-2026-45445){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/cve-2026-45447){: external}, [CVE-2026-34180](https://nvd.nist.gov/vuln/detail/cve-2026-34180){: external}, [CVE-2026-34181](https://nvd.nist.gov/vuln/detail/cve-2026-34181){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/cve-2026-42764){: external}, [CVE-2026-42766](https://nvd.nist.gov/vuln/detail/cve-2026-42766){: external}, [CVE-2026-42767](https://nvd.nist.gov/vuln/detail/cve-2026-42767){: external}, [CVE-2026-42768](https://nvd.nist.gov/vuln/detail/cve-2026-42768){: external}, [CVE-2026-42769](https://nvd.nist.gov/vuln/detail/cve-2026-42769){: external}, [CVE-2026-42770](https://nvd.nist.gov/vuln/detail/cve-2026-42770){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/cve-2026-7383){: external}, [CVE-2026-9076](https://nvd.nist.gov/vuln/detail/cve-2026-9076){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/cve-2026-45446){: external}, [CVE-2026-49980](https://nvd.nist.gov/vuln/detail/cve-2026-49980){: external}, and [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}.
@@ -103,7 +103,7 @@ Review the version history for IBM Object CSI Driver.
 - Updates rclone mounter version to 1.74.3 
 
 
-### Version 1.0 - v1.0.21_333133599, released 09 June 2026
+### 09 June 2026, Version 1.0 - v1.0.21_333133599
 {: #cl-add-ons-ibm-object-csi-driver-v1021_333133599}
 
 - Resolves the following CVEs: [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/cve-2026-31790){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/cve-2026-4438){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/cve-2026-28390){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/cve-2026-39820){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/cve-2026-42499){: external}, [CVE-2026-44973](https://nvd.nist.gov/vuln/detail/cve-2026-44973){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/cve-2026-4437){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/cve-2026-40355){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/cve-2026-40356){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/cve-2026-29111){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/cve-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}, [CVE-2026-39825](https://nvd.nist.gov/vuln/detail/cve-2026-39825){: external}, and [CVE-2026-44740](https://nvd.nist.gov/vuln/detail/cve-2026-44740){: external}.
@@ -111,7 +111,7 @@ Review the version history for IBM Object CSI Driver.
 - Updates rclone mounter version to 1.74.2 
 
 
-### Version 1.0 - v1.0.20_333133599, released 25 May 2026
+### 25 May 2026, Version 1.0 - v1.0.20_333133599
 {: #cl-add-ons-ibm-object-csi-driver-v1020_333133599}
 
 - Resolves the following CVEs: [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/cve-2026-29111){: external}, [CVE-2026-32952](https://nvd.nist.gov/vuln/detail/cve-2026-32952){: external}, and [CVE-2026-29181](https://nvd.nist.gov/vuln/detail/cve-2026-29181){: external}.
@@ -119,7 +119,7 @@ Review the version history for IBM Object CSI Driver.
 - Updates rclone mounter version to 1.74.1 
 
 
-### Version 1.0 - v1.0.19_333133599, released 26 April 2026
+### 26 April 2026, Version 1.0 - v1.0.19_333133599
 {: #cl-add-ons-ibm-object-csi-driver-v1019_333133599}
 
 - Resolves the following CVEs: [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/cve-2026-27135){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/cve-2026-32288){: external}, [CVE-2026-33809](https://nvd.nist.gov/vuln/detail/cve-2026-33809){: external}, [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, and [CVE-2026-41179](https://nvd.nist.gov/vuln/detail/cve-2026-41179){: external}.
@@ -127,7 +127,7 @@ Review the version history for IBM Object CSI Driver.
 - Updates rclone mounter version to 1.73.5. Fixes GHSA-xmrv-pmrh-hhx2 
 
 
-### Version 1.0 - v1.0.18_320539369, released 02 April 2026
+### 02 April 2026, Version 1.0 - v1.0.18_320539369
 {: #cl-add-ons-ibm-object-csi-driver-v1018_320539369}
 
 - Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}.
@@ -135,7 +135,7 @@ Review the version history for IBM Object CSI Driver.
 - Updates rclone mounter version to 1.73.3 
 
 
-### Version 1.0 - v1.0.17_320539369, released 24 March 2026
+### 24 March 2026, Version 1.0 - v1.0.17_320539369
 {: #cl-add-ons-ibm-object-csi-driver-v1017_320539369}
 
 - Resolves the following CVEs: [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-1229](https://nvd.nist.gov/vuln/detail/cve-2026-1229){: external}, and [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}.
@@ -144,7 +144,7 @@ Review the version history for IBM Object CSI Driver.
 - Adds support for setting the quota limit for the buckets.
 
 
-### Version 1.0 - v1.0.13_297764008, released 14 November 2025
+### 14 November 2025, Version 1.0 - v1.0.13_297764008
 {: #cl-add-ons-ibm-object-csi-driver-v1013_297764008}
 
 - Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}, [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/cve-2025-61725){: external}, and [CVE-2025-5318](https://nvd.nist.gov/vuln/detail/cve-2025-5318){: external}.

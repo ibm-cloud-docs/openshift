@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-09-03"
 
-keywords: openshift, use cases, financial services, healthcare, retail, transportation, government
+keywords: openshift, red hat, use cases, financial services, healthcare, retail, transportation, government
 
 subcollection: openshift
 
@@ -13,9 +13,9 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Use cases for {{site.data.keyword.openshiftlong_notm}}
-{: #openshift-use-cases}
+{: #use-cases}
 
-{{site.data.keyword.openshiftlong}} powers workloads across industries by combining enterprise-grade container orchestration with the security, compliance, and global reach of {{site.data.keyword.cloud_notm}}. Common workload themes include AI and machine learning, DevOps acceleration, data and storage modernization, identity management, and virtualization with [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview).
+{{site.data.keyword.openshiftlong_notm}} powers workloads across industries by combining enterprise-grade container orchestration with the security, compliance, and global reach of {{site.data.keyword.cloud_notm}}. Common workload themes include AI and machine learning, DevOps acceleration, data and storage modernization, identity management, and virtualization with [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview).
 {: shortdesc}
 
 | Industry | Use cases |

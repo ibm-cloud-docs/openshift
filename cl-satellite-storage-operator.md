@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-03"
 
 
 keywords: change log, version history, Satellite Storage Operator
@@ -29,7 +29,7 @@ Review the version history for Satellite Storage Operator.
 {: #cl-satellite-storage-operator-1.0}
 
 
-### Version 1.0 - 1.0.87, released 31 July 2026
+### 31 July 2026, Version 1.0 - 1.0.87
 {: #cl-satellite-storage-operator-1087}
 
 [Default version]{: tag-green}
