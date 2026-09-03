@@ -3574,87 +3574,6 @@ subcollection: openshift
 * [Managing port 80 on the OpenShift default router](/docs/openshift?topic=openshift-openshift_routes#port80)
 
 
-### Classic load balancers
-{: #sitemap_classic_load_balancers}
-
-
-[Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
-
-* [Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs](/docs/openshift?topic=openshift-loadbalancer-about#comparison-lbs)
-
-* [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
-
-    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
-
-    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_multi)
-
-* [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
-
-    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
-
-    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
-
-[Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer#loadbalancer)
-
-* [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config_prereqs)
-
-* [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#lb_config_prereqs)
-
-* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
-
-    * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
-
-    * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
-
-[Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2#loadbalancer-v2)
-
-* [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
-
-* [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config_prereqs)
-
-* [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config_prereqs)
-
-* [Scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling)
-
-    * [Supported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_supported)
-
-    * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
-
-[Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
-
-* [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
-
-[Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
-
-* [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
-
-* [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
-
-* [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
-
-[Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
-
-* [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
-
-* [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format)
-
-* [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
-
-    * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
-
-[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
-
-* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
-
-
 ### VPC load balancers
 {: #sitemap_vpc_load_balancers}
 
@@ -3736,6 +3655,87 @@ subcollection: openshift
     * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_health_udp)
 
 * [Changing a load balancer's subnet or zone](/docs/openshift?topic=openshift-vpclb_manage#lbaas_change_subnets)
+
+
+### Classic load balancers
+{: #sitemap_classic_load_balancers}
+
+
+[Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
+
+* [Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs](/docs/openshift?topic=openshift-loadbalancer-about#comparison-lbs)
+
+* [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
+
+    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
+
+    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_multi)
+
+* [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
+
+    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
+
+    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
+
+[Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer#loadbalancer)
+
+* [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config_prereqs)
+
+* [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#lb_config_prereqs)
+
+* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
+
+    * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
+
+    * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
+
+[Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2#loadbalancer-v2)
+
+* [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
+
+* [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config_prereqs)
+
+* [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config_prereqs)
+
+* [Scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling)
+
+    * [Supported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_supported)
+
+    * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
+
+[Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
+
+[Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
+
+* [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
+
+* [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
+
+[Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
+
+* [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
+
+* [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format)
+
+* [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
+
+    * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
+
+[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
 
 
 ### Ingress
