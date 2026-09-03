@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-09-03"
 
 keywords: openshift, cli reference, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -10056,7 +10056,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 List Virtual Network Interfaces attached to a cluster or worker node
 
 ```sh
-ibmcloud oc vni ls --cluster-id CLUSTER_NAME_OR_ID
+ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
 
