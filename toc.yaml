@@ -241,6 +241,14 @@ toc:
           - openshift_app_networking.md
           - openshift_routes.md
           - topicgroup:
+              label: VPC load balancers
+              topics:
+              - vpc_lb_about.md
+              - vpc_alb.md
+              - vpc_nlb.md
+              - vpc_nlb_pp.md
+              - vpc_lb_manage.md
+          - topicgroup:
               label: Classic load balancers
               topics:
               - lb-about.md
@@ -250,14 +258,6 @@ toc:
               - edge-vpc-lb.md
               - lb-dns.md
               - edge-workload-prevent.md
-          - topicgroup:
-              label: VPC load balancers
-              topics:
-              - vpc_lb_about.md
-              - vpc_alb.md
-              - vpc_nlb.md
-              - vpc_nlb_pp.md
-              - vpc_lb_manage.md
           - topicgroup:
               label: Ingress
               topics:
