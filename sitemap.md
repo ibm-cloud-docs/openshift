@@ -8149,39 +8149,7 @@ subcollection: openshift
 
     * [15 September 2023, Version patch update 1.0.9_103](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109103_ca)
 
-    * [07 August 2023, Version patch update 1.0.9_81](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10981_ca)
-
-    * [24 July 2023, Version patch update 1.0.9_70](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10970_ca)
-
-    * [22 June 2023, Version patch update 1.0.9_44](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10944_ca)
-
-* [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0110_ca_addon)
-
     * [16 February 2024, Version patch update 1.1.0_362](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
-
-    * [15 May 2023, Version patch update 1.1.0_1066](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#111066_ca)
-
-    * [26 April 2023, Version patch update 1.1.0_1060](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#111060_ca)
-
-    * [16 March 2023, Version patch update 1.1.0_978](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110978_ca)
-
-    * [9 January 2023, Version patch update 1.1.0_897](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110897_ca)
-
-    * [22 September 2022, Version patch update 1.1.0_798](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110798_ca)
-
-    * [31 August 2022, Version patch update 1.1.0_776](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110776_ca)
-
-    * [21 July 2022, Version patch update 1.1.0_729](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110729_ca)
-
-    * [30 June 2022, Version patch update 1.1.0_682](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110682_ca)
-
-    * [16 May 2022, Version patch update 1.1.0_615](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110615_ca)
-
-    * [30 March 2022, Version patch update 1.1.0_475](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110475_ca)
-
-    * [16 March 2022, Version patch update 1.1.0_429](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110429_ca)
-
-* [Version 1.0.8](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0108_ca_addon)
 
     * [27 November 2023, Version patch update 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
 
@@ -8189,131 +8157,11 @@ subcollection: openshift
 
     * [15 September 2023, Version patch update 1.0.8_104](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108104_ca)
 
-    * [7 August 2023, Version patch update 1.0.8_82](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10882_ca)
-
-    * [6 July 2023, Version patch update 1.0.8_56](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10856_ca)
-
-    * [15 May 2023, Version patch update 1.0.8_1078](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1081078_ca)
-
-    * [5 April 2023, Version patch update 1.0.8_1016](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1081016_ca)
-
-    * [29 March 2023, Version patch update 1.0.8_987](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108987_ca)
-
-    * [9 March 2023, Version patch update 1.0.8_968](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108968_ca)
-
-    * [Change log for patch update 1.0.8_346, released 01 February  2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108346_ca)
-
-* [Version 1.0.7](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0107_ca_addon)
-
     * [27 November 2023, Version patch update 1.0.7_291](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
 
     * [13 November 2023, Version patch update 1.0.7_185](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
 
     * [15 September 2023, Version patch update 1.0.7_102](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
-
-    * [7 August 2023, Version patch update 1.0.7_83](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10783_ca)
-
-    * [6 July 2023, Version patch update 1.0.7_57](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10757_ca)
-
-    * [15 May 2023, Version patch update 1.0.7_1076](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1071076_ca)
-
-    * [5 April 2023, Version patch update 1.0.7_1021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1071021_ca)
-
-    * [29 March 2023, Version patch update 1.0.7_988](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107988_ca)
-
-    * [7 March 2023, Version patch update 1.0.7_956](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107956_ca)
-
-    * [17 February 2023, Version patch update 1.0.7_944](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107944_ca)
-
-    * [24 January 2023, Version patch update 1.0.7_940:](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107940_ca)
-
-    * [9 January 2023, Version patch update 1.0.7_900](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107900_ca)
-
-    * [3 November 2022, Version patch update 1.0.7_883](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107883_ca)
-
-* [Version 1.0.6](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0106_ca_addon)
-
-    * [15 May 2023, Version patch update 1.0.6_1077](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1061077_ca)
-
-    * [5 April 2023, Version patch update 1.0.6_1010](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1061010_ca)
-
-    * [7 March 2023, Version patch update 1.0.6_955](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106955_ca)
-
-    * [9 January 2023, Version patch update 1.0.6_899](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106899_ca)
-
-    * [10 October 2022, Version patch update 1.0.6_828](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106828_ca)
-
-    * [22 September 2022, Version patch update 1.0.6_800](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106800_ca)
-
-    * [31 August 2022, Version patch update 1.0.6_774](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106774_ca)
-
-    * [17 August 2022, Version patch update 1.0.6_763](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106763_ca)
-
-    * [15 July 2022, Version patch update 1.0.6_742](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106742_ca)
-
-* [Version 1.0.5](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0105_ca_addon)
-
-    * [9 January 2023, Version patch update 1.0.5_898](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105898_ca)
-
-    * [22 September 2022, Version patch update 1.0.5_779](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105779_ca)
-
-    * [31 August 2022, Version patch update 1.0.5_775](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105775_ca)
-
-    * [17 August 2022, Version patch update 1.0.5_754](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105754_ca)
-
-    * [19 July 2022, Version patch update 1.0.5_728](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105728_ca)
-
-    * [30 June 2022, Version patch update 1.0.5_694](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105694_ca)
-
-    * [16 May 2022, Version patch update 1.0.5_628](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105628_ca)
-
-    * [28 February 2022, Version patch update 1.0.5_415](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104415_ca)
-
-* [Version 1.0.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0104_ca_addon)
-
-    * [23 February 2022, Version patch update 1.0.4_410](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104410_ca)
-
-    * [20 January 2022, Version patch update 1.0.4_403](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104403_ca)
-
-    * [22 November 2021, Version patch update 1.0.4_387](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104387_ca)
-
-    * [7 October 2021, Version patch update 1.0.4_374](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104374_ca)
-
-* [Version 1.0.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0103_ca_addon)
-
-    * [26 August 2021, Version patch update 1.0.3_360](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#103360_ca)
-
-    * [23 June 2021, Version patch update 1.0.3_352](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#103352_ca)
-
-* [Version 1.0.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0102_ca_addon)
-
-    * [10 May 2021, Version patch update 1.0.2_267](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102267_ca)
-
-    * [19 April 2021, Version patch update 1.0.2_256](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102256_ca)
-
-    * [01 April 2021, Version patch update 1.0.2_249](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102249_ca)
-
-    * [09 March 2021, Version patch update 1.0.2_224](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10224_ca)
-
-* [Version 1.0.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0101_ca_addon)
-
-    * [16 February 2021, Version patch update 1.0.1_219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101219_ca)
-
-    * [13 January 2021, Version patch update 1.0.1_210](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101210_ca)
-
-    * [15 December 2020, Version patch update 1.0.1_205](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101205_ca)
-
-    * [10 December 2020, Version patch update 1.0.1_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101195_ca)
-
-    * [03 December 2020, Version patch update 1.0.1_146](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101146_ca)
-
-    * [27 October 2020, Version patch update 1.0.1_128](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101128_ca)
-
-    * [16 October 2020, Version patch update 1.0.1_124](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101124_ca)
-
-    * [10 September 2020, Version patch update 1.0.1_114](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101114_ca)
-
-    * [](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#)
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
@@ -8385,13 +8233,53 @@ subcollection: openshift
 
 [VPC Block CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver)
 
+* [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
+
+    * [19 August 2026, Version 5.2 - v5.2.59_362336000](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5259_362336000)
+
+    * [06 August 2026, Version 5.2 - v5.2.58_359719682](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5258_359719682)
+
+    * [29 July 2026, Version 5.2 - v5.2.57_356951284](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5257_356951284)
+
+    * [25 June 2026, Version 5.2 - v5.2.55_349394850](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5255_349394850)
+
+    * [10 June 2026, Version 5.2 - v5.2.54_345553805](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5254_345553805)
+
+    * [28 May 2026, Version 5.2 - v5.2.52_342345117](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5252_342345117)
+
+    * [20 May 2026, Version 5.2 - v5.2.51_340196278](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5251_340196278)
+
+    * [13 May 2026, Version 5.2 - v5.2.50_338659383](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5250_338659383)
+
+    * [30 April 2026, Version 5.2 - v5.2.49_335380306](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5249_335380306)
+
+    * [14 April 2026, Version 5.2 - v5.2.48_330814432](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5248_330814432)
+
+    * [25 March 2026, Version 5.2 - v5.2.47_326490882](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5247_326490882)
+
+    * [02 March 2026, Version 5.2 - v5.2.46_321044202](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5246_321044202)
+
+    * [26 February 2026, Version 5.2 - v5.2.45_319683178](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5245_319683178)
+
+    * [10 February 2026, Version 5.2 - v5.2.44_316463149](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5244_316463149)
+
+    * [02 February 2026, Version 5.2 - v5.2.43_313466999](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5243_313466999)
+
+    * [21 January 2026, Version 5.2 - v5.2.42_310488886](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5242_310488886)
+
+    * [12 November 2025, Version 5.2 - 5.2.41_296897820](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5241_296897820)
+
+    * [05 November 2025, Version 5.2 - 5.2.40_293222012](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5240_293222012)
+
+    * [14 July 2025, Version 5.2 - 5.2.38_828](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5238_828)
+
+    * [30 May 2025, Version 5.2 - 5.2.36_778](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5236_778)
+
+    * [09 May 2025, Version 5.2 - 5.2.33_735](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5233_735)
+
+    * [17 February 2025, Version 5.2 - 5.2.31_687](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
+
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
-
-    * [10 January 2024, Version 5.1.19_486](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.19_486_is_block_relnote)
-
-* [Change log for version 5.1.16_446, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.16_446_is_block_relnote)
-
-    * [Change log for version 5.1.15_419 released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.15_419_is_block_relnote)
 
     * [19 August 2026, Version 5.1 - v5.1.59_362336122](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5159_362336122)
 
@@ -8453,25 +8341,19 @@ subcollection: openshift
 
     * [08 February 2024, Version 5.1.21_506](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.21_506_is_block_relnote)
 
+    * [10 January 2024, Version 5.1.19_486](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.19_486_is_block_relnote)
+
+* [Change log for version 5.1.16_446, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.16_446_is_block_relnote)
+
+    * [Change log for version 5.1.15_419 released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.15_419_is_block_relnote)
+
     * [14 September 2023, Version 5.1.13_345](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.13_345_is_block_relnote)
 
-    * [01 August 2023, Version 5.1.12_285](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.12_285_is_block_relnote)
+    * [27 November 2023, Version 5.0.23_437](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.23_437_is_block_relnote)
 
-    * [21 June 2023, Version 5.1.11_126](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.11_126_is_block_relnote)
+    * [13 November 2023, Version 5.0.21_401](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.21_401_is_block_relnote)
 
-    * [15 May 2023, Version 5.1.8_1970](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.8_1970_is_block_relnote)
-
-    * [05 April 2023, Version 5.1.6_1872](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.6_1872_is_block_relnote)
-
-    * [29 March 2023, Version 5.1.5_1857](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.5_1857_is_block_relnote)
-
-    * [07 March 2023, Version 5.1.4_1852](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.4_1852_is_block_relnote)
-
-    * [21 February 2023, Version 5.1.2_1828](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.2-1828_is_block_relnote)
-
-    * [9 February 2023, Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1_is_block_relnote)
-
-* [Version 4.3](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#043_is_block)
+    * [14 September 2023, Version 5.0.19_358](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.19_358_is_block_relnote)
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
@@ -8563,16 +8445,6 @@ subcollection: openshift
 
     * [14 September 2023, Version 1.1.7_49](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.7_is_file_relnote)
 
-    * [3 July 2023, Version 1.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1_is_file_relnote)
-
-    * [15 May 2023, Version 1.1-beta](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1_beta_is_file_relnote)
-
-    * [Change log for version 1.1.6_41, release 28 July 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.6_is_file_relnote)
-
-* [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#01_is_file)
-
-    * [16 May 2023, Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.0_is_file_relnote)
-
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
@@ -8635,15 +8507,289 @@ subcollection: openshift
 
     * [14 November 2024, Version 1.0.0 - 1.0.0_1581](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
 
-    * [17 July 2023, Version 1.0.0_1122](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
-
-    * [8 September 2021, Version 1.0.0_649](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
-
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
-* [Version 4.10.0 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10-archive)
+* [Version 4.21.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.21.0)
+
+    * [30 August 2026, Version 4.21.0 - 4.21.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4219)
+
+    * [06 August 2026, Version 4.21.0 - 4.21.8](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4218)
+
+    * [12 July 2026, Version 4.21.0 - 4.21.6](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4216)
+
+    * [16 June 2026, Version 4.21.0 - 4.21.4](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4214)
+
+    * [11 May 2026, Version 4.21.0 - 4.21.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4211)
+
+* [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
+
+    * [30 August 2026, Version 4.20.0 - 4.20.12](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42012)
+
+    * [06 August 2026, Version 4.20.0 - 4.20.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42011)
+
+    * [12 July 2026, Version 4.20.0 - 4.20.10](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42010)
+
+    * [16 June 2026, Version 4.20.0 - 4.20.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4209)
+
+    * [01 May 2026, Version 4.20.0 - 4.20.6](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4206)
+
+    * [16 March 2026, Version 4.20.0 - 4.20.3](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4203)
+
+    * [05 March 2026, Version 4.20.0 - 4.20.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4201)
+
+* [Version 4.19.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.19.0)
+
+    * [30 August 2026, Version 4.19.0 - 4.19.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41918)
+
+    * [06 August 2026, Version 4.19.0 - 4.19.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41917)
+
+    * [12 July 2026, Version 4.19.0 - 4.19.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41916)
+
+    * [16 June 2026, Version 4.19.0 - 4.19.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41915)
+
+    * [01 May 2026, Version 4.19.0 - 4.19.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41911)
+
+    * [16 March 2026, Version 4.19.0 - 4.19.8](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4198)
+
+    * [03 March 2026, Version 4.19.0 - 4.19.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4197)
+
+    * [24 November 2025, Version 4.19.0 - 4.19.3](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4193)
+
+    * [09 October 2025, Version 4.19.0 - 4.19.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4191)
+
+* [Version 4.18.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.18.0)
+
+    * [30 August 2026, Version 4.18.0 - 4.18.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41821)
+
+    * [06 August 2026, Version 4.18.0 - 4.18.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41820)
+
+    * [12 July 2026, Version 4.18.0 - 4.18.19](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41819)
+
+    * [16 June 2026, Version 4.18.0 - 4.18.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41818)
+
+    * [01 May 2026, Version 4.18.0 - 4.18.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41815)
+
+    * [16 March 2026, Version 4.18.0 - 4.18.12](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41812)
+
+    * [03 March 2026, Version 4.18.0 - 4.18.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41811)
+
+    * [24 November 2025, Version 4.18.0 - 4.18.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4187)
+
+    * [02 September 2025, Version 4.18.0 - 4.18.5](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4185)
+
+    * [25 June 2025, Version 4.18.0 - 4.18.3](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4183)
+
+    * [18 June 2025, Version 4.18.0 - 4.18.2](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4182)
+
+* [Version 4.17.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.17.0)
+
+    * [30 August 2026, Version 4.17.0 - 4.17.26](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41726)
+
+    * [06 August 2026, Version 4.17.0 - 4.17.25](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41725)
+
+    * [12 July 2026, Version 4.17.0 - 4.17.24](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41724)
+
+    * [16 June 2026, Version 4.17.0 - 4.17.23](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41723)
+
+    * [01 May 2026, Version 4.17.0 - 4.17.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41720)
+
+    * [16 March 2026, Version 4.17.0 - 4.17.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41717)
+
+    * [03 March 2026, Version 4.17.0 - 4.17.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41716)
+
+    * [24 November 2025, Version 4.17.0 - 4.17.13](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41713)
+
+    * [02 September 2025, Version 4.17.0 - 4.17.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41711)
+
+    * [25 June 2025, Version 4.17.0 - 4.17.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4179)
+
+    * [14 April 2025, Version 4.17.0 - 4.17.5](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4175)
+
+    * [04 February 2025, Version 4.17.0 - 4.17.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4171)
+
+* [Version 4.16.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16.0)
+
+    * [30 August 2026, Version 4.16.0 - 4.16.33](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41633)
+
+    * [06 August 2026, Version 4.16.0 - 4.16.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41632)
+
+    * [12 July 2026, Version 4.16.0 - 4.16.31](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41631)
+
+    * [16 June 2026, Version 4.16.0 - 4.16.30](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41630)
+
+    * [01 May 2026, Version 4.16.0 - 4.16.26](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41626)
+
+    * [16 March 2026, Version 4.16.0 - 4.16.23](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41623)
+
+    * [03 March 2026, Version 4.16.0 - 4.16.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41621)
+
+    * [24 November 2025, Version 4.16.0 - 4.16.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41618)
+
+    * [02 September 2025, Version 4.16.0 - 4.16.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41616)
+
+    * [25 June 2025, Version 4.16.0 - 4.16.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41614)
+
+    * [25 April 2025, Version 4.16.0 - 4.16.10](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
+
+    * [14 April 2025, Version 4.16.0 - 4.16.10](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
+
+    * [04 February 2025, Version 4.16.0 - 4.16.6](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4166)
+
+    * [28 October 2024, Version 4.16.3](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16.3)
+
+* [Version 4.15.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.0)
+
+    * [12 July 2026, Version 4.15.0 - 4.15.30](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41530)
+
+    * [16 June 2026, Version 4.15.0 - 4.15.29](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41529)
+
+    * [01 May 2026, Version 4.15.0 - 4.15.26](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41526)
+
+    * [16 March 2026, Version 4.15.0 - 4.15.23](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41523)
+
+    * [03 March 2026, Version 4.15.0 - 4.15.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41522)
+
+    * [24 November 2025, Version 4.15.0 - 4.15.19](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41519)
+
+    * [02 September 2025, Version 4.15.0 - 4.15.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41517)
+
+    * [25 June 2025, Version 4.15.0 - 4.15.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41515)
+
+    * [14 April 2025, Version 4.15.0 - 4.15.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41511)
+
+    * [04 February 2025, Version 4.15.0 - 4.15.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4157)
+
+    * [28 October 2024, Version 4.15.6](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.6)
+
+    * [03 August 2024, Version 4.15.4](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.5)
+
+    * [15 July 2024, Version 4.15.4](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.4)
+
+    * [24 June 2024, Version 4.15.3](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.3)
+
+    * [5 June 2024, Version 4.15.2](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.2)
+
+    * [10 May 2024, Version 4.15.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.0-archive)
+
+* [Version 4.14.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.0)
+
+    * [24 November 2025, Version 4.14.0 - 4.14.29](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41429)
+
+    * [02 September 2025, Version 4.14.0 - 4.14.27](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41427)
+
+    * [25 June 2025, Version 4.14.0 - 4.14.25](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41425)
+
+    * [14 April 2025, Version 4.14.0 - 4.14.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41421)
+
+    * [04 February 2025, Version 4.14.0 - 4.14.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41417)
+
+* [Version 4.13.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
+
+    * [24 November 2025, Version 4.13.0 - 4.13.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41332)
+
+    * [02 September 2025, Version 4.13.0 - 4.13.30](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41330)
+
+    * [14 April 2025, Version 4.13.0 - 4.13.24](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41324)
+
+    * [04 February 2025, Version 4.13.0 - 4.13.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41320)
+
+* [Version 4.14 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14-archive)
+
+    * [03 August 2024, Version 4.14.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.16)
+
+    * [15 July 2024, Version 4.14.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.15)
+
+    * [24 June 2024, Version 4.14.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.14)
+
+    * [5 June 2024, Version 4.14.13](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.13)
+
+    * [19 April 2024, Version 4.14.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.11)
+
+    * [08 April 2024, Version 4.14.10](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.10)
+
+    * [26 March 2024, Version 4.14.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.9)
+
+    * [08 March 2024, Version 4.14.8](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.8)
+
+    * [29 February 2024, Version 4.14.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.7)
+
+    * [19 January 2024, Version 4.14.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.0-archive)
+
+    * [4.14.5, 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.5)
+
+* [Version 4.13 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13-archive)
+
+    * [03 August 2024, Version 4.13.19](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.19)
+
+    * [15 July 2024, Version 4.13.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.18)
+
+    * [5 June 2024, Version 4.13.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.17)
+
+    * [19 April 2024, Version 4.13.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.16)
+
+    * [14 March 2024, Version 4.13.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.14)
+
+    * [08 March 2024, Version 4.13.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.15)
+
+    * [08 March 2024, Version 4.13.13](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.13)
+
+    * [04 March 2024, Version 4.13.12](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.12)
+
+    * [14 February 2024, Version 4.13.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.11)
+
+    * [23 January 2024, Version 4.13.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.9)
+
+    * [02 November 2023, Version 4.13.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.7)
+
+    * [20 October 2023, Version 4.13.6](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.6)
+
+    * [12 September 2023, Version 4.13.4](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.4)
+
+    * [03 August 2024, Version 4.12.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.21)
+
+    * [15 July 2024, Version 4.12.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.20)
+
+    * [5 June 2024, Version 4.12.19](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.19)
+
+    * [19 April 2024, Version 4.12.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.18)
+
+    * [04 March 2024, Version 4.12.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.17)
+
+    * [14 February 2024, Version 4.12.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.16)
+
+    * [02 February 2024, Version 4.12.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.15)
+
+    * [29 November 2023, Version 4.12.13](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.13)
+
+    * [02 November 2023, Version 4.12.12](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.12)
+
+    * [20 October 2023, Version 4.12.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.11)
+
+    * [12 September 2023, Version 4.12.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.9)
+
+    * [04 March 2024, Version 4.11.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.21)
+
+    * [14 February 2024, Version 4.11.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.20)
+
+    * [02 February 2024, Version 4.11.19](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.19)
+
+    * [29 November 2023, Version 4.11.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.18)
+
+    * [02 November 2023, Version 4.11.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.17)
+
+    * [20 October 2023, Version 4.11.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.16)
+
+    * [12 September 2023, Version 4.11.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.14)
+
+    * [29 November 2023, Version 4.10.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.32)
+
+    * [17 November 2023, Version 4.10.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.14)
+
+    * [02 November 2023, Version 4.10.31](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.31)
 
     * [4.10.30 released 20 October 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.30)
+
+    * [12 September 2023, Version 4.10.29](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.29)
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 

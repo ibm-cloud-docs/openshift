@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-09-03"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -25,6 +25,9 @@ Review the supported cluster add-ons. Each add-on version can be used on any clu
 
 
 ACM `2.16.0`
+:   Supported OpenShift versions: `>=4.19.0 <4.22.0`
+
+ACM `2.17.0`
 :   Supported OpenShift versions: `>=4.20.0 <4.22.0`
 
 Image Key Synchronizer `1.0.0`

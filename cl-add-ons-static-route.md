@@ -67,15 +67,3 @@ Review the version history for Static Route.
 
 - Updates to the latest `ubi-minimal` base image for the operator build. 
 - `addon-static-route v1.0.0_1581`
-
-
-### 17 July 2023, Version 1.0.0_1122
-{: #cl-add-ons-static-route-100_1122}
-
-Adds support for different worker node architectures.
-
-
-### 8 September 2021, Version 1.0.0_649
-{: #cl-add-ons-static-route-100_649}
-
-- Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
