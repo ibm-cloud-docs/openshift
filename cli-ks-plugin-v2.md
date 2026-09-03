@@ -3514,7 +3514,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER
 {: pre}
 
 
-### `ibmcloud oc cluster master satellite-service-endpoint allowlist add`
+### `ibmcloud ks cluster master satellite-service-endpoint allowlist add`
 {: #cluster-master-satellite-service-endpoint-allowlist-add-cli}
 
 
@@ -3522,7 +3522,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER
 Add subnets to a Satellite cluster's service endpoint allowlist.
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+ibmcloud ks cluster master satellite-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
 ```
 
 #### Command options
@@ -3545,7 +3545,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CL
 Add subnets to a Satellite cluster's service endpoint allowlist
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist add \
+ibmcloud ks cluster master satellite-service-endpoint allowlist add \
   --cluster CLUSTER \
   --subnet SUBNET
 ```
@@ -3624,7 +3624,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist enable --cluster
 {: pre}
 
 
-### `ibmcloud oc cluster master satellite-service-endpoint allowlist get`
+### `ibmcloud ks cluster master satellite-service-endpoint allowlist get`
 {: #cluster-master-satellite-service-endpoint-allowlist-get-cli}
 
 
@@ -3632,7 +3632,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist enable --cluster
 Get a Satellite cluster's service endpoint allowlist.
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CLUSTER [-q]
+ibmcloud ks cluster master satellite-service-endpoint allowlist get --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -3652,7 +3652,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 Get a Satellite cluster's service endpoint allowlist
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CLUSTER
+ibmcloud ks cluster master satellite-service-endpoint allowlist get --cluster CLUSTER
 ```
 {: pre}
 
@@ -3680,7 +3680,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist help
 {: pre}
 
 
-### `ibmcloud oc cluster master satellite-service-endpoint allowlist rm`
+### `ibmcloud ks cluster master satellite-service-endpoint allowlist rm`
 {: #cluster-master-satellite-service-endpoint-allowlist-rm-cli}
 
 
@@ -3688,7 +3688,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist help
 Remove subnets from a Satellite cluster's service endpoint allowlist.
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
+ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
 ```
 
 #### Command options
@@ -3714,7 +3714,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLU
 Remove subnets from a Satellite cluster's service endpoint allowlist
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET
+ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET
 ```
 {: pre}
 
@@ -10053,7 +10053,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 #### Examples
 {: #vni-ls-examples}
 
-List Virtual Network Interfaces attached to a cluster or worker node
+List VNIs for a cluster.
 
 ```sh
 ibmcloud oc vni ls --after AFTER --first FIRST -q --cluster-id ID
