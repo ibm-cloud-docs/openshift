@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-09-03"
 
 
 keywords: openshift, red hat, red hat openshift, dev
@@ -35,7 +35,7 @@ Begin working with your cluster by setting up the CLI and accessing the cluster.
 
 1. **CLI setup**: [Set up the CLIs](/docs/openshift?topic=openshift-cli-install) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 2. **User permissions**: Ensure that your cluster administrator gives you the proper [{{site.data.keyword.cloud_notm}} IAM role](/docs/openshift?topic=openshift-learning-path-admin#admin_secure) to access the cluster.
-3. **Cluster access**: [Access your cluster through the public or private cloud service endpoint](/docs/containers?topic=containers-access_cluster).
+3. **Cluster access**: [Access your cluster through the public or private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster).
 
 Need help? Check out [Troubleshooting clusters and masters](/docs/openshift?topic=openshift-debug_clusters) and [Troubleshooting worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes).
 {: tip}

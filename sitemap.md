@@ -60,37 +60,37 @@ subcollection: openshift
 {: #sitemap_use_cases}
 
 
-[Use cases](/docs/openshift?topic=openshift-openshift-use-cases#openshift-use-cases)
+[Use cases](/docs/openshift?topic=openshift-use-cases#use-cases)
 
-* [Financial services](/docs/openshift?topic=openshift-openshift-use-cases#uc-finance)
+* [Financial services](/docs/openshift?topic=openshift-use-cases#uc-finance)
 
-    * [Trim IT costs and accelerate regulatory compliance](/docs/openshift?topic=openshift-openshift-use-cases#uc-finance-mortgage)
+    * [Trim IT costs and accelerate regulatory compliance](/docs/openshift?topic=openshift-use-cases#uc-finance-mortgage)
 
-    * [Deploy AI-enabled tools 4x faster](/docs/openshift?topic=openshift-openshift-use-cases#uc-finance-payments)
+    * [Deploy AI-enabled tools 4x faster](/docs/openshift?topic=openshift-use-cases#uc-finance-payments)
 
-* [Healthcare](/docs/openshift?topic=openshift-openshift-use-cases#uc-health)
+* [Healthcare](/docs/openshift?topic=openshift-use-cases#uc-health)
 
-    * [Migrate patient systems from VMs to containers](/docs/openshift?topic=openshift-openshift-use-cases#uc-health-migrate)
+    * [Migrate patient systems from VMs to containers](/docs/openshift?topic=openshift-use-cases#uc-health-migrate)
 
-    * [Securely host sensitive research data](/docs/openshift?topic=openshift-openshift-use-cases#uc-health-research)
+    * [Securely host sensitive research data](/docs/openshift?topic=openshift-use-cases#uc-health-research)
 
-* [Retail](/docs/openshift?topic=openshift-openshift-use-cases#uc-retail)
+* [Retail](/docs/openshift?topic=openshift-use-cases#uc-retail)
 
-    * [Share data via APIs to drive omnichannel sales](/docs/openshift?topic=openshift-openshift-use-cases#uc-retail-data)
+    * [Share data via APIs to drive omnichannel sales](/docs/openshift?topic=openshift-use-cases#uc-retail-data)
 
-    * [Optimize inventory with digital insights](/docs/openshift?topic=openshift-openshift-use-cases#uc-retail-grocer)
+    * [Optimize inventory with digital insights](/docs/openshift?topic=openshift-use-cases#uc-retail-grocer)
 
-* [Transportation](/docs/openshift?topic=openshift-openshift-use-cases#uc-transport)
+* [Transportation](/docs/openshift?topic=openshift-use-cases#uc-transport)
 
-    * [Build and deploy HR sites with AI in under 3 weeks](/docs/openshift?topic=openshift-openshift-use-cases#uc-transport-airline)
+    * [Build and deploy HR sites with AI in under 3 weeks](/docs/openshift?topic=openshift-use-cases#uc-transport-airline)
 
-    * [Increase availability of worldwide partner systems](/docs/openshift?topic=openshift-openshift-use-cases#uc-transport-shipping)
+    * [Increase availability of worldwide partner systems](/docs/openshift?topic=openshift-use-cases#uc-transport-shipping)
 
-* [Government](/docs/openshift?topic=openshift-openshift-use-cases#uc-gov)
+* [Government](/docs/openshift?topic=openshift-use-cases#uc-gov)
 
-    * [Secure data exchange between public and private organizations](/docs/openshift?topic=openshift-openshift-use-cases#uc-gov-port)
+    * [Secure data exchange between public and private organizations](/docs/openshift?topic=openshift-use-cases#uc-gov-port)
 
-    * [Improve collaboration velocity with open data](/docs/openshift?topic=openshift-openshift-use-cases#uc-gov-data)
+    * [Improve collaboration velocity with open data](/docs/openshift?topic=openshift-use-cases#uc-gov-data)
 
 
 ## Understanding the service
@@ -120,6 +120,27 @@ subcollection: openshift
 * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-overview#knowledge)
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
+
+
+## Architecture and dependencies
+{: #sitemap_architecture_and_dependencies}
+
+
+[Architecture and dependencies](/docs/openshift?topic=openshift-service-architecture#service-architecture)
+
+* [Classic {{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
+
+    * [{{site.data.keyword.redhat_openshift_notm}} master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
+
+    * [{{site.data.keyword.redhat_openshift_notm}} worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
+
+* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
+
+    * [Cluster with public and private cloud service endpoints](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-public-and-private)
+
+    * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-private-only)
+
+    * [VPC master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
 
 
 ## Learning paths
@@ -359,52 +380,6 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-document-environment#plan-prepare)
 
-
-## Your responsibilities
-{: #sitemap_your_responsibilities}
-
-
-[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
-
-* [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
-
-* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
-
-    * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops)
-
-    * [Change management](/docs/openshift?topic=openshift-responsibilities_iks#change-management)
-
-    * [Identity and access management](/docs/openshift?topic=openshift-responsibilities_iks#iam-responsibilities)
-
-    * [Security and regulation compliance](/docs/openshift?topic=openshift-responsibilities_iks#security-compliance)
-
-    * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
-
-    * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
-
-[Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
-
-* [Overview of shared responsibilities](/docs/openshift?topic=openshift-satellite-responsibilities#overview-by-resource-sat)
-
-* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-satellite-responsibilities#task-responsibilities-sat)
-
-    * [Incident and operations management](/docs/openshift?topic=openshift-satellite-responsibilities#incident-and-ops-sat)
-
-    * [Change management](/docs/openshift?topic=openshift-satellite-responsibilities#change-management-sat)
-
-    * [Identity and access management](/docs/openshift?topic=openshift-satellite-responsibilities#iam-responsibilities-sat)
-
-    * [Security and regulation compliance](/docs/openshift?topic=openshift-satellite-responsibilities#security-compliance-sat)
-
-    * [Disaster recovery](/docs/openshift?topic=openshift-satellite-responsibilities#disaster-recovery-sat)
-
-    * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
-
-
-## Security overview
-{: #sitemap_security_overview}
-
-
 [Security overview](/docs/openshift?topic=openshift-security#security)
 
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
@@ -466,6 +441,47 @@ subcollection: openshift
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
+
+
+## Your responsibilities
+{: #sitemap_your_responsibilities}
+
+
+[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
+
+* [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
+
+* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-responsibilities_iks#task-responsibilities)
+
+    * [Incident and operations management](/docs/openshift?topic=openshift-responsibilities_iks#incident-and-ops)
+
+    * [Change management](/docs/openshift?topic=openshift-responsibilities_iks#change-management)
+
+    * [Identity and access management](/docs/openshift?topic=openshift-responsibilities_iks#iam-responsibilities)
+
+    * [Security and regulation compliance](/docs/openshift?topic=openshift-responsibilities_iks#security-compliance)
+
+    * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
+
+    * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
+
+[Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
+
+* [Overview of shared responsibilities](/docs/openshift?topic=openshift-satellite-responsibilities#overview-by-resource-sat)
+
+* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-satellite-responsibilities#task-responsibilities-sat)
+
+    * [Incident and operations management](/docs/openshift?topic=openshift-satellite-responsibilities#incident-and-ops-sat)
+
+    * [Change management](/docs/openshift?topic=openshift-satellite-responsibilities#change-management-sat)
+
+    * [Identity and access management](/docs/openshift?topic=openshift-satellite-responsibilities#iam-responsibilities-sat)
+
+    * [Security and regulation compliance](/docs/openshift?topic=openshift-satellite-responsibilities#security-compliance-sat)
+
+    * [Disaster recovery](/docs/openshift?topic=openshift-satellite-responsibilities#disaster-recovery-sat)
+
+    * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
 
 
 ## Important notices
