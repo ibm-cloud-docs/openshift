@@ -600,7 +600,7 @@ Red Hat OpenShift 4.18.34
 
 
 Red Hat CoreOS 4.18.34
-:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-34_release-notes){: external}. CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412){: external}, [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414){: external}, [3.4.2](https://workbench.cisecurity.org/benchmarks/11478/sections/1594542){: external}, [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633){: external}
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-34_release-notes){: external}. CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412){: external}, [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414){: external}, [3.4.2](https://workbench.cisecurity.org){: external}, [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633){: external}
 
 
 HAProxy 965c403695b15b3410d87a3772002edbc5ed2569

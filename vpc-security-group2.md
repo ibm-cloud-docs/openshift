@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-09-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -166,7 +166,7 @@ Shared VPE gateways are created when the first cluster in a VPC is provisioned.T
 
 If this shared VPE gateway security group already exists when a cluster is provisioned, it is recognized by the provisioning process and is not recreated. However, a remote rule is still added between the existing shared VPE gateway security group and the new worker security group. This is done so that connectivity is allowed from all clusters in the given VPC. One rule is created for each cluster in the VPC. 
 
-There is a maximum of 15 rules that can target other security groups as their source or destination. By default, {{site.data.keyword.openshiftlong_notm}} applies 1 rule that targets the `kube-<clusterID>` security group for each cluster in the VPC. Because of this quota, only 15 clusters can be created in a given VPC. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
+Each cluster creation also adds security groups, and a VPC supports a maximum of 100 security groups. This limit is reached around 33 clusters, so a maximum of 25 clusters per VPC is recommended. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
 {: important}
 
 | Description | Direction | Protocol | Source or destination |
@@ -217,7 +217,7 @@ Monitoring clusters with RHCOS worker nodes
 :   The monitoring agent relies on kernel headers in the operating system, however RHCOS doesn't have kernel headers. In this scenario, the agent reaches back to `sysdig.com` to use the pre-compiled agent. In clusters with no public network access this process fails. eBPF is now enabled by default for new Sysdig deployments. However, if you are experiencing issues on an existing cluster, [verify whether eBPF is enabled and enable it if necessary](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf). Alternatively, you can allow outbound traffic or see the Sysdig documentation for [installing the agent on air-gapped environments](https://docs.sysdig.com/en/docs/administration/on-premises-deployments/installation/airgapped-installation/){: external}.
 
 VPC cluster quotas
-:   There is a maximum of 15 rules that can target other security groups as their source or destination. By default, {{site.data.keyword.openshiftlong_notm}} applies 1 rule that targets the `kube-<clusterID>` security group for each cluster in the VPC. Because of this quota, only 15 clusters can be created in a given VPC. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
+:   Each cluster creation adds security groups to your VPC, which has a maximum of 100 security groups. This limit is reached around 33 clusters, so a maximum of 25 clusters per VPC is recommended. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
 
 Encryption in-transit for VPC File Storage.
 :   To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.

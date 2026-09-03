@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-03"
 
 
 keywords: openshift
@@ -3057,6 +3057,28 @@ subcollection: openshift
 * [User-provided {{site.data.keyword.security-groups}}](/docs/openshift?topic=openshift-vpc-security-group-reference#user-provided-sgs)
 
 * [Limitations](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-limitations)
+
+[Understanding the IAM VPE Gateway for VPC clusters](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-gateway)
+
+* [Why is {{site.data.keyword.openshiftlong_notm}} adding an IAM VPE Gateway?](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-why)
+
+* [Who is affected by this change?](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-impact)
+
+* [Check whether your environment is affected](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-check)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-prereqs)
+
+* [Create the IAM VPE Gateway](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-create)
+
+* [Resolve connectivity issues](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-resolve)
+
+    * [Update security group rules](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-update-sg-rules)
+
+    * [Update custom network ACL rules](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-update-acl-rules)
+
+    * [Update Kubernetes and Calico network policies](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-update-network-policies)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-iam-vpe-gateway#vpc-iam-vpe-next)
 
 [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-allow-outbound)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-09-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -40,13 +40,13 @@ cluster-default-00000  -     bx2.4x16   provision_pending   Pending security gro
 Your VPC has reached the limit of clusters or security groups allowed per VPC. For more information, see the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas).
 {: tsCauses}
 
-Review the quota limitations that might cause the issue. 
+Review the quota limitations that might cause the issue.
 
 Cluster limit
-:   Because of security group limitations, a single VPC can have a maximum number of 15 clusters. This is a hard limit with no exceptions. 
+:   A VPC is limited to 25 clusters. This limit is based on the maximum number of security groups per VPC (100). Each cluster creation adds security groups, and the VPC security group limit is reached around 33 clusters. 25 clusters is the documented recommended maximum.
 
 Security group limit
-:   Every time a  VPC cluster is created, additional security groups are automatically created for the cluster and its worker nodes. However, there is a limited number of security groups that can exist in a VPC. If this limit is reached, additional security groups cannot be created for the cluster or worker nodes that you provisioned. 
+:   Every time a VPC cluster is created, additional security groups are automatically created for the cluster and its worker nodes. However, there is a limited number of security groups that can exist in a VPC (100). If this limit is reached, additional security groups cannot be created for the cluster or worker nodes that you provisioned.
 
 Review the logging messages from the `network-microservice` to see details on which quota was exceeded.
 {: tsResolve}
@@ -57,7 +57,7 @@ After reviewing the logging messages, complete the steps in the following sectio
 ## If you have reached the number of clusters allowed per VPC
 {: #quota-cluster-max}
 
-If you have already reached the 15 cluster maximum for your VPC, the worker nodes on any additional cluster you provision remain in the `pending` state. There are no exceptions to this quota. You can either [delete a cluster](/docs/openshift?topic=openshift-remove) from your VPC, or [create a new VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) where you can provision additional clusters. 
+If you have already reached the 25 cluster recommended maximum for your VPC, the worker nodes on any additional cluster you provision may remain in the `pending` state due to the VPC security group limit (100 security groups per VPC). You can either [delete a cluster](/docs/openshift?topic=openshift-remove) from your VPC, or [create a new VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) where you can provision additional clusters.
 
 If you choose to delete a cluster from your existing VPC, [refresh the cluster master](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli) to continue provisioning your worker nodes. 
 

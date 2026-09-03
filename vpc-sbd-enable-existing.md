@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-09-23"
+  years: 2024, 2026
+lastupdated: "2026-09-02"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -51,7 +51,7 @@ Understand that when you enable secure by default on your cluster then only the 
     {: screen}
 
 - Verify you won't exceed any of the follow quotas. If any of the following quotas are exceeded, the enablement process fails. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
-    - You must have 15 or fewer clusters in your VPC. There is a maximum of 15 rules that can target other security groups as their source or destination. By default, {{site.data.keyword.openshiftlong_notm}} applies 1 rule that targets the `kube-<clusterID>` security group for each cluster in the VPC. Because of this quota, only 15 clusters can be created in a given VPC.
+    - Your VPC must have fewer than 25 clusters. Each cluster creation adds security groups, and a VPC supports a maximum of 100 security groups. This limit is reached around 33 clusters, so 25 clusters per VPC is the recommended maximum.
     - You must have 95 or fewer security groups in your VPC. You can have a maximum 100 security groups in a VPC. Enabling secure by default creates 4 security groups. If you have close to 100 security groups already, then consider reducing or consolidating them before proceeding.
     - You must have 4 or fewer security groups for your cluster workers. Cluster workers can have up to 5 security groups. Enabling secure by default adds one security group to your workers.
 - If you have custom security group rules on your existing cluster worker security group (`kube-<clusterID>`) they are removed during enablement. If you want to keep these rules, make note of them ahead of time, and add them after the enablement.
