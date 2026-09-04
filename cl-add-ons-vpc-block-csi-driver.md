@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-04"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,15 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### 01 September 2026, Version 5.2 - v5.2.60_365903834
+{: #cl-add-ons-vpc-block-csi-driver-v5260_365903834}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, and [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}.
+- The VPC Block CSI driver now skips filesystem expansion for raw block volumes by correctly returning NodeExpansionRequired=false 
+- `armada-storage-secret v1.3.64`
+- `ibm-csi-init-container v1.0.33`
 
 
 ### 19 August 2026, Version 5.2 - v5.2.59_362336000
@@ -235,6 +244,15 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### 01 September 2026, Version 5.1 - v5.1.60_365903944
+{: #cl-add-ons-vpc-block-csi-driver-v5160_365903944}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, and [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}.
+- The VPC Block CSI driver now skips filesystem expansion for raw block volumes by correctly returning NodeExpansionRequired=false 
+- `armada-storage-secret v1.3.64`
+- `ibm-csi-init-container v1.0.33`
 
 
 ### 19 August 2026, Version 5.1 - v5.1.59_362336122
