@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-09-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -69,7 +69,7 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 | `containers-kubernetes.cluster-user-subnet.add` | A user-managed subnet is added to the cluster. **Note**: User-added subnets are deprecated. |
 | `containers-kubernetes.cluster.user-subnet.detach` | A user-managed subnet is detached from the cluster. **Note**: User-added subnets are deprecated. |
 | `containers-kubernetes.cluster-user-subnet.list` | User-added subnets for a cluster are listed. **Note**: User-added subnets are deprecated. |
-| `containers-kubernetes.cluster-webhook.create` | A cluster webhook, such as for Slack, is created. |
+| `containers-kubernetes.cluster-webhook.create` | A cluster webhook is created. |
 | `containers-kubernetes.cluster-webhook.list` | Webhooks for a cluster are listed. |
 | `containers-kubernetes.version.update` | A master patch update is initiated for the cluster. Master patch updates are typically applied automatically by IBM to your cluster. |
 {: caption="Cluster events" caption-side="bottom"}

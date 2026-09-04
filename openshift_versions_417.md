@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-04"
 
 
 keywords: openshift, version, update, upgrade, 4.17, update openshift
@@ -19,6 +19,13 @@ subcollection: openshift
 
 Review information about version 4.17 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_417_kube_version}}. 
 {: shortdesc}
+
+
+
+This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: deprecated}
+
+
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.17 release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-release-notes){: external}.
 {: tip}
