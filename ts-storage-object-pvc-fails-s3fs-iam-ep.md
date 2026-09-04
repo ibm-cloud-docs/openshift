@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-09-04"
 
 
 keywords: openshift
@@ -61,7 +61,7 @@ Complete the following steps:
     ```
     {: pre}
 
-    If the command returns `ibm.io/object-store-endpoint: NA`, your cluster is deployed in a location that is supported in {{site.data.keyword.openshiftlong_notm}} but is not yet supported by the {{site.data.keyword.cos_full_notm}} plug-in. To add the location to the {{site.data.keyword.openshiftlong_notm}}, post a question in Slack or open an {{site.data.keyword.cloud_notm}} support case. For more information, see [Getting help and support](/docs/openshift?topic=openshift-getting_help_storage).
+    If the command returns `ibm.io/object-store-endpoint: NA`, your cluster is deployed in a location that is supported in {{site.data.keyword.openshiftlong_notm}} but is not yet supported by the {{site.data.keyword.cos_full_notm}} plug-in. To add the location to the {{site.data.keyword.openshiftlong_notm}}, open an {{site.data.keyword.cloud_notm}} support case. For more information, see [Getting help and support](/docs/openshift?topic=openshift-getting_help_storage).
 
 2. If you manually added the s3fs API endpoint with the `ibm.io/endpoint` annotation or the IAM API endpoint with the `ibm.io/iam-endpoint` annotation in your PVC, make sure that you added the endpoints in the format `https://<s3fs_api_endpoint>` and `https://<iam_api_endpoint>`. The annotation overwrites the API endpoints that are automatically set by the `ibmc` plug-in in the {{site.data.keyword.cos_full_notm}} storage classes.
     ```sh

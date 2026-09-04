@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-04"
 
 
 keywords: openshift
@@ -28,7 +28,7 @@ Troubleshoot feedback and issues related to storage in your cluster.
 
 If you still experience issues with persistent storage in your cluster, review the following options to receive further support or ask questions.
 
-For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to contact the IBM team on Slack or open an {{site.data.keyword.cloud_notm}} support case.
+For issues with {{site.data.keyword.cloud_notm}} File, Block, or Object Storage, see [Getting help](/docs/openshift?topic=openshift-get-help) to find information about how to open an {{site.data.keyword.cloud_notm}} support case.
 
 Contact Portworx support by using one of the following methods.
 
