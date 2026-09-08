@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-01-29"
+  years: 2014, 2026
+lastupdated: "2026-09-08"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -101,7 +101,7 @@ The cluster autoscaler does not support early scaling (overprovisioning) of work
 ## Pause pods
 {: #pause-pods-ca}
 
-You can create a deployment that deploys [pause containers](https://stackoverflow.com/questions/48651269/what-are-the-pause-containers){: external} in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.
+You can create a deployment that deploys pause containers in pods with specific resource requests, and assign the deployment a low pod priority. When these resources are needed by higher priority workloads, the pause pod is preempted and becomes a pending pod. This event triggers the cluster autoscaler to scale up.
 {: shortdesc}
 
 For more information about setting up a pause pod deployment, see the [Kubernetes FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-configure-overprovisioning-with-cluster-autoscaler){: external}. You can use [this example overprovisioning configuration file](https://github.com/IBM-Cloud/kube-samples/blob/master/ibm-ks-cluster-autoscaler/overprovisioning-autoscaler.yaml){: external} to create the priority class, service account, and deployments.
