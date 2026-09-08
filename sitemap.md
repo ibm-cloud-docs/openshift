@@ -9836,8 +9836,6 @@ subcollection: openshift
 
 * [Gathering more data](/docs/openshift?topic=openshift-debug_clusters#ts-5)
 
-* [Review user forums for similar issues](/docs/openshift?topic=openshift-debug_clusters#ts-6)
-
 * [Next steps](/docs/openshift?topic=openshift-debug_clusters#advanced-ts-next)
 
 [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps#debug_apps)
