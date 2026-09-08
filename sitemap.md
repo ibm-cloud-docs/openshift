@@ -494,6 +494,8 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
+[Important notice: IAM VPE Gateway is being added to your VPC](/docs/openshift?topic=openshift-notice-vpc-iam-vpe-gateway#notice-vpc-iam-vpe-gateway)
+
 
 ## Release notes
 {: #sitemap_release_notes}
