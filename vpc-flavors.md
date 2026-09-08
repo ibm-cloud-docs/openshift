@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-09-08"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -234,7 +234,7 @@ These conditions might impact cluster flavor availability:
 | cx3d.metal.48x128  \n(Compute) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | cx3d.metal.64x128  \n(Compute) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx2.metal.96x768  \n(Memory) | us-south-1  \nus-south-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
-| mx2d.metal.96x768  \n(Memory) | us-south-1  \nus-south-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx2d.metal.96x768  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx3.metal.16x128  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 8 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3.metal.48x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3.metal.64x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|

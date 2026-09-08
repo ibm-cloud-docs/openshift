@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-09-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, allowlist, operating system, rhel, ubuntu
@@ -97,7 +97,7 @@ Example output
 ```sh
 Client Version: 4.21.3
 Server Version: 4.21.12
-Kubernetes Version: v1.34.2
+Kubernetes Version: v1.35.2
 ```
 {: screen}
 
