@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-09-09"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -103,7 +103,7 @@ The worker node flavors and isolation levels that are available to you depend on
 
 ![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.svg){: caption="Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
 
-VPC clusters
+VPC clusters (recommended)
 :   Worker nodes are provisioned as virtual server instances on VPC infrastructure. VPC is the recommended infrastructure type for new clusters. It provides network isolation by default and supports the latest {{site.data.keyword.openshiftlong_notm}} features, including dedicated hosts and secure by default.
 
 {{site.data.keyword.satelliteshort}} clusters

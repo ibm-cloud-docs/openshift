@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-09"
 
 keywords: confidential containers
 
@@ -212,31 +212,38 @@ If you are testing out confidential containers, you can use an API key. If you a
 
         a. Create a trusted profile.
 
-        ```sh
-        ibmcloud iam trusted-profile-create <NAME> [--description <DESCRIPTION>]
-        ```
-        {: pre}
+            ```sh
+            ibmcloud iam trusted-profile-create PROFILE_NAME [--description DESCRIPTION]
+            ```
+            {: pre}
 
         b. Allow the resources in `openshift-sandboxed-containers-operator` to use the trusted profile.
-        
-        ```sh
-        ibmcloud iam trusted-profile-rule-create PROFILE_NAME_OR_ID --name RULE_NAME --type Profile-CR --conditions claim:namespace,operator:EQUALS,value:openshift-sandboxed-containers-operator --cr-type ROKS_SA
-        ```
-        {: pre}
 
-        c. Allow access to the VPC Infrastructure Services (`is`).
-        
-        To allow access for every resource in the account:
-        ```sh
-        ibmcloud iam trusted-profile-policy-create <NAME or ID of the trusted profile>  --roles Editor,Writer --service-name is
-        ```
-        {: pre}
+            ```sh
+            ibmcloud iam trusted-profile-rule-create PROFILE_NAME_OR_ID --name RULE_NAME --type Profile-CR --conditions claim:namespace,operator:EQUALS,value:openshift-sandboxed-containers-operator --cr-type ROKS_SA
+            ```
+            {: pre}
 
-        To allow access for a specific resource group:
-        ```sh
-        ibmcloud iam trusted-profile-policy-create <NAME or ID of the trusted profile> --roles Viewer [--resource-group-id <resource group>]
-        ```
-        {: pre}
+        c. Allow access to the VPC Infrastructure Services (`is`) to create VSIs.
+
+            ```sh
+            ibmcloud iam trusted-profile-policy-create PROFILE_NAME_OR_ID --roles Editor,Writer --service-name is
+            ```
+            {: pre}
+
+        d. Grant Viewer access to the resource group. This is required so that the Cloud API Adapter can create VSIs within the resource group.
+
+            ```sh
+            ibmcloud iam trusted-profile-policy-create PROFILE_NAME_OR_ID --roles Viewer --resource-type resource-group --resource RESOURCE_GROUP_ID
+            ```
+            {: pre}
+
+        e. Grant Viewer access to the Kubernetes Service (`containers-kubernetes`). This is required so that the Cloud API Adapter can call the IKS API to look up the cluster security group at startup.
+
+            ```sh
+            ibmcloud iam trusted-profile-policy-create PROFILE_NAME_OR_ID --roles Viewer --service-name containers-kubernetes [--resource-group-id RESOURCE_GROUP_ID]
+            ```
+            {: pre}
 
    
 

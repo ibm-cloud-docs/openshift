@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-09"
 
 
 keywords: openshift
@@ -31,8 +31,8 @@ subcollection: openshift
 
 
 
-## Getting started
-{: #sitemap_getting_started}
+## Containers
+{: #sitemap_containers}
 
 
 [Getting started](/docs/openshift?topic=openshift-getting-started#getting-started)
@@ -54,11 +54,6 @@ subcollection: openshift
 * [Quick actions](/docs/openshift?topic=openshift-getting-started#getting-started-quick-actions)
 
 * [What's next?](/docs/openshift?topic=openshift-getting-started#getting-started-whats-next)
-
-
-## Use cases
-{: #sitemap_use_cases}
-
 
 [Use cases](/docs/openshift?topic=openshift-use-cases#use-cases)
 
@@ -92,11 +87,6 @@ subcollection: openshift
 
     * [Improve collaboration velocity with open data](/docs/openshift?topic=openshift-use-cases#uc-gov-data)
 
-
-## Understanding the service
-{: #sitemap_understanding_the_service}
-
-
 [Understanding the service](/docs/openshift?topic=openshift-overview#overview)
 
 * [What is Kubernetes?](/docs/openshift?topic=openshift-overview#what-is-kube-overview)
@@ -121,11 +111,6 @@ subcollection: openshift
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
-
-## Architecture and dependencies
-{: #sitemap_architecture_and_dependencies}
-
-
 [Architecture and dependencies](/docs/openshift?topic=openshift-service-architecture#service-architecture)
 
 * [Classic {{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
@@ -141,11 +126,6 @@ subcollection: openshift
     * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-private-only)
 
     * [VPC master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
-
-
-## Learning paths
-{: #sitemap_learning_paths}
-
 
 [Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin#learning-path-admin)
 
@@ -189,6 +169,35 @@ subcollection: openshift
 
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
+
+## Virtualization
+{: #sitemap_virtualization}
+
+
+[OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
+
+* [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
+
+* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
+
+* [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
+
+    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
+
+* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+
+* [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
+
+* [Storage and networking](/docs/openshift?topic=openshift-virt-overview#virt-storage-networking)
+
+    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
+
+    * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
+
+* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
+
+* [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
+
 [Learning path for VM administrators](/docs/openshift?topic=openshift-learning-path-virt#learning-path-virt)
 
 * [Understand the service](/docs/openshift?topic=openshift-learning-path-virt#virt-path-understand)
@@ -204,6 +213,27 @@ subcollection: openshift
 * [Monitor and log](/docs/openshift?topic=openshift-learning-path-virt#virt-path-observe)
 
 * [Troubleshoot](/docs/openshift?topic=openshift-learning-path-virt#virt-path-troubleshoot)
+
+
+## Migration
+{: #sitemap_migration}
+
+
+[Migrating Classic clusters to VPC overview](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview)
+
+* [Limitations](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations)
+
+* [How the migration works](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-how)
+
+* [Migration phases](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phases)
+
+    * [Phase 1 — Infrastructure migration](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phase1)
+
+    * [Phase 2 — Traffic cutover](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phase2)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-prereqs)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-next)
 
 
 ## Plan your cluster
@@ -494,6 +524,8 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
+[Important notice: IAM VPE Gateway is being added to your VPC](/docs/openshift?topic=openshift-notice-vpc-iam-vpe-gateway#notice-vpc-iam-vpe-gateway)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -502,6 +534,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
+
+    * [8 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0826)
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
 
     * [2 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0226)
 
@@ -1935,10 +1971,10 @@ subcollection: openshift
 
 
 ## Containers
-{: #sitemap_containers}
+{: #sitemap_containers1}
 
 
-[VPC cluster with the CLI](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Create a VPC cluster with the CLI (recommended)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
 
 * [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 
@@ -1999,8 +2035,8 @@ subcollection: openshift
 [OpenShift tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Virtual machines
-{: #sitemap_virtual_machines}
+## Virtualization
+{: #sitemap_virtualization1}
 
 
 [Creating a Virtualization Service cluster (quickstart)](/docs/openshift?topic=openshift-rovs-getting-started#rovs-getting-started)
@@ -2101,6 +2137,20 @@ subcollection: openshift
 {: #sitemap_cluster_creation}
 
 
+[Creating VPC clusters (recommended)](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
+
+* [Prerequisites and notes](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-prereq)
+
+* [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui#clusters_vpcg2_ui)
+
+* [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_vpcg2_cli)
+
+* [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc)
+
+* [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster_vpcg2_tf)
+
+* [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster-create-vpc-next-steps)
+
 [Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
 
 * [Prerequisites](/docs/openshift?topic=openshift-cluster-create-classic#classic-cluster-prereqs)
@@ -2114,20 +2164,6 @@ subcollection: openshift
 * [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster_classic_tf)
 
 * [Next steps for Classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster-create-classic-next-steps)
-
-[Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
-
-* [Prerequisites and notes](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-prereq)
-
-* [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui#clusters_vpcg2_ui)
-
-* [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_vpcg2_cli)
-
-* [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc)
-
-* [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster_vpcg2_tf)
-
-* [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster-create-vpc-next-steps)
 
 [Creating an OpenShift Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
 
@@ -2228,12 +2264,6 @@ subcollection: openshift
 
 * [Accessing through the Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-vpe)
 
-[Accessing Classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-classic#access-private-classic)
-
-* [Before you begin](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-prereqs)
-
-* [Accessing a private Classic cluster from the CLI](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-cli)
-
 [Accessing VPC clusters through the Virtual Private Endpoint gateway](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe)
 
 * [Before you begin](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe-prereqs)
@@ -2247,6 +2277,12 @@ subcollection: openshift
     * [Example: Target account commands](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_target_example)
 
     * [Example: Source account commands](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_source_example)
+
+[Accessing Classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-classic#access-private-classic)
+
+* [Before you begin](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-prereqs)
+
+* [Accessing a private Classic cluster from the CLI](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-cli)
 
 [Accessing clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-cluster-access-satellite#cluster-access-satellite)
 
@@ -2319,14 +2355,6 @@ subcollection: openshift
 {: #sitemap_adding_worker_nodes}
 
 
-[Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic#add-workers-classic)
-
-* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool)
-
-* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-classic#resize-pool)
-
-* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
-
 [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc#add-workers-vpc)
 
 * [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize-pool-vpc)
@@ -2334,6 +2362,14 @@ subcollection: openshift
 * [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool)
 
 * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
+
+[Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic#add-workers-classic)
+
+* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool)
+
+* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-classic#resize-pool)
+
+* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
 
 
 ### Updating and maintaining worker nodes
@@ -3295,6 +3331,31 @@ subcollection: openshift
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
+### Satellite clusters
+{: #sitemap_satellite_clusters1}
+
+
+[Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
+
+* [Defining custom subnets when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-subnet)
+
+* [Defining the pod network interface when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-location)
+
+* [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-cluster)
+
+* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
+
+* [Creating network policies by using Calico host endpoints](/docs/openshift?topic=openshift-satellite-network-customization#custom-network-policies-hostendpoints)
+
+* [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
+
+[Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters](/docs/openshift?topic=openshift-satellite-sriov#satellite-sriov)
+
+* [Prerequisites for using SR-IOV](/docs/openshift?topic=openshift-satellite-sriov#sriov-prereqs)
+
+* [Installing the SR-IOV network operator](/docs/openshift?topic=openshift-satellite-sriov#sriov-install-operator)
+
+
 ### Classic clusters
 {: #sitemap_classic_clusters}
 
@@ -3384,31 +3445,6 @@ subcollection: openshift
 [Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
 
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
-
-
-### Satellite clusters
-{: #sitemap_satellite_clusters1}
-
-
-[Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
-
-* [Defining custom subnets when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-subnet)
-
-* [Defining the pod network interface when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-location)
-
-* [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-cluster)
-
-* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
-
-* [Creating network policies by using Calico host endpoints](/docs/openshift?topic=openshift-satellite-network-customization#custom-network-policies-hostendpoints)
-
-* [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
-
-[Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters](/docs/openshift?topic=openshift-satellite-sriov#satellite-sriov)
-
-* [Prerequisites for using SR-IOV](/docs/openshift?topic=openshift-satellite-sriov#sriov-prereqs)
-
-* [Installing the SR-IOV network operator](/docs/openshift?topic=openshift-satellite-sriov#sriov-install-operator)
 
 
 ## App deployment
@@ -3610,7 +3646,7 @@ subcollection: openshift
 
 * [Limitations](/docs/openshift?topic=openshift-vpclb-about#vpclb_limit)
 
-[Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_alb#setup_vpc_alb)
+[Setting up an Application Load Balancer (ALB) for VPC](/docs/openshift?topic=openshift-setup_vpc_alb#setup_vpc_alb)
 
 * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-setup_vpc_alb#setup_vpc_alb_pub_priv)
 
@@ -3624,7 +3660,7 @@ subcollection: openshift
 
     * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations_opt)
 
-[Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb#setup_vpc_nlb)
+[Setting up a Network Load Balancer (NLB) for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb#setup_vpc_nlb)
 
 * [Setting up a public or private VPC NLB](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_pub_priv)
 
@@ -3677,87 +3713,6 @@ subcollection: openshift
     * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_health_udp)
 
 * [Changing a load balancer's subnet or zone](/docs/openshift?topic=openshift-vpclb_manage#lbaas_change_subnets)
-
-
-### Classic load balancers
-{: #sitemap_classic_load_balancers}
-
-
-[Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
-
-* [Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs](/docs/openshift?topic=openshift-loadbalancer-about#comparison-lbs)
-
-* [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
-
-    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
-
-    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_multi)
-
-* [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
-
-    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
-
-    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
-
-[Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer#loadbalancer)
-
-* [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config_prereqs)
-
-* [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#lb_config_prereqs)
-
-* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
-
-    * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
-
-    * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
-
-[Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2#loadbalancer-v2)
-
-* [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
-
-* [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config_prereqs)
-
-* [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
-
-    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config_prereqs)
-
-* [Scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling)
-
-    * [Supported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_supported)
-
-    * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
-
-[Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
-
-* [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
-
-[Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
-
-* [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
-
-* [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
-
-* [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
-
-[Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
-
-* [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
-
-* [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format)
-
-* [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
-
-    * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
-
-[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
-
-* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
 
 
 ### Ingress
@@ -3969,6 +3924,87 @@ subcollection: openshift
 * [Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
 
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
+
+
+### Classic load balancers
+{: #sitemap_classic_load_balancers}
+
+
+[Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
+
+* [Comparison of basic and DSR load balancing in version 1.0 and 2.0 NLBs](/docs/openshift?topic=openshift-loadbalancer-about#comparison-lbs)
+
+* [Components and architecture of an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer-about#v1_planning)
+
+    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_single)
+
+    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#v1_multi)
+
+* [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs)
+
+    * [Traffic flow in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_single)
+
+    * [Traffic flow in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-about#ipvs_multi)
+
+[Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer#loadbalancer)
+
+* [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config_prereqs)
+
+* [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#lb_config_prereqs)
+
+* [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
+
+    * [Adding edge node affinity rules and tolerations](/docs/openshift?topic=openshift-loadbalancer#lb_edge_nodes)
+
+    * [Adding affinity rules for multiple public or private VLANs](/docs/openshift?topic=openshift-loadbalancer#edge_nodes_multiple_vlans)
+
+[Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2#loadbalancer-v2)
+
+* [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
+
+* [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config_prereqs)
+
+* [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config_prereqs)
+
+* [Scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling)
+
+    * [Supported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_supported)
+
+    * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
+
+[Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
+
+[Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
+
+* [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
+
+* [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
+
+[Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
+
+* [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
+
+* [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format)
+
+* [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
+
+    * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
+
+[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
 
 
 ## Autoscaling
@@ -4242,95 +4278,6 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#hpcs-kms-block-next)
 
 
-### Block Storage for Classic
-{: #sitemap_block_storage_for_classic}
-
-
-[Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
-
-* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
-
-* [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
-
-* [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
-
-    * [Encrypting volume data by using your own storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
-
-    * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
-
-    * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)
-
-* [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block)
-
-* [Using existing block storage in your cluster](/docs/openshift?topic=openshift-block_storage#existing_block)
-
-    * [Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
-
-    * [Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
-
-* [Using block storage in a stateful set](/docs/openshift?topic=openshift-block_storage#block_statefulset)
-
-    * [Creating the PVC by using dynamic provisioning when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
-
-    * [Static provisioning by using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
-
-* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
-
-    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-block_storage#block-snaps)
-
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-block_storage#block-replicate)
-
-    * [Duplicating storage](/docs/openshift?topic=openshift-block_storage#block-dupe)
-
-    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-block_storage#block-cos-backup)
-
-    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
-
-* [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
-
-    * [Bronze](/docs/openshift?topic=openshift-block_storage#bronze-block)
-
-    * [Silver](/docs/openshift?topic=openshift-block_storage#silver-block)
-
-    * [Gold](/docs/openshift?topic=openshift-block_storage#gold-block)
-
-    * [Custom](/docs/openshift?topic=openshift-block_storage#custom-block)
-
-* [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
-
-    * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
-
-    * [Specifying the zone and region](/docs/openshift?topic=openshift-block_storage#block_multizone_yaml)
-
-    * [Mounting block storage with an `XFS` file system](/docs/openshift?topic=openshift-block_storage#xfs)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-block_storage#cleanup_block)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
-
-* [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
-
-* [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-block_storage#block-classic-trusted-profile)
-
-[Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#migrate_hpcs_kms_classic_block)
-
-* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-before)
-
-* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-prereqs)
-
-* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-steps)
-
-    * [Step 1: Replace the HPCS secret with a Key Protect configuration](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#replace-secret)
-
-    * [Step 2: Update PVC encryption keys to use Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#migrate-keys)
-
-* [Next steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-next)
-
-
 ### File Storage for VPC add-on
 {: #sitemap_file_storage_for_vpc_add-on}
 
@@ -4430,72 +4377,6 @@ subcollection: openshift
 * [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-turn-off-snapshots)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
-
-[File Storage for Classic](/docs/openshift?topic=openshift-file_storage#file_storage)
-
-* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
-
-* [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
-
-    * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
-
-    * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
-
-    * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#file-reclaim)
-
-    * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
-
-* [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
-
-* [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
-
-    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
-
-    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
-
-* [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
-
-    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
-
-    * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
-
-* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
-
-* [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
-
-    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
-
-    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
-
-    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
-
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
-
-    * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
-
-    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
-
-    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
-
-* [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
-
-* [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
-
-    * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
-
-    * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
-
-    * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup_file)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
-
-* [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-file_storage#file-classic-trusted-profile)
 
 
 ### Object Storage
@@ -4721,46 +4602,6 @@ subcollection: openshift
 
 * [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-yaml-vpc)
 
-[Classic: Installing ODF](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
-
-* [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
-
-    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos-classic)
-
-    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-hscrypto-classic)
-
-    * [Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-deploy-odf-classic#odf-cluster-prepare-classic)
-
-    * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
-
-* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#install-odf-cli-classic)
-
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic&interface=ui#install-odf-console-classic)
-
-* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#ocs-classic-deploy-crd)
-
-* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-limitations-classic)
-
-[Classic: Updating ODF](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
-
-* [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-cluster-master-classic)
-
-* [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-classic#determine-worker-nodes-classic)
-
-* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#scale-down-odf-classic)
-
-* [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cordon-drain-worker-node-classic)
-
-* [Update the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-worker-node-classic)
-
-* [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cleanup-os-storage-classic)
-
-* [Add the new storage nodes](/docs/openshift?topic=openshift-openshift-storage-update-classic#add-storage-node-classic)
-
-* [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-add-on-classic)
-
-* [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
-
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
 [Setting up trusted profiles for the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#storage-odf-trusted-profiles)
@@ -4884,6 +4725,46 @@ subcollection: openshift
 [OpenShift Data Foundation add-on parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters#openshift_storage_parameters)
 
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
+
+[Classic: Installing ODF](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
+
+* [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
+
+    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos-classic)
+
+    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-hscrypto-classic)
+
+    * [Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-deploy-odf-classic#odf-cluster-prepare-classic)
+
+    * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
+
+* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#install-odf-cli-classic)
+
+* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic&interface=ui#install-odf-console-classic)
+
+* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#ocs-classic-deploy-crd)
+
+* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-limitations-classic)
+
+[Classic: Updating ODF](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
+
+* [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-cluster-master-classic)
+
+* [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-classic#determine-worker-nodes-classic)
+
+* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#scale-down-odf-classic)
+
+* [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cordon-drain-worker-node-classic)
+
+* [Update the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-worker-node-classic)
+
+* [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cleanup-os-storage-classic)
+
+* [Add the new storage nodes](/docs/openshift?topic=openshift-openshift-storage-update-classic#add-storage-node-classic)
+
+* [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-add-on-classic)
+
+* [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
 
 
 ### Portworx
@@ -5039,6 +4920,161 @@ subcollection: openshift
     * [Troubleshooting persistent storage when an {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br#storage_br)
+
+
+### Block Storage for Classic
+{: #sitemap_block_storage_for_classic}
+
+
+[Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
+
+* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
+
+* [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
+
+* [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
+
+    * [Encrypting volume data by using your own storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
+
+    * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
+
+    * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)
+
+* [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block)
+
+* [Using existing block storage in your cluster](/docs/openshift?topic=openshift-block_storage#existing_block)
+
+    * [Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
+
+    * [Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
+
+* [Using block storage in a stateful set](/docs/openshift?topic=openshift-block_storage#block_statefulset)
+
+    * [Creating the PVC by using dynamic provisioning when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
+
+    * [Static provisioning by using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
+
+* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
+
+    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-block_storage#block-snaps)
+
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-block_storage#block-replicate)
+
+    * [Duplicating storage](/docs/openshift?topic=openshift-block_storage#block-dupe)
+
+    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-block_storage#block-cos-backup)
+
+    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
+
+* [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+
+    * [Bronze](/docs/openshift?topic=openshift-block_storage#bronze-block)
+
+    * [Silver](/docs/openshift?topic=openshift-block_storage#silver-block)
+
+    * [Gold](/docs/openshift?topic=openshift-block_storage#gold-block)
+
+    * [Custom](/docs/openshift?topic=openshift-block_storage#custom-block)
+
+* [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
+
+    * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
+
+    * [Specifying the zone and region](/docs/openshift?topic=openshift-block_storage#block_multizone_yaml)
+
+    * [Mounting block storage with an `XFS` file system](/docs/openshift?topic=openshift-block_storage#xfs)
+
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-block_storage#cleanup_block)
+
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
+
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
+
+* [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
+
+* [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-block_storage#block-classic-trusted-profile)
+
+[Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#migrate_hpcs_kms_classic_block)
+
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-before)
+
+* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-prereqs)
+
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-steps)
+
+    * [Step 1: Replace the HPCS secret with a Key Protect configuration](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#replace-secret)
+
+    * [Step 2: Update PVC encryption keys to use Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#migrate-keys)
+
+* [Next steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-next)
+
+[File Storage for Classic](/docs/openshift?topic=openshift-file_storage#file_storage)
+
+* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
+
+* [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
+
+    * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
+
+    * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
+
+    * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#file-reclaim)
+
+    * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
+
+* [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
+
+* [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
+
+    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
+
+    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
+
+* [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
+
+    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
+
+    * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
+
+* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
+
+* [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
+
+    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
+
+    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
+
+    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
+
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
+
+    * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
+
+    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
+
+    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
+
+* [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+
+* [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
+
+    * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
+
+    * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
+
+    * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
+
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup_file)
+
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
+
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
+
+* [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-file_storage#file-classic-trusted-profile)
 
 
 ## Add-ons and operators
@@ -5891,6 +5927,8 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
 
+* [08 September 2026, Worker node fix pack 4.21.31_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42131_1530_openshift_W)
+
 * [25 August 2026, Worker node fix pack 4.21.29_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42129_1529_openshift_W)
 
 * [12 August 2026, Worker node fix pack 4.21.27_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42127_1528_openshift_W)
@@ -6029,6 +6067,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+* [08 September 2026, Worker node fix pack 4.20.36_1561_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42036_1561_openshift_W)
 
 * [25 August 2026, Worker node fix pack 4.20.34_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42034_1560_openshift_W)
 
@@ -6176,6 +6216,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+* [08 September 2026, Worker node fix pack 4.19.45_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41945_1591_openshift_W)
 
 * [25 August 2026, Worker node fix pack 4.19.43_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41943_1590_openshift_W)
 
@@ -6357,6 +6399,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+* [08 September 2026, Worker node fix pack 4.18.54_1603_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41854_1603_openshift_W)
 
 * [25 August 2026, Worker node fix pack 4.18.53_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41853_1602_openshift_W)
 
@@ -6562,6 +6606,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+* [08 September 2026, Worker node fix pack 4.17.57_1598_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41757_1598_openshift_W)
 
 * [25 August 2026, Worker node fix pack 4.17.56_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41756_1597_openshift_W)
 
@@ -7959,6 +8005,8 @@ subcollection: openshift
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-supported-versions)
+
 * [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
 
     * [10 August 2026, Version 420 - v420.0.3_361259361](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42003_361259361)
@@ -8046,6 +8094,8 @@ subcollection: openshift
     * [21 January 2025, Version 416 - 416.0.0_424](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
 [Cluster autoscaler add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler)
+
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-supported-versions)
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
@@ -8149,6 +8199,8 @@ subcollection: openshift
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-supported-versions)
+
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
     * [02 September 2026, Version 1.0 - v1.0.58_365773320](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1058_365773320)
@@ -8216,6 +8268,8 @@ subcollection: openshift
     * [03 July 2024, Version 1.0.10_141](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#ibm-storage-operator-1.0.0-initial)
 
 [VPC Block CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver)
+
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-supported-versions)
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
@@ -8345,6 +8399,8 @@ subcollection: openshift
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-supported-versions)
+
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
 
     * [02 September 2026, Version 2.0 - v2.0.51_365773339](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2051_365773339)
@@ -8435,6 +8491,8 @@ subcollection: openshift
 
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-supported-versions)
+
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
     * [01 September 2026, Version 1.0 - v1.0.28_365471792](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1028_365471792)
@@ -8487,6 +8545,8 @@ subcollection: openshift
 
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-supported-versions)
+
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
 
     * [23 May 2026, Version 1.0.0 - v1.0.0-342645253](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-342645253)
@@ -8496,6 +8556,8 @@ subcollection: openshift
     * [14 November 2024, Version 1.0.0 - 1.0.0_1581](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
 
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
+
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-supported-versions)
 
 * [Version 4.21.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.21.0)
 
@@ -8816,6 +8878,8 @@ subcollection: openshift
     * [Version 4.9.0_1559, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1559)
 
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
+
+* [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
 

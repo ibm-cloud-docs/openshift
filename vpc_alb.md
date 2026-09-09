@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-09"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -11,7 +11,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up an Application Load Balancer for VPC
+# Setting up an Application Load Balancer (ALB) for VPC
 {: #setup_vpc_alb}
 
 Expose your app to the public or to the private network by setting up a Kubernetes `LoadBalancer` service in your cluster. When you expose your app, an Application Load Balancer for VPC (VPC ALB) that routes requests to your app is automatically created for you in your VPC outside of your cluster. Then, you can optionally [register the VPC ALB with a DNS record and TLS certificate](#vpc_lb_dns). VPC ALBs support the TCP protocol only. 

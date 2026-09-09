@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-09"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -125,7 +125,7 @@ For virtualization workloads, consider [OpenShift Virtualization Service](/docs/
 {: class="simple-tab-table"}
 {: caption="Infrastructure overview" caption-side="bottom"}
 {: #infra-1}
-{: tab-title="VPC"}
+{: tab-title="VPC (recommended)"}
 {: tab-group="infra-table"}
 
 
