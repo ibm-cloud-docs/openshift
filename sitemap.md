@@ -215,27 +215,6 @@ subcollection: openshift
 * [Troubleshoot](/docs/openshift?topic=openshift-learning-path-virt#virt-path-troubleshoot)
 
 
-## Migration
-{: #sitemap_migration}
-
-
-[Migrating Classic clusters to VPC overview](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview)
-
-* [Limitations](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations)
-
-* [How the migration works](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-how)
-
-* [Migration phases](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phases)
-
-    * [Phase 1 — Infrastructure migration](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phase1)
-
-    * [Phase 2 — Traffic cutover](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phase2)
-
-* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-prereqs)
-
-* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-next)
-
-
 ## Plan your cluster
 {: #sitemap_plan_your_cluster}
 

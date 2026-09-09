@@ -34,11 +34,6 @@ toc:
             navtitle: OpenShift Virtualization on IBM Cloud
           - path-virt.md
       - topicgroup:
-          label: Migration
-          topics:
-          - topic: vpc-migrate-overview.md
-            navtitle: Migrating Classic clusters to VPC overview
-      - topicgroup:
           label: Plan your cluster
           topics:
           - strategy.md
