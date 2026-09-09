@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-09"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -10,7 +10,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up a Network Load Balancer for VPC
+# Setting up a Network Load Balancer (NLB) for VPC
 {: #setup_vpc_nlb}
 
 Expose your app to the public or to the private network by setting up a public or private Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns). VPC NLBs support both the TCP and UDP protocol types. 

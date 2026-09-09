@@ -14,20 +14,30 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - topic: getting-started.md
-        navtitle: Getting started
-      - topic: use-cases.md
-        navtitle: Use cases
-      - topic: overview.md
-        navtitle: Understanding the service
-      - topic: openshift_tech.md
-        navtitle: Architecture and dependencies
       - topicgroup:
-          label: Learning paths
+          label: Containers
           topics:
+          - topic: getting-started.md
+            navtitle: Getting started
+          - topic: use-cases.md
+            navtitle: Use cases
+          - topic: overview.md
+            navtitle: Understanding the service
+          - topic: openshift_tech.md
+            navtitle: Architecture and dependencies
           - path-admin.md
           - path-dev.md
+      - topicgroup:
+          label: Virtualization
+          topics:
+          - topic: virt-overview.md
+            navtitle: OpenShift Virtualization on IBM Cloud
           - path-virt.md
+      - topicgroup:
+          label: Migration
+          topics:
+          - topic: vpc-migrate-overview.md
+            navtitle: Migrating Classic clusters to VPC overview
       - topicgroup:
           label: Plan your cluster
           topics:
@@ -56,7 +66,7 @@ toc:
           label: Containers
           topics:
           - topic: openshift_tutorial_vpc.md
-            navtitle: VPC cluster with the CLI
+            navtitle: Create a VPC cluster with the CLI (recommended)
           - topic: openshift_tutorial.md
             navtitle: Classic cluster with the CLI
           - topic: cs_tutorials_policies.md
@@ -65,7 +75,7 @@ toc:
               label: OpenShift tutorials
               href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - topicgroup:
-          label: Virtual machines
+          label: Virtualization
           topics:
           - topic: rovs-getting-started.md
             navtitle: Creating a Virtualization Service cluster (quickstart)
@@ -93,8 +103,9 @@ toc:
       - topicgroup:
           label: Cluster creation
           topics:
+          - topic: cluster-create-vpc-gen2.md
+            navtitle: Creating VPC clusters (recommended)
           - cluster-create-classic.md
-          - cluster-create-vpc-gen2.md
           - topic: rovs-cluster-create.md
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
@@ -105,8 +116,8 @@ toc:
           - openshift_cluster_access.md
           - cluster-access-public.md
           - cluster-access-private-vpc.md
-          - cluster-access-private-classic.md
           - cluster-access-vpe.md
+          - cluster-access-private-classic.md
           - cluster-access-satellite.md
           - cluster-access-automation.md
           - cluster-access-admission-control.md
@@ -123,8 +134,8 @@ toc:
           - topicgroup:
               label: Adding worker nodes
               topics:
-              - add-workers-classic.md
               - add-workers-vpc.md
+              - add-workers-classic.md
           - topicgroup:
               label: Updating and maintaining worker nodes
               topics:
@@ -221,6 +232,11 @@ toc:
               - vpc-vpn.md
               - static-routes.md
           - topicgroup:
+              label: Satellite clusters
+              topics:
+              - satellite-network-customization.md
+              - satellite-sriov.md
+          - topicgroup:
               label: Classic clusters
               topics:
               - topic: network-policy.md
@@ -228,11 +244,6 @@ toc:
               - firewall.md
               - subnets.md
               - vpn.md
-          - topicgroup:
-              label: Satellite clusters
-              topics:
-              - satellite-network-customization.md
-              - satellite-sriov.md
       - topicgroup:
           label: App deployment
           topics:
@@ -253,17 +264,6 @@ toc:
               - vpc_lb_manage.md
               - vpc_lbaas.md
           - topicgroup:
-              label: Classic load balancers
-              topics:
-              - lb-quickstart.md
-              - lb-about.md
-              - lb.md
-              - lb-v2.md
-              - edge-classic-nlb.md
-              - edge-vpc-lb.md
-              - lb-dns.md
-              - edge-workload-prevent.md
-          - topicgroup:
               label: Ingress
               topics:
               - openshift_ingress_qs_roks4.md
@@ -277,6 +277,17 @@ toc:
               - secrets-mgr.md
               - edge-ingress.md
           - satellite_expose_apps.md
+          - topicgroup:
+              label: Classic load balancers
+              topics:
+              - lb-quickstart.md
+              - lb-about.md
+              - lb.md
+              - lb-v2.md
+              - edge-classic-nlb.md
+              - edge-vpc-lb.md
+              - lb-dns.md
+              - edge-workload-prevent.md
       - topicgroup:
           label: Autoscaling
           topics:
@@ -310,12 +321,6 @@ toc:
               - topic: hpcs-kp-migration-block.md
                 navtitle: Migrating from HPCS to Key Protect
           - topicgroup:
-              label: Block Storage for Classic
-              topics:
-              - storage-block.md
-              - topic: hpcs-kp-migration-classic-block.md
-                navtitle: Migrating from HPCS to Key Protect
-          - topicgroup:
               label: File Storage for VPC add-on
               topics:
               - storage-file-vpc-install.md
@@ -324,8 +329,6 @@ toc:
               - storage-file-vpc-managing.md
               - storage-file-vpc-snapshot.md
               - storage-file-vpc-sc-ref.md
-          - topic: storage-file.md
-            navtitle: File Storage for Classic
           - topicgroup:
               label: Object Storage
               topics:
@@ -347,10 +350,6 @@ toc:
                 navtitle: 'VPC: Installing ODF'
               - topic: openshift-storage-update-vpc.md
                 navtitle: 'VPC: Updating ODF'
-              - topic: openshift_storage_odf_classic.md
-                navtitle: 'Classic: Installing ODF'
-              - topic: openshift-storage-update-classic.md
-                navtitle: 'Classic: Updating ODF'
               - openshift_storage_odf_apps.md
               - openshift_storage_odf_trusted_profile.md
               - topic: hpcs-kp-migration-odf.md
@@ -363,6 +362,10 @@ toc:
               - openshift_storage_noobaa.md
               - openshift_storage_parameters.md
               - openshift_storage_ocs_sc_ref.md
+              - topic: openshift_storage_odf_classic.md
+                navtitle: 'Classic: Installing ODF'
+              - topic: openshift-storage-update-classic.md
+                navtitle: 'Classic: Updating ODF'
           - topicgroup:
               label: Portworx
               topics:
@@ -381,6 +384,14 @@ toc:
               - hpcs-kp-migration-px.md
           - storage-utilities.md
           - storage-br.md
+          - topicgroup:
+              label: Block Storage for Classic
+              topics:
+              - storage-block.md
+              - topic: hpcs-kp-migration-classic-block.md
+                navtitle: Migrating from HPCS to Key Protect
+          - topic: storage-file.md
+            navtitle: File Storage for Classic
       - topicgroup:
           label: Add-ons and operators
           topics:

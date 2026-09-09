@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-04"
+lastupdated: "2026-09-09"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -33,6 +33,23 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
+
+
+
+
+
+
+
+## Supported versions
+{: #cl-add-ons-vpc-block-csi-driver-supported-versions}
+
+| Add-on version | Supported OpenShift versions |
+|---|---|
+| `5.2` | `>=4.10.0 <4.22.0` |
+| `5.1` | `>=4.9.0 <4.22.0` |
+{: caption="Supported VPC Block CSI Driver add-on versions" caption-side="bottom"}
+
+
 
 
 Review the version history for VPC Block CSI Driver.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-09-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -82,8 +82,8 @@ Review your deployment options in the following table.
 | Deployable architecture: Standard variation | Intermediate | 1-3 hours | This deployable architecture is based on the IBM Cloud for Financial Services reference architecture. The architecture creates secure and compliant clusters on a Virtual Private Cloud (VPC) network. For more information, see [{{site.data.keyword.openshiftlong_notm}} on VPC landing zone](https://cloud.ibm.com/catalog?search=openshift%20label%3Areference_architecture#search_results){: explore}. |
 | Deployable architecture: Community Registry | Intermediate | 1-4 hours | There are more deployable architectures available in the Community Registry. Review the options to see if they fit your use case. For more information, see [Catalog](https://cloud.ibm.com/catalog#reference_architecture){: external} and select **Community Registry** from the drop-down menu. |
 | Deployable architecture: OpenShift AI on {{site.data.keyword.IBM}} | Intermediate | 1-2 hours | This deployable architecture creates a new OpenShift cluster that runs GPU worker nodes and includes the Red Hat OpenShift AI operator. For more information, see [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} in the Catalog. | 
+| Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on VPC infrastructure (recommended)](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
 | Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic). |
-| Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
 {: caption="Options for creating a cluster" caption-side="bottom"}
 
 Already have a cluster? **[Learn how to access it](/docs/openshift?topic=openshift-access_cluster)** and continue to the next step to deploy a sample app.

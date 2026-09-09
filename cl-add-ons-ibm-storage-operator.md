@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-09"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -33,6 +33,22 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
+
+
+
+
+
+
+
+## Supported versions
+{: #cl-add-ons-ibm-storage-operator-supported-versions}
+
+| Add-on version | Supported OpenShift versions |
+|---|---|
+| `1.0` | `>=4.14.0 <4.22.0` |
+{: caption="Supported IBM Storage Operator add-on versions" caption-side="bottom"}
+
+
 
 
 Review the version history for IBM Storage Operator.
