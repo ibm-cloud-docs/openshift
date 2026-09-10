@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-10"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2026
 {: #openshift-sep26}
+
+
 
 ### 8 September 2026
 {: #openshift-sep0826}
