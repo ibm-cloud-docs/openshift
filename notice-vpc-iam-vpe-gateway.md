@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-10"
 
 keywords: VPE gateway, IAM, virtual private endpoint, private.iam.cloud.ibm.com, notice, change, VPC
 
@@ -13,7 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Important notice: IAM VPE Gateway is being added to your VPC
+# IAM VPE Gateway is being added to your VPC
 {: #notice-vpc-iam-vpe-gateway}
 
 [Virtual Private Cloud]{: tag-vpc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-10"
 
 
 keywords: openshift
@@ -503,7 +503,7 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
-[Important notice: IAM VPE Gateway is being added to your VPC](/docs/openshift?topic=openshift-notice-vpc-iam-vpe-gateway#notice-vpc-iam-vpe-gateway)
+[IAM VPE Gateway is being added to your VPC](/docs/openshift?topic=openshift-notice-vpc-iam-vpe-gateway#notice-vpc-iam-vpe-gateway)
 
 
 ## Release notes
