@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-11"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -72,7 +72,7 @@ Review the version history for IBM Object CSI Driver.
 ### 20 August 2026, Version 1.0 - v1.0.27_360474192
 {: #cl-add-ons-ibm-object-csi-driver-v1027_360474192}
 
-- Resolves the following CVEs: [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-71309](https://nvd.nist.gov/vuln/detail/cve-2026-71309){: external}, [CVE-2026-71312](https://nvd.nist.gov/vuln/detail/cve-2026-71312){: external}, [CVE-2026-71310](https://nvd.nist.gov/vuln/detail/cve-2026-71310){: external}, [CVE-2026-71311](https://nvd.nist.gov/vuln/detail/cve-2026-71311){: external}, [CVE-2026-71313](https://nvd.nist.gov/vuln/detail/cve-2026-71313){: external}, [GHSA-3x6r-wxxg-53vv](https://github.com/advisories/GHSA-3x6r-wxxg-53vv){: external}, [GHSA-8mxv-9xhp-86h4](https://github.com/advisories/GHSA-8mxv-9xhp-86h4){: external}, [GHSA-h4mf-4v27-hggj](https://github.com/advisories/GHSA-h4mf-4v27-hggj){: external}, and [GHSA-gwfq-86j8-7qhv](https://github.com/advisories/GHSA-gwfq-86j8-7qhv){: external}.
+- Resolves the following CVEs: [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-71309](https://nvd.nist.gov/vuln/detail/cve-2026-71309){: external}, [CVE-2026-71312](https://nvd.nist.gov/vuln/detail/cve-2026-71312){: external}, [CVE-2026-71310](https://nvd.nist.gov/vuln/detail/cve-2026-71310){: external}, [CVE-2026-71311](https://nvd.nist.gov/vuln/detail/cve-2026-71311){: external}, [CVE-2026-71313](https://nvd.nist.gov/vuln/detail/cve-2026-71313){: external}, [GHSA-3x6r-wxxg-53vv](https://github.com/advisories/ghsa-3x6r-wxxg-53vv){: external}, [GHSA-8mxv-9xhp-86h4](https://github.com/advisories/ghsa-8mxv-9xhp-86h4){: external}, [GHSA-h4mf-4v27-hggj](https://github.com/advisories/ghsa-h4mf-4v27-hggj){: external}, and [GHSA-gwfq-86j8-7qhv](https://github.com/advisories/ghsa-gwfq-86j8-7qhv){: external}.
 - Updates Go to version `1.26.5`.
 - Updates rclone mounter version to 1.75.0 
 
@@ -89,7 +89,7 @@ Review the version history for IBM Object CSI Driver.
 ### 28 July 2026, Version 1.0 - v1.0.25_357184891
 {: #cl-add-ons-ibm-object-csi-driver-v1025_357184891}
 
-- Resolves the following CVEs: [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/cve-2026-41178){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/cve-2026-33813){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/cve-2026-46601){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [GHSA-3fxj-6jh8-hvhx](https://github.com/advisories/GHSA-3fxj-6jh8-hvhx){: external}, [GHSA-9g5q-2w5x-hmxf](https://github.com/advisories/GHSA-9g5q-2w5x-hmxf){: external}, [GHSA-rjr7-jggh-pgcp](https://github.com/advisories/GHSA-rjr7-jggh-pgcp){: external}, and [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}.
+- Resolves the following CVEs: [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/cve-2026-41178){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/cve-2026-33813){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/cve-2026-46601){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [GHSA-3fxj-6jh8-hvhx](https://github.com/advisories/ghsa-3fxj-6jh8-hvhx){: external}, [GHSA-9g5q-2w5x-hmxf](https://github.com/advisories/ghsa-9g5q-2w5x-hmxf){: external}, [GHSA-rjr7-jggh-pgcp](https://github.com/advisories/ghsa-rjr7-jggh-pgcp){: external}, and [GHSA-hrxh-6v49-42gf](https://github.com/advisories/ghsa-hrxh-6v49-42gf){: external}.
 - Updates Go to version `1.26.5`.
 - Updates rclone mounter version to 1.74.4 
 - Skip cipher_suites=default when passed as mountOptions in CSI secret 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-11"
 
 
 keywords: change log, version history, OpenShift AI
@@ -65,14 +65,14 @@ Review the version history for OpenShift AI.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/GHSA-gcjh-h69q-9w9g){: external}.
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### 04 August 2026, Version 420 - v420.0.2_360056330
 {: #cl-add-ons-openshift-ai-v42002_360056330}
 
-- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}.
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 
 
@@ -95,14 +95,14 @@ Review the version history for OpenShift AI.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/GHSA-gcjh-h69q-9w9g){: external}.
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### 03 August 2026, Version 419 - v419.1.1_359492648
 {: #cl-add-ons-openshift-ai-v41911_359492648}
 
-- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}.
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 
 
@@ -148,14 +148,14 @@ Review the version history for OpenShift AI.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/GHSA-gcjh-h69q-9w9g){: external}.
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### 03 August 2026, Version 418 - 418.1.3_359492573
 {: #cl-add-ons-openshift-ai-41813_359492573}
 
-- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
 - Updates Go to version `1.26.4`.
 
 
@@ -202,14 +202,14 @@ Review the version history for OpenShift AI.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/GHSA-gcjh-h69q-9w9g){: external}.
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### 03 August 2026, Version 417 - 417.1.3_359492531
 {: #cl-add-ons-openshift-ai-41713_359492531}
 
-- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
 - Updates Go to version `1.26.4`.
 
 
@@ -271,14 +271,14 @@ Review the version history for OpenShift AI.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/GHSA-gcjh-h69q-9w9g){: external}.
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
 - Updates Go to version `1.26.5`.
 
 
 ### 03 August 2026, Version 416 - v416.4.3_359492487
 {: #cl-add-ons-openshift-ai-v41643_359492487}
 
-- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
 - Updates Go to version `1.26.4`.
 
 

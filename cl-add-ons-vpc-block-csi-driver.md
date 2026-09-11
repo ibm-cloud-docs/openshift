@@ -80,7 +80,7 @@ Review the version history for VPC Block CSI Driver.
 ### 06 August 2026, Version 5.2 - v5.2.58_359719682
 {: #cl-add-ons-vpc-block-csi-driver-v5258_359719682}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/ghsa-hrxh-6v49-42gf){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}.
 - `armada-storage-secret v1.3.60`
 
 
@@ -283,7 +283,7 @@ Review the version history for VPC Block CSI Driver.
 ### 06 August 2026, Version 5.1 - v5.1.58_359720275
 {: #cl-add-ons-vpc-block-csi-driver-v5158_359720275}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/ghsa-hrxh-6v49-42gf){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}.
 - `armada-storage-secret v1.3.60`
 - `ibm-csi-init-container v1.0.29`
 
