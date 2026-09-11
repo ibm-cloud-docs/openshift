@@ -8830,6 +8830,8 @@ subcollection: openshift
 
     * [15 June 2026, Version 4.20 - v1.0.4_4.20_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_420_347026591)
 
+* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
+
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
 * [Change log for 1.0.12, released 21 July 2025](/docs/openshift?topic=openshift-backup_restore_changelog#01012_br_chart)

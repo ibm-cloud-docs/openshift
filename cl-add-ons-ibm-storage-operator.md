@@ -89,7 +89,7 @@ Review the version history for IBM Storage Operator.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}.
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}.
 - Runs tunnel container as non-root 
 - `armada-storage-secret v1.3.61`
 - `stunnel:0.1.0.build-32`
@@ -100,7 +100,7 @@ Review the version history for IBM Storage Operator.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, and [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}.
+- Resolves the following CVEs: [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/ghsa-hrxh-6v49-42gf){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, and [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}.
 
 
 ### 29 July 2026, Version 1.0 - v1.0.52_358395144

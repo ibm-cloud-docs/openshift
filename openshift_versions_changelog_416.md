@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-11"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -57,7 +57,7 @@ RHEL 9 (VPC) 5.14.0-687.39.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.39.1.el9_8
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-687.39.1.el9_8
@@ -95,7 +95,7 @@ RHEL 9 (VPC) 5.14.0-687.34.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.34.1.el9_8
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-687.34.1.el9_8
@@ -163,7 +163,7 @@ RHEL 9 (VPC) 5.14.0-570.128.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-570.128.1.el9_6
@@ -255,7 +255,7 @@ RHEL 9 (VPC) 5.14.0-570.125.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-570.125.1.el9_6
@@ -293,7 +293,7 @@ RHEL 9 (VPC) 5.14.0-570.123.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-570.123.1.el9_6
@@ -381,7 +381,7 @@ RHEL 9 (VPC) 5.14.0-570.116.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-570.116.1.el9_6
@@ -419,7 +419,7 @@ RHEL 9 (VPC) 5.14.0-570.116.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   
+:   Kernel updates.
 
 
 RHEL 9 (Classic) 5.14.0-570.116.1.el9_6
@@ -483,7 +483,7 @@ RHEL 9 (Classic) 5.14.0-570.112.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   
+:   Kernel updates.
 
 
 RHEL 8 (VPC) 4.18.0-553.123.1.el8_10
