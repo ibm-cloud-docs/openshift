@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-11"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -544,7 +544,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates Golang to `1.20.11`.
 - Updates the UBI image to `8.9.1029`.
 - Updates `armada-storage-secret` to `v1.2.29`.
-- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
 ### Change log for version 5.1.15_419 released 13 November 2023
@@ -572,7 +572,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates Golang to `1.20.11`.
 - Updates the UBI image to `8.9.1029`.
 - Updates `armada-storage-secret` to `v1.2.29`.
-- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
 ### 13 November 2023, Version 5.0.21_401

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-10"
+lastupdated: "2026-09-11"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -45,11 +45,11 @@ Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}}
 :   **VPC infrastructure**: Replace the worker node.
 :   **VPC Bare Metal**: Reload the worker node.
 :   Review the change logs for your cluster version.
-:   [Version 4.21 change log](/docs/openshift?topic=openshift-changelog_421)
-:   [Version 4.20 change log](/docs/openshift?topic=openshift-changelog_420)
-:   [Version 4.19 change log](/docs/openshift?topic=openshift-changelog_419)
-:   [Version 4.18 change log](/docs/openshift?topic=openshift-changelog_418)
-:   [Version 4.17 change log](/docs/openshift?topic=openshift-changelog_417)
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 
 
 ### 2 September 2026

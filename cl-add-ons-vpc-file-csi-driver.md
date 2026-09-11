@@ -432,7 +432,7 @@ Review the version history for VPC File CSI Driver.
 - Updates Golang to `1.20.11`.
 - Updates UBI image to `8.9.1029`.
 - Updates the `armada-storage-secret` to `v1.2.29`.
-- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
 ### 31 October 2023, Version version 1.2.0
@@ -458,7 +458,7 @@ Review the version history for VPC File CSI Driver.
 - Updates Golang to `1.20.11`.
 - Updates UBI image to `8.9.1029`.
 - Updates the `armada-storage-secret` to `v1.2.29`.
-- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
 ### 13 November 2023, Version 1.1.9_87

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-11"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -345,7 +345,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 16 January 2024, Version patch update 1.2.0_322
 {: #120322_ca}
 
-- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}
+- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}
 - Updated the storage-secret-sidecar image to `v1.3.4`
 - Fixes an issue while updating custom variables via add-on.
 - Adds support for the `maxPodEvictionTime` parameter.
@@ -355,7 +355,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 27 November 2023, Version patch update 1.2.0_290
 {: #120290_ca}
 
-- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.3.3`.
 - Image tags: `1.22.0-120-2`, `1.23.0-120-2`, `1.24.0-120-2`, `1.25.0-120-2`, `1.26.4-120-2`, `1.27.3-120-2`, and `1.28.0-120-2`.
 
@@ -389,7 +389,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 16 January 2024, Version patch update 1.0.9_328
 {: #109328_ca}
 
-- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}
+- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}
 - Updates the storage-secret-sidecar image to `v1.2.30`.
 - Fixes an issue while updating custom variables via add-on.
 
@@ -397,7 +397,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 27 November 2023, Version patch update 1.0.9_290
 {: #109290_ca}
 
-- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.2.29`.
 - Image tags: `1.22.0-109-2`, `1.23.0-109-2`, `1.24.0-109-2`, `1.25.0-109-2`, `1.26.1-109-2`, `1.27.2-109-2`.
 
@@ -439,7 +439,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 27 November 2023, Version patch update 1.0.8_292
 {: #108292_ca}
 
-- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.2.29`.
 - Image tags: `1.20.0 108-5`, `1.21.0 108-5`, `1.22.0 108-5`, `1.23.0 108-5`, `1.24.0 108-5`, `1.25.0 108-5`, and `1.26.0 108-5`.
 
@@ -466,7 +466,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 27 November 2023, Version patch update 1.0.7_291
 {: #107291_ca}
 
-- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.2.29`.
 - Image tags: `1.20.0 107-7`, `1.21.0 107-7`, `1.22.0 107-7`, `1.23.0 107-7`, `1.24.0 107-7`, and `1.25.0 107-7`.
 
