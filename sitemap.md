@@ -512,6 +512,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
+
+    * [14 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1426)
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
     * [8 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0826)
 
         * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.

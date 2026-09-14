@@ -32,6 +32,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+## September 2026
+{: #openshift-sep26}
+
+
+
+### 14 September 2026
+{: #openshift-sep1426}
+{: release-note}
+
+OpenShift Virtualization cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
+
+
+
 ### 8 September 2026
 {: #openshift-sep0826}
 {: release-note}
