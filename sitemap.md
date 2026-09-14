@@ -518,6 +518,8 @@ subcollection: openshift
 
         * OpenShift Virtualization cluster add-on patch updates.
 
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [8 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0826)
 
         * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
@@ -8901,6 +8903,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [14 September 2026, Version 1.0.0 - 1.0.0_367585595](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_367585595)
 
     * [31 August 2026, Version 1.0.0 - 1.0.0_364389711](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711)
 
