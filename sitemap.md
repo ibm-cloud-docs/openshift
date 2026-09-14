@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-14"
 
 
 keywords: openshift
@@ -513,6 +513,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
+
+    * [14 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1426)
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
     * [8 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0826)
 
@@ -3693,6 +3699,50 @@ subcollection: openshift
 
 * [Changing a load balancer's subnet or zone](/docs/openshift?topic=openshift-vpclb_manage#lbaas_change_subnets)
 
+[Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
+
+* [Loadbalancer types](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas-types)
+
+    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
+
+    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
+
+* [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
+
+* [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
+
+    * [Setting up an NLB using port range](/docs/openshift?topic=openshift-vpc-lbaas#nlb-setup-portrange)
+
+    * [Setting up a private VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv)
+
+    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns__)
+
+* [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
+
+    * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
+
+    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+
+    * [Registering a private DNS record for a private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#vpc_alb_private_dns)
+
+* [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist)
+
+* [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
+
+    * [Detaching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
+
+    * [Attaching a VPC load balancer to a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_attach)
+
+* [Health checks for load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health)
+
+    * [Customizing health checks for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_custom)
+
+    * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_udp)
+
+* [Changing load balancer subnets or zones](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_change_subnets)
+
+* [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
+
 
 ### Ingress
 {: #sitemap_ingress}
@@ -3908,6 +3958,12 @@ subcollection: openshift
 ### Classic load balancers
 {: #sitemap_classic_load_balancers}
 
+
+[Quick start for load balancers](/docs/openshift?topic=openshift-loadbalancer-qs#loadbalancer-qs)
+
+* [Exposing an app by using an NLB in a classic cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_classic)
+
+* [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
 
@@ -8160,21 +8216,15 @@ subcollection: openshift
 
     * [04 October 2023, Version patch update 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
 
-    * [15 September 2023, Version patch update 1.0.9_103](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109103_ca)
-
     * [16 February 2024, Version patch update 1.1.0_362](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
 
     * [27 November 2023, Version patch update 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
 
     * [13 November 2023, Version patch update 1.0.8_233](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108233_ca)
 
-    * [15 September 2023, Version patch update 1.0.8_104](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108104_ca)
-
     * [27 November 2023, Version patch update 1.0.7_291](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
 
     * [13 November 2023, Version patch update 1.0.7_185](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
-
-    * [15 September 2023, Version patch update 1.0.7_102](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
@@ -8368,13 +8418,9 @@ subcollection: openshift
 
     * [Change log for version 5.1.15_419 released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.15_419_is_block_relnote)
 
-    * [14 September 2023, Version 5.1.13_345](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.13_345_is_block_relnote)
-
     * [27 November 2023, Version 5.0.23_437](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.23_437_is_block_relnote)
 
     * [13 November 2023, Version 5.0.21_401](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.21_401_is_block_relnote)
-
-    * [14 September 2023, Version 5.0.19_358](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.19_358_is_block_relnote)
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
@@ -8465,8 +8511,6 @@ subcollection: openshift
     * [27 November 2023, Version 1.1.10_93](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.10_93_is_file_relnote)
 
     * [13 November 2023, Version 1.1.9_87](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.9_87_is_file_relnote)
-
-    * [14 September 2023, Version 1.1.7_49](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.7_is_file_relnote)
 
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
@@ -8814,7 +8858,13 @@ subcollection: openshift
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
+* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
+
+    * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
+
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [14 September 2026, Version 4.21 - v1.0.10_4.21_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_421_368659156)
 
     * [31 August 2026, Version 4.21 - v1.0.9_4.21_366720299](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v109_421_366720299)
 
@@ -8829,8 +8879,6 @@ subcollection: openshift
 * [Version 4.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.20)
 
     * [15 June 2026, Version 4.20 - v1.0.4_4.20_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_420_347026591)
-
-* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
@@ -8855,6 +8903,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [14 September 2026, Version 1.0.0 - 1.0.0_367585595](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_367585595)
 
     * [31 August 2026, Version 1.0.0 - 1.0.0_364389711](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711)
 

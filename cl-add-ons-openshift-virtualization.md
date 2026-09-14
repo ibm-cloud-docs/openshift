@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-14"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -39,8 +39,35 @@ Review the version history for OpenShift Virtualization.
 {: shortdesc}
 
 
+## Version 4.22
+{: #cl-add-ons-openshift-virtualization-4.22}
+
+
+### 14 September 2026, Version 4.22 - v1.0.10_4.22_368659156
+{: #cl-add-ons-openshift-virtualization-v1010_422_368659156}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.26.8`.
+- kubevirt-hyperconverged-operator.v4.22.6
+- kubernetes-nmstate-operator.4.22.0-202608260901
+- node-maintenance-operator.v5.7.1
+
+
 ## Version 4.21
 {: #cl-add-ons-openshift-virtualization-4.21}
+
+
+### 14 September 2026, Version 4.21 - v1.0.10_4.21_368659156
+{: #cl-add-ons-openshift-virtualization-v1010_421_368659156}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.26.8`.
+- kubevirt-hyperconverged-operator.v4.21.17
+- kubernetes-nmstate-operator.4.21.0-202608241535
+- node-maintenance-operator.v5.6.1
+- Resolves the following Prisma CVEs: [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}.
 
 
 ### 31 August 2026, Version 4.21 - v1.0.9_4.21_366720299
@@ -71,7 +98,7 @@ Review the version history for OpenShift Virtualization.
 - kubevirt-hyperconverged-operator.v4.21.13
 - kubernetes-nmstate-operator.4.21.0-202607221131
 - node-maintenance-operator.v5.6.1
-- Resolves the following Prisma CVEs: [CVE-2026-25934](https://nvd.nist.gov/vuln/detail/cve-2026-25934){: external}, [CVE-2026-34165](https://nvd.nist.gov/vuln/detail/cve-2026-34165){: external}, [CVE-2026-44973](https://nvd.nist.gov/vuln/detail/cve-2026-44973){: external}, [CVE-2026-41506](https://nvd.nist.gov/vuln/detail/cve-2026-41506){: external}, [CVE-2026-45022](https://nvd.nist.gov/vuln/detail/cve-2026-45022){: external}, [CVE-2026-44740](https://nvd.nist.gov/vuln/detail/cve-2026-44740){: external}, [CVE-2026-45571](https://nvd.nist.gov/vuln/detail/cve-2026-45571){: external}, [CVE-2026-33762](https://nvd.nist.gov/vuln/detail/cve-2026-33762){: external}, [CVE-2026-53488](https://nvd.nist.gov/vuln/detail/cve-2026-53488){: external}, [CVE-2026-50163](https://nvd.nist.gov/vuln/detail/cve-2026-50163){: external}, [CVE-2026-45570](https://nvd.nist.gov/vuln/detail/cve-2026-45570){: external}, [CVE-2026-49478](https://nvd.nist.gov/vuln/detail/cve-2026-49478){: external}, [CVE-2026-39822](https://nvd.nist.gov/vuln/detail/cve-2026-39822){: external}, [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/cve-2026-41178){: external}, [CVE-2026-47262](https://nvd.nist.gov/vuln/detail/cve-2026-47262){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/GHSA-gcjh-h69q-9w9g){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}, and [GHSA-w5pp-99ch-qj29](https://github.com/advisories/GHSA-w5pp-99ch-qj29){: external}.
+- Resolves the following Prisma CVEs: [CVE-2026-25934](https://nvd.nist.gov/vuln/detail/cve-2026-25934){: external}, [CVE-2026-34165](https://nvd.nist.gov/vuln/detail/cve-2026-34165){: external}, [CVE-2026-44973](https://nvd.nist.gov/vuln/detail/cve-2026-44973){: external}, [CVE-2026-41506](https://nvd.nist.gov/vuln/detail/cve-2026-41506){: external}, [CVE-2026-45022](https://nvd.nist.gov/vuln/detail/cve-2026-45022){: external}, [CVE-2026-44740](https://nvd.nist.gov/vuln/detail/cve-2026-44740){: external}, [CVE-2026-45571](https://nvd.nist.gov/vuln/detail/cve-2026-45571){: external}, [CVE-2026-33762](https://nvd.nist.gov/vuln/detail/cve-2026-33762){: external}, [CVE-2026-53488](https://nvd.nist.gov/vuln/detail/cve-2026-53488){: external}, [CVE-2026-50163](https://nvd.nist.gov/vuln/detail/cve-2026-50163){: external}, [CVE-2026-45570](https://nvd.nist.gov/vuln/detail/cve-2026-45570){: external}, [CVE-2026-49478](https://nvd.nist.gov/vuln/detail/cve-2026-49478){: external}, [CVE-2026-39822](https://nvd.nist.gov/vuln/detail/cve-2026-39822){: external}, [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/cve-2026-41178){: external}, [CVE-2026-47262](https://nvd.nist.gov/vuln/detail/cve-2026-47262){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/ghsa-hrxh-6v49-42gf){: external}, and [GHSA-w5pp-99ch-qj29](https://github.com/advisories/ghsa-w5pp-99ch-qj29){: external}.
 
 
 ### 25 June 2026, Version 4.21 - v1.0.5_4.21_351283493
@@ -108,7 +135,3 @@ Review the version history for OpenShift Virtualization.
 - kubernetes-nmstate-operator.4.20.0-202605130318
 - node-maintenance-operator.v5.5.0
 - Resolves the following Prisma CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/cve-2026-39820){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/cve-2026-42499){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/cve-2026-39823){: external}, and [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}.
-
-
-## Version 4.22
-{: #cl-add-ons-openshift-virtualization-4.22}

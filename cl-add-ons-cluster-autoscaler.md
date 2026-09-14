@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-14"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -417,14 +417,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Image tags: `1.22.0-109-1`, `1.23.0-109-1`, `1.24.0-109-1`, `1.25.0-109-1`, `1.26.1-109-1`, `1.27.2-109-1`.
 
 
-### 15 September 2023, Version patch update 1.0.9_103
-{: #109103_ca}
-
-- Image tags: `1.22.0-109-3`, `1.23.0-109-3`, `1.24.0-109-3`, `1.25.0-109-3`, `1.26.1-109-3`, `1.27.2-109-3`.
-- Updated the storage-secret-sidecar image to `v1.2.26`.
-- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
-
-
 
 
 ### 16 February 2024, Version patch update 1.1.0_362
@@ -453,14 +445,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Image tags: `1.20.0 108-5`, `1.21.0 108-5`, `1.22.0 108-5`, `1.23.0 108-5`, `1.24.0 108-5`, `1.25.0 108-5`, and `1.26.0 108-5`.
 
 
-### 15 September 2023, Version patch update 1.0.8_104
-{: #108104_ca}
-
-- Image tags: `1.22.0-108-4`, `1.23.0-109-4`, `1.24.0-108-4`, `1.25.0-108-4`, `1.26.1-108-4`, `1.27.2-109-4`.
-- Updated the storage-secret-sidecar image to `v1.2.26`.
-- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
-
-
 
 
 ### 27 November 2023, Version patch update 1.0.7_291
@@ -477,11 +461,3 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Updates the `storage-secret-sidecar` image to `v1.2.28`.
 - Updates Golang to 1.20.10.
 - Image tags: `1.20.0 107-7`, `1.21.0 107-7`, `1.22.0 107-7`, `1.23.0 107-7`, `1.24.0 107-7`, and `1.25.0 107-7`.
-
-
-### 15 September 2023, Version patch update 1.0.7_102
-{: #107102_ca}
-
-- Image tags: `1.22.0-107-7`, `1.23.0-107-7`, `1.24.0-107-7`, `1.25.0-107-7`, `1.26.1-107-7`, `1.27.2-107-7`.
-- Updated the storage-secret-sidecar image to `v1.2.26`.
-- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
