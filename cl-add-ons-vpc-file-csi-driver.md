@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-14"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -467,12 +467,3 @@ Review the version history for VPC File CSI Driver.
 - Updates the `storage-secret-sidecar` image to `1.2.27`.
 - Updates Golang to `1.20.10`.
 - Resolves [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
-
-
-### 14 September 2023, Version 1.1.7_49
-{: #1.1.7_is_file_relnote}
-
-- Updates UBI image to `8.8-1037`.
-- Updates Golang to `1.19.12`.
-- Resolves the following CVEs: 
-    - [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.

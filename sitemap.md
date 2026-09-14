@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-14"
 
 
 keywords: openshift
@@ -511,8 +511,6 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
-
-* [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
 
     * [8 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0826)
 
@@ -8160,21 +8158,15 @@ subcollection: openshift
 
     * [04 October 2023, Version patch update 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
 
-    * [15 September 2023, Version patch update 1.0.9_103](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109103_ca)
-
     * [16 February 2024, Version patch update 1.1.0_362](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
 
     * [27 November 2023, Version patch update 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
 
     * [13 November 2023, Version patch update 1.0.8_233](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108233_ca)
 
-    * [15 September 2023, Version patch update 1.0.8_104](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108104_ca)
-
     * [27 November 2023, Version patch update 1.0.7_291](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
 
     * [13 November 2023, Version patch update 1.0.7_185](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
-
-    * [15 September 2023, Version patch update 1.0.7_102](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
@@ -8368,13 +8360,9 @@ subcollection: openshift
 
     * [Change log for version 5.1.15_419 released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.15_419_is_block_relnote)
 
-    * [14 September 2023, Version 5.1.13_345](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.13_345_is_block_relnote)
-
     * [27 November 2023, Version 5.0.23_437](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.23_437_is_block_relnote)
 
     * [13 November 2023, Version 5.0.21_401](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.21_401_is_block_relnote)
-
-    * [14 September 2023, Version 5.0.19_358](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.19_358_is_block_relnote)
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
@@ -8465,8 +8453,6 @@ subcollection: openshift
     * [27 November 2023, Version 1.1.10_93](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.10_93_is_file_relnote)
 
     * [13 November 2023, Version 1.1.9_87](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.9_87_is_file_relnote)
-
-    * [14 September 2023, Version 1.1.7_49](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.7_is_file_relnote)
 
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
@@ -8814,7 +8800,13 @@ subcollection: openshift
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
+* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
+
+    * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
+
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [14 September 2026, Version 4.21 - v1.0.10_4.21_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_421_368659156)
 
     * [31 August 2026, Version 4.21 - v1.0.9_4.21_366720299](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v109_421_366720299)
 
@@ -8829,8 +8821,6 @@ subcollection: openshift
 * [Version 4.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.20)
 
     * [15 June 2026, Version 4.20 - v1.0.4_4.20_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_420_347026591)
-
-* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-14"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -556,14 +556,6 @@ Review the version history for VPC Block CSI Driver.
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}.
 
 
-### 14 September 2023, Version 5.1.13_345
-{: #5.1.13_345_is_block_relnote}
-
-- Updated the UBI image to `8.8-860`.
-- Updated the Golang updated to `1.19.12`.
-- Resolves the following CVEs: [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
-
-
 
 
 ### 27 November 2023, Version 5.0.23_437
@@ -581,11 +573,3 @@ Review the version history for VPC Block CSI Driver.
 - Updates Golang to `1.20.10`. 
 - Updates the `storage-secret-sidecar` image to `1.2.28`.
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/cve-2023-39325){: external}.
-
-
-### 14 September 2023, Version 5.0.19_358
-{: #5.0.19_358_is_block_relnote}
-
-- Updated the UBI image to `8.8-860`.
-- Updated the Golang updated to `1.19.12`.
-- Resolves the following CVEs: [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
