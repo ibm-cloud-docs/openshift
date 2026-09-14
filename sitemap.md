@@ -518,6 +518,8 @@ subcollection: openshift
 
         * OpenShift Virtualization cluster add-on patch updates.
 
+        * CLI version 1.0.864 is available.
+
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
     * [8 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0826)
@@ -7871,6 +7873,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.864](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01864)
 
 * [Version v1.0.843](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01843)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.864
+{: #cli-01864}
+
+Version 1.0.864 of the CLI was released on 14 September 2026.
+- Updates dependencies to address CVEs. No new functionality.
 
 ## Version v1.0.843
 {: #cli-01843}
