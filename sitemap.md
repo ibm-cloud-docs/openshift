@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-14"
+lastupdated: "2026-09-15"
 
 
 keywords: openshift
@@ -513,6 +513,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
+
+    * [15 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1526)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
 
     * [14 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1426)
 
@@ -8236,6 +8242,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [15 September 2026, Version 1.0 - v1.0.59_369240550](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1059_369240550)
+
     * [02 September 2026, Version 1.0 - v1.0.58_365773320](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1058_365773320)
 
     * [26 August 2026, Version 1.0 - v1.0.57_364066782](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1057_364066782)
@@ -8431,6 +8439,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-supported-versions)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [15 September 2026, Version 2.0 - v2.0.52_369240368](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2052_369240368)
 
     * [02 September 2026, Version 2.0 - v2.0.51_365773339](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2051_365773339)
 
