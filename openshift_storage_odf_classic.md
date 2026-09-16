@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-16"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -212,10 +212,10 @@ Before you install OpenShift Data Foundation, prepare your cluster.
         ```
         {: pre}
 
-    - For each disk partition, clear the `xfs` file system on the worker node. If you don't clear the file system, the OSD is not created.
+    - For each disk, clear the `xfs` file system on the worker node. If you don't clear the file system, the OSD is not created.
         ```sh
-        file -sL /dev/<partition>
-        wipefs -a /dev/<partition>
+        file -sL /dev/DISK
+        wipefs -a /dev/DISK
         ```
         {: pre}
         
@@ -238,7 +238,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
         exit
         ```
 
-1. Repeat the previous steps to wipe the file system for each worker node that you want to use in your ODF deployment.
+1. Repeat the previous steps to wipe the disk for each worker node that you want to use in your ODF deployment.
     
 
 ### Getting your device details
@@ -274,7 +274,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-1. Review the command output for available disks. You can use only unmounted disks for ODF deployments, such as `sdc` disks in the following example. Note the initial storage capacity of your ODF deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two available partitions: `sdc1` and `sdc2`.
+1. Review the command output for available disks. You can use only raw, unmounted, unpartitioned disks for ODF deployments. Partitioned disks are not supported. In the following example, the `sdc` disk is unmounted and available for ODF. Note that the initial storage capacity of your ODF deployment is equal to the size of the disk that you specify as the `osd-device-path`.
     ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
@@ -284,12 +284,10 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     sdb      8:16   0 744.7G  0 disk
      -sdb1   8:17   0 744.7G  0 part /disk1
     sdc      8:32   0 744.7G  0 disk
-    |-sdc1   8:33   0  18.6G  0 part
-     -sdc2   8:34   0 260.8G  0 part
     ```
     {: screen}
 
-1. For each unmounted disk that you want to use in your deployment, find the disk ID. In the following example, the ID for the `sdc1` partition is `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and the ID for the `sdc2` partition is `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
+1. For each unmounted disk that you want to use in your deployment, find the disk ID. In the following example, the ID for the `sdc` disk is `scsi-3600605b00d87b43027b3bc310a64c6c9`.
 
     ```sh
     ls -l /dev/disk/by-id/
@@ -306,8 +304,6 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     lrwxrwxrwx. 1 root root  9 Feb  9 04:15 scsi-3600605b00d87b43027b3bbf306bc28a7 -> ../../sdb
     lrwxrwxrwx. 1 root root 10 Feb  9 04:15 scsi-3600605b00d87b43027b3bbf306bc28a7-part1 -> ../../sdb1
     lrwxrwxrwx. 1 root root  9 Feb  9 04:17 scsi-3600605b00d87b43027b3bc310a64c6c9 -> ../../sdc
-    lrwxrwxrwx. 1 root root 10 Feb 11 03:14 scsi-3600605b00d87b43027b3bc310a64c6c9-part1 -> ../../sdc1
-    lrwxrwxrwx. 1 root root 10 Feb 11 03:15 scsi-3600605b00d87b43027b3bc310a64c6c9-part2 -> ../../sdc2
     ```
     {: screen}
 
