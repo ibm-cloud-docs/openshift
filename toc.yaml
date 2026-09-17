@@ -243,6 +243,7 @@ toc:
           label: App deployment
           topics:
           - app-plan.md
+          - app-resiliency.md
           - app.md
           - openshift_app_deploy.md
           - nodeport.md
