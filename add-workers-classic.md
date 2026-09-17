@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add, classic
@@ -23,8 +23,7 @@ subcollection: openshift
 Review the following sections for information on how to add worker nodes to your classic cluster.
 {: shortdesc}
 
-Looking to add workers to VPC clusters? See [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). Already on Classic? See [Migrating Classic clusters to VPC](/docs/openshift?topic=openshift-vpc-migrate-overview) guidance.
-{: tip}
+Looking to add workers to VPC clusters? See [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). 
 
 
 To increase the availability of your apps, you can add worker nodes to an existing zone or multiple existing zones in your cluster. To help protect your apps from zone failures, you can add zones to your cluster.
