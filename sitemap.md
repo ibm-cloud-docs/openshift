@@ -3512,6 +3512,42 @@ subcollection: openshift
 
     * [After I deploy my app, how can I monitor its health?](/docs/openshift?topic=openshift-plan_deploy#app_plan_logmet_monitor)
 
+[Developing and testing apps for resiliency](/docs/openshift?topic=openshift-app-resiliency#app-resiliency)
+
+* [Overview of cluster architecture and responsibilities](/docs/openshift?topic=openshift-app-resiliency#app-resiliency-overview)
+
+* [How {{site.data.keyword.IBM_notm}} applies control plane patches](/docs/openshift?topic=openshift-app-resiliency#control-plane-patches)
+
+* [Workload impact during control plane updates](/docs/openshift?topic=openshift-app-resiliency#workload-impact)
+
+* [Simulating scenarios to test application resiliency](/docs/openshift?topic=openshift-app-resiliency#simulating-resiliency)
+
+    * [Simulating a control plane patch with a control plane refresh](/docs/openshift?topic=openshift-app-resiliency#simulate-control-plane-refresh)
+
+    * [Simulating network routing updates by adding and removing worker nodes](/docs/openshift?topic=openshift-app-resiliency#simulate-worker-routing)
+
+* [Recommended practices for workload resiliency](/docs/openshift?topic=openshift-app-resiliency#resiliency-best-practices)
+
+    * [Run multiple replicas for every workload](/docs/openshift?topic=openshift-app-resiliency#resiliency-replicas)
+
+    * [Spread replicas across zones and worker nodes](/docs/openshift?topic=openshift-app-resiliency#resiliency-topology-spread)
+
+    * [Configure Pod Disruption Budgets (PDBs)](/docs/openshift?topic=openshift-app-resiliency#resiliency-pdb)
+
+    * [Define readiness and liveness probes](/docs/openshift?topic=openshift-app-resiliency#resiliency-probes)
+
+    * [Set appropriate resource requests and limits](/docs/openshift?topic=openshift-app-resiliency#resiliency-resources)
+
+    * [Implement graceful shutdown handling](/docs/openshift?topic=openshift-app-resiliency#resiliency-graceful-shutdown)
+
+    * [Avoid relying on long-lived connections to the API server](/docs/openshift?topic=openshift-app-resiliency#resiliency-api-connections)
+
+    * [Use retry logic and circuit breakers](/docs/openshift?topic=openshift-app-resiliency#resiliency-retry-logic)
+
+* [Next steps](/docs/openshift?topic=openshift-app-resiliency#resiliency-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-app-resiliency#resiliency-related-links)
+
 [Developing apps](/docs/openshift?topic=openshift-app#app)
 
 * [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-app#app_yaml)
@@ -5849,6 +5885,22 @@ subcollection: openshift
     * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health-monitor#ob-remove-mon)
 
 * [Enabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_enable_telemetry_reports)
+
+[Using {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.logs_full_notm}} to debug your cluster](/docs/openshift?topic=openshift-debug-with-observability#debug-with-observability)
+
+* [Before you begin](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-prereqs)
+
+* [Check worker node resource usage with {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-nodes)
+
+* [Check pod health and restart counts with {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-pods)
+
+* [Investigate container logs with {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-logs)
+
+* [Check Kubernetes events with {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-events)
+
+* [Next steps](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-next)
+
+* [Related links](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-related)
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit#health-audit)
 

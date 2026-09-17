@@ -243,6 +243,7 @@ toc:
           label: App deployment
           topics:
           - app-plan.md
+          - app-resiliency.md
           - app.md
           - openshift_app_deploy.md
           - nodeport.md
@@ -445,6 +446,7 @@ toc:
           - monitoring.md
           - openshift_health_log.md
           - openshift_health_monitor.md
+          - debug-with-observability.md
           - health-audit.md
           - vpc-flow-logs.md
           - telemetry.md
