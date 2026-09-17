@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-17"
 
 
 keywords: openshift
@@ -513,6 +513,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
+
+    * [17 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1726)
+
+        * Openshift AI cluster add-on patch updates.
 
     * [15 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1526)
 
@@ -8054,6 +8058,8 @@ subcollection: openshift
 
 * [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
 
+    * [17 September 2026, Version 420 - 420.0.4_3370991846](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42004_3370991846)
+
     * [10 August 2026, Version 420 - v420.0.3_361259361](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42003_361259361)
 
     * [04 August 2026, Version 420 - v420.0.2_360056330](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42002_360056330)
@@ -8061,6 +8067,8 @@ subcollection: openshift
     * [08 July 2026, Version 420 - 420.0.0_349689605](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42000_349689605)
 
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
+
+    * [17 September 2026, Version 419 - 419.1.3_370991899](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41913_370991899)
 
     * [10 August 2026, Version 419 - v419.1.2_361259372](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41912_361259372)
 
@@ -8076,6 +8084,8 @@ subcollection: openshift
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
 
+    * [17 September 2026, Version 418 - 418.1.5_370992078](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41815_370992078)
+
     * [10 August 2026, Version 418 - v418.1.4_361259339](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41814_361259339)
 
     * [03 August 2026, Version 418 - 418.1.3_359492573](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41813_359492573)
@@ -8089,6 +8099,8 @@ subcollection: openshift
     * [11 November 2025, Version 418 - v418.0.0_295927267](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
+
+    * [17 September 2026, Version 417 - 417.1.5_370985594](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41715_370985594)
 
     * [10 August 2026, Version 417 - v417.1.4_361259329](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41714_361259329)
 
@@ -8107,6 +8119,8 @@ subcollection: openshift
     * [19 August 2025, Version 417 - 417.0.0_533](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [17 September 2026, Version 416 - v416.4.5_370992209](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41645_370992209)
 
     * [10 August 2026, Version 416 - v416.4.4_361259301](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41644_361259301)
 

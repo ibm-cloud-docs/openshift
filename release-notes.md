@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-17"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2026
 {: #openshift-sep26}
+
+
+### 17 September 2026
+{: #openshift-sep1726}
+{: release-note}
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 
 ### 15 September 2026
 {: #openshift-sep1526}
