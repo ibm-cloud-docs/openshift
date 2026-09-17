@@ -5886,6 +5886,22 @@ subcollection: openshift
 
 * [Enabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_enable_telemetry_reports)
 
+[Using {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.logs_full_notm}} to debug your cluster](/docs/openshift?topic=openshift-debug-with-observability#debug-with-observability)
+
+* [Before you begin](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-prereqs)
+
+* [Check worker node resource usage with {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-nodes)
+
+* [Check pod health and restart counts with {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-pods)
+
+* [Investigate container logs with {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-logs)
+
+* [Check Kubernetes events with {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-events)
+
+* [Next steps](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-next)
+
+* [Related links](/docs/openshift?topic=openshift-debug-with-observability#debug-observability-related)
+
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit#health-audit)
 
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)

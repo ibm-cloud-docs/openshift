@@ -446,6 +446,7 @@ toc:
           - monitoring.md
           - openshift_health_log.md
           - openshift_health_monitor.md
+          - debug-with-observability.md
           - health-audit.md
           - vpc-flow-logs.md
           - telemetry.md
