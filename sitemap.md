@@ -5494,7 +5494,9 @@ subcollection: openshift
 
     * [Viewing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-vms)
 
-    * [Live migrating VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-migrate-vms)
+    * [Placing a node into maintenance](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-node-maintenance)
+
+    * [Live migrating VMs manually](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-migrate-vms)
 
     * [Stopping and starting VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vm-lifecycle)
 

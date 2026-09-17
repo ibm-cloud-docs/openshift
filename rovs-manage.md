@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-09-17"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -121,15 +121,15 @@ The replacement worker is provisioned with the same configuration as the origina
 ### Reloading worker nodes
 {: #rovs-manage-reload-workers}
 
+Before you reload a worker node, place the node into maintenance by using the Node Maintenance Operator or migrate running VMs to other nodes. For more information, see [Placing a node into maintenance](#rovs-manage-node-maintenance) and [Live migrating VMs](#rovs-manage-migrate-vms).
+{: important}
+
 Reload a worker node to apply updates or fix issues:
 
 ```sh
 ibmcloud ks worker reload --cluster CLUSTER_NAME --worker WORKER_ID
 ```
 {: pre}
-
-Before reloading a worker node, ensure that any running VMs are migrated to other nodes or can tolerate downtime.
-{: important}
 
 ## Managing worker pools
 {: #rovs-manage-pools}
@@ -149,10 +149,10 @@ Create a new worker pool with a different bare metal flavor:
 
 ```sh
 ibmcloud ks worker-pool create vpc-gen2 \
-  --name <pool-name> \
-  --cluster <cluster-name> \
-  --flavor <bare-metal-flavor> \
-  --size-per-zone <number-of-workers>
+  --name POOL_NAME \
+  --cluster CLUSTER_NAME \
+  --flavor BARE_METAL_FLAVOR \
+  --size-per-zone NUMBER_OF_WORKERS
 ```
 {: pre}
 
@@ -166,10 +166,10 @@ Add a zone to an existing worker pool:
 
 ```sh
 ibmcloud ks zone add vpc-gen2 \
-  --cluster <cluster-name> \
-  --zone <zone> \
-  --subnet-id <subnet-id> \
-  --worker-pool <pool-name>
+  --cluster CLUSTER_NAME \
+  --zone ZONE \
+  --subnet-id SUBNET_ID \
+  --worker-pool POOL_NAME
 ```
 {: pre}
 
@@ -223,7 +223,7 @@ ibmcloud ks worker-pool update --cluster CLUSTER_NAME --worker-pool POOL_NAME
 ```
 {: pre}
 
-Before updating worker nodes, migrate VMs to other nodes or ensure they can tolerate downtime.
+Before you update worker nodes, place each node into maintenance by using the Node Maintenance Operator or migrate running VMs to other nodes. For more information, see [Placing a node into maintenance](#rovs-manage-node-maintenance) and [Live migrating VMs](#rovs-manage-migrate-vms).
 {: important}
 
 ## Monitoring cluster health
@@ -287,28 +287,98 @@ oc get vms -A
 View VMs in a specific namespace:
 
 ```sh
-oc get vms -n <namespace>
+oc get vms -n NAMESPACE
 ```
 {: pre}
 
-### Live migrating VMs
+### Placing a node into maintenance
+{: #rovs-manage-node-maintenance}
+
+Before you perform maintenance actions such as updating, reloading, or replacing a bare metal worker node, put the node into maintenance mode. The Node Maintenance Operator cordons the node and automatically evicts or live-migrates all eligible virtual machine workloads to other nodes in the same zone without interrupting workloads.
+
+If your cluster uses OpenShift Data Foundation (ODF), nodes that run ODF storage components must follow the ODF upgrade and maintenance procedures instead of this process. For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
+{: important}
+
+#### Starting node maintenance from the web console
+{: #rovs-node-maintenance-console}
+
+You can initiate node maintenance directly from the Red Hat OpenShift web console.
+
+1. In the OpenShift web console Administrator perspective, go to **Compute** > **Nodes**.
+2. Find the bare metal worker node you want to perform maintenance on.
+3. Click the actions menu (three vertical dots) for that node and select **Start maintenance**.
+4. In the confirmation dialog, review the maintenance settings and click **Start**.
+5. Verify that the node status displays as `Scheduling disabled` and that the actions menu shows **Stop maintenance** instead of **Start maintenance**. Wait until all VM instances migrate to other available nodes before proceeding with your node-level action (such as `ibmcloud ks worker reload` or `ibmcloud ks worker update`).
+6. After your maintenance action completes and the node is healthy, return to **Compute** > **Nodes**, click the actions menu for the node, and select **Stop maintenance**.
+
+#### Starting node maintenance from the CLI
+{: #rovs-node-maintenance-cli}
+
+You can also initiate node maintenance by creating a `NodeMaintenance` custom resource.
+
+1. Create a YAML file named `node-maintenance.yaml` with the `NodeMaintenance` custom resource definition. Specify the target bare metal worker node name in the `nodeName` field.
+
+   ```yaml
+   apiVersion: nodemaintenance.medik8s.io/v1beta1
+   kind: NodeMaintenance
+   metadata:
+     name: nodemaintenance-NODE_NAME
+   spec:
+     nodeName: NODE_NAME
+     reason: Node maintenance for update or reload
+   ```
+   {: codeblock}
+
+2. Apply the custom resource to put the node into maintenance mode:
+
+   ```sh
+   oc apply -f node-maintenance.yaml
+   ```
+   {: pre}
+
+3. Monitor the status of the `NodeMaintenance` resource to verify that the drain operation succeeds:
+
+   ```sh
+   oc get nodemaintenance nodemaintenance-NODE_NAME -o jsonpath='{.status.phase}'
+   ```
+   {: pre}
+
+   Verify that the phase reports `Succeeded` before you proceed to reload, update, or replace the node.
+
+4. Perform your planned node-level action, such as reloading or updating the worker node:
+
+   ```sh
+   ibmcloud ks worker reload --cluster CLUSTER_NAME --worker WORKER_ID
+   ```
+   {: pre}
+
+5. After the node reload or update is complete and the node status in `oc get nodes` is `Ready`, remove the node from maintenance by deleting the `NodeMaintenance` resource:
+
+   ```sh
+   oc delete nodemaintenance nodemaintenance-NODE_NAME
+   ```
+   {: pre}
+
+### Live migrating VMs manually
 {: #rovs-manage-migrate-vms}
 
-Before performing maintenance on a worker node, migrate VMs to other nodes:
+If you want to manually trigger a live migration for an individual virtual machine instead of using the Node Maintenance Operator:
 
-```sh
-oc get vmi -n <namespace>
-```
-{: pre}
+1. List the virtual machine instances in the namespace to identify the name of the VM you want to migrate:
 
-Trigger a live migration:
+   ```sh
+   oc get vmi -n NAMESPACE
+   ```
+   {: pre}
 
-```sh
-virtctl migrate <vm-name> -n <namespace>
-```
-{: pre}
+2. Trigger a live migration for the VM:
 
-Live migration is supported only within the same zone.
+   ```sh
+   virtctl migrate VM_NAME -n NAMESPACE
+   ```
+   {: pre}
+
+If a VM has a Virtual Network Interface (VNI) attached, live migration is supported only within the same zone. Migrating such a VM across zones succeeds, but the VM ends up with a broken network because VNIs cannot attach across zones.
 {: note}
 
 ### Stopping and starting VMs
@@ -317,14 +387,14 @@ Live migration is supported only within the same zone.
 Stop a VM:
 
 ```sh
-virtctl stop <vm-name> -n <namespace>
+virtctl stop VM_NAME -n NAMESPACE
 ```
 {: pre}
 
 Start a VM:
 
 ```sh
-virtctl start <vm-name> -n <namespace>
+virtctl start VM_NAME -n NAMESPACE
 ```
 {: pre}
 
@@ -361,7 +431,7 @@ oc get pvc -A | grep virtualmachine
 View PVC details:
 
 ```sh
-oc describe pvc <pvc-name> -n <namespace>
+oc describe pvc PVC_NAME -n NAMESPACE
 ```
 {: pre}
 
