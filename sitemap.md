@@ -8053,8 +8053,6 @@ subcollection: openshift
 
 * [Queries](/docs/openshift?topic=openshift-cs-graphql-api#queries)
 
-    * [`globalSearchSatelliteConnectorAccounts`](/docs/openshift?topic=openshift-cs-graphql-api#globalsearchsatelliteconnectoraccounts)
-
     * [`node`](/docs/openshift?topic=openshift-cs-graphql-api#node)
 
     * [`satelliteConnectors`](/docs/openshift?topic=openshift-cs-graphql-api#satelliteconnectors)

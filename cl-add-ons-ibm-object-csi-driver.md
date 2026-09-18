@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-18"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -45,7 +45,7 @@ ibmcloud oc cluster addon versions
 
 | Add-on version | Supported OpenShift versions |
 |---|---|
-| `1.0` | `>=4.18.0 <4.22.0` |
+| `1.0` | `>=4.18.0 <4.23.0` |
 {: caption="Supported IBM Object CSI Driver add-on versions" caption-side="bottom"}
 
 

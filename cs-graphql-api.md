@@ -16,7 +16,7 @@ subcollection: containers
 The {{site.data.keyword.containerlong_notm}} GraphQL API is available at `https://containers.cloud.ibm.com/graphql`. Use this API to manage Satellite Connectors, Kubernetes clusters, and bare metal worker nodes programmatically.
 {: shortdesc}
 
-This page is auto-generated from the live schema. All field and argument names are case-sensitive.
+This page is auto-generated from the live schema.
 
 
 ## Queries
@@ -24,71 +24,6 @@ This page is auto-generated from the live schema. All field and argument names a
 
 Queries retrieve data without modifying any resources. Send a `POST` request to `https://containers.cloud.ibm.com/graphql` with your query in the request body.
 
-
-### `globalSearchSatelliteConnectorAccounts`
-{: #globalsearchsatelliteconnectoraccounts}
-
-Globally searchable results for the IBM Global Search service. Internal use only.
-{: shortdesc}
-
-Returns
-:   `GlobalSearchSatelliteConnectorAccountsConnection`
-
-| Argument | Description |
-| --- | --- |
-| `after` (`String`) |  |
-| `first` (`Int`) |  |
-| `last` (`Int`) |  |
-| `before` (`String`) |  |
-| `regionName` (`String!`) *(required)* |  |
-{: caption="Arguments for globalSearchSatelliteConnectorAccounts" caption-side="bottom"}
-
-
-#### Example request
-{: #example-request-globalsearchsatelliteconnectoraccounts}
-
-```sh
-curl -X POST https://containers.cloud.ibm.com/graphql \
-  -H "Authorization: Bearer $IAM_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-  "query": "query globalSearchSatelliteConnectorAccounts($after: String, $first: Int, $last: Int, $before: String, $regionName: String!) {\n  globalSearchSatelliteConnectorAccounts(after: $after, first: $first, last: $last, before: $before, regionName: $regionName) {\n    # \u2026 select your fields here\n  }\n}",
-  "variables": {
-    "after": "example-value",
-    "first": 0,
-    "last": 0,
-    "before": "example-value",
-    "regionName": "example-value"
-  }
-}'
-```
-
-
-#### Example response
-{: #example-response-globalsearchsatelliteconnectoraccounts}
-
-```json
-{
-  "data": {
-    "globalSearchSatelliteConnectorAccounts": {
-      "edges": [
-        {
-          "cursor": "example-value",
-          "node": {
-            "externalID": "example-value"
-          }
-        }
-      ],
-      "pageInfo": {
-        "endCursor": "example-value",
-        "hasNextPage": true,
-        "hasPreviousPage": true,
-        "startCursor": "example-value"
-      }
-    }
-  }
-}
-```
 
 
 ### `node`
