@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-09-18"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -76,7 +76,7 @@ Retrieve the IAM key or IBM Cloud infrastructure API key that is stored in the `
     softlayer_token_exchange_endpoint_url = "https://iam.cloud.ibm.com"
     
     [VPC]
-    g2_token_exchange_endpoint_url = "https://iam.bluemix.net"
+    g2_token_exchange_endpoint_url = "https://iam.cloud.ibm.com"
     g2_riaas_endpoint_url = "https://us-south.iaas.cloud.ibm.com"
     g2_riaas_endpoint_private_url = "https://us-south.private.iaas.cloud.ibm.com"
     g2_resource_group_id = "............"

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-09-18"
 
 
 keywords: openshift, block storage
@@ -132,7 +132,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
     [vpc]
     iam_client_id = "bx"
     iam_client_secret = "bx"
-    g2_token_exchange_endpoint_url = "https://iam.bluemix.net"
+    g2_token_exchange_endpoint_url = "https://iam.cloud.ibm.com"
     g2_riaas_endpoint_url = "<g2_riaas_endpoint>"
     g2_resource_group_id = "<resource_group_id>"
     g2_api_key = "<IAM_API_key>" 
