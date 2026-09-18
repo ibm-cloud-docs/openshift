@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-18"
 
 
 keywords: openshift
@@ -311,7 +311,6 @@ Allow outgoing network traffic from your worker nodes to {{site.data.keyword.reg
 
 Allow outgoing network traffic from your worker node to {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Your allowlist must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your allowlist does not support Layer 7, you can allow all HTTPS network traffic on port 443.
 
-- `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
 - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
 
 #### Optional: Allow outgoing network traffic from the worker nodes to {{site.data.keyword.mon_short}} and {{site.data.keyword.logs_full_notm}} services
