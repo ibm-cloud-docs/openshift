@@ -612,7 +612,7 @@ Implements
 | `macAddress` (`MACAddress`) | MAC address assigned to this network interface. |
 | `name` (`String`) | Human-readable name of the VNI. |
 | `primaryIPAddress` (`IPv4Address`) | Primary IPv4 address assigned to this network interface. |
-| `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface.<br><br>**Arguments for `securityGroups`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface. **Arguments for `securityGroups`** `after` (`String`) — Cursor to start fetching from. `first` (`Int`) — Maximum number of items to return. |
 | `subnet` (`Subnet!`) | The VPC subnet this network interface is connected to. |
 {: caption="Fields for BareMetalVirtualNetworkInterface" caption-side="top"}
 
@@ -642,7 +642,7 @@ Implements
 | --- | --- |
 | `id` (`ID!`) | The cluster's unique identifier. |
 | `name` (`String`) | The cluster's name. |
-| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this cluster (if applicable).<br><br>**Arguments for `networkAttachments`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this cluster (if applicable). **Arguments for `networkAttachments`** `after` (`String`) — Cursor to start fetching from. `first` (`Int`) — Maximum number of items to return. |
 | `region` (`Region`) | The cluster's IBM Cloud catalog region. |
 {: caption="Fields for KubernetesCluster" caption-side="top"}
 
@@ -805,7 +805,7 @@ Implements
 | Field | Description |
 | --- | --- |
 | `id` (`ID!`) | Globally unique identifier for this worker node. |
-| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this bare metal node.<br><br>**Arguments for `networkAttachments`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this bare metal node. **Arguments for `networkAttachments`** `after` (`String`) — Cursor to start fetching from. `first` (`Int`) — Maximum number of items to return. |
 | `region` (`Region`) |  |
 {: caption="Fields for VPCBareMetalKubernetesNode" caption-side="top"}
 
@@ -861,7 +861,7 @@ Implementations
 | Field | Description |
 | --- | --- |
 | `id` (`ID!`) | Globally unique identifier for this node. |
-| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments associated to this node.<br><br>**Arguments for `networkAttachments`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments associated to this node. **Arguments for `networkAttachments`** `after` (`String`) — Cursor to start fetching from. `first` (`Int`) — Maximum number of items to return. |
 {: caption="Fields for NetworkAttachable" caption-side="top"}
 
 
@@ -913,7 +913,7 @@ Implementations
 | `macAddress` (`MACAddress`) | MAC address assigned to this network interface. |
 | `name` (`String`) | Human-readable name of the VNI. |
 | `primaryIPAddress` (`IPv4Address`) | Primary IPv4 address assigned to this network interface. |
-| `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface.<br><br>**Arguments for `securityGroups`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface. **Arguments for `securityGroups`** `after` (`String`) — Cursor to start fetching from. `first` (`Int`) — Maximum number of items to return. |
 | `subnet` (`Subnet!`) | The VPC subnet this network interface is connected to. |
 {: caption="Fields for VirtualNetworkInterface" caption-side="top"}
 
