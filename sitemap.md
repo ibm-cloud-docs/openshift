@@ -8047,9 +8047,9 @@ subcollection: openshift
 {: #sitemap_api_reference}
 
 
-[Red Hat OpenShift on IBM Cloud REST API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
+[REST API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
 
-[Red Hat OpenShift on IBM Cloud GraphQL API reference](/docs/openshift?topic=openshift-cs-graphql-api#cs-graphql-api)
+[GraphQL API reference](/docs/openshift?topic=openshift-cs-graphql-api#cs-graphql-api)
 
 * [Queries](/docs/openshift?topic=openshift-cs-graphql-api#queries)
 
@@ -8151,7 +8151,7 @@ subcollection: openshift
 
     * [MACAddress](/docs/openshift?topic=openshift-cs-graphql-api#macaddress)
 
-[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index){: external}
+[OCP REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index){: external}
 
 
 ## Add-on version history

@@ -31,18 +31,21 @@ Queries retrieve data without modifying any resources. Send a `POST` request to 
 Globally searchable results for the IBM Global Search service. Internal use only.
 {: shortdesc}
 
-**Returns:** `GlobalSearchSatelliteConnectorAccountsConnection`
+Returns
+:   `GlobalSearchSatelliteConnectorAccountsConnection`
 
-**Arguments:**
-
-- `after`: `String`
-- `first`: `Int`
-- `last`: `Int`
-- `before`: `String`
-- `regionName`: `String!` *(required)*
+| Argument | Description |
+| --- | --- |
+| `after` (`String`) |  |
+| `first` (`Int`) |  |
+| `last` (`Int`) |  |
+| `before` (`String`) |  |
+| `regionName` (`String!`) *(required)* |  |
+{: caption="Arguments for globalSearchSatelliteConnectorAccounts" caption-side="top"}
 
 
 #### Example request
+{: #example-request-globalsearchsatelliteconnectoraccounts}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -62,6 +65,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-globalsearchsatelliteconnectoraccounts}
 
 ```json
 {
@@ -93,15 +97,17 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 Find a Node for the given ID. Use fragments to select additional fields.
 {: shortdesc}
 
-**Returns:** `Node`
+Returns
+:   `Node`
 
-**Arguments:**
-
-- `id`: `ID!` *(required)*
-  The globally unique node identifier.
+| Argument | Description |
+| --- | --- |
+| `id` (`ID!`) *(required)* | The globally unique node identifier. |
+{: caption="Arguments for node" caption-side="top"}
 
 
 #### Example request
+{: #example-request-node}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -117,6 +123,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-node}
 
 ```json
 {
@@ -133,21 +140,20 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 List the Satellite Connectors you have access to.
 {: shortdesc}
 
-**Returns:** `SatelliteConnectorConnection`
+Returns
+:   `SatelliteConnectorConnection`
 
-**Arguments:**
-
-- `after`: `String`
-  Return Satellite Connectors after this cursor.
-- `first`: `Int`
-  Return the first N Satellite Connectors.
-- `last`: `Int`
-  Return the last N Satellite Connectors.
-- `before`: `String`
-  Return Satellite Connectors before this cursor.
+| Argument | Description |
+| --- | --- |
+| `after` (`String`) | Return Satellite Connectors after this cursor. |
+| `first` (`Int`) | Return the first N Satellite Connectors. |
+| `last` (`Int`) | Return the last N Satellite Connectors. |
+| `before` (`String`) | Return Satellite Connectors before this cursor. |
+{: caption="Arguments for satelliteConnectors" caption-side="top"}
 
 
 #### Example request
+{: #example-request-satelliteconnectors}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -166,6 +172,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-satelliteconnectors}
 
 ```json
 {
@@ -217,15 +224,17 @@ Mutations create, update, or delete resources. Each mutation requires an IAM bea
 Adds a virtual network interface (VNI) to a bare metal Kubernetes worker node.
 {: shortdesc}
 
-**Returns:** `AddVirtualNetworkInterfaceToBareMetalNodePayload`
+Returns
+:   `AddVirtualNetworkInterfaceToBareMetalNodePayload`
 
-**Arguments:**
-
-- `input`: `AddVirtualNetworkInterfaceToBareMetalNodeInput!` *(required)*
-  Input parameters for adding the VNI to a bare metal node.
+| Argument | Description |
+| --- | --- |
+| `input` (`AddVirtualNetworkInterfaceToBareMetalNodeInput!`) *(required)* | Input parameters for adding the VNI to a bare metal node. |
+{: caption="Arguments for addVirtualNetworkInterfaceToBareMetalNode" caption-side="top"}
 
 
 #### Example request
+{: #example-request-addvirtualnetworkinterfacetobaremetalnode}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -241,6 +250,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-addvirtualnetworkinterfacetobaremetalnode}
 
 ```json
 {
@@ -259,14 +269,17 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 Create a Satellite Connector.
 {: shortdesc}
 
-**Returns:** `CreateSatelliteConnectorPayload`
+Returns
+:   `CreateSatelliteConnectorPayload`
 
-**Arguments:**
-
-- `input`: `CreateSatelliteConnectorInput`
+| Argument | Description |
+| --- | --- |
+| `input` (`CreateSatelliteConnectorInput`) |  |
+{: caption="Arguments for createSatelliteConnector" caption-side="top"}
 
 
 #### Example request
+{: #example-request-createsatelliteconnector}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -282,6 +295,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-createsatelliteconnector}
 
 ```json
 {
@@ -316,14 +330,17 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 Reinitialize a Kubernetes node. Not supported on VPC virtual server instances today.
 {: shortdesc}
 
-**Returns:** `ReinitializeKubernetesNodePayload`
+Returns
+:   `ReinitializeKubernetesNodePayload`
 
-**Arguments:**
-
-- `input`: `ReinitializeKubernetesNodeInput`
+| Argument | Description |
+| --- | --- |
+| `input` (`ReinitializeKubernetesNodeInput`) |  |
+{: caption="Arguments for reinitializeKubernetesNode" caption-side="top"}
 
 
 #### Example request
+{: #example-request-reinitializekubernetesnode}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -339,6 +356,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-reinitializekubernetesnode}
 
 ```json
 {
@@ -357,14 +375,17 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 Remove a Satellite Connector.
 {: shortdesc}
 
-**Returns:** `RemoveSatelliteConnectorPayload`
+Returns
+:   `RemoveSatelliteConnectorPayload`
 
-**Arguments:**
-
-- `input`: `RemoveSatelliteConnectorInput`
+| Argument | Description |
+| --- | --- |
+| `input` (`RemoveSatelliteConnectorInput`) |  |
+{: caption="Arguments for removeSatelliteConnector" caption-side="top"}
 
 
 #### Example request
+{: #example-request-removesatelliteconnector}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -380,6 +401,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-removesatelliteconnector}
 
 ```json
 {
@@ -414,15 +436,17 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 Removes a virtual network interface from a Kubernetes worker node.
 {: shortdesc}
 
-**Returns:** `RemoveVirtualNetworkInterfaceFromNodePayload`
+Returns
+:   `RemoveVirtualNetworkInterfaceFromNodePayload`
 
-**Arguments:**
-
-- `input`: `RemoveVirtualNetworkInterfaceFromNodeInput!` *(required)*
-  Input parameters for removing the VNI from a node.
+| Argument | Description |
+| --- | --- |
+| `input` (`RemoveVirtualNetworkInterfaceFromNodeInput!`) *(required)* | Input parameters for removing the VNI from a node. |
+{: caption="Arguments for removeVirtualNetworkInterfaceFromNode" caption-side="top"}
 
 
 #### Example request
+{: #example-request-removevirtualnetworkinterfacefromnode}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -438,6 +462,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-removevirtualnetworkinterfacefromnode}
 
 ```json
 {
@@ -480,14 +505,17 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 Update a Satellite Location.
 {: shortdesc}
 
-**Returns:** `UpdateSatelliteLocationPayload`
+Returns
+:   `UpdateSatelliteLocationPayload`
 
-**Arguments:**
-
-- `input`: `UpdateSatelliteLocationInput`
+| Argument | Description |
+| --- | --- |
+| `input` (`UpdateSatelliteLocationInput`) |  |
+{: caption="Arguments for updateSatelliteLocation" caption-side="top"}
 
 
 #### Example request
+{: #example-request-updatesatellitelocation}
 
 ```sh
 curl -X POST https://containers.cloud.ibm.com/graphql \
@@ -503,6 +531,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 
 
 #### Example response
+{: #example-response-updatesatellitelocation}
 
 ```json
 {
@@ -531,10 +560,10 @@ Object types represent the concrete resources and response payloads returned by 
 An IBM Cloud account.
 {: shortdesc}
 
-**Fields:**
-
-`externalID`: `String!`
-:   The account's IBM Cloud ID.
+| Field | Description |
+| --- | --- |
+| `externalID` (`String!`) | The account's IBM Cloud ID. |
+{: caption="Fields for Account" caption-side="top"}
 
 
 ### AddVirtualNetworkInterfaceToBareMetalNodePayload
@@ -543,10 +572,10 @@ An IBM Cloud account.
 Response payload for adding a VNI to a bare metal node.
 {: shortdesc}
 
-**Fields:**
-
-`networkAttachment`: `NetworkAttachment!`
-:   The created network attachment with its properties.
+| Field | Description |
+| --- | --- |
+| `networkAttachment` (`NetworkAttachment!`) | The created network attachment with its properties. |
+{: caption="Fields for AddVirtualNetworkInterfaceToBareMetalNodePayload" caption-side="top"}
 
 
 ### BareMetalNetworkAttachmentByVLAN
@@ -555,21 +584,16 @@ Response payload for adding a VNI to a bare metal node.
 Network attachment for bare metal nodes using VLAN tagging.
 {: shortdesc}
 
-**Implements:** `NetworkAttachment`
+Implements
+:   `NetworkAttachment`
 
-**Fields:**
-
-`attachedTo`: `NetworkAttachable!`
-:   The bare metal node this interface is attached to.
-
-`canFloat`: `Boolean!`
-:   Whether this attachment can float between nodes in the cluster.
-
-`virtualNetworkInterface`: `VirtualNetworkInterface!`
-:   The virtual network interface that is attached.
-
-`vlanID`: `Int`
-:   VLAN ID used for this attachment (2-500). Null if not yet assigned.
+| Field | Description |
+| --- | --- |
+| `attachedTo` (`NetworkAttachable!`) | The bare metal node this interface is attached to. |
+| `canFloat` (`Boolean!`) | Whether this attachment can float between nodes in the cluster. |
+| `virtualNetworkInterface` (`VirtualNetworkInterface!`) | The virtual network interface that is attached. |
+| `vlanID` (`Int`) | VLAN ID used for this attachment (2-500). Null if not yet assigned. |
+{: caption="Fields for BareMetalNetworkAttachmentByVLAN" caption-side="top"}
 
 
 ### BareMetalVirtualNetworkInterface
@@ -578,35 +602,19 @@ Network attachment for bare metal nodes using VLAN tagging.
 Virtual network interface attached to a bare metal server.
 {: shortdesc}
 
-**Implements:** `VirtualNetworkInterface`
+Implements
+:   `VirtualNetworkInterface`
 
-**Fields:**
-
-`autoDelete`: `Boolean`
-:   Whether the VNI should be automatically deleted when detached.
-
-`externalID`: `String!`
-:   The VPC resource ID of this VNI.
-
-`macAddress`: `MACAddress`
-:   MAC address assigned to this network interface.
-
-`name`: `String`
-:   Human-readable name of the VNI.
-
-`primaryIPAddress`: `IPv4Address`
-:   Primary IPv4 address assigned to this network interface.
-
-`securityGroups`: `SecurityGroupConnection`
-:   Security groups applied to this network interface.
-:   **Arguments:**
-:   `after`: `String`
-:       - Cursor to start fetching from.
-:   `first`: `Int`
-:       - Maximum number of items to return.
-
-`subnet`: `Subnet!`
-:   The VPC subnet this network interface is connected to.
+| Field | Description |
+| --- | --- |
+| `autoDelete` (`Boolean`) | Whether the VNI should be automatically deleted when detached. |
+| `externalID` (`String!`) | The VPC resource ID of this VNI. |
+| `macAddress` (`MACAddress`) | MAC address assigned to this network interface. |
+| `name` (`String`) | Human-readable name of the VNI. |
+| `primaryIPAddress` (`IPv4Address`) | Primary IPv4 address assigned to this network interface. |
+| `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface.<br><br>**Arguments for `securityGroups`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `subnet` (`Subnet!`) | The VPC subnet this network interface is connected to. |
+{: caption="Fields for BareMetalVirtualNetworkInterface" caption-side="top"}
 
 
 ### CreateSatelliteConnectorPayload
@@ -615,10 +623,10 @@ Virtual network interface attached to a bare metal server.
 Output type for createSatelliteConnector.
 {: shortdesc}
 
-**Fields:**
-
-`satelliteConnector`: `SatelliteConnector`
-:   The new SatelliteConnector.
+| Field | Description |
+| --- | --- |
+| `satelliteConnector` (`SatelliteConnector`) | The new SatelliteConnector. |
+{: caption="Fields for CreateSatelliteConnectorPayload" caption-side="top"}
 
 
 ### KubernetesCluster
@@ -627,26 +635,16 @@ Output type for createSatelliteConnector.
 An IBM Cloud Kubernetes Service or IBM Cloud OpenShift Service cluster.
 {: shortdesc}
 
-**Implements:** `Node`
+Implements
+:   `Node`
 
-**Fields:**
-
-`id`: `ID!`
-:   The cluster's unique identifier.
-
-`name`: `String`
-:   The cluster's name.
-
-`networkAttachments`: `NetworkAttachmentConnection`
-:   Network attachments for this cluster (if applicable).
-:   **Arguments:**
-:   `after`: `String`
-:       - Cursor to start fetching from.
-:   `first`: `Int`
-:       - Maximum number of items to return.
-
-`region`: `Region`
-:   The cluster's IBM Cloud catalog region.
+| Field | Description |
+| --- | --- |
+| `id` (`ID!`) | The cluster's unique identifier. |
+| `name` (`String`) | The cluster's name. |
+| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this cluster (if applicable).<br><br>**Arguments for `networkAttachments`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `region` (`Region`) | The cluster's IBM Cloud catalog region. |
+{: caption="Fields for KubernetesCluster" caption-side="top"}
 
 
 ### Region
@@ -655,18 +653,15 @@ An IBM Cloud Kubernetes Service or IBM Cloud OpenShift Service cluster.
 An IBM Cloud catalog region.
 {: shortdesc}
 
-**Implements:** `Location`, `Node`
+Implements
+:   `Location`, `Node`
 
-**Fields:**
-
-`displayName`: `String`
-:   The translated name of this region.
-
-`id`: `ID!`
-:   The ID of this region.
-
-`name`: `String`
-:   The name of this region.
+| Field | Description |
+| --- | --- |
+| `displayName` (`String`) | The translated name of this region. |
+| `id` (`ID!`) | The ID of this region. |
+| `name` (`String`) | The name of this region. |
+{: caption="Fields for Region" caption-side="top"}
 
 
 ### ReinitializeKubernetesNodePayload
@@ -675,10 +670,10 @@ An IBM Cloud catalog region.
 Output type for reinitializeKubernetesNode.
 {: shortdesc}
 
-**Fields:**
-
-`node`: `KubernetesNode`
-:   The reinitializing Kubernetes node.
+| Field | Description |
+| --- | --- |
+| `node` (`KubernetesNode`) | The reinitializing Kubernetes node. |
+{: caption="Fields for ReinitializeKubernetesNodePayload" caption-side="top"}
 
 
 ### RemoveSatelliteConnectorPayload
@@ -687,10 +682,10 @@ Output type for reinitializeKubernetesNode.
 Output type for removeSatelliteConnector.
 {: shortdesc}
 
-**Fields:**
-
-`satelliteConnector`: `SatelliteConnector`
-:   The removed SatelliteConnector.
+| Field | Description |
+| --- | --- |
+| `satelliteConnector` (`SatelliteConnector`) | The removed SatelliteConnector. |
+{: caption="Fields for RemoveSatelliteConnectorPayload" caption-side="top"}
 
 
 ### RemoveVirtualNetworkInterfaceFromNodePayload
@@ -699,16 +694,12 @@ Output type for removeSatelliteConnector.
 Response payload for removing a VNI from a node.
 {: shortdesc}
 
-**Fields:**
-
-`cluster`: `KubernetesCluster!`
-:   The cluster the VNI was removed from.
-
-`node`: `NetworkAttachable!`
-:   The node the VNI was removed from.
-
-`virtualNetworkInterface`: `VirtualNetworkInterface!`
-:   The virtual network interface that was removed.
+| Field | Description |
+| --- | --- |
+| `cluster` (`KubernetesCluster!`) | The cluster the VNI was removed from. |
+| `node` (`NetworkAttachable!`) | The node the VNI was removed from. |
+| `virtualNetworkInterface` (`VirtualNetworkInterface!`) | The virtual network interface that was removed. |
+{: caption="Fields for RemoveVirtualNetworkInterfaceFromNodePayload" caption-side="top"}
 
 
 ### ResourceGroup
@@ -717,18 +708,15 @@ Response payload for removing a VNI from a node.
 A ResourceGroup is a way for you to organize your account resources in customizable groupings so that you can quickly assign users access to multiple resources at a time.
 {: shortdesc}
 
-**Implements:** `Node`
+Implements
+:   `Node`
 
-**Fields:**
-
-`externalID`: `String!`
-:   The resource group's IBM Cloud ID.
-
-`id`: `ID!`
-:   The resource group's Node ID.
-
-`name`: `String`
-:   The resource group's name.
+| Field | Description |
+| --- | --- |
+| `externalID` (`String!`) | The resource group's IBM Cloud ID. |
+| `id` (`ID!`) | The resource group's Node ID. |
+| `name` (`String`) | The resource group's name. |
+{: caption="Fields for ResourceGroup" caption-side="top"}
 
 
 ### SatelliteConnector
@@ -737,30 +725,19 @@ A ResourceGroup is a way for you to organize your account resources in customiza
 A Satellite Connector provides a secure connection between a specific remote location and IBM Cloud.
 {: shortdesc}
 
-**Implements:** `Node`
+Implements
+:   `Node`
 
-**Fields:**
-
-`createdDate`: `DateTime`
-:   The date when this resource was created.
-
-`crn`: `CloudResourceName`
-:   The resource's IBM Cloud CRN.
-
-`id`: `ID!`
-:   The resource's unique identifier.
-
-`name`: `String!`
-:   The resource's name.
-
-`region`: `Region`
-:   The region the resource is managed from.
-
-`resourceGroup`: `ResourceGroup`
-:   The resource group containing this resource.
-
-`state`: `SatelliteConnectorState`
-:   The current state of this resource.
+| Field | Description |
+| --- | --- |
+| `createdDate` (`DateTime`) | The date when this resource was created. |
+| `crn` (`CloudResourceName`) | The resource's IBM Cloud CRN. |
+| `id` (`ID!`) | The resource's unique identifier. |
+| `name` (`String!`) | The resource's name. |
+| `region` (`Region`) | The region the resource is managed from. |
+| `resourceGroup` (`ResourceGroup`) | The resource group containing this resource. |
+| `state` (`SatelliteConnectorState`) | The current state of this resource. |
+{: caption="Fields for SatelliteConnector" caption-side="top"}
 
 
 ### SatelliteLocation
@@ -769,18 +746,15 @@ A Satellite Connector provides a secure connection between a specific remote loc
 A Satellite Location.
 {: shortdesc}
 
-**Implements:** `Node`
+Implements
+:   `Node`
 
-**Fields:**
-
-`description`: `String`
-:   The Location description.
-
-`id`: `ID!`
-:   The resource's unique identifier.
-
-`name`: `String`
-:   The Location name.
+| Field | Description |
+| --- | --- |
+| `description` (`String`) | The Location description. |
+| `id` (`ID!`) | The resource's unique identifier. |
+| `name` (`String`) | The Location name. |
+{: caption="Fields for SatelliteLocation" caption-side="top"}
 
 
 ### SecurityGroup
@@ -789,10 +763,10 @@ A Satellite Location.
 Represents a VPC security group.
 {: shortdesc}
 
-**Fields:**
-
-`externalID`: `String!`
-:   The VPC resource ID of this security group.
+| Field | Description |
+| --- | --- |
+| `externalID` (`String!`) | The VPC resource ID of this security group. |
+{: caption="Fields for SecurityGroup" caption-side="top"}
 
 
 ### Subnet
@@ -801,10 +775,10 @@ Represents a VPC security group.
 Represents a VPC subnet.
 {: shortdesc}
 
-**Fields:**
-
-`externalID`: `String!`
-:   The VPC resource ID of this subnet.
+| Field | Description |
+| --- | --- |
+| `externalID` (`String!`) | The VPC resource ID of this subnet. |
+{: caption="Fields for Subnet" caption-side="top"}
 
 
 ### UpdateSatelliteLocationPayload
@@ -813,10 +787,10 @@ Represents a VPC subnet.
 Output type for updateSatelliteLocation.
 {: shortdesc}
 
-**Fields:**
-
-`satelliteLocation`: `SatelliteLocation`
-:   The updated SatelliteLocation.
+| Field | Description |
+| --- | --- |
+| `satelliteLocation` (`SatelliteLocation`) | The updated SatelliteLocation. |
+{: caption="Fields for UpdateSatelliteLocationPayload" caption-side="top"}
 
 
 ### VPCBareMetalKubernetesNode
@@ -825,22 +799,15 @@ Output type for updateSatelliteLocation.
 Represents a bare metal Kubernetes worker node in IBM Cloud VPC.
 {: shortdesc}
 
-**Implements:** `KubernetesNode`, `NetworkAttachable`, `Node`
+Implements
+:   `KubernetesNode`, `NetworkAttachable`, `Node`
 
-**Fields:**
-
-`id`: `ID!`
-:   Globally unique identifier for this worker node.
-
-`networkAttachments`: `NetworkAttachmentConnection`
-:   Network attachments for this bare metal node.
-:   **Arguments:**
-:   `after`: `String`
-:       - Cursor to start fetching from.
-:   `first`: `Int`
-:       - Maximum number of items to return.
-
-`region`: `Region`
+| Field | Description |
+| --- | --- |
+| `id` (`ID!`) | Globally unique identifier for this worker node. |
+| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this bare metal node.<br><br>**Arguments for `networkAttachments`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `region` (`Region`) |  |
+{: caption="Fields for VPCBareMetalKubernetesNode" caption-side="top"}
 
 
 ## Interface types
@@ -855,14 +822,14 @@ Interface types define common fields that are shared across multiple concrete ob
 A Kubernetes Node runs your workload.
 {: shortdesc}
 
-**Implementations:** `KubernetesNode`, `VPCBareMetalKubernetesNode`
+Implementations
+:   `KubernetesNode`, `VPCBareMetalKubernetesNode`
 
-**Fields:**
-
-`id`: `ID!`
-:   The resource's unique identifier.
-
-`region`: `Region`
+| Field | Description |
+| --- | --- |
+| `id` (`ID!`) | The resource's unique identifier. |
+| `region` (`Region`) |  |
+{: caption="Fields for KubernetesNode" caption-side="top"}
 
 
 ### Location
@@ -871,18 +838,15 @@ A Kubernetes Node runs your workload.
 An IBM Cloud catalog location.
 {: shortdesc}
 
-**Implementations:** `Location`, `Region`
+Implementations
+:   `Location`, `Region`
 
-**Fields:**
-
-`displayName`: `String`
-:   Translated name of this location.
-
-`id`: `ID!`
-:   The ID of this location.
-
-`name`: `String`
-:   Name of this location.
+| Field | Description |
+| --- | --- |
+| `displayName` (`String`) | Translated name of this location. |
+| `id` (`ID!`) | The ID of this location. |
+| `name` (`String`) | Name of this location. |
+{: caption="Fields for Location" caption-side="top"}
 
 
 ### NetworkAttachable
@@ -891,20 +855,14 @@ An IBM Cloud catalog location.
 Represents an entity that can have network interfaces attached to it.
 {: shortdesc}
 
-**Implementations:** `NetworkAttachable`
+Implementations
+:   `NetworkAttachable`
 
-**Fields:**
-
-`id`: `ID!`
-:   Globally unique identifier for this node.
-
-`networkAttachments`: `NetworkAttachmentConnection`
-:   Network attachments associated to this node.
-:   **Arguments:**
-:   `after`: `String`
-:       - Cursor to start fetching from.
-:   `first`: `Int`
-:       - Maximum number of items to return.
+| Field | Description |
+| --- | --- |
+| `id` (`ID!`) | Globally unique identifier for this node. |
+| `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments associated to this node.<br><br>**Arguments for `networkAttachments`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+{: caption="Fields for NetworkAttachable" caption-side="top"}
 
 
 ### NetworkAttachment
@@ -913,15 +871,14 @@ Represents an entity that can have network interfaces attached to it.
 Represents a network interface attachment to a node.
 {: shortdesc}
 
-**Implementations:** `BareMetalNetworkAttachmentByVLAN`, `NetworkAttachment`
+Implementations
+:   `BareMetalNetworkAttachmentByVLAN`, `NetworkAttachment`
 
-**Fields:**
-
-`attachedTo`: `NetworkAttachable!`
-:   The node this network interface is attached to.
-
-`virtualNetworkInterface`: `VirtualNetworkInterface!`
-:   The virtual network interface that is attached.
+| Field | Description |
+| --- | --- |
+| `attachedTo` (`NetworkAttachable!`) | The node this network interface is attached to. |
+| `virtualNetworkInterface` (`VirtualNetworkInterface!`) | The virtual network interface that is attached. |
+{: caption="Fields for NetworkAttachment" caption-side="top"}
 
 
 ### Node
@@ -930,12 +887,13 @@ Represents a network interface attachment to a node.
 Fetches an object given its ID.
 {: shortdesc}
 
-**Implementations:** `KubernetesCluster`, `KubernetesNode`, `NetworkAttachable`, `Node`, `Region`, `ResourceGroup`, `SatelliteConnector`, `SatelliteLocation`, `VPCBareMetalKubernetesNode`
+Implementations
+:   `KubernetesCluster`, `KubernetesNode`, `NetworkAttachable`, `Node`, `Region`, `ResourceGroup`, `SatelliteConnector`, `SatelliteLocation`, `VPCBareMetalKubernetesNode`
 
-**Fields:**
-
-`id`: `ID!`
-:   The globally unique object ID.
+| Field | Description |
+| --- | --- |
+| `id` (`ID!`) | The globally unique object ID. |
+{: caption="Fields for Node" caption-side="top"}
 
 
 ### VirtualNetworkInterface
@@ -945,35 +903,19 @@ Represents a virtual network interface in IBM Cloud VPC.
 Can be attached to bare metal or virtual server instances.
 {: shortdesc}
 
-**Implementations:** `BareMetalVirtualNetworkInterface`, `VirtualNetworkInterface`
+Implementations
+:   `BareMetalVirtualNetworkInterface`, `VirtualNetworkInterface`
 
-**Fields:**
-
-`autoDelete`: `Boolean`
-:   Whether the VNI should be automatically deleted when detached.
-
-`externalID`: `String!`
-:   The VPC resource ID of this virtual network interface.
-
-`macAddress`: `MACAddress`
-:   MAC address assigned to this network interface.
-
-`name`: `String`
-:   Human-readable name of the VNI.
-
-`primaryIPAddress`: `IPv4Address`
-:   Primary IPv4 address assigned to this network interface.
-
-`securityGroups`: `SecurityGroupConnection`
-:   Security groups applied to this network interface.
-:   **Arguments:**
-:   `after`: `String`
-:       - Cursor to start fetching from.
-:   `first`: `Int`
-:       - Maximum number of items to return.
-
-`subnet`: `Subnet!`
-:   The VPC subnet this network interface is connected to.
+| Field | Description |
+| --- | --- |
+| `autoDelete` (`Boolean`) | Whether the VNI should be automatically deleted when detached. |
+| `externalID` (`String!`) | The VPC resource ID of this virtual network interface. |
+| `macAddress` (`MACAddress`) | MAC address assigned to this network interface. |
+| `name` (`String`) | Human-readable name of the VNI. |
+| `primaryIPAddress` (`IPv4Address`) | Primary IPv4 address assigned to this network interface. |
+| `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface.<br><br>**Arguments for `securityGroups`**<br>- `after` (`String`)<br>  Cursor to start fetching from.<br>- `first` (`Int`)<br>  Maximum number of items to return. |
+| `subnet` (`Subnet!`) | The VPC subnet this network interface is connected to. |
+{: caption="Fields for VirtualNetworkInterface" caption-side="top"}
 
 
 ## Input types
@@ -988,26 +930,14 @@ Input types are used as arguments to mutations. Fields marked *(required)* must 
 Input for adding a VNI to a bare metal node.
 {: shortdesc}
 
-**Input fields:**
-
-`autoDelete`: `Boolean`
-:   Whether to automatically delete the VNI from VPC when it is detached.
-Defaults to false if not specified.
-
-`cluster`: `ID`
-:   Cluster ID. Either cluster or node must be specified, but not both.
-If only cluster is provided, a node will be auto-selected and the attachment will float.
-
-`node`: `ID`
-:   Node ID. Either cluster or node must be specified, but not both.
-If specified, creates a non-floating attachment to this specific node.
-
-`virtualNetworkInterfaceID`: `String!` *(required)*
-:   The VPC resource ID of the virtual network interface to attach.
-
-`vlanID`: `Int!` *(required)*
-:   VLAN ID for the attachment (2-500).
-VLAN 1 is reserved for the primary network interface.
+| Field | Description |
+| --- | --- |
+| `autoDelete` (`Boolean`) | Whether to automatically delete the VNI from VPC when it is detached. Defaults to false if not specified. |
+| `cluster` (`ID`) | Cluster ID. Either cluster or node must be specified, but not both. If only cluster is provided, a node will be auto-selected and the attachment will float. |
+| `node` (`ID`) | Node ID. Either cluster or node must be specified, but not both. If specified, creates a non-floating attachment to this specific node. |
+| `virtualNetworkInterfaceID` (`String!`) *(required)* | The VPC resource ID of the virtual network interface to attach. |
+| `vlanID` (`Int!`) *(required)* | VLAN ID for the attachment (2-500). VLAN 1 is reserved for the primary network interface. |
+{: caption="Input fields for AddVirtualNetworkInterfaceToBareMetalNodeInput" caption-side="top"}
 
 
 ### CreateSatelliteConnectorInput
@@ -1016,16 +946,12 @@ VLAN 1 is reserved for the primary network interface.
 Details needed to provision a Satellite Connector.
 {: shortdesc}
 
-**Input fields:**
-
-`name`: `String!` *(required)*
-:   The resource's name.
-
-`regionName`: `String!` *(required)*
-:   The region name indicating where the new connector should be managed from.
-
-`resourceGroupID`: `String!` *(required)*
-:   The resource group ID to provision inside.
+| Field | Description |
+| --- | --- |
+| `name` (`String!`) *(required)* | The resource's name. |
+| `regionName` (`String!`) *(required)* | The region name indicating where the new connector should be managed from. |
+| `resourceGroupID` (`String!`) *(required)* | The resource group ID to provision inside. |
+{: caption="Input fields for CreateSatelliteConnectorInput" caption-side="top"}
 
 
 ### ReinitializeKubernetesNodeInput
@@ -1034,13 +960,11 @@ Details needed to provision a Satellite Connector.
 Input type for reinitializeKubernetesNode.
 {: shortdesc}
 
-**Input fields:**
-
-`bypassUnhealthyControlPlane`: `Boolean`
-:   Set to true to proceed with reinitialization, even when the cluster's control plane is unhealthy.
-
-`id`: `ID!` *(required)*
-:   Kubernetes node to reinitialize.
+| Field | Description |
+| --- | --- |
+| `bypassUnhealthyControlPlane` (`Boolean`) | Set to true to proceed with reinitialization, even when the cluster's control plane is unhealthy. |
+| `id` (`ID!`) *(required)* | Kubernetes node to reinitialize. |
+{: caption="Input fields for ReinitializeKubernetesNodeInput" caption-side="top"}
 
 
 ### RemoveSatelliteConnectorInput
@@ -1049,10 +973,10 @@ Input type for reinitializeKubernetesNode.
 Input type for removeSatelliteConnector.
 {: shortdesc}
 
-**Input fields:**
-
-`id`: `ID!` *(required)*
-:   Satellite Connector ID to remove.
+| Field | Description |
+| --- | --- |
+| `id` (`ID!`) *(required)* | Satellite Connector ID to remove. |
+{: caption="Input fields for RemoveSatelliteConnectorInput" caption-side="top"}
 
 
 ### RemoveVirtualNetworkInterfaceFromNodeInput
@@ -1061,16 +985,12 @@ Input type for removeSatelliteConnector.
 Input for removing a VNI from a node.
 {: shortdesc}
 
-**Input fields:**
-
-`cluster`: `ID`
-:   Cluster ID. Either cluster or node must be specified, but not both.
-
-`node`: `ID`
-:   Node ID. Either cluster or node must be specified, but not both.
-
-`virtualNetworkInterfaceID`: `String!` *(required)*
-:   The VPC resource ID of the virtual network interface to remove.
+| Field | Description |
+| --- | --- |
+| `cluster` (`ID`) | Cluster ID. Either cluster or node must be specified, but not both. |
+| `node` (`ID`) | Node ID. Either cluster or node must be specified, but not both. |
+| `virtualNetworkInterfaceID` (`String!`) *(required)* | The VPC resource ID of the virtual network interface to remove. |
+{: caption="Input fields for RemoveVirtualNetworkInterfaceFromNodeInput" caption-side="top"}
 
 
 ### UpdateSatelliteLocationInput
@@ -1079,14 +999,12 @@ Input for removing a VNI from a node.
 Input type for updateSatelliteLocation.
 {: shortdesc}
 
-**Input fields:**
-
-`description`: `String`
-
-`id`: `ID!` *(required)*
-:   Satellite Location ID to update.
-
-`name`: `String`
+| Field | Description |
+| --- | --- |
+| `description` (`String`) |  |
+| `id` (`ID!`) *(required)* | Satellite Location ID to update. |
+| `name` (`String`) |  |
+{: caption="Input fields for UpdateSatelliteLocationInput" caption-side="top"}
 
 
 ## Enum types
@@ -1103,16 +1021,13 @@ The administrative state of a Satellite Connector.
 The values are expected to expand in the future. When processing, check for and log unknown values. Optionally halt processing and surface the error, or bypass the Satellite Connector on which the unexpected value was encountered.
 {: shortdesc}
 
-**Values:**
-
-- `CREATED`
-  The connector has completed provisioning and is ready to use.
-- `CREATING`
-  The connector is provisioning and may not be ready to use.
-- `DELETING`
-  The connector is deprovisioning and may be unavailable.
-- `FAILED`
-  The connector's most recent operation has failed and it must be deleted to continue.
+| Value | Description |
+| --- | --- |
+| `CREATED` | The connector has completed provisioning and is ready to use. |
+| `CREATING` | The connector is provisioning and may not be ready to use. |
+| `DELETING` | The connector is deprovisioning and may be unavailable. |
+| `FAILED` | The connector's most recent operation has failed and it must be deleted to continue. |
+{: caption="Values for SatelliteConnectorState" caption-side="top"}
 
 
 ## Scalar types
