@@ -8047,7 +8047,109 @@ subcollection: openshift
 {: #sitemap_api_reference}
 
 
-[Red Hat OpenShift on IBM Cloud API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
+[Red Hat OpenShift on IBM Cloud REST API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
+
+[Red Hat OpenShift on IBM Cloud GraphQL API reference](/docs/openshift?topic=openshift-cs-graphql-api#cs-graphql-api)
+
+* [Queries](/docs/openshift?topic=openshift-cs-graphql-api#queries)
+
+    * [`globalSearchSatelliteConnectorAccounts`](/docs/openshift?topic=openshift-cs-graphql-api#globalsearchsatelliteconnectoraccounts)
+
+    * [`node`](/docs/openshift?topic=openshift-cs-graphql-api#node)
+
+    * [`satelliteConnectors`](/docs/openshift?topic=openshift-cs-graphql-api#satelliteconnectors)
+
+* [Mutations](/docs/openshift?topic=openshift-cs-graphql-api#mutations)
+
+    * [`addVirtualNetworkInterfaceToBareMetalNode`](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnode)
+
+    * [`createSatelliteConnector`](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnector)
+
+    * [`reinitializeKubernetesNode`](/docs/openshift?topic=openshift-cs-graphql-api#reinitializekubernetesnode)
+
+    * [`removeSatelliteConnector`](/docs/openshift?topic=openshift-cs-graphql-api#removesatelliteconnector)
+
+    * [`removeVirtualNetworkInterfaceFromNode`](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnode)
+
+    * [`updateSatelliteLocation`](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocation)
+
+* [Object types](/docs/openshift?topic=openshift-cs-graphql-api#object-types)
+
+    * [Account](/docs/openshift?topic=openshift-cs-graphql-api#account)
+
+    * [AddVirtualNetworkInterfaceToBareMetalNodePayload](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnodepayload)
+
+    * [BareMetalNetworkAttachmentByVLAN](/docs/openshift?topic=openshift-cs-graphql-api#baremetalnetworkattachmentbyvlan)
+
+    * [BareMetalVirtualNetworkInterface](/docs/openshift?topic=openshift-cs-graphql-api#baremetalvirtualnetworkinterface)
+
+    * [CreateSatelliteConnectorPayload](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnectorpayload)
+
+    * [KubernetesCluster](/docs/openshift?topic=openshift-cs-graphql-api#kubernetescluster)
+
+    * [Region](/docs/openshift?topic=openshift-cs-graphql-api#region)
+
+    * [ReinitializeKubernetesNodePayload](/docs/openshift?topic=openshift-cs-graphql-api#reinitializekubernetesnodepayload)
+
+    * [RemoveSatelliteConnectorPayload](/docs/openshift?topic=openshift-cs-graphql-api#removesatelliteconnectorpayload)
+
+    * [RemoveVirtualNetworkInterfaceFromNodePayload](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnodepayload)
+
+    * [ResourceGroup](/docs/openshift?topic=openshift-cs-graphql-api#resourcegroup)
+
+    * [SatelliteConnector](/docs/openshift?topic=openshift-cs-graphql-api#satelliteconnector)
+
+    * [SatelliteLocation](/docs/openshift?topic=openshift-cs-graphql-api#satellitelocation)
+
+    * [SecurityGroup](/docs/openshift?topic=openshift-cs-graphql-api#securitygroup)
+
+    * [Subnet](/docs/openshift?topic=openshift-cs-graphql-api#subnet)
+
+    * [UpdateSatelliteLocationPayload](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocationpayload)
+
+    * [VPCBareMetalKubernetesNode](/docs/openshift?topic=openshift-cs-graphql-api#vpcbaremetalkubernetesnode)
+
+* [Interface types](/docs/openshift?topic=openshift-cs-graphql-api#interface-types)
+
+    * [KubernetesNode](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesnode)
+
+    * [Location](/docs/openshift?topic=openshift-cs-graphql-api#location)
+
+    * [NetworkAttachable](/docs/openshift?topic=openshift-cs-graphql-api#networkattachable)
+
+    * [NetworkAttachment](/docs/openshift?topic=openshift-cs-graphql-api#networkattachment)
+
+    * [Node](/docs/openshift?topic=openshift-cs-graphql-api#node)
+
+    * [VirtualNetworkInterface](/docs/openshift?topic=openshift-cs-graphql-api#virtualnetworkinterface)
+
+* [Input types](/docs/openshift?topic=openshift-cs-graphql-api#input-types)
+
+    * [AddVirtualNetworkInterfaceToBareMetalNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnodeinput)
+
+    * [CreateSatelliteConnectorInput](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnectorinput)
+
+    * [ReinitializeKubernetesNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#reinitializekubernetesnodeinput)
+
+    * [RemoveSatelliteConnectorInput](/docs/openshift?topic=openshift-cs-graphql-api#removesatelliteconnectorinput)
+
+    * [RemoveVirtualNetworkInterfaceFromNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnodeinput)
+
+    * [UpdateSatelliteLocationInput](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocationinput)
+
+* [Enum types](/docs/openshift?topic=openshift-cs-graphql-api#enum-types)
+
+    * [SatelliteConnectorState](/docs/openshift?topic=openshift-cs-graphql-api#satelliteconnectorstate)
+
+* [Scalar types](/docs/openshift?topic=openshift-cs-graphql-api#scalar-types)
+
+    * [CloudResourceName](/docs/openshift?topic=openshift-cs-graphql-api#cloudresourcename)
+
+    * [DateTime](/docs/openshift?topic=openshift-cs-graphql-api#datetime)
+
+    * [IPv4Address](/docs/openshift?topic=openshift-cs-graphql-api#ipv4address)
+
+    * [MACAddress](/docs/openshift?topic=openshift-cs-graphql-api#macaddress)
 
 [OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index){: external}
 

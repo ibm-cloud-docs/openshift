@@ -50,7 +50,7 @@ keyword:
   kubernetes_134_deprecated: 'True'
   kubernetes_134_release_date: 20 November 2025
   kubernetes_134_unsupported_certainty: tentative
-  kubernetes_134_unsupported_date: 01 November 2026
+  kubernetes_134_unsupported_date: 20 January 2027
   kubernetes_135_deprecated: 'False'
   kubernetes_135_release_date: 05 March 2026
   kubernetes_135_unsupported_certainty: tentative

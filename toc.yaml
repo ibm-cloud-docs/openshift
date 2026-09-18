@@ -513,8 +513,10 @@ toc:
           label: API reference
           topics:
           - link:
-              label: Red Hat OpenShift on IBM Cloud API
+              label: Red Hat OpenShift on IBM Cloud REST API
               href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2
+          - topic: cs-graphql-api.md
+            navtitle: Red Hat OpenShift on IBM Cloud GraphQL API reference
           - link:
               label: OpenShift Container Platform REST API
               href: https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index
