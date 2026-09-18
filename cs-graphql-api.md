@@ -42,6 +42,51 @@ Globally searchable results for the IBM Global Search service. Internal use only
 - `regionName`: `String!` *(required)*
 
 
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "query globalSearchSatelliteConnectorAccounts($after: String, $first: Int, $last: Int, $before: String, $regionName: String!) {\n  globalSearchSatelliteConnectorAccounts(after: $after, first: $first, last: $last, before: $before, regionName: $regionName) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "after": "example-value",
+    "first": 0,
+    "last": 0,
+    "before": "example-value",
+    "regionName": "example-value"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "globalSearchSatelliteConnectorAccounts": {
+      "edges": [
+        {
+          "cursor": "example-value",
+          "node": {
+            "externalID": "example-value"
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "example-value",
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "startCursor": "example-value"
+      }
+    }
+  }
+}
+```
+
+
 ### `node`
 {: #node}
 
@@ -54,6 +99,32 @@ Find a Node for the given ID. Use fragments to select additional fields.
 
 - `id`: `ID!` *(required)*
   The globally unique node identifier.
+
+
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "query node($id: ID!) {\n  node(id: $id) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "id": "abc123"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "node": "<Node>"
+  }
+}
+```
 
 
 ### `satelliteConnectors`
@@ -76,6 +147,64 @@ List the Satellite Connectors you have access to.
   Return Satellite Connectors before this cursor.
 
 
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "query satelliteConnectors($after: String, $first: Int, $last: Int, $before: String) {\n  satelliteConnectors(after: $after, first: $first, last: $last, before: $before) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "after": "example-value",
+    "first": 0,
+    "last": 0,
+    "before": "example-value"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "satelliteConnectors": {
+      "edges": [
+        {
+          "cursor": "example-value",
+          "node": {
+            "createdDate": "2025-01-01T00:00:00Z",
+            "crn": "<CloudResourceName>",
+            "id": "abc123",
+            "name": "example-value",
+            "region": {
+              "displayName": "...",
+              "id": "...",
+              "name": "..."
+            },
+            "resourceGroup": {
+              "externalID": "...",
+              "id": "...",
+              "name": "..."
+            },
+            "state": "CREATED"
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "example-value",
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "startCursor": "example-value"
+      }
+    }
+  }
+}
+```
+
+
 ## Mutations
 {: #mutations}
 
@@ -96,6 +225,34 @@ Adds a virtual network interface (VNI) to a bare metal Kubernetes worker node.
   Input parameters for adding the VNI to a bare metal node.
 
 
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation addVirtualNetworkInterfaceToBareMetalNode($input: AddVirtualNetworkInterfaceToBareMetalNodeInput!) {\n  addVirtualNetworkInterfaceToBareMetalNode(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "input": "<AddVirtualNetworkInterfaceToBareMetalNodeInput>"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "addVirtualNetworkInterfaceToBareMetalNode": {
+      "networkAttachment": "<NetworkAttachment>"
+    }
+  }
+}
+```
+
+
 ### `createSatelliteConnector`
 {: #createsatelliteconnector}
 
@@ -107,6 +264,50 @@ Create a Satellite Connector.
 **Arguments:**
 
 - `input`: `CreateSatelliteConnectorInput`
+
+
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation createSatelliteConnector($input: CreateSatelliteConnectorInput) {\n  createSatelliteConnector(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "input": "<CreateSatelliteConnectorInput>"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "createSatelliteConnector": {
+      "satelliteConnector": {
+        "createdDate": "2025-01-01T00:00:00Z",
+        "crn": "<CloudResourceName>",
+        "id": "abc123",
+        "name": "example-value",
+        "region": {
+          "displayName": "example-value",
+          "id": "abc123",
+          "name": "example-value"
+        },
+        "resourceGroup": {
+          "externalID": "example-value",
+          "id": "abc123",
+          "name": "example-value"
+        },
+        "state": "CREATED"
+      }
+    }
+  }
+}
+```
 
 
 ### `reinitializeKubernetesNode`
@@ -122,6 +323,34 @@ Reinitialize a Kubernetes node. Not supported on VPC virtual server instances to
 - `input`: `ReinitializeKubernetesNodeInput`
 
 
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation reinitializeKubernetesNode($input: ReinitializeKubernetesNodeInput) {\n  reinitializeKubernetesNode(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "input": "<ReinitializeKubernetesNodeInput>"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "reinitializeKubernetesNode": {
+      "node": "<KubernetesNode>"
+    }
+  }
+}
+```
+
+
 ### `removeSatelliteConnector`
 {: #removesatelliteconnector}
 
@@ -133,6 +362,50 @@ Remove a Satellite Connector.
 **Arguments:**
 
 - `input`: `RemoveSatelliteConnectorInput`
+
+
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation removeSatelliteConnector($input: RemoveSatelliteConnectorInput) {\n  removeSatelliteConnector(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "input": "<RemoveSatelliteConnectorInput>"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "removeSatelliteConnector": {
+      "satelliteConnector": {
+        "createdDate": "2025-01-01T00:00:00Z",
+        "crn": "<CloudResourceName>",
+        "id": "abc123",
+        "name": "example-value",
+        "region": {
+          "displayName": "example-value",
+          "id": "abc123",
+          "name": "example-value"
+        },
+        "resourceGroup": {
+          "externalID": "example-value",
+          "id": "abc123",
+          "name": "example-value"
+        },
+        "state": "CREATED"
+      }
+    }
+  }
+}
+```
 
 
 ### `removeVirtualNetworkInterfaceFromNode`
@@ -149,6 +422,58 @@ Removes a virtual network interface from a Kubernetes worker node.
   Input parameters for removing the VNI from a node.
 
 
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation removeVirtualNetworkInterfaceFromNode($input: RemoveVirtualNetworkInterfaceFromNodeInput!) {\n  removeVirtualNetworkInterfaceFromNode(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "input": "<RemoveVirtualNetworkInterfaceFromNodeInput>"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "removeVirtualNetworkInterfaceFromNode": {
+      "cluster": {
+        "id": "abc123",
+        "name": "example-value",
+        "networkAttachments": {
+          "edges": [
+            {
+              "cursor": "...",
+              "node": "..."
+            }
+          ],
+          "pageInfo": {
+            "endCursor": "...",
+            "hasNextPage": "...",
+            "hasPreviousPage": "...",
+            "startCursor": "..."
+          }
+        },
+        "region": {
+          "displayName": "example-value",
+          "id": "abc123",
+          "name": "example-value"
+        }
+      },
+      "node": "<NetworkAttachable>",
+      "virtualNetworkInterface": "<VirtualNetworkInterface>"
+    }
+  }
+}
+```
+
+
 ### `updateSatelliteLocation`
 {: #updatesatellitelocation}
 
@@ -160,6 +485,38 @@ Update a Satellite Location.
 **Arguments:**
 
 - `input`: `UpdateSatelliteLocationInput`
+
+
+#### Example request
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation updateSatelliteLocation($input: UpdateSatelliteLocationInput) {\n  updateSatelliteLocation(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "variables": {
+    "input": "<UpdateSatelliteLocationInput>"
+  }
+}'
+```
+
+
+#### Example response
+
+```json
+{
+  "data": {
+    "updateSatelliteLocation": {
+      "satelliteLocation": {
+        "description": "example-value",
+        "id": "abc123",
+        "name": "example-value"
+      }
+    }
+  }
+}
+```
 
 
 ## Object types
