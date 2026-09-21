@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-09-21"
 
-keywords: openshift, cli reference, openshift cli, {{site.data.keyword.openshiftlong_notm}}
+keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
 subcollection: openshift
 
@@ -14,10 +14,10 @@ content-type: cli-docs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.openshiftlong_notm}} CLI reference
+# {{site.data.keyword.containerlong_notm}} CLI plug-in reference
 {: #kubernetes-service-cli}
 
-Refer to these commands to create and manage {{site.data.keyword.openshiftlong_notm}} clusters.
+Use these commands to create and manage clusters for {{site.data.keyword.containerlong_notm}}, {{site.data.keyword.openshiftlong_notm}}, and {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
@@ -41,7 +41,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 View the current API endpoint.
 
 
-### `ibmcloud oc api`
+### `ibmcloud ks api`
 {: #api-cli}
 
 
@@ -49,7 +49,7 @@ View the current API endpoint.
 View the current API endpoint.
 
 ```sh
-ibmcloud oc api [-q]
+ibmcloud ks api [-q]
 ```
 
 #### Command options
@@ -66,7 +66,7 @@ ibmcloud oc api [-q]
 View the current API endpoint
 
 ```sh
-ibmcloud oc api
+ibmcloud ks api
 ```
 {: pre}
 
@@ -77,7 +77,7 @@ ibmcloud oc api
 View information about the API key for a cluster or reset it to a new key.
 
 
-### `ibmcloud oc api-key help`
+### `ibmcloud ks api-key help`
 {: #api-key-help-cli}
 
 
@@ -85,7 +85,7 @@ View information about the API key for a cluster or reset it to a new key.
 Show help
 
 ```sh
-ibmcloud oc api-key help
+ibmcloud ks api-key help
 ```
 
 
@@ -95,12 +95,12 @@ ibmcloud oc api-key help
 Show help
 
 ```sh
-ibmcloud oc api-key help
+ibmcloud ks api-key help
 ```
 {: pre}
 
 
-### `ibmcloud oc api-key info`
+### `ibmcloud ks api-key info`
 {: #api-key-info-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -108,7 +108,7 @@ ibmcloud oc api-key help
 View information about the API key owner for a cluster.
 
 ```sh
-ibmcloud oc api-key info --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks api-key info --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -131,12 +131,12 @@ ibmcloud oc api-key info --cluster CLUSTER [--output OUTPUT] [-q]
 View information about the API key owner for a cluster
 
 ```sh
-ibmcloud oc api-key info --cluster CLUSTER
+ibmcloud ks api-key info --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc api-key reset`
+### `ibmcloud ks api-key reset`
 {: #api-key-reset-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -144,7 +144,7 @@ ibmcloud oc api-key info --cluster CLUSTER
 Replace the API key for all clusters in the specified region and targeted resource group. If no resource group is targeted the command applies to the default resource group. For more information, see [http://ibm.biz/api-key](http://ibm.biz/api-key).
 
 ```sh
-ibmcloud oc api-key reset --region REGION [-f] [--output OUTPUT] [-q]
+ibmcloud ks api-key reset --region REGION [-f] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -170,7 +170,7 @@ ibmcloud oc api-key reset --region REGION [-f] [--output OUTPUT] [-q]
 Replace the API key for all clusters in the specified region and targeted resource group
 
 ```sh
-ibmcloud oc api-key reset --region REGION
+ibmcloud ks api-key reset --region REGION
 ```
 {: pre}
 
@@ -181,7 +181,7 @@ ibmcloud oc api-key reset --region REGION
 View and modify cluster and cluster service settings.
 
 
-### `ibmcloud oc cluster addon disable acm`
+### `ibmcloud ks cluster addon disable acm`
 {: #cluster-addon-disable-acm-cli}
 
 
@@ -189,7 +189,7 @@ View and modify cluster and cluster service settings.
 Disable the Red Hat Advanced Cluster Management add-on.
 
 ```sh
-ibmcloud oc cluster addon disable acm --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable acm --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -212,12 +212,48 @@ ibmcloud oc cluster addon disable acm --cluster CLUSTER [-f] [-q]
 Disable the Red Hat Advanced Cluster Management add-on
 
 ```sh
-ibmcloud oc cluster addon disable acm --cluster CLUSTER
+ibmcloud ks cluster addon disable acm --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable cluster-autoscaler`
+### `ibmcloud ks cluster addon disable alb-oauth-proxy`
+{: #cluster-addon-disable-alb-oauth-proxy-cli}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
+
+Disable the ALB OAuth Proxy add-on.
+
+```sh
+ibmcloud ks cluster addon disable alb-oauth-proxy --cluster CLUSTER [-f] [-q]
+```
+
+#### Command options
+{: #cluster-addon-disable-alb-oauth-proxy-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-addon-disable-alb-oauth-proxy-examples}
+
+Disable the ALB OAuth Proxy add-on
+
+```sh
+ibmcloud ks cluster addon disable alb-oauth-proxy --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon disable cluster-autoscaler`
 {: #cluster-addon-disable-cluster-autoscaler-cli}
 
 
@@ -225,7 +261,7 @@ ibmcloud oc cluster addon disable acm --cluster CLUSTER
 Disable the Cluster Autoscaler add-on.
 
 ```sh
-ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -248,12 +284,12 @@ ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
 Disable the Cluster Autoscaler add-on
 
 ```sh
-ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER
+ibmcloud ks cluster addon disable cluster-autoscaler --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable debug-tool`
+### `ibmcloud ks cluster addon disable debug-tool`
 {: #cluster-addon-disable-debug-tool-cli}
 
 
@@ -261,7 +297,7 @@ ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER
 Disable the Diagnostics and Debug Tool add-on.
 
 ```sh
-ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -284,12 +320,51 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
 Disable the Diagnostics and Debug Tool add-on
 
 ```sh
-ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER
+ibmcloud ks cluster addon disable debug-tool --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable help`
+### `ibmcloud ks cluster addon disable headlamp`
+{: #cluster-addon-disable-headlamp-cli}
+
+The `cluster addon disable headlamp` command is a beta feature.
+{: beta}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
+
+Disable the Headlamp add-on.
+
+```sh
+ibmcloud ks cluster addon disable headlamp --cluster CLUSTER [-f] [-q]
+```
+
+#### Command options
+{: #cluster-addon-disable-headlamp-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-addon-disable-headlamp-examples}
+
+Disable the Headlamp add-on
+
+```sh
+ibmcloud ks cluster addon disable headlamp --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon disable help`
 {: #cluster-addon-disable-help-cli}
 
 
@@ -297,7 +372,7 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster addon disable help
+ibmcloud ks cluster addon disable help
 ```
 
 
@@ -307,12 +382,12 @@ ibmcloud oc cluster addon disable help
 Show help
 
 ```sh
-ibmcloud oc cluster addon disable help
+ibmcloud ks cluster addon disable help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable hpcs-router`
+### `ibmcloud ks cluster addon disable hpcs-router`
 {: #cluster-addon-disable-hpcs-router-cli}
 
 
@@ -320,7 +395,7 @@ ibmcloud oc cluster addon disable help
 Disable the HPCS Router Operator add-on for OpenShift.
 
 ```sh
-ibmcloud oc cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -343,12 +418,12 @@ ibmcloud oc cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
 Disable the HPCS Router Operator add-on for OpenShift
 
 ```sh
-ibmcloud oc cluster addon disable hpcs-router --cluster CLUSTER
+ibmcloud ks cluster addon disable hpcs-router --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable ibm-storage-operator`
+### `ibmcloud ks cluster addon disable ibm-storage-operator`
 {: #cluster-addon-disable-ibm-storage-operator-cli}
 
 The `cluster addon disable ibm-storage-operator` command is a beta feature.
@@ -359,7 +434,7 @@ The `cluster addon disable ibm-storage-operator` command is a beta feature.
 Disable the IBM Cloud Storage Operator add-on.
 
 ```sh
-ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -382,12 +457,12 @@ ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-
 Disable the IBM Cloud Storage Operator add-on
 
 ```sh
-ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER
+ibmcloud ks cluster addon disable ibm-storage-operator --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable image-key-synchronizer`
+### `ibmcloud ks cluster addon disable image-key-synchronizer`
 {: #cluster-addon-disable-image-key-synchronizer-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -395,7 +470,7 @@ ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER
 The IBM Cloud Image Key Synchronizer add-on.
 
 ```sh
-ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable image-key-synchronizer --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -418,12 +493,126 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER [-f] 
 The IBM Cloud Image Key Synchronizer add-on
 
 ```sh
-ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER
+ibmcloud ks cluster addon disable image-key-synchronizer --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable knative`
+### `ibmcloud ks cluster addon disable istio`
+{: #cluster-addon-disable-istio-cli}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+Disable the managed Istio add-on.
+
+```sh
+ibmcloud ks cluster addon disable istio --cluster CLUSTER [-f] [-q]
+```
+
+#### Command options
+{: #cluster-addon-disable-istio-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-addon-disable-istio-examples}
+
+Disable the managed Istio add-on
+
+```sh
+ibmcloud ks cluster addon disable istio --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon disable istio-extras`
+{: #cluster-addon-disable-istio-extras-cli}
+
+The `cluster addon disable istio-extras` command is deprecated.
+{: deprecated}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+Disable extra Istio components: Grafana, Jaeger, and Kiali.
+
+```sh
+ibmcloud ks cluster addon disable istio-extras --cluster CLUSTER [-f] [-q]
+```
+
+#### Command options
+{: #cluster-addon-disable-istio-extras-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-addon-disable-istio-extras-examples}
+
+Disable extra Istio components: Grafana, Jaeger, and Kiali
+
+```sh
+ibmcloud ks cluster addon disable istio-extras --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon disable istio-sample-bookinfo`
+{: #cluster-addon-disable-istio-sample-bookinfo-cli}
+
+The `cluster addon disable istio-sample-bookinfo` command is deprecated.
+{: deprecated}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+Disable the Istio BookInfo sample application add-on (deprecated).
+
+```sh
+ibmcloud ks cluster addon disable istio-sample-bookinfo --cluster CLUSTER [-f] [-q]
+```
+
+#### Command options
+{: #cluster-addon-disable-istio-sample-bookinfo-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-addon-disable-istio-sample-bookinfo-examples}
+
+Disable the Istio BookInfo sample application add-on (deprecated)
+
+```sh
+ibmcloud ks cluster addon disable istio-sample-bookinfo --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon disable knative`
 {: #cluster-addon-disable-knative-cli}
 
 
@@ -431,7 +620,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER
 Disable the Knative serverless framework add-on.
 
 ```sh
-ibmcloud oc cluster addon disable knative --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable knative --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -454,12 +643,12 @@ ibmcloud oc cluster addon disable knative --cluster CLUSTER [-f] [-q]
 Disable the Knative serverless framework add-on
 
 ```sh
-ibmcloud oc cluster addon disable knative --cluster CLUSTER
+ibmcloud ks cluster addon disable knative --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable kube-terminal`
+### `ibmcloud ks cluster addon disable kube-terminal`
 {: #cluster-addon-disable-kube-terminal-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -467,7 +656,7 @@ ibmcloud oc cluster addon disable knative --cluster CLUSTER
 Disable the Kubernetes web terminal add-on.
 
 ```sh
-ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -490,12 +679,12 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
 Disable the Kubernetes web terminal add-on
 
 ```sh
-ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER
+ibmcloud ks cluster addon disable kube-terminal --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable openshift-data-foundation`
+### `ibmcloud ks cluster addon disable openshift-data-foundation`
 {: #cluster-addon-disable-openshift-data-foundation-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -503,7 +692,7 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on
 
 ```sh
-ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable openshift-data-foundation --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -526,12 +715,12 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on
 
 ```sh
-ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER
+ibmcloud ks cluster addon disable openshift-data-foundation --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable static-route`
+### `ibmcloud ks cluster addon disable static-route`
 {: #cluster-addon-disable-static-route-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -539,7 +728,7 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER
 Disable the Static Route add-on.
 
 ```sh
-ibmcloud oc cluster addon disable static-route --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable static-route --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -562,12 +751,12 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER [-f] [-q]
 Disable the Static Route add-on
 
 ```sh
-ibmcloud oc cluster addon disable static-route --cluster CLUSTER
+ibmcloud ks cluster addon disable static-route --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon disable vpc-block-csi-driver`
+### `ibmcloud ks cluster addon disable vpc-block-csi-driver`
 {: #cluster-addon-disable-vpc-block-csi-driver-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -575,7 +764,7 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 Disable the VPC Block Storage CSI Driver add-on.
 
 ```sh
-ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -598,12 +787,12 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-
 Disable the VPC Block Storage CSI Driver add-on
 
 ```sh
-ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER
+ibmcloud ks cluster addon disable vpc-block-csi-driver --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable acm`
+### `ibmcloud ks cluster addon enable acm`
 {: #cluster-addon-enable-acm-cli}
 
 
@@ -611,7 +800,7 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER
 Enable the Red Hat Advanced Cluster Management add-on.
 
 ```sh
-ibmcloud oc cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -643,12 +832,51 @@ ibmcloud oc cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q]
 Enable the Red Hat Advanced Cluster Management add-on
 
 ```sh
-ibmcloud oc cluster addon enable acm --cluster CLUSTER
+ibmcloud ks cluster addon enable acm --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable cluster-autoscaler`
+### `ibmcloud ks cluster addon enable alb-oauth-proxy`
+{: #cluster-addon-enable-alb-oauth-proxy-cli}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
+
+Enable the ALB OAuth Proxy add-on.
+
+```sh
+ibmcloud ks cluster addon enable alb-oauth-proxy --cluster CLUSTER [-q] [--version VERSION] [-y]
+```
+
+#### Command options
+{: #cluster-addon-enable-alb-oauth-proxy-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--version`
+:    Specify the version of the add-on to install. If no version is specified, the default version is installed.
+
+`-y`
+:    Enable all add-on dependencies.
+
+
+#### Examples
+{: #cluster-addon-enable-alb-oauth-proxy-examples}
+
+Enable the ALB OAuth Proxy add-on
+
+```sh
+ibmcloud ks cluster addon enable alb-oauth-proxy --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon enable cluster-autoscaler`
 {: #cluster-addon-enable-cluster-autoscaler-cli}
 
 
@@ -656,7 +884,7 @@ ibmcloud oc cluster addon enable acm --cluster CLUSTER
 Enable the Cluster Autoscaler add-on.
 
 ```sh
-ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -682,12 +910,12 @@ ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--ve
 Enable the Cluster Autoscaler add-on
 
 ```sh
-ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER
+ibmcloud ks cluster addon enable cluster-autoscaler --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable debug-tool`
+### `ibmcloud ks cluster addon enable debug-tool`
 {: #cluster-addon-enable-debug-tool-cli}
 
 
@@ -695,7 +923,7 @@ ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER
 Enable the Diagnostics and Debug Tool add-on.
 
 ```sh
-ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -721,12 +949,54 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VE
 Enable the Diagnostics and Debug Tool add-on
 
 ```sh
-ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER
+ibmcloud ks cluster addon enable debug-tool --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable help`
+### `ibmcloud ks cluster addon enable headlamp`
+{: #cluster-addon-enable-headlamp-cli}
+
+The `cluster addon enable headlamp` command is a beta feature.
+{: beta}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
+
+Enable the Headlamp add-on.
+
+```sh
+ibmcloud ks cluster addon enable headlamp --cluster CLUSTER [-q] [--version VERSION] [-y]
+```
+
+#### Command options
+{: #cluster-addon-enable-headlamp-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--version`
+:    Specify the version of the add-on to install. If no version is specified, the default version is installed.
+
+`-y`
+:    Enable all add-on dependencies.
+
+
+#### Examples
+{: #cluster-addon-enable-headlamp-examples}
+
+Enable the Headlamp add-on
+
+```sh
+ibmcloud ks cluster addon enable headlamp --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon enable help`
 {: #cluster-addon-enable-help-cli}
 
 
@@ -734,7 +1004,7 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster addon enable help
+ibmcloud ks cluster addon enable help
 ```
 
 
@@ -744,12 +1014,12 @@ ibmcloud oc cluster addon enable help
 Show help
 
 ```sh
-ibmcloud oc cluster addon enable help
+ibmcloud ks cluster addon enable help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable hpcs-router`
+### `ibmcloud ks cluster addon enable hpcs-router`
 {: #cluster-addon-enable-hpcs-router-cli}
 
 
@@ -757,7 +1027,7 @@ ibmcloud oc cluster addon enable help
 Enable the HPCS Router Operator add-on for OpenShift.
 
 ```sh
-ibmcloud oc cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -783,12 +1053,12 @@ ibmcloud oc cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version V
 Enable the HPCS Router Operator add-on for OpenShift
 
 ```sh
-ibmcloud oc cluster addon enable hpcs-router --cluster CLUSTER
+ibmcloud ks cluster addon enable hpcs-router --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable ibm-storage-operator`
+### `ibmcloud ks cluster addon enable ibm-storage-operator`
 {: #cluster-addon-enable-ibm-storage-operator-cli}
 
 The `cluster addon enable ibm-storage-operator` command is a beta feature.
@@ -799,7 +1069,7 @@ The `cluster addon enable ibm-storage-operator` command is a beta feature.
 Enable the IBM Cloud Storage Operator add-on.
 
 ```sh
-ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -825,12 +1095,12 @@ ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--
 Enable the IBM Cloud Storage Operator add-on
 
 ```sh
-ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER
+ibmcloud ks cluster addon enable ibm-storage-operator --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable image-key-synchronizer`
+### `ibmcloud ks cluster addon enable image-key-synchronizer`
 {: #cluster-addon-enable-image-key-synchronizer-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -838,7 +1108,7 @@ ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER
 The IBM Cloud Image Key Synchronizer add-on.
 
 ```sh
-ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable image-key-synchronizer --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -864,12 +1134,51 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [-q] [
 The IBM Cloud Image Key Synchronizer add-on
 
 ```sh
-ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER
+ibmcloud ks cluster addon enable image-key-synchronizer --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable istio-extras`
+### `ibmcloud ks cluster addon enable istio`
+{: #cluster-addon-enable-istio-cli}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+Enable the managed Istio add-on.
+
+```sh
+ibmcloud ks cluster addon enable istio --cluster CLUSTER [-q] [--version VERSION] [-y]
+```
+
+#### Command options
+{: #cluster-addon-enable-istio-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--version`
+:    Specify the version of the add-on to install. If no version is specified, the default version is installed.
+
+`-y`
+:    Enable all add-on dependencies.
+
+
+#### Examples
+{: #cluster-addon-enable-istio-examples}
+
+Enable the managed Istio add-on
+
+```sh
+ibmcloud ks cluster addon enable istio --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon enable istio-extras`
 {: #cluster-addon-enable-istio-extras-cli}
 
 The `cluster addon enable istio-extras` command is deprecated.
@@ -880,7 +1189,7 @@ The `cluster addon enable istio-extras` command is deprecated.
 Enable extra Istio components: Grafana, Jaeger, and Kiali.
 
 ```sh
-ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable istio-extras --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -906,12 +1215,12 @@ ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [-q] [--version 
 Enable extra Istio components: Grafana, Jaeger, and Kiali
 
 ```sh
-ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER
+ibmcloud ks cluster addon enable istio-extras --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable istio-sample-bookinfo`
+### `ibmcloud ks cluster addon enable istio-sample-bookinfo`
 {: #cluster-addon-enable-istio-sample-bookinfo-cli}
 
 The `cluster addon enable istio-sample-bookinfo` command is deprecated.
@@ -922,7 +1231,7 @@ The `cluster addon enable istio-sample-bookinfo` command is deprecated.
 Enable the Istio BookInfo sample application add-on on a cluster (deprecated).
 
 ```sh
-ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -948,12 +1257,12 @@ ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [-
 Enable the Istio BookInfo sample application add-on on a cluster (deprecated)
 
 ```sh
-ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER
+ibmcloud ks cluster addon enable istio-sample-bookinfo --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable openshift-data-foundation`
+### `ibmcloud ks cluster addon enable openshift-data-foundation`
 {: #cluster-addon-enable-openshift-data-foundation-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -961,7 +1270,7 @@ ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on
 
 ```sh
-ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable openshift-data-foundation --cluster CLUSTER [-f] [--param PARAM] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -993,12 +1302,12 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on
 
 ```sh
-ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER
+ibmcloud ks cluster addon enable openshift-data-foundation --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon enable static-route`
+### `ibmcloud ks cluster addon enable static-route`
 {: #cluster-addon-enable-static-route-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1006,7 +1315,7 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER
 Enable the Static Route add-on.
 
 ```sh
-ibmcloud oc cluster addon enable static-route --cluster CLUSTER [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon enable static-route --cluster CLUSTER [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1032,12 +1341,51 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [-q] [--version 
 Enable the Static Route add-on
 
 ```sh
-ibmcloud oc cluster addon enable static-route --cluster CLUSTER
+ibmcloud ks cluster addon enable static-route --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon get`
+### `ibmcloud ks cluster addon enable vpc-block-csi-driver`
+{: #cluster-addon-enable-vpc-block-csi-driver-cli}
+
+[Virtual Private Cloud]{: tag-vpc} 
+
+Enable the VPC Block Storage CSI Driver add-on.
+
+```sh
+ibmcloud ks cluster addon enable vpc-block-csi-driver --cluster CLUSTER [-q] [--version VERSION] [-y]
+```
+
+#### Command options
+{: #cluster-addon-enable-vpc-block-csi-driver-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--version`
+:    Specify the version of the add-on to install. If no version is specified, the default version is installed.
+
+`-y`
+:    Enable all add-on dependencies.
+
+
+#### Examples
+{: #cluster-addon-enable-vpc-block-csi-driver-examples}
+
+Enable the VPC Block Storage CSI Driver add-on
+
+```sh
+ibmcloud ks cluster addon enable vpc-block-csi-driver --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster addon get`
 {: #cluster-addon-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1045,7 +1393,7 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER
 View details of an installed add-on.
 
 ```sh
-ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -1071,12 +1419,12 @@ ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] 
 View details of an installed add-on
 
 ```sh
-ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER
+ibmcloud ks cluster addon get --addon ADDON --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon help`
+### `ibmcloud ks cluster addon help`
 {: #cluster-addon-help-cli}
 
 
@@ -1084,7 +1432,7 @@ ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster addon help
+ibmcloud ks cluster addon help
 ```
 
 
@@ -1094,12 +1442,12 @@ ibmcloud oc cluster addon help
 Show help
 
 ```sh
-ibmcloud oc cluster addon help
+ibmcloud ks cluster addon help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon ls`
+### `ibmcloud ks cluster addon ls`
 {: #cluster-addon-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1107,7 +1455,7 @@ ibmcloud oc cluster addon help
 List enabled add-ons.
 
 ```sh
-ibmcloud oc cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -1130,12 +1478,12 @@ ibmcloud oc cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
 List enabled add-ons
 
 ```sh
-ibmcloud oc cluster addon ls --cluster CLUSTER
+ibmcloud ks cluster addon ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon options`
+### `ibmcloud ks cluster addon options`
 {: #cluster-addon-options-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1143,7 +1491,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 View installation options for an add-on.
 
 ```sh
-ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--version VERSION]
+ibmcloud ks cluster addon options --addon ADDON [--output OUTPUT] [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -1169,12 +1517,12 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 View installation options for an add-on
 
 ```sh
-ibmcloud oc cluster addon options --addon ADDON
+ibmcloud ks cluster addon options --addon ADDON
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update acm`
+### `ibmcloud ks cluster addon update acm`
 {: #cluster-addon-update-acm-cli}
 
 
@@ -1182,7 +1530,7 @@ ibmcloud oc cluster addon options --addon ADDON
 Update the Red Hat Advanced Cluster Management add-on.
 
 ```sh
-ibmcloud oc cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1211,12 +1559,12 @@ ibmcloud oc cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERS
 Update the Red Hat Advanced Cluster Management add-on
 
 ```sh
-ibmcloud oc cluster addon update acm --cluster CLUSTER
+ibmcloud ks cluster addon update acm --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update alb-oauth-proxy`
+### `ibmcloud ks cluster addon update alb-oauth-proxy`
 {: #cluster-addon-update-alb-oauth-proxy-cli}
 
 
@@ -1224,7 +1572,7 @@ ibmcloud oc cluster addon update acm --cluster CLUSTER
 Update the ALB OAuth Proxy add-on.
 
 ```sh
-ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1253,12 +1601,12 @@ ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--
 Update the ALB OAuth Proxy add-on
 
 ```sh
-ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER
+ibmcloud ks cluster addon update alb-oauth-proxy --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update cluster-autoscaler`
+### `ibmcloud ks cluster addon update cluster-autoscaler`
 {: #cluster-addon-update-cluster-autoscaler-cli}
 
 
@@ -1266,7 +1614,7 @@ ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER
 Update the Cluster Autoscaler add-on.
 
 ```sh
-ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1295,12 +1643,12 @@ ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] 
 Update the Cluster Autoscaler add-on
 
 ```sh
-ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER
+ibmcloud ks cluster addon update cluster-autoscaler --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update debug-tool`
+### `ibmcloud ks cluster addon update debug-tool`
 {: #cluster-addon-update-debug-tool-cli}
 
 
@@ -1308,7 +1656,7 @@ ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER
 Update the Diagnostics and Debug Tool add-on.
 
 ```sh
-ibmcloud oc cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1337,12 +1685,12 @@ ibmcloud oc cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--versi
 Update the Diagnostics and Debug Tool add-on
 
 ```sh
-ibmcloud oc cluster addon update debug-tool --cluster CLUSTER
+ibmcloud ks cluster addon update debug-tool --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update headlamp`
+### `ibmcloud ks cluster addon update headlamp`
 {: #cluster-addon-update-headlamp-cli}
 
 The `cluster addon update headlamp` command is a beta feature.
@@ -1353,7 +1701,7 @@ The `cluster addon update headlamp` command is a beta feature.
 Update the Headlamp add-on.
 
 ```sh
-ibmcloud oc cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1382,12 +1730,12 @@ ibmcloud oc cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version
 Update the Headlamp add-on
 
 ```sh
-ibmcloud oc cluster addon update headlamp --cluster CLUSTER
+ibmcloud ks cluster addon update headlamp --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update help`
+### `ibmcloud ks cluster addon update help`
 {: #cluster-addon-update-help-cli}
 
 
@@ -1395,7 +1743,7 @@ ibmcloud oc cluster addon update headlamp --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster addon update help
+ibmcloud ks cluster addon update help
 ```
 
 
@@ -1405,12 +1753,12 @@ ibmcloud oc cluster addon update help
 Show help
 
 ```sh
-ibmcloud oc cluster addon update help
+ibmcloud ks cluster addon update help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update hpcs-router`
+### `ibmcloud ks cluster addon update hpcs-router`
 {: #cluster-addon-update-hpcs-router-cli}
 
 
@@ -1418,7 +1766,7 @@ ibmcloud oc cluster addon update help
 Update the HPCS Router Operator add-on for OpenShift.
 
 ```sh
-ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1447,12 +1795,12 @@ ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--vers
 Update the HPCS Router Operator add-on for OpenShift
 
 ```sh
-ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER
+ibmcloud ks cluster addon update hpcs-router --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update ibm-storage-operator`
+### `ibmcloud ks cluster addon update ibm-storage-operator`
 {: #cluster-addon-update-ibm-storage-operator-cli}
 
 The `cluster addon update ibm-storage-operator` command is a beta feature.
@@ -1463,7 +1811,7 @@ The `cluster addon update ibm-storage-operator` command is a beta feature.
 Update the IBM Cloud Storage Operator add-on.
 
 ```sh
-ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1492,12 +1840,12 @@ ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q
 Update the IBM Cloud Storage Operator add-on
 
 ```sh
-ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER
+ibmcloud ks cluster addon update ibm-storage-operator --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update image-key-synchronizer`
+### `ibmcloud ks cluster addon update image-key-synchronizer`
 {: #cluster-addon-update-image-key-synchronizer-cli}
 
 
@@ -1505,7 +1853,7 @@ ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER
 Update the Image Key Synchronizer add-on.
 
 ```sh
-ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1534,12 +1882,12 @@ ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [
 Update the Image Key Synchronizer add-on
 
 ```sh
-ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER
+ibmcloud ks cluster addon update image-key-synchronizer --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update istio`
+### `ibmcloud ks cluster addon update istio`
 {: #cluster-addon-update-istio-cli}
 
 
@@ -1547,7 +1895,7 @@ ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER
 Update the managed Istio add-on.
 
 ```sh
-ibmcloud oc cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1576,12 +1924,12 @@ ibmcloud oc cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VE
 Update the managed Istio add-on
 
 ```sh
-ibmcloud oc cluster addon update istio --cluster CLUSTER
+ibmcloud ks cluster addon update istio --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update istio-extras`
+### `ibmcloud ks cluster addon update istio-extras`
 {: #cluster-addon-update-istio-extras-cli}
 
 The `cluster addon update istio-extras` command is deprecated.
@@ -1592,7 +1940,7 @@ The `cluster addon update istio-extras` command is deprecated.
 Update extra Istio components: Grafana, Jaeger, and Kiali.
 
 ```sh
-ibmcloud oc cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1621,12 +1969,12 @@ ibmcloud oc cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--ver
 Update extra Istio components: Grafana, Jaeger, and Kiali
 
 ```sh
-ibmcloud oc cluster addon update istio-extras --cluster CLUSTER
+ibmcloud ks cluster addon update istio-extras --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update istio-sample-bookinfo`
+### `ibmcloud ks cluster addon update istio-sample-bookinfo`
 {: #cluster-addon-update-istio-sample-bookinfo-cli}
 
 The `cluster addon update istio-sample-bookinfo` command is deprecated.
@@ -1637,7 +1985,7 @@ The `cluster addon update istio-sample-bookinfo` command is deprecated.
 Update the Istio BookInfo sample application add-on (deprecated).
 
 ```sh
-ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1666,12 +2014,12 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-
 Update the Istio BookInfo sample application add-on (deprecated)
 
 ```sh
-ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER
+ibmcloud ks cluster addon update istio-sample-bookinfo --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update knative`
+### `ibmcloud ks cluster addon update knative`
 {: #cluster-addon-update-knative-cli}
 
 
@@ -1679,7 +2027,7 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER
 Update the Knative serverless framework add-on.
 
 ```sh
-ibmcloud oc cluster addon update knative --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update knative --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1708,12 +2056,12 @@ ibmcloud oc cluster addon update knative --cluster CLUSTER [-f] [-q] [--version 
 Update the Knative serverless framework add-on
 
 ```sh
-ibmcloud oc cluster addon update knative --cluster CLUSTER
+ibmcloud ks cluster addon update knative --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update kube-terminal`
+### `ibmcloud ks cluster addon update kube-terminal`
 {: #cluster-addon-update-kube-terminal-cli}
 
 
@@ -1721,7 +2069,7 @@ ibmcloud oc cluster addon update knative --cluster CLUSTER
 Update the Kubernetes web terminal add-on.
 
 ```sh
-ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1750,12 +2098,12 @@ ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--ve
 Update the Kubernetes web terminal add-on
 
 ```sh
-ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER
+ibmcloud ks cluster addon update kube-terminal --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update openshift-data-foundation`
+### `ibmcloud ks cluster addon update openshift-data-foundation`
 {: #cluster-addon-update-openshift-data-foundation-cli}
 
 
@@ -1763,7 +2111,7 @@ ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER
 Update the OpenShift Data Foundation add-on.
 
 ```sh
-ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update openshift-data-foundation --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1792,12 +2140,12 @@ ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER [-f
 Update the OpenShift Data Foundation add-on
 
 ```sh
-ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER
+ibmcloud ks cluster addon update openshift-data-foundation --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update static-route`
+### `ibmcloud ks cluster addon update static-route`
 {: #cluster-addon-update-static-route-cli}
 
 
@@ -1805,7 +2153,7 @@ ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER
 Update the Static Route add-on.
 
 ```sh
-ibmcloud oc cluster addon update static-route --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update static-route --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1834,12 +2182,12 @@ ibmcloud oc cluster addon update static-route --cluster CLUSTER [-f] [-q] [--ver
 Update the Static Route add-on
 
 ```sh
-ibmcloud oc cluster addon update static-route --cluster CLUSTER
+ibmcloud ks cluster addon update static-route --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon update vpc-block-csi-driver`
+### `ibmcloud ks cluster addon update vpc-block-csi-driver`
 {: #cluster-addon-update-vpc-block-csi-driver-cli}
 
 
@@ -1847,7 +2195,7 @@ ibmcloud oc cluster addon update static-route --cluster CLUSTER
 Update the VPC Block Storage CSI Driver add-on.
 
 ```sh
-ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+ibmcloud ks cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
 ```
 
 #### Command options
@@ -1876,12 +2224,12 @@ ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q
 Update the VPC Block Storage CSI Driver add-on
 
 ```sh
-ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER
+ibmcloud ks cluster addon update vpc-block-csi-driver --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster addon versions`
+### `ibmcloud ks cluster addon versions`
 {: #cluster-addon-versions-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1889,7 +2237,7 @@ ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER
 List supported versions for managed add-ons.
 
 ```sh
-ibmcloud oc cluster addon versions [--addon ADDON] [--offering OFFERING] [--output OUTPUT] [-q] [--show-defaults]
+ibmcloud ks cluster addon versions [--addon ADDON] [--offering OFFERING] [--output OUTPUT] [-q] [--show-defaults]
 ```
 
 #### Command options
@@ -1918,12 +2266,12 @@ ibmcloud oc cluster addon versions [--addon ADDON] [--offering OFFERING] [--outp
 List supported versions for managed add-ons
 
 ```sh
-ibmcloud oc cluster addon versions
+ibmcloud ks cluster addon versions
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster ca create`
+### `ibmcloud ks cluster ca create`
 {: #cluster-ca-create-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1931,7 +2279,7 @@ ibmcloud oc cluster addon versions
 Create a CA certificate for your cluster. Then, you must rotate the previous certificates to use the new certificates.
 
 ```sh
-ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster ca create --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -1954,12 +2302,12 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 Create a CA certificate for your cluster
 
 ```sh
-ibmcloud oc cluster ca create --cluster CLUSTER
+ibmcloud ks cluster ca create --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster ca get`
+### `ibmcloud ks cluster ca get`
 {: #cluster-ca-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -1967,7 +2315,7 @@ ibmcloud oc cluster ca create --cluster CLUSTER
 View the details of a cluster's CA certificate.
 
 ```sh
-ibmcloud oc cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -1990,12 +2338,12 @@ ibmcloud oc cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
 View the details of a cluster's CA certificate
 
 ```sh
-ibmcloud oc cluster ca get --cluster CLUSTER
+ibmcloud ks cluster ca get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster ca help`
+### `ibmcloud ks cluster ca help`
 {: #cluster-ca-help-cli}
 
 
@@ -2003,7 +2351,7 @@ ibmcloud oc cluster ca get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster ca help
+ibmcloud ks cluster ca help
 ```
 
 
@@ -2013,12 +2361,12 @@ ibmcloud oc cluster ca help
 Show help
 
 ```sh
-ibmcloud oc cluster ca help
+ibmcloud ks cluster ca help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster ca rotate`
+### `ibmcloud ks cluster ca rotate`
 {: #cluster-ca-rotate-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2026,7 +2374,7 @@ ibmcloud oc cluster ca help
 Rotate the CA certificates of a cluster, which requires that you previously created CA certificates. Rotating invalidates the previous certificates and refreshes the API server of the cluster.
 
 ```sh
-ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster ca rotate --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -2049,12 +2397,12 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 Rotate the CA certificates of a cluster, which requires that you previously created CA certificates
 
 ```sh
-ibmcloud oc cluster ca rotate --cluster CLUSTER
+ibmcloud ks cluster ca rotate --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster ca status`
+### `ibmcloud ks cluster ca status`
 {: #cluster-ca-status-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2062,7 +2410,7 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER
 View the rotation status of CA certificates for a cluster.
 
 ```sh
-ibmcloud oc cluster ca status --cluster CLUSTER [-q]
+ibmcloud ks cluster ca status --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -2082,12 +2430,12 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 View the rotation status of CA certificates for a cluster
 
 ```sh
-ibmcloud oc cluster ca status --cluster CLUSTER
+ibmcloud ks cluster ca status --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster config`
+### `ibmcloud ks cluster config`
 {: #cluster-config-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2095,7 +2443,7 @@ ibmcloud oc cluster ca status --cluster CLUSTER
 Download the Kubernetes configuration files and certificates to connect to your cluster by using kubectl commands.
 
 ```sh
-ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--network] [--output OUTPUT] [-q] [--skip-rbac]
+ibmcloud ks cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--network] [--output OUTPUT] [-q] [--skip-rbac]
 ```
 
 #### Command options
@@ -2130,12 +2478,12 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--
 Download the Kubernetes configuration files and certificates to connect to your cluster by using kubectl commands
 
 ```sh
-ibmcloud oc cluster config --cluster CLUSTER
+ibmcloud ks cluster config --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster create classic`
+### `ibmcloud ks cluster create classic`
 {: #cluster-create-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -2143,7 +2491,7 @@ ibmcloud oc cluster config --cluster CLUSTER
 Create a cluster with worker nodes on classic infrastructure.
 
 ```sh
-ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--hardware HARDWARE] [--location LOCATION] [--no-subnet] [--operating-system SYSTEM] [--pod-subnet SUBNET] [--private-service-endpoint] [--private-vlan VLAN] [--public-service-endpoint] [-q] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT] (--private-only | --public-vlan VLAN)
+ibmcloud ks cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--hardware HARDWARE] [--location LOCATION] [--no-subnet] [--operating-system SYSTEM] [--pod-subnet SUBNET] [--private-service-endpoint] [--private-vlan VLAN] [--public-service-endpoint] [-q] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT] (--private-only | --public-vlan VLAN)
 ```
 
 #### Command options
@@ -2223,12 +2571,12 @@ ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--di
 Create a cluster with worker nodes on classic infrastructure
 
 ```sh
-ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE --private-only
+ibmcloud ks cluster create classic --flavor FLAVOR --name NAME --zone ZONE --private-only
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster create help`
+### `ibmcloud ks cluster create help`
 {: #cluster-create-help-cli}
 
 
@@ -2236,7 +2584,7 @@ ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE --pri
 Show help
 
 ```sh
-ibmcloud oc cluster create help
+ibmcloud ks cluster create help
 ```
 
 
@@ -2246,12 +2594,12 @@ ibmcloud oc cluster create help
 Show help
 
 ```sh
-ibmcloud oc cluster create help
+ibmcloud ks cluster create help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster create satellite`
+### `ibmcloud ks cluster create satellite`
 {: #cluster-create-satellite-cli}
 
 
@@ -2259,7 +2607,7 @@ ibmcloud oc cluster create help
 Create an IBM Cloud Satellite cluster on your own infrastructure.
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--entitlement ENTITLEMENT] [--host-label LABEL ...] [--infrastructure-topology TOPOLOGY] [--operating-system SYSTEM] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
+ibmcloud ks cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--entitlement ENTITLEMENT] [--host-label LABEL ...] [--infrastructure-topology TOPOLOGY] [--operating-system SYSTEM] [--pod-network-interface-selection SELECTION] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
 ```
 
 #### Command options
@@ -2324,12 +2672,12 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 Create an IBM Cloud Satellite cluster on your own infrastructure
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION
+ibmcloud ks cluster create satellite --location LOCATION --name NAME --version VERSION
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster create vpc-classic`
+### `ibmcloud ks cluster create vpc-classic`
 {: #cluster-create-vpc-classic-cli}
 
 
@@ -2337,7 +2685,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 Create a cluster with worker nodes on Virtual Private Cloud (VPC) Gen 1 infrastructure.
 
 ```sh
-ibmcloud oc cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id ID --vpc-id ID --zone ZONE [--disable-public-service-endpoint] [--entitlement ENTITLEMENT] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT]
+ibmcloud ks cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id ID --vpc-id ID --zone ZONE [--disable-public-service-endpoint] [--entitlement ENTITLEMENT] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT]
 ```
 
 #### Command options
@@ -2396,7 +2744,7 @@ ibmcloud oc cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id I
 Create a cluster with worker nodes on Virtual Private Cloud (VPC) Gen 1 infrastructure
 
 ```sh
-ibmcloud oc cluster create vpc-classic \
+ibmcloud ks cluster create vpc-classic \
   --flavor FLAVOR \
   --name NAME \
   --subnet-id ID \
@@ -2406,7 +2754,7 @@ ibmcloud oc cluster create vpc-classic \
 {: pre}
 
 
-### `ibmcloud oc cluster create vpc-gen2`
+### `ibmcloud ks cluster create vpc-gen2`
 {: #cluster-create-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -2414,7 +2762,7 @@ ibmcloud oc cluster create vpc-classic \
 Create a cluster with worker nodes on Virtual Private Cloud (VPC) Gen 2 infrastructure.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID --vpc-id ID --zone ZONE [--cluster-security-group GROUP ...] [--cni CNI] [--cos-instance INSTANCE] [--crk CRK] [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance INSTANCE] [--offering OFFERING] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--secondary-storage STORAGE] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT]
+ibmcloud ks cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID --vpc-id ID --zone ZONE [--cluster-security-group GROUP ...] [--cni CNI] [--cos-instance INSTANCE] [--crk CRK] [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance INSTANCE] [--offering OFFERING] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--secondary-storage STORAGE] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT]
 ```
 
 #### Command options
@@ -2500,7 +2848,7 @@ ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 Create a cluster with worker nodes on Virtual Private Cloud (VPC) Gen 2 infrastructure
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 \
+ibmcloud ks cluster create vpc-gen2 \
   --flavor FLAVOR \
   --name NAME \
   --subnet-id ID \
@@ -2510,7 +2858,7 @@ ibmcloud oc cluster create vpc-gen2 \
 {: pre}
 
 
-### `ibmcloud oc cluster get`
+### `ibmcloud ks cluster get`
 {: #cluster-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2518,7 +2866,7 @@ ibmcloud oc cluster create vpc-gen2 \
 View the details of a cluster.
 
 ```sh
-ibmcloud oc cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resources]
+ibmcloud ks cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resources]
 ```
 
 #### Command options
@@ -2544,12 +2892,12 @@ ibmcloud oc cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resourc
 View the details of a cluster
 
 ```sh
-ibmcloud oc cluster get --cluster CLUSTER
+ibmcloud ks cluster get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster help`
+### `ibmcloud ks cluster help`
 {: #cluster-help-cli}
 
 
@@ -2557,7 +2905,7 @@ ibmcloud oc cluster get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster help
+ibmcloud ks cluster help
 ```
 
 
@@ -2567,12 +2915,12 @@ ibmcloud oc cluster help
 Show help
 
 ```sh
-ibmcloud oc cluster help
+ibmcloud ks cluster help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster image-security disable`
+### `ibmcloud ks cluster image-security disable`
 {: #cluster-image-security-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2580,7 +2928,7 @@ ibmcloud oc cluster help
 Disable image security enforcement in your cluster.
 
 ```sh
-ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
+ibmcloud ks cluster image-security disable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -2600,12 +2948,12 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 Disable image security enforcement in your cluster
 
 ```sh
-ibmcloud oc cluster image-security disable --cluster CLUSTER
+ibmcloud ks cluster image-security disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster image-security enable`
+### `ibmcloud ks cluster image-security enable`
 {: #cluster-image-security-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2613,7 +2961,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER
 Enable image security enforcement in your cluster.
 
 ```sh
-ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster image-security enable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -2636,12 +2984,12 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 Enable image security enforcement in your cluster
 
 ```sh
-ibmcloud oc cluster image-security enable --cluster CLUSTER
+ibmcloud ks cluster image-security enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster image-security help`
+### `ibmcloud ks cluster image-security help`
 {: #cluster-image-security-help-cli}
 
 
@@ -2649,7 +2997,7 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster image-security help
+ibmcloud ks cluster image-security help
 ```
 
 
@@ -2659,12 +3007,12 @@ ibmcloud oc cluster image-security help
 Show help
 
 ```sh
-ibmcloud oc cluster image-security help
+ibmcloud ks cluster image-security help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster ls`
+### `ibmcloud ks cluster ls`
 {: #cluster-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2672,7 +3020,7 @@ ibmcloud oc cluster image-security help
 List all clusters in your IBM Cloud account.
 
 ```sh
-ibmcloud oc cluster ls [-l LOCATION ...] [--output OUTPUT] [--provider PROVIDER] [-q]
+ibmcloud ks cluster ls [-l LOCATION ...] [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 
 #### Command options
@@ -2698,12 +3046,48 @@ ibmcloud oc cluster ls [-l LOCATION ...] [--output OUTPUT] [--provider PROVIDER]
 List all clusters in your IBM Cloud account
 
 ```sh
-ibmcloud oc cluster ls
+ibmcloud ks cluster ls
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master audit-webhook help`
+### `ibmcloud ks cluster master audit-webhook get`
+{: #cluster-master-audit-webhook-get-cli}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+View the audit webhook configuration for a cluster's Kubernetes API server. The webhook backend forwards API server audit logs to a remote server.
+
+```sh
+ibmcloud ks cluster master audit-webhook get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+
+#### Command options
+{: #cluster-master-audit-webhook-get-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`--output`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-master-audit-webhook-get-examples}
+
+View the audit webhook configuration for a cluster's Kubernetes API server
+
+```sh
+ibmcloud ks cluster master audit-webhook get --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster master audit-webhook help`
 {: #cluster-master-audit-webhook-help-cli}
 
 
@@ -2711,7 +3095,7 @@ ibmcloud oc cluster ls
 Show help
 
 ```sh
-ibmcloud oc cluster master audit-webhook help
+ibmcloud ks cluster master audit-webhook help
 ```
 
 
@@ -2721,12 +3105,93 @@ ibmcloud oc cluster master audit-webhook help
 Show help
 
 ```sh
-ibmcloud oc cluster master audit-webhook help
+ibmcloud ks cluster master audit-webhook help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master console-oauth-access get`
+### `ibmcloud ks cluster master audit-webhook set`
+{: #cluster-master-audit-webhook-set-cli}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+Set the audit webhook configuration for a cluster's Kubernetes API server. The webhook backend forwards API server audit logs to a remote server.
+
+```sh
+ibmcloud ks cluster master audit-webhook set --cluster CLUSTER [--ca-cert CERT] [--client-cert CERT] [--client-key KEY] [--policy POLICY] [-q] [--remote-server SERVER]
+```
+
+#### Command options
+{: #cluster-master-audit-webhook-set-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`--ca-cert`
+:    The filepath of the CA cert used to verify the remote logging service.
+
+`--client-cert`
+:    The filepath for the client cert that is used to authenticate against the remote logging service.
+
+`--client-key`
+:    The filepath for the corresponding client key that is used to connect to the remote logging service.
+
+`--policy`
+:    Specify the audit policy type. Accepted values: `default`, `verbose`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--remote-server`
+:    The URL or IP address for the remote logging service.
+
+
+#### Examples
+{: #cluster-master-audit-webhook-set-examples}
+
+Set the audit webhook configuration for a cluster's Kubernetes API server
+
+```sh
+ibmcloud ks cluster master audit-webhook set --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster master audit-webhook unset`
+{: #cluster-master-audit-webhook-unset-cli}
+
+[Classic infrastructure]{: tag-classic-inf} 
+
+Remove the audit webhook configuration for a cluster's Kubernetes API server.
+
+```sh
+ibmcloud ks cluster master audit-webhook unset --cluster CLUSTER [-q]
+```
+
+#### Command options
+{: #cluster-master-audit-webhook-unset-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #cluster-master-audit-webhook-unset-examples}
+
+Remove the audit webhook configuration for a cluster's Kubernetes API server
+
+```sh
+ibmcloud ks cluster master audit-webhook unset --cluster CLUSTER
+```
+{: pre}
+
+
+### `ibmcloud ks cluster master console-oauth-access get`
 {: #cluster-master-console-oauth-access-get-cli}
 
 
@@ -2734,7 +3199,7 @@ ibmcloud oc cluster master audit-webhook help
 Get the OpenShift web console and OAuth server access type.
 
 ```sh
-ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks cluster master console-oauth-access get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -2757,12 +3222,12 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 Get the OpenShift web console and OAuth server access type
 
 ```sh
-ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER
+ibmcloud ks cluster master console-oauth-access get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master console-oauth-access help`
+### `ibmcloud ks cluster master console-oauth-access help`
 {: #cluster-master-console-oauth-access-help-cli}
 
 
@@ -2770,7 +3235,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster master console-oauth-access help
+ibmcloud ks cluster master console-oauth-access help
 ```
 
 
@@ -2780,12 +3245,12 @@ ibmcloud oc cluster master console-oauth-access help
 Show help
 
 ```sh
-ibmcloud oc cluster master console-oauth-access help
+ibmcloud ks cluster master console-oauth-access help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master console-oauth-access set`
+### `ibmcloud ks cluster master console-oauth-access set`
 {: #cluster-master-console-oauth-access-set-cli}
 
 
@@ -2793,7 +3258,7 @@ ibmcloud oc cluster master console-oauth-access help
 Set the OpenShift web console and OAuth server access type.
 
 ```sh
-ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] [--type TYPE]
+ibmcloud ks cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] [--type TYPE]
 ```
 
 #### Command options
@@ -2819,12 +3284,12 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 Set the OpenShift web console and OAuth server access type
 
 ```sh
-ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER
+ibmcloud ks cluster master console-oauth-access set --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master help`
+### `ibmcloud ks cluster master help`
 {: #cluster-master-help-cli}
 
 
@@ -2832,7 +3297,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster master help
+ibmcloud ks cluster master help
 ```
 
 
@@ -2842,12 +3307,12 @@ ibmcloud oc cluster master help
 Show help
 
 ```sh
-ibmcloud oc cluster master help
+ibmcloud ks cluster master help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security get`
+### `ibmcloud ks cluster master pod-security get`
 {: #cluster-master-pod-security-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2855,7 +3320,7 @@ ibmcloud oc cluster master help
 View the PodSecurity admission configuration for a cluster's Kubernetes API server.
 
 ```sh
-ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks cluster master pod-security get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -2878,12 +3343,12 @@ ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] 
 View the PodSecurity admission configuration for a cluster's Kubernetes API server
 
 ```sh
-ibmcloud oc cluster master pod-security get --cluster CLUSTER
+ibmcloud ks cluster master pod-security get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security help`
+### `ibmcloud ks cluster master pod-security help`
 {: #cluster-master-pod-security-help-cli}
 
 
@@ -2891,7 +3356,7 @@ ibmcloud oc cluster master pod-security get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster master pod-security help
+ibmcloud ks cluster master pod-security help
 ```
 
 
@@ -2901,12 +3366,12 @@ ibmcloud oc cluster master pod-security help
 Show help
 
 ```sh
-ibmcloud oc cluster master pod-security help
+ibmcloud ks cluster master pod-security help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security policy disable`
+### `ibmcloud ks cluster master pod-security policy disable`
 {: #cluster-master-pod-security-policy-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2914,7 +3379,7 @@ ibmcloud oc cluster master pod-security help
 Disable PodSecurityPolicy for a cluster's Kubernetes API server.
 
 ```sh
-ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
+ibmcloud ks cluster master pod-security policy disable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -2934,12 +3399,12 @@ ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
 Disable PodSecurityPolicy for a cluster's Kubernetes API server
 
 ```sh
-ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER
+ibmcloud ks cluster master pod-security policy disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security policy enable`
+### `ibmcloud ks cluster master pod-security policy enable`
 {: #cluster-master-pod-security-policy-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2947,7 +3412,7 @@ ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER
 Enable PodSecurityPolicy for a cluster's Kubernetes API server.
 
 ```sh
-ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [-q]
+ibmcloud ks cluster master pod-security policy enable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -2967,12 +3432,12 @@ ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [-q]
 Enable PodSecurityPolicy for a cluster's Kubernetes API server
 
 ```sh
-ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER
+ibmcloud ks cluster master pod-security policy enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security policy get`
+### `ibmcloud ks cluster master pod-security policy get`
 {: #cluster-master-pod-security-policy-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -2980,7 +3445,7 @@ ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER
 View the PodSecurityPolicy configuration for a cluster's Kubernetes API server.
 
 ```sh
-ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks cluster master pod-security policy get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -3003,12 +3468,12 @@ ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output O
 View the PodSecurityPolicy configuration for a cluster's Kubernetes API server
 
 ```sh
-ibmcloud oc cluster master pod-security policy get --cluster CLUSTER
+ibmcloud ks cluster master pod-security policy get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security policy help`
+### `ibmcloud ks cluster master pod-security policy help`
 {: #cluster-master-pod-security-policy-help-cli}
 
 
@@ -3016,7 +3481,7 @@ ibmcloud oc cluster master pod-security policy get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster master pod-security policy help
+ibmcloud ks cluster master pod-security policy help
 ```
 
 
@@ -3026,12 +3491,12 @@ ibmcloud oc cluster master pod-security policy help
 Show help
 
 ```sh
-ibmcloud oc cluster master pod-security policy help
+ibmcloud ks cluster master pod-security policy help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security set`
+### `ibmcloud ks cluster master pod-security set`
 {: #cluster-master-pod-security-set-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3039,7 +3504,7 @@ ibmcloud oc cluster master pod-security policy help
 Set and enable the PodSecurity admission configuration for a cluster's Kubernetes API server.
 
 ```sh
-ibmcloud oc cluster master pod-security set --cluster CLUSTER [--config-file FILE] [-q]
+ibmcloud ks cluster master pod-security set --cluster CLUSTER [--config-file FILE] [-q]
 ```
 
 #### Command options
@@ -3062,12 +3527,12 @@ ibmcloud oc cluster master pod-security set --cluster CLUSTER [--config-file FIL
 Set and enable the PodSecurity admission configuration for a cluster's Kubernetes API server
 
 ```sh
-ibmcloud oc cluster master pod-security set --cluster CLUSTER
+ibmcloud ks cluster master pod-security set --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master pod-security unset`
+### `ibmcloud ks cluster master pod-security unset`
 {: #cluster-master-pod-security-unset-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3075,7 +3540,7 @@ ibmcloud oc cluster master pod-security set --cluster CLUSTER
 Remove the PodSecurity admission configuration for a cluster's Kubernetes API server.
 
 ```sh
-ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
+ibmcloud ks cluster master pod-security unset --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -3095,12 +3560,12 @@ ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
 Remove the PodSecurity admission configuration for a cluster's Kubernetes API server
 
 ```sh
-ibmcloud oc cluster master pod-security unset --cluster CLUSTER
+ibmcloud ks cluster master pod-security unset --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint allowlist add`
+### `ibmcloud ks cluster master private-service-endpoint allowlist add`
 {: #cluster-master-private-service-endpoint-allowlist-add-cli}
 
 The `cluster master private-service-endpoint allowlist add` command is deprecated.
@@ -3111,7 +3576,7 @@ The `cluster master private-service-endpoint allowlist add` command is deprecate
 Add subnets to a cluster's private service endpoint allowlist.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
 ```
 
 #### Command options
@@ -3134,7 +3599,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 Add subnets to a cluster's private service endpoint allowlist
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET
+ibmcloud ks cluster master private-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET
 ```
 {: pre}
 
@@ -3217,7 +3682,7 @@ ibmcloud ks cluster master private-service-endpoint allowlist enable --cluster C
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint allowlist get`
+### `ibmcloud ks cluster master private-service-endpoint allowlist get`
 {: #cluster-master-private-service-endpoint-allowlist-get-cli}
 
 The `cluster master private-service-endpoint allowlist get` command is deprecated.
@@ -3228,7 +3693,7 @@ The `cluster master private-service-endpoint allowlist get` command is deprecate
 Get a cluster's private service endpoint allowlist.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUSTER [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist get --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -3248,12 +3713,12 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 Get a cluster's private service endpoint allowlist
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUSTER
+ibmcloud ks cluster master private-service-endpoint allowlist get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint allowlist help`
+### `ibmcloud ks cluster master private-service-endpoint allowlist help`
 {: #cluster-master-private-service-endpoint-allowlist-help-cli}
 
 
@@ -3261,7 +3726,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 Show help
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist help
+ibmcloud ks cluster master private-service-endpoint allowlist help
 ```
 
 
@@ -3271,12 +3736,12 @@ ibmcloud oc cluster master private-service-endpoint allowlist help
 Show help
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist help
+ibmcloud ks cluster master private-service-endpoint allowlist help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint allowlist rm`
+### `ibmcloud ks cluster master private-service-endpoint allowlist rm`
 {: #cluster-master-private-service-endpoint-allowlist-rm-cli}
 
 The `cluster master private-service-endpoint allowlist rm` command is deprecated.
@@ -3287,7 +3752,7 @@ The `cluster master private-service-endpoint allowlist rm` command is deprecated
 Remove subnets from a cluster's private service endpoint allowlist.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
 ```
 
 #### Command options
@@ -3313,12 +3778,12 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 Remove subnets from a cluster's private service endpoint allowlist
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET
+ibmcloud ks cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint enable`
+### `ibmcloud ks cluster master private-service-endpoint enable`
 {: #cluster-master-private-service-endpoint-enable-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -3326,7 +3791,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 Enable the private service endpoint to make the master privately accessible.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-f] [-q] [-y]
+ibmcloud ks cluster master private-service-endpoint enable --cluster CLUSTER [-f] [-q] [-y]
 ```
 
 #### Command options
@@ -3352,12 +3817,12 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-f
 Enable the private service endpoint to make the master privately accessible
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER
+ibmcloud ks cluster master private-service-endpoint enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint help`
+### `ibmcloud ks cluster master private-service-endpoint help`
 {: #cluster-master-private-service-endpoint-help-cli}
 
 
@@ -3365,7 +3830,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint help
+ibmcloud ks cluster master private-service-endpoint help
 ```
 
 
@@ -3375,12 +3840,12 @@ ibmcloud oc cluster master private-service-endpoint help
 Show help
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint help
+ibmcloud ks cluster master private-service-endpoint help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master public-service-endpoint disable`
+### `ibmcloud ks cluster master public-service-endpoint disable`
 {: #cluster-master-public-service-endpoint-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -3388,7 +3853,7 @@ ibmcloud oc cluster master private-service-endpoint help
 Disable the public service endpoint to make the master only privately accessible.
 
 ```sh
-ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER [-f] [-q] [-y]
+ibmcloud ks cluster master public-service-endpoint disable --cluster CLUSTER [-f] [-q] [-y]
 ```
 
 #### Command options
@@ -3414,12 +3879,12 @@ ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER [-f
 Disable the public service endpoint to make the master only privately accessible
 
 ```sh
-ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER
+ibmcloud ks cluster master public-service-endpoint disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master public-service-endpoint enable`
+### `ibmcloud ks cluster master public-service-endpoint enable`
 {: #cluster-master-public-service-endpoint-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -3427,7 +3892,7 @@ ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER
 Enable the public service endpoint to make the master publicly accessible.
 
 ```sh
-ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-f] [-q] [-y]
+ibmcloud ks cluster master public-service-endpoint enable --cluster CLUSTER [-f] [-q] [-y]
 ```
 
 #### Command options
@@ -3453,12 +3918,12 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-f]
 Enable the public service endpoint to make the master publicly accessible
 
 ```sh
-ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER
+ibmcloud ks cluster master public-service-endpoint enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master public-service-endpoint help`
+### `ibmcloud ks cluster master public-service-endpoint help`
 {: #cluster-master-public-service-endpoint-help-cli}
 
 
@@ -3466,7 +3931,7 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster master public-service-endpoint help
+ibmcloud ks cluster master public-service-endpoint help
 ```
 
 
@@ -3476,12 +3941,12 @@ ibmcloud oc cluster master public-service-endpoint help
 Show help
 
 ```sh
-ibmcloud oc cluster master public-service-endpoint help
+ibmcloud ks cluster master public-service-endpoint help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master refresh`
+### `ibmcloud ks cluster master refresh`
 {: #cluster-master-refresh-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3489,7 +3954,7 @@ ibmcloud oc cluster master public-service-endpoint help
 Restart the cluster master nodes to apply new Kubernetes API configuration changes. Your worker nodes, apps, and resources are not modified and continue to run.
 
 ```sh
-ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
+ibmcloud ks cluster master refresh --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -3509,7 +3974,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 Restart the cluster master nodes to apply new Kubernetes API configuration changes
 
 ```sh
-ibmcloud oc cluster master refresh --cluster CLUSTER
+ibmcloud ks cluster master refresh --cluster CLUSTER
 ```
 {: pre}
 
@@ -3719,7 +4184,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLU
 {: pre}
 
 
-### `ibmcloud oc cluster master satellite-service-endpoint help`
+### `ibmcloud ks cluster master satellite-service-endpoint help`
 {: #cluster-master-satellite-service-endpoint-help-cli}
 
 
@@ -3727,7 +4192,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLU
 Show help
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint help
+ibmcloud ks cluster master satellite-service-endpoint help
 ```
 
 
@@ -3737,12 +4202,12 @@ ibmcloud oc cluster master satellite-service-endpoint help
 Show help
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint help
+ibmcloud ks cluster master satellite-service-endpoint help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master update`
+### `ibmcloud ks cluster master update`
 {: #cluster-master-update-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3750,7 +4215,7 @@ ibmcloud oc cluster master satellite-service-endpoint help
 Update the cluster master to the latest or a specified Kubernetes version.
 
 ```sh
-ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [--version VERSION]
+ibmcloud ks cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -3779,12 +4244,12 @@ ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [
 Update the cluster master to the latest or a specified Kubernetes version
 
 ```sh
-ibmcloud oc cluster master update --cluster CLUSTER
+ibmcloud ks cluster master update --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster pull-secret apply`
+### `ibmcloud ks cluster pull-secret apply`
 {: #cluster-pull-secret-apply-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3792,7 +4257,7 @@ ibmcloud oc cluster master update --cluster CLUSTER
 Generate and apply a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Registry.
 
 ```sh
-ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
+ibmcloud ks cluster pull-secret apply --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -3812,12 +4277,12 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
 Generate and apply a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Registry
 
 ```sh
-ibmcloud oc cluster pull-secret apply --cluster CLUSTER
+ibmcloud ks cluster pull-secret apply --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster pull-secret help`
+### `ibmcloud ks cluster pull-secret help`
 {: #cluster-pull-secret-help-cli}
 
 
@@ -3825,7 +4290,7 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc cluster pull-secret help
+ibmcloud ks cluster pull-secret help
 ```
 
 
@@ -3835,12 +4300,12 @@ ibmcloud oc cluster pull-secret help
 Show help
 
 ```sh
-ibmcloud oc cluster pull-secret help
+ibmcloud ks cluster pull-secret help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster rm`
+### `ibmcloud ks cluster rm`
 {: #cluster-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3848,7 +4313,7 @@ ibmcloud oc cluster pull-secret help
 Delete a cluster. All worker nodes, apps, and containers are permanently deleted. This action cannot be undone.
 
 ```sh
-ibmcloud oc cluster rm --cluster CLUSTER [--delete-openshift-registry-cos-bucket] [--delete-storage] [-f] [-q] [--skip-advance-permissions-check]
+ibmcloud ks cluster rm --cluster CLUSTER [--delete-openshift-registry-cos-bucket] [--delete-storage] [-f] [-q] [--skip-advance-permissions-check]
 ```
 
 #### Command options
@@ -3880,12 +4345,12 @@ ibmcloud oc cluster rm --cluster CLUSTER [--delete-openshift-registry-cos-bucket
 Delete a cluster
 
 ```sh
-ibmcloud oc cluster rm --cluster CLUSTER
+ibmcloud ks cluster rm --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster service bind`
+### `ibmcloud ks cluster service bind`
 {: #cluster-service-bind-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3893,7 +4358,7 @@ ibmcloud oc cluster rm --cluster CLUSTER
 Add an IBM Cloud service to a cluster by binding the service instance to a Kubernetes namespace.
 
 ```sh
-ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --service SERVICE [-q] (--key KEY | --role ROLE)
+ibmcloud ks cluster service bind --cluster CLUSTER --namespace NAMESPACE --service SERVICE [-q] (--key KEY | --role ROLE)
 ```
 
 #### Command options
@@ -3925,12 +4390,12 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --servi
 Add an IBM Cloud service to a cluster by binding the service instance to a Kubernetes namespace
 
 ```sh
-ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --service SERVICE --key KEY
+ibmcloud ks cluster service bind --cluster CLUSTER --namespace NAMESPACE --service SERVICE --key KEY
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster service help`
+### `ibmcloud ks cluster service help`
 {: #cluster-service-help-cli}
 
 
@@ -3938,7 +4403,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --servi
 Show help
 
 ```sh
-ibmcloud oc cluster service help
+ibmcloud ks cluster service help
 ```
 
 
@@ -3948,12 +4413,12 @@ ibmcloud oc cluster service help
 Show help
 
 ```sh
-ibmcloud oc cluster service help
+ibmcloud ks cluster service help
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster service ls`
+### `ibmcloud ks cluster service ls`
 {: #cluster-service-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -3961,7 +4426,7 @@ ibmcloud oc cluster service help
 List services bound to a Kubernetes namespace.
 
 ```sh
-ibmcloud oc cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-namespaces | --namespace NAMESPACE)
+ibmcloud ks cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-namespaces | --namespace NAMESPACE)
 ```
 
 #### Command options
@@ -3990,12 +4455,12 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-n
 List services bound to a Kubernetes namespace
 
 ```sh
-ibmcloud oc cluster service ls --cluster CLUSTER --all-namespaces
+ibmcloud ks cluster service ls --cluster CLUSTER --all-namespaces
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster service unbind`
+### `ibmcloud ks cluster service unbind`
 {: #cluster-service-unbind-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4003,7 +4468,7 @@ ibmcloud oc cluster service ls --cluster CLUSTER --all-namespaces
 Remove an IBM Cloud service from a cluster by unbinding it from a Kubernetes namespace.
 
 ```sh
-ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --service SERVICE [-q]
+ibmcloud ks cluster service unbind --cluster CLUSTER --namespace NAMESPACE --service SERVICE [-q]
 ```
 
 #### Command options
@@ -4029,12 +4494,12 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --ser
 Remove an IBM Cloud service from a cluster by unbinding it from a Kubernetes namespace
 
 ```sh
-ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --service SERVICE
+ibmcloud ks cluster service unbind --cluster CLUSTER --namespace NAMESPACE --service SERVICE
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster subnet add`
+### `ibmcloud ks cluster subnet add`
 {: #cluster-subnet-add-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4042,7 +4507,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --ser
 Make an existing public or private portable subnet in your IBM Cloud infrastructure account available to a classic cluster.
 
 ```sh
-ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
+ibmcloud ks cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
 ```
 
 #### Command options
@@ -4065,12 +4530,12 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
 Make an existing public or private portable subnet in your IBM Cloud infrastructure account available to a classic cluster
 
 ```sh
-ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID
+ibmcloud ks cluster subnet add --cluster CLUSTER --subnet-id ID
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster subnet create`
+### `ibmcloud ks cluster subnet create`
 {: #cluster-subnet-create-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4078,7 +4543,7 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID
 Create a portable subnet on your public or private VLAN and make it available to a classic cluster.
 
 ```sh
-ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
+ibmcloud ks cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
 ```
 
 #### Command options
@@ -4104,12 +4569,12 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
 Create a portable subnet on your public or private VLAN and make it available to a classic cluster
 
 ```sh
-ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN
+ibmcloud ks cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster subnet detach`
+### `ibmcloud ks cluster subnet detach`
 {: #cluster-subnet-detach-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4117,7 +4582,7 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN
 Detach an existing public or private portable subnet from a classic cluster.
 
 ```sh
-ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
+ibmcloud ks cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 ```
 
 #### Command options
@@ -4143,12 +4608,12 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 Detach an existing public or private portable subnet from a classic cluster
 
 ```sh
-ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID
+ibmcloud ks cluster subnet detach --cluster CLUSTER --subnet-id ID
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster subnet help`
+### `ibmcloud ks cluster subnet help`
 {: #cluster-subnet-help-cli}
 
 
@@ -4156,7 +4621,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID
 Show help
 
 ```sh
-ibmcloud oc cluster subnet help
+ibmcloud ks cluster subnet help
 ```
 
 
@@ -4166,7 +4631,7 @@ ibmcloud oc cluster subnet help
 Show help
 
 ```sh
-ibmcloud oc cluster subnet help
+ibmcloud ks cluster subnet help
 ```
 {: pre}
 
@@ -4177,7 +4642,7 @@ ibmcloud oc cluster subnet help
 Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
 
 
-### `ibmcloud oc credential get`
+### `ibmcloud ks credential get`
 {: #credential-get-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4185,10 +4650,10 @@ Set and unset credentials that allow you to access the IBM Cloud classic infrast
 If you set up your IBM Cloud account to use different credentials to access the IBM Cloud classic infrastructure portfolio, get the infrastructure user name. This command applies to the targeted resource group, or to the default resource group if no resource group is targeted.
 
 ```sh
-ibmcloud oc credential get --region REGION [--output OUTPUT] [-q]
+ibmcloud ks credential get --region REGION [--output OUTPUT] [-q]
 ```
 
-Aliases: `ibmcloud oc credentials-get`
+Aliases: `ibmcloud ks credentials-get`
 
 #### Command options
 {: #credential-get-options}
@@ -4210,12 +4675,12 @@ Aliases: `ibmcloud oc credentials-get`
 If you set up your IBM Cloud account to use different credentials to access the IBM Cloud classic infrastructure portfolio, get the infrastructure user name
 
 ```sh
-ibmcloud oc credential get --region REGION
+ibmcloud ks credential get --region REGION
 ```
 {: pre}
 
 
-### `ibmcloud oc credential help`
+### `ibmcloud ks credential help`
 {: #credential-help-cli}
 
 
@@ -4223,7 +4688,7 @@ ibmcloud oc credential get --region REGION
 Show help
 
 ```sh
-ibmcloud oc credential help
+ibmcloud ks credential help
 ```
 
 
@@ -4233,12 +4698,12 @@ ibmcloud oc credential help
 Show help
 
 ```sh
-ibmcloud oc credential help
+ibmcloud ks credential help
 ```
 {: pre}
 
 
-### `ibmcloud oc credential set classic`
+### `ibmcloud ks credential set classic`
 {: #credential-set-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4246,7 +4711,7 @@ ibmcloud oc credential help
 Set credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
 
 ```sh
-ibmcloud oc credential set classic --infrastructure-api-key KEY --infrastructure-username USERNAME --region REGION [-q]
+ibmcloud ks credential set classic --infrastructure-api-key KEY --infrastructure-username USERNAME --region REGION [-q]
 ```
 
 #### Command options
@@ -4272,7 +4737,7 @@ ibmcloud oc credential set classic --infrastructure-api-key KEY --infrastructure
 Set credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account
 
 ```sh
-ibmcloud oc credential set classic \
+ibmcloud ks credential set classic \
   --infrastructure-api-key KEY \
   --infrastructure-username USERNAME \
   --region REGION
@@ -4280,7 +4745,7 @@ ibmcloud oc credential set classic \
 {: pre}
 
 
-### `ibmcloud oc credential set help`
+### `ibmcloud ks credential set help`
 {: #credential-set-help-cli}
 
 
@@ -4288,7 +4753,7 @@ ibmcloud oc credential set classic \
 Show help
 
 ```sh
-ibmcloud oc credential set help
+ibmcloud ks credential set help
 ```
 
 
@@ -4298,12 +4763,12 @@ ibmcloud oc credential set help
 Show help
 
 ```sh
-ibmcloud oc credential set help
+ibmcloud ks credential set help
 ```
 {: pre}
 
 
-### `ibmcloud oc credential unset`
+### `ibmcloud ks credential unset`
 {: #credential-unset-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4311,10 +4776,10 @@ ibmcloud oc credential set help
 Remove the credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account. This command applies to the targeted resource group, or to the default resource group if no resource group is targeted.
 
 ```sh
-ibmcloud oc credential unset --region REGION [-q]
+ibmcloud ks credential unset --region REGION [-q]
 ```
 
-Aliases: `ibmcloud oc credentials-unset`
+Aliases: `ibmcloud ks credentials-unset`
 
 #### Command options
 {: #credential-unset-options}
@@ -4333,7 +4798,7 @@ Aliases: `ibmcloud oc credentials-unset`
 Remove the credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account
 
 ```sh
-ibmcloud oc credential unset --region REGION
+ibmcloud ks credential unset --region REGION
 ```
 {: pre}
 
@@ -4344,7 +4809,7 @@ ibmcloud oc credential unset --region REGION
 [Expires on 2026-10-21] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 
 
-### `ibmcloud oc experimental help`
+### `ibmcloud ks experimental help`
 {: #experimental-help-cli}
 
 
@@ -4352,7 +4817,7 @@ ibmcloud oc credential unset --region REGION
 Show help
 
 ```sh
-ibmcloud oc experimental help
+ibmcloud ks experimental help
 ```
 
 
@@ -4362,12 +4827,12 @@ ibmcloud oc experimental help
 Show help
 
 ```sh
-ibmcloud oc experimental help
+ibmcloud ks experimental help
 ```
 {: pre}
 
 
-### `ibmcloud oc experimental trusted-profile default get`
+### `ibmcloud ks experimental trusted-profile default get`
 {: #experimental-trusted-profile-default-get-cli}
 
 
@@ -4375,7 +4840,7 @@ ibmcloud oc experimental help
 [Expires on 2026-10-21] Get the default trusted profile for clusters created in a resource-group.
 
 ```sh
-ibmcloud oc experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
+ibmcloud ks experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -4401,12 +4866,12 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 [Expires on 2026-10-21] Get the default trusted profile for clusters created in a resource-group
 
 ```sh
-ibmcloud oc experimental trusted-profile default get --region REGION --resource-group GROUP
+ibmcloud ks experimental trusted-profile default get --region REGION --resource-group GROUP
 ```
 {: pre}
 
 
-### `ibmcloud oc experimental trusted-profile default help`
+### `ibmcloud ks experimental trusted-profile default help`
 {: #experimental-trusted-profile-default-help-cli}
 
 
@@ -4414,7 +4879,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 Show help
 
 ```sh
-ibmcloud oc experimental trusted-profile default help
+ibmcloud ks experimental trusted-profile default help
 ```
 
 
@@ -4424,12 +4889,12 @@ ibmcloud oc experimental trusted-profile default help
 Show help
 
 ```sh
-ibmcloud oc experimental trusted-profile default help
+ibmcloud ks experimental trusted-profile default help
 ```
 {: pre}
 
 
-### `ibmcloud oc experimental trusted-profile default set`
+### `ibmcloud ks experimental trusted-profile default set`
 {: #experimental-trusted-profile-default-set-cli}
 
 
@@ -4437,7 +4902,7 @@ ibmcloud oc experimental trusted-profile default help
 [Expires on 2026-10-21] Set the default trusted profile for clusters created in a resource-group.
 
 ```sh
-ibmcloud oc experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
+ibmcloud ks experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -4466,7 +4931,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 [Expires on 2026-10-21] Set the default trusted profile for clusters created in a resource-group
 
 ```sh
-ibmcloud oc experimental trusted-profile default set \
+ibmcloud ks experimental trusted-profile default set \
   --region REGION \
   --resource-group GROUP \
   --trusted-profile PROFILE
@@ -4474,7 +4939,7 @@ ibmcloud oc experimental trusted-profile default set \
 {: pre}
 
 
-### `ibmcloud oc experimental trusted-profile get`
+### `ibmcloud ks experimental trusted-profile get`
 {: #experimental-trusted-profile-get-cli}
 
 
@@ -4482,7 +4947,7 @@ ibmcloud oc experimental trusted-profile default set \
 [Expires on 2026-10-21] Get trusted profile for a cluster.
 
 ```sh
-ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -4505,12 +4970,12 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 [Expires on 2026-10-21] Get trusted profile for a cluster
 
 ```sh
-ibmcloud oc experimental trusted-profile get --cluster CLUSTER
+ibmcloud ks experimental trusted-profile get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc experimental trusted-profile help`
+### `ibmcloud ks experimental trusted-profile help`
 {: #experimental-trusted-profile-help-cli}
 
 
@@ -4518,7 +4983,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc experimental trusted-profile help
+ibmcloud ks experimental trusted-profile help
 ```
 
 
@@ -4528,12 +4993,12 @@ ibmcloud oc experimental trusted-profile help
 Show help
 
 ```sh
-ibmcloud oc experimental trusted-profile help
+ibmcloud ks experimental trusted-profile help
 ```
 {: pre}
 
 
-### `ibmcloud oc experimental trusted-profile set`
+### `ibmcloud ks experimental trusted-profile set`
 {: #experimental-trusted-profile-set-cli}
 
 
@@ -4541,7 +5006,7 @@ ibmcloud oc experimental trusted-profile help
 [Expires on 2026-10-21] Set trusted profile on a cluster.
 
 ```sh
-ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
+ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -4567,7 +5032,7 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 [Expires on 2026-10-21] Set trusted profile on a cluster
 
 ```sh
-ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE
+ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE
 ```
 {: pre}
 
@@ -4578,7 +5043,7 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 Getting flavor related information. Flavors determine how much virtual CPU, memory, and disk space is available to each worker node.
 
 
-### `ibmcloud oc flavor get`
+### `ibmcloud ks flavor get`
 {: #flavor-get-cli}
 
 
@@ -4586,7 +5051,7 @@ Getting flavor related information. Flavors determine how much virtual CPU, memo
 Get the information of a flavor for a zone and provider.
 
 ```sh
-ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output OUTPUT] [-q]
+ibmcloud ks flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -4615,12 +5080,12 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output
 Get the information of a flavor for a zone and provider
 
 ```sh
-ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE
+ibmcloud ks flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc flavor help`
+### `ibmcloud ks flavor help`
 {: #flavor-help-cli}
 
 
@@ -4628,7 +5093,7 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE
 Show help
 
 ```sh
-ibmcloud oc flavor help
+ibmcloud ks flavor help
 ```
 
 
@@ -4638,12 +5103,12 @@ ibmcloud oc flavor help
 Show help
 
 ```sh
-ibmcloud oc flavor help
+ibmcloud ks flavor help
 ```
 {: pre}
 
 
-### `ibmcloud oc flavor ls`
+### `ibmcloud ks flavor ls`
 {: #flavor-ls-cli}
 
 
@@ -4651,7 +5116,7 @@ ibmcloud oc flavor help
 List available flavors for a zone.
 
 ```sh
-ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [--show-os] [--show-storage]
+ibmcloud ks flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [--show-os] [--show-storage]
 ```
 
 #### Command options
@@ -4683,7 +5148,7 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 List available flavors for a zone
 
 ```sh
-ibmcloud oc flavor ls --zone ZONE
+ibmcloud ks flavor ls --zone ZONE
 ```
 {: pre}
 
@@ -4694,7 +5159,7 @@ ibmcloud oc flavor ls --zone ZONE
 View information about infrastructure permissions that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
 
 
-### `ibmcloud oc infra-permissions get`
+### `ibmcloud ks infra-permissions get`
 {: #infra-permissions-get-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -4702,7 +5167,7 @@ View information about infrastructure permissions that allow you to access the I
 Check whether the credentials that allow access to the IBM Cloud classic infrastructure portfolio for the targeted resource group are missing suggested or required infrastructure permissions. This command applies to the targeted resource group, or to the default resource group if no resource group is targeted.
 
 ```sh
-ibmcloud oc infra-permissions get [--output OUTPUT] [-q] [--region REGION]
+ibmcloud ks infra-permissions get [--output OUTPUT] [-q] [--region REGION]
 ```
 
 #### Command options
@@ -4725,12 +5190,12 @@ ibmcloud oc infra-permissions get [--output OUTPUT] [-q] [--region REGION]
 Check whether the credentials that allow access to the IBM Cloud classic infrastructure portfolio for the targeted resource group are missing suggested or required infrastructure permissions
 
 ```sh
-ibmcloud oc infra-permissions get
+ibmcloud ks infra-permissions get
 ```
 {: pre}
 
 
-### `ibmcloud oc infra-permissions help`
+### `ibmcloud ks infra-permissions help`
 {: #infra-permissions-help-cli}
 
 
@@ -4738,7 +5203,7 @@ ibmcloud oc infra-permissions get
 Show help
 
 ```sh
-ibmcloud oc infra-permissions help
+ibmcloud ks infra-permissions help
 ```
 
 
@@ -4748,7 +5213,7 @@ ibmcloud oc infra-permissions help
 Show help
 
 ```sh
-ibmcloud oc infra-permissions help
+ibmcloud ks infra-permissions help
 ```
 {: pre}
 
@@ -4759,7 +5224,7 @@ ibmcloud oc infra-permissions help
 View and modify Ingress services and settings
 
 
-### `ibmcloud oc ingress alb autoscale get`
+### `ibmcloud ks ingress alb autoscale get`
 {: #ingress-alb-autoscale-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4767,7 +5232,7 @@ View and modify Ingress services and settings
 See autoscaling status and configuration for Ingress ALBs.
 
 ```sh
-ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -4793,12 +5258,12 @@ ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTP
 See autoscaling status and configuration for Ingress ALBs
 
 ```sh
-ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER
+ibmcloud ks ingress alb autoscale get --alb ALB --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoscale help`
+### `ibmcloud ks ingress alb autoscale help`
 {: #ingress-alb-autoscale-help-cli}
 
 
@@ -4806,7 +5271,7 @@ ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress alb autoscale help
+ibmcloud ks ingress alb autoscale help
 ```
 
 
@@ -4816,12 +5281,12 @@ ibmcloud oc ingress alb autoscale help
 Show help
 
 ```sh
-ibmcloud oc ingress alb autoscale help
+ibmcloud ks ingress alb autoscale help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoscale set`
+### `ibmcloud ks ingress alb autoscale set`
 {: #ingress-alb-autoscale-set-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4829,7 +5294,7 @@ ibmcloud oc ingress alb autoscale help
 Configure autoscaling for Ingress ALBs.
 
 ```sh
-ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas REPLICAS --min-replicas REPLICAS [--output OUTPUT] [-q] (--cpu-average-utilization PERCENT | --custom-metrics-file FILE)
+ibmcloud ks ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas REPLICAS --min-replicas REPLICAS [--output OUTPUT] [-q] (--cpu-average-utilization PERCENT | --custom-metrics-file FILE)
 ```
 
 #### Command options
@@ -4867,7 +5332,7 @@ ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas
 Configure autoscaling for Ingress ALBs
 
 ```sh
-ibmcloud oc ingress alb autoscale set \
+ibmcloud ks ingress alb autoscale set \
   --alb ALB \
   --cluster CLUSTER \
   --max-replicas REPLICAS \
@@ -4877,7 +5342,7 @@ ibmcloud oc ingress alb autoscale set \
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoscale unset`
+### `ibmcloud ks ingress alb autoscale unset`
 {: #ingress-alb-autoscale-unset-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4885,7 +5350,7 @@ ibmcloud oc ingress alb autoscale set \
 Delete the autoscaling configuration for Ingress ALBs.
 
 ```sh
-ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
+ibmcloud ks ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -4908,12 +5373,12 @@ ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
 Delete the autoscaling configuration for Ingress ALBs
 
 ```sh
-ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER
+ibmcloud ks ingress alb autoscale unset --alb ALB --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoupdate disable`
+### `ibmcloud ks ingress alb autoupdate disable`
 {: #ingress-alb-autoupdate-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4921,7 +5386,7 @@ ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER
 Disable automatic updates of all Ingress ALB pods in a cluster.
 
 ```sh
-ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
+ibmcloud ks ingress alb autoupdate disable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -4941,12 +5406,12 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 Disable automatic updates of all Ingress ALB pods in a cluster
 
 ```sh
-ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER
+ibmcloud ks ingress alb autoupdate disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoupdate enable`
+### `ibmcloud ks ingress alb autoupdate enable`
 {: #ingress-alb-autoupdate-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4954,7 +5419,7 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER
 Enable automatic updates of all Ingress ALB pods in a cluster.
 
 ```sh
-ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
+ibmcloud ks ingress alb autoupdate enable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -4974,12 +5439,12 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 Enable automatic updates of all Ingress ALB pods in a cluster
 
 ```sh
-ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER
+ibmcloud ks ingress alb autoupdate enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoupdate get`
+### `ibmcloud ks ingress alb autoupdate get`
 {: #ingress-alb-autoupdate-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -4987,7 +5452,7 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER
 View whether the Ingress ALB pods in a cluster are set to automatically update and whether ALB pods are at the latest version.
 
 ```sh
-ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5010,12 +5475,12 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 View whether the Ingress ALB pods in a cluster are set to automatically update and whether ALB pods are at the latest version
 
 ```sh
-ibmcloud oc ingress alb autoupdate get --cluster CLUSTER
+ibmcloud ks ingress alb autoupdate get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb autoupdate help`
+### `ibmcloud ks ingress alb autoupdate help`
 {: #ingress-alb-autoupdate-help-cli}
 
 
@@ -5023,7 +5488,7 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress alb autoupdate help
+ibmcloud ks ingress alb autoupdate help
 ```
 
 
@@ -5033,12 +5498,12 @@ ibmcloud oc ingress alb autoupdate help
 Show help
 
 ```sh
-ibmcloud oc ingress alb autoupdate help
+ibmcloud ks ingress alb autoupdate help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb create classic`
+### `ibmcloud ks ingress alb create classic`
 {: #ingress-alb-create-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -5046,7 +5511,7 @@ ibmcloud oc ingress alb autoupdate help
 Create and enable an Ingress ALB in a classic cluster.
 
 ```sh
-ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN --zone ZONE [--ip IP] [-q] [--version VERSION]
+ibmcloud ks ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN --zone ZONE [--ip IP] [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -5081,12 +5546,12 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN
 Create and enable an Ingress ALB in a classic cluster
 
 ```sh
-ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN --zone ZONE
+ibmcloud ks ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb create help`
+### `ibmcloud ks ingress alb create help`
 {: #ingress-alb-create-help-cli}
 
 
@@ -5094,7 +5559,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN
 Show help
 
 ```sh
-ibmcloud oc ingress alb create help
+ibmcloud ks ingress alb create help
 ```
 
 
@@ -5104,12 +5569,12 @@ ibmcloud oc ingress alb create help
 Show help
 
 ```sh
-ibmcloud oc ingress alb create help
+ibmcloud ks ingress alb create help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb create vpc-gen2`
+### `ibmcloud ks ingress alb create vpc-gen2`
 {: #ingress-alb-create-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -5117,7 +5582,7 @@ ibmcloud oc ingress alb create help
 Create and enable an Ingress ALB in a VPC Gen 2 cluster.
 
 ```sh
-ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZONE [-q] [--version VERSION]
+ibmcloud ks ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZONE [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -5146,12 +5611,12 @@ ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZON
 Create and enable an Ingress ALB in a VPC Gen 2 cluster
 
 ```sh
-ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZONE
+ibmcloud ks ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb disable`
+### `ibmcloud ks ingress alb disable`
 {: #ingress-alb-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5159,7 +5624,7 @@ ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZON
 Disable an Ingress ALB in a cluster.
 
 ```sh
-ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER [-q]
+ibmcloud ks ingress alb disable --alb ALB --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -5182,12 +5647,12 @@ ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER [-q]
 Disable an Ingress ALB in a cluster
 
 ```sh
-ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER
+ibmcloud ks ingress alb disable --alb ALB --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb enable classic`
+### `ibmcloud ks ingress alb enable classic`
 {: #ingress-alb-enable-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -5195,7 +5660,7 @@ ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER
 Enable an Ingress ALB in a classic cluster.
 
 ```sh
-ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q] [--version VERSION]
+ibmcloud ks ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -5224,12 +5689,12 @@ ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q
 Enable an Ingress ALB in a classic cluster
 
 ```sh
-ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER
+ibmcloud ks ingress alb enable classic --alb ALB --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb enable help`
+### `ibmcloud ks ingress alb enable help`
 {: #ingress-alb-enable-help-cli}
 
 
@@ -5237,7 +5702,7 @@ ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress alb enable help
+ibmcloud ks ingress alb enable help
 ```
 
 
@@ -5247,12 +5712,12 @@ ibmcloud oc ingress alb enable help
 Show help
 
 ```sh
-ibmcloud oc ingress alb enable help
+ibmcloud ks ingress alb enable help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb enable vpc-gen2`
+### `ibmcloud ks ingress alb enable vpc-gen2`
 {: #ingress-alb-enable-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -5260,7 +5725,7 @@ ibmcloud oc ingress alb enable help
 Enable an Ingress ALB in a VPC Gen 2 cluster.
 
 ```sh
-ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER [-q] [--version VERSION]
+ibmcloud ks ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -5286,12 +5751,12 @@ ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER [-q] [--vers
 Enable an Ingress ALB in a VPC Gen 2 cluster
 
 ```sh
-ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER
+ibmcloud ks ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb get`
+### `ibmcloud ks ingress alb get`
 {: #ingress-alb-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5299,7 +5764,7 @@ ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER
 View the details of an Ingress ALB in a cluster.
 
 ```sh
-ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5325,12 +5790,12 @@ ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 View the details of an Ingress ALB in a cluster
 
 ```sh
-ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER
+ibmcloud ks ingress alb get --alb ALB --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb health-checker disable`
+### `ibmcloud ks ingress alb health-checker disable`
 {: #ingress-alb-health-checker-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5338,7 +5803,7 @@ ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER
 Disable the Ingress health checker.
 
 ```sh
-ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
+ibmcloud ks ingress alb health-checker disable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -5358,12 +5823,12 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
 Disable the Ingress health checker
 
 ```sh
-ibmcloud oc ingress alb health-checker disable --cluster CLUSTER
+ibmcloud ks ingress alb health-checker disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb health-checker enable`
+### `ibmcloud ks ingress alb health-checker enable`
 {: #ingress-alb-health-checker-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5371,7 +5836,7 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER
 Enable the Ingress health checker.
 
 ```sh
-ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
+ibmcloud ks ingress alb health-checker enable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -5391,12 +5856,12 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
 Enable the Ingress health checker
 
 ```sh
-ibmcloud oc ingress alb health-checker enable --cluster CLUSTER
+ibmcloud ks ingress alb health-checker enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb health-checker get`
+### `ibmcloud ks ingress alb health-checker get`
 {: #ingress-alb-health-checker-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5404,7 +5869,7 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER
 View status of the Ingress health checker.
 
 ```sh
-ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5427,12 +5892,12 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [
 View status of the Ingress health checker
 
 ```sh
-ibmcloud oc ingress alb health-checker get --cluster CLUSTER
+ibmcloud ks ingress alb health-checker get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb health-checker help`
+### `ibmcloud ks ingress alb health-checker help`
 {: #ingress-alb-health-checker-help-cli}
 
 
@@ -5440,7 +5905,7 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress alb health-checker help
+ibmcloud ks ingress alb health-checker help
 ```
 
 
@@ -5450,12 +5915,12 @@ ibmcloud oc ingress alb health-checker help
 Show help
 
 ```sh
-ibmcloud oc ingress alb health-checker help
+ibmcloud ks ingress alb health-checker help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb help`
+### `ibmcloud ks ingress alb help`
 {: #ingress-alb-help-cli}
 
 
@@ -5463,7 +5928,7 @@ ibmcloud oc ingress alb health-checker help
 Show help
 
 ```sh
-ibmcloud oc ingress alb help
+ibmcloud ks ingress alb help
 ```
 
 
@@ -5473,12 +5938,12 @@ ibmcloud oc ingress alb help
 Show help
 
 ```sh
-ibmcloud oc ingress alb help
+ibmcloud ks ingress alb help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb ls`
+### `ibmcloud ks ingress alb ls`
 {: #ingress-alb-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5486,7 +5951,7 @@ ibmcloud oc ingress alb help
 List all Ingress ALB IDs in a cluster and whether ALB pods are at the latest version.
 
 ```sh
-ibmcloud oc ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5509,12 +5974,12 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
 List all Ingress ALB IDs in a cluster and whether ALB pods are at the latest version
 
 ```sh
-ibmcloud oc ingress alb ls --cluster CLUSTER
+ibmcloud ks ingress alb ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb update`
+### `ibmcloud ks ingress alb update`
 {: #ingress-alb-update-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5522,7 +5987,7 @@ ibmcloud oc ingress alb ls --cluster CLUSTER
 Force a one-time update of the pods for individual or all ALBs in the cluster.
 
 ```sh
-ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPUT] [-q] [--version VERSION]
+ibmcloud ks ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPUT] [-q] [--version VERSION]
 ```
 
 #### Command options
@@ -5551,12 +6016,12 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPU
 Force a one-time update of the pods for individual or all ALBs in the cluster
 
 ```sh
-ibmcloud oc ingress alb update --cluster CLUSTER
+ibmcloud ks ingress alb update --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress alb versions`
+### `ibmcloud ks ingress alb versions`
 {: #ingress-alb-versions-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -5564,7 +6029,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER
 List Ingress ALB image versions that are available.
 
 ```sh
-ibmcloud oc ingress alb versions [--output OUTPUT] [-q] [--region REGION]
+ibmcloud ks ingress alb versions [--output OUTPUT] [-q] [--region REGION]
 ```
 
 #### Command options
@@ -5587,12 +6052,12 @@ ibmcloud oc ingress alb versions [--output OUTPUT] [-q] [--region REGION]
 List Ingress ALB image versions that are available
 
 ```sh
-ibmcloud oc ingress alb versions
+ibmcloud ks ingress alb versions
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain create`
+### `ibmcloud ks ingress domain create`
 {: #ingress-domain-create-cli}
 
 
@@ -5600,7 +6065,7 @@ ibmcloud oc ingress alb versions
 Create an Ingress domain for a cluster.
 
 ```sh
-ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN] [--domain-provider PROVIDER] [--domain-zone ZONE] [--hostname HOSTNAME] [--ip IP] [--is-default] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
+ibmcloud ks ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN] [--domain-provider PROVIDER] [--domain-zone ZONE] [--hostname HOSTNAME] [--ip IP] [--is-default] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
 ```
 
 #### Command options
@@ -5647,12 +6112,12 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN
 Create an Ingress domain for a cluster
 
 ```sh
-ibmcloud oc ingress domain create --cluster CLUSTER
+ibmcloud ks ingress domain create --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain default help`
+### `ibmcloud ks ingress domain default help`
 {: #ingress-domain-default-help-cli}
 
 
@@ -5660,7 +6125,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress domain default help
+ibmcloud ks ingress domain default help
 ```
 
 
@@ -5670,12 +6135,12 @@ ibmcloud oc ingress domain default help
 Show help
 
 ```sh
-ibmcloud oc ingress domain default help
+ibmcloud ks ingress domain default help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain default replace`
+### `ibmcloud ks ingress domain default replace`
 {: #ingress-domain-default-replace-cli}
 
 
@@ -5683,7 +6148,7 @@ ibmcloud oc ingress domain default help
 Change a cluster's default Ingress domain.
 
 ```sh
-ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q]
+ibmcloud ks ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q]
 ```
 
 #### Command options
@@ -5706,12 +6171,12 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q
 Change a cluster's default Ingress domain
 
 ```sh
-ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN
+ibmcloud ks ingress domain default replace --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain get`
+### `ibmcloud ks ingress domain get`
 {: #ingress-domain-get-cli}
 
 
@@ -5719,7 +6184,7 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN
 View the details of an Ingress domain.
 
 ```sh
-ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
+ibmcloud ks ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5745,12 +6210,12 @@ ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPU
 View the details of an Ingress domain
 
 ```sh
-ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN
+ibmcloud ks ingress domain get --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain help`
+### `ibmcloud ks ingress domain help`
 {: #ingress-domain-help-cli}
 
 
@@ -5758,7 +6223,7 @@ ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN
 Show help
 
 ```sh
-ibmcloud oc ingress domain help
+ibmcloud ks ingress domain help
 ```
 
 
@@ -5768,12 +6233,12 @@ ibmcloud oc ingress domain help
 Show help
 
 ```sh
-ibmcloud oc ingress domain help
+ibmcloud ks ingress domain help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain ls`
+### `ibmcloud ks ingress domain ls`
 {: #ingress-domain-ls-cli}
 
 
@@ -5781,7 +6246,7 @@ ibmcloud oc ingress domain help
 List all Ingress domains for a cluster.
 
 ```sh
-ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5804,12 +6269,12 @@ ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
 List all Ingress domains for a cluster
 
 ```sh
-ibmcloud oc ingress domain ls --cluster CLUSTER
+ibmcloud ks ingress domain ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain rm`
+### `ibmcloud ks ingress domain rm`
 {: #ingress-domain-rm-cli}
 
 
@@ -5817,7 +6282,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER
 Remove an Ingress domain from a cluster.
 
 ```sh
-ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
+ibmcloud ks ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
 ```
 
 #### Command options
@@ -5843,12 +6308,12 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
 Remove an Ingress domain from a cluster
 
 ```sh
-ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
+ibmcloud ks ingress domain rm --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain secret help`
+### `ibmcloud ks ingress domain secret help`
 {: #ingress-domain-secret-help-cli}
 
 
@@ -5856,7 +6321,7 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
 Show help
 
 ```sh
-ibmcloud oc ingress domain secret help
+ibmcloud ks ingress domain secret help
 ```
 
 
@@ -5866,12 +6331,12 @@ ibmcloud oc ingress domain secret help
 Show help
 
 ```sh
-ibmcloud oc ingress domain secret help
+ibmcloud ks ingress domain secret help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain secret regenerate`
+### `ibmcloud ks ingress domain secret regenerate`
 {: #ingress-domain-secret-regenerate-cli}
 
 
@@ -5879,7 +6344,7 @@ ibmcloud oc ingress domain secret help
 Regenerate the certificate for an Ingress domain.
 
 ```sh
-ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
+ibmcloud ks ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5905,12 +6370,12 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [
 Regenerate the certificate for an Ingress domain
 
 ```sh
-ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
+ibmcloud ks ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain secret rm`
+### `ibmcloud ks ingress domain secret rm`
 {: #ingress-domain-secret-rm-cli}
 
 
@@ -5918,7 +6383,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
 Delete a secret for an Ingress domain and prevent future renewal of the certificate.
 
 ```sh
-ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--output OUTPUT] [-q]
+ibmcloud ks ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -5947,12 +6412,12 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--o
 Delete a secret for an Ingress domain and prevent future renewal of the certificate
 
 ```sh
-ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN
+ibmcloud ks ingress domain secret rm --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress domain update`
+### `ibmcloud ks ingress domain update`
 {: #ingress-domain-update-cli}
 
 
@@ -5960,7 +6425,7 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN
 Update an Ingress domain for a cluster. The records passed in will fully replace the current records associated with the domain. Passing in no records will unregister the current records from a domain.
 
 ```sh
-ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] [-q]
+ibmcloud ks ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] [-q]
 ```
 
 #### Command options
@@ -5989,12 +6454,12 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname 
 Update an Ingress domain for a cluster
 
 ```sh
-ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN
+ibmcloud ks ingress domain update --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress help`
+### `ibmcloud ks ingress help`
 {: #ingress-help-cli}
 
 
@@ -6002,7 +6467,7 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN
 Show help
 
 ```sh
-ibmcloud oc ingress help
+ibmcloud ks ingress help
 ```
 
 
@@ -6012,12 +6477,12 @@ ibmcloud oc ingress help
 Show help
 
 ```sh
-ibmcloud oc ingress help
+ibmcloud ks ingress help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance default help`
+### `ibmcloud ks ingress instance default help`
 {: #ingress-instance-default-help-cli}
 
 
@@ -6025,7 +6490,7 @@ ibmcloud oc ingress help
 Show help
 
 ```sh
-ibmcloud oc ingress instance default help
+ibmcloud ks ingress instance default help
 ```
 
 
@@ -6035,12 +6500,12 @@ ibmcloud oc ingress instance default help
 Show help
 
 ```sh
-ibmcloud oc ingress instance default help
+ibmcloud ks ingress instance default help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance default set`
+### `ibmcloud ks ingress instance default set`
 {: #ingress-instance-default-set-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6048,7 +6513,7 @@ ibmcloud oc ingress instance default help
 Set a registered IBM Cloud Secrets Manager instance as the default. If an existing default instance exists, it is unset.
 
 ```sh
-ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME [-q] [--secret-group GROUP]
+ibmcloud ks ingress instance default set --cluster CLUSTER --name NAME [-q] [--secret-group GROUP]
 ```
 
 #### Command options
@@ -6074,12 +6539,12 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME [-q] [--s
 Set a registered IBM Cloud Secrets Manager instance as the default
 
 ```sh
-ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME
+ibmcloud ks ingress instance default set --cluster CLUSTER --name NAME
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance default unset`
+### `ibmcloud ks ingress instance default unset`
 {: #ingress-instance-default-unset-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6087,7 +6552,7 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME
 Unset a registered IBM Cloud Secrets Manager instance from default.
 
 ```sh
-ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME [-q]
+ibmcloud ks ingress instance default unset --cluster CLUSTER --name NAME [-q]
 ```
 
 #### Command options
@@ -6110,12 +6575,12 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME [-q]
 Unset a registered IBM Cloud Secrets Manager instance from default
 
 ```sh
-ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME
+ibmcloud ks ingress instance default unset --cluster CLUSTER --name NAME
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance get`
+### `ibmcloud ks ingress instance get`
 {: #ingress-instance-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6123,7 +6588,7 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME
 View details of an IBM Cloud Secrets Manager instance registered to a cluster.
 
 ```sh
-ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT] [-q]
+ibmcloud ks ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -6149,12 +6614,12 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 View details of an IBM Cloud Secrets Manager instance registered to a cluster
 
 ```sh
-ibmcloud oc ingress instance get --cluster CLUSTER --name NAME
+ibmcloud ks ingress instance get --cluster CLUSTER --name NAME
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance help`
+### `ibmcloud ks ingress instance help`
 {: #ingress-instance-help-cli}
 
 
@@ -6162,7 +6627,7 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME
 Show help
 
 ```sh
-ibmcloud oc ingress instance help
+ibmcloud ks ingress instance help
 ```
 
 
@@ -6172,12 +6637,12 @@ ibmcloud oc ingress instance help
 Show help
 
 ```sh
-ibmcloud oc ingress instance help
+ibmcloud ks ingress instance help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance ls`
+### `ibmcloud ks ingress instance ls`
 {: #ingress-instance-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6185,7 +6650,7 @@ ibmcloud oc ingress instance help
 List IBM Cloud Secrets Manager instances registered to a cluster.
 
 ```sh
-ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-deleted]
+ibmcloud ks ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-deleted]
 ```
 
 #### Command options
@@ -6211,12 +6676,12 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 List IBM Cloud Secrets Manager instances registered to a cluster
 
 ```sh
-ibmcloud oc ingress instance ls --cluster CLUSTER
+ibmcloud ks ingress instance ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance register`
+### `ibmcloud ks ingress instance register`
 {: #ingress-instance-register-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6224,7 +6689,7 @@ ibmcloud oc ingress instance ls --cluster CLUSTER
 Register an IBM Cloud Secrets Manager instance to a cluster.
 
 ```sh
-ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q] [--secret-group GROUP]
+ibmcloud ks ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q] [--secret-group GROUP]
 ```
 
 #### Command options
@@ -6253,12 +6718,12 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 Register an IBM Cloud Secrets Manager instance to a cluster
 
 ```sh
-ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN
+ibmcloud ks ingress instance register --cluster CLUSTER --crn CRN
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress instance unregister`
+### `ibmcloud ks ingress instance unregister`
 {: #ingress-instance-unregister-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6266,7 +6731,7 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN
 Unregister an IBM Cloud Secrets Manager instance from a cluster.
 
 ```sh
-ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
+ibmcloud ks ingress instance unregister --cluster CLUSTER --name NAME [-q]
 ```
 
 #### Command options
@@ -6289,12 +6754,12 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 Unregister an IBM Cloud Secrets Manager instance from a cluster
 
 ```sh
-ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME
+ibmcloud ks ingress instance unregister --cluster CLUSTER --name NAME
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer backend help`
+### `ibmcloud ks ingress load-balancer backend help`
 {: #ingress-load-balancer-backend-help-cli}
 
 
@@ -6302,7 +6767,7 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME
 Show help
 
 ```sh
-ibmcloud oc ingress load-balancer backend help
+ibmcloud ks ingress load-balancer backend help
 ```
 
 
@@ -6312,12 +6777,12 @@ ibmcloud oc ingress load-balancer backend help
 Show help
 
 ```sh
-ibmcloud oc ingress load-balancer backend help
+ibmcloud ks ingress load-balancer backend help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer backend set`
+### `ibmcloud ks ingress load-balancer backend set`
 {: #ingress-load-balancer-backend-set-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -6325,7 +6790,7 @@ ibmcloud oc ingress load-balancer backend help
 Set the private and/or public backend for the VPC ALB load balancer that exposes the Ingress controller for a cluster.
 
 ```sh
-ibmcloud oc ingress load-balancer backend set --cluster CLUSTER [--private-backend BACKEND] [--public-backend BACKEND] [-q]
+ibmcloud ks ingress load-balancer backend set --cluster CLUSTER [--private-backend BACKEND] [--public-backend BACKEND] [-q]
 ```
 
 #### Command options
@@ -6351,12 +6816,12 @@ ibmcloud oc ingress load-balancer backend set --cluster CLUSTER [--private-backe
 Set the private and/or public backend for the VPC ALB load balancer that exposes the Ingress controller for a cluster
 
 ```sh
-ibmcloud oc ingress load-balancer backend set --cluster CLUSTER
+ibmcloud ks ingress load-balancer backend set --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer get`
+### `ibmcloud ks ingress load-balancer get`
 {: #ingress-load-balancer-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -6364,7 +6829,7 @@ ibmcloud oc ingress load-balancer backend set --cluster CLUSTER
 Get the configuration of load balancers that expose Ingress ALBs in your cluster.
 
 ```sh
-ibmcloud oc ingress load-balancer get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress load-balancer get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -6387,12 +6852,12 @@ ibmcloud oc ingress load-balancer get --cluster CLUSTER [--output OUTPUT] [-q]
 Get the configuration of load balancers that expose Ingress ALBs in your cluster
 
 ```sh
-ibmcloud oc ingress load-balancer get --cluster CLUSTER
+ibmcloud ks ingress load-balancer get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer help`
+### `ibmcloud ks ingress load-balancer help`
 {: #ingress-load-balancer-help-cli}
 
 
@@ -6400,7 +6865,7 @@ ibmcloud oc ingress load-balancer get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress load-balancer help
+ibmcloud ks ingress load-balancer help
 ```
 
 
@@ -6410,12 +6875,12 @@ ibmcloud oc ingress load-balancer help
 Show help
 
 ```sh
-ibmcloud oc ingress load-balancer help
+ibmcloud ks ingress load-balancer help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer proxy-protocol disable`
+### `ibmcloud ks ingress load-balancer proxy-protocol disable`
 {: #ingress-load-balancer-proxy-protocol-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -6423,7 +6888,7 @@ ibmcloud oc ingress load-balancer help
 Disable the PROXY protocol on Ingress ALBs.
 
 ```sh
-ibmcloud oc ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] [-q]
+ibmcloud ks ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -6446,12 +6911,12 @@ ibmcloud oc ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] 
 Disable the PROXY protocol on Ingress ALBs
 
 ```sh
-ibmcloud oc ingress load-balancer proxy-protocol disable --cluster CLUSTER
+ibmcloud ks ingress load-balancer proxy-protocol disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer proxy-protocol enable`
+### `ibmcloud ks ingress load-balancer proxy-protocol enable`
 {: #ingress-load-balancer-proxy-protocol-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -6459,7 +6924,7 @@ ibmcloud oc ingress load-balancer proxy-protocol disable --cluster CLUSTER
 Enable the PROXY protocol so that client connection information is passed in request headers to ALBs.
 
 ```sh
-ibmcloud oc ingress load-balancer proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...] [-f] [-q]
+ibmcloud ks ingress load-balancer proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...] [-f] [-q]
 ```
 
 #### Command options
@@ -6485,12 +6950,12 @@ ibmcloud oc ingress load-balancer proxy-protocol enable --cluster CLUSTER [--cid
 Enable the PROXY protocol so that client connection information is passed in request headers to ALBs
 
 ```sh
-ibmcloud oc ingress load-balancer proxy-protocol enable --cluster CLUSTER
+ibmcloud ks ingress load-balancer proxy-protocol enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress load-balancer proxy-protocol help`
+### `ibmcloud ks ingress load-balancer proxy-protocol help`
 {: #ingress-load-balancer-proxy-protocol-help-cli}
 
 
@@ -6498,7 +6963,7 @@ ibmcloud oc ingress load-balancer proxy-protocol enable --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress load-balancer proxy-protocol help
+ibmcloud ks ingress load-balancer proxy-protocol help
 ```
 
 
@@ -6508,12 +6973,12 @@ ibmcloud oc ingress load-balancer proxy-protocol help
 Show help
 
 ```sh
-ibmcloud oc ingress load-balancer proxy-protocol help
+ibmcloud ks ingress load-balancer proxy-protocol help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret create`
+### `ibmcloud ks ingress secret create`
 {: #ingress-secret-create-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6521,7 +6986,7 @@ ibmcloud oc ingress load-balancer proxy-protocol help
 Create an Ingress secret in a cluster for a secret stored in IBM Cloud Secret Manager.
 
 ```sh
-ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN] [--field FIELD] [--namespace NAMESPACE] [--persist] [-q] [--type TYPE]
+ibmcloud ks ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN] [--field FIELD] [--namespace NAMESPACE] [--persist] [-q] [--type TYPE]
 ```
 
 #### Command options
@@ -6559,12 +7024,12 @@ ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN]
 Create an Ingress secret in a cluster for a secret stored in IBM Cloud Secret Manager
 
 ```sh
-ibmcloud oc ingress secret create --cluster CLUSTER --name NAME
+ibmcloud ks ingress secret create --cluster CLUSTER --name NAME
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret field add`
+### `ibmcloud ks ingress secret field add`
 {: #ingress-secret-field-add-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6572,7 +7037,7 @@ ibmcloud oc ingress secret create --cluster CLUSTER --name NAME
 Add fields to an existing Ingress secret.
 
 ```sh
-ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace NAMESPACE [--field FIELD] [-q]
+ibmcloud ks ingress secret field add --cluster CLUSTER --name NAME --namespace NAMESPACE [--field FIELD] [-q]
 ```
 
 #### Command options
@@ -6601,12 +7066,12 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace N
 Add fields to an existing Ingress secret
 
 ```sh
-ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace NAMESPACE
+ibmcloud ks ingress secret field add --cluster CLUSTER --name NAME --namespace NAMESPACE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret field help`
+### `ibmcloud ks ingress secret field help`
 {: #ingress-secret-field-help-cli}
 
 
@@ -6614,7 +7079,7 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace N
 Show help
 
 ```sh
-ibmcloud oc ingress secret field help
+ibmcloud ks ingress secret field help
 ```
 
 
@@ -6624,12 +7089,12 @@ ibmcloud oc ingress secret field help
 Show help
 
 ```sh
-ibmcloud oc ingress secret field help
+ibmcloud ks ingress secret field help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret field ls`
+### `ibmcloud ks ingress secret field ls`
 {: #ingress-secret-field-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6637,7 +7102,7 @@ ibmcloud oc ingress secret field help
 View the fields of an Ingress secret.
 
 ```sh
-ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NAMESPACE [--output OUTPUT] [-q] [--show-crn]
+ibmcloud ks ingress secret field ls --cluster CLUSTER --name NAME --namespace NAMESPACE [--output OUTPUT] [-q] [--show-crn]
 ```
 
 #### Command options
@@ -6669,12 +7134,12 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NA
 View the fields of an Ingress secret
 
 ```sh
-ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NAMESPACE
+ibmcloud ks ingress secret field ls --cluster CLUSTER --name NAME --namespace NAMESPACE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret field rm`
+### `ibmcloud ks ingress secret field rm`
 {: #ingress-secret-field-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6682,7 +7147,7 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NA
 Remove fields from an existing Ingress secret.
 
 ```sh
-ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE [--field-name NAME] [-q]
+ibmcloud ks ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE [--field-name NAME] [-q]
 ```
 
 #### Command options
@@ -6711,12 +7176,12 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 Remove fields from an existing Ingress secret
 
 ```sh
-ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE
+ibmcloud ks ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret get`
+### `ibmcloud ks ingress secret get`
 {: #ingress-secret-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6724,7 +7189,7 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 View the details of an Ingress secret.
 
 ```sh
-ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPACE [--output OUTPUT] [-q]
+ibmcloud ks ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPACE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -6753,12 +7218,12 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPA
 View the details of an Ingress secret
 
 ```sh
-ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPACE
+ibmcloud ks ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPACE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret help`
+### `ibmcloud ks ingress secret help`
 {: #ingress-secret-help-cli}
 
 
@@ -6766,7 +7231,7 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPA
 Show help
 
 ```sh
-ibmcloud oc ingress secret help
+ibmcloud ks ingress secret help
 ```
 
 
@@ -6776,12 +7241,12 @@ ibmcloud oc ingress secret help
 Show help
 
 ```sh
-ibmcloud oc ingress secret help
+ibmcloud ks ingress secret help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret ls`
+### `ibmcloud ks ingress secret ls`
 {: #ingress-secret-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6789,7 +7254,7 @@ ibmcloud oc ingress secret help
 List all Ingress secrets in a cluster.
 
 ```sh
-ibmcloud oc ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-crn] [--show-deleted]
+ibmcloud ks ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-crn] [--show-deleted]
 ```
 
 #### Command options
@@ -6818,12 +7283,12 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-c
 List all Ingress secrets in a cluster
 
 ```sh
-ibmcloud oc ingress secret ls --cluster CLUSTER
+ibmcloud ks ingress secret ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret rm`
+### `ibmcloud ks ingress secret rm`
 {: #ingress-secret-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6831,7 +7296,7 @@ ibmcloud oc ingress secret ls --cluster CLUSTER
 Remove an Ingress secret from a cluster.
 
 ```sh
-ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPACE [-q]
+ibmcloud ks ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPACE [-q]
 ```
 
 #### Command options
@@ -6857,12 +7322,12 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPAC
 Remove an Ingress secret from a cluster
 
 ```sh
-ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPACE
+ibmcloud ks ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPACE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress secret update`
+### `ibmcloud ks ingress secret update`
 {: #ingress-secret-update-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -6870,7 +7335,7 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPAC
 Update an existing Ingress secret.
 
 ```sh
-ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAMESPACE [--cert-crn CRN] [-q]
+ibmcloud ks ingress secret update --cluster CLUSTER --name NAME --namespace NAMESPACE [--cert-crn CRN] [-q]
 ```
 
 #### Command options
@@ -6899,12 +7364,12 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAME
 Update an existing Ingress secret
 
 ```sh
-ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAMESPACE
+ibmcloud ks ingress secret update --cluster CLUSTER --name NAME --namespace NAMESPACE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress security help`
+### `ibmcloud ks ingress security help`
 {: #ingress-security-help-cli}
 
 
@@ -6912,7 +7377,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAME
 Show help
 
 ```sh
-ibmcloud oc ingress security help
+ibmcloud ks ingress security help
 ```
 
 
@@ -6922,12 +7387,12 @@ ibmcloud oc ingress security help
 Show help
 
 ```sh
-ibmcloud oc ingress security help
+ibmcloud ks ingress security help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress security port80 disable`
+### `ibmcloud ks ingress security port80 disable`
 {: #ingress-security-port80-disable-cli}
 
 
@@ -6935,7 +7400,7 @@ ibmcloud oc ingress security help
 Disable the usage of port 80 in your cluster.
 
 ```sh
-ibmcloud oc ingress security port80 disable --cluster CLUSTER [-f] [-q]
+ibmcloud ks ingress security port80 disable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -6958,12 +7423,12 @@ ibmcloud oc ingress security port80 disable --cluster CLUSTER [-f] [-q]
 Disable the usage of port 80 in your cluster
 
 ```sh
-ibmcloud oc ingress security port80 disable --cluster CLUSTER
+ibmcloud ks ingress security port80 disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress security port80 enable`
+### `ibmcloud ks ingress security port80 enable`
 {: #ingress-security-port80-enable-cli}
 
 
@@ -6971,7 +7436,7 @@ ibmcloud oc ingress security port80 disable --cluster CLUSTER
 Enable the usage of port 80 in your cluster.
 
 ```sh
-ibmcloud oc ingress security port80 enable --cluster CLUSTER [-f] [-q]
+ibmcloud ks ingress security port80 enable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -6994,12 +7459,12 @@ ibmcloud oc ingress security port80 enable --cluster CLUSTER [-f] [-q]
 Enable the usage of port 80 in your cluster
 
 ```sh
-ibmcloud oc ingress security port80 enable --cluster CLUSTER
+ibmcloud ks ingress security port80 enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress security port80 get`
+### `ibmcloud ks ingress security port80 get`
 {: #ingress-security-port80-get-cli}
 
 
@@ -7007,7 +7472,7 @@ ibmcloud oc ingress security port80 enable --cluster CLUSTER
 Get the security configuration of port 80 in your cluster.
 
 ```sh
-ibmcloud oc ingress security port80 get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress security port80 get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7030,12 +7495,12 @@ ibmcloud oc ingress security port80 get --cluster CLUSTER [--output OUTPUT] [-q]
 Get the security configuration of port 80 in your cluster
 
 ```sh
-ibmcloud oc ingress security port80 get --cluster CLUSTER
+ibmcloud ks ingress security port80 get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress security port80 help`
+### `ibmcloud ks ingress security port80 help`
 {: #ingress-security-port80-help-cli}
 
 
@@ -7043,7 +7508,7 @@ ibmcloud oc ingress security port80 get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress security port80 help
+ibmcloud ks ingress security port80 help
 ```
 
 
@@ -7053,12 +7518,12 @@ ibmcloud oc ingress security port80 help
 Show help
 
 ```sh
-ibmcloud oc ingress security port80 help
+ibmcloud ks ingress security port80 help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report disable`
+### `ibmcloud ks ingress status-report disable`
 {: #ingress-status-report-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7066,7 +7531,7 @@ ibmcloud oc ingress security port80 help
 Disable status reporting for Ingress components in a cluster.
 
 ```sh
-ibmcloud oc ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7089,12 +7554,12 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-
 Disable status reporting for Ingress components in a cluster
 
 ```sh
-ibmcloud oc ingress status-report disable --cluster CLUSTER
+ibmcloud ks ingress status-report disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report enable`
+### `ibmcloud ks ingress status-report enable`
 {: #ingress-status-report-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7102,7 +7567,7 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER
 Enable status reporting for Ingress components in a cluster.
 
 ```sh
-ibmcloud oc ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7125,12 +7590,12 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q
 Enable status reporting for Ingress components in a cluster
 
 ```sh
-ibmcloud oc ingress status-report enable --cluster CLUSTER
+ibmcloud ks ingress status-report enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report get`
+### `ibmcloud ks ingress status-report get`
 {: #ingress-status-report-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7138,7 +7603,7 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER
 Get the status report for Ingress components in a cluster.
 
 ```sh
-ibmcloud oc ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7161,12 +7626,12 @@ ibmcloud oc ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
 Get the status report for Ingress components in a cluster
 
 ```sh
-ibmcloud oc ingress status-report get --cluster CLUSTER
+ibmcloud ks ingress status-report get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report help`
+### `ibmcloud ks ingress status-report help`
 {: #ingress-status-report-help-cli}
 
 
@@ -7174,7 +7639,7 @@ ibmcloud oc ingress status-report get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc ingress status-report help
+ibmcloud ks ingress status-report help
 ```
 
 
@@ -7184,12 +7649,12 @@ ibmcloud oc ingress status-report help
 Show help
 
 ```sh
-ibmcloud oc ingress status-report help
+ibmcloud ks ingress status-report help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report ignored-errors add`
+### `ibmcloud ks ingress status-report ignored-errors add`
 {: #ingress-status-report-ignored-errors-add-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7197,7 +7662,7 @@ ibmcloud oc ingress status-report help
 Suppress warnings from Ingress status reports for a cluster.
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report ignored-errors add --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7223,12 +7688,12 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 Suppress warnings from Ingress status reports for a cluster
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CODE
+ibmcloud ks ingress status-report ignored-errors add --cluster CLUSTER --code CODE
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report ignored-errors help`
+### `ibmcloud ks ingress status-report ignored-errors help`
 {: #ingress-status-report-ignored-errors-help-cli}
 
 
@@ -7236,7 +7701,7 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 Show help
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors help
+ibmcloud ks ingress status-report ignored-errors help
 ```
 
 
@@ -7246,12 +7711,12 @@ ibmcloud oc ingress status-report ignored-errors help
 Show help
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors help
+ibmcloud ks ingress status-report ignored-errors help
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report ignored-errors ls`
+### `ibmcloud ks ingress status-report ignored-errors ls`
 {: #ingress-status-report-ignored-errors-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7259,7 +7724,7 @@ ibmcloud oc ingress status-report ignored-errors help
 List warnings that are currently ignored by Ingress status for a cluster.
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report ignored-errors ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7282,12 +7747,12 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output 
 List warnings that are currently ignored by Ingress status for a cluster
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER
+ibmcloud ks ingress status-report ignored-errors ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc ingress status-report ignored-errors rm`
+### `ibmcloud ks ingress status-report ignored-errors rm`
 {: #ingress-status-report-ignored-errors-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7295,7 +7760,7 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER
 Remove warnings that are currently ignored by Ingress status for a cluster.
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report ignored-errors rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7321,7 +7786,7 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 Remove warnings that are currently ignored by Ingress status for a cluster
 
 ```sh
-ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code CODE
+ibmcloud ks ingress status-report ignored-errors rm --cluster CLUSTER --code CODE
 ```
 {: pre}
 
@@ -7332,7 +7797,7 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 View and configure Key Management Service integrations.
 
 
-### `ibmcloud oc kms crk help`
+### `ibmcloud ks kms crk help`
 {: #kms-crk-help-cli}
 
 
@@ -7340,7 +7805,7 @@ View and configure Key Management Service integrations.
 Show help
 
 ```sh
-ibmcloud oc kms crk help
+ibmcloud ks kms crk help
 ```
 
 
@@ -7350,12 +7815,12 @@ ibmcloud oc kms crk help
 Show help
 
 ```sh
-ibmcloud oc kms crk help
+ibmcloud ks kms crk help
 ```
 {: pre}
 
 
-### `ibmcloud oc kms crk ls`
+### `ibmcloud ks kms crk ls`
 {: #kms-crk-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7363,7 +7828,7 @@ ibmcloud oc kms crk help
 List available root keys for a Key Management Service instance.
 
 ```sh
-ibmcloud oc kms crk ls --instance-id ID [--output OUTPUT] [-q]
+ibmcloud ks kms crk ls --instance-id ID [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7386,12 +7851,12 @@ ibmcloud oc kms crk ls --instance-id ID [--output OUTPUT] [-q]
 List available root keys for a Key Management Service instance
 
 ```sh
-ibmcloud oc kms crk ls --instance-id ID
+ibmcloud ks kms crk ls --instance-id ID
 ```
 {: pre}
 
 
-### `ibmcloud oc kms enable`
+### `ibmcloud ks kms enable`
 {: #kms-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7399,7 +7864,7 @@ ibmcloud oc kms crk ls --instance-id ID
 Enable a key management service (KMS) in your cluster to encrypt your secrets.
 
 ```sh
-ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-account-id ID] [--public-endpoint] [-q]
+ibmcloud ks kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-account-id ID] [--public-endpoint] [-q]
 ```
 
 #### Command options
@@ -7431,12 +7896,12 @@ ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-accou
 Enable a key management service (KMS) in your cluster to encrypt your secrets
 
 ```sh
-ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID
+ibmcloud ks kms enable --cluster CLUSTER --crk CRK --instance-id ID
 ```
 {: pre}
 
 
-### `ibmcloud oc kms help`
+### `ibmcloud ks kms help`
 {: #kms-help-cli}
 
 
@@ -7444,7 +7909,7 @@ ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID
 Show help
 
 ```sh
-ibmcloud oc kms help
+ibmcloud ks kms help
 ```
 
 
@@ -7454,12 +7919,12 @@ ibmcloud oc kms help
 Show help
 
 ```sh
-ibmcloud oc kms help
+ibmcloud ks kms help
 ```
 {: pre}
 
 
-### `ibmcloud oc kms instance help`
+### `ibmcloud ks kms instance help`
 {: #kms-instance-help-cli}
 
 
@@ -7467,7 +7932,7 @@ ibmcloud oc kms help
 Show help
 
 ```sh
-ibmcloud oc kms instance help
+ibmcloud ks kms instance help
 ```
 
 
@@ -7477,12 +7942,12 @@ ibmcloud oc kms instance help
 Show help
 
 ```sh
-ibmcloud oc kms instance help
+ibmcloud ks kms instance help
 ```
 {: pre}
 
 
-### `ibmcloud oc kms instance ls`
+### `ibmcloud ks kms instance ls`
 {: #kms-instance-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -7490,7 +7955,7 @@ ibmcloud oc kms instance help
 List available Key Management Service instances.
 
 ```sh
-ibmcloud oc kms instance ls [--output OUTPUT] [-q]
+ibmcloud ks kms instance ls [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7510,7 +7975,7 @@ ibmcloud oc kms instance ls [--output OUTPUT] [-q]
 List available Key Management Service instances
 
 ```sh
-ibmcloud oc kms instance ls
+ibmcloud ks kms instance ls
 ```
 {: pre}
 
@@ -7521,7 +7986,7 @@ ibmcloud oc kms instance ls
 List supported IBM Cloud Kubernetes Service locations.
 
 
-### `ibmcloud oc locations`
+### `ibmcloud ks locations`
 {: #locations-cli}
 
 
@@ -7529,7 +7994,7 @@ List supported IBM Cloud Kubernetes Service locations.
 List supported IBM Cloud Kubernetes Service locations.
 
 ```sh
-ibmcloud oc locations
+ibmcloud ks locations
 ```
 
 #### Command options
@@ -7555,7 +8020,7 @@ ibmcloud oc locations
 List supported IBM Cloud Kubernetes Service locations
 
 ```sh
-ibmcloud oc locations
+ibmcloud ks locations
 ```
 {: pre}
 
@@ -7566,7 +8031,7 @@ ibmcloud oc locations
 Forward logs from your cluster.
 
 
-### `ibmcloud oc logging autoupdate disable`
+### `ibmcloud ks logging autoupdate disable`
 {: #logging-autoupdate-disable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7574,7 +8039,7 @@ Forward logs from your cluster.
 Disable automatic updates of all Fluentd pods in a cluster.
 
 ```sh
-ibmcloud oc logging autoupdate disable --cluster CLUSTER [-q]
+ibmcloud ks logging autoupdate disable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -7594,12 +8059,12 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-q]
 Disable automatic updates of all Fluentd pods in a cluster
 
 ```sh
-ibmcloud oc logging autoupdate disable --cluster CLUSTER
+ibmcloud ks logging autoupdate disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc logging autoupdate enable`
+### `ibmcloud ks logging autoupdate enable`
 {: #logging-autoupdate-enable-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7607,7 +8072,7 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER
 Enable automatic updates of all Fluentd pods in a cluster.
 
 ```sh
-ibmcloud oc logging autoupdate enable --cluster CLUSTER [-q]
+ibmcloud ks logging autoupdate enable --cluster CLUSTER [-q]
 ```
 
 #### Command options
@@ -7627,12 +8092,12 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-q]
 Enable automatic updates of all Fluentd pods in a cluster
 
 ```sh
-ibmcloud oc logging autoupdate enable --cluster CLUSTER
+ibmcloud ks logging autoupdate enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc logging autoupdate get`
+### `ibmcloud ks logging autoupdate get`
 {: #logging-autoupdate-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7640,7 +8105,7 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER
 View whether your Fluentd pods are set to automatically update in a cluster.
 
 ```sh
-ibmcloud oc logging autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks logging autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7663,12 +8128,12 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 View whether your Fluentd pods are set to automatically update in a cluster
 
 ```sh
-ibmcloud oc logging autoupdate get --cluster CLUSTER
+ibmcloud ks logging autoupdate get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc logging autoupdate help`
+### `ibmcloud ks logging autoupdate help`
 {: #logging-autoupdate-help-cli}
 
 
@@ -7676,7 +8141,7 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc logging autoupdate help
+ibmcloud ks logging autoupdate help
 ```
 
 
@@ -7686,12 +8151,12 @@ ibmcloud oc logging autoupdate help
 Show help
 
 ```sh
-ibmcloud oc logging autoupdate help
+ibmcloud ks logging autoupdate help
 ```
 {: pre}
 
 
-### `ibmcloud oc logging config create`
+### `ibmcloud ks logging config create`
 {: #logging-config-create-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7699,7 +8164,7 @@ ibmcloud oc logging autoupdate help
 Create a logging configuration. If you are using a Dedicated account, you must log in to the public IBM Cloud endpoint and target your public org and space to enable log forwarding.
 
 ```sh
-ibmcloud oc logging config create --cluster CLUSTER --logsource LOGSOURCE --type TYPE [--force-update] [--hostname HOSTNAME] [--output OUTPUT] [--port PORT] [-q] (--ca-cert CERT --syslog-protocol PROTOCOL --verify-mode MODE | --org ORG --skip-validation --space SPACE) (--namespace NAMESPACE | -C CONTAINER -p PATH)
+ibmcloud ks logging config create --cluster CLUSTER --logsource LOGSOURCE --type TYPE [--force-update] [--hostname HOSTNAME] [--output OUTPUT] [--port PORT] [-q] (--ca-cert CERT --syslog-protocol PROTOCOL --verify-mode MODE | --org ORG --skip-validation --space SPACE) (--namespace NAMESPACE | -C CONTAINER -p PATH)
 ```
 
 #### Command options
@@ -7764,7 +8229,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOGSOURCE --type
 Create a logging configuration
 
 ```sh
-ibmcloud oc logging config create \
+ibmcloud ks logging config create \
   --cluster CLUSTER \
   --logsource LOGSOURCE \
   --type TYPE \
@@ -7776,7 +8241,7 @@ ibmcloud oc logging config create \
 {: pre}
 
 
-### `ibmcloud oc logging config get`
+### `ibmcloud ks logging config get`
 {: #logging-config-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7784,7 +8249,7 @@ ibmcloud oc logging config create \
 View log forwarding configurations for a cluster.
 
 ```sh
-ibmcloud oc logging config get --cluster CLUSTER [--logsource LOGSOURCE] [--output OUTPUT] [-q]
+ibmcloud ks logging config get --cluster CLUSTER [--logsource LOGSOURCE] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7810,12 +8275,12 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOGSOURCE] [--outp
 View log forwarding configurations for a cluster
 
 ```sh
-ibmcloud oc logging config get --cluster CLUSTER
+ibmcloud ks logging config get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc logging config help`
+### `ibmcloud ks logging config help`
 {: #logging-config-help-cli}
 
 
@@ -7823,7 +8288,7 @@ ibmcloud oc logging config get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc logging config help
+ibmcloud ks logging config help
 ```
 
 
@@ -7833,12 +8298,12 @@ ibmcloud oc logging config help
 Show help
 
 ```sh
-ibmcloud oc logging config help
+ibmcloud ks logging config help
 ```
 {: pre}
 
 
-### `ibmcloud oc logging config rm`
+### `ibmcloud ks logging config rm`
 {: #logging-config-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7846,7 +8311,7 @@ ibmcloud oc logging config help
 Delete a log forwarding configuration from a cluster.
 
 ```sh
-ibmcloud oc logging config rm --cluster CLUSTER [--force-update] [-q] (--all | --id ID | --namespace NAMESPACE)
+ibmcloud ks logging config rm --cluster CLUSTER [--force-update] [-q] (--all | --id ID | --namespace NAMESPACE)
 ```
 
 #### Command options
@@ -7878,12 +8343,12 @@ ibmcloud oc logging config rm --cluster CLUSTER [--force-update] [-q] (--all | -
 Delete a log forwarding configuration from a cluster
 
 ```sh
-ibmcloud oc logging config rm --cluster CLUSTER --all
+ibmcloud ks logging config rm --cluster CLUSTER --all
 ```
 {: pre}
 
 
-### `ibmcloud oc logging config update`
+### `ibmcloud ks logging config update`
 {: #logging-config-update-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7891,7 +8356,7 @@ ibmcloud oc logging config rm --cluster CLUSTER --all
 Update a log forwarding configuration for a cluster.
 
 ```sh
-ibmcloud oc logging config update --cluster CLUSTER --id ID --logsource LOGSOURCE --type TYPE [--force-update] [--hostname HOSTNAME] [--output OUTPUT] [--port PORT] [-q] (--ca-cert CERT --syslog-protocol PROTOCOL --verify-mode MODE | --org ORG --skip-validation --space SPACE) (--namespace NAMESPACE | -C CONTAINER -p PATH)
+ibmcloud ks logging config update --cluster CLUSTER --id ID --logsource LOGSOURCE --type TYPE [--force-update] [--hostname HOSTNAME] [--output OUTPUT] [--port PORT] [-q] (--ca-cert CERT --syslog-protocol PROTOCOL --verify-mode MODE | --org ORG --skip-validation --space SPACE) (--namespace NAMESPACE | -C CONTAINER -p PATH)
 ```
 
 #### Command options
@@ -7959,7 +8424,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id ID --logsource LOGSOURC
 Update a log forwarding configuration for a cluster
 
 ```sh
-ibmcloud oc logging config update \
+ibmcloud ks logging config update \
   --cluster CLUSTER \
   --id ID \
   --logsource LOGSOURCE \
@@ -7972,7 +8437,7 @@ ibmcloud oc logging config update \
 {: pre}
 
 
-### `ibmcloud oc logging filter create`
+### `ibmcloud ks logging filter create`
 {: #logging-filter-create-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -7980,7 +8445,7 @@ ibmcloud oc logging config update \
 Create a filter to exclude log lines from forwarding.
 
 ```sh
-ibmcloud oc logging filter create --cluster CLUSTER [--container CONTAINER] [--force-update] [--lc LOGGING-CONFIG ...] [--level LEVEL] [--namespace NAMESPACE] [--output OUTPUT] [-q] [--type TYPE] (--message MESSAGE | --regex-message MESSAGE)
+ibmcloud ks logging filter create --cluster CLUSTER [--container CONTAINER] [--force-update] [--lc LOGGING-CONFIG ...] [--level LEVEL] [--namespace NAMESPACE] [--output OUTPUT] [-q] [--type TYPE] (--message MESSAGE | --regex-message MESSAGE)
 ```
 
 #### Command options
@@ -8027,12 +8492,12 @@ ibmcloud oc logging filter create --cluster CLUSTER [--container CONTAINER] [--f
 Create a filter to exclude log lines from forwarding
 
 ```sh
-ibmcloud oc logging filter create --cluster CLUSTER --message MESSAGE
+ibmcloud ks logging filter create --cluster CLUSTER --message MESSAGE
 ```
 {: pre}
 
 
-### `ibmcloud oc logging filter get`
+### `ibmcloud ks logging filter get`
 {: #logging-filter-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -8040,7 +8505,7 @@ ibmcloud oc logging filter create --cluster CLUSTER --message MESSAGE
 View a logging filter configuration.
 
 ```sh
-ibmcloud oc logging filter get --cluster CLUSTER [--id ID] [--output OUTPUT] [-q] [--show-covering-filters] [--show-matching-configs]
+ibmcloud ks logging filter get --cluster CLUSTER [--id ID] [--output OUTPUT] [-q] [--show-covering-filters] [--show-matching-configs]
 ```
 
 #### Command options
@@ -8072,12 +8537,12 @@ ibmcloud oc logging filter get --cluster CLUSTER [--id ID] [--output OUTPUT] [-q
 View a logging filter configuration
 
 ```sh
-ibmcloud oc logging filter get --cluster CLUSTER
+ibmcloud ks logging filter get --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc logging filter help`
+### `ibmcloud ks logging filter help`
 {: #logging-filter-help-cli}
 
 
@@ -8085,7 +8550,7 @@ ibmcloud oc logging filter get --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc logging filter help
+ibmcloud ks logging filter help
 ```
 
 
@@ -8095,12 +8560,12 @@ ibmcloud oc logging filter help
 Show help
 
 ```sh
-ibmcloud oc logging filter help
+ibmcloud ks logging filter help
 ```
 {: pre}
 
 
-### `ibmcloud oc logging filter rm`
+### `ibmcloud ks logging filter rm`
 {: #logging-filter-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -8108,7 +8573,7 @@ ibmcloud oc logging filter help
 Delete a logging filter.
 
 ```sh
-ibmcloud oc logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | --id ID)
+ibmcloud ks logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | --id ID)
 ```
 
 #### Command options
@@ -8137,12 +8602,12 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | -
 Delete a logging filter
 
 ```sh
-ibmcloud oc logging filter rm --cluster CLUSTER --all
+ibmcloud ks logging filter rm --cluster CLUSTER --all
 ```
 {: pre}
 
 
-### `ibmcloud oc logging filter update`
+### `ibmcloud ks logging filter update`
 {: #logging-filter-update-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -8150,7 +8615,7 @@ ibmcloud oc logging filter rm --cluster CLUSTER --all
 Update a logging filter.
 
 ```sh
-ibmcloud oc logging filter update --cluster CLUSTER --id ID [--container CONTAINER] [--force-update] [--lc LOGGING-CONFIG ...] [--level LEVEL] [--namespace NAMESPACE] [--output OUTPUT] [-q] [--type TYPE] (--message MESSAGE | --regex-message MESSAGE)
+ibmcloud ks logging filter update --cluster CLUSTER --id ID [--container CONTAINER] [--force-update] [--lc LOGGING-CONFIG ...] [--level LEVEL] [--namespace NAMESPACE] [--output OUTPUT] [-q] [--type TYPE] (--message MESSAGE | --regex-message MESSAGE)
 ```
 
 #### Command options
@@ -8200,12 +8665,12 @@ ibmcloud oc logging filter update --cluster CLUSTER --id ID [--container CONTAIN
 Update a logging filter
 
 ```sh
-ibmcloud oc logging filter update --cluster CLUSTER --id ID --message MESSAGE
+ibmcloud ks logging filter update --cluster CLUSTER --id ID --message MESSAGE
 ```
 {: pre}
 
 
-### `ibmcloud oc logging help`
+### `ibmcloud ks logging help`
 {: #logging-help-cli}
 
 
@@ -8213,7 +8678,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id ID --message MESSAGE
 Show help
 
 ```sh
-ibmcloud oc logging help
+ibmcloud ks logging help
 ```
 
 
@@ -8223,12 +8688,12 @@ ibmcloud oc logging help
 Show help
 
 ```sh
-ibmcloud oc logging help
+ibmcloud ks logging help
 ```
 {: pre}
 
 
-### `ibmcloud oc logging refresh`
+### `ibmcloud ks logging refresh`
 {: #logging-refresh-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -8236,7 +8701,7 @@ ibmcloud oc logging help
 Refresh the logging configuration for a cluster.
 
 ```sh
-ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
+ibmcloud ks logging refresh --cluster CLUSTER [--force-update] [-q]
 ```
 
 #### Command options
@@ -8259,7 +8724,7 @@ ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
 Refresh the logging configuration for a cluster
 
 ```sh
-ibmcloud oc logging refresh --cluster CLUSTER
+ibmcloud ks logging refresh --cluster CLUSTER
 ```
 {: pre}
 
@@ -8270,7 +8735,7 @@ ibmcloud oc logging refresh --cluster CLUSTER
 View the current user messages.
 
 
-### `ibmcloud oc messages`
+### `ibmcloud ks messages`
 {: #messages-cli}
 
 
@@ -8278,7 +8743,7 @@ View the current user messages.
 View the current user messages.
 
 ```sh
-ibmcloud oc messages [-q]
+ibmcloud ks messages [-q]
 ```
 
 #### Command options
@@ -8295,7 +8760,7 @@ ibmcloud oc messages [-q]
 View the current user messages
 
 ```sh
-ibmcloud oc messages
+ibmcloud ks messages
 ```
 {: pre}
 
@@ -8306,7 +8771,7 @@ ibmcloud oc messages
 Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names.
 
 
-### `ibmcloud oc nlb-dns add`
+### `ibmcloud ks nlb-dns add`
 {: #nlb-dns-add-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8314,7 +8779,7 @@ Create and manage host names for network load balancer (NLB) IP addresses in a c
 Add an NLB IP to an existing host name that you created with `ibmcloud ks nlb-dns create`.
 
 ```sh
-ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8343,12 +8808,12 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST 
 Add an NLB IP to an existing host name that you created with `ibmcloud ks nlb-dns create`
 
 ```sh
-ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP --nlb-host HOST
+ibmcloud ks nlb-dns add --cluster CLUSTER --ip IP --nlb-host HOST
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns create classic`
+### `ibmcloud ks nlb-dns create classic`
 {: #nlb-dns-create-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8356,7 +8821,7 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP --nlb-host HOST
 Create a DNS host name to register one or more NLB IPs in a classic cluster.
 
 ```sh
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
+ibmcloud ks nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
 ```
 
 #### Command options
@@ -8385,12 +8850,12 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--ou
 Create a DNS host name to register one or more NLB IPs in a classic cluster
 
 ```sh
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP
+ibmcloud ks nlb-dns create classic --cluster CLUSTER --ip IP
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns create help`
+### `ibmcloud ks nlb-dns create help`
 {: #nlb-dns-create-help-cli}
 
 
@@ -8398,7 +8863,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP
 Show help
 
 ```sh
-ibmcloud oc nlb-dns create help
+ibmcloud ks nlb-dns create help
 ```
 
 
@@ -8408,12 +8873,12 @@ ibmcloud oc nlb-dns create help
 Show help
 
 ```sh
-ibmcloud oc nlb-dns create help
+ibmcloud ks nlb-dns create help
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns create vpc-gen2`
+### `ibmcloud ks nlb-dns create vpc-gen2`
 {: #nlb-dns-create-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -8421,7 +8886,7 @@ ibmcloud oc nlb-dns create help
 Create a DNS record to register a load balancer host name or load balancer IP addresses in a VPC cluster.
 
 ```sh
-ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--secret-namespace NAMESPACE] (--ip IP | --lb-host HOST)
+ibmcloud ks nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--secret-namespace NAMESPACE] (--ip IP | --lb-host HOST)
 ```
 
 #### Command options
@@ -8453,12 +8918,12 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--
 Create a DNS record to register a load balancer host name or load balancer IP addresses in a VPC cluster
 
 ```sh
-ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --ip IP
+ibmcloud ks nlb-dns create vpc-gen2 --cluster CLUSTER --ip IP
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns get`
+### `ibmcloud ks nlb-dns get`
 {: #nlb-dns-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -8466,7 +8931,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER --ip IP
 View the details of a registered NLB host name in a cluster.
 
 ```sh
-ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8492,12 +8957,12 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OU
 View the details of a registered NLB host name in a cluster
 
 ```sh
-ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN
+ibmcloud ks nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns help`
+### `ibmcloud ks nlb-dns help`
 {: #nlb-dns-help-cli}
 
 
@@ -8505,7 +8970,7 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 Show help
 
 ```sh
-ibmcloud oc nlb-dns help
+ibmcloud ks nlb-dns help
 ```
 
 
@@ -8515,12 +8980,12 @@ ibmcloud oc nlb-dns help
 Show help
 
 ```sh
-ibmcloud oc nlb-dns help
+ibmcloud ks nlb-dns help
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns ls`
+### `ibmcloud ks nlb-dns ls`
 {: #nlb-dns-ls-cli}
 
 
@@ -8528,7 +8993,7 @@ ibmcloud oc nlb-dns help
 List the registered NLB host names and IP addresses in a cluster.
 
 ```sh
-ibmcloud oc nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8551,12 +9016,12 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
 List the registered NLB host names and IP addresses in a cluster
 
 ```sh
-ibmcloud oc nlb-dns ls --cluster CLUSTER
+ibmcloud ks nlb-dns ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns monitor configure`
+### `ibmcloud ks nlb-dns monitor configure`
 {: #nlb-dns-monitor-configure-cli}
 
 
@@ -8564,7 +9029,7 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER
 Configure a health check monitor for an existing NLB host name in a cluster. To enable the monitor, include the `--enable` flag. To update an existing monitor, include only the flags for the settings that you want to change.
 
 ```sh
-ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enable] [--header HEADER ...] [--interval INTERVAL] [--output OUTPUT] [--path PATH] [--port PORT] [-q] [--timeout TIMEOUT] [--type TYPE]
+ibmcloud ks nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enable] [--header HEADER ...] [--interval INTERVAL] [--output OUTPUT] [--path PATH] [--port PORT] [-q] [--timeout TIMEOUT] [--type TYPE]
 ```
 
 #### Command options
@@ -8611,12 +9076,12 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 Configure a health check monitor for an existing NLB host name in a cluster
 
 ```sh
-ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST
+ibmcloud ks nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns monitor disable`
+### `ibmcloud ks nlb-dns monitor disable`
 {: #nlb-dns-monitor-disable-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8624,7 +9089,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST
 Disable an existing health check monitor for a NLB host name in a cluster..
 
 ```sh
-ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8650,12 +9115,12 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output 
 Disable an existing health check monitor for a NLB host name in a cluster
 
 ```sh
-ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST
+ibmcloud ks nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns monitor enable`
+### `ibmcloud ks nlb-dns monitor enable`
 {: #nlb-dns-monitor-enable-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8663,7 +9128,7 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST
 Enable a health check monitor for an NLB host name in a cluster. Note: You must first configure the monitor with `ibmcloud ks nlb-dns monitor configure`.
 
 ```sh
-ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8689,12 +9154,12 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output O
 Enable a health check monitor for an NLB host name in a cluster
 
 ```sh
-ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST
+ibmcloud ks nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns monitor get`
+### `ibmcloud ks nlb-dns monitor get`
 {: #nlb-dns-monitor-get-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8702,7 +9167,7 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST
 View the settings for an existing health check monitor.
 
 ```sh
-ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8728,12 +9193,12 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTP
 View the settings for an existing health check monitor
 
 ```sh
-ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST
+ibmcloud ks nlb-dns monitor get --cluster CLUSTER --nlb-host HOST
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns monitor help`
+### `ibmcloud ks nlb-dns monitor help`
 {: #nlb-dns-monitor-help-cli}
 
 
@@ -8741,7 +9206,7 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST
 Show help
 
 ```sh
-ibmcloud oc nlb-dns monitor help
+ibmcloud ks nlb-dns monitor help
 ```
 
 
@@ -8751,12 +9216,12 @@ ibmcloud oc nlb-dns monitor help
 Show help
 
 ```sh
-ibmcloud oc nlb-dns monitor help
+ibmcloud ks nlb-dns monitor help
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns monitor ls`
+### `ibmcloud ks nlb-dns monitor ls`
 {: #nlb-dns-monitor-ls-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8764,7 +9229,7 @@ ibmcloud oc nlb-dns monitor help
 List the health check monitor settings for each NLB host name in a cluster.
 
 ```sh
-ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8787,12 +9252,12 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
 List the health check monitor settings for each NLB host name in a cluster
 
 ```sh
-ibmcloud oc nlb-dns monitor ls --cluster CLUSTER
+ibmcloud ks nlb-dns monitor ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns replace`
+### `ibmcloud ks nlb-dns replace`
 {: #nlb-dns-replace-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -8800,7 +9265,7 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER
 Update an existing DNS host name by replacing the load balancer hostname associated with it in a VPC cluster.
 
 ```sh
-ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8829,12 +9294,12 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUB
 Update an existing DNS host name by replacing the load balancer hostname associated with it in a VPC cluster
 
 ```sh
-ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUBDOMAIN
+ibmcloud ks nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUBDOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns rm classic`
+### `ibmcloud ks nlb-dns rm classic`
 {: #nlb-dns-rm-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -8842,7 +9307,7 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUB
 Remove an NLB IP address from an NLB host name. If you remove all IPs from a host name, the host name still exists but no IPs are associated with it.
 
 ```sh
-ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8871,12 +9336,12 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--outp
 Remove an NLB IP address from an NLB host name
 
 ```sh
-ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST
+ibmcloud ks nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns rm help`
+### `ibmcloud ks nlb-dns rm help`
 {: #nlb-dns-rm-help-cli}
 
 
@@ -8884,7 +9349,7 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST
 Show help
 
 ```sh
-ibmcloud oc nlb-dns rm help
+ibmcloud ks nlb-dns rm help
 ```
 
 
@@ -8894,12 +9359,12 @@ ibmcloud oc nlb-dns rm help
 Show help
 
 ```sh
-ibmcloud oc nlb-dns rm help
+ibmcloud ks nlb-dns rm help
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns rm vpc-gen2`
+### `ibmcloud ks nlb-dns rm vpc-gen2`
 {: #nlb-dns-rm-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -8907,7 +9372,7 @@ ibmcloud oc nlb-dns rm help
 Remove a load balancer host name or IP address from a DNS record in a VPC cluster.
 
 ```sh
-ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--ip IP] [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--ip IP] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8936,12 +9401,12 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--i
 Remove a load balancer host name or IP address from a DNS record in a VPC cluster
 
 ```sh
-ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN
+ibmcloud ks nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns secret help`
+### `ibmcloud ks nlb-dns secret help`
 {: #nlb-dns-secret-help-cli}
 
 
@@ -8949,7 +9414,7 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 Show help
 
 ```sh
-ibmcloud oc nlb-dns secret help
+ibmcloud ks nlb-dns secret help
 ```
 
 
@@ -8959,12 +9424,12 @@ ibmcloud oc nlb-dns secret help
 Show help
 
 ```sh
-ibmcloud oc nlb-dns secret help
+ibmcloud ks nlb-dns secret help
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns secret regenerate`
+### `ibmcloud ks nlb-dns secret regenerate`
 {: #nlb-dns-secret-regenerate-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -8972,7 +9437,7 @@ ibmcloud oc nlb-dns secret help
 Regenerate the certificate and secret for an NLB subdomain.
 
 ```sh
-ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8998,12 +9463,12 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 Regenerate the certificate and secret for an NLB subdomain
 
 ```sh
-ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN
+ibmcloud ks nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 ```
 {: pre}
 
 
-### `ibmcloud oc nlb-dns secret rm`
+### `ibmcloud ks nlb-dns secret rm`
 {: #nlb-dns-secret-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -9011,7 +9476,7 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 Delete a secret from an NLB subdomain and prevent future renewal of the certificate.
 
 ```sh
-ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -9040,7 +9505,7 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 Delete a secret from an NLB subdomain and prevent future renewal of the certificate
 
 ```sh
-ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN
+ibmcloud ks nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 ```
 {: pre}
 
@@ -9051,7 +9516,7 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN
 View the quota and limits for cluster-related resources in your IBM Cloud account.
 
 
-### `ibmcloud oc quota help`
+### `ibmcloud ks quota help`
 {: #quota-help-cli}
 
 
@@ -9059,7 +9524,7 @@ View the quota and limits for cluster-related resources in your IBM Cloud accoun
 Show help
 
 ```sh
-ibmcloud oc quota help
+ibmcloud ks quota help
 ```
 
 
@@ -9069,12 +9534,12 @@ ibmcloud oc quota help
 Show help
 
 ```sh
-ibmcloud oc quota help
+ibmcloud ks quota help
 ```
 {: pre}
 
 
-### `ibmcloud oc quota ls`
+### `ibmcloud ks quota ls`
 {: #quota-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -9082,7 +9547,7 @@ ibmcloud oc quota help
 List all quota and limits for cluster-related resources in your IBM Cloud account.
 
 ```sh
-ibmcloud oc quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
+ibmcloud ks quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 
 #### Command options
@@ -9105,7 +9570,7 @@ ibmcloud oc quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
 List all quota and limits for cluster-related resources in your IBM Cloud account
 
 ```sh
-ibmcloud oc quota ls
+ibmcloud ks quota ls
 ```
 {: pre}
 
@@ -9116,7 +9581,7 @@ ibmcloud oc quota ls
 Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. Legacy-structured commands are replaced with beta-structured commands.
 
 
-### `ibmcloud oc script help`
+### `ibmcloud ks script help`
 {: #script-help-cli}
 
 
@@ -9124,7 +9589,7 @@ Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. Legacy-
 Show help
 
 ```sh
-ibmcloud oc script help
+ibmcloud ks script help
 ```
 
 
@@ -9134,12 +9599,12 @@ ibmcloud oc script help
 Show help
 
 ```sh
-ibmcloud oc script help
+ibmcloud ks script help
 ```
 {: pre}
 
 
-### `ibmcloud oc script update`
+### `ibmcloud ks script update`
 {: #script-update-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -9147,7 +9612,7 @@ ibmcloud oc script help
 Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. Legacy-structured commands are replaced with beta-structured commands.
 
 ```sh
-ibmcloud oc script update [--in-place] FILE [FILE ...]
+ibmcloud ks script update [--in-place] FILE [FILE ...]
 ```
 
 #### Command options
@@ -9167,7 +9632,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands
 
 ```sh
-ibmcloud oc script update FILE
+ibmcloud ks script update FILE
 ```
 {: pre}
 
@@ -9178,7 +9643,7 @@ ibmcloud oc script update FILE
 Run operations against a security group.
 
 
-### `ibmcloud oc security-group help`
+### `ibmcloud ks security-group help`
 {: #security-group-help-cli}
 
 
@@ -9186,7 +9651,7 @@ Run operations against a security group.
 Show help
 
 ```sh
-ibmcloud oc security-group help
+ibmcloud ks security-group help
 ```
 
 
@@ -9196,12 +9661,12 @@ ibmcloud oc security-group help
 Show help
 
 ```sh
-ibmcloud oc security-group help
+ibmcloud ks security-group help
 ```
 {: pre}
 
 
-### `ibmcloud oc security-group ls`
+### `ibmcloud ks security-group ls`
 {: #security-group-ls-cli}
 
 
@@ -9209,7 +9674,7 @@ ibmcloud oc security-group help
 List all security groups associated with a cluster.
 
 ```sh
-ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--managed-by MANAGER] [--output OUTPUT] [-q] [--scope SCOPE]
+ibmcloud ks security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--managed-by MANAGER] [--output OUTPUT] [-q] [--scope SCOPE]
 ```
 
 #### Command options
@@ -9241,12 +9706,12 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 List all security groups associated with a cluster
 
 ```sh
-ibmcloud oc security-group ls --cluster CLUSTER
+ibmcloud ks security-group ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc security-group reset`
+### `ibmcloud ks security-group reset`
 {: #security-group-reset-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -9254,7 +9719,7 @@ ibmcloud oc security-group ls --cluster CLUSTER
 Deletes all existing security group rules, and reapplies default rules.
 
 ```sh
-ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [-q]
+ibmcloud ks security-group reset --cluster CLUSTER --security-group GROUP [-f] [-q]
 ```
 
 #### Command options
@@ -9280,12 +9745,12 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [
 Deletes all existing security group rules, and reapplies default rules
 
 ```sh
-ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP
+ibmcloud ks security-group reset --cluster CLUSTER --security-group GROUP
 ```
 {: pre}
 
 
-### `ibmcloud oc security-group sync`
+### `ibmcloud ks security-group sync`
 {: #security-group-sync-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
@@ -9293,7 +9758,7 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP
 Reapplies default security group rules that do not exist. Does not delete any preexisting rules.
 
 ```sh
-ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
+ibmcloud ks security-group sync --cluster CLUSTER --security-group GROUP [-q]
 ```
 
 #### Command options
@@ -9316,7 +9781,7 @@ ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
 Reapplies default security group rules that do not exist
 
 ```sh
-ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP
+ibmcloud ks security-group sync --cluster CLUSTER --security-group GROUP
 ```
 {: pre}
 
@@ -9327,7 +9792,7 @@ ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP
 View and modify storage resources.
 
 
-### `ibmcloud oc storage attachment create`
+### `ibmcloud ks storage attachment create`
 {: #storage-attachment-create-cli}
 
 The `storage attachment create` command is a beta feature.
@@ -9338,7 +9803,7 @@ The `storage attachment create` command is a beta feature.
 Attach a storage volume to a worker node.
 
 ```sh
-ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker WORKER [--output OUTPUT] [-q]
+ibmcloud ks storage attachment create --cluster CLUSTER --volume VOLUME --worker WORKER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -9367,12 +9832,12 @@ ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker
 Attach a storage volume to a worker node
 
 ```sh
-ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker WORKER_ID
+ibmcloud ks storage attachment create --cluster CLUSTER --volume VOLUME --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc storage attachment get`
+### `ibmcloud ks storage attachment get`
 {: #storage-attachment-get-cli}
 
 The `storage attachment get` command is a beta feature.
@@ -9383,7 +9848,7 @@ The `storage attachment get` command is a beta feature.
 Get the details of a volume attachment in a cluster.
 
 ```sh
-ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
+ibmcloud ks storage attachment get --attachment ATTACHMENT --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -9412,12 +9877,12 @@ ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --w
 Get the details of a volume attachment in a cluster
 
 ```sh
-ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks storage attachment get --attachment ATTACHMENT --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc storage attachment help`
+### `ibmcloud ks storage attachment help`
 {: #storage-attachment-help-cli}
 
 
@@ -9425,7 +9890,7 @@ ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --w
 Show help
 
 ```sh
-ibmcloud oc storage attachment help
+ibmcloud ks storage attachment help
 ```
 
 
@@ -9435,12 +9900,12 @@ ibmcloud oc storage attachment help
 Show help
 
 ```sh
-ibmcloud oc storage attachment help
+ibmcloud ks storage attachment help
 ```
 {: pre}
 
 
-### `ibmcloud oc storage attachment ls`
+### `ibmcloud ks storage attachment ls`
 {: #storage-attachment-ls-cli}
 
 The `storage attachment ls` command is a beta feature.
@@ -9451,7 +9916,7 @@ The `storage attachment ls` command is a beta feature.
 List all storage volume attachments of a worker in a cluster.
 
 ```sh
-ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
+ibmcloud ks storage attachment ls --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -9477,12 +9942,12 @@ ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--output OU
 List all storage volume attachments of a worker in a cluster
 
 ```sh
-ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks storage attachment ls --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc storage attachment rm`
+### `ibmcloud ks storage attachment rm`
 {: #storage-attachment-rm-cli}
 
 The `storage attachment rm` command is a beta feature.
@@ -9493,7 +9958,7 @@ The `storage attachment rm` command is a beta feature.
 Delete a volume attachment from a worker node.
 
 ```sh
-ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --worker WORKER [-q]
+ibmcloud ks storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --worker WORKER [-q]
 ```
 
 #### Command options
@@ -9519,12 +9984,12 @@ ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --wo
 Delete a volume attachment from a worker node
 
 ```sh
-ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc storage help`
+### `ibmcloud ks storage help`
 {: #storage-help-cli}
 
 
@@ -9532,7 +9997,7 @@ ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --wo
 Show help
 
 ```sh
-ibmcloud oc storage help
+ibmcloud ks storage help
 ```
 
 
@@ -9542,12 +10007,12 @@ ibmcloud oc storage help
 Show help
 
 ```sh
-ibmcloud oc storage help
+ibmcloud ks storage help
 ```
 {: pre}
 
 
-### `ibmcloud oc storage volume get`
+### `ibmcloud ks storage volume get`
 {: #storage-volume-get-cli}
 
 The `storage volume get` command is a beta feature.
@@ -9558,7 +10023,7 @@ The `storage volume get` command is a beta feature.
 Get the details of a volume.
 
 ```sh
-ibmcloud oc storage volume get --volume VOLUME [--output OUTPUT] [-q]
+ibmcloud ks storage volume get --volume VOLUME [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -9581,12 +10046,12 @@ ibmcloud oc storage volume get --volume VOLUME [--output OUTPUT] [-q]
 Get the details of a volume
 
 ```sh
-ibmcloud oc storage volume get --volume VOLUME
+ibmcloud ks storage volume get --volume VOLUME
 ```
 {: pre}
 
 
-### `ibmcloud oc storage volume help`
+### `ibmcloud ks storage volume help`
 {: #storage-volume-help-cli}
 
 
@@ -9594,7 +10059,7 @@ ibmcloud oc storage volume get --volume VOLUME
 Show help
 
 ```sh
-ibmcloud oc storage volume help
+ibmcloud ks storage volume help
 ```
 
 
@@ -9604,12 +10069,12 @@ ibmcloud oc storage volume help
 Show help
 
 ```sh
-ibmcloud oc storage volume help
+ibmcloud ks storage volume help
 ```
 {: pre}
 
 
-### `ibmcloud oc storage volume ls`
+### `ibmcloud ks storage volume ls`
 {: #storage-volume-ls-cli}
 
 The `storage volume ls` command is a beta feature.
@@ -9620,7 +10085,7 @@ The `storage volume ls` command is a beta feature.
 List the details of volumes.
 
 ```sh
-ibmcloud oc storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider PROVIDER] [-q] [--zone ZONE]
+ibmcloud ks storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider PROVIDER] [-q] [--zone ZONE]
 ```
 
 #### Command options
@@ -9649,7 +10114,7 @@ ibmcloud oc storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider 
 List the details of volumes
 
 ```sh
-ibmcloud oc storage volume ls
+ibmcloud ks storage volume ls
 ```
 {: pre}
 
@@ -9660,7 +10125,7 @@ ibmcloud oc storage volume ls
 List available portable subnets in your IBM Cloud infrastructure account.
 
 
-### `ibmcloud oc subnets`
+### `ibmcloud ks subnets`
 {: #subnets-cli}
 
 
@@ -9668,7 +10133,7 @@ List available portable subnets in your IBM Cloud infrastructure account.
 List available portable subnets in your IBM Cloud infrastructure account.
 
 ```sh
-ibmcloud oc subnets --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q] [--vpc-id ID] [--zone ZONE]
+ibmcloud ks subnets --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q] [--vpc-id ID] [--zone ZONE]
 ```
 
 #### Command options
@@ -9700,7 +10165,7 @@ ibmcloud oc subnets --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 List available portable subnets in your IBM Cloud infrastructure account
 
 ```sh
-ibmcloud oc subnets --provider PROVIDER
+ibmcloud ks subnets --provider PROVIDER
 ```
 {: pre}
 
@@ -9711,7 +10176,7 @@ ibmcloud oc subnets --provider PROVIDER
 List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters.
 
 
-### `ibmcloud oc versions`
+### `ibmcloud ks versions`
 {: #versions-cli}
 
 
@@ -9719,7 +10184,7 @@ List all the container platform versions that are available for IBM Cloud Kubern
 List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters.
 
 ```sh
-ibmcloud oc versions [--output OUTPUT] [-q] [--show-version VERSION]
+ibmcloud ks versions [--output OUTPUT] [-q] [--show-version VERSION]
 ```
 
 #### Command options
@@ -9742,7 +10207,7 @@ ibmcloud oc versions [--output OUTPUT] [-q] [--show-version VERSION]
 List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters
 
 ```sh
-ibmcloud oc versions
+ibmcloud ks versions
 ```
 {: pre}
 
@@ -9753,7 +10218,7 @@ ibmcloud oc versions
 List public and private VLANs for a zone and view the VLAN spanning status.
 
 
-### `ibmcloud oc vlan help`
+### `ibmcloud ks vlan help`
 {: #vlan-help-cli}
 
 
@@ -9761,7 +10226,7 @@ List public and private VLANs for a zone and view the VLAN spanning status.
 Show help
 
 ```sh
-ibmcloud oc vlan help
+ibmcloud ks vlan help
 ```
 
 
@@ -9771,12 +10236,12 @@ ibmcloud oc vlan help
 Show help
 
 ```sh
-ibmcloud oc vlan help
+ibmcloud ks vlan help
 ```
 {: pre}
 
 
-### `ibmcloud oc vlan ls`
+### `ibmcloud ks vlan ls`
 {: #vlan-ls-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -9784,7 +10249,7 @@ ibmcloud oc vlan help
 List available public and private VLANs for a zone.
 
 ```sh
-ibmcloud oc vlan ls --zone ZONE [--output OUTPUT] [-q]
+ibmcloud ks vlan ls --zone ZONE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -9807,12 +10272,12 @@ ibmcloud oc vlan ls --zone ZONE [--output OUTPUT] [-q]
 List available public and private VLANs for a zone
 
 ```sh
-ibmcloud oc vlan ls --zone ZONE
+ibmcloud ks vlan ls --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc vlan spanning get`
+### `ibmcloud ks vlan spanning get`
 {: #vlan-spanning-get-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -9820,7 +10285,7 @@ ibmcloud oc vlan ls --zone ZONE
 View the VLAN spanning status for your IBM Cloud classic infrastructure account.
 
 ```sh
-ibmcloud oc vlan spanning get [--output OUTPUT] [-q] [--region REGION]
+ibmcloud ks vlan spanning get [--output OUTPUT] [-q] [--region REGION]
 ```
 
 #### Command options
@@ -9843,12 +10308,12 @@ ibmcloud oc vlan spanning get [--output OUTPUT] [-q] [--region REGION]
 View the VLAN spanning status for your IBM Cloud classic infrastructure account
 
 ```sh
-ibmcloud oc vlan spanning get
+ibmcloud ks vlan spanning get
 ```
 {: pre}
 
 
-### `ibmcloud oc vlan spanning help`
+### `ibmcloud ks vlan spanning help`
 {: #vlan-spanning-help-cli}
 
 
@@ -9856,7 +10321,7 @@ ibmcloud oc vlan spanning get
 Show help
 
 ```sh
-ibmcloud oc vlan spanning help
+ibmcloud ks vlan spanning help
 ```
 
 
@@ -9866,7 +10331,7 @@ ibmcloud oc vlan spanning help
 Show help
 
 ```sh
-ibmcloud oc vlan spanning help
+ibmcloud ks vlan spanning help
 ```
 {: pre}
 
@@ -9877,7 +10342,7 @@ ibmcloud oc vlan spanning help
 Attach, detach, and list Virtual Network Interfaces on worker nodes.
 
 
-### `ibmcloud oc vni attach baremetal`
+### `ibmcloud ks vni attach baremetal`
 {: #vni-attach-baremetal-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -9885,7 +10350,7 @@ Attach, detach, and list Virtual Network Interfaces on worker nodes.
 Attach a Virtual Network Interface to a bare metal worker node or cluster.
 
 ```sh
-ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 
 #### Command options
@@ -9920,12 +10385,12 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 Attach a Virtual Network Interface to a bare metal worker node or cluster
 
 ```sh
-ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI --cluster-id CLUSTER_NAME_OR_ID
+ibmcloud ks vni attach baremetal --vlan VLAN --vni VNI --cluster-id CLUSTER_NAME_OR_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc vni attach help`
+### `ibmcloud ks vni attach help`
 {: #vni-attach-help-cli}
 
 
@@ -9933,7 +10398,7 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI --cluster-id CLUSTER_NAME
 Show help
 
 ```sh
-ibmcloud oc vni attach help
+ibmcloud ks vni attach help
 ```
 
 
@@ -9943,12 +10408,12 @@ ibmcloud oc vni attach help
 Show help
 
 ```sh
-ibmcloud oc vni attach help
+ibmcloud ks vni attach help
 ```
 {: pre}
 
 
-### `ibmcloud oc vni detach`
+### `ibmcloud ks vni detach`
 {: #vni-detach-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -9956,7 +10421,7 @@ ibmcloud oc vni attach help
 Detach a Virtual Network Interface from a worker node or cluster.
 
 ```sh
-ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 
 #### Command options
@@ -9988,12 +10453,12 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 Detach a Virtual Network Interface from a worker node or cluster
 
 ```sh
-ibmcloud oc vni detach --vni VNI --cluster-id CLUSTER_NAME_OR_ID
+ibmcloud ks vni detach --vni VNI --cluster-id CLUSTER_NAME_OR_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc vni help`
+### `ibmcloud ks vni help`
 {: #vni-help-cli}
 
 
@@ -10001,7 +10466,7 @@ ibmcloud oc vni detach --vni VNI --cluster-id CLUSTER_NAME_OR_ID
 Show help
 
 ```sh
-ibmcloud oc vni help
+ibmcloud ks vni help
 ```
 
 
@@ -10011,12 +10476,12 @@ ibmcloud oc vni help
 Show help
 
 ```sh
-ibmcloud oc vni help
+ibmcloud ks vni help
 ```
 {: pre}
 
 
-### `ibmcloud oc vni ls`
+### `ibmcloud ks vni ls`
 {: #vni-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -10024,7 +10489,7 @@ ibmcloud oc vni help
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud oc vni ls (--cluster-id ID | --worker WORKER) [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
+ibmcloud ks vni ls (--cluster-id ID | --worker WORKER) [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -10056,7 +10521,7 @@ ibmcloud oc vni ls (--cluster-id ID | --worker WORKER) [--after AFTER] [--first 
 List Virtual Network Interfaces attached to a cluster or worker node
 
 ```sh
-ibmcloud oc vni ls --cluster-id CLUSTER_NAME_OR_ID
+ibmcloud ks vni ls --cluster-id CLUSTER_NAME_OR_ID
 ```
 {: pre}
 
@@ -10067,7 +10532,7 @@ ibmcloud oc vni ls --cluster-id CLUSTER_NAME_OR_ID
 Get information about VPCs and manage VPC clusters.
 
 
-### `ibmcloud oc vpc help`
+### `ibmcloud ks vpc help`
 {: #vpc-help-cli}
 
 
@@ -10075,7 +10540,7 @@ Get information about VPCs and manage VPC clusters.
 Show help
 
 ```sh
-ibmcloud oc vpc help
+ibmcloud ks vpc help
 ```
 
 
@@ -10085,12 +10550,12 @@ ibmcloud oc vpc help
 Show help
 
 ```sh
-ibmcloud oc vpc help
+ibmcloud ks vpc help
 ```
 {: pre}
 
 
-### `ibmcloud oc vpc ls`
+### `ibmcloud ks vpc ls`
 {: #vpc-ls-cli}
 
 
@@ -10098,7 +10563,7 @@ ibmcloud oc vpc help
 List all VPCs in the targeted resource group. If no resource group is targeted, all VPCs in the account are listed.
 
 ```sh
-ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
+ibmcloud ks vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 
 #### Command options
@@ -10121,12 +10586,12 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 List all VPCs in the targeted resource group
 
 ```sh
-ibmcloud oc vpc ls
+ibmcloud ks vpc ls
 ```
 {: pre}
 
 
-### `ibmcloud oc vpc outbound-traffic-protection disable`
+### `ibmcloud ks vpc outbound-traffic-protection disable`
 {: #vpc-outbound-traffic-protection-disable-cli}
 
 
@@ -10134,7 +10599,7 @@ ibmcloud oc vpc ls
 Disable outbound traffic protection for a Secure By Default VPC cluster.
 
 ```sh
-ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
+ibmcloud ks vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -10157,12 +10622,12 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 Disable outbound traffic protection for a Secure By Default VPC cluster
 
 ```sh
-ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
+ibmcloud ks vpc outbound-traffic-protection disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc vpc outbound-traffic-protection enable`
+### `ibmcloud ks vpc outbound-traffic-protection enable`
 {: #vpc-outbound-traffic-protection-enable-cli}
 
 
@@ -10170,7 +10635,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
 Enable outbound traffic protection for a Secure By Default VPC cluster.
 
 ```sh
-ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
+ibmcloud ks vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -10193,12 +10658,12 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 Enable outbound traffic protection for a Secure By Default VPC cluster
 
 ```sh
-ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER
+ibmcloud ks vpc outbound-traffic-protection enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc vpc outbound-traffic-protection help`
+### `ibmcloud ks vpc outbound-traffic-protection help`
 {: #vpc-outbound-traffic-protection-help-cli}
 
 
@@ -10206,7 +10671,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc vpc outbound-traffic-protection help
+ibmcloud ks vpc outbound-traffic-protection help
 ```
 
 
@@ -10216,12 +10681,12 @@ ibmcloud oc vpc outbound-traffic-protection help
 Show help
 
 ```sh
-ibmcloud oc vpc outbound-traffic-protection help
+ibmcloud ks vpc outbound-traffic-protection help
 ```
 {: pre}
 
 
-### `ibmcloud oc vpc secure-by-default enable`
+### `ibmcloud ks vpc secure-by-default enable`
 {: #vpc-secure-by-default-enable-cli}
 
 
@@ -10229,7 +10694,7 @@ ibmcloud oc vpc outbound-traffic-protection help
 Enable Secure By Default VPC Networking for a VPC cluster using legacy Security Groups.
 
 ```sh
-ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-traffic-protection] [-f] [-q]
+ibmcloud ks vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-traffic-protection] [-f] [-q]
 ```
 
 #### Command options
@@ -10255,12 +10720,12 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-t
 Enable Secure By Default VPC Networking for a VPC cluster using legacy Security Groups
 
 ```sh
-ibmcloud oc vpc secure-by-default enable --cluster CLUSTER
+ibmcloud ks vpc secure-by-default enable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc vpc secure-by-default help`
+### `ibmcloud ks vpc secure-by-default help`
 {: #vpc-secure-by-default-help-cli}
 
 
@@ -10268,7 +10733,7 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc vpc secure-by-default help
+ibmcloud ks vpc secure-by-default help
 ```
 
 
@@ -10278,7 +10743,7 @@ ibmcloud oc vpc secure-by-default help
 Show help
 
 ```sh
-ibmcloud oc vpc secure-by-default help
+ibmcloud ks vpc secure-by-default help
 ```
 {: pre}
 
@@ -10289,7 +10754,7 @@ ibmcloud oc vpc secure-by-default help
 Register a webhook in a cluster.
 
 
-### `ibmcloud oc webhook-create`
+### `ibmcloud ks webhook-create`
 {: #webhook-create-cli}
 
 
@@ -10297,7 +10762,7 @@ Register a webhook in a cluster.
 Register a webhook in a cluster.
 
 ```sh
-ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL [--level LEVEL] [-q]
+ibmcloud ks webhook-create --cluster CLUSTER --type TYPE --url URL [--level LEVEL] [-q]
 ```
 
 #### Command options
@@ -10326,7 +10791,7 @@ ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL [--level LEVE
 Register a webhook in a cluster
 
 ```sh
-ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL
+ibmcloud ks webhook-create --cluster CLUSTER --type TYPE --url URL
 ```
 {: pre}
 
@@ -10337,7 +10802,7 @@ ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL
 View and modify worker nodes for a cluster.
 
 
-### `ibmcloud oc worker get`
+### `ibmcloud ks worker get`
 {: #worker-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10345,7 +10810,7 @@ View and modify worker nodes for a cluster.
 View the details of a worker node.
 
 ```sh
-ibmcloud oc worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
+ibmcloud ks worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -10371,12 +10836,12 @@ ibmcloud oc worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 View the details of a worker node
 
 ```sh
-ibmcloud oc worker get --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks worker get --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc worker help`
+### `ibmcloud ks worker help`
 {: #worker-help-cli}
 
 
@@ -10384,7 +10849,7 @@ ibmcloud oc worker get --cluster CLUSTER --worker WORKER_ID
 Show help
 
 ```sh
-ibmcloud oc worker help
+ibmcloud ks worker help
 ```
 
 
@@ -10394,12 +10859,12 @@ ibmcloud oc worker help
 Show help
 
 ```sh
-ibmcloud oc worker help
+ibmcloud ks worker help
 ```
 {: pre}
 
 
-### `ibmcloud oc worker ls`
+### `ibmcloud ks worker ls`
 {: #worker-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10407,7 +10872,7 @@ ibmcloud oc worker help
 List all worker nodes in a cluster.
 
 ```sh
-ibmcloud oc worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-reason] [--show-deleted] [--show-pools] [--worker-pool POOL]
+ibmcloud ks worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-reason] [--show-deleted] [--show-pools] [--worker-pool POOL]
 ```
 
 #### Command options
@@ -10442,12 +10907,12 @@ ibmcloud oc worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-re
 List all worker nodes in a cluster
 
 ```sh
-ibmcloud oc worker ls --cluster CLUSTER
+ibmcloud ks worker ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc worker reboot`
+### `ibmcloud ks worker reboot`
 {: #worker-reboot-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10455,7 +10920,7 @@ ibmcloud oc worker ls --cluster CLUSTER
 Restart a worker node.
 
 ```sh
-ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [--hard] [-q] [--skip-master-health]
+ibmcloud ks worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [--hard] [-q] [--skip-master-health]
 ```
 
 #### Command options
@@ -10487,12 +10952,12 @@ ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...
 Restart a worker node
 
 ```sh
-ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks worker reboot --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc worker reload`
+### `ibmcloud ks worker reload`
 {: #worker-reload-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10500,7 +10965,7 @@ ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER_ID
 Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes and bare metal VPC nodes are supported.
 
 ```sh
-ibmcloud oc worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--skip-master-health]
+ibmcloud ks worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--skip-master-health]
 ```
 
 #### Command options
@@ -10526,12 +10991,12 @@ ibmcloud oc worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--ski
 Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes
 
 ```sh
-ibmcloud oc worker reload --worker WORKER_ID
+ibmcloud ks worker reload --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc worker replace`
+### `ibmcloud ks worker replace`
 {: #worker-replace-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10539,7 +11004,7 @@ ibmcloud oc worker reload --worker WORKER_ID
 Delete a worker node and replace it with a new worker node in the same worker pool.
 
 ```sh
-ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update]
+ibmcloud ks worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update]
 ```
 
 #### Command options
@@ -10568,12 +11033,12 @@ ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update
 Delete a worker node and replace it with a new worker node in the same worker pool
 
 ```sh
-ibmcloud oc worker replace --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks worker replace --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc worker rm`
+### `ibmcloud ks worker rm`
 {: #worker-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10581,7 +11046,7 @@ ibmcloud oc worker replace --cluster CLUSTER --worker WORKER_ID
 Remove a worker node from a cluster.
 
 ```sh
-ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
+ibmcloud ks worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
 ```
 
 #### Command options
@@ -10607,12 +11072,12 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-
 Remove a worker node from a cluster
 
 ```sh
-ibmcloud oc worker rm --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks worker rm --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
 
-### `ibmcloud oc worker update`
+### `ibmcloud ks worker update`
 {: #worker-update-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -10620,7 +11085,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER_ID
 Update one or more worker nodes in a classic cluster to a new Kubernetes version. During the update, the worker node is updated with the latest image and data is permanently deleted if not stored on persistent storage.
 
 ```sh
-ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
+ibmcloud ks worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
 ```
 
 #### Command options
@@ -10646,7 +11111,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...
 Update one or more worker nodes in a classic cluster to a new Kubernetes version
 
 ```sh
-ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID
+ibmcloud ks worker update --cluster CLUSTER --worker WORKER_ID
 ```
 {: pre}
 
@@ -10657,7 +11122,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID
 View and modify worker pools for a cluster.
 
 
-### `ibmcloud oc worker-pool create classic`
+### `ibmcloud ks worker-pool create classic`
 {: #worker-pool-create-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -10665,7 +11130,7 @@ View and modify worker pools for a cluster.
 Add a worker pool to a classic cluster. No worker nodes are created until zones are added to the worker pool.
 
 ```sh
-ibmcloud oc worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--hardware HARDWARE] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
+ibmcloud ks worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--hardware HARDWARE] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -10712,7 +11177,7 @@ ibmcloud oc worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name 
 Add a worker pool to a classic cluster
 
 ```sh
-ibmcloud oc worker-pool create classic \
+ibmcloud ks worker-pool create classic \
   --cluster CLUSTER \
   --flavor FLAVOR \
   --name NAME \
@@ -10721,7 +11186,7 @@ ibmcloud oc worker-pool create classic \
 {: pre}
 
 
-### `ibmcloud oc worker-pool create help`
+### `ibmcloud ks worker-pool create help`
 {: #worker-pool-create-help-cli}
 
 
@@ -10729,7 +11194,7 @@ ibmcloud oc worker-pool create classic \
 Show help
 
 ```sh
-ibmcloud oc worker-pool create help
+ibmcloud ks worker-pool create help
 ```
 
 
@@ -10739,12 +11204,12 @@ ibmcloud oc worker-pool create help
 Show help
 
 ```sh
-ibmcloud oc worker-pool create help
+ibmcloud ks worker-pool create help
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool create satellite`
+### `ibmcloud ks worker-pool create satellite`
 {: #worker-pool-create-satellite-cli}
 
 
@@ -10752,7 +11217,7 @@ ibmcloud oc worker-pool create help
 Add a worker pool to an IBM Cloud Satellite cluster. No worker nodes are created until zones are added to the worker pool.
 
 ```sh
-ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME --size-per-zone SIZE --zone ZONE [--entitlement ENTITLEMENT] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
+ibmcloud ks worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME --size-per-zone SIZE --zone ZONE [--entitlement ENTITLEMENT] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -10796,7 +11261,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 Add a worker pool to an IBM Cloud Satellite cluster
 
 ```sh
-ibmcloud oc worker-pool create satellite \
+ibmcloud ks worker-pool create satellite \
   --cluster CLUSTER \
   --host-label LABEL \
   --name NAME \
@@ -10806,7 +11271,7 @@ ibmcloud oc worker-pool create satellite \
 {: pre}
 
 
-### `ibmcloud oc worker-pool create vpc-classic`
+### `ibmcloud ks worker-pool create vpc-classic`
 {: #worker-pool-create-vpc-classic-cli}
 
 
@@ -10814,7 +11279,7 @@ ibmcloud oc worker-pool create satellite \
 Add a worker pool to a VPC Gen 1 cluster. No worker nodes are created until zones are added to the worker pool.
 
 ```sh
-ibmcloud oc worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--entitlement ENTITLEMENT] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q] [--vpc-id ID]
+ibmcloud ks worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--entitlement ENTITLEMENT] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q] [--vpc-id ID]
 ```
 
 #### Command options
@@ -10858,7 +11323,7 @@ ibmcloud oc worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --n
 Add a worker pool to a VPC Gen 1 cluster
 
 ```sh
-ibmcloud oc worker-pool create vpc-classic \
+ibmcloud ks worker-pool create vpc-classic \
   --cluster CLUSTER \
   --flavor FLAVOR \
   --name NAME \
@@ -10867,7 +11332,7 @@ ibmcloud oc worker-pool create vpc-classic \
 {: pre}
 
 
-### `ibmcloud oc worker-pool create vpc-gen2`
+### `ibmcloud ks worker-pool create vpc-gen2`
 {: #worker-pool-create-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -10875,7 +11340,7 @@ ibmcloud oc worker-pool create vpc-classic \
 Add a worker pool to a VPC Gen 2 cluster. No worker nodes are created until zones are added to the worker pool.
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--crk CRK] [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance INSTANCE] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--vpc-id ID]
+ibmcloud ks worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--crk CRK] [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance INSTANCE] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--vpc-id ID]
 ```
 
 #### Command options
@@ -10937,7 +11402,7 @@ ibmcloud oc worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name
 Add a worker pool to a VPC Gen 2 cluster
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 \
+ibmcloud ks worker-pool create vpc-gen2 \
   --cluster CLUSTER \
   --flavor FLAVOR \
   --name NAME \
@@ -10946,7 +11411,7 @@ ibmcloud oc worker-pool create vpc-gen2 \
 {: pre}
 
 
-### `ibmcloud oc worker-pool get`
+### `ibmcloud ks worker-pool get`
 {: #worker-pool-get-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -10954,7 +11419,7 @@ ibmcloud oc worker-pool create vpc-gen2 \
 List the details of a worker pool.
 
 ```sh
-ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPUT] [-q]
+ibmcloud ks worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -10980,12 +11445,12 @@ ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPU
 List the details of a worker pool
 
 ```sh
-ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL
+ibmcloud ks worker-pool get --cluster CLUSTER --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool help`
+### `ibmcloud ks worker-pool help`
 {: #worker-pool-help-cli}
 
 
@@ -10993,7 +11458,7 @@ ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL
 Show help
 
 ```sh
-ibmcloud oc worker-pool help
+ibmcloud ks worker-pool help
 ```
 
 
@@ -11003,12 +11468,12 @@ ibmcloud oc worker-pool help
 Show help
 
 ```sh
-ibmcloud oc worker-pool help
+ibmcloud ks worker-pool help
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool label help`
+### `ibmcloud ks worker-pool label help`
 {: #worker-pool-label-help-cli}
 
 
@@ -11016,7 +11481,7 @@ ibmcloud oc worker-pool help
 Show help
 
 ```sh
-ibmcloud oc worker-pool label help
+ibmcloud ks worker-pool label help
 ```
 
 
@@ -11026,12 +11491,12 @@ ibmcloud oc worker-pool label help
 Show help
 
 ```sh
-ibmcloud oc worker-pool label help
+ibmcloud ks worker-pool label help
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool label rm`
+### `ibmcloud ks worker-pool label rm`
 {: #worker-pool-label-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11039,7 +11504,7 @@ ibmcloud oc worker-pool label help
 Remove all custom Kubernetes labels from all worker nodes in a worker pool.
 
 ```sh
-ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11065,12 +11530,12 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 Remove all custom Kubernetes labels from all worker nodes in a worker pool
 
 ```sh
-ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL
+ibmcloud ks worker-pool label rm --cluster CLUSTER --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool label set`
+### `ibmcloud ks worker-pool label set`
 {: #worker-pool-label-set-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11078,7 +11543,7 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL
 Set custom Kubernetes labels for all worker nodes in a worker pool.
 
 ```sh
-ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL ...] --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL ...] --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11107,12 +11572,12 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 Set custom Kubernetes labels for all worker nodes in a worker pool
 
 ```sh
-ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL --worker-pool POOL
+ibmcloud ks worker-pool label set --cluster CLUSTER --label LABEL --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool ls`
+### `ibmcloud ks worker-pool ls`
 {: #worker-pool-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11120,7 +11585,7 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL --worker-pool 
 List all worker pools in a cluster.
 
 ```sh
-ibmcloud oc worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud ks worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -11143,12 +11608,12 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
 List all worker pools in a cluster
 
 ```sh
-ibmcloud oc worker-pool ls --cluster CLUSTER
+ibmcloud ks worker-pool ls --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool operating-system help`
+### `ibmcloud ks worker-pool operating-system help`
 {: #worker-pool-operating-system-help-cli}
 
 
@@ -11156,7 +11621,7 @@ ibmcloud oc worker-pool ls --cluster CLUSTER
 Show help
 
 ```sh
-ibmcloud oc worker-pool operating-system help
+ibmcloud ks worker-pool operating-system help
 ```
 
 
@@ -11166,12 +11631,12 @@ ibmcloud oc worker-pool operating-system help
 Show help
 
 ```sh
-ibmcloud oc worker-pool operating-system help
+ibmcloud ks worker-pool operating-system help
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool operating-system set`
+### `ibmcloud ks worker-pool operating-system set`
 {: #worker-pool-operating-system-set-cli}
 
 
@@ -11179,7 +11644,7 @@ ibmcloud oc worker-pool operating-system help
 Set the operating system. After you set the operating system, you must update your workers by running either `ibmcloud ks worker update` or `ibmcloud ks worker replace`.
 
 ```sh
-ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-system SYSTEM --worker-pool POOL [-q]
+ibmcloud ks worker-pool operating-system set --cluster CLUSTER --operating-system SYSTEM --worker-pool POOL [-q]
 ```
 
 #### Command options
@@ -11205,7 +11670,7 @@ ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-syste
 Set the operating system
 
 ```sh
-ibmcloud oc worker-pool operating-system set \
+ibmcloud ks worker-pool operating-system set \
   --cluster CLUSTER \
   --operating-system SYSTEM \
   --worker-pool POOL
@@ -11213,7 +11678,7 @@ ibmcloud oc worker-pool operating-system set \
 {: pre}
 
 
-### `ibmcloud oc worker-pool rebalance`
+### `ibmcloud ks worker-pool rebalance`
 {: #worker-pool-rebalance-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11221,7 +11686,7 @@ ibmcloud oc worker-pool operating-system set \
 Rebalance a worker pool in a cluster. Rebalancing adds and removes worker nodes to match the worker pool's size per zone. Satellite worker pools might remove manually assigned nodes if they do not match the worker pool's host labels.
 
 ```sh
-ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11247,12 +11712,12 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
 Rebalance a worker pool in a cluster
 
 ```sh
-ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL
+ibmcloud ks worker-pool rebalance --cluster CLUSTER --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool resize`
+### `ibmcloud ks worker-pool resize`
 {: #worker-pool-resize-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11260,7 +11725,7 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL
 Resize the worker pool to the number of workers per zone that you specify.
 
 ```sh
-ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-pool POOL [-q]
+ibmcloud ks worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-pool POOL [-q]
 ```
 
 #### Command options
@@ -11286,12 +11751,12 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-p
 Resize the worker pool to the number of workers per zone that you specify
 
 ```sh
-ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-pool POOL
+ibmcloud ks worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool rm`
+### `ibmcloud ks worker-pool rm`
 {: #worker-pool-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11299,7 +11764,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-p
 Remove a worker pool from a cluster.
 
 ```sh
-ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11325,12 +11790,12 @@ ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 Remove a worker pool from a cluster
 
 ```sh
-ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL
+ibmcloud ks worker-pool rm --cluster CLUSTER --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool taint help`
+### `ibmcloud ks worker-pool taint help`
 {: #worker-pool-taint-help-cli}
 
 
@@ -11338,7 +11803,7 @@ ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL
 Show help
 
 ```sh
-ibmcloud oc worker-pool taint help
+ibmcloud ks worker-pool taint help
 ```
 
 
@@ -11348,12 +11813,12 @@ ibmcloud oc worker-pool taint help
 Show help
 
 ```sh
-ibmcloud oc worker-pool taint help
+ibmcloud ks worker-pool taint help
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool taint rm`
+### `ibmcloud ks worker-pool taint rm`
 {: #worker-pool-taint-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11361,7 +11826,7 @@ ibmcloud oc worker-pool taint help
 Remove all Kubernetes taints from all worker nodes in a worker pool.
 
 ```sh
-ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool taint rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11387,12 +11852,12 @@ ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 Remove all Kubernetes taints from all worker nodes in a worker pool
 
 ```sh
-ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL
+ibmcloud ks worker-pool taint rm --cluster CLUSTER --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool taint set`
+### `ibmcloud ks worker-pool taint set`
 {: #worker-pool-taint-set-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11400,7 +11865,7 @@ ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL
 Set Kubernetes taints for all worker nodes in a worker pool. Taints prevent pods without matching tolerations from running on the worker nodes.
 
 ```sh
-ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT ...] --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT ...] --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11429,12 +11894,12 @@ ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT
 Set Kubernetes taints for all worker nodes in a worker pool
 
 ```sh
-ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT --worker-pool POOL
+ibmcloud ks worker-pool taint set --cluster CLUSTER --taint TAINT --worker-pool POOL
 ```
 {: pre}
 
 
-### `ibmcloud oc worker-pool zones`
+### `ibmcloud ks worker-pool zones`
 {: #worker-pool-zones-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11442,7 +11907,7 @@ ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT --worker-pool 
 View the zones attached to a worker pool.
 
 ```sh
-ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUTPUT] [-q]
+ibmcloud ks worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -11468,7 +11933,7 @@ ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUT
 View the zones attached to a worker pool
 
 ```sh
-ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL
+ibmcloud ks worker-pool zones --cluster CLUSTER --worker-pool POOL
 ```
 {: pre}
 
@@ -11479,7 +11944,7 @@ ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL
 List availability zones and modify the zones attached to a worker pool.
 
 
-### `ibmcloud oc zone add classic`
+### `ibmcloud ks zone add classic`
 {: #zone-add-classic-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -11487,7 +11952,7 @@ List availability zones and modify the zones attached to a worker pool.
 Add a zone to one or more worker pools in a classic cluster.
 
 ```sh
-ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [--private-vlan VLAN] [-q] (--private-only | --public-vlan VLAN)
+ibmcloud ks zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [--private-vlan VLAN] [-q] (--private-only | --public-vlan VLAN)
 ```
 
 #### Command options
@@ -11525,12 +11990,12 @@ ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool
 Add a zone to one or more worker pools in a classic cluster
 
 ```sh
-ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL --zone ZONE --private-only
+ibmcloud ks zone add classic --cluster CLUSTER --worker-pool POOL --zone ZONE --private-only
 ```
 {: pre}
 
 
-### `ibmcloud oc zone add help`
+### `ibmcloud ks zone add help`
 {: #zone-add-help-cli}
 
 
@@ -11538,7 +12003,7 @@ ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL --zone ZONE --
 Show help
 
 ```sh
-ibmcloud oc zone add help
+ibmcloud ks zone add help
 ```
 
 
@@ -11548,12 +12013,12 @@ ibmcloud oc zone add help
 Show help
 
 ```sh
-ibmcloud oc zone add help
+ibmcloud ks zone add help
 ```
 {: pre}
 
 
-### `ibmcloud oc zone add satellite`
+### `ibmcloud ks zone add satellite`
 {: #zone-add-satellite-cli}
 
 
@@ -11561,7 +12026,7 @@ ibmcloud oc zone add help
 Add a zone to one or more worker pools in a Satellite cluster.
 
 ```sh
-ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [-q]
+ibmcloud ks zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -11590,12 +12055,12 @@ ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-po
 Add a zone to one or more worker pools in a Satellite cluster
 
 ```sh
-ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL --zone ZONE
+ibmcloud ks zone add satellite --cluster CLUSTER --worker-pool POOL --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc zone add vpc-classic`
+### `ibmcloud ks zone add vpc-classic`
 {: #zone-add-vpc-classic-cli}
 
 
@@ -11603,7 +12068,7 @@ ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL --zone ZONE
 Add a zone to one or more worker pools in a VPC Gen 1 cluster.
 
 ```sh
-ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE [--output OUTPUT] [-q]
+ibmcloud ks zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -11635,12 +12100,12 @@ ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool 
 Add a zone to one or more worker pools in a VPC Gen 1 cluster
 
 ```sh
-ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE
+ibmcloud ks zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc zone add vpc-gen2`
+### `ibmcloud ks zone add vpc-gen2`
 {: #zone-add-vpc-gen2-cli}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -11648,7 +12113,7 @@ ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool 
 Add a zone to one or more worker pools in a VPC Gen 2 cluster.
 
 ```sh
-ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE [--output OUTPUT] [-q]
+ibmcloud ks zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -11680,12 +12145,12 @@ ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POO
 Add a zone to one or more worker pools in a VPC Gen 2 cluster
 
 ```sh
-ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE
+ibmcloud ks zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE
 ```
 {: pre}
 
 
-### `ibmcloud oc zone help`
+### `ibmcloud ks zone help`
 {: #zone-help-cli}
 
 
@@ -11693,7 +12158,7 @@ ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POO
 Show help
 
 ```sh
-ibmcloud oc zone help
+ibmcloud ks zone help
 ```
 
 
@@ -11703,12 +12168,12 @@ ibmcloud oc zone help
 Show help
 
 ```sh
-ibmcloud oc zone help
+ibmcloud ks zone help
 ```
 {: pre}
 
 
-### `ibmcloud oc zone ls`
+### `ibmcloud ks zone ls`
 {: #zone-ls-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11716,7 +12181,7 @@ ibmcloud oc zone help
 List all availability zones in a region.
 
 ```sh
-ibmcloud oc zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q] [--region-only] [--show-flavors]
+ibmcloud ks zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q] [--region-only] [--show-flavors]
 ```
 
 #### Command options
@@ -11748,12 +12213,12 @@ ibmcloud oc zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 List all availability zones in a region
 
 ```sh
-ibmcloud oc zone ls --provider PROVIDER
+ibmcloud ks zone ls --provider PROVIDER
 ```
 {: pre}
 
 
-### `ibmcloud oc zone network-set`
+### `ibmcloud ks zone network-set`
 {: #zone-network-set-cli}
 
 [Classic infrastructure]{: tag-classic-inf} 
@@ -11761,7 +12226,7 @@ ibmcloud oc zone ls --provider PROVIDER
 Set the network metadata in a specific zone for the given worker pools in a classic cluster.
 
 ```sh
-ibmcloud oc zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q] (--private-only | --public-vlan VLAN)
+ibmcloud ks zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q] (--private-only | --public-vlan VLAN)
 ```
 
 #### Command options
@@ -11799,7 +12264,7 @@ ibmcloud oc zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool
 Set the network metadata in a specific zone for the given worker pools in a classic cluster
 
 ```sh
-ibmcloud oc zone network-set \
+ibmcloud ks zone network-set \
   --cluster CLUSTER \
   --private-vlan VLAN \
   --worker-pool POOL \
@@ -11809,7 +12274,7 @@ ibmcloud oc zone network-set \
 {: pre}
 
 
-### `ibmcloud oc zone rm`
+### `ibmcloud ks zone rm`
 {: #zone-rm-cli}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
@@ -11817,7 +12282,7 @@ ibmcloud oc zone network-set \
 Remove a zone from one or more worker pools in a cluster.
 
 ```sh
-ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q]
+ibmcloud ks zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q]
 ```
 
 #### Command options
@@ -11846,6 +12311,6 @@ ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...
 Remove a zone from one or more worker pools in a cluster
 
 ```sh
-ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL --zone ZONE
+ibmcloud ks zone rm --cluster CLUSTER --worker-pool POOL --zone ZONE
 ```
 {: pre}

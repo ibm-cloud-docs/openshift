@@ -36,6 +36,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-sep26}
 
 
+
 ### 21 September 2026
 {: #openshift-sep2126}
 {: release-note}
@@ -876,8 +877,6 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-
-
 ### 18 May 2026
 {: #openshift-may1826}
 {: release-note}
@@ -1269,7 +1268,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 
-
 ### 11 March 2026
 {: #openshift-mar1126}
 {: release-note}
@@ -1461,8 +1459,6 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
-
-
 
 
 
@@ -1753,8 +1749,6 @@ OpenShift AI cluster add-on patch updates.
 
 
 
-
-
 ### 15 November 2025
 {: #openshift-nov1525}
 {: release-note}
@@ -1855,7 +1849,6 @@ CLI version `1.0.727` is available.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
 
 
 
@@ -2456,8 +2449,6 @@ Versions 4.12 and 4.13 are unsupported.
 
 
 
-
-
 ### 27 May 2025
 {: #openshift-27may25}
 {: release-note}
@@ -2580,7 +2571,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 
 
-
 ### 25 April 2025
 {: #openshift-25april25}
 {: release-note}
@@ -2623,8 +2613,6 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 
 
 
-
-
 ### 16 April 2025
 {: #openshift-16april25}
 {: release-note}
@@ -2651,7 +2639,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
-
 
 
 
@@ -2700,6 +2687,7 @@ OpenShift AI cluster add-on patch updates.
 
 :   Version 4.13 change log
 :   Version 4.12 change log
+
 
 
 
@@ -2762,7 +2750,6 @@ Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
 
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
-
 
 
 
@@ -2920,6 +2907,8 @@ Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_no
 
 :   Version 4.13 change log
 :   Version 4.12 change log
+
+
 
 
 
@@ -3630,7 +3619,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 
-
 ### 10 July 2024
 {: #openshift-july1024}
 {: release-note}
@@ -4022,7 +4010,6 @@ New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes w
 
 
 
-
 ### 15 March 2024
 {: #openshift-mar1524}
 {: release-note}
@@ -4051,7 +4038,6 @@ Version 4.14 the default version for {{site.data.keyword.openshiftlong_notm}}.
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
-
 
 
 
@@ -4162,8 +4148,6 @@ New worker node flavors are available with L4 GPUs.
 
 
 
-
-
 ### 16 February 2024
 {: #openshift-feb1624}
 {: release-note}
@@ -4171,8 +4155,6 @@ New worker node flavors are available with L4 GPUs.
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.1.0_362`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
-
-
 
 
 
