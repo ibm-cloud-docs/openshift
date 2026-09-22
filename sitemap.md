@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-21"
+lastupdated: "2026-09-22"
 
 
 keywords: openshift
@@ -8186,6 +8186,10 @@ subcollection: openshift
     * [IPv4Address](/docs/openshift?topic=openshift-cs-graphql-api#ipv4address)
 
     * [MACAddress](/docs/openshift?topic=openshift-cs-graphql-api#macaddress)
+
+* [Internal queries](/docs/openshift?topic=openshift-cs-graphql-api#internal-queries)
+
+    * [`globalSearchSatelliteConnectorAccounts`](/docs/openshift?topic=openshift-cs-graphql-api#globalsearchsatelliteconnectoraccounts)
 
 [OCP REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index){: external}
 
