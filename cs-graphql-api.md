@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-09-21"
+lastupdated: "2026-09-22"
 
 keywords: containers, kubernetes, satellite, graphql, api, reference
 
@@ -25,7 +25,6 @@ This page is auto-generated from the live schema.
 Queries retrieve data without modifying any resources. Send a `POST` request to `https://containers.cloud.ibm.com/graphql` with your query in the request body.
 
 
-
 ### `node`
 {: #node}
 
@@ -47,7 +46,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "query node($id: ID!) {\n  node(id: $id) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "query node($id: ID!) {\n  node(id: $id) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "id": "abc123"
   }
@@ -91,7 +90,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "query satelliteConnectors($after: String, $first: Int, $last: Int, $before: String) {\n  satelliteConnectors(after: $after, first: $first, last: $last, before: $before) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "query satelliteConnectors($after: String, $first: Int, $last: Int, $before: String) {\n  satelliteConnectors(after: $after, first: $first, last: $last, before: $before) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "after": "example-value",
     "first": 0,
@@ -170,7 +169,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "mutation addVirtualNetworkInterfaceToBareMetalNode($input: AddVirtualNetworkInterfaceToBareMetalNodeInput!) {\n  addVirtualNetworkInterfaceToBareMetalNode(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "mutation addVirtualNetworkInterfaceToBareMetalNode($input: AddVirtualNetworkInterfaceToBareMetalNodeInput!) {\n  addVirtualNetworkInterfaceToBareMetalNode(input: $input) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "input": "<AddVirtualNetworkInterfaceToBareMetalNodeInput>"
   }
@@ -213,7 +212,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "mutation createSatelliteConnector($input: CreateSatelliteConnectorInput) {\n  createSatelliteConnector(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "mutation createSatelliteConnector($input: CreateSatelliteConnectorInput) {\n  createSatelliteConnector(input: $input) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "input": "<CreateSatelliteConnectorInput>"
   }
@@ -272,7 +271,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "mutation reinitializeKubernetesNode($input: ReinitializeKubernetesNodeInput) {\n  reinitializeKubernetesNode(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "mutation reinitializeKubernetesNode($input: ReinitializeKubernetesNodeInput) {\n  reinitializeKubernetesNode(input: $input) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "input": "<ReinitializeKubernetesNodeInput>"
   }
@@ -315,7 +314,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "mutation removeSatelliteConnector($input: RemoveSatelliteConnectorInput) {\n  removeSatelliteConnector(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "mutation removeSatelliteConnector($input: RemoveSatelliteConnectorInput) {\n  removeSatelliteConnector(input: $input) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "input": "<RemoveSatelliteConnectorInput>"
   }
@@ -374,7 +373,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "mutation removeVirtualNetworkInterfaceFromNode($input: RemoveVirtualNetworkInterfaceFromNodeInput!) {\n  removeVirtualNetworkInterfaceFromNode(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "mutation removeVirtualNetworkInterfaceFromNode($input: RemoveVirtualNetworkInterfaceFromNodeInput!) {\n  removeVirtualNetworkInterfaceFromNode(input: $input) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "input": "<RemoveVirtualNetworkInterfaceFromNodeInput>"
   }
@@ -441,7 +440,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
   -H "Authorization: Bearer $IAM_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-  "query": "mutation updateSatelliteLocation($input: UpdateSatelliteLocationInput) {\n  updateSatelliteLocation(input: $input) {\n    # \u2026 select your fields here\n  }\n}",
+  "query": "mutation updateSatelliteLocation($input: UpdateSatelliteLocationInput) {\n  updateSatelliteLocation(input: $input) {\n    # ... select your fields here\n  }\n}",
   "variables": {
     "input": "<UpdateSatelliteLocationInput>"
   }
@@ -968,3 +967,73 @@ IPv4 address in dotted-decimal notation (e.g., 192.168.1.1).
 
 MAC address in colon-hexadecimal notation (e.g., 00:1A:2B:3C:4D:5E).
 {: shortdesc}
+
+
+## Internal queries
+{: #internal-queries}
+
+The following queries are for internal use only and are not supported for external callers. They are documented here for completeness.
+
+
+### `globalSearchSatelliteConnectorAccounts`
+{: #globalsearchsatelliteconnectoraccounts}
+
+Globally searchable results for the IBM Global Search service. Internal use only.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Returns | `GlobalSearchSatelliteConnectorAccountsConnection` | |
+| Argument | `after` (`String`) |  |
+| Argument | `first` (`Int`) |  |
+| Argument | `last` (`Int`) |  |
+| Argument | `before` (`String`) |  |
+| Argument | `regionName` (`String!`) *(required)* |  |
+{: caption="Returns and arguments for globalSearchSatelliteConnectorAccounts" caption-side="bottom"}
+
+
+#### Example request
+{: #example-request-globalsearchsatelliteconnectoraccounts}
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "query globalSearchSatelliteConnectorAccounts($after: String, $first: Int, $last: Int, $before: String, $regionName: String!) {\n  globalSearchSatelliteConnectorAccounts(after: $after, first: $first, last: $last, before: $before, regionName: $regionName) {\n    # ... select your fields here\n  }\n}",
+  "variables": {
+    "after": "example-value",
+    "first": 0,
+    "last": 0,
+    "before": "example-value",
+    "regionName": "example-value"
+  }
+}'
+```
+
+
+#### Example response
+{: #example-response-globalsearchsatelliteconnectoraccounts}
+
+```json
+{
+  "data": {
+    "globalSearchSatelliteConnectorAccounts": {
+      "edges": [
+        {
+          "cursor": "example-value",
+          "node": {
+            "externalID": "example-value"
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "example-value",
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "startCursor": "example-value"
+      }
+    }
+  }
+}
+```
