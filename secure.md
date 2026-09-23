@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-23"
 
 
 keywords: openshift
@@ -199,7 +199,7 @@ Encrypted disks {: #encrypted_disk}
     {: note}
 
 SELinux
-:   Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux){: external} profiles that are loaded into the worker node during bootstrapping. SELinux profiles can't be changed by the user or owner of the machine. 
+:   Every worker node is set up with security and access policies that are enforced by [Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux){: external} profiles that are loaded into the worker node during bootstrapping. SELinux profiles can't be changed by the user or owner of the machine.
 
 SSH disabled
 :   By default, SSH access is disabled on the worker node to protect your cluster from malicious attacks. When SSH access is disabled, access to the cluster is forced via the {{site.data.keyword.redhat_openshift_notm}} API server. The {{site.data.keyword.redhat_openshift_notm}} API server requires every request to be checked against the policies that are set in the authentication, authorization, and admission control module before the request is executed in the cluster.
