@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-14"
+lastupdated: "2026-09-23"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -217,7 +217,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
     :   **Optional**. The health check URL path for HTTP and HTTPS health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
-    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
+    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/info/rfc7230/#section-5.3.1){: external}.
     - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
@@ -527,7 +527,7 @@ To enable your app to receive private network requests,
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
     :   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
-    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
+    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/info/rfc7230/#section-5.3.1){: external}.
     - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
@@ -806,7 +806,7 @@ To enable your app to receive public or private requests,
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
     :   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
-    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
+    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/info/rfc7230/#section-5.3.1){: external}.
     - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
@@ -1112,7 +1112,7 @@ For more control over your VPC load balancer health checks, you can use optional
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
 :   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
-   - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
+   - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/info/rfc7230/#section-5.3.1){: external}.
    - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
@@ -1193,7 +1193,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#setup_vpc_nlb).
+1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb).
 
 1. Apply the new `LoadBalancer` definition file.
 
@@ -1276,7 +1276,7 @@ Review the following default settings and limitations.
     * VPC NLBs only: `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
     * VPC ALBs only: The `externalTrafficPolicy: Local` setting is supported, but the setting does not preserve the source IP of the request.
 * When you delete a VPC cluster, any non-persistent VPC load balancers, which are named in the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` format and are automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster, are also automatically deleted. However, [persistent load balancers](#vpc_lb_persist) with unique names and VPC load balancers that you manually created in your VPC are not deleted.
-* You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/account?topic=account-using-avatar).
+* You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/openshift?topic=openshift-get-help).
 * Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALBs listen on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, which limit traffic to specific nodes.
     * The subnets and zones of the VPC ALB can be updated or modified after the ALB is created. If you add more zones to the cluster or update the Kubernetes load balancer service with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, the VPC ALB is updated to listen on the new subnets. 
@@ -1284,7 +1284,3 @@ Review the following default settings and limitations.
     * VPC NLBs forward incoming traffic to all worker nodes in the cluster unless you restrict incoming traffic to specific worker nodes with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone annotations`. To limit traffic to a specific zone, you can use these annotations to specify worker nodes in that zone. 
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
 * VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.
-
-
-
-
