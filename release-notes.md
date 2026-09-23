@@ -27,11 +27,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
-
-
-
-
-
 ## September 2026
 {: #openshift-sep26}
 
@@ -44,11 +39,11 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 
-
-
 ### 21 September 2026
 {: #openshift-sep2126}
 {: release-note}
+
+
 
 {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
@@ -58,6 +53,23 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 
+
+
+
+
+
+
+Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+:   Fix packs can be applied in the following ways. 
+:   **Classic infrastructure**: Update or reload the worker node.
+:   **VPC infrastructure**: Replace the worker node.
+:   **VPC Bare Metal**: Reload the worker node.
+:   Review the change logs for your cluster version.
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 
 
 ### 18 September 2026

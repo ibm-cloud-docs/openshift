@@ -3,7 +3,7 @@ copyright:
   years: 2026
 lastupdated: "2026-09-23"
 
-keywords: openshift, kubernetes, satellite, graphql, api, reference
+keywords: containers, kubernetes, satellite, graphql, api, reference
 
 subcollection: openshift
 ---
