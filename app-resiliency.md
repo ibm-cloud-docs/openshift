@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-09-23"
 
 keywords: openshift, resiliency, high availability, control plane, patch, master refresh, replica set, pod disruption budget, probes
 
@@ -177,7 +177,7 @@ When your application interacts with the Kubernetes API, external databases, or 
 
 - Review [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy) to learn more about workload types and Kubernetes objects.
 - Learn about [Deploying apps to clusters](/docs/openshift?topic=openshift-app) with complete configuration examples.
-- Read [High availability and disaster recovery](/docs/openshift?topic=openshift-ha-dr) for cluster-level availability strategies.
+- Read [High availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr) for cluster-level availability strategies.
 
 ## Related links
 {: #resiliency-related-links}
