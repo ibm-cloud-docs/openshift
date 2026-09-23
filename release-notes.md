@@ -84,6 +84,8 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 
+
+
 ### 17 September 2026
 {: #openshift-sep1726}
 {: release-note}
