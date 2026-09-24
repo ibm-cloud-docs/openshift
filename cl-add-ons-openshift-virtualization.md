@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-14"
+lastupdated: "2026-09-24"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -60,8 +60,6 @@ Review the version history for OpenShift Virtualization.
 
 ### 14 September 2026, Version 4.21 - v1.0.10_4.21_368659156
 {: #cl-add-ons-openshift-virtualization-v1010_421_368659156}
-
-[Default version]{: tag-green}
 
 - Updates Go to version `1.26.8`.
 - kubevirt-hyperconverged-operator.v4.21.17
