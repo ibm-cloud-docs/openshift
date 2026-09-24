@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-09-24"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -104,6 +104,11 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ibmcloud oc experimental trusted-profile set --cluster CLUSTER_NAME_OR_ID --trusted-profile TRUSTED_PROFILE_ID
     ```
     {: pre}
+
+If this command fails or is not recognized, your Kubernetes Service plug-in may be out of date. Run `ibmcloud plugin update ks` to update it to the latest version, then retry.
+{: tip}
+
+
 
 1. Verify that the trusted profile secret was created in the cluster. This command can take up to 10 minutes to complete. Wait for the secret to appear before proceeding to install the ACM add-on. If you proceed before the secret is created, the ACM add-on installation will fail.
     ```sh
