@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-14"
+lastupdated: "2026-09-25"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -45,7 +45,7 @@ ibmcloud oc cluster addon versions
 
 | Add-on version | Supported OpenShift versions |
 |---|---|
-| `2.0.0` | `>=4.17.0 <4.22.0` |
+| `2.0.0` | `>=4.17.0 <4.23.0` |
 | `1.2.4` | `>=4.15.0 <4.22.0` |
 | `1.1.0` | `>=4.6.0 <4.13.0` |
 {: caption="Supported Cluster autoscaler add-on versions" caption-side="bottom"}
