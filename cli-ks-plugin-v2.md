@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-22"
+lastupdated: "2026-09-25"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -10574,7 +10574,7 @@ ibmcloud ks vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `--provider`
-:    The VPC infrastructure provider type. Supported values are `vpc-classic` and `vpc-gen2`. By default, VPCs of all provider types are returned.
+:    The VPC infrastructure provider type. The only supported value is `vpc-gen2`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
