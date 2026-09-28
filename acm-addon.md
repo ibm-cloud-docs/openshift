@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-24"
+lastupdated: "2026-09-28"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -46,7 +46,7 @@ Review the following prerequisite steps and information before you install the A
 
 Follow the steps to create a trusted profile to use for ACM and assign it to the hub cluster.
 
-Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly.
+Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. The trusted profile applies to all components that use pod identity, including storage CSI drivers. Include the required permissions for each component or those components will fail with authorization errors. Make sure that you follow these steps carefully.
 {: important}
 
 ### Create a trusted profile using the UI
