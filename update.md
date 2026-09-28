@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-09-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -20,8 +20,15 @@ subcollection: openshift
 # Updating clusters, worker nodes, and cluster components
 {: #update}
 
-Review the following sections for steps to keep your cluster master and worker nodes up-to-date.
+Keep your cluster secure and supported by updating the master, worker nodes, and cluster components in the correct order. Updating out of sequence can cause version skew failures or unexpected downtime.
 {: shortdesc}
+
+Complete updates in the following order:
+
+1. [Update the cluster master](#master).
+2. Update your worker nodes — [Classic](#worker_node), [VPC](#vpc_worker_node), or [Satellite](/docs/satellite?topic=satellite-host-update-workers) — depending on your infrastructure type. Not sure which type you have? In the IBM Cloud console, click your cluster and check the **Infrastructure** field on the Overview tab — it shows **Classic**, **VPC**, or **Satellite**.
+3. [Update cluster components](#components) such as Fluentd and Ingress ALBs, if you manage them manually.
+4. [Update managed add-ons](#addons-update).
 
 ## Updating the master
 {: #master}
@@ -62,10 +69,10 @@ What process can I follow to update the master?
 ### Steps to update the cluster master
 {: #master-steps}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles). If you're unsure of your access role, go to **Manage → Access (IAM) → Users** in the IBM Cloud console, or ask your account administrator.
 
-Updates to the cluster master are blocked if a certificate authority (CA) certificate rotation is in progress. Wait for a rotation to complete before you update the cluster master.
-{: note}
+If a certificate authority (CA) certificate rotation is in progress, the master update is blocked until the rotation completes. Check the status of any in-progress rotation before you begin.
+{: important}
 
 To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _minor_ version:
 
@@ -97,64 +104,70 @@ To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _min
 
 4. Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli).
 5. Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
-6. Install the version of the [`oc cli`](/docs/openshift?topic=openshift-cli-install) that matches the API server version that runs in the master. Kubernetes does not support `oc` client versions that are two or more versions apart from the server version (n +/- 2).
+6. Install the version of the [`oc cli`](/docs/openshift?topic=openshift-cli-install) that matches the API server version that runs in the master. Kubernetes does not support `oc` client versions that are two or more versions apart from the server version (n +/- 2). To refresh your local configuration, run `ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID`, then verify with `oc version --client`.
 
-When the master update is complete, you can update your worker nodes, depending on the type of cluster infrastructure provider that you have.
-* [Updating classic worker nodes](#worker_node).
-* [Updating VPC worker nodes](#vpc_worker_node).
+When the master update is complete, update your worker nodes. The method depends on your infrastructure type:
+1. [Updating classic worker nodes](#worker_node) — uses a rolling update controlled by a ConfigMap and the `worker update` command.
+2. [Updating VPC worker nodes](#vpc_worker_node) — VPC bare metal workers are updated in place using `worker reload`; VPC VSI workers must use `worker replace --update`. The ConfigMap rolling update procedure is not yet supported for VPC worker nodes.
 
 
 
 ## Updating classic worker nodes
 {: #worker_node}
 
-You notice that an update is available for your worker nodes in a [classic infrastructure](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered) cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
+Classic infrastructure worker nodes perform a rolling update in place. Updates are controlled by a Kubernetes ConfigMap that defines how many nodes can be unavailable at one time. The `ibmcloud oc worker update` command is supported only for classic worker nodes.
 {: shortdesc}
 
-* **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one minor version behind the master version (`n-1`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
+You can make two types of updates:
+
+* **Patch**: Applies security fixes and updates to the latest patch version. Use `ibmcloud oc worker reload` or `ibmcloud oc worker update`. Both commands update the node to the latest patch version. The `update` command also applies any available `major.minor` version update to match the master at the same time.
+* **Major.minor**: Moves the worker node Kubernetes version up to match the master. Your worker nodes can be at most one version behind the master (`n-1`). Use the `ibmcloud oc worker update` command.
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
-{: shortdesc}
 
 It is good practice to [rotate your CA certificates](/docs/containers?topic=containers-cert-rotate) whenever you update your worker nodes, as the longest step of certificate rotation includes reloading or replacing your worker nodes.
 {: tip}
 
 What happens to my apps during an update?
-:   If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
+:   Apps that run on updated worker nodes are rescheduled onto other worker nodes in the cluster — including nodes in different worker pools or stand-alone worker nodes. To avoid downtime, make sure that you have enough capacity in the cluster to carry the workload before you start the update.
 
 How can I control how many worker nodes go down at a time during an update or reload?
-:   If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-cli) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
+:   Use a Kubernetes ConfigMap to set the maximum number of worker nodes that can be unavailable at a time. Worker nodes are identified by their labels. You can use IBM-provided labels or custom labels. If you need all your worker nodes to remain available, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-cli) to add temporary capacity before the update.
 
-In addition, you can create a Kubernetes config map that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
-
-The Kubernetes config map rules are used for updating worker nodes only. These rules do not impact worker node reloads which means reloading happens immediately when requested.
+The ConfigMap controls update behavior only. It does not affect worker node reloads, which happen immediately when requested.
 {: important}
 
 What if I choose not to define a config map?
-:   When the config map is not defined, the default is used. By default, a maximum of 20% of all your worker nodes in each cluster can be unavailable during the update process.
+:   By default, a maximum of 20% of all worker nodes in each cluster can be unavailable during the update. You can override this value by defining a ConfigMap with a `defaultcheck.json` entry.
 
 ### Prerequisites
 {: #worker-up-prereqs}
 
-Before you update your classic infrastructure worker nodes, review the prerequisite steps.
+Before you update your classic infrastructure worker nodes, complete the following prerequisite steps.
 {: shortdesc}
 
-Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage-plan).
+During a worker node update, the worker node machine is reimaged and all data that is not [stored on persistent storage](/docs/openshift?topic=openshift-storage-plan) is permanently deleted. Verify that any data you need to retain is stored outside the worker node before you begin.
 {: important}
 
-- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
-- If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-- Consider adding more worker nodes so that your cluster has enough capacity to rescheduling your workloads during the update. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
-- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+If you have Portworx installed in your cluster, you must [update your Portworx configuration before you update worker nodes](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations).
+{: important}
+
+**Pre-update actions (complete in order)**
+
+1. Review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions) for the latest security patches and required changes.
+2. Make any changes that are marked with _Update before master_ or _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+3. [Update the master](#master) before updating worker nodes. The worker node version cannot be higher than the API server version that runs in the master.
+4. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+5. Consider [adding worker nodes](/docs/openshift?topic=openshift-add-workers-classic) to your cluster to provide extra capacity for workload rescheduling during the update. You can remove the extra nodes after the update is complete.
+
+**Required permissions**
+
+Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles). If you're unsure of your access role, go to **Manage → Access (IAM) → Users** in the IBM Cloud console, or ask your account administrator.
 
 ### Updating classic worker nodes in the CLI with a configmap
 {: #worker-up-configmap}
 
-Set up a ConfigMap to perform a rolling update of your classic worker nodes.
+Use a ConfigMap to perform a rolling update of your classic worker nodes. The ConfigMap lets you control how many nodes can be unavailable at a time, per zone or region. If the default 20% unavailability rule is acceptable for your cluster, you can skip steps 3 and 4 (ConfigMap creation) and proceed directly to step 5 to apply the update using the default behavior.
 {: shortdesc}
 
 1. Complete the [prerequisite steps](#worker-up-prereqs).
@@ -195,7 +208,7 @@ Set up a ConfigMap to perform a rolling update of your classic worker nodes.
     ```
     {: screen}
 
-4. Create a config map and define the unavailability rules for your worker nodes. The following example shows four checks, the `zonecheck.json`, `regioncheck.json`, `defaultcheck.json`, and a check template. You can use these example checks to define rules for worker nodes in a specific zone (`zonecheck.json`), region (`regioncheck.json`), or for all worker nodes that don't match any of the checks that you defined in the config map (`defaultcheck.json`). Use the check template to create your own check. For every check, to identify a worker node, you must choose one of the worker node labels that you retrieved in the previous step.  
+4. Create a config map and define the unavailability rules for your worker nodes. The ConfigMap supports up to 15 named checks. Each check targets a set of worker nodes by label and sets the maximum percentage of those nodes that can be unavailable at one time. The following example shows a zone check (`zonecheck.json`), a region check (`regioncheck.json`), a default fallback check (`defaultcheck.json`), and a template for custom checks. For every check, choose one of the worker node labels that you retrieved in the previous step to identify the target nodes.
 
     For every check, you can set only one value for `NodeSelectorKey` and `NodeSelectorValue`. If you want to set rules for more than one region, zone, or other worker node labels, create a new check. Define up to 15 checks in a config map. If you add more checks, only 1 worker node is reloaded at a time until all workers requested are updated.
     {: note}
@@ -283,39 +296,48 @@ Set up a ConfigMap to perform a rolling update of your classic worker nodes.
     ```
     {: pre}
 
-10. Verify that you don't have duplicate worker nodes. Sometimes, older clusters might list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/openshift?topic=openshift-cs_duplicate_nodes).
+10. Verify that you don't have duplicate worker nodes. Sometimes, older clusters list duplicate worker nodes with a **`NotReady`** status after an update. To remove duplicates, see [troubleshooting](/docs/openshift?topic=openshift-cs_duplicate_nodes).
 
-Next steps:
-- Repeat the update process with other worker pools.
-- Inform developers who work in the cluster to update their `oc` CLI to the version of the Kubernetes master.
-- If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_dashboard_graphs).
+**Next steps**
+
+1. Repeat the update process with other worker pools.
+2. Notify all developers who work in the cluster to [update their `oc` CLI](/docs/openshift?topic=openshift-cli-install) to match the Kubernetes master version. Running a `oc` client that is two or more versions apart from the server version is not supported and can cause unexpected errors.
+{: important}
+3. If the Kubernetes dashboard does not display utilization graphs, [delete the `kube-dashboard` pod](/docs/containers?topic=containers-cs_dashboard_graphs).
 
 ### Updating classic worker nodes in the console
 {: #worker_up_console}
 
-After you set up the config map for the first time, you can then update worker nodes by using the {{site.data.keyword.cloud_notm}} console.
+After you set up the ConfigMap for the first time, you can update worker nodes by using the {{site.data.keyword.cloud_notm}} console. The console respects the unavailability rules that you defined in the ConfigMap.
 {: shortdesc}
 
-To update worker nodes from the console:
-1. Complete the [prerequisite steps](#worker-up-prereqs) and [set up a config map](#worker_node) to control how your worker nodes are updated.
+1. Complete the [prerequisite steps](#worker-up-prereqs) and [set up a ConfigMap](#worker-up-configmap) to control how your worker nodes are updated.
 2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **Containers** > **Clusters**.
 3. From the **Clusters** page, click your cluster.
 4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
 5. From the action bar, click **Update**.
 
-If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations).
+If you have Portworx installed in your cluster, you must restart the Portworx pods on the updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations).
+{: important}
 
 
 
 ## Updating VPC worker nodes
 {: #vpc_worker_node}
 
-You notice that an update is available for your worker nodes in a VPC cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
+VPC worker nodes are updated differently depending on their type and cluster platform. The `ibmcloud oc worker update` command is not supported for any VPC worker node. In all cases, the cluster master must be updated first.
+
+
+- **VPC bare metal workers**: Updated in place using `ibmcloud oc worker reload`. The node retains its IP address.
+- **VPC virtual server instance (VSI) workers**: Replaced using `ibmcloud oc worker replace --update` (to match the master version) or `ibmcloud oc worker replace` (patch refresh only). The old node is deleted and a new one is provisioned.
+
+
 {: shortdesc}
 
-If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up).
-{: important}
+You can make two types of updates:
 
+* **Patch**: Applies security fixes and updates to the latest patch of the current BOM version. For VPC bare metal workers, use `ibmcloud oc worker reload`. For VPC VSI workers, use `ibmcloud oc worker replace`.
+* **Major.minor**: Moves the worker node Kubernetes version up to match the master. Your worker nodes can be at most one version behind the master (`n-1`). For VPC bare metal workers, use `ibmcloud oc worker reload`. For VPC VSI workers, use `ibmcloud oc worker replace --update`.
 
 It is good practice to [rotate your CA certificates](/docs/containers?topic=containers-cert-rotate) whenever you update your worker nodes, as the longest step of certificate rotation includes reloading or replacing your worker nodes.
 {: tip}
@@ -327,14 +349,11 @@ If you have OpenShift Data Foundation deployed in your cluster, follow the steps
 
 
 
-* **Patch**: A worker node patch update includes security fixes. For VPC bare metal workers, you can apply the latest patch by using the `ibmcloud oc worker reload` command. For VPC virtual server instance workers, use the `ibmcloud oc worker replace` command.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one minor version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` option.
-
 What happens to my apps during an update?
-:   If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload, such as by resizing your worker pools. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
+:   Apps that run on updated worker nodes are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool. To avoid downtime, make sure that you have enough capacity in your cluster to carry the workload before you start the update. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
 What happens to my worker node during an update?
-:   Your VPC worker node is replaced by removing the old worker node and provisioning a new worker node that runs at the updated patch or `major.minor` version. The replacement worker node is created in the same zone, same worker pool, and with the same flavor as the deleted worker node. However, the replacement worker node is assigned a new private IP address, and loses any custom labels or taints that you applied to the old worker node (worker pool labels and taints are still applied to the replacement worker node).
+:   For VPC bare metal workers, the worker node is reloaded in place using `worker reload`. The node retains its IP address; data on local disks is deleted and must be stored outside the worker node. For VPC virtual server instance (VSI) workers, the worker node is replaced by removing the old worker node and provisioning a new worker node that runs at the updated patch or `major.minor` version. The replacement worker node is created in the same zone, same worker pool, and with the same flavor as the deleted worker node. However, the replacement worker node is assigned a new private IP address, and loses any custom labels or taints that you applied to the old worker node (worker pool labels and taints are still applied to the replacement worker node).
 
 What if I replace multiple worker nodes at the same time?
 :   If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes.
@@ -345,18 +364,25 @@ What if a replacement worker node is not created?
 ### Prerequisites
 {: #vpc_worker_prereqs}
 
-Before you update your VPC infrastructure worker nodes, review the prerequisite steps.
+Before you update your VPC infrastructure worker nodes, complete the following prerequisite steps.
 {: shortdesc}
 
-Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is removed, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage-plan).
+For VPC VSI workers, the worker node is deleted and replaced with a new node. For VPC bare metal workers, the node is reloaded in place. In both cases, data that is not [stored on persistent storage](/docs/openshift?topic=openshift-storage-plan) is permanently deleted. Verify that any data you need to retain is stored outside the worker node before you begin.
 {: important}
 
-- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
-- If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up) instead of the steps on this page.
+{: important}
+
+**Pre-update actions (complete in order)**
+
+1. Review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions) for the latest security patches and required changes.
+2. Make any changes that are marked with _Update before master_ or _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+3. [Update the master](#master) before updating worker nodes. The worker node version cannot be higher than the API server version that runs in the master.
+4. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+**Required permissions**
+
+Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles). If you're unsure of your access role, go to **Manage → Access (IAM) → Users** in the IBM Cloud console, or ask your account administrator.
 
 ### Updating VPC worker nodes in the CLI
 {: #vpc_worker_cli}
@@ -373,7 +399,17 @@ Complete the following steps to update your worker nodes by using the CLI.
     ```
     {: pre}
 
-4. Replace the worker node to update either the patch version or the `major.minor` version that matches the master version.
+4. Update the worker node. The command to use depends on the worker node type.
+
+    **VPC bare metal workers**: Use `worker reload` to reimage the node in place. The node retains its IP address and is updated to the latest patch version.
+
+    ```sh
+    ibmcloud oc worker reload --cluster CLUSTER --worker WORKER-NODE-ID
+    ```
+    {: pre}
+
+    **VPC virtual server instance (VSI) workers**: Use the `worker replace` command to update either the patch version or the `major.minor` version that matches the master version.
+
     *  To update the worker node to the same `major.minor` version as the master, include the `--update` option.
         ```sh
         ibmcloud oc worker replace --cluster CLUSTER --worker WORKER-NODE-ID --update
@@ -392,6 +428,27 @@ Complete the following steps to update your worker nodes by using the CLI.
 If you are running Portworx in your VPC cluster, you must [manually attach your {{site.data.keyword.block_storage_is_short}} volume to your new worker node.](/docs/openshift?topic=openshift-storage_portworx_update)
 {: note}
 
+### Firmware updates during VPC bare metal worker reload
+{: #vpc_bm_firmware}
+
+When you reload a VPC bare metal worker node, {{site.data.keyword.cloud_notm}} infrastructure automatically checks whether a firmware update is pending for that server and applies it as part of the reload process. No additional action is required to trigger the firmware update.
+
+Be aware of the following considerations when you reload a VPC bare metal worker node:
+
+Extended reload time
+:   If a firmware update is applied during the reload, the total reload time can increase significantly — by 30 minutes or more — beyond the typical reload duration. Plan your maintenance windows accordingly.
+
+No advance visibility into pending updates
+:   There is no visibility into whether a firmware update is pending for a worker node before you issue the reload command.
+
+Data loss risk
+:   As with all VPC bare metal worker reloads, data on local disks is deleted during the reload regardless of whether a firmware update is applied. Back up any data that is not stored on persistent storage before you reload.
+
+Reload failure due to firmware update
+:   In some cases, a firmware update can fail, which causes the worker node to enter a `reload_failed` state (`Failed to reload worker`) with status detail `The infrastructure firmware update has failed. (P4056)`. If this occurs:
+    1. Wait a few minutes, then retry the reload by running `ibmcloud oc worker reload --cluster CLUSTER --worker WORKER-NODE-ID` again.
+    2. If the error persists after 2–3 attempts, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
+
 
 ### Updating VPC worker nodes in the console
 {: #vpc_worker_ui}
@@ -399,6 +456,11 @@ If you are running Portworx in your VPC cluster, you must [manually attach your 
 
 You can update your VPC worker nodes in the console. Before you begin, consider [adding worker nodes](/docs/openshift?topic=openshift-add-workers-vpc) to the cluster to help avoid downtime for your apps.
 {: shortdesc}
+
+What the **Update** action does depends on the worker node type and cluster platform:
+- **VPC bare metal workers**: The node is reloaded in place. No replacement node is provisioned.
+- **VPC virtual server instance (VSI) workers**: The worker node is replaced with a new node at the updated version.
+
 
 1. Complete the [prerequisite steps](#vpc_worker_prereqs).
 2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **Containers** > **Clusters**.
@@ -411,12 +473,16 @@ You can update your VPC worker nodes in the console. Before you begin, consider 
 ## Updating flavors (machine types)
 {: #machine_type}
 
-Before you begin:
-- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- Data on the worker node is deleted. Consider storing your data on persistent storage outside of the worker node.
-- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+Update the flavor (machine type) of your worker nodes when you need different compute resources — for example, more memory, additional CPUs, or a GPU-enabled machine. Updating a flavor provisions a new worker pool with the new flavor and then removes the old worker pool. Because this process replaces nodes, all data on the worker nodes that is not stored on persistent storage is permanently deleted.
+{: shortdesc}
 
-To update flavors:
+**Before you begin**
+
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- Verify that any data you need to retain is stored on [persistent storage](/docs/openshift?topic=openshift-storage-plan) outside the worker node. Data stored only on the worker node is lost and cannot be recovered.
+- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles). If you're unsure of your access role, go to **Manage → Access (IAM) → Users** in the IBM Cloud console, or ask your account administrator.
+
+**To update flavors:**
 
 1. List available worker nodes and note their private IP address.
 
@@ -483,7 +549,8 @@ To update flavors:
     ```
     {: pre}
 
-5. Remove the old worker node. **Note**: If you are removing a flavor that is billed monthly (such as bare metal), you are charged for the entire the month.
+5. Remove the old worker pool. If you are removing a Classic bare metal flavor (which is billed monthly), you are charged for the entire month even if you remove it mid-month. VPC workers, including bare metal, are billed hourly.
+{: important}
     1. Remove the worker pool with the old machine type. Removing a worker pool removes all worker nodes in the pool in all zones. This process might take a few minutes to complete.
         ```sh
         ibmcloud oc worker-pool rm --worker-pool WORKER-POOL --cluster CLUSTER
@@ -507,7 +574,9 @@ To update flavors:
 ## How are worker pools scaled down?
 {: #worker-scaledown-logic}
 
-When the number of worker nodes in a worker pool is decreased, such as during a worker node update or with the [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli) command, the worker nodes are prioritized for deletion based on several properties including state, health, and version. 
+This section describes the automatic prioritization logic used when worker nodes are removed during a scale-down, such as after a worker node update or when you run [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli). You do not need to configure this behavior — it happens automatically.
+
+When the number of worker nodes in a worker pool is decreased, the worker nodes are prioritized for deletion based on several properties including state, health, and version.
 
 This priority logic is not relevant to the autoscaler add-on.
 {: note}
@@ -563,7 +632,9 @@ Can I install other plug-ins or add-ons than the default components?
 When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. To change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
 {: shortdesc}
 
-You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
+To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
+
+You can manage automatic updates of the Fluentd component in the following ways.
 
 * Check whether automatic updates are enabled by running the `ibmcloud oc logging autoupdate get --cluster CLUSTER` [command](/docs/containers?topic=containers-kubernetes-service-cli#logging-autoupdate-get-cli).
 * Disable automatic updates by running the `ibmcloud oc logging autoupdate disable` [command](/docs/containers?topic=containers-kubernetes-service-cli#logging-autoupdate-disable-cli).
@@ -574,7 +645,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
         ```
         {: pre}
 
-    * Force a one-time update when you use a logging command that includes the `--force-update` option. **Note**: Your pods update to the latest version of the Fluentd component, but Fluentd does not update automatically going forward.
+    * Force a one-time update when you use a logging command that includes the `--force-update` option. Your pods update to the latest version of the Fluentd component, but Fluentd does not update automatically going forward.
         Example command
 
         ```sh

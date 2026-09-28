@@ -30,12 +30,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-sep26}
 
 
+
 ### 28 September 2026
 {: #openshift-sep2826}
 {: release-note}
 
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.22 change log](/docs/openshift?topic=openshift-openshift_changelog_422)
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-09-21"
+lastupdated: "2026-09-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -182,6 +182,8 @@ Make sure the storage cluster is healthy before continuing.
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
+Scaling down the `rook-ceph-mon`, `rook-ceph-osd`, and crashcollector deployments before draining ensures that these storage processes shut down cleanly instead of being forcibly evicted. Running OSD and monitor pods must be shut down gracefully so that Ceph can safely quiesce I/O and maintain data integrity while the node is offline. After the updated or replaced node rejoins the cluster, the Rook-Ceph operator automatically scales these deployments back up to their original replica counts.
+
 1. Cordon the node. Cordoning the node prevents any pods from being scheduled on this node while you scale down the ODF deployments.
 
 	```sh
@@ -285,50 +287,15 @@ Make sure the storage cluster is healthy before continuing.
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-**Bare metal worker nodes only**: If you are updating or replacing a bare metal worker node, complete the following steps to clean up persistent volumes and prepare the node for the new deployment. If you are working with virtual server instance (VSI) worker nodes, skip this section and continue to [Update the worker node](#upgrade-worker-node-vpc).
+**Bare metal worker nodes only**: If you are updating or replacing a bare metal worker node, complete the following steps to wipe the ODF disks and prepare the node for the new deployment. If you are working with virtual server instance (VSI) worker nodes, skip this section and continue to [Update the worker node](#upgrade-worker-node-vpc).
 {: important}
 
 Before you begin, make sure you have completed the previous steps to cordon and drain the worker node.
 
-1. Identify any persistent volumes (PVs) in `Released` state that are associated with the `localblock` storage class on the node you are updating.
+1. Wipe the ODF disks on the bare metal node to prepare for new persistent volume creation. Start a debug pod on the node you are updating. Replace `NODE_NAME` with the name of your bare metal worker node.
 
 	```sh
-	oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
-	```
-	{: pre}
-
-	Example output
-
-	```sh
-	local-pv-d6bf175b  1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
-	```
-	{: screen}
-
-1. If there are any PVs in `Released` state, delete them. Replace `<persistent_volume>` with the name of the PV from the previous step.
-
-	```sh
-	oc delete pv <persistent_volume>
-	```
-	{: pre}
-
-	Example command
-
-	```sh
-	oc delete pv local-pv-d6bf175b
-	```
-	{: pre}
-
-	Example output
-
-	```sh
-	persistentvolume "local-pv-d6bf175b" deleted
-	```
-	{: screen}
-
-1. Wipe the ODF disks on the bare metal node to prepare for new persistent volume creation. Start a debug pod on the node you are updating. Replace `<node-name>` with the name of your bare metal worker node.
-
-	```sh
-	kubectl debug node/<node-name> -it --image=registry.access.redhat.com/ubi8/ubi
+	kubectl debug node/NODE_NAME -it --image=registry.access.redhat.com/ubi8/ubi
 	```
 	{: pre}
 
@@ -394,10 +361,10 @@ Before you begin, make sure you have completed the previous steps to cordon and 
 	```
 	{: screen}
 
-1. Delete the `localvolumediscoveryresults` resource for the node you are updating. Replace `<discovery-result-name>` with the name from the previous step.
+1. Delete the `localvolumediscoveryresults` resource for the node you are updating. Replace `DISCOVERY_RESULT_NAME` with the name from the previous step.
 
 	```sh
-	kubectl delete localvolumediscoveryresults <discovery-result-name> -n openshift-local-storage
+	kubectl delete localvolumediscoveryresults DISCOVERY_RESULT_NAME -n openshift-local-storage
 	```
 	{: pre}
 
@@ -408,7 +375,7 @@ Before you begin, make sure you have completed the previous steps to cordon and 
 	```
 	{: pre}
 
-After completing these steps, new persistent volumes will be automatically created and scheduled on the bare metal node after it is reloaded. Continue to the next section to update the worker node.
+After completing these steps, continue to the next section to update the worker node. New persistent volumes are automatically created and scheduled on the bare metal node after it is reloaded.
 
 ## Update the worker node
 {: #upgrade-worker-node-vpc}
@@ -485,6 +452,17 @@ After completing these steps, new persistent volumes will be automatically creat
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
+After the node rejoins the cluster, the Rook-Ceph operator automatically scales the `rook-ceph-mon`, `rook-ceph-osd`, and crashcollector deployments back up. Verify that the ODF pods are running before continuing.
+
+1. Verify that the `rook-ceph-mon` and `rook-ceph-osd` pods that were scaled down earlier are back in `Running` state on the updated node. Replace `NODE_NAME` with the name of the updated or replaced node.
+
+	```sh
+	oc get pods -n openshift-storage -o wide | grep NODE_NAME
+	```
+	{: pre}
+
+	Confirm that the output shows `rook-ceph-mon` and `rook-ceph-osd` pods in `Running` state. If any pods are still missing or not yet `Running`, wait a few minutes and run the command again before proceeding.
+
 1. Verify that the OSD pod has come up on the replaced node in a `Running` state. Replace `NODE_NAME` with the name of the new replacement node.
 
 	```sh
@@ -532,12 +510,47 @@ After completing these steps, new persistent volumes will be automatically creat
 	```
 	{: screen}
 
-Before continuing to the following steps, make sure you've completed the previous steps for all storage nodes in the cluster.
-{: important}
+1. **Bare metal worker nodes only**: After the OSD is removed, identify any persistent volumes (PVs) in `Released` state that are associated with the `localblock` storage class. The OSD removal places these PVs into `Released` state, so this step must be completed after the OSD is removed.
+
+	```sh
+	oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+	```
+	{: pre}
+
+	Example output
+
+	```sh
+	local-pv-d6bf175b  1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
+	```
+	{: screen}
+
+1. **Bare metal worker nodes only**: If there are any PVs in `Released` state, delete them. Replace `PERSISTENT_VOLUME` with the name of the PV from the previous step.
+
+	```sh
+	oc delete pv PERSISTENT_VOLUME
+	```
+	{: pre}
+
+	Example command
+
+	```sh
+	oc delete pv local-pv-d6bf175b
+	```
+	{: pre}
+
+	Example output
+
+	```sh
+	persistentvolume "local-pv-d6bf175b" deleted
+	```
+	{: screen}
 
 ## Update the OcsCluster resource with the new node
 {: #add-storage-node-vpc}
 {: step}
+
+Before continuing to the following steps, make sure you've completed the previous steps for this storage node before moving to the next node in the cluster.
+{: important}
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 

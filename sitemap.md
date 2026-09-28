@@ -530,6 +530,8 @@ subcollection: openshift
 
         * OpenShift Virtualization cluster add-on patch updates.
 
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+
     * [28 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2326)
 
         * VPC Block CSI Driver cluster add-on patch updates.
@@ -2444,6 +2446,8 @@ subcollection: openshift
     * [Prerequisites](/docs/openshift?topic=openshift-update#vpc_worker_prereqs)
 
     * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update&interface=cli#vpc_worker_cli)
+
+    * [Firmware updates during VPC bare metal worker reload](/docs/openshift?topic=openshift-update&interface=cli#vpc_bm_firmware)
 
     * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update&interface=ui#vpc_worker_ui)
 
@@ -9621,7 +9625,7 @@ subcollection: openshift
 
 * [`Reloading` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
 
-* [`Reloading_failed` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
+* [`reload_failed` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
 
 * [`Reload_pending` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
 
