@@ -176,7 +176,8 @@ For VPC bare metal workers:
 VPC bare metal workers support the `worker reload` command, which reloads the node in place without provisioning a new worker node. The node retains its IP address and other identifiers. If a firmware update is pending, it is applied automatically as part of the reload and can add 30 minutes or more to the total reload time. If your bare metal worker has local storage, back up any data that is not stored on persistent storage before you begin, as data on local disks is lost during a reload.
 {: note}
 
-**Part 1: Prepare the worker for maintenance**
+#### Part 1: Prepare the worker for maintenance
+{: #bm-part1}
 
 1. If your worker has local storage, back up any data that you want to preserve before you proceed. Data on local disks is lost during a reload.
 
@@ -211,7 +212,8 @@ VPC bare metal workers support the `worker reload` command, which reloads the no
 
 
 
-**Part 2: Apply maintenance**
+#### Part 2: Apply maintenance
+{: #bm-part2}
 
 4. Reload the worker. The node is reloaded in place on a host that is not undergoing maintenance and retains its IP address.
 
