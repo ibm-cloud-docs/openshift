@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-23"
+lastupdated: "2026-09-28"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,12 +29,36 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2026
 {: #openshift-sep26}
 
-### 23 September 2026
-{: #openshift-sep2326}
+### 28 September 2026
+{: #openshift-sep2826}
 {: release-note}
+
+
+
+Red Hat OpenShift on IBM Cloud version 4.22 is now available
+:   You can now create or update clusters to Red Hat OpenShift version 4.22. OpenShift 4.22 is based on Kubernetes {{site.data.keyword.openshift_422_kube_version}} and includes new features, performance improvements, and security enhancements. For more information, see:
+    - [Version 4.22 overview](/docs/openshift?topic=openshift-openshift_versions)
+    - [Version 4.22 change log](/docs/openshift?topic=openshift-openshift_changelog_422)
+    - [Preparing to update to version 4.22](/docs/openshift?topic=openshift-cs_versions_422)
+
+Cluster control plane reachable over port 443 (4.22+)
+:   Starting with version 4.22, the cluster control plane is reachable over port 443 in addition to port 30000-32767. Review your firewall rules and network configurations to ensure that port 443 access is permitted. For more information, see [Cluster control plane reachable over port 443](/docs/openshift?topic=openshift-notice-cp-port-443).
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.22 change log](/docs/openshift?topic=openshift-openshift_changelog_422)
+
+OpenShift Virtualization cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
+
+
 
 
 
@@ -46,11 +70,11 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.22 change log](/docs/openshift?topic=openshift-openshift_changelog_422)
 :   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
 :   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
 :   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
-:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 
 
 

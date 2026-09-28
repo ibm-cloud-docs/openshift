@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-09-28"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -119,7 +119,7 @@ Follow the steps to reboot the worker before the maintenance period begins.
 For workers in VPC clusters, the steps to take depend on the flavor of the worker node. To check a worker node's flavor, run `ibmcloud oc worker get --worker <worker_id> --cluster <cluster_name_or_id>`.
 {: shortdesc}
 
-For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
+For VPC virtual server instance (VSI) workers (workers without local storage):
 
 1. Cordon the worker.
 
@@ -171,9 +171,17 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
 
 
 
-For workers with the `cx2d.`, `bx2d.`, or `mx2d.` flavors:
+For VPC bare metal workers:
 
-1. Cordon the worker.
+VPC bare metal workers support the `worker reload` command, which reloads the node in place without provisioning a new worker node. The node retains its IP address and other identifiers. If a firmware update is pending, it is applied automatically as part of the reload and can add 30 minutes or more to the total reload time. If your bare metal worker has local storage, back up any data that is not stored on persistent storage before you begin, as data on local disks is lost during a reload.
+{: note}
+
+#### Part 1: Prepare the worker for maintenance
+{: #bm-part1}
+
+1. If your worker has local storage, back up any data that you want to preserve before you proceed. Data on local disks is lost during a reload.
+
+2. Cordon the worker to prevent new workloads from being scheduled on it.
 
 
 
@@ -185,7 +193,7 @@ For workers with the `cx2d.`, `bx2d.`, or `mx2d.` flavors:
 
 
 
-2. Drain the worker. In some scenarios, such as Cloud Pak for Data, you might need to specify additional drain options.
+3. Drain the worker to evict existing workloads. In some scenarios, such as Cloud Pak for Data, you might need to specify additional drain options.
 
 
 
@@ -204,7 +212,17 @@ For workers with the `cx2d.`, `bx2d.`, or `mx2d.` flavors:
 
 
 
-3. Replace the worker. A new worker node is provisioned on a host that is not undergoing maintenance.
+#### Part 2: Apply maintenance
+{: #bm-part2}
+
+4. Reload the worker. The node is reloaded in place on a host that is not undergoing maintenance and retains its IP address.
+
+    ```sh
+    ibmcloud oc worker reload --cluster <cluster_name_or_id> --worker <worker_id>
+    ```
+    {: pre}
+
+    Alternatively, you can replace the worker instead of reloading it. Replacing the worker deletes the existing node and provisions a new one with a new IP address.
 
     ```sh
     ibmcloud oc worker replace --cluster <cluster_name_or_id> --worker <worker_id>

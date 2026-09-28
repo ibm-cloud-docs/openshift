@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-23"
+lastupdated: "2026-09-28"
 
 
 keywords: openshift
@@ -505,6 +505,18 @@ subcollection: openshift
 
 [IAM VPE Gateway is being added to your VPC](/docs/openshift?topic=openshift-notice-vpc-iam-vpe-gateway#notice-vpc-iam-vpe-gateway)
 
+[Cluster control plane reachable over port 443 (ROKS 4.22+)](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443)
+
+* [What is changing](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443-what)
+
+* [Who is affected](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443-who)
+
+* [Required actions](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443-actions)
+
+* [Verification](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443-verify)
+
+* [Getting help](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443-help)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -514,7 +526,15 @@ subcollection: openshift
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
 
-    * [23 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2326)
+    * [28 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2826)
+
+        * Red Hat OpenShift on IBM Cloud version 4.22 is now available
+
+        * Cluster control plane reachable over port 443 (4.22+)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+
+        * OpenShift Virtualization cluster add-on patch updates.
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
@@ -2422,6 +2442,8 @@ subcollection: openshift
     * [Prerequisites](/docs/openshift?topic=openshift-update#vpc_worker_prereqs)
 
     * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update&interface=cli#vpc_worker_cli)
+
+    * [Firmware updates during VPC bare metal worker reload](/docs/openshift?topic=openshift-update&interface=cli#vpc_bm_firmware)
 
     * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update&interface=ui#vpc_worker_ui)
 
@@ -8492,7 +8514,7 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
-    * [23 September 2026, Version 5.2 - v5.2.62_371105267](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5262_371105267)
+    * [28 September 2026, Version 5.2 - v5.2.62_371105267](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5262_371105267)
 
     * [16 September 2026, Version 5.2 - v5.2.61_369265005](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5261_369265005)
 
@@ -8544,7 +8566,7 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
 
-    * [23 September 2026, Version 5.1 - v5.1.62_371311380](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5162_371311380)
+    * [28 September 2026, Version 5.1 - v5.1.62_371311380](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5162_371311380)
 
     * [16 September 2026, Version 5.1 - v5.1.61_369264966](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5161_369264966)
 
@@ -9070,11 +9092,9 @@ subcollection: openshift
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
-* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
-
-    * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
-
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [28 September 2026, Version 4.21 - v1.0.11_4.21_373756836](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1011_421_373756836)
 
     * [14 September 2026, Version 4.21 - v1.0.10_4.21_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_421_368659156)
 
@@ -9087,6 +9107,10 @@ subcollection: openshift
     * [25 June 2026, Version 4.21 - v1.0.5_4.21_351283493](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v105_421_351283493)
 
     * [15 June 2026, Version 4.21 - v1.0.4_4.21_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_421_347026591)
+
+* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
+
+    * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
 
 * [Version 4.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.20)
 
@@ -9859,7 +9883,7 @@ subcollection: openshift
 
 * [`Reloading` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
 
-* [`Reloading_failed` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
+* [`reload_failed` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
 
 * [`Reload_pending` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
 

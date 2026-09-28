@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-17"
+lastupdated: "2026-09-28"
 
 
 keywords: change log, version history, OpenShift AI
 
-subcollection: "openshift"
+subcollection: openshift
 
 ---
 

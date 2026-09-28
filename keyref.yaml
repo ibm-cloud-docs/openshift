@@ -69,7 +69,7 @@ keyword:
   kubernetes_default_unsupported_certainty: tentative
   kubernetes_default_unsupported_date: 01 August 2027
   kubernetes_default_version: '1.36'
-  kubernetes_latest_deprecated: false
+  kubernetes_latest_deprecated: 'False'
   kubernetes_latest_docs: /docs/containers?topic=containers-changelog_136
   kubernetes_latest_release_date: 26 June 2026
   kubernetes_latest_unsupported_certainty: tentative
@@ -156,7 +156,7 @@ keyword:
   openshift_422_deprecated: None
   openshift_422_kube_version: None
   openshift_422_release_date: None
-  openshift_422_unsupported_certainty: None
+  openshift_422_unsupported_certainty: tentative
   openshift_422_unsupported_date: None
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
@@ -182,12 +182,12 @@ keyword:
   openshift_default_unsupported_certainty: tentative
   openshift_default_unsupported_date: 22 March 2028
   openshift_default_version: '4.21'
-  openshift_latest_deprecated: false
-  openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_421
-  openshift_latest_release_date: 13 May 2026
+  openshift_latest_deprecated: None
+  openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_422
+  openshift_latest_release_date: None
   openshift_latest_unsupported_certainty: tentative
-  openshift_latest_unsupported_date: 22 March 2028
-  openshift_latest_version: '4.21'
+  openshift_latest_unsupported_date: None
+  openshift_latest_version: '4.22'
   satellite_410_RHEL_7_unsupported_date: 6 December 2022
   satellite_410_RHEL_8_unsupported_date: ''
   satellite_410_deprecated: 'True'
@@ -269,7 +269,7 @@ keyword:
   satellite_422_deprecated: None
   satellite_422_kube_version: None
   satellite_422_release_date: None
-  satellite_422_unsupported_certainty: None
+  satellite_422_unsupported_certainty: tentative
   satellite_422_unsupported_date: None
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
@@ -295,9 +295,9 @@ keyword:
   satellite_default_unsupported_certainty: tentative
   satellite_default_unsupported_date: 19 January 2028
   satellite_default_version: '4.21'
-  satellite_latest_deprecated: false
-  satellite_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_421
-  satellite_latest_release_date: 04 February 2026
+  satellite_latest_deprecated: None
+  satellite_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_422
+  satellite_latest_release_date: None
   satellite_latest_unsupported_certainty: tentative
-  satellite_latest_unsupported_date: 19 January 2028
-  satellite_latest_version: '4.21'
+  satellite_latest_unsupported_date: None
+  satellite_latest_version: '4.22'

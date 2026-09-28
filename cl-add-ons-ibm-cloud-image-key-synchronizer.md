@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-18"
+lastupdated: "2026-09-28"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
 
-subcollection: "openshift"
+subcollection: openshift
 
 ---
 
@@ -35,8 +35,6 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 
-
-
 ## Supported versions
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions}
 
@@ -44,7 +42,6 @@ ibmcloud oc cluster addon versions
 |---|---|
 | `1.0.0` | `>=4.4.0 <4.23.0` |
 {: caption="Supported IBM Cloud Image Key Synchronizer add-on versions" caption-side="bottom"}
-
 
 
 

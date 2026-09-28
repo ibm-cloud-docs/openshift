@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-28"
 
 
 keywords: change log, version history, Confidential containers
 
-subcollection: "openshift"
+subcollection: openshift
 
 ---
 

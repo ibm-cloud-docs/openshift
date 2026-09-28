@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-09-28"
 
 keywords: kubernetes, worker nodes, state
 
@@ -87,10 +87,25 @@ Your worker node could not be provisioned. List the details for the worker node 
 
 A `Reloading` state means that your worker node is being reloaded and is not available in the cluster. You can monitor the reloading process in the **Status** column of your CLI output. If your worker node is stuck in this state for a long time, check whether a problem occurred during reloading.
 
-## `Reloading_failed` state
+## `reload_failed` state
 {: #worker-node-reloading-failed}
 
-A `Reloading_failed` state means that your worker node could not be reloaded. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.
+A `reload_failed` state means that your worker node could not be reloaded. Run the following command to find the details of the failure.
+
+```sh
+ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
+```
+{: pre}
+
+Review the **Status** field in the output. Common causes and recovery steps are described in the following list.
+
+Firmware update failure (VPC bare metal only)
+:   If the worker node is a VPC bare metal server, the reload failure might be caused by a firmware update that was applied automatically as part of the reload. The worker node enters the `reload_failed` state with status `Failed to reload worker` and status detail `The infrastructure firmware update has failed. (P4056)`. To recover, try the following steps in order:
+    1. Retry the reload by running `ibmcloud oc worker reload --cluster <cluster_name_or_id> --worker <worker_node_id>`.
+    2. If reload attempts continue to fail due to firmware update failure, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
+
+Other causes
+:   For non-firmware failures, see [Troubleshooting worker nodes](/docs/openshift?topic=openshift-ts-worker-debug) for additional recovery steps.
 
 ## `Reload_pending` state
 {: #worker-node-reload-pending}

@@ -3,12 +3,12 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-18"
+lastupdated: "2026-09-28"
 
 
 keywords: change log, version history, IBM Object CSI Driver
 
-subcollection: "openshift"
+subcollection: openshift
 
 ---
 
@@ -61,8 +61,6 @@ Review the version history for IBM Object CSI Driver.
 
 ### 01 September 2026, Version 1.0 - v1.0.28_365471792
 {: #cl-add-ons-ibm-object-csi-driver-v1028_365471792}
-
-[Default version]{: tag-green}
 
 - Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, and [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}.
 - Updates Go to version `1.26.6`.
