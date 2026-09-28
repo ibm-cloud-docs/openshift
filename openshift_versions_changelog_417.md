@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-23"
+lastupdated: "2026-09-28"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -13,6 +13,8 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+<!-- Link checker skip -->
 
 
 
