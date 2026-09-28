@@ -8,7 +8,7 @@ lastupdated: "2026-09-28"
 
 keywords: change log, version history, OpenShift Data Foundation
 
-subcollection: "openshift"
+subcollection: openshift
 
 ---
 

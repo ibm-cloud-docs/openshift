@@ -8,7 +8,7 @@ lastupdated: "2026-09-28"
 
 keywords: change log, version history, VPC Block CSI Driver
 
-subcollection: "openshift"
+subcollection: openshift
 
 ---
 
