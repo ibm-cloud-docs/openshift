@@ -33,6 +33,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-sep2826}
 {: release-note}
 
+
+
 Red Hat OpenShift on IBM Cloud version 4.22 is now available
 :   You can now create or update clusters to Red Hat OpenShift version 4.22. OpenShift 4.22 is based on Kubernetes {{site.data.keyword.openshift_422_kube_version}} and includes new features, performance improvements, and security enhancements. For more information, see:
     - [Version 4.22 overview](/docs/openshift?topic=openshift-openshift_versions)
