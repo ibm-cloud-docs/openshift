@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, file, encryption, transit, EIT, stunnel, regional, RFS
@@ -35,6 +35,9 @@ On RHCOS (CoreOS) worker nodes, EIT is not active until the node is rebooted aft
 {: important}
 
 
+
+Zonal file share encryption in transit (`dp2` profile) is not supported on worker nodes running Red Hat Enterprise Linux 9.8 (RHEL 9.8) or later.
+{: important}
 
 
 - EIT is available for cluster versions 4.16 and later.

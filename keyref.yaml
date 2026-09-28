@@ -69,7 +69,7 @@ keyword:
   kubernetes_default_unsupported_certainty: tentative
   kubernetes_default_unsupported_date: 01 August 2027
   kubernetes_default_version: '1.36'
-  kubernetes_latest_deprecated: false
+  kubernetes_latest_deprecated: 'False'
   kubernetes_latest_docs: /docs/containers?topic=containers-changelog_136
   kubernetes_latest_release_date: 26 June 2026
   kubernetes_latest_unsupported_certainty: tentative
@@ -152,12 +152,12 @@ keyword:
   openshift_421_release_date: 13 May 2026
   openshift_421_unsupported_certainty: tentative
   openshift_421_unsupported_date: 22 March 2028
-  openshift_422_RHEL_9_unsupported_date: None
-  openshift_422_deprecated: None
-  openshift_422_kube_version: None
-  openshift_422_release_date: None
-  openshift_422_unsupported_certainty: None
-  openshift_422_unsupported_date: None
+  openshift_422_RHEL_9_unsupported_date: ''
+  openshift_422_deprecated: 'False'
+  openshift_422_kube_version: '1.35'
+  openshift_422_release_date: 28 September 2026
+  openshift_422_unsupported_certainty: tentative
+  openshift_422_unsupported_date: 30 June 2028
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
@@ -182,7 +182,7 @@ keyword:
   openshift_default_unsupported_certainty: tentative
   openshift_default_unsupported_date: 22 March 2028
   openshift_default_version: '4.21'
-  openshift_latest_deprecated: false
+  openshift_latest_deprecated: 'False'
   openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_421
   openshift_latest_release_date: 13 May 2026
   openshift_latest_unsupported_certainty: tentative
