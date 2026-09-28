@@ -528,19 +528,15 @@ subcollection: openshift
 
     * [28 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2826)
 
-        * OpenShift Virtualization cluster add-on patch updates.
-
-        * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
-
-    * [28 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2326)
-
-        * VPC Block CSI Driver cluster add-on patch updates.
-
-    * [28 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2326)
-
         * Red Hat OpenShift on IBM Cloud version 4.22 is now available
 
         * Cluster control plane reachable over port 443 (4.22+)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
     * [21 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2126)
 
