@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -57,6 +57,19 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### 29 September 2026, Version 2.0 - v2.0.54_372210496
+{: #cl-add-ons-vpc-file-csi-driver-v2054_372210496}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}, [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/cve-2026-56391){: external}, and [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/cve-2026-56392){: external}.
+- Fixed crash when handling invalid volumeCapability requests 
+- Added default mount options (nfsvers=4.1, sec=sys) for NFS volumes when StorageClass does not specify mountOptions. 
+- Added `allowCapacityRoundoffForIops` StorageClass parameter for dp2 volumes — automatically rounds up requested PVC capacity to the minimum GiB needed to satisfy the specified IOPS, using the dp2 profile band table fetched from at driver startup.
+- `armada-storage-secret v1.3.66`
+- `stunnel:0.1.0.build-37`
 
 
 ### 15 September 2026, Version 2.0 - v2.0.52_369240368

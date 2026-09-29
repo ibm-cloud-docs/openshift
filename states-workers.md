@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 keywords: kubernetes, worker nodes, state
 
@@ -15,7 +15,7 @@ subcollection: openshift
 # Worker node states
 {: #worker-node-state-reference}
 
-You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
+You can view the current worker node state by running the `ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
 ## `Critical` state
@@ -46,7 +46,7 @@ A `Deploying` state means that when you update the Kubernetes version of your wo
 ## `Deploy_failed` state
 {: #worker-node-deploy-failed}
 
-A `Deploy_failed` state means that your worker node could not be deployed. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.
+A `Deploy_failed` state means that your worker node could not be deployed. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID`.
 
 
 ## `Normal` state
@@ -80,7 +80,7 @@ A `Provision pending` state means that another process is completing before the 
 ## `Provision_failed` state
 {: #worker-node-provision-failed}
 
-Your worker node could not be provisioned. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>`.
+Your worker node could not be provisioned. List the details for the worker node to find the details for the failure by running `ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID`.
 
 ## `Reloading` state
 {: #worker-node-reloading}
@@ -93,7 +93,7 @@ A `Reloading` state means that your worker node is being reloaded and is not ava
 A `reload_failed` state means that your worker node could not be reloaded. Run the following command to find the details of the failure.
 
 ```sh
-ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
+ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID
 ```
 {: pre}
 
@@ -101,7 +101,7 @@ Review the **Status** field in the output. Common causes and recovery steps are 
 
 Firmware update failure (VPC bare metal only)
 :   If the worker node is a VPC bare metal server, the reload failure might be caused by a firmware update that was applied automatically as part of the reload. The worker node enters the `reload_failed` state with status `Failed to reload worker` and status detail `The infrastructure firmware update has failed. (P4056)`. To recover, try the following steps in order:
-    1. Retry the reload by running `ibmcloud oc worker reload --cluster <cluster_name_or_id> --worker <worker_node_id>`.
+    1. Retry the reload by running `ibmcloud oc worker reload --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID`.
     2. If reload attempts continue to fail due to firmware update failure, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
 
 Other causes

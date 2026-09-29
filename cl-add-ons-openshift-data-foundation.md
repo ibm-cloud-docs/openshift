@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -34,6 +34,7 @@ ibmcloud oc cluster addon versions
 ```
 {: pre}
 
+
 ## Supported versions
 {: #cl-add-ons-openshift-data-foundation-supported-versions}
 
@@ -46,8 +47,6 @@ ibmcloud oc cluster addon versions
 | `4.17.0` | `>=4.17.0 <4.19.0` |
 | `4.16.0` | `>=4.16.0 <4.18.0` |
 {: caption="Supported OpenShift Data Foundation add-on versions" caption-side="bottom"}
-
-
 
 
 Review the version history for OpenShift Data Foundation.
@@ -725,38 +724,6 @@ Review the version history for OpenShift Data Foundation.
 - Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/cve-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/cve-2024-3596){: external}, and [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/cve-2024-5535){: external}.
 
 
-## Version 4.13.0
-{: #cl-add-ons-openshift-data-foundation-4.13.0}
-
-
-### 24 November 2025, Version 4.13.0 - 4.13.32
-{: #cl-add-ons-openshift-data-foundation-41332}
-
-- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/cve-2025-61725){: external}.
-- Updates Go to version `1.25.3`.
-- VA fixes. 
-
-
-### 02 September 2025, Version 4.13.0 - 4.13.30
-{: #cl-add-ons-openshift-data-foundation-41330}
-
-- Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/cve-2025-8058){: external}.
-- Updates Go to version `1.24.4`.
-- VA fixes. 
-
-
-### 14 April 2025, Version 4.13.0 - 4.13.24
-{: #cl-add-ons-openshift-data-foundation-41324}
-
-- Resolves the following CVEs: [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/cve-2025-24528){: external}, [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/cve-2024-5535){: external}, and [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/cve-2020-11023){: external}.
-
-
-### 04 February 2025, Version 4.13.0 - 4.13.20
-{: #cl-add-ons-openshift-data-foundation-41320}
-
-- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/cve-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/cve-2024-3596){: external}, and [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/cve-2024-5535){: external}.
-
-
 ## Version 4.14 archive
 {: #cl-add-ons-openshift-data-foundation-4.14-archive}
 
@@ -830,6 +797,38 @@ Review the version history for OpenShift Data Foundation.
 
 - Changes the default base image.
 - Fixes vulnerabilities.
+
+
+## Version 4.13.0
+{: #cl-add-ons-openshift-data-foundation-4.13.0}
+
+
+### 24 November 2025, Version 4.13.0 - 4.13.32
+{: #cl-add-ons-openshift-data-foundation-41332}
+
+- Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}, and [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/cve-2025-61725){: external}.
+- Updates Go to version `1.25.3`.
+- VA fixes. 
+
+
+### 02 September 2025, Version 4.13.0 - 4.13.30
+{: #cl-add-ons-openshift-data-foundation-41330}
+
+- Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/cve-2025-8058){: external}.
+- Updates Go to version `1.24.4`.
+- VA fixes. 
+
+
+### 14 April 2025, Version 4.13.0 - 4.13.24
+{: #cl-add-ons-openshift-data-foundation-41324}
+
+- Resolves the following CVEs: [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/cve-2025-24528){: external}, [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/cve-2024-5535){: external}, and [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/cve-2020-11023){: external}.
+
+
+### 04 February 2025, Version 4.13.0 - 4.13.20
+{: #cl-add-ons-openshift-data-foundation-41320}
+
+- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/cve-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/cve-2024-3596){: external}, and [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/cve-2024-5535){: external}.
 
 
 ## Version 4.13 archive

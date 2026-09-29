@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-29"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -66,6 +66,7 @@ For more information, see the Kubernetes Cluster Autoscaler FAQ for [How does sc
 {: #scalable-practices}
 
 - Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
+- Plan to autoscale a worker pool other than the `default` worker pool, because the `default` worker pool has system components that can prevent automatically scaling down.
 - [Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps).
 - Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
 
@@ -126,6 +127,7 @@ If new pods need resources, the autoscaler automatically scales the pool back up
 What do you need to do?
 :   - Check your add-on version and ensure that you are using v2.0.0 or later.
 :   - Set `minSize = 0` for the worker pool in your autoscaler configuration. If you have public ALBs enabled, set `minSize = 2` per zone for high availability.
+:   - Do not set `minSize = 0` on the `default` worker pool. The `default` worker pool has system components that can prevent automatically scaling down.
 
 What is the cluster quorum requirement?
 :   Note that the entire cluster cannot scale down to zero. A minimum number of nodes must remain active to keep the cluster healthy and maintain etcd quorum. If this quorum is satisfied, you can scale down other worker pools to zero.

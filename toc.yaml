@@ -463,12 +463,6 @@ toc:
           - benchmarks_overview.md
           - benchmark-comparison.md
           - topicgroup:
-              label: Version 4.22
-              topics:
-              - openshift_versions_422.md
-              - openshift_versions_changelog_422.md
-              - benchmarks_422_co.md
-          - topicgroup:
               label: Version 4.21
               topics:
               - openshift_versions_421.md

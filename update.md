@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -482,14 +482,14 @@ What the **Update** action does depends on the worker node type and cluster plat
 Update the flavor (machine type) of your worker nodes when you need different compute resources — for example, more memory, additional CPUs, or a GPU-enabled machine. Updating a flavor provisions a new worker pool with the new flavor and then removes the old worker pool. Because this process replaces nodes, all data on the worker nodes that is not stored on persistent storage is permanently deleted.
 {: shortdesc}
 
-#### Before you begin
+### Before you begin
 {: #machine-type-prereqs}
 
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Verify that any data you need to retain is stored on [persistent storage](/docs/openshift?topic=openshift-storage-plan) outside the worker node. Data stored only on the worker node is lost and cannot be recovered.
 - Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles). If you're unsure of your access role, go to **Manage → Access (IAM) → Users** in the IBM Cloud console, or ask your account administrator.
 
-#### To update flavors
+### To update flavors
 {: #machine-type-steps}
 
 1. List available worker nodes and note their private IP address.

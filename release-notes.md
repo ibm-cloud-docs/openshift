@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2026
 {: #openshift-sep26}
+
+### 29 September 2026
+{: #openshift-sep2926}
+{: release-note}
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ### 28 September 2026
 {: #openshift-sep2826}
@@ -56,9 +66,6 @@ OpenShift Virtualization cluster add-on patch updates.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-
-
 
 
 
@@ -564,6 +571,9 @@ Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}}
 
 
 
+Cluster autoscaler cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
+
 ### 10 July 2026
 {: #openshift-jul1026}
 {: release-note}
@@ -961,6 +971,8 @@ IBM Storage Operator cluster add-on patch updates.
 
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+
 
 ### 11 May 2026
 {: #openshift-may1126}
@@ -1752,6 +1764,9 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 
 
 
+
+Cluster autoscaler cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 ## November 2025
 {: #openshift-nov25}
@@ -3265,7 +3280,6 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 
 
 
-
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
@@ -4014,6 +4028,8 @@ Version 1.0.9 of the cluster autoscaler add-on is deprecated with an end of supp
 
 Image Key Synchronizer add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
 
 
 
