@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-09-29"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -40,8 +40,6 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 ## Deployment options
 {: #virt-deployment-options}
 
-
-
 | Deployment option | Description | Best for | Setup time | More information |
 | ----------------- | ----------- | -------- | ---------- | ---------------- |
 | OpenShift Virtualization Service (Recommended) | Ready-to-use virtualization environment with all components automatically installed and configured during cluster creation | VM-focused workloads, quick deployment, simplified management with managed add-ons, cost-optimized licensing | Minutes (automated) | [Get started](/docs/openshift?topic=openshift-rovs-getting-started), [Create cluster](/docs/openshift?topic=openshift-rovs-cluster-create), [Learn more](/docs/openshift?topic=openshift-rovs-overview) |
@@ -71,7 +69,7 @@ OpenShift Virtualization Edition (OVE) licensing provides a cost-effective optio
 ## Characteristics
 {: #virt-requirements}
 
-Both deployment options have the following characteristics:OpenShift Virtualization has the following characteristics:
+Both deployment options have the following characteristics
 
 | Category | Requirements |
 | -------- | ------------ |
@@ -158,7 +156,6 @@ Virtualization Service clusters running version 4.21 and later have access to ad
 {: #virt-next-steps}
 
 Choose your deployment path:
-
 
 For quick deployment:
 1. [Get started with Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started)
