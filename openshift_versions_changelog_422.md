@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2026, [{CURRENT_YEAR}]
+  years: 2026, 2026
 
-lastupdated: "[{LAST_UPDATED_DATE}]"
+lastupdated: "2026-09-29"
 
 
 keywords: change log, version history, 4.22_openshift
@@ -16,19 +16,26 @@ subcollection: openshift
 
 <!-- Link checker skip -->
 
-<!-- The content in this topic is auto-generated except for reuse-snippets. -->
+
 
 
 # 4.22 version change log
 {: #openshift_changelog_422}
 
-{[cl-boms-shortdesc.md]}
+View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
+{: shortdesc}
 
 ## Overview
 {: #changelog_overview_422}
 
-{[cl-boms-overview.md]}
 
+Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features are disabled and subject to change.
+{: shortdesc}
+
+Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security){: external} for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Change log entries that address other security vulnerabilities but don't include an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
+
+Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
+{: tip}
 
 
 ## 28 September 2026, Master fix pack 4.22.13_1519_openshift
@@ -83,4 +90,3 @@ Red Hat OpenShift on IBM Cloud 4.22.13
 
 Tigera Operator v1.40.15
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.40.15){: external}.
-
