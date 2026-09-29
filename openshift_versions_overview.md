@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-29"
 
 keywords: openshift, version, update, upgrade
 
@@ -66,6 +66,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 |Version|Release date|End of support|Operating systems|Related links|
 |---|---|---|---|---|
+|4.22 (Kubernetes 1.35)|28 September 2026|30 June 2028†|Red Hat CoreOS,  \nRHEL 9*| - [4.22 details and update actions](/docs/openshift?topic=openshift-cs_versions_422)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_422)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/release_notes/ocp-4-22-release-notes){: external}|
 |4.21 (Kubernetes 1.33) [Default]{: tag-purple} |13 May 2026|22 March 2028†|Red Hat CoreOS,  \nRHEL 9*| - [4.21 details and update actions](/docs/openshift?topic=openshift-cs_versions_421)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_421)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes){: external}|
 |4.20 (Kubernetes 1.33)|04 February 2026|19 January 2028†|Red Hat CoreOS,  \nRHEL 9*| - [4.20 details and update actions](/docs/openshift?topic=openshift-cs_versions_420)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_420)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes){: external}|
 |4.19 (Kubernetes 1.32)|3 September 2025|28 July 2027†|Red Hat CoreOS,  \nRHEL 9*| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
@@ -79,6 +80,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 |Version|Release date|End of support|Operating systems|Related links|
 |---|---|---|---|---|
+|4.22 (Kubernetes 1.35)|28 September 2026|30 June 2028†|RHEL 9| - [4.22 details and update actions](/docs/openshift?topic=openshift-cs_versions_422)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_422)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/release_notes/ocp-4-22-release-notes){: external}|
 |4.21 (Kubernetes 1.33) [Default]{: tag-purple} |13 May 2026|22 March 2028†|RHEL 9| - [4.21 details and update actions](/docs/openshift?topic=openshift-cs_versions_421)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_421)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes){: external}|
 |4.20 (Kubernetes 1.33)|04 February 2026|19 January 2028†|RHEL 9| - [4.20 details and update actions](/docs/openshift?topic=openshift-cs_versions_420)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_420)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes){: external}|
 |4.19 (Kubernetes 1.32)|3 September 2025|28 July 2027†|RHEL 9| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
@@ -92,6 +94,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 |Version|Release date|End of support|Operating systems|Related links|
 |---|---|---|---|---|
+|4.22 (Kubernetes 1.35)|28 September 2026|30 June 2028†|Red Hat CoreOS,  \nRHEL 9| - [4.22 details and update actions](/docs/openshift?topic=openshift-cs_versions_422)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_422)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/release_notes/ocp-4-22-release-notes){: external}|
 |4.21 (Kubernetes 1.33) [Default]{: tag-purple} |04 February 2026|19 January 2028†|Red Hat CoreOS,  \nRHEL 9| - [4.21 details and update actions](/docs/openshift?topic=openshift-cs_versions_421)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_421)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes){: external}|
 |4.20 (Kubernetes 1.33)|04 February 2026|10 November 2027†|Red Hat CoreOS,  \nRHEL 9| - [4.20 details and update actions](/docs/openshift?topic=openshift-cs_versions_420)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_420)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes){: external}|
 |4.19 (Kubernetes 1.32)|3 September 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|

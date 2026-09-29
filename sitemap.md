@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 
 keywords: openshift
@@ -526,6 +526,12 @@ subcollection: openshift
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
 
+    * [29 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2926)
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
     * [28 September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2826)
 
         * Red Hat OpenShift on IBM Cloud version 4.22 is now available
@@ -713,6 +719,8 @@ subcollection: openshift
     * [13 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1326)
 
         * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+
+        * Cluster autoscaler cluster add-on patch updates.
 
     * [10 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1026)
 
@@ -1147,6 +1155,8 @@ subcollection: openshift
         * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
 
         * {{site.data.keyword.cos_full_notm}} add-on patch updates.
+
+        * Cluster autoscaler cluster add-on patch updates.
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
 
@@ -2448,6 +2458,10 @@ subcollection: openshift
     * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update&interface=ui#vpc_worker_ui)
 
 * [Updating flavors (machine types)](/docs/openshift?topic=openshift-update&interface=ui#machine_type)
+
+    * [Before you begin](/docs/openshift?topic=openshift-update&interface=ui#machine-type-prereqs)
+
+    * [To update flavors](/docs/openshift?topic=openshift-update&interface=ui#machine-type-steps)
 
 * [How are worker pools scaled down?](/docs/openshift?topic=openshift-update&interface=ui#worker-scaledown-logic)
 
@@ -8344,6 +8358,20 @@ subcollection: openshift
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
+    * [17 September 2026, Version 2.0.0 - v200-18-0_369390702](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-18-0_369390702)
+
+    * [02 September 2026, Version 2.0.0 - v200-17-0_366057995](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-17-0_366057995)
+
+    * [27 August 2026, Version 2.0.0 - v200-16-2_364653497](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-16-2_364653497)
+
+    * [20 August 2026, Version 2.0.0 - v200-16-1_362894571](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-16-1_362894571)
+
+    * [10 August 2026, Version 2.0.0 - v200-16-0_360121060](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-16-0_360121060)
+
+    * [23 July 2026, Version 2.0.0 - v200-14-0_356116403](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-14-0_356116403)
+
+    * [13 July 2026, Version 2.0.0 - v200-13-0_353354474](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-13-0_353354474)
+
     * [07 July 2026, Version 2.0.0 - v200-12-0_351296784](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-12-0_351296784)
 
     * [30 April 2026, Version 2.0.0 - v200-7-0_332133224](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-7-0_332133224)
@@ -8352,7 +8380,7 @@ subcollection: openshift
 
     * [18 February 2026, Version 2.0.0 - v200-4_316755565](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-4_316755565)
 
-    * [2 December 2025, Version patch update 2.0.0-2_302959219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#2.0.0-2_302959219_ca)
+    * [02 December 2025, Version 2.0.0 - v200-2_302959219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-2_302959219)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
 
@@ -8362,73 +8390,133 @@ subcollection: openshift
 
     * [16 February 2026, Version 1.2.4 - v124-7_312863411](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-7_312863411)
 
+    * [18 September 2025, Version 1.2.4 - 1.2.4_793](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-124_793)
+
+    * [18 July 2025, Version 1.2.4 - 1.2.4_680](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-124_680)
+
     * [18 July 2025, Version patch update 1.2.4_680.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_680_ca)
+
+    * [22 April 2025, Version 1.2.4 - 1.2.4_629](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-124_629)
 
     * [22 April 2025, Version patch update 1.2.4_629.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_629_ca)
 
-    * [Change log for patch update 1.2.4_793, released 18th September 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_793_ca)
+* [Version 1.2.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.3)
 
-* [Version 1.2.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0123_ca_addon)
+    * [25 July 2025, Version 1.2.3 - 1.2.3_716](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-123_716)
 
     * [25 July 2025, Version patch update 1.2.3_716.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_716_ca)
 
+    * [10 March 2025, Version 1.2.3 - 1.2.3_540](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-123_540)
+
     * [10 March 2025, Version patch update 1.2.3_540](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_540_ca)
+
+    * [31 October 2024, Version 1.2.3 - 1.2.3_512](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-123_512)
 
     * [31 October 2024, Version patch update 1.2.3_512](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_512_ca)
 
-* [Version 1.2.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0122_ca_addon)
+* [Version 1.2.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.2)
+
+    * [15 July 2024, Version 1.2.2 - 1.2.2_466](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-122_466)
 
     * [15 July 2024, Version patch update 1.2.2_466](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122_466_ca)
 
+    * [20 June 2024, Version 1.2.2 - 1.2.2_452](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-122_452)
+
     * [20 June 2024, Version patch update 1.2.2_452](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122452_ca)
 
-* [Version 1.2.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0121_ca_addon)
+* [Version 1.2.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.1)
+
+    * [15 July 2024, Version 1.2.1 - 1.2.1_467](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-121_467)
 
     * [15 July 2024, Version patch update 1.2.1_467](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121_467_ca)
 
+    * [21 June 2024, Version 1.2.1 - 1.2.1_444](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-121_444)
+
     * [21 June 2024, Version patch update 1.2.1_444](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121444_ca)
+
+    * [05 May 2024, Version 1.2.1 - 1.2.1_425](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-121_425)
 
     * [05 May 2024, Version patch update 1.2.1_425](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121425_ca)
 
+    * [02 April 2024, Version 1.2.1 - 1.2.1_418](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-121_418)
+
     * [02 April 2024, Version patch update 1.2.1_418](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121418_ca)
+
+    * [28 February 2024, Version 1.2.1 - 1.2.1_395](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-121_395)
 
     * [28 February 2024, Version patch update 1.2.1_395](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121395_ca)
 
-* [Version 1.2.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0120_ca_addon)
+* [Version 1.2.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.0)
+
+    * [15 July 2024, Version 1.2.0 - 1.2.0_468](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_468)
 
     * [15 July 2024, Version patch update 1.2.0_468](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120_468_ca)
 
+    * [21 June 2024, Version 1.2.0 - 1.2.0_443](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_443)
+
     * [21 June 2024, Version patch update 1.2.0_443](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120443_ca)
+
+    * [05 May 2024, Version 1.2.0 - 1.2.0_426](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_426)
 
     * [05 May 2024, Version patch update 1.2.0_426](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120426_ca)
 
+    * [02 April 2024, Version 1.2.0 - 1.2.0_410](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_410)
+
     * [02 April 2024, Version patch update 1.2.0_410](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120410_ca)
+
+    * [21 February 2024, Version 1.2.0 - 1.2.0_365](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_365)
 
     * [21 February 2024, Version patch update 1.2.0_365](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120365_ca)
 
+    * [16 January 2024, Version 1.2.0 - 1.2.0_322](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_322)
+
     * [16 January 2024, Version patch update 1.2.0_322](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120322_ca)
+
+    * [27 November 2023, Version 1.2.0 - 1.2.0_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_290)
 
     * [27 November 2023, Version patch update 1.2.0_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120290_ca)
 
+    * [15 November 2023, Version 1.2.0 - 1.2.0_228](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-120_228)
+
     * [15 November 2023, Version patch update 1.2.0_228](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120228_ca)
 
-* [Version 1.0.9](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0109_ca_addon)
+* [Version 1.1.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.1.0)
 
-    * [02 April 2024, Version patch update 1.0.9_411](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109411_ca)
-
-    * [21 February 2024, Version patch update 1.0.9_377](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109377_ca)
-
-    * [16 January 2024, Version patch update 1.0.9_328](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109328_ca)
-
-    * [27 November 2023, Version patch update 1.0.9_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109290_ca)
-
-    * [13 November 2023, Version patch update 1.0.9_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109195_ca)
-
-    * [04 October 2023, Version patch update 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
+    * [16 February 2024, Version 1.1.0 - 1.1.0_362](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-110_362)
 
     * [16 February 2024, Version patch update 1.1.0_362](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
 
+    * [02 April 2024, Version 1.0.9 - 1.0.9_411](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_411)
+
+    * [02 April 2024, Version patch update 1.0.9_411](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109411_ca)
+
+    * [21 February 2024, Version 1.0.9 - 1.0.9_377](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_377)
+
+    * [21 February 2024, Version patch update 1.0.9_377](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109377_ca)
+
+    * [16 January 2024, Version 1.0.9 - 1.0.9_328](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_328)
+
+    * [16 January 2024, Version patch update 1.0.9_328](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109328_ca)
+
+    * [27 November 2023, Version 1.0.9 - 1.0.9_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_290)
+
+    * [27 November 2023, Version patch update 1.0.9_290](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109290_ca)
+
+    * [13 November 2023, Version 1.0.9 - 1.0.9_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_195)
+
+    * [13 November 2023, Version patch update 1.0.9_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109195_ca)
+
+    * [04 October 2023, Version 1.0.9 - 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_134)
+
+    * [04 October 2023, Version patch update 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
+
+    * [01 February 2024, Version 1.0.8 - 1.0.8_346](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-108_346)
+
+    * [27 November 2023, Version 1.0.8 - 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-108_292)
+
     * [27 November 2023, Version patch update 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
+
+    * [13 November 2023, Version 1.0.8 - 1.0.8_233](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-108_233)
 
     * [13 November 2023, Version patch update 1.0.8_233](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108233_ca)
 
@@ -8441,6 +8529,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-supported-versions)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
+
+    * [29 September 2026, Version 1.0 - v1.0.61_372201350](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1061_372201350)
 
     * [15 September 2026, Version 1.0 - v1.0.59_369240550](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1059_369240550)
 
@@ -8516,6 +8606,8 @@ subcollection: openshift
 
     * [28 September 2026, Version 5.2 - v5.2.62_371105267](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5262_371105267)
 
+    * [23 September 2026, Version 5.2 - v5.2.62_371105267](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5262_371105267)
+
     * [16 September 2026, Version 5.2 - v5.2.61_369265005](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5261_369265005)
 
     * [01 September 2026, Version 5.2 - v5.2.60_365903834](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5260_365903834)
@@ -8567,6 +8659,8 @@ subcollection: openshift
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
 
     * [28 September 2026, Version 5.1 - v5.1.62_371311380](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5162_371311380)
+
+    * [23 September 2026, Version 5.1 - v5.1.62_371311380](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5162_371311380)
 
     * [16 September 2026, Version 5.1 - v5.1.61_369264966](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5161_369264966)
 
@@ -8647,6 +8741,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-supported-versions)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [29 September 2026, Version 2.0 - v2.0.54_372210496](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2054_372210496)
 
     * [15 September 2026, Version 2.0 - v2.0.52_369240368](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2052_369240368)
 
@@ -8785,6 +8881,8 @@ subcollection: openshift
 [Satellite Storage Operator](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1.0)
+
+    * [29 September 2026, Version 1.0 - 1.0.88](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1088)
 
     * [31 July 2026, Version 1.0 - 1.0.87](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1087)
 
@@ -8990,16 +9088,6 @@ subcollection: openshift
 
     * [04 February 2025, Version 4.14.0 - 4.14.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41417)
 
-* [Version 4.13.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
-
-    * [24 November 2025, Version 4.13.0 - 4.13.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41332)
-
-    * [02 September 2025, Version 4.13.0 - 4.13.30](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41330)
-
-    * [14 April 2025, Version 4.13.0 - 4.13.24](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41324)
-
-    * [04 February 2025, Version 4.13.0 - 4.13.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41320)
-
 * [Version 4.14 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14-archive)
 
     * [03 August 2024, Version 4.14.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.16)
@@ -9023,6 +9111,16 @@ subcollection: openshift
     * [19 January 2024, Version 4.14.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.0-archive)
 
     * [4.14.5, 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.5)
+
+* [Version 4.13.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
+
+    * [24 November 2025, Version 4.13.0 - 4.13.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41332)
+
+    * [02 September 2025, Version 4.13.0 - 4.13.30](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41330)
+
+    * [14 April 2025, Version 4.13.0 - 4.13.24](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41324)
+
+    * [04 February 2025, Version 4.13.0 - 4.13.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41320)
 
 * [Version 4.13 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13-archive)
 
@@ -9092,6 +9190,10 @@ subcollection: openshift
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
+* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
+
+    * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
+
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
 
     * [28 September 2026, Version 4.21 - v1.0.11_4.21_373756836](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1011_421_373756836)
@@ -9107,10 +9209,6 @@ subcollection: openshift
     * [25 June 2026, Version 4.21 - v1.0.5_4.21_351283493](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v105_421_351283493)
 
     * [15 June 2026, Version 4.21 - v1.0.4_4.21_347026591](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_421_347026591)
-
-* [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
-
-    * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
 
 * [Version 4.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.20)
 

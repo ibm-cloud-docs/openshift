@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-28"
+lastupdated: "2026-09-29"
 
 
 keywords: change log, version history, OpenShift AI
@@ -35,8 +35,6 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 
-
-
 ## Supported versions
 {: #cl-add-ons-openshift-ai-supported-versions}
 
@@ -48,8 +46,6 @@ ibmcloud oc cluster addon versions
 | `417` | `>=4.17.0 <4.19.0` |
 | `416` | `>=4.16.0 <4.18.0` |
 {: caption="Supported OpenShift AI add-on versions" caption-side="bottom"}
-
-
 
 
 Review the version history for OpenShift AI.
