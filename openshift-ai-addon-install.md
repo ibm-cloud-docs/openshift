@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-09-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -33,6 +33,7 @@ Review the following considerations before setting up the add-on.
 - Your cluster must have at least 2 worker nodes. Each worker node must have a minimum of 8vCPU and 32GB memory.
 - Your worker nodes must use the RHCOS operating system.
 - You must allow outbound traffic from your cluster to install the required operators.
+
 
 ## Supported versions
 {: #versions}
