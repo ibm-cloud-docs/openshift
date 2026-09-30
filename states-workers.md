@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-29"
+lastupdated: "2026-09-30"
 
 keywords: kubernetes, worker nodes, state
 
@@ -105,7 +105,7 @@ Firmware update failure (VPC bare metal only)
     2. If reload attempts continue to fail due to firmware update failure, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
 
 Other causes
-:   For non-firmware failures, see [Troubleshooting worker nodes](/docs/openshift?topic=openshift-ts-worker-debug) for additional recovery steps.
+:   For non-firmware failures, see [Troubleshooting worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes) for additional recovery steps.
 
 ## `Reload_pending` state
 {: #worker-node-reload-pending}

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-29"
+lastupdated: "2026-09-30"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -33,6 +33,7 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
+
 
 
 
@@ -578,7 +579,7 @@ Review the version history for VPC Block CSI Driver.
 - Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/cve-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/cve-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/cve-2023-5678){: external}.
 - Applies a security fix to use the correct socket path following SElinux policy module changes and CSI recommendations to use `/var/lib/kubelet/plugins/`.
 
-## Change log for version 5.1.16_446, released 27 November 2023
+### 27 November 2023, Version 5.1.16_446
 {: #5.1.16_446_is_block_relnote}
 
 - Updates Golang to `1.20.11`.
@@ -587,7 +588,7 @@ Review the version history for VPC Block CSI Driver.
 - Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
-### Change log for version 5.1.15_419 released 13 November 2023
+### 13 November 2023, Version 5.1.15_419
 {: #5.1.15_419_is_block_relnote}
 
 - Updates Golang `1.20.10`. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-09-30"
 
 
 keywords: openshift
@@ -229,11 +229,16 @@ Verify that the Ingress operator and the Ingress controller are healthy. Ingress
 Check the availability of the public IP addresses of the Ingress controller and verify your subdomain mappings. Additionally, ensure that the {{site.data.keyword.redhat_openshift_notm}} control plane can access your Ingress controllers to health check them.
 {: shortdesc}
 
-1. Verify that your Ingress controller services are reachable by the Ingress controller health check.
+1. Verify that your Ingress controller load balancer is reachable by the ingress health check.
 
-    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 or 443 from the {{site.data.keyword.redhat_openshift_notm}} control plane and IBM NS1's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-policy_tutorial#lesson3) to allow inbound access to your Ingress controllers from [IBM NS1's source IP addresses](/docs/containers?topic=containers-firewall#firewall-ingress-domain-monitor) that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
+    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block traffic to or from your cluster, including the [create a Calico pre-DNAT policy tutorial](/docs/containers?topic=containers-policy_tutorial#lesson3), then:
+        * You must allow inbound access to the IP addresses of your ALBs on port 443, from the cluster workers (since that is where the health check comes from)
+        * You must also allow outbound access from your cluster workers to the ALB IP addresses to port 443
 
-    * **VPC**: If you have a custom security group on the VPC LBaaS (LoadBalancer-as-a-Service) instances for the cluster ingress, ensure that the security group rules allow the necessary health-check traffic from the Kubernetes [control plane IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} to port 443.
+    * **VPC**: If you have customized any of the VPC security groups for your cluster or the VPC network ACLs for your subnets.
+        * You must ensure the VPC security groups and network ACLs allow inbound access to the IP addresses of your Ingress VPC Load Balancer (LBaaS) on port 443, from the cluster workers (since that is where the health check comes from)
+        * You must also ensure the VPC security groups and network ACLs allow outbound access from your cluster workers to the LBaaS addresses to port 443
+        * While doing this, remember that addresses for your VPC LBaaS (assuming you are using the ALB which is the default) can change.
 
 2. Get the external IP addresses that the Ingress controller services are listening on. If you have a multizone cluster, note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
     ```sh
@@ -250,7 +255,7 @@ Check the availability of the public IP addresses of the Ingress controller and 
     ```
     {: screen}
 
-    If a Ingress controller has no external IP address (classic) or hostname (VPC), see [Version 4: Why doesn't the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43).
+    If an Ingress controller has no external IP address (classic) or hostname (VPC), see [Version 4: Why doesn't the Ingress controller deploy in a zone?](/docs/openshift?topic=openshift-cs_subnet_limit_43).
     {: note}
 
 3. Check the health of your Ingress controller pods (classic) or hostname (VPC).
@@ -270,7 +275,7 @@ Check the availability of the public IP addresses of the Ingress controller and 
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     Ingress Subdomain:      mycluster-<hash>-0000.us-south.containers.appdomain.cloud
@@ -284,7 +289,7 @@ Check the availability of the public IP addresses of the Ingress controller and 
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
@@ -299,7 +304,7 @@ Check the availability of the public IP addresses of the Ingress controller and 
         ```
         {: pre}
 
-        Example output
+        Example output:
         ```sh
         www.my-domain.com is an alias for mycluster-<hash>-0000.us-south.containers.appdomain.cloud
         mycluster-<hash>-0000.us-south.containers.appdomain.cloud has address 169.XX.XX.XXX
@@ -313,7 +318,7 @@ Check the availability of the public IP addresses of the Ingress controller and 
         ```
         {: pre}
 
-        Example output
+        Example output:
         ```sh
         www.my-domain.com has address 169.XX.XX.XXX
         www.my-domain.com has address 169.XX.XX.XXX

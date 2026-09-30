@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-09-30"
 
 
 keywords: openshift
@@ -37,7 +37,5 @@ Warning  SyncLoadBalancerFailed           55s                service-controller 
 This error occurs when your IAM allowlist doesn't allow the necessary communication to control plane IPs.
 {: tsCauses}
 
-To resolve this issue, add the control plane IPs for the region where your cluster is located to your IAM allowlist.
+To resolve this issue, [add the Kubernetes Service network zone to your IAM allowlist](/docs/openshift?topic=openshift-vpc-firewall#iam_firewall).
 {: tsResolve}
-
-For a list of control plane IPs by region, see the `IBM/kube-samples` [repo](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}

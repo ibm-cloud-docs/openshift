@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-29"
+lastupdated: "2026-09-30"
 
 
 keywords: change log, version history, Confidential containers
@@ -29,7 +29,7 @@ Review the version history for Confidential containers.
 {: #cl-confidential-containers-20260604-05-hardened-version}
 
 
-### Version 20260604-05-hardened, released 04 June 2026
+### 04 June 2026, Version 20260604-05-hardened
 {: #cl-confidential-containers-20260604-05-hardened}
 
 - Resolved configuration issues affecting the attestation workflow
@@ -39,7 +39,7 @@ Review the version history for Confidential containers.
 - `rhel9-podvm-hardened-20260604-05.qcow2`
 
 
-### Version 20260604-05, released 04 June 2026
+### 04 June 2026, Version 20260604-05
 {: #cl-confidential-containers-20260604-05}
 
 - Resolved configuration issues affecting the attestation workflow
@@ -52,7 +52,7 @@ Review the version history for Confidential containers.
 {: #cl-confidential-containers-20260319-02-version}
 
 
-### Version 20260319-02, released 19 March 2026
+### 19 March 2026, Version 20260319-02
 {: #cl-confidential-containers-20260319-02}
 
 - Fixing systemd startup error in the image provided as feedback.
@@ -63,7 +63,7 @@ Review the version history for Confidential containers.
 {: #cl-confidential-containers-20260318-10-version}
 
 
-### Version 20260318-10, released 18 March 2026
+### 18 March 2026, Version 20260318-10
 {: #cl-confidential-containers-20260318-10}
 
 - Correcting image with ssh disabled. Previous still had SSH.
@@ -74,7 +74,7 @@ Review the version history for Confidential containers.
 {: #cl-confidential-containers-20260312-07-hardened-version}
 
 
-### Version 20260312-07-hardened, released 12 March 2026
+### 12 March 2026, Version 20260312-07-hardened
 {: #cl-confidential-containers-20260312-07-hardened}
 
 [Default version]{: tag-green}
@@ -92,7 +92,7 @@ Review the version history for Confidential containers.
 {: #cl-confidential-containers-20260303-01-version}
 
 
-### Version 20260303-01, released 03 March 2026
+### 03 March 2026, Version 20260303-01
 {: #cl-confidential-containers-20260303-01}
 
 [Default version]{: tag-green}

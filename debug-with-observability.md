@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-23"
+lastupdated: "2026-09-30"
 
 keywords: monitoring, logging, sysdig, cloud logs, debug, troubleshoot, observability, cluster health, dashboards
 
@@ -62,7 +62,8 @@ Pods that crash-loop or restart frequently are a common sign of application-leve
    - A restart count that increments repeatedly indicates a crash loop. Note the pod name and namespace for use in the log investigation steps that follow.
    - A restart count of zero but a **Pending** or **Unknown** status indicates a scheduling or node connectivity issue rather than an application failure.
 
-1. To set up an alert for future pod restart events, click the **Alerts** icon in the {{site.data.keyword.mon_full_notm}} UI and create a metric alert on the `kubernetes.pod.restart.count` metric. Set the threshold to trigger when the count exceeds two restarts within five minutes for any pod. This provides early warning before a crash loop becomes disruptive. For more information about configuring alerts, see [Setting up {{site.data.keyword.mon_full}} alerts](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options_monitoring).
+1. To set up an alert for future pod restart events, click the **Alerts** icon in the {{site.data.keyword.mon_full_notm}} UI and create a metric alert on the `kubernetes.pod.restart.count` metric. Set the threshold to trigger when the count exceeds two restarts within five minutes for any pod. This provides early warning before a crash loop becomes disruptive. For more information about configuring alerts, see [Setting up {{site.data.keyword.mon_full}} alerts](/docs/openshift?topic=openshift-health-monitor)
+
 
 ## Investigate container logs with {{site.data.keyword.logs_full_notm}}
 {: #debug-observability-logs}
@@ -146,4 +147,4 @@ Kubernetes events capture important cluster activity such as pod scheduling fail
 - [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started){: external}
 - [Getting started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started){: external}
 - [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready)
-- [Setting up {{site.data.keyword.mon_full}} alerts](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options_monitoring)
+- [Setting up {{site.data.keyword.mon_full}} alerts](/docs/openshift?topic=openshift-health-monitor#monitoring-alerts)
