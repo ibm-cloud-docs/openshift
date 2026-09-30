@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-09-29"
 
 
 keywords: key protect, hpcs, kp, migrate, encryption
@@ -31,8 +31,8 @@ Before you begin, make sure to backup all of your apps and data using a backup t
 
 Request access to migration tools to use during the process, which are used to detect HPCS key usage and later migrate certain components. You must request access by opening a [customer support ticket], so make sure to plan your timeline accordingly. After you open a customer support ticket, the migration tools are delivered in a zip file called `hpcs-2-kp-k8s.zip`, which contains several scripts for you to run during the migration process.
 
-1. Create an [IBM Support ticket for IBM Cloud Kubernetes Service](/docs/containers?topic=containers-get-help#support-case) to request access to the tooling.
-2. Download the `hpcs-2-kp-k8s.zip` file provided in the suppor ticket.
+1. Create an [IBM Support ticket for Key Protect](https://cloud.ibm.com/docs/key-protect?topic=key-protect-migrate-tool#migrate-tool-download) to request access to the HPCS to Key Protect migration tools.
+2. Download the `hpcs-2-kp-k8s.zip` file provided in the support ticket.
 3. Verify the SHA-256 checksum of the downloaded `hpcs-2-kp-k8s.zip` file with the value that is provided in the support ticket. Compare the values directly; they must match exactly.
 
    Run the appropriate command for your operating system to get the SHA-256 checksum and compare with the value that is provided in the support ticket:
