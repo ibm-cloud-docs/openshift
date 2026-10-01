@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -40,7 +40,6 @@ ibmcloud oc cluster addon versions
 
 
 
-
 ## Supported versions
 {: #cl-add-ons-ibm-object-csi-driver-supported-versions}
 
@@ -58,6 +57,16 @@ Review the version history for IBM Object CSI Driver.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
+
+
+### 25 September 2026, Version 1.0 - v1.0.29_373392591
+{: #cl-add-ons-ibm-object-csi-driver-v1029_373392591}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/cve-2026-56391){: external}, [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/cve-2026-56392){: external}, [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/cve-2026-56854){: external}, [CVE-2026-56855](https://nvd.nist.gov/vuln/detail/cve-2026-56855){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, [CVE-2026-78662](https://nvd.nist.gov/vuln/detail/cve-2026-78662){: external}, and [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}.
+- Updates Go to version `1.26.8`.
+- Remove shell from cos csi driver pods 
 
 
 ### 01 September 2026, Version 1.0 - v1.0.28_365471792

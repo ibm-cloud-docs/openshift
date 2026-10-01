@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -35,12 +35,51 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 
+## Supported versions
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions}
+
+| Add-on version | Supported OpenShift versions |
+|---|---|
+| `1.0.0` | `>=4.4.0 <4.23.0` |
+{: caption="Supported IBM Cloud Image Key Synchronizer add-on versions" caption-side="bottom"}
+
+
 Review the version history for IBM Cloud Image Key Synchronizer.
 {: shortdesc}
 
 
 ## Version 1.0.0
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0}
+
+
+### 14 September 2026, Version 1.0.0 - 1.0.0_367585595
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_367585595}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
+
+
+### 31 August 2026, Version 1.0.0 - 1.0.0_364389711
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
+
+
+### 17 August 2026, Version 1.0.0 - 1.0.0_359585651
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_359585651}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
+
+
+### 09 July 2026, Version 1.0.0 - 1.0.0_351682779
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_351682779}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
+
+
+### 25 June 2026, Version 1.0.0 - 1.0.0_348708490
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_348708490}
+
+- Resolves the following CVEs: [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}.
 
 
 ### 09 June 2026, Version 1.0.0 - 1.0.0_345162128
@@ -120,30 +159,85 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 ### 13 March 2025, Version 1.0.0 - 1.0.0_2640
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
+
 
 ### 15 January 2025, Version 1.0.0 - 1.0.0_2557
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
 
 
 ### 30 October 2024, Version 1.0.0 - 1.0.0_2450
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
+
 
 ### 04 September 2024, Version 1.0.0 - 1.0.0_2382
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
 
 
 ### 09 July 2024, Version 1.0.0 - 1.0.0_2308
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
+
 
 ### 06 June 2024, Version 1.0.0 - 1.0.0_2258
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
 
 
 ### 04 June 2024, Version 1.0.0 - 1.0.0_2244
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244}
 
+- No feature changes. Updates dependencies and base images to the latest versions.
+
 
 ### 08 May 2024, Version 1.0.0 - 1.0.0_2186
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186}
+
+- No feature changes. Updates dependencies and base images to the latest versions.
+
+
+### 03 April 2024, Version 1.0.0 - 1.0.0_2111
+{: #1.0.0_2111}
+
+- Resolves [CVE-2024-24786](https://www.cve.org/cveRecord?id=cve-2024-24786){: external}.
+
+
+### 16 January 2024, Version 1.0.0 - 1.0.0_2015
+{: #1.0.0_2015}
+
+- [CVE-2023-3446](https://www.cve.org/cveRecord?id=cve-2023-3446){: external}.
+- [CVE-2023-3817](https://www.cve.org/cveRecord?id=cve-2023-3817){: external}.
+- [CVE-2023-5678](https://www.cve.org/cveRecord?id=cve-2023-5678){: external}.
+
+
+### 25 October 2023, Version 1.0.0 - 1.0.0_1936
+{: #1.0.0_1936}
+
+- Resolves [CVE-2023-39325](https://www.cve.org/cveRecord?id=cve-2023-39325){: external}.
+
+
+### 18 October 2023, Version 1.0.0 - 1.0.0_1921
+{: #1.0.0_1921}
+
+- [CVE-2023-4911](https://www.cve.org/cveRecord?id=cve-2023-4911){: external}.
+- [CVE-2023-4527](https://www.cve.org/cveRecord?id=cve-2023-4527){: external}.
+- [CVE-2023-4806](https://www.cve.org/cveRecord?id=cve-2023-4806){: external}.
+- [CVE-2023-4813](https://www.cve.org/cveRecord?id=cve-2023-4813){: external}.
+
+
+### 03 October 2023, Version 1.0.0 - 1.0.0_1831
+{: #1_0_1831}
+
+- [CVE-2021-43565](https://www.cve.org/cveRecord?id=cve-2021-43565){: external}.
+- [CVE-2022-27191](https://www.cve.org/cveRecord?id=cve-2022-27191){: external}.
+- [CVE-2022-27664](https://www.cve.org/cveRecord?id=cve-2022-27664){: external}.
+- [CVE-2022-41721](https://www.cve.org/cveRecord?id=cve-2022-41721){: external}.
+- [CVE-2022-41723](https://www.cve.org/cveRecord?id=cve-2022-41723){: external}.

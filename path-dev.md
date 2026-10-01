@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-10-01"
 
 
 keywords: openshift, red hat, red hat openshift, dev
@@ -187,3 +187,12 @@ Enhance app capabilities by integrating various external services and catalog se
 
 Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_worker_nodes).
 {: tip}
+
+## Migrating from Classic to VPC
+{: #dev_migrate}
+
+[Classic infrastructure]{: tag-classic-inf}
+
+If your cluster administrator is migrating from Classic to VPC, the migration tool moves your workloads namespace by namespace to a new VPC cluster. Application configuration, Kubernetes resources, and persistent storage are included in the migration. After migration, update any Ingress subdomain references, environment variables, and CI/CD pipeline configurations that reference the Classic cluster's Ingress subdomain.
+
+For migration details and planning guidance, see [Migrating from Classic to VPC](/docs/openshift?topic=openshift-vpc-migrate-overview).

@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, 4.22_openshift
@@ -76,7 +76,7 @@ Key Management Service provider 2.10.30
 
 
 Kubernetes feature gates configuration 
-:   RotateKubeletServerCertificate=true,BuildCSIVolumes=true,NetworkLiveMigration=true,OpenShiftPodSecurityAdmission=false,AdminNetworkPolicy=true,KMSv1=false,ExternalOIDC=true,NetworkDiagnosticsConfig=true,ManagedBootImages=true,TranslateStreamCloseWebsocketRequests=false,NewOLM=false,DisableNodeKubeProxyVersion=false,ServiceAccountTokenNodeBinding=true,AdditionalRoutingCapabilities=true,CPMSMachineNamePrefix=true,ConsolePluginContentSecurityPolicy=true,GatewayAPI=true,GatewayAPIController=true,MetricsCollectionProfiles=true,NetworkSegmentation=true,RouteExternalCertificate=true,HighlyAvailableArbiter=true,ImageVolume=true,MachineConfigNodes=true,PinnedImages=true,ProcMountType=true,RouteAdvertisements=true,SigstoreImageVerification=true,StoragePerformantSecurityPolicy=true,UpgradeStatus=true,UserNamespacesPodSecurityStandards=true,UserNamespacesSupport=true,ExternalOIDCWithUIDAndExtraClaimMappings=true,HyperShiftOnlyDynamicResourceAllocation=true,ImageStreamImportMode=true,ManagedBootImagesvSphere=true,PreconfiguredUDNAddresses=true,SigstoreImageVerificationPKI=true,VolumeAttributesClass=true. For more information, see [Kubernetes docs](https://kubernetes.io/docs/home/){: external}
+:   `RotateKubeletServerCertificate=true`, `BuildCSIVolumes=true`, `NetworkLiveMigration=true`, `OpenShiftPodSecurityAdmission=false`, `AdminNetworkPolicy=true`, `KMSv1=false`, `ExternalOIDC=true`, `NetworkDiagnosticsConfig=true`, `ManagedBootImages=true`, `TranslateStreamCloseWebsocketRequests=false`, `NewOLM=false`, `DisableNodeKubeProxyVersion=false`, `ServiceAccountTokenNodeBinding=true`, `AdditionalRoutingCapabilities=true`, `CPMSMachineNamePrefix=true`, `ConsolePluginContentSecurityPolicy=true`, `GatewayAPI=true`, `GatewayAPIController=true`, `MetricsCollectionProfiles=true`, `NetworkSegmentation=true`, `RouteExternalCertificate=true`, `HighlyAvailableArbiter=true`, `ImageVolume=true`, `MachineConfigNodes=true`, `PinnedImages=true`, `ProcMountType=true`, `RouteAdvertisements=true`, `SigstoreImageVerification=true`, `StoragePerformantSecurityPolicy=true`, `UpgradeStatus=true`, `UserNamespacesPodSecurityStandards=true`, `UserNamespacesSupport=true`, `ExternalOIDCWithUIDAndExtraClaimMappings=true`, `HyperShiftOnlyDynamicResourceAllocation=true`, `ImageStreamImportMode=true`, `ManagedBootImagesvSphere=true`, `PreconfiguredUDNAddresses=true`, `SigstoreImageVerificationPKI=true`, `VolumeAttributesClass=true`. For more information, see [Kubernetes docs](https://kubernetes.io/docs/home/){: external}
 
 
 Portieris admission controller v0.14.3

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, OpenShift AI
@@ -35,18 +35,89 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 
+## Supported versions
+{: #cl-add-ons-openshift-ai-supported-versions}
+
+| Add-on version | Supported OpenShift versions |
+|---|---|
+| `420` | `>=4.20.0 <4.22.0` |
+| `419` | `>=4.19.0 <4.22.0` |
+| `418` | `>=4.18.0 <4.20.0` |
+| `417` | `>=4.17.0 <4.19.0` |
+| `416` | `>=4.16.0 <4.18.0` |
+{: caption="Supported OpenShift AI add-on versions" caption-side="bottom"}
+
+
 Review the version history for OpenShift AI.
 {: shortdesc}
+
+
+## Version 420
+{: #cl-add-ons-openshift-ai-420}
+
+
+### 17 September 2026, Version 420 - 420.0.4_3370991846
+{: #cl-add-ons-openshift-ai-42004_3370991846}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}, and [CVE-2026-84303](https://nvd.nist.gov/vuln/detail/cve-2026-84303){: external}.
+- Updates Go to version `1.26.6`.
+
+
+### 10 August 2026, Version 420 - v420.0.3_361259361
+{: #cl-add-ons-openshift-ai-v42003_361259361}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 04 August 2026, Version 420 - v420.0.2_360056330
+{: #cl-add-ons-openshift-ai-v42002_360056330}
+
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 08 July 2026, Version 420 - 420.0.0_349689605
+{: #cl-add-ons-openshift-ai-42000_349689605}
+
+- Updates Go to version `1.25.11`.
+- Installs Red Hat `openshift-ai` operator version `3.4.2`.
+- Optionally installs NFD operator based on latest version available for channel `stable`.
+- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
+- Optionally installs Pipeline operator based on latest version available for channel `latest`.
 
 
 ## Version 419
 {: #cl-add-ons-openshift-ai-419}
 
 
-### 23 June 2026, Version 419 - v419.1.0_348058306
-{: #cl-add-ons-openshift-ai-v41910_348058306}
+### 17 September 2026, Version 419 - 419.1.3_370991899
+{: #cl-add-ons-openshift-ai-41913_370991899}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}, and [CVE-2026-84303](https://nvd.nist.gov/vuln/detail/cve-2026-84303){: external}.
+- Updates Go to version `1.26.6`.
+
+
+### 10 August 2026, Version 419 - v419.1.2_361259372
+{: #cl-add-ons-openshift-ai-v41912_361259372}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 03 August 2026, Version 419 - v419.1.1_359492648
+{: #cl-add-ons-openshift-ai-v41911_359492648}
+
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 23 June 2026, Version 419 - v419.1.0_348058306
+{: #cl-add-ons-openshift-ai-v41910_348058306}
 
 - Updates Go to version `1.25.11`.
 - Installs Red Hat `openshift-ai` operator version `3.4.0`.
@@ -63,7 +134,7 @@ Review the version history for OpenShift AI.
 ### 26 April 2026, Version 419 - v419.0.0_333601315
 {: #cl-add-ons-openshift-ai-v41900_333601315}
 
-- Resolves the following CVEs: [CVE-2026-25679](https://access.redhat.com/security/cve/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, and [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}.
+- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, and [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}.
 - Updates Go to version `1.25.9`.
 - Installs Red Hat `openshift-ai` operator version `3.3.0`.
 - Optionally installs NFD operator based on latest version available for channel `stable`.
@@ -82,10 +153,31 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-418}
 
 
-### 09 June 2026, Version 418 - 418.1.2_346505318
-{: #cl-add-ons-openshift-ai-41812_346505318}
+### 17 September 2026, Version 418 - 418.1.5_370992078
+{: #cl-add-ons-openshift-ai-41815_370992078}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}, and [CVE-2026-84303](https://nvd.nist.gov/vuln/detail/cve-2026-84303){: external}.
+- Updates Go to version `1.26.6`.
+
+
+### 10 August 2026, Version 418 - v418.1.4_361259339
+{: #cl-add-ons-openshift-ai-v41814_361259339}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 03 August 2026, Version 418 - 418.1.3_359492573
+{: #cl-add-ons-openshift-ai-41813_359492573}
+
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
+- Updates Go to version `1.26.4`.
+
+
+### 09 June 2026, Version 418 - 418.1.2_346505318
+{: #cl-add-ons-openshift-ai-41812_346505318}
 
 - Resolves the following CVEs: [CVE-2026-39882](https://nvd.nist.gov/vuln/detail/cve-2026-39882){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/cve-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/cve-2026-4437){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/cve-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}, and [CVE-2026-39882](https://nvd.nist.gov/vuln/detail/cve-2026-39882){: external}.
 - Updates Go to version `1.25.10`.
@@ -94,7 +186,7 @@ Review the version history for OpenShift AI.
 ### 18 May 2026, Version 418 - v418.1.1_339109080
 {: #cl-add-ons-openshift-ai-v41811_339109080}
 
-- Resolves the following CVEs: [CVE-2026-25679](https://access.redhat.com/security/cve/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-40161](https://nvd.nist.gov/vuln/detail/cve-2026-40161){: external}, [CVE-2026-40938](https://nvd.nist.gov/vuln/detail/cve-2026-40938){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-25542](https://nvd.nist.gov/vuln/detail/cve-2026-25542){: external}, [CVE-2026-40923](https://nvd.nist.gov/vuln/detail/cve-2026-40923){: external}, and [CVE-2026-40924](https://nvd.nist.gov/vuln/detail/cve-2026-40924){: external}.
+- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-40161](https://nvd.nist.gov/vuln/detail/cve-2026-40161){: external}, [CVE-2026-40938](https://nvd.nist.gov/vuln/detail/cve-2026-40938){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-25542](https://nvd.nist.gov/vuln/detail/cve-2026-25542){: external}, [CVE-2026-40923](https://nvd.nist.gov/vuln/detail/cve-2026-40923){: external}, and [CVE-2026-40924](https://nvd.nist.gov/vuln/detail/cve-2026-40924){: external}.
 - Updates Go to version `1.25.9`.
 - Installs Red Hat `openshift-ai` operator version `2.25.6`.
 
@@ -102,7 +194,7 @@ Review the version history for OpenShift AI.
 ### 03 March 2026, Version 418 - v418.1.0_320919095
 {: #cl-add-ons-openshift-ai-v41810_320919095}
 
-- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61726](https://access.redhat.com/security/cve/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
 - Updates Go to version `1.25.7`.
 - Installs Red Hat `openshift-ai` operator version `2.25.2`.
 
@@ -122,10 +214,31 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-417}
 
 
-### 09 June 2026, Version 417 - 417.1.2_346505437
-{: #cl-add-ons-openshift-ai-41712_346505437}
+### 17 September 2026, Version 417 - 417.1.5_370985594
+{: #cl-add-ons-openshift-ai-41715_370985594}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}, and [CVE-2026-84303](https://nvd.nist.gov/vuln/detail/cve-2026-84303){: external}.
+- Updates Go to version `1.26.6`.
+
+
+### 10 August 2026, Version 417 - v417.1.4_361259329
+{: #cl-add-ons-openshift-ai-v41714_361259329}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 03 August 2026, Version 417 - 417.1.3_359492531
+{: #cl-add-ons-openshift-ai-41713_359492531}
+
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
+- Updates Go to version `1.26.4`.
+
+
+### 09 June 2026, Version 417 - 417.1.2_346505437
+{: #cl-add-ons-openshift-ai-41712_346505437}
 
 - Resolves the following CVEs: [CVE-2026-39883](https://nvd.nist.gov/vuln/detail/cve-2026-39883){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/cve-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/cve-2026-4437){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/cve-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}, and [CVE-2026-39882](https://nvd.nist.gov/vuln/detail/cve-2026-39882){: external}.
 - Updates Go to version `1.25.10`.
@@ -134,7 +247,7 @@ Review the version history for OpenShift AI.
 ### 18 May 2026, Version 417 - v417.1.1_339109167
 {: #cl-add-ons-openshift-ai-v41711_339109167}
 
-- Resolves the following CVEs: [CVE-2026-25679](https://access.redhat.com/security/cve/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-40161](https://nvd.nist.gov/vuln/detail/cve-2026-40161){: external}, [CVE-2026-40938](https://nvd.nist.gov/vuln/detail/cve-2026-40938){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-25542](https://nvd.nist.gov/vuln/detail/cve-2026-25542){: external}, [CVE-2026-40923](https://nvd.nist.gov/vuln/detail/cve-2026-40923){: external}, and [CVE-2026-40924](https://nvd.nist.gov/vuln/detail/cve-2026-40924){: external}.
+- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-40161](https://nvd.nist.gov/vuln/detail/cve-2026-40161){: external}, [CVE-2026-40938](https://nvd.nist.gov/vuln/detail/cve-2026-40938){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-25542](https://nvd.nist.gov/vuln/detail/cve-2026-25542){: external}, [CVE-2026-40923](https://nvd.nist.gov/vuln/detail/cve-2026-40923){: external}, and [CVE-2026-40924](https://nvd.nist.gov/vuln/detail/cve-2026-40924){: external}.
 - Updates Go to version `1.25.9`.
 - Installs Red Hat `openshift-ai` operator version `2.25.6`.
 
@@ -142,7 +255,7 @@ Review the version history for OpenShift AI.
 ### 03 March 2026, Version 417 - v417.1.0_320919116
 {: #cl-add-ons-openshift-ai-v41710_320919116}
 
-- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61726](https://access.redhat.com/security/cve/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
 - Updates Go to version `1.25.7`.
 - Installs Red Hat `openshift-ai` operator version `2.25.2`.
 
@@ -177,10 +290,31 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
-### 09 June 2026, Version 416 - v416.4.2_346505672
-{: #cl-add-ons-openshift-ai-v41642_346505672}
+### 17 September 2026, Version 416 - v416.4.5_370992209
+{: #cl-add-ons-openshift-ai-v41645_370992209}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}, and [CVE-2026-84303](https://nvd.nist.gov/vuln/detail/cve-2026-84303){: external}.
+- Updates Go to version `1.26.6`.
+
+
+### 10 August 2026, Version 416 - v416.4.4_361259301
+{: #cl-add-ons-openshift-ai-v41644_361259301}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://github.com/advisories/ghsa-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### 03 August 2026, Version 416 - v416.4.3_359492487
+{: #cl-add-ons-openshift-ai-v41643_359492487}
+
+- Resolves the following CVEs: [GO-2026-6061](https://pkg.go.dev/vuln/go-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/cve-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}.
+- Updates Go to version `1.26.4`.
+
+
+### 09 June 2026, Version 416 - v416.4.2_346505672
+{: #cl-add-ons-openshift-ai-v41642_346505672}
 
 - Resolves the following CVEs: [CVE-2026-39883](https://nvd.nist.gov/vuln/detail/cve-2026-39883){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/cve-2026-39836){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/cve-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/cve-2026-4437){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/cve-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/cve-2026-39826){: external}, and [CVE-2026-39882](https://nvd.nist.gov/vuln/detail/cve-2026-39882){: external}.
 - Updates Go to version `1.25.10`.
@@ -189,7 +323,7 @@ Review the version history for OpenShift AI.
 ### 18 May 2026, Version 416 - v416.4.1_339109233
 {: #cl-add-ons-openshift-ai-v41641_339109233}
 
-- Resolves the following CVEs: [CVE-2026-25679](https://access.redhat.com/security/cve/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-40161](https://nvd.nist.gov/vuln/detail/cve-2026-40161){: external}, [CVE-2026-40938](https://nvd.nist.gov/vuln/detail/cve-2026-40938){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-25542](https://nvd.nist.gov/vuln/detail/cve-2026-25542){: external}, [CVE-2026-40923](https://nvd.nist.gov/vuln/detail/cve-2026-40923){: external}, and [CVE-2026-40924](https://nvd.nist.gov/vuln/detail/cve-2026-40924){: external}.
+- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/cve-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/cve-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/cve-2026-32283){: external}, [CVE-2026-40161](https://nvd.nist.gov/vuln/detail/cve-2026-40161){: external}, [CVE-2026-40938](https://nvd.nist.gov/vuln/detail/cve-2026-40938){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, [CVE-2026-25542](https://nvd.nist.gov/vuln/detail/cve-2026-25542){: external}, [CVE-2026-40923](https://nvd.nist.gov/vuln/detail/cve-2026-40923){: external}, and [CVE-2026-40924](https://nvd.nist.gov/vuln/detail/cve-2026-40924){: external}.
 - Updates Go to version `1.25.9`.
 - Installs Red Hat `openshift-ai` operator version `2.25.6`.
 
@@ -254,6 +388,7 @@ Review the version history for OpenShift AI.
 - Resolves the following CVEs: [CVE-2025-22868](https://nvd.nist.gov/vuln/detail/cve-2025-22868){: external}.
 - Updates Go to version `1.23.7`.
 - Installs Red Hat `openshift-ai` operator version `2.16.1`.
+- Resolves the following Prisma CVEs: [CVE-2024-45336](https://nvd.nist.gov/vuln/detail/cve-2024-45336){: external}, [CVE-2024-45341](https://nvd.nist.gov/vuln/detail/cve-2024-45341){: external}, and [CVE-2025-22866](https://nvd.nist.gov/vuln/detail/cve-2025-22866){: external}.
 
 
 ### 05 March 2025, Version 416 - 416.0.1_474
@@ -266,7 +401,7 @@ Review the version history for OpenShift AI.
 ### 03 March 2025, Version 416 - v416.4.0_320919164
 {: #cl-add-ons-openshift-ai-v41640_320919164}
 
-- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61726](https://access.redhat.com/security/cve/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
 - Updates Go to version `1.25.7`.
 - Installs Red Hat `openshift-ai` operator version `2.25.2`.
 
