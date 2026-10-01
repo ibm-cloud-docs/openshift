@@ -507,6 +507,18 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
+[Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction)
+
+* [Who is affected by this restriction?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-affected)
+
+* [Why does this restriction exist?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-why)
+
+* [What error do I see when classic cluster creation is blocked?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-error)
+
+* [What are my options if I'm affected?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-next)
+
+* [How do I check whether my account has existing classic clusters?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-check)
+
 [IAM VPE Gateway is being added to your VPC](/docs/openshift?topic=openshift-notice-vpc-iam-vpe-gateway#notice-vpc-iam-vpe-gateway)
 
 [Cluster control plane reachable over port 443 (ROKS 4.22+)](/docs/openshift?topic=openshift-notice-cp-port-443#notice-cp-port-443)
@@ -527,6 +539,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [1 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0126)
+
+        * Classic cluster creation restriction
 
 * [September 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep26)
 

@@ -26,6 +26,16 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## October 2026
+{: #openshift-oct26}
+
+### 1 October 2026
+{: #openshift-oct0126}
+{: release-note}
+
+Classic cluster creation restriction
+:   Accounts that do not already have at least one classic cluster in a region can no longer create new classic clusters in that region. This restriction applies to all creation methods (console, CLI, API, and Terraform) in production environments. Stage environments are not affected. For more information, see [Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction).
+
 ## September 2026
 {: #openshift-sep26}
 
