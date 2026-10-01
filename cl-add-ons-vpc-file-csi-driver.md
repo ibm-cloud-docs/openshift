@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -33,7 +33,6 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-21"
+lastupdated: "2026-10-01"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -281,24 +281,193 @@ Import both managed clusters into ACM so that the hub cluster can manage them.
 ## Step 6. Configure the Submariner add-on
 {: #submariner}
 
-[Managed cluster]{: tag-warm-gray}
+[Hub cluster]{: tag-blue} [Managed cluster]{: tag-warm-gray}
 
-Follow the steps to install and configure the Submariner add-on, which establishes connectivity across your two managed clusters. These steps use the ACM console. For more detailed information, see [Deploying Submariner by using the console](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-console){: external} in the Red Hat documentation.
+Configure the Submariner add-on to establish cross-cluster networking between your two managed clusters. Choose one of the following options based on your infrastructure and cluster types:
 
-1. Navigate to the ACM console. Then click **Fleet Management** > **Clusters** > **Cluster sets**.
+- **Option 1: Transit Gateway (Preferred)** — Supported for both {{site.data.keyword.openshiftlong_notm}} and Red Hat OpenShift Virtualization Service (ROVS) clusters with Virtual Server Instances (VSI) and Bare Metal worker nodes.
+- **Option 2: Network Load Balancer (NLB)** — Supported for {{site.data.keyword.openshiftlong_notm}} clusters with VSI worker nodes only.
+
+### Option 1: Use {{site.data.keyword.tg_full_notm}} to connect VPCs (Preferred)
+{: #submariner-tg}
+
+[Hub cluster]{: tag-blue}
+
+Use {{site.data.keyword.tg_full_notm}} for high-performance direct cross-VPC communication. This option supports {{site.data.keyword.openshiftlong_notm}} and Red Hat OpenShift Virtualization Service clusters on both VSI and Bare Metal infrastructure.
+
+1. Identify the VPCs used by your managed clusters:
+   - For **{{site.data.keyword.openshiftlong_notm}}**: Go to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} > Navigation Menu > **Containers** > **Clusters** > select your cluster > note the **VPC**.
+   - For **Red Hat OpenShift Virtualization Service**: Go to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} > Navigation Menu > **Infrastructure** > **OpenShift Virtualization** > select your cluster > note the **VPC**.
+
+1. Create a Transit Gateway and add connections to both managed cluster VPCs:
+   1. In the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}, navigate to **Infrastructure** > **Network** > **Transit Gateway**.
+   1. Click **Create**.
+   1. Enter a **Transit Gateway name** and select your **Resource group**.
+   1. Select the **Routing**:
+      - **Local routing**: Choose this option if both managed clusters reside within the same region.
+      - **Global routing**: Choose this option if your managed clusters are deployed across different regions.
+   1. Under **Connections**, add connections for both VPCs:
+      - **Connection 1**: Select **VPC** for network connection, choose the region for Cluster 1, and select the VPC for Cluster 1.
+      - **Connection 2**: Select **VPC** for network connection, choose the region for Cluster 2, and select the VPC for Cluster 2.
+   1. Click **Create**.
+
+1. Create a ClusterSet resource on the hub cluster and add your managed clusters:
+   1. In the ACM console on your hub cluster, navigate to **Fleet Management** > **Infrastructure** > **Clusters** > **ClusterSet**.
+   1. Click **Create Cluster Set** and provide a name for the cluster set (for example, `<CLUSTERSET>`).
+   1. Click **Manage Cluster Assignments** and add both managed clusters to the cluster set.
+
+1. On the hub cluster, create the Submariner Broker configuration file `submariner-broker.yaml`.
+
+   ```yaml
+   apiVersion: submariner.io/v1alpha1
+   kind: Broker
+   metadata:
+     name: submariner-broker
+     namespace: <CLUSTERSET>-broker
+     labels:
+       cluster.open-cluster-management.io/backup: submariner
+   spec:
+     globalnetEnabled: true
+   ```
+   {: codeblock}
+
+   Set `globalnetEnabled: true` if the managed clusters have overlapping networks (pod and service CIDRs). If your managed clusters do not have overlapping CIDRs, set `globalnetEnabled: false`.
+   {: note}
+
+1. Apply the Broker configuration to the hub cluster.
+
+   ```sh
+   oc apply -f submariner-broker.yaml
+   ```
+   {: pre}
+
+1. On the hub cluster, create the `SubmarinerConfig` custom resource file `SubmarinerConfig-mc1.yaml` for managed cluster 1.
+
+   ```yaml
+   apiVersion: submarineraddon.open-cluster-management.io/v1alpha1
+   kind: SubmarinerConfig
+   metadata:
+     name: submariner
+     namespace: <MANAGED_CLUSTER1>
+   spec:
+     cableDriver: libreswan
+     forceUDPEncaps: true
+     gatewayConfig:
+       gateways: 2
+     NATTEnable: false
+   ```
+   {: codeblock}
+
+1. On the hub cluster, create the `SubmarinerConfig` custom resource file `SubmarinerConfig-mc2.yaml` for managed cluster 2.
+
+   ```yaml
+   apiVersion: submarineraddon.open-cluster-management.io/v1alpha1
+   kind: SubmarinerConfig
+   metadata:
+     name: submariner
+     namespace: <MANAGED_CLUSTER2>
+   spec:
+     cableDriver: libreswan
+     forceUDPEncaps: true
+     gatewayConfig:
+       gateways: 2
+     NATTEnable: false
+   ```
+   {: codeblock}
+
+1. Apply both `SubmarinerConfig` resources on the hub cluster.
+
+   ```sh
+   oc apply -f SubmarinerConfig-mc1.yaml
+   oc apply -f SubmarinerConfig-mc2.yaml
+   ```
+   {: pre}
+
+1. On the hub cluster, create the `ManagedClusterAddOn` custom resource file `ManagedClusterAddOn-mc1.yaml` for managed cluster 1.
+
+   ```yaml
+   apiVersion: addon.open-cluster-management.io/v1alpha1
+   kind: ManagedClusterAddOn
+   metadata:
+     name: submariner
+     namespace: <MANAGED_CLUSTER1>
+   spec:
+     installNamespace: submariner-operator
+   ```
+   {: codeblock}
+
+1. On the hub cluster, create the `ManagedClusterAddOn` custom resource file `ManagedClusterAddOn-mc2.yaml` for managed cluster 2.
+
+   ```yaml
+   apiVersion: addon.open-cluster-management.io/v1alpha1
+   kind: ManagedClusterAddOn
+   metadata:
+     name: submariner
+     namespace: <MANAGED_CLUSTER2>
+   spec:
+     installNamespace: submariner-operator
+   ```
+   {: codeblock}
+
+1. Apply both `ManagedClusterAddOn` resources on the hub cluster.
+
+   ```sh
+   oc apply -f ManagedClusterAddOn-mc1.yaml
+   oc apply -f ManagedClusterAddOn-mc2.yaml
+   ```
+   {: pre}
+
+1. Verify that the Submariner add-on status displays as healthy in the ACM console.
+   1. Navigate to **Fleet Management** > **Infrastructure** > **Clusters** > **ClusterSet**.
+   1. Select your cluster set and click **Submariner Add-on**.
+   1. Confirm that **Connection Status** shows **Healthy** with a green checkmark.
+
+1. (Optional) Run additional Submariner connectivity and diagnostic tests using the `subctl` CLI:
+
+   1. Install the `subctl` CLI tool on your local system:
+      ```sh
+      curl -Ls https://get.submariner.io | bash
+      export PATH=$PATH:~/.local/bin
+      echo export PATH=\$PATH:~/.local/bin >> ~/.profile
+      ```
+      {: pre}
+
+   1. Check gateway and route agent connections on managed cluster 1:
+      ```sh
+      subctl diagnose connections --kubeconfig ./<MANAGED_CLUSTER1_KUBECONFIG>.yaml
+      ```
+      {: pre}
+
+   1. Check gateway and route agent connections on managed cluster 2:
+      ```sh
+      subctl diagnose connections --kubeconfig ./<MANAGED_CLUSTER2_KUBECONFIG>.yaml
+      ```
+      {: pre}
+
+   1. Run the end-to-end connectivity test suite between the clusters:
+      ```sh
+      subctl verify --context <MANAGED_CLUSTER1_CONTEXT> --tocontext <MANAGED_CLUSTER2_CONTEXT> --only connectivity --verbose --image-override=submariner-nettest=quay.io/submariner/nettest:0.24.1
+      ```
+      {: pre}
+
+### Option 2: Use Network Load Balancers to connect VPCs
+{: #submariner-nlb}
+
+[Hub cluster]{: tag-blue}
+
+Follow these steps to install and configure the Submariner add-on through the ACM console using Network Load Balancers. This option is supported for {{site.data.keyword.openshiftlong_notm}} clusters with VSI worker nodes only. For more detailed information, see [Deploying Submariner by using the console](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-console){: external} in the Red Hat documentation.
+
+1. Navigate to the ACM console on your hub cluster. Click **Fleet Management** > **Clusters** > **Cluster sets**.
 1. Click **Create cluster set**. Follow the prompts to add your two managed clusters to the cluster set.
 1. Click the option to install the Submariner add-on to the cluster set.
 1. Select the managed clusters as target clusters for add-on installation.
-1. When reviewing the configuration for both clusters, change the following settings as shown and leave the rest as default. Then click **Install**.
-    ```sh
-    globalnetEnabled: true (checked)
-    gateways: 2
-    NATTEnable: false (unchecked)
-    cableDriver: vxlan
-    ```
-    {: code}
-
-1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes.
+1. When reviewing the configuration for both clusters, change the following settings as shown and leave the rest as default:
+   - `globalnetEnabled: true` (checked)
+   - `gateways: 2`
+   - `NATTEnable: false` (unchecked)
+   - `cableDriver: vxlan`
+1. Click **Install**.
+1. Wait for the Submariner add-on status to show healthy (green checkmark). This can take up to 20 minutes.
 
 
 ## Step 7. Install and configure OpenShift Data Foundation

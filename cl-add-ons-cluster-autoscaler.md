@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -40,7 +40,6 @@ ibmcloud oc cluster addon versions
 
 
 
-
 ## Supported versions
 {: #cl-add-ons-cluster-autoscaler-supported-versions}
 
@@ -67,12 +66,14 @@ Review the version history for Cluster autoscaler.
 
 - Updates Go to version `1.25.13`.
 - Update storage secret sidecar 1.3.67 
+- Adds support for cluster version 1.36, Please note that zone balancing during scale-up is a known limitation in this release.
 - `1.30.7-v200-19`
 - `1.31.5-v200-19`
 - `1.32.7-v200-19`
-- `1.33.4-v200-19`
-- `1.34.4-v200-19`
-- `1.35.0-v200-19`
+- `1.33.6-v200-19`
+- `1.34.5-v200-19`
+- `1.35.2-v200-19`
+- `1.36.1-v200-19`
 
 
 ### 17 September 2026, Version 2.0.0 - v200-18-0_369390702

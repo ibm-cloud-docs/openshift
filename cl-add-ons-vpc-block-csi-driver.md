@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-01"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -40,7 +40,6 @@ ibmcloud oc cluster addon versions
 
 
 
-
 ## Supported versions
 {: #cl-add-ons-vpc-block-csi-driver-supported-versions}
 
@@ -59,6 +58,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### 30 September 2026, Version 5.2 - v5.2.63_372871485
+{: #cl-add-ons-vpc-block-csi-driver-v5263_372871485}
+
+- Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, and [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}.
+- `armada-storage-secret v1.3.67`
+- `ibm-csi-init-container v1.0.36`
 
 
 ### 28 September 2026, Version 5.2 - v5.2.62_371105267
@@ -282,6 +289,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### 30 September 2026, Version 5.1 - v5.1.63_372876804
+{: #cl-add-ons-vpc-block-csi-driver-v5163_372876804}
+
+- Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, and [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}.
+- `armada-storage-secret v1.3.67`
+- `ibm-csi-init-container v1.0.36`
 
 
 ### 28 September 2026, Version 5.1 - v5.1.62_371311380
@@ -578,6 +593,7 @@ Review the version history for VPC Block CSI Driver.
 
 - Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/cve-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/cve-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/cve-2023-5678){: external}.
 - Applies a security fix to use the correct socket path following SElinux policy module changes and CSI recommendations to use `/var/lib/kubelet/plugins/`.
+
 
 ### 27 November 2023, Version 5.1.16_446
 {: #5.1.16_446_is_block_relnote}
