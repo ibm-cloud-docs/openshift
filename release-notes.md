@@ -36,6 +36,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Classic cluster creation restriction
 :   Accounts that do not already have at least one classic cluster in a region can no longer create new classic clusters in that region. This restriction applies to all creation methods (console, CLI, API, and Terraform) in production environments. Stage environments are not affected. For more information, see [Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction).
 
+CLI version 1.0.877 is available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 ## September 2026
 {: #openshift-sep26}
 
