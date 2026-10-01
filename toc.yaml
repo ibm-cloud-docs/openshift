@@ -52,6 +52,7 @@ toc:
           label: Important notices
           topics:
           - rhel-deprecation.md
+          - classic-create-restriction.md
           - notice-vpc-iam-vpe-gateway.md
           - notice-cp-port-443.md
       - release-notes.md
