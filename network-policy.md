@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-02"
 
 
 keywords: openshift
@@ -84,7 +84,7 @@ Review the following default Calico host policies that are automatically applied
 View the details for default and any added network policies that are applied to your cluster.
 {: shortdesc}
 
-Before you begin, [install and configure the Calico CLI, and set the context for your cluster to run Calico commands](#cli_install).
+Before you begin, install and configure the Calico CLI, and set the context for your cluster to run Calico commands.
 
 1. View the Calico host endpoint.
     ```sh

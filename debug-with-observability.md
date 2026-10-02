@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-02"
 
 keywords: monitoring, logging, sysdig, cloud logs, debug, troubleshoot, observability, cluster health, dashboards
 
@@ -147,4 +147,4 @@ Kubernetes events capture important cluster activity such as pod scheduling fail
 - [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started){: external}
 - [Getting started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started){: external}
 - [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready)
-- [Setting up {{site.data.keyword.mon_full}} alerts](/docs/openshift?topic=openshift-health-monitor#monitoring-alerts)
+- [Setting up {{site.data.keyword.mon_full}} alerts](/docs/openshift?topic=openshift-health-monitor)

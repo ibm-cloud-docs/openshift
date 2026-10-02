@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-10-02"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -502,19 +502,51 @@ Updating a managed cluster's connection credentials requires the [secret](#prep-
 ## Upgrading the ACM version
 {: #upgrade}
 
-Run the command to upgrade the add-on to a new version.
+1. Run the command to upgrade the add-on to a new version.
 
-```sh
-ibmcloud oc cluster addon update acm --cluster CLUSTER_ID --version ADD-ON_VERSION
-```
-{: pre}
+    ```sh
+    ibmcloud oc cluster addon update acm --cluster CLUSTER_ID --version ADD-ON_VERSION
+    ```
+    {: pre}
 
-To check that the add-on updated, list your cluster add-ons. In the output, look for the ACM add-on details.
+2. To check that the add-on updated, list your cluster add-ons. In the output, look for the ACM add-on details.
 
-```sh
-ibmcloud oc cluster addon ls --cluster CLUSTER_ID
-```
-{: pre}
+    ```sh
+    ibmcloud oc cluster addon ls --cluster CLUSTER_ID
+    ```
+    {: pre}
+
+3. Edit the `acmhub` custom resource on your hub cluster.
+
+    ```sh
+    oc edit acmhub acm-auto
+    ```
+    {: pre}
+
+4. In the `spec` section, change the `acmUpgrade` parameter from `false` to `true`.
+
+    ```yaml
+    spec:
+      acmUpgrade: true
+    ```
+    {: codeblock}
+
+5. Save and apply your changes.
+
+6. After some time, verify that the subscription channel is updated to the latest version.
+
+    ```sh
+    oc get subs -n open-cluster-management
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    NAME                          PACKAGE                       SOURCE             CHANNEL
+    advanced-cluster-management   advanced-cluster-management   redhat-operators   release-2.17
+    ```
+    {: screen}
 
 
 ## Deleting the ACM add-on

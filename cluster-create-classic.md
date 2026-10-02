@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-02"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
 
@@ -25,8 +25,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 Classic cluster creation is restricted for accounts that do not already have a classic cluster in the target region. For more information, see [Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction).
 {: important}
 
-Already on Classic? See [Migrating Classic clusters to VPC](/docs/openshift?topic=openshift-vpc-migrate-overview) guidance.
-{: tip}
+
 
 <!--<qna:considerations>-->
 
