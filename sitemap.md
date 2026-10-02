@@ -147,8 +147,6 @@ subcollection: openshift
 
 * [Manage the lifecycle](/docs/openshift?topic=openshift-learning-path-admin#admin_lifecycle)
 
-* [Migrate Classic clusters to VPC](/docs/openshift?topic=openshift-learning-path-admin#admin_migrate)
-
 [Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev#learning-path-dev)
 
 * [Access the cluster](/docs/openshift?topic=openshift-learning-path-dev#dev_cluster)
@@ -170,8 +168,6 @@ subcollection: openshift
 * [Add app storage](/docs/openshift?topic=openshift-learning-path-dev#dev_storage)
 
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
-
-* [Migrating from Classic to VPC](/docs/openshift?topic=openshift-learning-path-dev#dev_migrate)
 
 
 ## Virtualization

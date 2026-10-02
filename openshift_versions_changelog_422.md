@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-02"
 
 
 keywords: change log, version history, 4.22_openshift
@@ -52,7 +52,7 @@ Cluster health image v1.6.19
 
 
 etcd v3.6.14
-:   See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.6.14){: external}.
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.6.14){: external}.
 
 
 IBM Cloud Block Storage driver and plug-in v2.5.28

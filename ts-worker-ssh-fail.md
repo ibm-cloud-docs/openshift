@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-10-02"
 
 
 keywords: kubernetes, openshift, help, network, connectivity
@@ -280,7 +280,7 @@ For classic clusters, the [device](https://cloud.ibm.com/gen1/infrastructure/dev
 Debug classic clusters that are connected to a public VLAN by logging in to your worker nodes.
 {: shortdesc}
         
-1. [Install and configure the Calico CLI, and set the context for your cluster to run Calico commands](/docs/openshift?topic=openshift-network_policies#cli_install).
+1. [Install and configure the Calico CLI, and set the context for your cluster to run Calico commands](/docs/openshift?topic=openshift-network_policies).
 
 2. Create a Calico global network policy that is named `ssh-open` to allow inbound SSH traffic on port 22.
 
