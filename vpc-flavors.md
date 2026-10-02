@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-10-02"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -380,6 +380,7 @@ These conditions might impact cluster flavor availability:
 | mx3d.metal.48x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3d.metal.64x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3d.metal.96x1024  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 48 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx2de.metal.96x768  \n(Memory) | eu-de-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-physical-table}
