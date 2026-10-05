@@ -47,6 +47,8 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 {: #openshift-oct0226}
 {: release-note}
 
+
+
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
