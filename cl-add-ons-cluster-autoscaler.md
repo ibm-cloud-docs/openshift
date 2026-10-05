@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-05"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -884,25 +884,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Updates the `storage-secret-sidecar` image to `v1.2.28`.
 - Updates Golang to 1.20.10.
 - Image tags: `1.22.0-109-2`, `1.23.0-109-2`, `1.24.0-109-2`, `1.25.0-109-2`, `1.26.1-109-2`, `1.27.2-109-2`.
-
-
-### 04 October 2023, Version 1.0.9 - 1.0.9_134
-{: #cl-add-ons-cluster-autoscaler-109_134}
-
-- Adds constraints to allow add-on deployment on amd64 architecture only. 
-- `1.22.0-109-1`
-- `1.23.0-109-1`
-- `1.24.0-109-1`
-- `1.25.0-109-1`
-- `1.26.1-109-1`
-- `1.27.2-109-1`
-
-
-### 04 October 2023, Version patch update 1.0.9_134
-{: #109134_ca}
-
-- Adds constraints to allow add-on deployment on `amd64` architecture only.
-- Image tags: `1.22.0-109-1`, `1.23.0-109-1`, `1.24.0-109-1`, `1.25.0-109-1`, `1.26.1-109-1`, `1.27.2-109-1`.
 
 
 

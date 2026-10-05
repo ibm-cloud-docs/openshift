@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-05"
 
 
 keywords: openshift
@@ -537,6 +537,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [5 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0526)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
     * [2 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0226)
 
@@ -8659,10 +8663,6 @@ subcollection: openshift
 
     * [13 November 2023, Version patch update 1.0.9_195](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109195_ca)
 
-    * [04 October 2023, Version 1.0.9 - 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-109_134)
-
-    * [04 October 2023, Version patch update 1.0.9_134](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
-
     * [01 February 2024, Version 1.0.8 - 1.0.8_346](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-108_346)
 
     * [27 November 2023, Version 1.0.8 - 1.0.8_292](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-108_292)
@@ -9408,6 +9408,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [05 October 2026, Version 1.0.0 - 1.0.0_373100393](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_373100393)
 
     * [14 September 2026, Version 1.0.0 - 1.0.0_367585595](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_367585595)
 
