@@ -10489,7 +10489,7 @@ ibmcloud ks vni help
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks vni ls (--cluster-id ID | --worker WORKER) [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
 ```
 
 #### Command options
