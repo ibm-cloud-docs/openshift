@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-25"
+lastupdated: "2026-10-06"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -10489,7 +10489,7 @@ ibmcloud ks vni help
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks vni ls (--cluster-id ID | --worker WORKER) [--after AFTER] [--first FIRST] [--output OUTPUT] [-q]
+ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 
 #### Command options
