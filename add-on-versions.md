@@ -22,8 +22,6 @@ Review the supported cluster add-ons. Each add-on version can be used on any clu
 
 
 
-
-
 ACM `2.16.0`
 :   Supported OpenShift versions: `>=4.19.0 <4.22.0`
 
