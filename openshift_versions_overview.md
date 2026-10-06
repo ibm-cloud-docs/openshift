@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-09-29"
+lastupdated: "2026-10-06"
 
 keywords: openshift, version, update, upgrade
 
@@ -54,7 +54,6 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 
 <!--<qna:latest-version>-->
-
 
 
 

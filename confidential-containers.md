@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-10-06"
 
 keywords: confidential containers
 
@@ -245,7 +245,6 @@ If you are testing out confidential containers, you can use an API key. If you a
             ```
             {: pre}
 
-   
 
 
 
