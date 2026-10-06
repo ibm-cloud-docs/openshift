@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2022, 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-10-06"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -64,4 +64,4 @@ OpenShift Data Foundation `4.20.0`
 :   Supported OpenShift versions: `>=4.20.0 <4.22.0`
 
 OpenShift Data Foundation `4.21.0`
-:   Supported OpenShift versions: `>=4.21.0 <4.22.0`
+:   Supported OpenShift versions: `>=4.21.0 <4.23.0`

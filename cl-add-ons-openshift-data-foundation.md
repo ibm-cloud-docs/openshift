@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-06"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -40,7 +40,7 @@ ibmcloud oc cluster addon versions
 
 | Add-on version | Supported OpenShift versions |
 |---|---|
-| `4.21.0` | `>=4.21.0 <4.22.0` |
+| `4.21.0` | `>=4.21.0 <4.23.0` |
 | `4.20.0` | `>=4.20.0 <4.22.0` |
 | `4.19.0` | `>=4.19.0 <4.21.0` |
 | `4.18.0` | `>=4.18.0 <4.20.0` |
