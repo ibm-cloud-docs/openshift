@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-10-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -156,7 +156,7 @@ You can manually configure an {{site.data.keyword.cos_full_notm}} bucket for you
       --bucket "$COS_BUCKET_NAME" \
       --ibm-service-instance-id "$COS_INSTANCE_ID" \
       --class standard \
-      --region <region>
+      --region REGION
     ```
     {: pre}
 

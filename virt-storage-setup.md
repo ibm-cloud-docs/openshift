@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-10-06"
 
 keywords: openshift, virtualization, storage, odf, vpc file, openshift data foundation
 
@@ -130,7 +130,7 @@ For more information about ODF parameters, see [OpenShift Data Foundation parame
 2. Enable the OpenShift Data Foundation add-on with automatic disk discovery and virtualization support.
    ```sh
    ibmcloud oc cluster addon enable openshift-data-foundation \
-     -c <cluster-name> \
+     -c CLUSTER-NAME \
      --version 4.20.0 \
      --param "odfDeploy=true" \
      --param "osdStorageClassName=localblock" \

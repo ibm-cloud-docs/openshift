@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-10-06"
 
 keywords: openshift, roks, no cos, no registry, emptydir, image registry, internal registry, icr, fs cloud, financial services
 
@@ -95,13 +95,13 @@ When you omit the `--cos-instance` option from the cluster creation command, the
 2. Create the cluster. Replace the placeholder values with your own cluster name, zone, {{site.data.keyword.redhat_openshift_notm}} version, worker node flavor, VPC ID, and subnet ID.
     ```sh
     ibmcloud oc cluster create vpc-gen2 \
-      --name <cluster-name> \
-      --zone <zone> \
-      --version <openshift-version> \
-      --flavor <worker-flavor> \
-      --workers <number-of-workers> \
-      --vpc-id <vpc-id> \
-      --subnet-id <subnet-id>
+      --name CLUSTER-NAME \
+      --zone ZONE \
+      --version OPENSHIFT-VERSION \
+      --flavor WORKER-FLAVOR \
+      --workers NUMBER-OF-WORKERS \
+      --vpc-id VPC-ID \
+      --subnet-id SUBNET-ID
     ```
     {: pre}
 

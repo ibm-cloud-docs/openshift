@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-09-03"
+lastupdated: "2026-10-06"
 
 keywords: openshift, odf, openshift data foundation, virtualization, performance, osd, ceph, bulk flag, resource limits
 
@@ -55,8 +55,8 @@ From the CLI, include `--param "resourceProfile=performance"` when you enable th
 
 ```sh
 ibmcloud oc cluster addon enable openshift-data-foundation \
-  -c <cluster-name> \
-  --version <addon-version> \
+  -c CLUSTER-NAME \
+  --version ADDON-VERSION \
   --param "odfDeploy=true" \
   --param "osdStorageClassName=localblock" \
   --param "autoDiscoverDevices=true" \
