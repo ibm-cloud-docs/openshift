@@ -60,6 +60,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 
 
+
 ### VPC clusters
 {: #os-vpc-gen2}
 

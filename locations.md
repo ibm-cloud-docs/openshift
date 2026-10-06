@@ -47,6 +47,8 @@ This image is an artistic representation and does not reflect actual political o
 {: note}
 
 
+
+
 | Geography | Country | Metro | Region | Zones |
 | --- | --- | --- | --- | --- |
 | Asia Pacific | Australia | Sydney | au-syd | au-syd-1, au-syd-2, au-syd-3 |
@@ -87,6 +89,8 @@ This image is an artistic representation and does not reflect actual political o
 {: note}
 
 
+
+
 | Geography | Country | Metro | Region | Zones |
 | --- | --- | --- | --- | --- |
 | Asia Pacific | Australia | Sydney | au-syd | syd01, syd04, syd05 |
@@ -115,6 +119,8 @@ Classic regions with one data center are managed from the regional endpoint loca
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
+
+
 
 
 | Geography | Country | Metro | Region | Zone | Managed from region |
