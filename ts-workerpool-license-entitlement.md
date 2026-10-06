@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-10-06"
 
 keywords: license, entitlement, OCP, Cloud Pak, {{site.data.keyword.openshiftlong_notm}}
 
@@ -27,13 +27,16 @@ If no match is found, then you do not have a supported license or entitlement.
 ```
 {: screen}
 
-The Cloud Pak license might not be assigned to your IBM Cloud account.
+The Cloud Pak license might not be assigned to your IBM Cloud account. If your OpenShift license was acquired through Passport Advantage, the entitlement key owner's IBMid might not be added to your IBM Cloud account.
 {: tsCauses}
 
-Follow the steps to check your existing licenses and to assign the Cloud Pak license to your IBM Cloud account. 
+Follow the steps to check your existing licenses and to assign the Cloud Pak license to your IBM Cloud account.
 {: tsResolve}
 
-Before you begin, make sure that you have at least the Editor platform access role for License and Entitlement. 
+Before you begin, complete the following prerequisite steps.
+
+- Make sure that you have at least the Editor platform access role for the License and Entitlement account management service.
+- If your OpenShift license was acquired through Passport Advantage, make sure that the entitlement key owner's IBMid is added to the IBM Cloud account where the cluster is being created, and that the owner is assigned the Administrator role on the License and Entitlement account management service.
 
 1. Log in to the [IBM Cloud console](https://cloud.ibm.com/){: external} and navigate to `Manage` > `Account`.
 2. Click `Licenses and entitlements`.
