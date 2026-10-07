@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-29"
+lastupdated: "2026-10-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -376,6 +376,11 @@ For VPC VSI workers, the worker node is deleted and replaced with a new node. Fo
 
 If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up) instead of the steps on this page.
 {: important}
+
+
+If you have OpenShift Data Foundation deployed in your cluster, follow the steps to [update VPC worker nodes with OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc) instead of the steps on this page.
+{: important}
+
 
 #### Pre-update actions (complete in order)
 {: #vpc-worker-prereq-actions}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-05"
+lastupdated: "2026-10-07"
 
 
 keywords: openshift
@@ -538,6 +538,10 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
+    * [7 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0726)
+
+        * Cluster autoscaler cluster add-on patch updates.
+
     * [5 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0526)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -717,6 +721,10 @@ subcollection: openshift
         * VPC File CSI Driver cluster add-on patch updates.
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+
+    * [4 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0426)
+
+        * ACM cluster add-on patch updates.
 
     * [3 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0326)
 
@@ -7753,6 +7761,8 @@ subcollection: openshift
 
     * [`ibmcloud ks experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
 
+    * [`ibmcloud ks experimental update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-update-versions-cli)
+
 * [Flavor commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
 
     * [`ibmcloud ks flavor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-cli)
@@ -8407,6 +8417,62 @@ subcollection: openshift
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
+[ACM add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm)
+
+* [Version 2.17.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.17.0)
+
+    * [06 October 2026, Version 2.17.0 - 2.17.7](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2177)
+
+    * [30 September 2026, Version 2.17.0 - 2.17.6](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2176)
+
+    * [29 September 2026, Version 2.17.0 - 2.17.4](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2174)
+
+    * [29 September 2026, Version 2.17.0 - 2.17.5](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2175)
+
+    * [01 September 2026, Version 2.17.0 - 2.17.3](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2173)
+
+    * [04 August 2026, Version 2.17.0 - 2.17.1](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2171)
+
+    * [04 August 2026, Version 2.17.0 - 2.17.2](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2172)
+
+* [Version 2.16.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.16.0)
+
+    * [06 October 2026, Version 2.16.0 - 2.16.18](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21618)
+
+    * [30 September 2026, Version 2.16.0 - 2.16.17](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21617)
+
+    * [29 September 2026, Version 2.16.0 - 2.16.16](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21616)
+
+    * [01 September 2026, Version 2.16.0 - 2.16.15](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21615)
+
+    * [16 June 2026, Version 2.16.0 - 2.16.12](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21612)
+
+    * [16 June 2026, Version 2.16.0 - 2.16.13](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21613)
+
+    * [03 June 2026, Version 2.16.0 - 2.16.10](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21610)
+
+    * [03 June 2026, Version 2.16.0 - 2.16.11](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21611)
+
+    * [02 June 2026, Version 2.16.0 - 2.16.7](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2167)
+
+    * [02 June 2026, Version 2.16.0 - 2.16.8](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2168)
+
+    * [02 June 2026, Version 2.16.0 - 2.16.9](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2169)
+
+    * [11 May 2026, Version 2.16.0 - 2.16.4](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2164)
+
+    * [11 May 2026, Version 2.16.0 - 2.16.5](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2165)
+
+    * [11 May 2026, Version 2.16.0 - 2.16.6](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2166)
+
+    * [07 May 2026, Version 2.16.0 - 2.16.3](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2163)
+
+    * [15 April 2026, Version 2.16.0 - 2.16.1](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2161)
+
+    * [15 April 2026, Version 2.16.0 - 2.16.2](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2162)
+
+    * [06 April 2026, Version 2.16.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2160)
+
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-supported-versions)
@@ -8512,6 +8578,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-supported-versions)
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
+
+    * [07 October 2026, Version 2.0.0 - v200-20-0_374701188](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-20-0_374701188)
 
     * [30 September 2026, Version 2.0.0 - v200-19-1_372827987](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-19-1_372827987)
 

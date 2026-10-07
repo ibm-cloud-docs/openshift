@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-09-21"
+lastupdated: "2026-10-07"
 
 keywords: kubernetes, openshift
 
@@ -187,7 +187,7 @@ Set and unset credentials that allow you to access the IBM Cloud classic infrast
 ## `experimental` commands
 {: #icks_map_experimental}
 
-[Expires on 2026-10-21] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
+[Expires on 2026-11-01] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 
 * **`experimental trusted-profile`**: [Expires on 2026-10-21] View and set the trusted profile on a cluster or the default trusted profile for clusters created in a resource-group.
 * **`experimental vni`**: [Deactivated on 2026-05-20! Use `ibmcloud ks vni` instead] Attach, detach, and list Virtual Network Interfaces on worker nodes.
@@ -198,6 +198,7 @@ Set and unset credentials that allow you to access the IBM Cloud classic infrast
     * [`ibmcloud ks experimental trusted-profile get`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-trusted-profile-get-cli)
     * [`ibmcloud ks experimental trusted-profile help`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-trusted-profile-help-cli)
     * [`ibmcloud ks experimental trusted-profile set`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-trusted-profile-set-cli)
+    * [`ibmcloud ks experimental update-versions`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-update-versions-cli)
 
 
 ## `flavor` commands

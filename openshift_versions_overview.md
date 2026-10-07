@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -114,34 +114,34 @@ Unsupported versions:
 ## Release lifecycle
 {: #release_lifecycle}
 
-Each supported version of {{site.data.keyword.openshiftlong_notm}} goes through a lifecycle of testing, development, general release, support, deprecation, and becoming unsupported. Review the descriptions of each phase of a version's lifecycle. 
+Each supported version of {{site.data.keyword.openshiftlong_notm}} goes through a lifecycle of testing, development, general release, support, deprecation, and becoming unsupported. Review the descriptions of each phase of a version's lifecycle.
 
 Estimated days and versions are provided for general understanding. Actual availability and release dates are subject to change and depend on various factors, such as community updates, security patches, and technology changes between versions.
 {: note}
 
 1. **Community release**: The community releases the new version. IBM engineers begin testing and hardening the community version in preparation to release a supported {{site.data.keyword.openshiftlong_notm}} version.
 2. **Supported version lifecycle**:
-    
+
     Development release
-    :   Release is under development and might be available as a Beta to select customers. IBM provides best effort support for the release.
+    :   Release is under development and might be available as a Beta to select customers. IBM provides best-effort support for the release.
 
     General availability
-    :   Release is generally available (GA). IBM provides full support for the release. IBM provides a tentative target date for the release to be unsupported. Release becomes the default version used during cluster creation once there are minimal restrictions and a reasonable adoption rate for the release.
+    :   Release is generally available (GA). IBM provides full support for the release and provides a tentative target date for when the release becomes unsupported. The release becomes the default version used during cluster creation once there are minimal restrictions and a reasonable adoption rate.
 
     Maintenance
-    :   Release has entered maintenance support as defined by Red Hat support. IBM provides maintenance support for OpenShift based on Red Hat policy. IBM provides full support otherwise.
+    :   Release has entered maintenance support as defined by Red Hat. IBM provides maintenance support for OpenShift based on Red Hat policy. IBM provides full support otherwise.
 
     Extended support
     :   Release has entered extended support as defined by Red Hat. IBM provides extended support for OpenShift based on Red Hat policy. IBM provides full support otherwise.
 
-3. **Deprecated version**: The version is deprecated. IBM provides an updated unsupported target date for the release. An unsupported countdown to this date is provided at least 45 days before the release becomes unsupported. IBM provides minimal support for the release in alignment with Red Hat support. This support phase is generally the final phase before the release becomes unsupported and overrides the maintenance and extended support phases should there be any overlap. Security patch updates might not be provided. During the deprecation period, the version is still supported and your cluster is still functional, but might require updating to a supported release to fix security vulnerabilities. For example, by adding or reloading worker nodes.
+3. **Deprecated version**: The version is deprecated. IBM provides an updated unsupported target date for the release. An unsupported countdown to this date is provided at least 45 days before the release becomes unsupported. IBM provides support for the release in alignment with Red Hat support policy during this phase. This support phase is the final phase before the release becomes unsupported and overrides the maintenance and extended support phases if there is any overlap. Security patch updates might not be provided. During the deprecation period, the version is still supported and your cluster is still functional, but you must update your cluster control plane and worker nodes to a supported version to fix security vulnerabilities.
 
-4. **Unsupported version**: The version is unsupported. IBM only provides support to upgrade to a supported release. The version is unsupported. Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If the cluster master runs two or more versions behind the oldest supported version, you can no longer apply updates and must delete the cluster and create a new one.
+4. **Unsupported version**: The version is unsupported. IBM provides support only to help you upgrade to a supported release. Unsupported clusters are not provided with security or patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster control plane or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If the cluster control plane runs two or more versions behind the oldest supported version, you can no longer apply updates and must delete the cluster and create a new one.
 
     Clusters running an unsupported version will eventually fail because cluster certificates expire. Failures might include, but aren't limited to, an unavailable cluster control plane, `NotReady` worker nodes, or an unhealthy Ingress.
     {: important}
 
-5. **Archived**: The version is unsupported with no upgrade path. IBM provides no support. IBM reserves the right to shut down the control planes for such clusters.
+5. **Archived**: The version is unsupported with no upgrade path available. IBM provides no support and reserves the right to shut down the control planes for archived clusters.
 
 
 
@@ -151,8 +151,7 @@ Estimated days and versions are provided for general understanding. Actual avail
 
 IBM provides bi-weekly worker node fix packs. IBM's goal is to remediate detected, legitimate vulnerabilities within an appropriate time for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
 
-For {{site.data.keyword.redhat_openshift_notm}}, fix packs are applied to the latest minor release and patch for the targeted operating system. 
-- For RHEL8 that is 8.9.
+For {{site.data.keyword.redhat_openshift_notm}}, fix packs are applied to the latest minor release and patch for the targeted operating system.
 
 To keep your nodes secure, you must install worker node fix packs as soon as possible. You can subscribe to notifications to be alerted when a new update is available.
 

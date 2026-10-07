@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-07"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -4806,7 +4806,7 @@ ibmcloud ks credential unset --region REGION
 ## Experimental commands
 {: #experimental-cli}
 
-[Expires on 2026-10-21] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
+[Expires on 2026-11-01] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 
 
 ### `ibmcloud ks experimental help`
@@ -5033,6 +5033,42 @@ ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile
 
 ```sh
 ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE
+```
+{: pre}
+
+
+### `ibmcloud ks experimental update-versions`
+{: #experimental-update-versions-cli}
+
+
+
+[Expires on 2026-11-01] List the possible versions that the cluster master can be updated to.
+
+```sh
+ibmcloud ks experimental update-versions --cluster CLUSTER [--output OUTPUT] [-q]
+```
+
+#### Command options
+{: #experimental-update-versions-options}
+
+
+`-c`, `--cluster`
+:    Specify the cluster name or ID.
+
+`--output`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+
+#### Examples
+{: #experimental-update-versions-examples}
+
+[Expires on 2026-11-01] List the possible versions that the cluster master can be updated to
+
+```sh
+ibmcloud ks experimental update-versions --cluster CLUSTER
 ```
 {: pre}
 
