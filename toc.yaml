@@ -533,6 +533,7 @@ toc:
           label: Add-on version history
           topics:
           - add-on-versions.md
+          - cl-add-ons-acm.md
           - cl-add-ons-openshift-ai.md
           - cl-add-ons-cluster-autoscaler.md
           - cl-add-ons-ibm-storage-operator.md
