@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-05"
+lastupdated: "2026-10-07"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -59,6 +59,21 @@ Review the version history for Cluster autoscaler.
 
 ## Version 2.0.0
 {: #cl-add-ons-cluster-autoscaler-2.0.0}
+
+
+### 07 October 2026, Version 2.0.0 - v200-20-0_374701188
+{: #cl-add-ons-cluster-autoscaler-v200-20-0_374701188}
+
+- Updates Go to version `1.25.4`.
+- Updated the Storage Secret Sidecar to version 1.3.68. 
+- Fixed a zone balancing issue during scale-up operations in Kubernetes 1.36 clusters. 
+- `1.30.7-v200-20`
+- `1.31.5-v200-20`
+- `1.32.7-v200-20`
+- `1.33.6-v200-20`
+- `1.34.5-v200-20`
+- `1.35.2-v200-20`
+- `1.36.1-v200-20`
 
 
 ### 30 September 2026, Version 2.0.0 - v200-19-1_372827987

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-05"
+lastupdated: "2026-10-07"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2026
 {: #openshift-oct26}
+
+### 7 October 2026
+{: #openshift-oct0726}
+{: release-note}
+
+Cluster autoscaler cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 ### 5 October 2026
 {: #openshift-oct0526}
@@ -499,6 +506,13 @@ VPC File CSI Driver cluster add-on patch updates.
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 
 
+
+### 4 August 2026
+{: #openshift-aug0426}
+{: release-note}
+
+ACM cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-acm).
 
 ### 3 August 2026
 {: #openshift-aug0326}
