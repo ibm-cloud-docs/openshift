@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-07"
+lastupdated: "2026-10-08"
 
 
 keywords: openshift
@@ -541,6 +541,10 @@ subcollection: openshift
     * [7 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0726)
 
         * Cluster autoscaler cluster add-on patch updates.
+
+    * [6 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0626)
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
 
     * [5 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0526)
 
@@ -6128,6 +6132,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_422#changelog_overview_422)
 
+* [06 October 2026, Worker node fix pack 4.22.16_1523_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42216_1523_openshift_W)
+
 * [28 September 2026, Master fix pack 4.22.13_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms_master-42213_1519_openshift_M)
 
 [4.22 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-422#cis-benchmark-422)
@@ -6244,6 +6250,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_421#changelog_overview_421)
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
+
+* [06 October 2026, Worker node fix pack 4.21.35_1535_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42135_1535_openshift_W)
 
 * [21 September 2026, Worker node fix pack 4.21.33_1532_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42133_1532_openshift_W)
 
@@ -6389,6 +6397,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+* [06 October 2026, Worker node fix pack 4.20.40_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42040_1566_openshift_W)
 
 * [21 September 2026, Worker node fix pack 4.20.38_1563_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42038_1563_openshift_W)
 
@@ -6542,6 +6552,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+* [06 October 2026, Worker node fix pack 4.19.49_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41949_1596_openshift_W)
 
 * [21 September 2026, Worker node fix pack 4.19.47_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41947_1593_openshift_W)
 
@@ -6729,6 +6741,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+* [06 October 2026, Worker node fix pack 4.18.56_1611_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41856_1611_openshift_W)
 
 * [21 September 2026, Worker node fix pack 4.18.55_1605_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41855_1605_openshift_W)
 
@@ -6940,6 +6954,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+* [06 October 2026, Worker node fix pack 4.17.58_1603_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41758_1603_openshift_W)
 
 * [21 September 2026, Worker node fix pack 4.17.57_1600_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41757_1600_openshift_W)
 
@@ -8416,62 +8432,6 @@ subcollection: openshift
 
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
-
-[ACM add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm)
-
-* [Version 2.17.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.17.0)
-
-    * [06 October 2026, Version 2.17.0 - 2.17.7](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2177)
-
-    * [30 September 2026, Version 2.17.0 - 2.17.6](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2176)
-
-    * [29 September 2026, Version 2.17.0 - 2.17.4](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2174)
-
-    * [29 September 2026, Version 2.17.0 - 2.17.5](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2175)
-
-    * [01 September 2026, Version 2.17.0 - 2.17.3](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2173)
-
-    * [04 August 2026, Version 2.17.0 - 2.17.1](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2171)
-
-    * [04 August 2026, Version 2.17.0 - 2.17.2](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2172)
-
-* [Version 2.16.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.16.0)
-
-    * [06 October 2026, Version 2.16.0 - 2.16.18](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21618)
-
-    * [30 September 2026, Version 2.16.0 - 2.16.17](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21617)
-
-    * [29 September 2026, Version 2.16.0 - 2.16.16](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21616)
-
-    * [01 September 2026, Version 2.16.0 - 2.16.15](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21615)
-
-    * [16 June 2026, Version 2.16.0 - 2.16.12](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21612)
-
-    * [16 June 2026, Version 2.16.0 - 2.16.13](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21613)
-
-    * [03 June 2026, Version 2.16.0 - 2.16.10](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21610)
-
-    * [03 June 2026, Version 2.16.0 - 2.16.11](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21611)
-
-    * [02 June 2026, Version 2.16.0 - 2.16.7](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2167)
-
-    * [02 June 2026, Version 2.16.0 - 2.16.8](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2168)
-
-    * [02 June 2026, Version 2.16.0 - 2.16.9](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2169)
-
-    * [11 May 2026, Version 2.16.0 - 2.16.4](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2164)
-
-    * [11 May 2026, Version 2.16.0 - 2.16.5](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2165)
-
-    * [11 May 2026, Version 2.16.0 - 2.16.6](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2166)
-
-    * [07 May 2026, Version 2.16.0 - 2.16.3](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2163)
-
-    * [15 April 2026, Version 2.16.0 - 2.16.1](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2161)
-
-    * [15 April 2026, Version 2.16.0 - 2.16.2](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2162)
-
-    * [06 April 2026, Version 2.16.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2160)
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
