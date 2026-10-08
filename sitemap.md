@@ -7763,6 +7763,12 @@ subcollection: openshift
 
 * [Experimental commands](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cli)
 
+    * [`ibmcloud ks experimental cluster help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-help-cli)
+
+    * [`ibmcloud ks experimental cluster master help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-master-help-cli)
+
+    * [`ibmcloud ks experimental cluster master update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-master-update-versions-cli)
+
     * [`ibmcloud ks experimental help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-help-cli)
 
     * [`ibmcloud ks experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
@@ -7776,8 +7782,6 @@ subcollection: openshift
     * [`ibmcloud ks experimental trusted-profile help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-help-cli)
 
     * [`ibmcloud ks experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
-
-    * [`ibmcloud ks experimental update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-update-versions-cli)
 
 * [Flavor commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
 
