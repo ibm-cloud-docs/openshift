@@ -2646,6 +2646,8 @@ subcollection: openshift
 
 * [Changing the maximum transmission unit (MTU) for clusters using Calico](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
+* [OVN-Kubernetes MTU limitation](/docs/openshift?topic=openshift-kernel#ovn-kubernetes-mtu)
+
 * [Disabling the port map plug-in in Calico](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
 [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
@@ -7763,6 +7765,12 @@ subcollection: openshift
 
 * [Experimental commands](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cli)
 
+    * [`ibmcloud ks experimental cluster help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-help-cli)
+
+    * [`ibmcloud ks experimental cluster master help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-master-help-cli)
+
+    * [`ibmcloud ks experimental cluster master update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-master-update-versions-cli)
+
     * [`ibmcloud ks experimental help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-help-cli)
 
     * [`ibmcloud ks experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
@@ -7776,8 +7784,6 @@ subcollection: openshift
     * [`ibmcloud ks experimental trusted-profile help`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-help-cli)
 
     * [`ibmcloud ks experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
-
-    * [`ibmcloud ks experimental update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-update-versions-cli)
 
 * [Flavor commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
 

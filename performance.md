@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-10-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -382,6 +382,16 @@ If you are completing these steps on a production cluster, you should use the sa
 
 During the reboot process, some pods use the new larger MTU and some pods still have the original, smaller MTU. Typically, this scenario does not cause issues because both sides negotiate the correct max packet size. However, if you block ICMP packets, the negotiation might not work and your cluster might experience pod connection issues until all reboots have completed. It is critical that this process is first tested on a development cluster. 
 {: important}
+
+
+## OVN-Kubernetes MTU limitation
+{: #ovn-kubernetes-mtu}
+
+The OVN-Kubernetes MTU is fixed and cannot be changed.
+{: shortdesc}
+
+Changing the OVN-Kubernetes MTU is not supported. The MTU value is set by {{site.data.keyword.openshiftlong_notm}} and cannot be modified either at cluster creation time or afterward. For standard {{site.data.keyword.openshiftlong_notm}} clusters, the OVN MTU is 1400 bytes and the worker node MTU is 1500 bytes. For OpenShift Virtualization Service clusters, the OVN MTU is 8900 bytes and the worker node MTU is 9000 bytes.
+{: restriction}
 
 
 
