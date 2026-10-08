@@ -2646,6 +2646,8 @@ subcollection: openshift
 
 * [Changing the maximum transmission unit (MTU) for clusters using Calico](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
+* [OVN-Kubernetes MTU limitation](/docs/openshift?topic=openshift-kernel#ovn-kubernetes-mtu)
+
 * [Disabling the port map plug-in in Calico](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
 [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
