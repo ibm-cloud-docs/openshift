@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-09"
 
 
 keywords: openshift
@@ -3204,6 +3204,8 @@ subcollection: openshift
     * [Shared VPE gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#shared-gateways)
 
     * [Non-shared VPE gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#non-shared-gateways)
+
+    * [Accessing the cluster master VPE gateway from another VPC](/docs/openshift?topic=openshift-vpc-security-group-reference#non-shared-gateway-cross-vpc)
 
 * [Managed security groups](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-groups)
 

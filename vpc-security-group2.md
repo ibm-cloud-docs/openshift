@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-10-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -61,7 +61,7 @@ The following VPE gateways are created automatically when you create a VPC clust
 ### Non-shared VPE gateways
 {: #non-shared-gateways}
 
-All supported VPC clusters have a VPE Gateway for the cluster master that gets created in your account when the cluster gets created. 
+All supported VPC clusters have a VPE Gateway for the cluster master that gets created in your account when the cluster gets created.
 
 | VPE Gateway | Description |
 | --- | --- |
@@ -70,6 +70,14 @@ All supported VPC clusters have a VPE Gateway for the cluster master that gets c
 {: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description."}
 
 † For example, if the cluster has workers in only a single zone region (`us-east-1`) and single VPC subnet, then a single IP is created in that subnet and assigned to the VPE Gateway. If a cluster has workers in all three zones like `us-east-1`, `us-east-2`, and `us-east-3` and these workers are spread out among 4 VPC subnets in each zone, then 12 VPC subnets altogether, three IPs are created, one in each zone, in one of the four VPC subnets in that zone. Note that the subnet is chosen at random.
+
+### Accessing the cluster master VPE gateway from another VPC
+{: #non-shared-gateway-cross-vpc}
+
+The cluster master VPE gateway is used by cluster workers and by any resource in the same VPC to access the cluster master API server over the private network. If you need to connect to the cluster master privately from a different VPC in the same account, you can create an additional VPE gateway in that other VPC that targets the same cluster master.
+
+To do this, use the target CRN from the cluster master VPE gateway that {{site.data.keyword.openshiftlong_notm}} creates. You must supply your own Reserved IPs for the new gateway, and you must create and manage the security group and its rules. Outbound rules on a VPE gateway have no effect — only inbound rules are evaluated. {{site.data.keyword.openshiftlong_notm}} does not manage or modify the VPE gateway or security group that you create.
+{: note}
 
 
 
@@ -83,7 +91,7 @@ All supported VPC clusters have a VPE Gateway for the cluster master that gets c
 | [Worker security group](#vpc-sg-kube-clusterid) | `kube-<clusterID>` |
 | [Master VPE gateway security group](#vpc-sg-kube-vpegw-cluster-id) | `kube-vpegw-<clusterID>` |
 | [Shared VPE gateway security group](#vpc-sg-kube-vpegw-vpc-id) | `kube-vpegw-<vpcID>` |
-| [Load balancer services security group](#vpc-sg-kube-vpegw-vpc-id) | `kube-lbaas-<clusterID>` |
+| [Load balancer services security group](#vpc-sg-kube-lbaas-cluster-ID) | `kube-lbaas-<clusterID>` |
 {: caption="Managed security groups" caption-side="bottom"}
 {: summary="The table shows the managed security groups created for VPC clusters. The first column includes name of the security group. The second column includes the naming convention."}
 
@@ -96,8 +104,9 @@ When you create an {{site.data.keyword.openshiftlong_notm}} VPC cluster, a secur
 - The name of the security group is `kube-<clusterID>` where `<clusterID>` is the ID of the cluster.
 - If new nodes are added to the cluster later, those nodes are added to the cluster security group automatically.
 - Rules are dynamically added or removed as needed by load balancers.
-- Rules that are added in the node port range are automatically removed if they aren't needed. If customers want to allow incoming traffic to a node port service, you must add the rule to allow traffic after you created the node port service.
-- Do not modify the rules in the `kube-<clusterID>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster.
+- {{site.data.keyword.openshiftlong_notm}} monitors only inbound TCP and UDP rules in the node port range on the `kube-<clusterID>` security group. If {{site.data.keyword.openshiftlong_notm}} detects a rule in the node port range and there is no corresponding node port service, it removes the rule. To allow inbound traffic to a node port service, add the required rule to the `kube-<clusterID>` security group after the node port service is created, not before.
+- Extra rules that you add to the `kube-<clusterID>` security group outside of the node port range are ignored by {{site.data.keyword.openshiftlong_notm}} and left in place.
+- Do not modify or remove the default rules in the `kube-<clusterID>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control plane.
 
 
 | Description | Direction | Protocol | Ports or values | Source or destination |
@@ -162,28 +171,62 @@ To allow access to a cluster's master only from its worker nodes a security grou
 ### Shared VPE gateway security group
 {: #vpc-sg-kube-vpegw-vpc-id}
 
-Shared VPE gateways are created when the first cluster in a VPC is provisioned.The shared VPE gateway security group is created when you create a cluster (if it doesn't already exist from previous clusters). The name of the security group is `kube-vpegw-<vpcID>` where `<vpcID>` is the the ID of your VPC. A remote rule is then created that allows Ingress connectivity from the cluster worker security group for the given cluster. The shared VPE gateway security group contains the VPE gateways that are shared by all clusters in that VPC. Shared VPE gateways might be added in later versions to allow connections to other IBM Cloud Services.
+The shared VPE gateway security group is created when you provision the first cluster in a VPC. The name of the security group is `kube-vpegw-<vpcID>` where `<vpcID>` is the ID of your VPC. This security group is attached to all the shared VPE gateways in the VPC, and it controls which resources are allowed to send traffic through those gateways.
 
-If this shared VPE gateway security group already exists when a cluster is provisioned, it is recognized by the provisioning process and is not recreated. However, a remote rule is still added between the existing shared VPE gateway security group and the new worker security group. This is done so that connectivity is allowed from all clusters in the given VPC. One rule is created for each cluster in the VPC. 
+When each additional cluster is provisioned in the same VPC, a single inbound remote rule is added to this security group that allows traffic from the new cluster's `kube-<clusterID>` worker security group. One rule is created for each cluster in the VPC. If the `kube-vpegw-<vpcID>` security group already exists when a cluster is provisioned, it is recognized and reused — it is not recreated.
 
 Each cluster creation also adds security groups, and a VPC supports a maximum of 100 security groups. This limit is reached around 33 clusters, so a maximum of 25 clusters per VPC is recommended. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
 {: important}
 
 | Description | Direction | Protocol | Source or destination |
-| ---- | ---- | ---- | ---- | 
+| ---- | ---- | ---- | ---- |
 | Allows inbound traffic from the specified cluster. | Inbound | TCP | `kube-<clusterID>` |
 {: caption="Inbound rules in the shared VPE gateway security group" caption-side="bottom"}
 {: summary="The table shows the inbound rules applied to the shared VPE gateway security group. The first column includes the purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes remote destination of the rule."}
+
+You can add inbound rules to the `kube-vpegw-<vpcID>` security group, for example to allow VSIs or other resources in your VPC to access the shared VPE gateways. {{site.data.keyword.openshiftlong_notm}} does not remove rules that you add during normal cluster operations, including when additional clusters are provisioned in the VPC. For guidance on allowing VSIs to access shared VPE gateways, see [Why can't my VSIs access the VPE gateway?](/docs/openshift?topic=openshift-ts-sbd-vsi-vpe).
+
+Running `ibmcloud oc security-group reset` deletes all rules in the security group, including any rules that you added, and restores only the default {{site.data.keyword.openshiftlong_notm}} rules.
+{: important}
+
+If your VPC contains VSIs or other resources that need access to shared cloud service endpoints (such as `icr.io` or `s3.direct`) before any cluster is provisioned, you can create the `kube-vpegw-<vpcID>` security group and the shared VPE gateways yourself. When a {{site.data.keyword.openshiftlong_notm}} cluster is later provisioned in the VPC, it finds the existing security group and reuses it, and adds a new inbound rule for the new cluster's worker security group.
+
+When you create a shared VPE gateway yourself, attach the `kube-vpegw-<vpcID>` security group to it. {{site.data.keyword.openshiftlong_notm}} does not automatically attach its security group to gateways that it did not create.
+{: note}
+
+{{site.data.keyword.openshiftlong_notm}} identifies the shared VPE gateways it manages by their name prefix. Gateways created by {{site.data.keyword.openshiftlong_notm}} use the `iks-` naming convention. Shared VPE gateways and the `kube-vpegw-<vpcID>` security group are not deleted when a cluster is removed from the VPC. {{site.data.keyword.openshiftlong_notm}} does not modify the Reserved IPs of shared VPE gateways that it did not create. If you rename a gateway that {{site.data.keyword.openshiftlong_notm}} created (removing the `iks-` prefix), {{site.data.keyword.openshiftlong_notm}} stops managing that gateway's Reserved IPs. This is the supported way to take ownership of a gateway created by {{site.data.keyword.openshiftlong_notm}} without disrupting existing connectivity.
+
+In a hub and spoke VPC configuration where spoke VPCs delegate DNS resolution to a hub VPC, {{site.data.keyword.openshiftlong_notm}} always creates shared VPE gateways in the spoke VPC when a cluster is provisioned there. This ensures connectivity if the spoke is ever disconnected from the hub. If DNS delegation routes spoke endpoints through the hub, the spoke gateways are not used for DNS resolution. You must still configure the security groups on the hub's shared VPE gateways to allow inbound traffic from the spoke VPC subnets. For more information, see [Considerations for hub and spoke VPCs with outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-hubspoke).
 
 
 ### Load balancer services security group
 {: #vpc-sg-kube-lbaas-cluster-ID}
 
-The default security group that is attached to all load balancers (ALBs and NLBs).
-- Each cluster gets their own unique security group which is shared by all the load balancers in the cluster.
-- The name of the security group is `kube-lbaas-<clusterID>` where `<clusterID>` is the ID of your cluster.
-- The rules on this security group are added or deleted dynamically as load balancers are added, removed, or updated. Note that SDNLBs do not support attaching security groups.
-- You can add rules to this security group. However, some rules might be removed if they are incompatible with the other rules or if they break functionality.
+Each cluster has one `kube-lbaas-<clusterID>` security group that is attached to all of its load balancers (ALBs and NLBs). Private Path NLBs do not support attaching security groups.
+
+Rules in this security group are generated and updated dynamically as load balancers are added, updated, or removed. {{site.data.keyword.openshiftlong_notm}} monitors all inbound and outbound rules in this security group and automatically removes any extra rules that it does not recognize as required. If you run `ibmcloud oc security-group reset`, all rules are deleted and only the default {{site.data.keyword.openshiftlong_notm}} rules are restored.
+
+Outbound rules in this security group route traffic to the worker node ports that the external ports (such as ports 80 and 443) are mapped to. Do not modify or delete any outbound rules in the `kube-lbaas-<clusterID>` security group.
+
+#### Restricting inbound traffic to public load balancers
+{: #restricting-inbound-lbaas}
+
+A common scenario is restricting which source IP addresses can send traffic to a public load balancer. To limit inbound traffic for a specific port (such as TCP port 443):
+
+1. Add inbound rules to the `kube-lbaas-<clusterID>` security group for that port specifying the allowed source IP addresses or CIDR blocks. You can create multiple rules to allow multiple source IP addresses.
+2. After your allowed source IP rules are created, delete the default inbound rule that allows all IP addresses (`0.0.0.0/0`) on that port.
+
+Every inbound port exposed by the load balancer must have at least one rule — either the default rule allowing all IPs or one or more custom source IP rules. If you delete the default "allow all IPs" rule without first adding an allowed source IP rule for that port, {{site.data.keyword.openshiftlong_notm}} automatically recreates the "allow all IPs" rule.
+{: important}
+
+#### Custom LBaaS security groups
+{: #custom-lbaas-sgs}
+
+If you have both public and private load balancers and want different firewall rules for each (for example, restricting source IPs for public load balancers while allowing all traffic to private load balancers), you can attach a custom security group to specific load balancers by using the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group` annotation instead of using the cluster default.
+
+When you use a custom LBaaS security group:
+- {{site.data.keyword.openshiftlong_notm}} still automatically creates any required inbound rules that are missing.
+- {{site.data.keyword.openshiftlong_notm}} never removes rules that you add to the custom security group.
 
 
 | Description | Direction | Protocol | Port or value | Source or destination |
@@ -199,7 +242,7 @@ The default security group that is attached to all load balancers (ALBs and NLBs
 
 When you create a VPC cluster, you can provide up to four additional security groups that you own.
 
-
+You can also attach a custom security group to a load balancer by adding the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group` annotation to your load balancer resource. This is useful if you have both public and private facing load balancers and you want to limit who can send traffic to the public load balancer. When you use a custom LBaaS security group, {{site.data.keyword.openshiftlong_notm}} automatically creates rules for incoming traffic, but does not automatically delete extra rules that you add. For more information, see [Custom LBaaS security groups](#custom-lbaas-sgs).
 
 For more information, see [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
