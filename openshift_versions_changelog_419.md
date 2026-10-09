@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-09"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -63,7 +63,7 @@ Red Hat OpenShift 4.19.49
 
 
 Red Hat CoreOS 4.19.49
-:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-49_release-notes){: external}.
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-49_release-notes){: external}. CIS benchmark compliance [1.7.1](https://workbench.cisecurity.org/sections/4341748/recommendations/7349052){: external}.
 
 
 HAProxy 81100547c0eabf73d68d42fcba4c3f64284b2f1e
