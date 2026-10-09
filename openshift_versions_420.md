@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-05"
+lastupdated: "2026-10-09"
 
 
 keywords: openshift, version, update, upgrade, 4.20, update openshift
@@ -52,9 +52,6 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 {: shortdesc}
 
 The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.20 clusters are the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing).
-{: important}
-
-[Portworx](/docs/openshift?topic=openshift-storage_portworx_about) does not yet support Red Hat OpenShift on IBM Cloud version 4.20 clusters. Do not update your cluster to version 4.20 if Portworx is installed.
 {: important}
 
 
