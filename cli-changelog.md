@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -25,6 +25,14 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 
 Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
+
+## Version v1.0.892
+{: #cli-01892}
+
+Version 1.0.892 of the CLI was released on 09 October 2026.
+- Adds the experimental [`ibmcloud ks experimental cluster master update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-master-update-versions-cli) command. Use this command to list the possible Kubernetes versions that the cluster master can be updated to. This command expires on 01 November 2026.
+- Adds support for VPC-based control plane migration. A new `vpc` value is available as an endpoint type for the [`ibmcloud ks cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config) command.
+- Updates dependencies to address CVEs.
 
 ## Version v1.0.877
 {: #cli-01877}

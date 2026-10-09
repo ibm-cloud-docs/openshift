@@ -538,6 +538,10 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
+    * [9 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0926)
+
+        * New CLI version `1.0.892` available.
+
     * [7 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0726)
 
         * Cluster autoscaler cluster add-on patch updates.
@@ -8222,6 +8226,8 @@ subcollection: openshift
     * [`ibmcloud ks zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
+
+* [Version v1.0.892](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01892)
 
 * [Version v1.0.877](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01877)
 
