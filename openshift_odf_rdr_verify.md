@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-10-09"
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery, odf rdr, verify, regional disaster recovery
 
@@ -203,7 +203,7 @@ Run the following steps on **each managed cluster**.
     ```
     {: screen}
 
-    If connectivity is degraded, reinstall Submariner by following [Step 4 of the ODF Regional Disaster Recovery setup](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#submariner).
+    If connectivity is degraded, reinstall Submariner by following [Step 6 of the ODF Regional Disaster Recovery setup](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#submariner).
 
 ## Verifying ODF on the managed clusters
 {: #odf-rdr-verify-odf}
@@ -252,7 +252,7 @@ Run the following steps on **each managed cluster**.
     ```
     {: screen}
 
-    If the `ocs-provider-server` ServiceExport is missing, recreate it by following [Step 5 of the ODF Regional Disaster Recovery setup](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf_install).
+    If the `ocs-provider-server` ServiceExport is missing, recreate it by following [Step 7 of the ODF Regional Disaster Recovery setup](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf_install).
 
 1. Verify that the multicluster network configuration is properly set on the StorageCluster. In the output, confirm that `multiClusterService.enabled` is `true` and that `clusterID` matches the name of the managed cluster. Also confirm that the `ocs.openshift.io/api-server-exported-address` annotation is present and correctly set.
 

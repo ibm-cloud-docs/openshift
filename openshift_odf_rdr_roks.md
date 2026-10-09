@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -535,6 +535,49 @@ The following steps must be completed on each managed cluster. Switch your conte
     rook-ceph-osd-2   4d14h
     ```
     {: screen}
+
+1. Verify that the service exports are healthy. Each service export must report `Valid=True` and `Ready=True`.
+
+    ```sh
+    oc get serviceexport -n openshift-storage -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{range .status.conditions[*]}{.type}{"="}{.status}{" "}{end}{"\n"}{end}'
+    ```
+    {: pre}
+
+    Example output:
+    ```sh
+    rook-ceph-mon-d Valid=True Ready=True
+    rook-ceph-mon-e Valid=True Ready=True
+    rook-ceph-mon-f Valid=True Ready=True
+    rook-ceph-osd-0 Valid=True Ready=True
+    rook-ceph-osd-1 Valid=True Ready=True
+    rook-ceph-osd-2 Valid=True Ready=True
+    ```
+    {: screen}
+
+1. If a service export doesn't reach the `Valid` and `Ready` state, describe the resource and check the error message. Replace `SERVICE_EXPORT_NAME` with the name of the service export that isn't healthy.
+
+    ```sh
+    oc describe serviceexport SERVICE_EXPORT_NAME -n openshift-storage
+    ```
+    {: pre}
+
+    A known issue in Submariner 0.24.1 causes the following error message because the Submariner Lighthouse component restricts exporting services from `openshift-*` namespaces.
+
+    ```text
+    Service in namespace "openshift-storage" cannot be exported due to namespace restriction
+    ```
+    {: screen}
+
+    If you see this error, create the `submariner-lighthouse-agent` config map in the `submariner-operator` namespace of the managed cluster. This config map removes the namespace restriction.
+
+    ```sh
+    oc create configmap submariner-lighthouse-agent \
+      --from-literal=import-namespace-deny-list="kube-" \
+      -n submariner-operator
+    ```
+    {: pre}
+
+    After you create the config map, run the command from the previous step again to confirm that the service exports reach the `Valid=True Ready=True` state.
 
 1. Create a service export for `ocs-provider-server`.
 
