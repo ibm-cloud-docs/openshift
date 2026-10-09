@@ -958,7 +958,7 @@ A DateTime is an RFC3339 compliant combination of a date and time.
 ### IPv4Address
 {: #ipv4address}
 
-IPv4 address in dotted-decimal notation (e.g., 192.168.1.1).
+IPv4 address in dotted-decimal notation (e.g., xxx.xxx.xxx.xxx).
 {: shortdesc}
 
 
