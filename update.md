@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-07"
+lastupdated: "2026-10-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -365,6 +365,13 @@ What if I replace multiple worker nodes at the same time?
 What if a replacement worker node is not created?
 :   A replacement worker node is not created if the worker pool does not have [automatic rebalancing enabled](/docs/openshift?topic=openshift-auto-rebalance-off).
 
+
+
+What happens to the VNIs that are attached to my bare metal worker nodes?
+:   A dynamic VNI that is used by an OpenShift Virtualization VM follows the VM when the VM is live migrated off the worker node. A VNI that is attached to the worker node or to the cluster but is not used by any VM is detached when the worker node is replaced. If auto-delete is enabled for the VNI, the VNI is also deleted. You are not notified when unused VNIs are detached. For more information, see [Why are my unused VNIs no longer attached after I replaced a worker node?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-unused-detached).
+
+
+
 ### Prerequisites
 {: #vpc_worker_prereqs}
 
@@ -379,6 +386,9 @@ If you have Portworx deployed in your cluster, follow the steps to [update VPC w
 
 
 If you have OpenShift Data Foundation deployed in your cluster, follow the steps to [update VPC worker nodes with OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc) instead of the steps on this page.
+{: important}
+
+If you attached [VNIs](/docs/openshift?topic=openshift-vni-virtualization) to your bare metal worker nodes or cluster, VNIs that are not used by an OpenShift Virtualization VM are detached when the worker node is replaced, and deleted if auto-delete is enabled. Before you replace a worker node, run `ibmcloud oc vni ls --worker WORKER_ID` and note the attached VNIs so that you can reattach them after the replacement. For more information, see [Why are my unused VNIs no longer attached after I replaced a worker node?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-unused-detached).
 {: important}
 
 

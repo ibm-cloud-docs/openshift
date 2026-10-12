@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -74,21 +74,20 @@ Complete these steps before you install the add-on.
 
     1. Enable OperatorHub on your cluster.
 
-    ```sh
-    oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]'
-    ```
-    {: pre}
-
+        ```sh
+        oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]'
+        ```
+        {: pre}
 
     2. Disable outbound traffic protection.
 
-    Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
-    {: note}
+        Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
+        {: note}
 
-    ```sh
-    ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
-    ```
-    {: pre}
+        ```sh
+        ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
+        ```
+        {: pre}
 
 
 
@@ -106,18 +105,18 @@ Complete these steps before you install the add-on.
 
     1. Enable OperatorHub on your cluster.
 
-		   ```sh
-		   oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]'
-		   ```
-		   {: pre}
+        ```sh
+        oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]'
+        ```
+        {: pre}
 
     2. Disable outbound traffic protection.
 
-    Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
-    {: note}
+        Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
+        {: note}
 
-    1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
-    2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
+        1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
+        2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
 
 
 

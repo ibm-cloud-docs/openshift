@@ -5899,6 +5899,8 @@ subcollection: openshift
 
     * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-not-working)
 
+    * [Why are my unused VNIs no longer attached after I replaced a worker node?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-unused-detached)
+
 [Tuning ODF performance for virtualization](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance)
 
 * [Before you begin](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance-prereqs)
