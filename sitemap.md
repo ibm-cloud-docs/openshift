@@ -31,8 +31,8 @@ subcollection: openshift
 
 
 
-## Containers
-{: #sitemap_containers}
+## Get started with containers
+{: #sitemap_get_started_with_containers}
 
 
 [Getting started](/docs/openshift?topic=openshift-getting-started#getting-started)
@@ -2075,8 +2075,8 @@ subcollection: openshift
         * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
-## Containers
-{: #sitemap_containers1}
+## Container tutorials
+{: #sitemap_container_tutorials}
 
 
 [Create a VPC cluster with the CLI (recommended)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
@@ -2140,8 +2140,8 @@ subcollection: openshift
 [OpenShift tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Virtualization
-{: #sitemap_virtualization1}
+## Virtualization tutorials
+{: #sitemap_virtualization_tutorials}
 
 
 [Creating a Virtualization Service cluster (quickstart)](/docs/openshift?topic=openshift-rovs-getting-started#rovs-getting-started)
