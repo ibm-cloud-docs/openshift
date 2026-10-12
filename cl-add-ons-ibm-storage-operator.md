@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-12"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -57,6 +57,14 @@ Review the version history for IBM Storage Operator.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
+
+
+### 12 October 2026, Version 1.0 - v1.0.62_374966560
+{: #cl-add-ons-ibm-storage-operator-v1062_374966560}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-63382](https://nvd.nist.gov/vuln/detail/cve-2026-63382){: external}, [CVE-2026-86140](https://nvd.nist.gov/vuln/detail/cve-2026-86140){: external}, [CVE-2026-63388](https://nvd.nist.gov/vuln/detail/cve-2026-63388){: external}, [CVE-2026-8458](https://nvd.nist.gov/vuln/detail/cve-2026-8458){: external}, [CVE-2026-73281](https://nvd.nist.gov/vuln/detail/cve-2026-73281){: external}, [CVE-2026-63387](https://nvd.nist.gov/vuln/detail/cve-2026-63387){: external}, [CVE-2026-86144](https://nvd.nist.gov/vuln/detail/cve-2026-86144){: external}, [CVE-2026-63385](https://nvd.nist.gov/vuln/detail/cve-2026-63385){: external}, [CVE-2026-73283](https://nvd.nist.gov/vuln/detail/cve-2026-73283){: external}, [CVE-2026-63383](https://nvd.nist.gov/vuln/detail/cve-2026-63383){: external}, [CVE-2026-8927](https://nvd.nist.gov/vuln/detail/cve-2026-8927){: external}, [CVE-2026-59995](https://nvd.nist.gov/vuln/detail/cve-2026-59995){: external}, [CVE-2026-82717](https://nvd.nist.gov/vuln/detail/cve-2026-82717){: external}, [CVE-2026-86142](https://nvd.nist.gov/vuln/detail/cve-2026-86142){: external}, [CVE-2026-63381](https://nvd.nist.gov/vuln/detail/cve-2026-63381){: external}, [CVE-2026-63379](https://nvd.nist.gov/vuln/detail/cve-2026-63379){: external}, [CVE-2026-63384](https://nvd.nist.gov/vuln/detail/cve-2026-63384){: external}, [CVE-2026-81634](https://nvd.nist.gov/vuln/detail/cve-2026-81634){: external}, [CVE-2026-59999](https://nvd.nist.gov/vuln/detail/cve-2026-59999){: external}, [CVE-2026-81642](https://nvd.nist.gov/vuln/detail/cve-2026-81642){: external}, [CVE-2026-86143](https://nvd.nist.gov/vuln/detail/cve-2026-86143){: external}, [CVE-2026-50252](https://nvd.nist.gov/vuln/detail/cve-2026-50252){: external}, [CVE-2026-74860](https://nvd.nist.gov/vuln/detail/cve-2026-74860){: external}, [CVE-2026-73282](https://nvd.nist.gov/vuln/detail/cve-2026-73282){: external}, and [CVE-2026-86138](https://nvd.nist.gov/vuln/detail/cve-2026-86138){: external}.
 
 
 ### 29 September 2026, Version 1.0 - v1.0.61_372201350

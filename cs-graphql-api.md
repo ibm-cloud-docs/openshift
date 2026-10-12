@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-10-09"
+lastupdated: "2026-10-12"
 
 keywords: containers, kubernetes, satellite, graphql, api, reference
 
@@ -34,7 +34,7 @@ Find a Node for the given ID. Use fragments to select additional fields.
 | Type | Name | Description |
 | --- | --- | --- |
 | Returns | `Node` | |
-| Argument | `id` (`ID!`) *(required)* | The globally unique node identifier. |
+| Argument | `id` (`ID!`) *(required)* | The Node's ID to find. |
 {: caption="Returns and arguments for node" caption-side="bottom"}
 
 
@@ -944,7 +944,7 @@ Scalar types are primitive leaf values in the GraphQL schema.
 ### CloudResourceName
 {: #cloudresourcename}
 
-A Cloud Resource Name (CRN) uniquely identifies IBM Cloud resources. A CRN is used to specify a resource in an unambiguous way that is guaranteed to be globally unique.
+A Cloud Resource Name (CRN) uniquely identifies IBM Cloud resources.
 {: shortdesc}
 
 
