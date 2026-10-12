@@ -2,8 +2,8 @@
 
 copyright:
   years: 2014, 2026
+lastupdated: "2026-10-12"
 
-lastupdated: "2026-10-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -53,7 +53,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 
 
-<!--<qna:latest-version>-->
+
 
 
 
@@ -102,7 +102,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 |4.17 (Kubernetes 1.30) [Deprecated]{: tag-deprecated} |20 November 2024|23 October 2026|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.17 details and update actions](/docs/openshift?topic=openshift-cs_versions_417)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes){: external}|
 {: caption="Available versions for clusters in Satellite locations" caption-side="bottom"}
 
-<!--</qna:latest-version>-->
+
 
 - `†` Indicates dates that are tentative and subject to change.
 - `*` Indicates operating systems that are deprecated.
