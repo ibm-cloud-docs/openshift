@@ -4224,7 +4224,7 @@ subcollection: openshift
 
     * [How does GPU autoscaling work?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scaling-gpus)
 
-    * [What are the limitations when using GPU flavors with the cluster autoscaler?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#what-are-the-limitations-when-using-gpu-flavors-with-the-cluster-autoscaler)
+    * [What are the limitations when using GPU flavors with the cluster autoscaler?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scaling-gpus-limitations)
 
     * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-multiple)
 
