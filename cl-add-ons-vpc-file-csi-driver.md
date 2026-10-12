@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-12"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -57,6 +57,16 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### 12 October 2026, Version 2.0 - v2.0.55_374967197
+{: #cl-add-ons-vpc-file-csi-driver-v2055_374967197}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-63382](https://nvd.nist.gov/vuln/detail/cve-2026-63382){: external}, [CVE-2026-86140](https://nvd.nist.gov/vuln/detail/cve-2026-86140){: external}, [CVE-2026-63388](https://nvd.nist.gov/vuln/detail/cve-2026-63388){: external}, [CVE-2026-8458](https://nvd.nist.gov/vuln/detail/cve-2026-8458){: external}, [CVE-2026-73281](https://nvd.nist.gov/vuln/detail/cve-2026-73281){: external}, [CVE-2026-63387](https://nvd.nist.gov/vuln/detail/cve-2026-63387){: external}, [CVE-2026-86144](https://nvd.nist.gov/vuln/detail/cve-2026-86144){: external}, [CVE-2026-63385](https://nvd.nist.gov/vuln/detail/cve-2026-63385){: external}, [CVE-2026-73283](https://nvd.nist.gov/vuln/detail/cve-2026-73283){: external}, [CVE-2026-63383](https://nvd.nist.gov/vuln/detail/cve-2026-63383){: external}, [CVE-2026-8927](https://nvd.nist.gov/vuln/detail/cve-2026-8927){: external}, [CVE-2026-59995](https://nvd.nist.gov/vuln/detail/cve-2026-59995){: external}, [CVE-2026-82717](https://nvd.nist.gov/vuln/detail/cve-2026-82717){: external}, [CVE-2026-86142](https://nvd.nist.gov/vuln/detail/cve-2026-86142){: external}, [CVE-2026-63381](https://nvd.nist.gov/vuln/detail/cve-2026-63381){: external}, [CVE-2026-63379](https://nvd.nist.gov/vuln/detail/cve-2026-63379){: external}, [CVE-2026-63384](https://nvd.nist.gov/vuln/detail/cve-2026-63384){: external}, [CVE-2026-81634](https://nvd.nist.gov/vuln/detail/cve-2026-81634){: external}, [CVE-2026-59999](https://nvd.nist.gov/vuln/detail/cve-2026-59999){: external}, [CVE-2026-81642](https://nvd.nist.gov/vuln/detail/cve-2026-81642){: external}, [CVE-2026-86143](https://nvd.nist.gov/vuln/detail/cve-2026-86143){: external}, [CVE-2026-50252](https://nvd.nist.gov/vuln/detail/cve-2026-50252){: external}, [CVE-2026-74860](https://nvd.nist.gov/vuln/detail/cve-2026-74860){: external}, [CVE-2026-73282](https://nvd.nist.gov/vuln/detail/cve-2026-73282){: external}, and [CVE-2026-86138](https://nvd.nist.gov/vuln/detail/cve-2026-86138){: external}.
+- `armada-storage-secret v1.3.69`
+- `stunnel:0.1.0.build-38`
 
 
 ### 29 September 2026, Version 2.0 - v2.0.54_372210496
