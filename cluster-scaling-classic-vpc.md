@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-29"
+lastupdated: "2026-10-12"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -96,7 +96,22 @@ When you [create a worker pool](/docs/openshift?topic=openshift-add-workers-vpc)
 ### How does GPU autoscaling work?
 {: #scaling-gpus}
 
-Autoscaling GPU worker nodes is supported only with cluster autoscaler version 1.2.4 and later and only with NVIDIA GPUs worker node flavors. Scale up happens when a pod goes into pending state due to GPU resource crunch. The autoscaler then scales up the cluster by adding more nodes. Scale down happens when the utilization goes below the configured `scaleDownGPUUtilizationThreshold`. When this happens, the node is considered for scale down.
+Autoscaling GPU worker nodes is supported with cluster autoscaler version 1.2.4 and later and with NVIDIA GPU and Intel Gaudi worker node flavors. Scale up happens when a pod goes into pending state due to GPU resource crunch. The autoscaler then scales up the cluster by adding more nodes. Scale down happens when the utilization goes below the configured `scaleDownGPUUtilizationThreshold`. When this happens, the node is considered for scale down.
+
+Before you use GPU worker nodes with the cluster autoscaler, review the GPU worker node prerequisites:
+- **NVIDIA GPU**: Follow the [NVIDIA GPU prerequisites](/docs/containers?topic=containers-deploy_app#gpu-prereqs) to prepare your worker nodes.
+- **Intel Gaudi**: Follow the Intel Gaudi prerequisites for [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-deploy_app#gpu-prereqs) or [{{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-deploy_app) to prepare your worker nodes.
+
+### What are the limitations when using GPU flavors with the cluster autoscaler?
+
+Zone balancing is not supported for GPU worker pools.
+:   When the cluster autoscaler scales up or down a GPU worker pool, it does not rebalance nodes evenly across zones. This applies to both NVIDIA GPU and Intel Gaudi worker pools, on {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}.
+
+One extra node might be provisioned during scale-up on {{site.data.keyword.containerlong_notm}}.
+:   When scaling up an NVIDIA or Intel Gaudi GPU worker pool on {{site.data.keyword.containerlong_notm}}, the autoscaler might overprovision by one node. This extra node is automatically deleted after the scale-up completes.
+
+Scale up from zero is not supported for Intel Gaudi worker pools (add-on version 2.0.0 and later).
+:   If an Intel Gaudi worker pool is scaled down to zero nodes, the cluster autoscaler cannot scale it back up. Set `minSize` to at least `1` for Intel Gaudi worker pools to avoid this condition.
 
 
 ### Can I autoscale multiple worker pools at once?
@@ -159,6 +174,9 @@ Yes, but make sure to [apply taints at the worker pool level](/docs/openshift?to
 Before you install the {{site.data.keyword.cloud_notm}} cluster autoscaler add-on, you can set up your cluster to prepare the cluster for autoscaling.
 
 The cluster autoscaler add-on is not supported for baremetal worker nodes.
+{: important}
+
+If you plan to autoscale worker pools that use GPU flavors (NVIDIA or Intel Gaudi), complete the GPU worker node prerequisites before you enable autoscaling. For NVIDIA GPUs, see [GPU prerequisites](/docs/containers?topic=containers-deploy_app#gpu-prereqs). For Intel Gaudi, see the prerequisites for [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-deploy_app#gpu-prereqs) or [{{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-deploy_app). Review the [known limitations for GPU autoscaling](#scaling-gpus) before you proceed.
 {: important}
 
 1. Before you begin, [Install the required CLI and plug-ins](/docs/cli?topic=cli-getting-started).
