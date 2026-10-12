@@ -15,7 +15,7 @@ toc:
       id: learn
       topics:
       - topicgroup:
-          label: Containers
+          label: Get started with containers
           topics:
           - topic: getting-started.md
             navtitle: Getting started
@@ -60,7 +60,7 @@ toc:
       id: tutorial
       topics:
       - topicgroup:
-          label: Containers
+          label: Container tutorials
           topics:
           - topic: openshift_tutorial_vpc.md
             navtitle: Create a VPC cluster with the CLI (recommended)
@@ -72,7 +72,7 @@ toc:
               label: OpenShift tutorials
               href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - topicgroup:
-          label: Virtualization
+          label: Virtualization tutorials
           topics:
           - topic: rovs-getting-started.md
             navtitle: Creating a Virtualization Service cluster (quickstart)
