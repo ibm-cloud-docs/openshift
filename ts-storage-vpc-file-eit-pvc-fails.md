@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-10-12"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -33,11 +33,14 @@ vpc.file.csi.ibm.io_ibm-vpc-file-csi-controller-699b96b98-7vhwx_58851c95-cfcc-46
 {: screen}
 
 
-One possible cause for this issue is that your Cluster and VPC are in different resource groups. If this is true, create your own storage class and retry creating a PVC. If your cluster and VPC are in the same resource group, verify your subnet details, then open a support case and provide your VPC subnet information.
+This issue can occur in the following scenarios:
+* Your cluster and VPC are in different resource groups.
+* Your VPC and subnet are in different resource groups (even if the cluster and VPC are in the same resource group).
+* The `vpc_subnet_ids` property in your cluster configuration contains invalid subnet IDs.
 {: tsResolve}
 
 
-1. Find the resource group of your cluster and VPC. You can find your resource groups in the console or by running the `ibmcloud is resource service-instances -g GROUP` command.
+1. Find the resource group of your cluster, VPC, and subnets. You can find your resource groups in the console or by running the `ibmcloud is resource service-instances -g GROUP` and `ibmcloud is subnets` commands.
 
 
     * **Cluster and VPC are not in the same resource group**: [Create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc) and make sure to specify the VPC resource group ID in the `resourceGroup` section as well as the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running the following command.
@@ -47,9 +50,19 @@ One possible cause for this issue is that your Cluster and VPC are in different 
         {: pre}
 
 
-    * **Cluster and VPC are in the same resource group**: Check that the `vpc_subnet_ids` property contains valid subnet IDs.
+    * **VPC and subnet are not in the same resource group**: [Create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc) and provide the `subnetID` parameter manually along with the `region` and `zone` parameters to override the default cluster node topology selection:
+        ```yaml
+        parameters:
+          subnetID: "<subnet-id>"
+          region: "<region>"
+          zone: "<zone>"
+        ```
+        {: codeblock}
 
-        1. Review the subnet IDs in the `ibm-cloud-provider-data` configmap. 
+
+    * **Cluster, VPC, and subnets are in the same resource group**: Check that the `vpc_subnet_ids` property contains valid subnet IDs.
+
+        1. Review the subnet IDs in the `ibm-cloud-provider-data` configmap.
             ```sh
             oc get cm ibm-cloud-provider-data -n kube-system -o yaml | grep vpc_subnet_ids
             ```

@@ -590,6 +590,7 @@ If you need the following features, you must [create your own storage class](/do
 
 - Your app needs to run as non-root.
 - Your cluster is in a different resource group from your VPC and subnet.
+- Your VPC and subnet are in different resource groups.
 - You need to limit file share access to pods on a given node or in a given zone.
 - You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
 - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
@@ -597,6 +598,9 @@ If you need the following features, you must [create your own storage class](/do
 
 
 If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-CLUSTER_ID  | grep ID`.
+{: important}
+
+If your VPC and subnet are in different resource groups, you must specify the `subnetID`, `region`, and `zone` parameters in your custom storage class to override the default cluster node topology.
 {: important}
 
 
@@ -683,7 +687,9 @@ Custom storage classes must include `nfsvers=4.1` in the `mountOptions` section.
       classVersion: "1"
       isENIEnabled: "true"   # VPC File Share ENI/VNI feature will be used by all PVCs created with this storage class.
       securityGroupIDs: ""   # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own command separated SGs.
-      subnetID: ""         # User can provide subnetID in which the ENI/VNI will be created.If not provided CSI driver will use the subnetID available in the cluster' VPC zone.
+      subnetID: ""         # User can provide subnetID in which the ENI/VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster's VPC zone.
+      region: ""           # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+      zone: ""             # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
       primaryIPID: ""      # Existing ID of reserved IP from any of subnets within the VPC,subnetID is not mandatory for this.
       primaryIPAddress: "" # IPAddress for ENI/VNI to be created in the respective subnet,subnetID is mandatory for this.
       uid: "0"             # The initial user identifier for the file share, by default its root.
