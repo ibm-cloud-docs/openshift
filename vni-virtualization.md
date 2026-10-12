@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-10-12"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -64,6 +64,9 @@ Static VNI modifications
 
 VNI modification restrictions for floating attachments
 :   You cannot modify VNI properties for floating (cluster-scoped) dynamic attachments. This includes changes to the VNI name, Floating IP addresses, Infrastructure NAT settings, and security group assignments. To update these settings, you must first detach the VNI, make your changes, and then reattach it to the cluster. This limitation is temporary.
+
+Unused VNIs are detached when a worker node is replaced
+:   A dynamic VNI that is used by an OpenShift Virtualization VM follows the VM. When a worker node is replaced, the VM is live migrated to another worker node before the replacement, and the VNI moves with it. However, a VNI that is attached to a worker node or to the cluster but is not used by any VM stays on the bare metal worker node where it is currently attached. When that worker node is replaced, either explicitly or as part of an update, the VNI is detached. If auto-delete is enabled for the VNI, the VNI is also deleted. You are not notified when this happens, and you can't prevent unused VNIs from being detached. To keep your VNIs attached, use them with a VM before you replace the worker node, or [list the VNIs that are attached to the worker node](#vni-list) before you replace it and [reattach them](#vni-attach) afterward. For more information, see [Why are my unused VNIs no longer attached after I replaced a worker node?](#vni-ts-unused-detached).
 
 Zone constraints
 :   VNIs are attached to a specific VPC subnet and cannot float between zones. In multi-zone {{site.data.keyword.openshiftshort}} clusters, VNIs can handle traffic only for workloads running on cluster workers in the same zone where the VNI is provisioned. This also means you must avoid OpenShift Virtualization VM live migration between zones when the specific VM is using a VNI on a Localnet UDN.
@@ -504,3 +507,39 @@ Check the following items:
 - Verify that the VLAN ID in the CUDN matches the VLAN ID in the VNI attachment. VPC DHCP might still work without further traffic if the VLAN is mismatched.
 - If floating is not enabled, make sure the workload is scheduled on the worker where the VNI is attached.
 - Verify that the dedicated OVS bridge and the mapping are present on the workers. Check the NodeNetworkConfigurationPolicy resource status.
+
+### Why are my unused VNIs no longer attached after I replaced a worker node?
+{: #vni-ts-unused-detached}
+
+After you replace a bare metal worker node, either explicitly or as part of an update, some VNIs that you previously attached to the worker node or to the cluster are no longer listed as attached, or they no longer exist in your VPC.
+
+A VNI that is used by an OpenShift Virtualization VM follows the VM when the VM is live migrated off the worker node before the replacement. A VNI that is not used by any VM stays on the bare metal worker node where it is attached. When the worker node is replaced, the underlying bare metal server is deleted and the VNI is detached. If auto-delete is enabled for the VNI, the VNI is also deleted. This is expected VPC infrastructure behavior. You are not notified when unused VNIs are detached, and you can't prevent it.
+
+Before you replace a worker node, complete one of the following options.
+
+- Use the VNI with a VM. A VNI that is used by a VM moves with the VM to another worker node in the same zone.
+- Record the VNIs that are attached to the worker node so that you can reattach them after the replacement.
+
+    1. List the VNIs that are attached to the worker node that you plan to replace. Note the **VNI ID**, **VLAN**, **Floating**, and **Auto-delete** values for each VNI.
+
+        ```sh
+        ibmcloud ks vni ls --worker WORKER_ID
+        ```
+        {: pre}
+
+    2. Replace the worker node.
+
+    3. Reattach each VNI. For a worker attachment, specify the new worker node ID. For a floating attachment, specify the cluster ID. Use the same VLAN ID as before. For more information, see [Attaching VNIs to your cluster](#vni-attach).
+
+        ```sh
+        ibmcloud ks vni attach baremetal --worker NEW_WORKER_ID --vni VNI_ID --vlan VLAN_ID
+        ```
+        {: pre}
+
+        ```sh
+        ibmcloud ks vni attach baremetal --cluster-id CLUSTER_ID --vni VNI_ID --vlan VLAN_ID
+        ```
+        {: pre}
+
+If auto-delete was enabled, the VNI is deleted and can't be reattached. [Create a new VNI](/docs/vpc?topic=vpc-vni-create&interface=cli) and attach it to the cluster.
+{: note}
