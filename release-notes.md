@@ -39,6 +39,8 @@ IBM Storage Operator cluster add-on patch updates.
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
+
+
 ### 9 October 2026
 {: #openshift-oct0926}
 {: release-note}
