@@ -103,6 +103,7 @@ Before you use GPU worker nodes with the cluster autoscaler, review the GPU work
 - **Intel Gaudi**: Follow the Intel Gaudi prerequisites for [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-deploy_app#gpu-prereqs) or [{{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-deploy_app) to prepare your worker nodes.
 
 ### What are the limitations when using GPU flavors with the cluster autoscaler?
+{: #scaling-gpus-limitations}
 
 Zone balancing is not supported for GPU worker pools.
 :   When the cluster autoscaler scales up or down a GPU worker pool, it does not rebalance nodes evenly across zones. This applies to both NVIDIA GPU and Intel Gaudi worker pools, on {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}.
