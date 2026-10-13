@@ -534,21 +534,21 @@ toc:
           topics:
           - add-on-versions.md
           - cl-add-ons-acm.md
-          - cl-add-ons-openshift-ai.md
-          - cl-add-ons-cluster-autoscaler.md
-          - cl-add-ons-ibm-storage-operator.md
-          - cl-add-ons-vpc-block-csi-driver.md
-          - cl-add-ons-vpc-file-csi-driver.md
-          - cl-add-ons-ibm-object-csi-driver.md
-          - cl-object-storage-plug-in.md
-          - cl-satellite-storage-operator.md
-          - cl-add-ons-static-route.md
-          - cl-add-ons-openshift-data-foundation.md
-          - cl-add-ons-openshift-virtualization.md
           - versions-backup-restore.md
+          - cl-add-ons-cluster-autoscaler.md
+          - cl-confidential-containers.md
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
-          - cl-confidential-containers.md
+          - cl-add-ons-ibm-object-csi-driver.md
+          - cl-add-ons-ibm-storage-operator.md
+          - cl-object-storage-plug-in.md
+          - cl-add-ons-openshift-ai.md
+          - cl-add-ons-openshift-data-foundation.md
+          - cl-add-ons-openshift-virtualization.md
+          - cl-satellite-storage-operator.md
+          - cl-add-ons-static-route.md
+          - cl-add-ons-vpc-block-csi-driver.md
+          - cl-add-ons-vpc-file-csi-driver.md
       - topicgroup:
           label: Service settings
           topics:
