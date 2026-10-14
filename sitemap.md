@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-14"
 
 
 keywords: openshift
@@ -537,6 +537,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [15 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1526)
+
+        * Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
 
     * [13 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1326)
 
@@ -4667,6 +4671,48 @@ subcollection: openshift
 * [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-sync)
 
 * [Redeploy your app in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
+
+[Migrating {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#storage-cos-flex-to-csi)
+
+* [Why migrate to the CSI driver?](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-why)
+
+* [Differences between FlexVolume and CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-differences)
+
+* [How the migration process works](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-how-it-works)
+
+* [Before you begin](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-prereqs)
+
+* [Required permissions](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-permissions)
+
+* [Installing the migration tool](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-install)
+
+* [Discovering FlexVolume PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-discover)
+
+* [Previewing the migration with a dry run](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-dry-run)
+
+* [Migrating your PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-migrate)
+
+* [Verifying the migration and updating workloads](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-verify)
+
+* [Understanding migrated resource names](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-naming)
+
+    * [Single secret used by multiple PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-naming-shared-secret)
+
+    * [Single secret used by single PVC](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-naming-dedicated-secret)
+
+* [CLI reference](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-cli-reference)
+
+* [Self-upgrade](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-upgrade)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-troubleshooting)
+
+    * [Resolving blocked PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-auto-delete-bucket)
+
+* [Limitations](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-limitations)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-related)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 

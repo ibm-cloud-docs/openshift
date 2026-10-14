@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2026
 {: #openshift-oct26}
 
+### 15 October 2026
+{: #openshift-oct1526}
+{: release-note}
+
+Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
+:   Use the new `cos-flex-to-csi` migration tool to migrate your {{site.data.keyword.cos_full_notm}} PVCs and secrets from the legacy FlexVolume driver to the Container Storage Interface (CSI) driver on VPC clusters. The tool discovers FlexVolume-based PVCs and secrets, and creates equivalent CSI resources alongside them for safe validation before decommissioning. For more information, see [Migrating {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi).
+
 
 
 

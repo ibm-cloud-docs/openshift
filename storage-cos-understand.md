@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-14"
 
 
 keywords: kubernetes, openshift, object storage, COS, persistent volume, secret, HMAC authentication, s3fs, bucket
@@ -22,6 +22,9 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across many geographic locations, and accessed over HTTP by using a REST API.
 {: shortdesc}
+
+The recommended way to use {{site.data.keyword.cos_full_notm}} in your cluster is with the [{{site.data.keyword.cos_full_notm}} CSI add-on](/docs/openshift?topic=openshift-storage-cos-install-addon), which uses the CSI driver. If you are currently using the legacy FlexVolume-based Helm plug-in on a VPC cluster, see [Migrating {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi).
+{: tip}
 
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
