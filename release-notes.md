@@ -29,8 +29,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2026
 {: #openshift-oct26}
 
-### 15 October 2026
-{: #openshift-oct1526}
+### 16 October 2026
+{: #openshift-oct1626}
 {: release-note}
 
 Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.

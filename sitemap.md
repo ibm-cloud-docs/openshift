@@ -538,7 +538,7 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
-    * [15 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1526)
+    * [16 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1626)
 
         * Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
 
@@ -4713,6 +4713,8 @@ subcollection: openshift
 * [Troubleshooting](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-troubleshooting)
 
     * [Resolving blocked PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-auto-delete-bucket)
+
+    * [Resolving PVCs that fail to bind](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-failed-bind)
 
 * [Limitations](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-limitations)
 

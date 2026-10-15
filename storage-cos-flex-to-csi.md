@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-15"
 
 keywords: object storage, openshift, cos, FlexVolume, CSI, migrate, migration, cos-flex-to-csi, flex-to-csi, csi driver, object storage migration
 
@@ -30,9 +30,9 @@ The legacy FlexVolume driver is tentatively planned to be unsupported by the end
 
 Kubernetes has deprecated the FlexVolume specification across the industry in favor of the Container Storage Interface (CSI) standard. Migrating your storage resources to the {{site.data.keyword.cos_full_notm}} CSI driver provides the following benefits:
 
-- **Managed add-on lifecycle:** The CSI driver is managed as a cluster add-on with automated patch updates, health management, and zero worker node host mutations.
-- **Enhanced security:** Runs containerized within native RBAC permissions rather than requiring host-level binary execution with root privileges on worker nodes.
-- **Modern storage capabilities:** Supports enhanced mount options for `s3fs` and `rclone`, seamless integration with VPC Gen 2 infrastructure, and future Kubernetes storage features.
+- **Managed add-on lifecycle:** The CSI driver is managed as a cluster add-on with automated patch updates and health management. The add-on installs and updates the `s3fs` or `rclone` mounter and the `cos-csi-mounter` service on your worker nodes, so you don't install or maintain these host components manually.
+- **Standard CSI architecture:** The controller server and node server run as containerized pods and follow the standard CSI model. The node server forwards mount and unmount requests from the kubelet to the `cos-csi-mounter` systemd service on the worker node over a Unix socket.
+- **Choice of mounters:** You can choose the `s3fs` or `rclone` mounter, with its own mount options, to match the access pattern and performance needs of each workload.
 
 ## Differences between FlexVolume and CSI
 {: #cos-flex-to-csi-differences}
@@ -42,9 +42,9 @@ Review the key architectural and operational differences between the legacy Flex
 | Feature | FlexVolume driver (legacy) | CSI driver (modern) |
 |---|---|---|
 | Provisioner name | `ibm.io/ibmc-s3fs` | `cos.s3.csi.ibm.io` |
-| Installation method | Helm chart or manual script | Managed cluster add-on (`cos-csi`) |
-| Supported infrastructure | Classic and VPC | VPC Gen 2 |
-| Runtime model | Host-level scripts on worker nodes | Containerized pods (DaemonSets and Deployments) |
+| Installation method | Helm chart | Managed cluster add-on (`ibm-object-csi-driver`) |
+| Supported infrastructure | Classic, VPC and Satellite | VPC Gen 2 |
+| Runtime model | Host-level scripts on worker nodes | Containerized controller and node pods (Deployment and DaemonSet), plus the `cos-csi-mounter` systemd service on each worker node that performs the mount |
 | Upgrade management | Manual Helm release updates | Managed cluster add-on updates |
 {: caption="Comparison between FlexVolume and CSI drivers" caption-side="bottom"}
 
@@ -55,7 +55,7 @@ The `cos-flex-to-csi` tool provides a safe, non-destructive migration path:
 
 1. **Discovery:** Scans your cluster to identify all FlexVolume PVCs and their associated secrets, and checks whether backing PVs have auto-delete bucket protection enabled.
 2. **Dry run:** Previews the exact resource definitions and names that the tool generates before applying any changes to your cluster.
-3. **Resource creation:** Creates a new CSI-compatible Secret and PVC (suffixed with `-csi-migrated`) alongside the original FlexVolume resources. Both resources point to the same underlying {{site.data.keyword.cos_short}} bucket without modifying bucket contents.
+3. **Resource creation:** Creates a new CSI-compatible Secret and PVC (suffixed with `-csi-migrated`) in the same namespace as the original FlexVolume PVC. The original FlexVolume resources are not changed. Both resources point to the same underlying {{site.data.keyword.cos_short}} bucket without modifying bucket contents.
 4. **Verification and cutover:** Your original FlexVolume PVC remains active until you verify that the new CSI PVC is bound, update your application deployments to reference the new PVC, and manually decommission the legacy resources.
 
 ## Before you begin
@@ -85,7 +85,7 @@ The `cos-flex-to-csi` tool uses your active `KUBECONFIG` credentials to read and
 | `nodes` | Cluster | `list` |
 | `storageclasses` | Cluster | `get`, `list` |
 | `daemonsets` | Namespaced (`ibm-object-csi-operator`, `kube-system`) | `get` |
-| `deployments` | Namespaced (`ibm-object-csi-operator`, `kube-system`) | `get` |
+| `deployments` | Namespaced (`ibm-object-csi-operator` only) | `get` |
 {: caption="RBAC permissions required by the cos-flex-to-csi migration tool" caption-side="bottom"}
 
 ## Installing the migration tool
@@ -174,20 +174,37 @@ Before migrating, scan your cluster to identify all FlexVolume-based PVCs and th
 
 1. Review the discovery output table.
 
-    The output lists each FlexVolume-based PVC, whether its backing PV has the `ibm.io/auto-delete-bucket` annotation enabled, its associated secret, migration status, and the names of the migrated CSI resources if migration has already been completed.
+    The output lists each FlexVolume-based PVC, whether its backing PV has the `ibm.io/auto-delete-bucket` annotation enabled, its associated secret, migration status, and the names of the migrated CSI resources if migration has already been completed. PVC and secret names are shown in the `NAMESPACE/NAME` format.
 
     ```text
-    Flex Resources (Pending Migration): 2
+    5 COS FlexVolume PVC(s) found
 
-    ┌────┬───────────┬───────────────────┬────────────────────────────────┬──────────────────────┬────────────────┬────────────────────┬─────────────────────────────┐
-    │ #  │ NAMESPACE │ COS FLEX PVC NAME │ HAS AUTO-DELETE-BUCKET ENABLED │ COS FLEX SECRET NAME │ MIGRATION DONE │ COS CSI PVC NAME   │ COS CSI SECRET NAME         │
-    ├────┼───────────┼───────────────────┼────────────────────────────────┼──────────────────────┼────────────────┼────────────────────┼─────────────────────────────┤
-    │ 1  │ default   │ pvc-1             │ NO                             │ secret-1             │ NO             │ -                  │ -                           │
-    │ 2  │ prod      │ pvc-2             │ NO                             │ secret-2             │ YES            │ pvc-2-csi-migrated │ secret-2-pvc-2-csi-migrated │
-    │ 3  │ staging   │ pvc-3             │ ⚠ YES                          │ secret-3             │ NO             │ -                  │ -                           │
-    └────┴───────────┴───────────────────┴────────────────────────────────┴──────────────────────┴────────────────┴────────────────────┴─────────────────────────────┘
+    ┌────┬───────────────────┬────────────────────────────────┬──────────────────────┬────────────────┬───────────────────────────┬────────────────────────────────────┐
+    │ #  │ COS FLEX PVC NAME │ HAS AUTO-DELETE-BUCKET ENABLED │ COS FLEX SECRET NAME │ MIGRATION DONE │ COS CSI PVC NAME          │ COS CSI SECRET NAME                │
+    ├────┼───────────────────┼────────────────────────────────┼──────────────────────┼────────────────┼───────────────────────────┼────────────────────────────────────┤
+    │ 1  │ default/pvc-1     │ NO                             │ default/secret-1     │ NO             │ -                         │ -                                  │
+    │ 2  │ prod/pvc-2        │ NO                             │ prod/secret-2        │ YES            │ prod/pvc-2-csi-migrated   │ prod/secret-2-pvc-2-csi-migrated   │
+    │ 3  │ staging/pvc-3     │ ⚠ YES                          │ staging/secret-3     │ NO             │ -                         │ -                                  │
+    │ 4  │ dev/pvc-4         │ NO                             │ shared/secret-4      │ YES            │ dev/pvc-4-csi-migrated    │ dev/secret-4-pvc-4-csi-migrated    │
+    │ 5  │ team-a/pvc-5      │ NO                             │ team-a/secret-5      │ ⚠ FAILED       │ team-a/pvc-5-csi-migrated │ team-a/secret-5-pvc-5-csi-migrated │
+    └────┴───────────────────┴────────────────────────────────┴──────────────────────┴────────────────┴───────────────────────────┴────────────────────────────────────┘
+
+    Summary: 2 pending, 1 failed, 2 migrated — 5 total PVCs
     ```
     {: screen}
+
+    The FlexVolume driver allows a PVC and its secret to be in different namespaces. The CSI driver requires a PVC and its secret to be in the same namespace. For this reason, the tool creates the CSI secret in the same namespace as the PVC. In the previous example, the FlexVolume PVC `dev/pvc-4` uses the secret `shared/secret-4`, so the CSI secret is created as `dev/secret-4-pvc-4-csi-migrated`. The original secret in the `shared` namespace is not changed.
+
+    The `MIGRATION DONE` column shows the migration status of each PVC.
+
+    | Value | Meaning |
+    |---|---|
+    | `NO` | The CSI PVC does not exist yet. The PVC still needs to be migrated. |
+    | `YES` | The CSI PVC exists and is in the `Bound` state. |
+    | `⚠ FAILED` | The CSI PVC exists but is not in the `Bound` state, for example because the `migrate` command timed out while it waited for the PVC to bind. |
+    {: caption="Values of the MIGRATION DONE column" caption-side="bottom"}
+
+    If any migrations failed, `discover` prints a `Failed migration(s) detected: CSI PVC exists but is not Bound` message after the table. To resolve the failure, see [Resolving PVCs that fail to bind](#cos-flex-to-csi-failed-bind).
 
     The `HAS AUTO-DELETE-BUCKET ENABLED` column shows whether the `ibm.io/auto-delete-bucket: true` annotation is set on the backing PV of the FlexVolume PVC.
 
@@ -208,9 +225,9 @@ Before migrating, scan your cluster to identify all FlexVolume-based PVCs and th
 
 1. Identify the PVCs that require migration.
 
-    The tool determines migration status at run time. It inspects the presence, the annotation (`app.kubernetes.io/created-by=cos-flex-to-csi-migration-tool`), and the phase of the expected CSI PVC in the cluster. A PVC shows `YES` in the `MIGRATION DONE` column only when all of these checks pass.
+    The tool determines migration status at run time. It inspects the presence, the annotation (`app.kubernetes.io/created-by=cos-flex-to-csi-migration-tool`), and the phase of the expected CSI PVC in the cluster. A PVC shows `YES` in the `MIGRATION DONE` column only when all of these checks pass. A PVC shows `⚠ FAILED` when the CSI PVC exists but is not in the `Bound` state.
 
-    Review the list and note which PVCs show `NO` in the `MIGRATION DONE` column and whether any show `⚠ YES` in the `HAS AUTO-DELETE-BUCKET ENABLED` column before continuing.
+    Review the list and note which PVCs show `NO` or `⚠ FAILED` in the `MIGRATION DONE` column and whether any show `⚠ YES` in the `HAS AUTO-DELETE-BUCKET ENABLED` column before continuing.
 
 ## Previewing the migration with a dry run
 {: #cos-flex-to-csi-dry-run}
@@ -252,6 +269,8 @@ At the start of every `migrate` run, the tool automatically checks the GitHub Re
 
 1. Repeat this step for each PVC that shows `NO` in the `MIGRATION DONE` column from the discovery step. If a PVC is blocked due to an auto-delete bucket annotation, see [Resolving blocked PVCs](#cos-flex-to-csi-auto-delete-bucket).
 
+    The `migrate` command waits up to 30 seconds for the new CSI PVC to reach the `Bound` state. If the PVC does not bind in that time, the command fails with a `CSI PVC did not reach Bound state within the timeout period` error, and `discover` shows `⚠ FAILED` for the PVC. For more information, see [Resolving PVCs that fail to bind](#cos-flex-to-csi-failed-bind).
+
 ## Verifying the migration and updating workloads
 {: #cos-flex-to-csi-verify}
 
@@ -264,7 +283,7 @@ After migration, confirm that the new CSI PVC is bound before updating your work
     ```
     {: pre}
 
-    Look for the `-csi-migrated` PVC in the output and confirm its `STATUS` is `Bound`.
+    Look for the `-csi-migrated` PVC in the output and confirm its `STATUS` is `Bound`. If the `STATUS` is not `Bound`, see [Resolving PVCs that fail to bind](#cos-flex-to-csi-failed-bind).
 
 1. Run `discover` again to confirm that `MIGRATION DONE` now shows `YES` for the migrated PVC, and that the `COS CSI PVC NAME` and `COS CSI SECRET NAME` columns are populated.
 
@@ -284,7 +303,7 @@ After migration, confirm that the new CSI PVC is bound before updating your work
 
 1. Verify that your application pods restart and mount the volume successfully.
 
-1. Manually remove the original FlexVolume-based PVC and secret from your cluster when you are ready. Cleanup of the original resources is not automated in the current version of the tool.
+1. Manually remove the original FlexVolume-based PVC and secret from your cluster when you are ready. Cleanup of the original resources is not automated in the current version of the tool. The original secret might be in a different namespace than the PVC and might be used by other PVCs. Check that no other PVC still uses the secret before you delete it.
 
 ## Understanding migrated resource names
 {: #cos-flex-to-csi-naming}
@@ -300,6 +319,7 @@ The following naming rules are used by the tool.
 
 - **PVC:** Each migrated PVC always gets the suffix `-csi-migrated`.
 - **Secret:** The migrated secret name is built as `<original-secret>-<pvc-name>-csi-migrated`.
+- **Namespace:** The migrated PVC and the migrated secret are always created in the same namespace as the original FlexVolume PVC, even when the original secret is in a different namespace. The CSI driver requires a PVC and its secret to be in the same namespace.
 
 This secret naming rule ensures that every migrated PVC gets its own CSI secret, even when the original FlexVolume configuration reused a single secret across multiple PVCs.
 
@@ -389,13 +409,59 @@ The tool never patches this annotation automatically. To resolve a blocked PVC, 
 
 1. Re-run the `migrate` command for the PVC.
 
+### Resolving PVCs that fail to bind
+{: #cos-flex-to-csi-failed-bind}
+
+The `migrate` command creates the CSI secret and the CSI PVC, and then waits up to 30 seconds for the CSI PVC to reach the `Bound` state. If the PVC stays in the `Pending` state, the command fails and `discover` shows `⚠ FAILED` in the `MIGRATION DONE` column for the PVC. The tool does not remove the CSI resources that it created.
+
+When a PVC fails to bind, the output is similar to the following example.
+
+```text
+Creating CSI PVC...
+✅ CSI PVC created: PVC_NAME-csi-migrated
+  ⏳ PVC status: Pending (waiting...)
+
+❌ CSI PVC did not reach Bound state within the timeout period.
+
+To investigate:
+  kubectl get pvc PVC_NAME-csi-migrated -n NAMESPACE
+  kubectl describe pvc PVC_NAME-csi-migrated -n NAMESPACE
+```
+{: screen}
+
+To resolve a PVC that failed to bind, complete the following steps.
+
+1. Review the events of the CSI PVC to find the cause of the failure. Replace PVC_NAME and NAMESPACE with the name of the original FlexVolume PVC and its namespace.
+
+    ```sh
+    kubectl describe pvc PVC_NAME-csi-migrated -n NAMESPACE
+    ```
+    {: pre}
+
+1. Fix the root cause that is shown in the `Events` section of the output.
+
+1. If you need to retry the migration, delete the CSI PVC and the CSI secret that the tool created for the failed migration. The CSI secret is in the same namespace as the PVC. Replace FLEX_SECRET_NAME with the name of the original FlexVolume secret.
+
+    ```sh
+    kubectl delete pvc PVC_NAME-csi-migrated -n NAMESPACE
+    kubectl delete secret FLEX_SECRET_NAME-PVC_NAME-csi-migrated -n NAMESPACE
+    ```
+    {: pre}
+
+    Delete only the resources with the `-csi-migrated` suffix. Do not delete the original FlexVolume PVC or secret.
+    {: important}
+
+1. Re-run the `migrate` command for the original FlexVolume PVC.
+
+1. Run `./cos-flex-to-csi discover` again to confirm that `MIGRATION DONE` now shows `YES`.
+
 ## Limitations
 {: #cos-flex-to-csi-limitations}
 
 The following scenarios are not supported in the current version of the migration tool.
 
 - **Classic infrastructure clusters** are not supported. The {{site.data.keyword.cos_full_notm}} CSI driver add-on is available only on VPC Gen 2 clusters, so migration is not possible on Classic clusters.
-- **Cleanup of original FlexVolume resources** is not automated. You must manually remove the original PVCs and secrets after verifying the migration and updating your workloads.
+- **Cleanup of original FlexVolume resources** is not automated. You must manually remove the original PVCs and secrets after verifying the migration and updating your workloads. Because an original secret can be in a different namespace than the PVC and can be used by other PVCs, check that no other PVC still uses a secret before you delete it.
 - **Unsupported node operating systems:** At least one worker node in the cluster must run Ubuntu or Red Hat CoreOS (RHCOS). Clusters with only RHEL nodes are not supported.
 - **Air-gapped environments:** The automatic self-upgrade feature requires outbound internet access to GitHub. Use the `--no-upgrade` flag on the `migrate` command to skip the upgrade check in air-gapped environments. Do not run `./cos-flex-to-csi --upgrade` in air-gapped environments. Instead, manually download a specific verified release.
 - **Backing PVs with `ibm.io/auto-delete-bucket: true`:** Migration is blocked for any FlexVolume PVC whose backing PV has the `ibm.io/auto-delete-bucket: true` annotation. You must manually patch the annotation to `false` on the PV before you can migrate. For more information, see [Resolving blocked PVCs](#cos-flex-to-csi-auto-delete-bucket).
@@ -406,14 +472,13 @@ If your cluster configuration is not listed as supported, do not proceed with mi
 {: #cos-flex-to-csi-next-steps}
 
 - After verifying that your migrated PVCs are bound, update your workloads to reference the new CSI PVCs.
-- After updating your workloads, manually remove the original FlexVolume PVCs and secrets from your cluster.
-- Review [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_apps) to explore additional PVC configuration options available with the CSI driver.
+- After updating your workloads, manually remove the original FlexVolume PVCs and secrets from your cluster. Before you delete a secret, check that no other PVC still uses it.
+- Review [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app) to explore additional PVC configuration options available with the CSI driver.
 - Review the [{{site.data.keyword.cos_full_notm}} add-on parameter reference](/docs/openshift?topic=openshift-storage-cos-install-addon) to customize your CSI driver configuration.
 
 ## Related links
 {: #cos-flex-to-csi-related}
 
 - [Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon)
-- [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_apps)
+- [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
 - [ibmcloud-object-storage-plugin releases](https://github.com/IBM/ibmcloud-object-storage-plugin/releases){: external}
-- [Migrating COS apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-cos-app-migration)
