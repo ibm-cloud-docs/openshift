@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-15"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -35,6 +35,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
 :   Use the new `cos-flex-to-csi` migration tool to migrate your {{site.data.keyword.cos_full_notm}} PVCs and secrets from the legacy FlexVolume driver to the Container Storage Interface (CSI) driver on VPC clusters. The tool discovers FlexVolume-based PVCs and secrets, and creates equivalent CSI resources alongside them for safe validation before decommissioning. For more information, see [Migrating {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 
 
