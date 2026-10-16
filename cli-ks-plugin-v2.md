@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-16"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -11044,7 +11044,7 @@ ibmcloud ks worker reboot --cluster CLUSTER --worker WORKER_ID
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
-Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes and bare metal VPC nodes are supported.
+Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes, bare metal VPC nodes, and VPC virtual server nodes in clusters that run Kubernetes 1.37 or later or Red Hat OpenShift 4.23 or later are supported. For other VPC virtual server nodes, use the `worker replace` command.
 
 ```sh
 ibmcloud ks worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--skip-master-health]
