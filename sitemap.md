@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-15"
 
 
 keywords: openshift
@@ -537,6 +537,16 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [16 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1626)
+
+        * Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
 
     * [13 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1326)
 
@@ -4667,6 +4677,50 @@ subcollection: openshift
 * [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-sync)
 
 * [Redeploy your app in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
+
+[Migrating {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#storage-cos-flex-to-csi)
+
+* [Why migrate to the CSI driver?](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-why)
+
+* [Differences between FlexVolume and CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-differences)
+
+* [How the migration process works](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-how-it-works)
+
+* [Before you begin](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-prereqs)
+
+* [Required permissions](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-permissions)
+
+* [Installing the migration tool](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-install)
+
+* [Discovering FlexVolume PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-discover)
+
+* [Previewing the migration with a dry run](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-dry-run)
+
+* [Migrating your PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-migrate)
+
+* [Verifying the migration and updating workloads](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-verify)
+
+* [Understanding migrated resource names](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-naming)
+
+    * [Single secret used by multiple PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-naming-shared-secret)
+
+    * [Single secret used by single PVC](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-naming-dedicated-secret)
+
+* [CLI reference](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-cli-reference)
+
+* [Self-upgrade](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-upgrade)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-troubleshooting)
+
+    * [Resolving blocked PVCs](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-auto-delete-bucket)
+
+    * [Resolving PVCs that fail to bind](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-failed-bind)
+
+* [Limitations](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-limitations)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-storage-cos-flex-to-csi#cos-flex-to-csi-related)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
@@ -8809,6 +8863,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [15 October 2026, Version 1.0 - v1.0.30_379049185](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1030_379049185)
+
     * [25 September 2026, Version 1.0 - v1.0.29_373392591](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1029_373392591)
 
     * [01 September 2026, Version 1.0 - v1.0.28_365471792](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1028_365471792)
@@ -8842,6 +8898,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-supported-versions)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
+
+    * [15 October 2026, Version 1.0 - v1.0.63_377107229](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1063_377107229)
 
     * [12 October 2026, Version 1.0 - v1.0.62_374966560](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1062_374966560)
 
@@ -9524,6 +9582,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-supported-versions)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [15 October 2026, Version 2.0 - v2.0.56_377110066](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2056_377110066)
 
     * [12 October 2026, Version 2.0 - v2.0.55_374967197](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2055_374967197)
 

@@ -2,10 +2,10 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-10-14"
 
 
-keywords: kubernetes, openshift, object storage add-in, cos
+keywords: kubernetes, openshift, object storage add-on, cos
 
 subcollection: openshift
 
@@ -528,6 +528,9 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
 ## Migrating from the Helm plug-in to the cluster add-on
 {: #cos-addon-migrate-helm}
 
+If you have many FlexVolume-based persistent volume claims (PVCs) to migrate on a VPC cluster, you can use the `cos-flex-to-csi` migration tool to automate discovery and migration of your FlexVolume PVCs and secrets. For more information, see [Migrating {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI](/docs/openshift?topic=openshift-storage-cos-flex-to-csi).
+{: tip}
+
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the details of your PVCs and select one to migrate.
@@ -671,7 +674,6 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
 1. After the new deployment is running, you can delete the old deployment.
 
 1. Repeat these steps for each PVC that you want to migrate.
-
 
 
 ## {{site.data.keyword.cos_full_notm}} cluster add-on storage classes

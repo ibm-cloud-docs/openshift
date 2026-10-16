@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-14"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -32,11 +32,11 @@ Review the following prerequisite steps and information before you install the A
 
 
 1. Make sure that your clusters meet the following requirements.
-    - Your **hub cluster** must be a VPC cluster with at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones.
-    - Each **managed cluster** must have at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. 
+    - Your **hub cluster** must be a VPC cluster with at least **3** worker nodes that run **RHCOS** and a minimum of **6 vCPU and 64 GB RAM**. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones.
+    - Each **managed cluster** must have at least **3** worker nodes that run **RHCOS** and a minimum of **6 vCPU and 64 GB RAM**. 
+    - If you plan to use ACM to manage clusters for ODF Regional Disaster Recovery, the hub cluster and each managed cluster must meet the higher ODF minimum of **16 vCPU x 64 GB**. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks).
 1. Review the [operators that are automatically installed](#auto-op) by the ACM add-on and the [optional operators](#optional-op) that you can install as enhancements.
 1. You must have the [Administrator platform access role and the Manager service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster in IBM Cloud Kubernetes Service.
-1. You must have a VPC cluster with at least 3 worker nodes. Each worker node must have a minimum of 4 CPUs and 16GB RAM. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones.
 1. [Create a trusted profile on your cluster to use for ACM](#trust-prof).
 1. **Optional**: If you want to import managed clusters during the ACM add-on installation process, if you plan to import managed clusters using the CLI after installation, or if you plan to update a managed cluster's connection credentials later, you must create a secret on the hub cluster for each managed cluster. See [Preparing secrets for ACM](#prep-secret). This step is not required if you only plan to import managed clusters after installation using the OpenShift web console.
 1. [Install or update the CLI](/docs/openshift?topic=openshift-cli-install).
@@ -253,7 +253,7 @@ Use the CLI to install the ACM add-on on the hub cluster.
     ```
     {: pre}
 
-2. Review the ACM add-on options. In the command, specify the default version found in the previous step. Note any options you want to include when you install the add-on. 
+2. Review the ACM add-on options. In the command, specify the default version found in the previous step. Note any options you want to include when you install the add-on.
 
     ```sh
     ibmcloud oc cluster addon options --addon acm --version DEFAULT_VERSION
@@ -287,7 +287,7 @@ Use the CLI to install the ACM add-on on the hub cluster.
     :   Required. The billing plan you want to select for ACM. Specify `KUBERNETES` for the **ACM for Kubernetes** plan.
 
     `--param 'isLicenseAccepted='`
-    :  Required. Specify `TRUE` to accept the license agreement for the selected billing plan. By accepting this license, you agree to the applicable terms and conditions and acknowledge your understanding of the services included in the selected plan. 
+    :  Required. Specify `TRUE` to accept the license agreement for the selected billing plan. By accepting this license, you agree to the applicable terms and conditions and acknowledge your understanding of the services included in the selected plan.
     
 1. Verify that the add-on installed. It might take several minutes for the add-on to show in the following outputs.
 
@@ -418,7 +418,7 @@ Gather the kubeconfig for the cluster you want to import, then use the OpenShift
 1. Get the kubeconfig for the cluster you want to import. From the IBM Cloud CLI, run the following command and save the output.
 
     ```sh
-    ibmcloud ks cluster config --cluster CLUSTER_NAME --admin --output yaml
+    ibmcloud oc cluster config --cluster CLUSTER_NAME --admin --output yaml
     ```
     {: pre}
 
@@ -502,28 +502,37 @@ Updating a managed cluster's connection credentials requires the [secret](#prep-
 ## Upgrading the ACM version
 {: #upgrade}
 
-1. Run the command to upgrade the add-on to a new version.
+1. List the available versions of the ACM add-on. In the output, find the version that you want to upgrade to.
+
+    ```sh
+    ibmcloud oc cluster addon versions --addon acm
+    ```
+    {: pre}
+
+    Before you upgrade, make sure that the version you choose supports your cluster's OpenShift version. For the supported OpenShift versions for each ACM version, see [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+
+2. Run the command to upgrade the add-on to a new version.
 
     ```sh
     ibmcloud oc cluster addon update acm --cluster CLUSTER_ID --version ADD-ON_VERSION
     ```
     {: pre}
 
-2. To check that the add-on updated, list your cluster add-ons. In the output, look for the ACM add-on details.
+3. To check that the add-on updated, list your cluster add-ons. In the output, look for the ACM add-on details.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster CLUSTER_ID
     ```
     {: pre}
 
-3. Edit the `acmhub` custom resource on your hub cluster.
+4. Edit the `acmhub` custom resource on your hub cluster.
 
     ```sh
     oc edit acmhub acm-auto
     ```
     {: pre}
 
-4. In the `spec` section, change the `acmUpgrade` parameter from `false` to `true`.
+5. In the `spec` section, change the `acmUpgrade` parameter from `false` to `true`.
 
     ```yaml
     spec:
@@ -531,9 +540,9 @@ Updating a managed cluster's connection credentials requires the [secret](#prep-
     ```
     {: codeblock}
 
-5. Save and apply your changes.
+6. Save and apply your changes.
 
-6. After some time, verify that the subscription channel is updated to the latest version.
+7. After some time, verify that the subscription channel is updated to the latest version.
 
     ```sh
     oc get subs -n open-cluster-management

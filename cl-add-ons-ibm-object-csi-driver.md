@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-15"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -59,10 +59,20 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### 25 September 2026, Version 1.0 - v1.0.29_373392591
-{: #cl-add-ons-ibm-object-csi-driver-v1029_373392591}
+### 15 October 2026, Version 1.0 - v1.0.30_379049185
+{: #cl-add-ons-ibm-object-csi-driver-v1030_379049185}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}, [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, [CVE-2026-78667](https://nvd.nist.gov/vuln/detail/cve-2026-78667){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-40467](https://nvd.nist.gov/vuln/detail/cve-2026-40467){: external}, [CVE-2026-40468](https://nvd.nist.gov/vuln/detail/cve-2026-40468){: external}, and [CVE-2026-40553](https://nvd.nist.gov/vuln/detail/cve-2026-40553){: external}.
+- Updates Go to version `1.26.9`.
+- Updated ControllerServer, NodeServer, and associated ClusterRoles to eliminate redundant cluster-info ConfigMap permissions. 
+- Tightened RBAC permissions for the COS CSI Operator and removed cluster-info ConfigMap access. 
+- Added robust validation checks for incoming request payloads across cos-csi-mounter APIs. 
+
+
+### 25 September 2026, Version 1.0 - v1.0.29_373392591
+{: #cl-add-ons-ibm-object-csi-driver-v1029_373392591}
 
 - Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/cve-2026-56391){: external}, [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/cve-2026-56392){: external}, [CVE-2026-56854](https://nvd.nist.gov/vuln/detail/cve-2026-56854){: external}, [CVE-2026-56855](https://nvd.nist.gov/vuln/detail/cve-2026-56855){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, [CVE-2026-78662](https://nvd.nist.gov/vuln/detail/cve-2026-78662){: external}, and [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}.
 - Updates Go to version `1.26.8`.
