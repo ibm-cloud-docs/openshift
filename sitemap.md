@@ -540,8 +540,6 @@ subcollection: openshift
 
     * [19 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1926)
 
-        * Add-on OpenShift AI version `421` is available.
-
     * [16 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1626)
 
         * Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
@@ -555,8 +553,6 @@ subcollection: openshift
     * [13 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1326)
 
         * ACM cluster add-on patch updates.
-
-        * Add-on OpenShift AI version `421` is available.
 
     * [12 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1226)
 

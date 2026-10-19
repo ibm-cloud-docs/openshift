@@ -33,9 +33,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-oct1926}
 {: release-note}
 
-Add-on OpenShift AI version `421` is available.
-:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons).
-
 ### 16 October 2026
 {: #openshift-oct1626}
 {: release-note}
@@ -62,11 +59,6 @@ IBM Storage Operator cluster add-on patch updates.
 
 ACM cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-acm).
-
-
-
-Add-on OpenShift AI version `421` is available.
-:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons).
 
 
 
