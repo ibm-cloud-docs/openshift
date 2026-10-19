@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-19"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -40,6 +40,7 @@ ibmcloud oc cluster addon versions
 
 | Add-on version | Supported OpenShift versions |
 |---|---|
+| `4.22.0` | `>=4.22.0 <4.23.0` |
 | `4.21.0` | `>=4.21.0 <4.23.0` |
 | `4.20.0` | `>=4.20.0 <4.22.0` |
 | `4.19.0` | `>=4.19.0 <4.21.0` |
@@ -953,12 +954,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI image to `8.8-10721697`.
 
 
-### 20 October 2023, Version 4.13.6
-{: #cl-add-ons-openshift-data-foundation-4.13.6}
-
-- Updates the UBI image to `8.8-10721696`.
-
-
 
 
 ### 03 August 2024, Version 4.12.21
@@ -1019,12 +1014,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI to`8.8-1072.1697`.
 
 
-### 20 October 2023, Version 4.12.11
-{: #cl-add-ons-openshift-data-foundation-4.12.11}
-
-- Updates the UBI to`8.8-1072.1696`.
-
-
 
 
 ### 04 March 2024, Version 4.11.21
@@ -1059,12 +1048,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI image to `8.9-10721697`.
 
 
-### 20 October 2023, Version 4.11.16
-{: #cl-add-ons-openshift-data-foundation-4.11.16}
-
-- Updates the UBI image to `8.9-10721696`.
-
-
 
 
 ### 29 November 2023, Version 4.10.32 
@@ -1085,9 +1068,3 @@ Updates the UBI.
 {: #cl-add-ons-openshift-data-foundation-4.10.31}
 
 - Updates the UBI image to `8.8-10721697`.
-
-
-### 20 October 2023, Version 4.10 - 4.10.30
-{: #cl-add-ons-openshift-data-foundation-4.10.30}
-
-- Updates the UBI image to `8.8-10721696`.
