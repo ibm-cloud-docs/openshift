@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-05"
+lastupdated: "2026-10-19"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -228,12 +228,3 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 {: #1.0.0_1936}
 
 - Resolves [CVE-2023-39325](https://www.cve.org/cveRecord?id=cve-2023-39325){: external}.
-
-
-### 18 October 2023, Version 1.0.0 - 1.0.0_1921
-{: #1.0.0_1921}
-
-- [CVE-2023-4911](https://www.cve.org/cveRecord?id=cve-2023-4911){: external}.
-- [CVE-2023-4527](https://www.cve.org/cveRecord?id=cve-2023-4527){: external}.
-- [CVE-2023-4806](https://www.cve.org/cveRecord?id=cve-2023-4806){: external}.
-- [CVE-2023-4813](https://www.cve.org/cveRecord?id=cve-2023-4813){: external}.

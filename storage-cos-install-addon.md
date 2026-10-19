@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-19"
 
 
 keywords: kubernetes, openshift, object storage add-on, cos
@@ -36,9 +36,14 @@ Prerequisites:
 - You can use an existing bucket by specifying the bucket name in your PVC.
 - If you provide a bucket name and that bucket doesn't exist, then a bucket with that name is created.
 - If you don't provide a bucket name, then a bucket with the naming convention `s3fs-<timestamp>-xxx` or `rclone-<timestamp>-xxx` is created, based on the mounter type.
-- Buckets are deleted based on reclaim policy defined in your storage class.
-    - If `reclaimPolicy: Delete` is set, the bucket is deleted when the PVC is deleted.
-    - If `reclaimPolicy: Retain` is set, the bucket is retained even after the PVC is deleted.
+- When a PVC is deleted, whether the bucket is also deleted depends on the storage class reclaim policy and how the bucket was provisioned:
+
+    | Bucket origin | Reclaim policy | Bucket deleted with PVC? |
+    |---|---|---|
+    | Pre-existing bucket specified via `bucketName` in cos csi secret | `Delete` or `Retain` | No — bucket is always preserved |
+    | Bucket created by the driver | `Delete` | Yes |
+    | Bucket created by the driver | `Retain` | No — bucket is preserved |
+    {: caption="Bucket deletion behavior on PVC deletion" caption-side="bottom"}
 
 
 ## Enabling the {{site.data.keyword.cos_full_notm}} add-on from the console

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-10-19"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, vpc
@@ -151,11 +151,9 @@ Consider scaling down your RHEL worker pool and keeping it for several days befo
     ```
     {: pre}
 
-### Optional Step 5: Uninstall and reinstall the Object Storage plug-in
+### Optional Step 5: Upgrade the Object Storage plug-in
 {: #rhel-rm-cos}
 
-If you use the COS plug-in in your cluster, after migrating from RHEL to RHCOS, you must uninstall and reinstall it because the `kube-driver` path is different between the two operating systems. If this is not done, you may see an error similar to `Error: failed to mkdir /usr/libexec/kubernetes: mkdir /usr/libexec/kubernetes: read-only file system`.
+If you use the COS plug-in in your cluster, after migrating from RHEL to RHCOS, you must upgrade it to version 2.2.40 or later because the `kube-driver` path is different between the two operating systems. If this is not done, you may see an error similar to `Error: failed to mkdir /usr/libexec/kubernetes: mkdir /usr/libexec/kubernetes: read-only file system`.
 
-* [Follow the steps to uninstall the COS plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin).
-
-* [Reinstall the plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
+If your COS plug-in version is earlier than 2.2.40, [upgrade the plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).

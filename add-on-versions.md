@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-19"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -33,9 +33,6 @@ ACM `2.17.0`
 Image Key Synchronizer `1.0.0`
 :   Supported OpenShift versions: `>=4.4.0 <4.23.0`
 
-OpenShift AI `416`
-:   Supported OpenShift versions: `>=4.16.0 <4.18.0`
-
 OpenShift AI `417`
 :   Supported OpenShift versions: `>=4.17.0 <4.19.0`
 
@@ -65,3 +62,6 @@ OpenShift Data Foundation `4.20.0`
 
 OpenShift Data Foundation `4.21.0`
 :   Supported OpenShift versions: `>=4.21.0 <4.23.0`
+
+OpenShift Data Foundation `4.22.0`
+:   Supported OpenShift versions: `>=4.22.0 <4.23.0`

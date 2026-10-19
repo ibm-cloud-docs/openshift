@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-15"
+lastupdated: "2026-10-19"
 
 
 keywords: openshift
@@ -537,6 +537,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [19 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1926)
+
+        * Add-on OpenShift AI version `421` is available.
 
     * [16 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1626)
 
@@ -2571,7 +2575,7 @@ subcollection: openshift
 
 * [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
 
-    * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
+    * [Optional Step 5: Upgrade the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
 
 [Migrating Satellite worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate_sat#rhel_migrate_sat)
 
@@ -2585,7 +2589,7 @@ subcollection: openshift
 
 * [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate_sat#rm-rhel-pool)
 
-    * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate_sat#rhel-rm-cos)
+    * [Optional Step 5: Upgrade the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate_sat#rhel-rm-cos)
 
 [Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhcos-migrate-gpu#rhcos-migrate-gpu)
 
@@ -8416,13 +8420,21 @@ subcollection: openshift
 
     * [`addVirtualNetworkInterfaceToBareMetalNode`](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnode)
 
+    * [`createKubernetesWorkloadMigrationPlan`](/docs/openshift?topic=openshift-cs-graphql-api#createkubernetesworkloadmigrationplan)
+
     * [`createSatelliteConnector`](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnector)
+
+    * [`createVPCKubernetesClusterFromTemplate`](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclusterfromtemplate)
+
+    * [`createVPCKubernetesClusterTemplate`](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclustertemplate)
 
     * [`reinitializeKubernetesNode`](/docs/openshift?topic=openshift-cs-graphql-api#reinitializekubernetesnode)
 
     * [`removeSatelliteConnector`](/docs/openshift?topic=openshift-cs-graphql-api#removesatelliteconnector)
 
     * [`removeVirtualNetworkInterfaceFromNode`](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnode)
+
+    * [`startKubernetesWorkloadMigration`](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigration)
 
     * [`updateSatelliteLocation`](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocation)
 
@@ -8436,9 +8448,39 @@ subcollection: openshift
 
     * [BareMetalVirtualNetworkInterface](/docs/openshift?topic=openshift-cs-graphql-api#baremetalvirtualnetworkinterface)
 
+    * [ClassicKubernetesClusterServiceEndpointsTemplate](/docs/openshift?topic=openshift-cs-graphql-api#classickubernetesclusterserviceendpointstemplate)
+
+    * [ClassicKubernetesClusterTemplate](/docs/openshift?topic=openshift-cs-graphql-api#classickubernetesclustertemplate)
+
+    * [ClassicKubernetesClusterVPCMigrationStatus](/docs/openshift?topic=openshift-cs-graphql-api#classickubernetesclustervpcmigrationstatus)
+
+    * [ClassicKubernetesNamespaceTemplate](/docs/openshift?topic=openshift-cs-graphql-api#classickubernetesnamespacetemplate)
+
+    * [CreateKubernetesWorkloadMigrationPlanPayload](/docs/openshift?topic=openshift-cs-graphql-api#createkubernetesworkloadmigrationplanpayload)
+
     * [CreateSatelliteConnectorPayload](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnectorpayload)
 
+    * [CreateVPCKubernetesClusterFromTemplatePayload](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclusterfromtemplatepayload)
+
+    * [CreateVPCKubernetesClusterTemplatePayload](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclustertemplatepayload)
+
+    * [KeyValuePair](/docs/openshift?topic=openshift-cs-graphql-api#keyvaluepair)
+
     * [KubernetesCluster](/docs/openshift?topic=openshift-cs-graphql-api#kubernetescluster)
+
+    * [KubernetesClusterAddOnTemplate](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesclusteraddontemplate)
+
+    * [KubernetesClusterKeyManagementTemplate](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesclusterkeymanagementtemplate)
+
+    * [KubernetesClusterVPCMigration](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesclustervpcmigration)
+
+    * [KubernetesClusterVPCMigrationPlan](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesclustervpcmigrationplan)
+
+    * [KubernetesNodePoolTemplate](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesnodepooltemplate)
+
+    * [KubernetesWorkloadMigrationPlan](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesworkloadmigrationplan)
+
+    * [KubernetesWorkloadMigrationPlanDetails](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesworkloadmigrationplandetails)
 
     * [Region](/docs/openshift?topic=openshift-cs-graphql-api#region)
 
@@ -8456,11 +8498,55 @@ subcollection: openshift
 
     * [SecurityGroup](/docs/openshift?topic=openshift-cs-graphql-api#securitygroup)
 
+    * [StartKubernetesWorkloadMigrationPayload](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigrationpayload)
+
     * [Subnet](/docs/openshift?topic=openshift-cs-graphql-api#subnet)
 
     * [UpdateSatelliteLocationPayload](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocationpayload)
 
     * [VPCBareMetalKubernetesNode](/docs/openshift?topic=openshift-cs-graphql-api#vpcbaremetalkubernetesnode)
+
+    * [VPCKubernetesClusterTemplate](/docs/openshift?topic=openshift-cs-graphql-api#vpckubernetesclustertemplate)
+
+    * [VPCMigrationCalicoNetworkPolicy](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationcaliconetworkpolicy)
+
+    * [VPCMigrationComponentAddOnStatus](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationcomponentaddonstatus)
+
+    * [VPCMigrationComponentClusterStatus](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationcomponentclusterstatus)
+
+    * [VPCMigrationComponentGlobalResourcesStatus](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationcomponentglobalresourcesstatus)
+
+    * [VPCMigrationComponentPolicyStatus](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationcomponentpolicystatus)
+
+    * [VPCMigrationExternalName](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationexternalname)
+
+    * [VPCMigrationHost](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationhost)
+
+    * [VPCMigrationHostMapping](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationhostmapping)
+
+    * [VPCMigrationIngress](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationingress)
+
+    * [VPCMigrationKubernetesNetworkPolicy](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationkubernetesnetworkpolicy)
+
+    * [VPCMigrationLoadBalancer](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationloadbalancer)
+
+    * [VPCMigrationLoadBalancerTypeMapping](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationloadbalancertypemapping)
+
+    * [VPCMigrationNamespaceDetails](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationnamespacedetails)
+
+    * [VPCMigrationNamespaceNetworking](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationnamespacenetworking)
+
+    * [VPCMigrationNamespaceStatus](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationnamespacestatus)
+
+    * [VPCMigrationNodePort](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationnodeport)
+
+    * [VPCMigrationNote](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationnote)
+
+    * [VPCMigrationRoute](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationroute)
+
+    * [VPCMigrationStorage](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationstorage)
+
+    * [VPCMigrationStorageClassNameMapping](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationstorageclassnamemapping)
 
 * [Interface types](/docs/openshift?topic=openshift-cs-graphql-api#interface-types)
 
@@ -8480,13 +8566,25 @@ subcollection: openshift
 
     * [AddVirtualNetworkInterfaceToBareMetalNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnodeinput)
 
+    * [CreateKubernetesWorkloadMigrationPlanInput](/docs/openshift?topic=openshift-cs-graphql-api#createkubernetesworkloadmigrationplaninput)
+
     * [CreateSatelliteConnectorInput](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnectorinput)
+
+    * [CreateVPCKubernetesClusterFromTemplateInput](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclusterfromtemplateinput)
+
+    * [CreateVPCKubernetesClusterTemplateInput](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclustertemplateinput)
+
+    * [KeyValuePairInput](/docs/openshift?topic=openshift-cs-graphql-api#keyvaluepairinput)
+
+    * [KubernetesNodePoolVPCMigrationOverride](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesnodepoolvpcmigrationoverride)
 
     * [ReinitializeKubernetesNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#reinitializekubernetesnodeinput)
 
     * [RemoveSatelliteConnectorInput](/docs/openshift?topic=openshift-cs-graphql-api#removesatelliteconnectorinput)
 
     * [RemoveVirtualNetworkInterfaceFromNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnodeinput)
+
+    * [StartKubernetesWorkloadMigrationInput](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigrationinput)
 
     * [UpdateSatelliteLocationInput](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocationinput)
 
@@ -8854,8 +8952,6 @@ subcollection: openshift
     * [16 January 2024, Version 1.0.0 - 1.0.0_2015](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2015)
 
     * [25 October 2023, Version 1.0.0 - 1.0.0_1936](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1936)
-
-    * [18 October 2023, Version 1.0.0 - 1.0.0_1921](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1921)
 
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
@@ -9347,8 +9443,6 @@ subcollection: openshift
 
     * [02 November 2023, Version 4.13.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.7)
 
-    * [20 October 2023, Version 4.13.6](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.6)
-
     * [03 August 2024, Version 4.12.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.21)
 
     * [15 July 2024, Version 4.12.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.20)
@@ -9367,8 +9461,6 @@ subcollection: openshift
 
     * [02 November 2023, Version 4.12.12](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.12)
 
-    * [20 October 2023, Version 4.12.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.11)
-
     * [04 March 2024, Version 4.11.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.21)
 
     * [14 February 2024, Version 4.11.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.20)
@@ -9379,15 +9471,11 @@ subcollection: openshift
 
     * [02 November 2023, Version 4.11.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.17)
 
-    * [20 October 2023, Version 4.11.16](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.16)
-
     * [29 November 2023, Version 4.10.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.32)
 
     * [17 November 2023, Version 4.10.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.14)
 
     * [02 November 2023, Version 4.10.31](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.31)
-
-    * [20 October 2023, Version 4.10 - 4.10.30](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.30)
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
