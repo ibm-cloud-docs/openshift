@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-16"
+lastupdated: "2026-10-20"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -32,6 +32,10 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
     ibmcloud plugin install ks
     ```
     {: pre}
+
+
+
+
 
 
 
