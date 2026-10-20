@@ -93,7 +93,7 @@ Cluster autoscaler cluster add-on patch updates.
 
 
 Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
-:   Fix packs can be applied in the following ways. 
+:   Fix packs can be applied in the following ways.
 :   **Classic infrastructure**: Update or reload the worker node.
 :   **VPC infrastructure**: Replace the worker node.
 :   **VPC Bare Metal**: Reload the worker node.
@@ -222,7 +222,7 @@ IBM Object CSI Driver cluster add-on patch updates.
 
 
 Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
-:   Fix packs can be applied in the following ways. 
+:   Fix packs can be applied in the following ways.
 :   **Classic infrastructure**: Update or reload the worker node.
 :   **VPC infrastructure**: Replace the worker node.
 :   **VPC Bare Metal**: Reload the worker node.
@@ -309,7 +309,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 
 Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
-:   Fix packs can be applied in the following ways. 
+:   Fix packs can be applied in the following ways.
 :   **Classic infrastructure**: Update or reload the worker node.
 :   **VPC infrastructure**: Replace the worker node.
 :   **VPC Bare Metal**: Reload the worker node.
