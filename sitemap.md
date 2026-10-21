@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-20"
 
 
 keywords: openshift
@@ -9901,8 +9901,6 @@ subcollection: openshift
 
 [VPC worker node flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [Chennai (`in-che`)](/docs/openshift?topic=openshift-vpc-flavors#chennai-in-che)
-
 * [Dallas (`us-south`)](/docs/openshift?topic=openshift-vpc-flavors#dallas-us-south)
 
 * [Frankfurt (`eu-de`)](/docs/openshift?topic=openshift-vpc-flavors#frankfurt-eu-de)
@@ -9912,8 +9910,6 @@ subcollection: openshift
 * [Madrid (`eu-es`)](/docs/openshift?topic=openshift-vpc-flavors#madrid-eu-es)
 
 * [Montreal (`ca-mon`)](/docs/openshift?topic=openshift-vpc-flavors#montreal-ca-mon)
-
-* [Mumbai (`in-mum`)](/docs/openshift?topic=openshift-vpc-flavors#mumbai-in-mum)
 
 * [Osaka (`jp-osa`)](/docs/openshift?topic=openshift-vpc-flavors#osaka-jp-osa)
 

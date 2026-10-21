@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-29"
+lastupdated: "2026-10-20"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -46,8 +46,6 @@ Review the version history for OpenShift Virtualization.
 ### 14 September 2026, Version 4.22 - v1.0.10_4.22_368659156
 {: #cl-add-ons-openshift-virtualization-v1010_422_368659156}
 
-[Default version]{: tag-green}
-
 - Updates Go to version `1.26.8`.
 - kubevirt-hyperconverged-operator.v4.22.6
 - kubernetes-nmstate-operator.4.22.0-202608260901
@@ -60,8 +58,6 @@ Review the version history for OpenShift Virtualization.
 
 ### 28 September 2026, Version 4.21 - v1.0.11_4.21_373756836
 {: #cl-add-ons-openshift-virtualization-v1011_421_373756836}
-
-[Default version]{: tag-green}
 
 - Updates Go to version `1.26.8`.
 - kubevirt-hyperconverged-operator.v4.21.17
