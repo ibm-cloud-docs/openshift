@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-22"
 
 
 keywords: openshift
@@ -538,6 +538,10 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
+    * [20 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2026)
+
+        * New CLI version `1.0.896` available.
+
     * [16 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1626)
 
         * Migrate {{site.data.keyword.cos_full_notm}} PVCs from FlexVolume to CSI.
@@ -603,6 +607,8 @@ subcollection: openshift
         * Red Hat OpenShift on IBM Cloud version 4.22 is now available
 
         * Cluster control plane reachable over port 443 (4.22+)
+
+        * OpenShift web console plug-ins from add-ons require updates for version 4.22
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
 
@@ -6202,6 +6208,8 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_422#422_before)
 
+    * [Update after master](/docs/openshift?topic=openshift-cs_versions_422#422_after)
+
 * [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_422#status-check-422)
 
 [4.22 version change log](/docs/openshift?topic=openshift-openshift_changelog_422#openshift_changelog_422)
@@ -8294,6 +8302,8 @@ subcollection: openshift
     * [`ibmcloud ks zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
+
+* [Version v1.0.896](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01896)
 
 * [Version v1.0.892](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01892)
 

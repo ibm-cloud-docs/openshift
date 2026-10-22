@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-22"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2026
 {: #openshift-oct26}
+
+### 20 October 2026
+{: #openshift-oct2026}
+{: release-note}
+
+New CLI version `1.0.896` available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 16 October 2026
 {: #openshift-oct1626}
@@ -179,6 +186,9 @@ Red Hat OpenShift on IBM Cloud version 4.22 is now available
 Cluster control plane reachable over port 443 (4.22+)
 :   Starting with version 4.22, the cluster control plane is reachable over port 443 in addition to port 30000-32767. Review your firewall rules and network configurations to ensure that port 443 access is permitted. For more information, see [Cluster control plane reachable over port 443](/docs/openshift?topic=openshift-notice-cp-port-443).
 
+
+OpenShift web console plug-ins from add-ons require updates for version 4.22
+:   Red Hat made breaking changes to the OpenShift web console in version 4.22. All dynamic console plug-ins must be updated to version 4.22 to function properly. The following cluster add-ons deliver a console plug-in: OpenShift Data Foundation, Advanced Cluster Management (ACM), OpenShift Virtualization, and Red Hat OpenShift AI. These add-ons are not updated automatically when you update your cluster master. Until you update them, the related pages in the web console might not load or function correctly. Backend and workload behavior and CLI operations are not affected. After you update your cluster master to version 4.22, update each of these add-ons that is installed to a version that supports 4.22. For more information, see [Update after master](/docs/openshift?topic=openshift-cs_versions_422#422_after).
 
 {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-09"
+lastupdated: "2026-10-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -25,6 +25,12 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 
 Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
+
+## Version v1.0.896
+{: #cli-01896}
+
+Version 1.0.896 of the CLI was released on 20 October 2026.
+- Updates the description for [`ibmcloud ks worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) to reflect that VPC virtual server nodes in clusters that run Kubernetes 1.37 or later or Red Hat OpenShift 4.23 or later are now supported.
 
 ## Version v1.0.892
 {: #cli-01892}

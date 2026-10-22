@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-09-29"
+lastupdated: "2026-10-22"
 
 
 keywords: openshift, version, update, upgrade, 4.22, update openshift
@@ -61,6 +61,9 @@ Starting with version 4.22, the cluster control plane is served over port 443 in
 {: important}
 
 
+After you update to version 4.22, console plug-ins that are delivered by the following cluster add-ons might not function correctly in the OpenShift web console until you update the add-ons to versions that support 4.22: OpenShift Data Foundation, Advanced Cluster Management (ACM), OpenShift Virtualization, and Red Hat OpenShift AI. Red Hat made breaking changes to the web console on this release boundary. Backend and workload behavior and CLI operations are not affected. For more information, see [Update after master](#422_after).
+{: important}
+
 ### Update before master
 {: #422_before}
 
@@ -82,7 +85,16 @@ For clusters that run version 4.22 or later, you can use the `oc adm upgrade sta
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.22" caption-side="bottom"}
 
 
+### Update after master
+{: #422_after}
 
+The following table shows the actions that you must take after you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+{: shortdesc}
+
+| Type | Description |
+| --- | --- |
+| OpenShift web console plug-ins from add-ons | Red Hat made breaking changes to the OpenShift web console in version 4.22. All dynamic console plug-ins must be updated to version 4.22 to function properly. The following cluster add-ons deliver a console plug-in: OpenShift Data Foundation, Advanced Cluster Management (ACM), OpenShift Virtualization, and Red Hat OpenShift AI. These add-ons are not updated automatically when you update the cluster master. Until you update them, the related pages in the web console might not load, might display errors, or might not function correctly. This change does not affect backend or workload behavior, and CLI operations such as `oc` and `ibmcloud ks` are not affected. Red Hat does not expect similar limitations in future releases. **Action required:** Immediately after the master update, update each of these add-ons that is installed to a version that supports 4.22 by running `ibmcloud ks cluster addon update ADD-ON_NAME --cluster CLUSTER_NAME_OR_ID --version VERSION`. To list your add-ons and available versions, run `ibmcloud ks cluster addon ls --cluster CLUSTER_NAME_OR_ID` and `ibmcloud ks cluster addon versions`. To see the console plug-ins that are installed in your cluster, run `oc get consoleplugin`. For more information, see [Updating the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-add-on-vpc), [Upgrading the ACM version](/docs/openshift?topic=openshift-acm#upgrade), [Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-update), [Updating the IBM-managed OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update), and the [add-on version history](/docs/openshift?topic=openshift-supported-cluster-addon-versions). |
+{: caption="Changes to make after you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.22" caption-side="bottom"}
 
 ## Checking the `Upgradeable` status of your cluster
 {: #status-check-422}
