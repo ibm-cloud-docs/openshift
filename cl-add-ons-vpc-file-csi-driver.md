@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-15"
+lastupdated: "2026-10-23"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -57,6 +57,16 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### 22 October 2026, Version 2.0 - v2.0.57_379023073
+{: #cl-add-ons-vpc-file-csi-driver-v2057_379023073}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
+- `armada-storage-secret v1.3.72`
+- `stunnel:0.1.0.build-41`
 
 
 ### 15 October 2026, Version 2.0 - v2.0.56_377110066

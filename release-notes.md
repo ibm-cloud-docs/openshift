@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-22"
+lastupdated: "2026-10-23"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,12 +29,53 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2026
 {: #openshift-oct26}
 
+### 23 October 2026
+{: #openshift-oct2326}
+{: release-note}
+
+Add-on OpenShift AI version `421` is available.
+:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons).
+
+### 22 October 2026
+{: #openshift-oct2226}
+{: release-note}
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+
+
+OpenShift Virtualization cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
 ### 20 October 2026
 {: #openshift-oct2026}
 {: release-note}
 
 New CLI version `1.0.896` available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
+
+
+Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+:   Fix packs can be applied in the following ways. 
+:   **Classic infrastructure**: Update or reload the worker node.
+:   **VPC infrastructure**: Replace the worker node.
+:   **VPC Bare Metal**: Reload the worker node.
+:   Review the change logs for your cluster version.
+:   [Version 4.22 change log](/docs/openshift?topic=openshift-openshift_changelog_422)
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+
 
 ### 16 October 2026
 {: #openshift-oct1626}
@@ -76,6 +117,9 @@ VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 ### 9 October 2026
 {: #openshift-oct0926}

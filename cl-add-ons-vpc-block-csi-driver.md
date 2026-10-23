@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-23"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -58,6 +58,20 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### 23 October 2026, Version 5.2 - v5.2.65_379715753
+{: #cl-add-ons-vpc-block-csi-driver-v5265_379715753}
+
+- Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, and [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}.
+- `armada-storage-secret v1.3.67`
+- `ibm-csi-init-container v1.0.39`
+
+
+### 12 October 2026, Version 5.2 - v5.2.64_375350429
+{: #cl-add-ons-vpc-block-csi-driver-v5264_375350429}
+
+- Add CSISnapshotterWorkerThreads to addon-vpc-block-csi-driver-configmap 
 
 
 ### 30 September 2026, Version 5.2 - v5.2.63_372871485
@@ -289,6 +303,20 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### 23 October 2026, Version 5.1 - v5.1.65_379715791
+{: #cl-add-ons-vpc-block-csi-driver-v5165_379715791}
+
+- Resolves the following CVEs: [CVE-2026-14456](https://nvd.nist.gov/vuln/detail/cve-2026-14456){: external}, [CVE-2026-14457](https://nvd.nist.gov/vuln/detail/cve-2026-14457){: external}, [CVE-2026-18798](https://nvd.nist.gov/vuln/detail/cve-2026-18798){: external}, [CVE-2026-54874](https://nvd.nist.gov/vuln/detail/cve-2026-54874){: external}, [CVE-2026-63072](https://nvd.nist.gov/vuln/detail/cve-2026-63072){: external}, [CVE-2026-63074](https://nvd.nist.gov/vuln/detail/cve-2026-63074){: external}, [CVE-2026-63075](https://nvd.nist.gov/vuln/detail/cve-2026-63075){: external}, [CVE-2026-63076](https://nvd.nist.gov/vuln/detail/cve-2026-63076){: external}, and [CVE-2026-63073](https://nvd.nist.gov/vuln/detail/cve-2026-63073){: external}.
+- `armada-storage-secret v1.3.72`
+- `ibm-csi-init-container v1.0.39`
+
+
+### 12 October 2026, Version 5.1 - v5.1.64_375569201
+{: #cl-add-ons-vpc-block-csi-driver-v5164_375569201}
+
+- Add CSISnapshotterWorkerThreads to addon-vpc-block-csi-driver-configmap 
 
 
 ### 30 September 2026, Version 5.1 - v5.1.63_372876804

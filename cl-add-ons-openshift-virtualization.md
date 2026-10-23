@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-23"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -43,6 +43,18 @@ Review the version history for OpenShift Virtualization.
 {: #cl-add-ons-openshift-virtualization-4.22}
 
 
+### 22 October 2026, Version 4.22 - v1.0.12_4.22_380378239
+{: #cl-add-ons-openshift-virtualization-v1012_422_380378239}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.26.9`.
+- kubevirt-hyperconverged-operator.v4.22.12
+- kubernetes-nmstate-operator.4.21.0-202609301304
+- node-maintenance-operator.v5.7.1
+- Resolves the following Prisma CVEs: [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}, and [CVE-2026-81870](https://nvd.nist.gov/vuln/detail/cve-2026-81870){: external}.
+
+
 ### 14 September 2026, Version 4.22 - v1.0.10_4.22_368659156
 {: #cl-add-ons-openshift-virtualization-v1010_422_368659156}
 
@@ -54,6 +66,18 @@ Review the version history for OpenShift Virtualization.
 
 ## Version 4.21
 {: #cl-add-ons-openshift-virtualization-4.21}
+
+
+### 22 October 2026, Version 4.21 - v1.0.12_4.21_380378239
+{: #cl-add-ons-openshift-virtualization-v1012_421_380378239}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.26.9`.
+- kubevirt-hyperconverged-operator.v4.21.17
+- kubernetes-nmstate-operator.4.21.0-202610070332
+- node-maintenance-operator.v5.6.1
+- Resolves the following Prisma CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}, and [CVE-2026-81870](https://nvd.nist.gov/vuln/detail/cve-2026-81870){: external}.
 
 
 ### 28 September 2026, Version 4.21 - v1.0.11_4.21_373756836

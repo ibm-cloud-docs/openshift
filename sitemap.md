@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-22"
+lastupdated: "2026-10-23"
 
 
 keywords: openshift
@@ -538,9 +538,23 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
+    * [23 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2326)
+
+        * Add-on OpenShift AI version `421` is available.
+
+    * [22 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2226)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
     * [20 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2026)
 
         * New CLI version `1.0.896` available.
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
 
     * [16 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1626)
 
@@ -561,6 +575,8 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * VPC File CSI Driver cluster add-on patch updates.
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
     * [9 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0926)
 
@@ -6216,6 +6232,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_422#changelog_overview_422)
 
+* [20 October 2026, Worker node fix pack 4.22.18_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42218_1527_openshift_W)
+
 * [06 October 2026, Worker node fix pack 4.22.16_1523_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42216_1523_openshift_W)
 
 * [28 September 2026, Master fix pack 4.22.13_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms_master-42213_1519_openshift_M)
@@ -6334,6 +6352,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_421#changelog_overview_421)
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
+
+* [20 October 2026, Worker node fix pack 4.21.37_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42137_1538_openshift_W)
 
 * [06 October 2026, Worker node fix pack 4.21.35_1535_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42135_1535_openshift_W)
 
@@ -6481,6 +6501,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+* [20 October 2026, Worker node fix pack 4.20.42_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42042_1569_openshift_W)
 
 * [06 October 2026, Worker node fix pack 4.20.40_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42040_1566_openshift_W)
 
@@ -6636,6 +6658,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+* [20 October 2026, Worker node fix pack 4.19.51_1600_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41951_1600_openshift_W)
 
 * [06 October 2026, Worker node fix pack 4.19.49_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41949_1596_openshift_W)
 
@@ -6825,6 +6849,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+* [20 October 2026, Worker node fix pack 4.18.57_1614_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41857_1614_openshift_W)
 
 * [06 October 2026, Worker node fix pack 4.18.56_1611_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41856_1611_openshift_W)
 
@@ -7038,6 +7064,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+* [20 October 2026, Worker node fix pack 4.17.59_1606_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41759_1606_openshift_W)
 
 * [06 October 2026, Worker node fix pack 4.17.58_1603_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41758_1603_openshift_W)
 
@@ -8999,6 +9027,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [22 October 2026, Version 1.0 - v1.0.64_379022441](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1064_379022441)
+
     * [15 October 2026, Version 1.0 - v1.0.63_377107229](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1063_377107229)
 
     * [12 October 2026, Version 1.0 - v1.0.62_374966560](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1062_374966560)
@@ -9485,9 +9515,13 @@ subcollection: openshift
 
 * [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
 
+    * [22 October 2026, Version 4.22 - v1.0.12_4.22_380378239](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_422_380378239)
+
     * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [22 October 2026, Version 4.21 - v1.0.12_4.21_380378239](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_421_380378239)
 
     * [28 September 2026, Version 4.21 - v1.0.11_4.21_373756836](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1011_421_373756836)
 
@@ -9532,6 +9566,10 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-supported-versions)
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
+
+    * [23 October 2026, Version 5.2 - v5.2.65_379715753](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5265_379715753)
+
+    * [12 October 2026, Version 5.2 - v5.2.64_375350429](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5264_375350429)
 
     * [30 September 2026, Version 5.2 - v5.2.63_372871485](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5263_372871485)
 
@@ -9588,6 +9626,10 @@ subcollection: openshift
     * [17 February 2025, Version 5.2 - 5.2.31_687](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
+
+    * [23 October 2026, Version 5.1 - v5.1.65_379715791](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5165_379715791)
+
+    * [12 October 2026, Version 5.1 - v5.1.64_375569201](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5164_375569201)
 
     * [30 September 2026, Version 5.1 - v5.1.63_372876804](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5163_372876804)
 
@@ -9674,6 +9716,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-supported-versions)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [22 October 2026, Version 2.0 - v2.0.57_379023073](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2057_379023073)
 
     * [15 October 2026, Version 2.0 - v2.0.56_377110066](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2056_377110066)
 
