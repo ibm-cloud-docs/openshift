@@ -33,6 +33,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-oct2326}
 {: release-note}
 
+New CLI version `1.0.899` available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 Add-on OpenShift AI version `421` is available.
 :   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons).
 

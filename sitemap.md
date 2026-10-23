@@ -540,6 +540,8 @@ subcollection: openshift
 
     * [23 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2326)
 
+        * New CLI version `1.0.899` available.
+
         * Add-on OpenShift AI version `421` is available.
 
     * [22 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2226)
