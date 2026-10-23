@@ -8331,6 +8331,8 @@ subcollection: openshift
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
+* [Version v1.0.899](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01899)
+
 * [Version v1.0.896](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01896)
 
 * [Version v1.0.892](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01892)
