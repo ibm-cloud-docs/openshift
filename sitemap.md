@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift
@@ -8986,8 +8986,6 @@ subcollection: openshift
     * [03 April 2024, Version 1.0.0 - 1.0.0_2111](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2111)
 
     * [16 January 2024, Version 1.0.0 - 1.0.0_2015](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2015)
-
-    * [25 October 2023, Version 1.0.0 - 1.0.0_1936](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1936)
 
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
