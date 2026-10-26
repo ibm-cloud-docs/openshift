@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2026
 {: #openshift-oct26}
 
+### 26 October 2026
+{: #openshift-oct2626}
+{: release-note}
+
+Cluster autoscaler cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
+
 ### 23 October 2026
 {: #openshift-oct2326}
 {: release-note}
