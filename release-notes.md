@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-26"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -32,6 +32,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ### 23 October 2026
 {: #openshift-oct2326}
 {: release-note}
+
+
+
+{{site.data.keyword.openshiftlong_notm}} version 4.17 is no longer supported.
+:   {{site.data.keyword.openshiftlong_notm}} version 4.17 is unsupported as of 23 October 2026. Update your cluster to at least [version 4.18](/docs/openshift?topic=openshift-openshift_versions_418) as soon as possible.
+
+
 
 New CLI version `1.0.899` available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).

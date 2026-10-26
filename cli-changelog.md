@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -30,7 +30,7 @@ Refer to the following change logs for a summary of changes for each version of 
 {: #cli-01899}
 
 Version 1.0.899 of the CLI was released on 23 October 2026.
-- Updates the worker update recommendation message in the output of [`ibmcloud ks worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-ls-cli) for VPC clusters to instruct users to run [`ibmcloud ks worker replace --update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli).
+- Corrects the suggested [`ibmcloud ks worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) command to include the `--update` parameter to update the worker.
 - Adds support for sending an `IBM-Cloud-Req-Ctx` request header to the API when the `IBM_CLOUD_REQ_CTX` environment variable is set.
 - Updates dependencies to address CVEs.
 
