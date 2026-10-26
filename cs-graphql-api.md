@@ -1714,7 +1714,7 @@ Details needed to provision a Satellite Connector.
 | Field | `cluster` (`ID!`) *(required)* | The classic cluster ID to migrate from. |
 | Field | `nodePoolOverrides` (`[KubernetesNodePoolVPCMigrationOverride!]`) | Worker pool overrides (flavor and/or subnet IDs per worker pool). |
 | Field | `skipBackupRecoveryServiceNodePool` (`Boolean`) | Disable the BRS workerpool. When true, the BRS workerpool is removed from vpc.json before cluster creation.  \n Default: `false` |
-| Field | `vpcClusterName` (`String`) | Optional override for the VPC cluster name. When provided, this name is used instead of the auto-generated mig-<classic-cluster-name> value from ReplatformGenerateVPCMetadata. Must start with a lowercase letter, contain only lowercase letters, digits, and hyphens, end with a lowercase letter or digit, and be at most 32 characters. |
+| Field | `vpcClusterName` (`String`) | Optional override for the VPC cluster name. When provided, this name is used instead of the auto-generated `mig-<classic-cluster-name>` value from ReplatformGenerateVPCMetadata. Must start with a lowercase letter, contain only lowercase letters, digits, and hyphens, end with a lowercase letter or digit, and be at most 32 characters. |
 | Field | `vpcID` (`String`) | The VPC ID to use for the new cluster. |
 {: caption="Input fields for CreateVPCKubernetesClusterFromTemplateInput" caption-side="bottom"}
 
