@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, webhooks, admission control, 
@@ -98,7 +98,7 @@ Note the following limitations for referencing the webhook app as an IP address 
 
 - If the URL is a DNS, then this DNS must be a publicly registered DNS name. Private DNS configurations are not supported.
 - If the URL is an external IP address, which means the webhook service is outside of the cluster, the control plane network is used to connect to the service. The control plane must be able to reach the IP address. If, for example, the IP address is from an on-premises network and the control plane can't reach the IP address, the webhook service does not work.
-- If the URL is a cluster IP address, which means the webhook service is inside of the cluster, the Kubernetes API needs to connect to cluster network. If you have cluster version 1.21 and later, and your webhook uses the cluster IP address, you must update your webhook to use a Kubernetes service instead.
+- If the URL is a cluster IP address, which means the webhook service is inside of the cluster, the Kubernetes API needs to connect to the cluster network. If your webhook uses a cluster IP address, you must update your webhook to use a Kubernetes service instead.
 
 
 

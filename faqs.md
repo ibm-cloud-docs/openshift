@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -409,7 +409,7 @@ To see the components of each Cloud Pak, consult the [Cloud Pak documentation](h
 ## What else do I need to know to use Cloud Paks?
 {: #cloud_paks_other}
 
-When you set up your Cloud Pak, you might need to work with {{site.data.keyword.redhat_openshift_notm}}-specific resources, such as security context constraints. Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-cli-install) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 has a bug that yields an error when you run commands against {{site.data.keyword.redhat_openshift_notm}}-specific resources, such as `kubectl get scc`.
+When you set up your Cloud Pak, you might need to work with {{site.data.keyword.redhat_openshift_notm}}-specific resources, such as security context constraints. Make sure that you use the [`oc` CLI or `kubectl` CLI](/docs/openshift?topic=openshift-cli-install) to interact with these resources, such as `oc get scc`.
 
 
 ## Does IBM support third-party and open source tools that I use with my cluster?

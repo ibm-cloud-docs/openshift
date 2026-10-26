@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-10-02"
+lastupdated: "2026-10-26"
 
 
 keywords: kubernetes, openshift, containers not starting
@@ -175,7 +175,7 @@ Next, check for and clean up entire blocks of IP addresses that are assigned to 
 
 Occasionally, when a worker node is assigned a second or third block of IP addresses, entire blocks of IP addresses that the worker node previously used might later be completely unused. Additionally, when you remove or replace a worker node, the cleanup of the IP address block by the Calico IPAM might fail due to the lack of a worker node for the `calico-kube-controllers` to temporarily run on, or due to problems with the CNI plug-in or `containerd` runtime when the worker node is removed or replaced.
 
-Ensuring that IP blocks are free is especially important for all classic clusters that run Kubernetes version 1.19 or later and all VPC clusters. In these clusters, the `strictAffinity` Calico setting is set to `true`, which forces a worker node to use IP addresses that are from its assigned IP blocks only, as opposed to using IP addresses from blocks that are assigned to other worker nodes. Over time, the blocks that are assigned to nodes but that are unused can accumulate until no more IP address blocks can be assigned to worker nodes.
+Ensuring that IP blocks are free is especially important for all Classic and VPC clusters. In these clusters, the `strictAffinity` Calico setting is set to `true`, which forces a worker node to use IP addresses that are from its assigned IP blocks only, as opposed to using IP addresses from blocks that are assigned to other worker nodes. Over time, the blocks that are assigned to nodes but that are unused can accumulate until no more IP address blocks can be assigned to worker nodes.
 
 1. Follow the steps to [release individual IP addresses](#individual-ips).
 
