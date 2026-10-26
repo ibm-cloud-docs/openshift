@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-22"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -25,6 +25,14 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 
 Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
+
+## Version v1.0.899
+{: #cli-01899}
+
+Version 1.0.899 of the CLI was released on 23 October 2026.
+- Corrects the suggested [`ibmcloud ks worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) command to include the `--update` parameter to update the worker.
+- Adds support for sending an `IBM-Cloud-Req-Ctx` request header to the API when the `IBM_CLOUD_REQ_CTX` environment variable is set.
+- Updates dependencies to address CVEs.
 
 ## Version v1.0.896
 {: #cli-01896}
