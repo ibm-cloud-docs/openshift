@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-30"
+lastupdated: "2026-10-26"
 
 
 keywords: change log, version history, Confidential containers
@@ -25,8 +25,44 @@ Review the version history for Confidential containers.
 {: shortdesc}
 
 
+## Version 20261021-03-hardened
+{: #cl-confidential-containers-20261021-03-hardened}
+
+
+### 22 October 2026, Version 20261021-03-hardened
+{: #cl-confidential-containers-20261021-03-hardened}
+
+- All 7 hardened tests passed
+- `rhel9-podvm-hardened-20261021-03.qcow2`
+
+
+### 22 October 2026, Version 20261021-03
+{: #cl-confidential-containers-20261021-03}
+
+- Uptycs 5.22.1.14; payload=1.10.3 + validated-0922 binaries; 22/24 tests passed (2 skipped: dm-verity not active, known non-issue)
+- `rhel9-podvm-20261021-03.qcow2`
+
+
+## Version 20260822-01-hardened
+{: #cl-confidential-containers-20260822-01-hardened}
+
+
+### 23 August 2026, Version 20260822-01-hardened
+{: #cl-confidential-containers-20260822-01-hardened}
+
+- Uptycs 5.19.0.21 ca.crt fix — All 7 hardened tests passed
+- `rhel9-podvm-hardened-20260822-01.qcow2`
+
+
+### 23 August 2026, Version 20260822-01
+{: #cl-confidential-containers-20260822-01}
+
+- Uptycs 5.19.0.21 ca.crt fix — All 18 tests passed
+- `rhel9-podvm-20260822-01.qcow2`
+
+
 ## Version 20260604-05-hardened
-{: #cl-confidential-containers-20260604-05-hardened-version}
+{: #cl-confidential-containers-20260604-05-hardened}
 
 
 ### 04 June 2026, Version 20260604-05-hardened
@@ -49,7 +85,7 @@ Review the version history for Confidential containers.
 
 
 ## Version 20260319-02
-{: #cl-confidential-containers-20260319-02-version}
+{: #cl-confidential-containers-20260319-02}
 
 
 ### 19 March 2026, Version 20260319-02
@@ -60,7 +96,7 @@ Review the version history for Confidential containers.
 
 
 ## Version 20260318-10
-{: #cl-confidential-containers-20260318-10-version}
+{: #cl-confidential-containers-20260318-10}
 
 
 ### 18 March 2026, Version 20260318-10
@@ -71,7 +107,7 @@ Review the version history for Confidential containers.
 
 
 ## Version 20260312-07-hardened
-{: #cl-confidential-containers-20260312-07-hardened-version}
+{: #cl-confidential-containers-20260312-07-hardened}
 
 
 ### 12 March 2026, Version 20260312-07-hardened
@@ -89,7 +125,7 @@ Review the version history for Confidential containers.
 
 
 ## Version 20260303-01
-{: #cl-confidential-containers-20260303-01-version}
+{: #cl-confidential-containers-20260303-01}
 
 
 ### 03 March 2026, Version 20260303-01

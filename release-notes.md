@@ -61,6 +61,10 @@ IBM Storage Operator cluster add-on patch updates.
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
 
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
+
 
 ### 20 October 2026
 {: #openshift-oct2026}
