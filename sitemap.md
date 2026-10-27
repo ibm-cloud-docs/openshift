@@ -544,6 +544,8 @@ subcollection: openshift
 
         * ACM cluster add-on patch updates.
 
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [26 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2626)
 
         * Cluster autoscaler cluster add-on patch updates.
@@ -8456,6 +8458,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-supported-versions)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [27 October 2026, Version 1.0.0 - 1.0.0_379112580](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_379112580)
 
     * [05 October 2026, Version 1.0.0 - 1.0.0_373100393](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_373100393)
 

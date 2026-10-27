@@ -30,6 +30,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-oct26}
 
 
+
 ### 27 October 2026
 {: #openshift-oct2726}
 {: release-note}
@@ -40,6 +41,14 @@ OpenShift Virtualization cluster add-on patch updates.
 ACM cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-acm).
 
+
+
+
+
+
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
 
 ### 26 October 2026
