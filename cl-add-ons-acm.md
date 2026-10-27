@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-27"
 
 
 keywords: change log, version history, ACM
@@ -41,6 +41,13 @@ Review the version history for ACM.
 
 ## Version 2.17.0
 {: #cl-add-ons-acm-2.17.0}
+
+
+### 27 October 2026, Version 2.17.0 - 2.17.9
+{: #cl-add-ons-acm-2179}
+
+- Updates Go to version `1.27.3`.
+- VA fixes. Bumped Go to 1.27.3 and builder image to v9.8.166. Bumped golangci-lint to v2.15.0. 
 
 
 ### 13 October 2026, Version 2.17.0 - 2.17.8
@@ -108,6 +115,13 @@ Review the version history for ACM.
 
 ## Version 2.16.0
 {: #cl-add-ons-acm-2.16.0}
+
+
+### 27 October 2026, Version 2.16.0 - 2.16.20
+{: #cl-add-ons-acm-21620}
+
+- Updates Go to version `1.27.3`.
+- VA fixes. Bumped Go to 1.27.3 and builder image to v9.8.166. Bumped golangci-lint to v2.15.0. 
 
 
 ### 13 October 2026, Version 2.16.0 - 2.16.19
@@ -247,4 +261,3 @@ Review the version history for ACM.
 
 - Updates Go to version `1.23.7`.
 - Initial release of ACM 2.16.
-

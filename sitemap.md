@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-27"
 
 
 keywords: openshift
@@ -537,6 +537,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [27 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2726)
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
+        * ACM cluster add-on patch updates.
 
     * [26 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2626)
 
@@ -8155,6 +8161,8 @@ subcollection: openshift
 
 * [Version 2.17.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.17.0)
 
+    * [27 October 2026, Version 2.17.0 - 2.17.9](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2179)
+
     * [13 October 2026, Version 2.17.0 - 2.17.8](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2178)
 
     * [06 October 2026, Version 2.17.0 - 2.17.7](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2177)
@@ -8172,6 +8180,8 @@ subcollection: openshift
     * [04 August 2026, Version 2.17.0 - 2.17.2](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2172)
 
 * [Version 2.16.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.16.0)
+
+    * [27 October 2026, Version 2.16.0 - 2.16.20](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21620)
 
     * [13 October 2026, Version 2.16.0 - 2.16.19](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21619)
 
@@ -9045,11 +9055,15 @@ subcollection: openshift
 
 * [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
 
+    * [27 October 2026, Version 4.22 - v1.0.12_4.22_381687865](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_422_381687865)
+
     * [22 October 2026, Version 4.22 - v1.0.12_4.22_380378239](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_422_380378239)
 
     * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [27 October 2026, Version 4.21 - v1.0.12_4.21_381687865](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_421_381687865)
 
     * [22 October 2026, Version 4.21 - v1.0.12_4.21_380378239](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_421_380378239)
 
