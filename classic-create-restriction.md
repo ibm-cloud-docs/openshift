@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-27"
 
 keywords: openshift, classic, cluster, create, restriction, blocked, vpc
 
@@ -33,7 +33,7 @@ Accounts that already have at least one classic cluster in a region are not affe
 ## Why does this restriction exist?
 {: #classic-create-restriction-why}
 
-Classic infrastructure is a legacy compute platform. {{site.data.keyword.containerlong_notm}} is investing in VPC infrastructure as the strategic direction for new workloads. VPC clusters provide improved security, networking flexibility, and a better overall experience. To learn more, see [Overview of Classic and VPC infrastructure](/docs/openshift?topic=openshift-infrastructure_providers).
+Classic infrastructure is a legacy compute platform. {{site.data.keyword.openshiftlong_notm}} is investing in VPC infrastructure as the strategic direction for new workloads. VPC clusters provide improved security, networking flexibility, and a better overall experience. To learn more, see [Overview of Classic and VPC infrastructure](/docs/openshift?topic=openshift-infrastructure_providers).
 
 ## What error do I see when classic cluster creation is blocked?
 {: #classic-create-restriction-error}
@@ -50,9 +50,14 @@ E501e: Classic cluster creation is not supported in regions that do not have exi
 
 If your account is affected, consider the following options:
 
-- **Create a VPC cluster.** VPC clusters are the recommended option for new workloads. To get started, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
-- **Use a region where you already have a classic cluster.** If your account has a classic cluster in another region, you can create additional classic clusters in that region.
-- **Request an exception.** If you have a specific use case that requires classic infrastructure in a new region and you cannot migrate to VPC, [open a support case](/unifiedsupport/cases/add) and provide your account ID, the target region, and the reason that VPC infrastructure does not meet your requirements.
+Create a VPC cluster
+:   VPC clusters are the recommended option for new workloads. To get started, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
+
+Use a region where you already have a classic cluster
+:   If your account has a classic cluster in another region, you can create additional classic clusters in that region.
+
+Request an exception
+:   If you have a specific use case that requires classic infrastructure in a new region and you cannot migrate to VPC, [open a support case](/unifiedsupport/cases/add) and provide your account ID, the target region, and the reason that VPC infrastructure does not meet your requirements.
 
 ## How do I check whether my account has existing classic clusters?
 {: #classic-create-restriction-check}
