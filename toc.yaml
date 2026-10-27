@@ -15,7 +15,7 @@ toc:
       id: learn
       topics:
       - topicgroup:
-          label: Get started with containers
+          label: Containers
           topics:
           - topic: getting-started.md
             navtitle: Getting started
@@ -27,27 +27,27 @@ toc:
             navtitle: Architecture and dependencies
           - path-admin.md
           - path-dev.md
+          - topicgroup:
+              label: Plan your cluster
+              topics:
+              - strategy.md
+              - cluster-plan-network-vpc.md
+              - cluster-plan-network-classic.md
+              - encryption.md
+              - document-environment.md
+              - topic: secure.md
+                navtitle: Security overview
+          - topicgroup:
+              label: Your responsibilities
+              topics:
+              - responsibilities.md
+              - satellite-resp.md
       - topicgroup:
           label: Virtualization
           topics:
           - topic: virt-overview.md
             navtitle: OpenShift Virtualization on IBM Cloud
           - path-virt.md
-      - topicgroup:
-          label: Plan your cluster
-          topics:
-          - strategy.md
-          - cluster-plan-network-vpc.md
-          - cluster-plan-network-classic.md
-          - encryption.md
-          - document-environment.md
-          - topic: secure.md
-            navtitle: Security overview
-      - topicgroup:
-          label: Your responsibilities
-          topics:
-          - responsibilities.md
-          - satellite-resp.md
       - topicgroup:
           label: Important notices
           topics:

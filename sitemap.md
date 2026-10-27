@@ -31,8 +31,8 @@ subcollection: openshift
 
 
 
-## Get started with containers
-{: #sitemap_get_started_with_containers}
+## Containers
+{: #sitemap_containers}
 
 
 [Getting started](/docs/openshift?topic=openshift-getting-started#getting-started)
@@ -170,52 +170,7 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
-## Virtualization
-{: #sitemap_virtualization}
-
-
-[OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
-
-* [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
-
-* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
-
-* [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
-
-    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
-
-* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
-
-* [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
-
-* [Storage and networking](/docs/openshift?topic=openshift-virt-overview#virt-storage-networking)
-
-    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
-
-    * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
-
-* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
-
-* [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
-
-[Learning path for VM administrators](/docs/openshift?topic=openshift-learning-path-virt#learning-path-virt)
-
-* [Understand the service](/docs/openshift?topic=openshift-learning-path-virt#virt-path-understand)
-
-* [Plan your environment](/docs/openshift?topic=openshift-learning-path-virt#virt-path-plan)
-
-* [Create a cluster](/docs/openshift?topic=openshift-learning-path-virt#virt-path-create)
-
-* [Manage and maintain](/docs/openshift?topic=openshift-learning-path-virt#virt-path-manage)
-
-* [Secure your cluster](/docs/openshift?topic=openshift-learning-path-virt#virt-path-secure)
-
-* [Monitor and log](/docs/openshift?topic=openshift-learning-path-virt#virt-path-observe)
-
-* [Troubleshoot](/docs/openshift?topic=openshift-learning-path-virt#virt-path-troubleshoot)
-
-
-## Plan your cluster
+### Plan your cluster
 {: #sitemap_plan_your_cluster}
 
 
@@ -452,7 +407,7 @@ subcollection: openshift
 * [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
 
-## Your responsibilities
+### Your responsibilities
 {: #sitemap_your_responsibilities}
 
 
@@ -491,6 +446,51 @@ subcollection: openshift
     * [Disaster recovery](/docs/openshift?topic=openshift-satellite-responsibilities#disaster-recovery-sat)
 
     * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
+
+
+## Virtualization
+{: #sitemap_virtualization}
+
+
+[OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
+
+* [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
+
+* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
+
+* [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
+
+    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
+
+* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+
+* [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
+
+* [Storage and networking](/docs/openshift?topic=openshift-virt-overview#virt-storage-networking)
+
+    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
+
+    * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
+
+* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
+
+* [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
+
+[Learning path for VM administrators](/docs/openshift?topic=openshift-learning-path-virt#learning-path-virt)
+
+* [Understand the service](/docs/openshift?topic=openshift-learning-path-virt#virt-path-understand)
+
+* [Plan your environment](/docs/openshift?topic=openshift-learning-path-virt#virt-path-plan)
+
+* [Create a cluster](/docs/openshift?topic=openshift-learning-path-virt#virt-path-create)
+
+* [Manage and maintain](/docs/openshift?topic=openshift-learning-path-virt#virt-path-manage)
+
+* [Secure your cluster](/docs/openshift?topic=openshift-learning-path-virt#virt-path-secure)
+
+* [Monitor and log](/docs/openshift?topic=openshift-learning-path-virt#virt-path-observe)
+
+* [Troubleshoot](/docs/openshift?topic=openshift-learning-path-virt#virt-path-troubleshoot)
 
 
 ## Important notices
