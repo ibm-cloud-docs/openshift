@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-16"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -404,9 +404,6 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-Version 4.11 is currently available for new clusters only. You can't upgrade a 4.10 deployment to 4.11. However, you can continue using ODF version 4.10.
-{: note}
-
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. Note that the add-on supports `n+1` cluster versions.
 1. [Review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you want to install the add-on.
@@ -441,7 +438,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     - If your worker node has raw disks with partitions, you need one partition for the OSD and one partition for the MON per worker node. As a best practice, and to maximize storage capacity on partitioned disks, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration. 
     - If you devices aren't partitioned, you  must specify one raw disk for the MON and one for the OSD for each worker node that you want to use.
     
-    Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster by using automatic disk discovery.
+    Example custom resource for installing ODF on all worker nodes in a cluster by using automatic disk discovery.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster
@@ -454,7 +451,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
     
-    Example custom resource for installing ODF on all worker nodes in a version 4.8 cluster with partitioned disks.
+    Example custom resource for installing ODF on all worker nodes in a cluster with partitioned disks.
     ```yaml
     apiVersion: ocs.ibm.io/v1
     kind: OcsCluster

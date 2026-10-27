@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-27"
 
 
 keywords: openshift
@@ -538,6 +538,16 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
+    * [27 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2726)
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
+        * ACM cluster add-on patch updates.
+
+    * [26 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2626)
+
+        * Cluster autoscaler cluster add-on patch updates.
+
     * [23 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2326)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.17 is no longer supported.
@@ -553,6 +563,8 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * OpenShift Virtualization cluster add-on patch updates.
+
+        * OpenShift Data Foundation cluster add-on patch updates.
 
     * [20 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2026)
 
@@ -8149,6 +8161,8 @@ subcollection: openshift
 
 * [Version 2.17.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.17.0)
 
+    * [27 October 2026, Version 2.17.0 - 2.17.9](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2179)
+
     * [13 October 2026, Version 2.17.0 - 2.17.8](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2178)
 
     * [06 October 2026, Version 2.17.0 - 2.17.7](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2177)
@@ -8166,6 +8180,8 @@ subcollection: openshift
     * [04 August 2026, Version 2.17.0 - 2.17.2](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2172)
 
 * [Version 2.16.0](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-2.16.0)
+
+    * [27 October 2026, Version 2.16.0 - 2.16.20](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21620)
 
     * [13 October 2026, Version 2.16.0 - 2.16.19](/docs/openshift?topic=openshift-cl-add-ons-acm#cl-add-ons-acm-21619)
 
@@ -8217,6 +8233,8 @@ subcollection: openshift
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
+    * [26 October 2026, Version 2.0.0 - v200-21-0_380175534](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-21-0_380175534)
+
     * [07 October 2026, Version 2.0.0 - v200-20-0_374701188](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-20-0_374701188)
 
     * [30 September 2026, Version 2.0.0 - v200-19-1_372827987](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-19-1_372827987)
@@ -8246,6 +8264,8 @@ subcollection: openshift
     * [02 December 2025, Version 2.0.0 - v200-2_302959219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-2_302959219)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
+
+    * [26 October 2026, Version 1.2.4 - v124-18-0_380208188](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-18-0_380208188)
 
     * [07 July 2026, Version 1.2.4 - v124-13-0_351834855](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-13-0_351834855)
 
@@ -8385,25 +8405,37 @@ subcollection: openshift
 
 [Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
 
-* [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened-version)
+* [Version 20261021-03-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261021-03-hardened)
+
+    * [22 October 2026, Version 20261021-03-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261021-03-hardened)
+
+    * [22 October 2026, Version 20261021-03](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261021-03)
+
+* [Version 20260822-01-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
+
+    * [23 August 2026, Version 20260822-01-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
+
+    * [23 August 2026, Version 20260822-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01)
+
+* [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
     * [04 June 2026, Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
     * [04 June 2026, Version 20260604-05](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
 
-* [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02-version)
+* [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
 
     * [19 March 2026, Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
 
-* [Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10-version)
+* [Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
 
     * [18 March 2026, Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
 
-* [Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened-version)
+* [Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
 
     * [12 March 2026, Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
 
-* [Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01-version)
+* [Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
 
     * [03 March 2026, Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
 
@@ -8719,6 +8751,8 @@ subcollection: openshift
 
 * [Version 4.21.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.21.0)
 
+    * [22 October 2026, Version 4.21.0 - 4.21.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42114)
+
     * [02 October 2026, Version 4.21.0 - 4.21.11](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42111)
 
     * [18 September 2026, Version 4.21.0 - 4.21.10](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42110)
@@ -8734,6 +8768,8 @@ subcollection: openshift
     * [11 May 2026, Version 4.21.0 - 4.21.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4211)
 
 * [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
+
+    * [22 October 2026, Version 4.20.0 - 4.20.15](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42015)
 
     * [02 October 2026, Version 4.20.0 - 4.20.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-42014)
 
@@ -8754,6 +8790,8 @@ subcollection: openshift
     * [05 March 2026, Version 4.20.0 - 4.20.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4201)
 
 * [Version 4.19.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.19.0)
+
+    * [22 October 2026, Version 4.19.0 - 4.19.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41921)
 
     * [02 October 2026, Version 4.19.0 - 4.19.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41920)
 
@@ -8778,6 +8816,8 @@ subcollection: openshift
     * [09 October 2025, Version 4.19.0 - 4.19.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4191)
 
 * [Version 4.18.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.18.0)
+
+    * [22 October 2026, Version 4.18.0 - 4.18.24](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41824)
 
     * [02 October 2026, Version 4.18.0 - 4.18.23](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41823)
 
@@ -8806,6 +8846,8 @@ subcollection: openshift
     * [18 June 2025, Version 4.18.0 - 4.18.2](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4182)
 
 * [Version 4.17.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.17.0)
+
+    * [22 October 2026, Version 4.17.0 - 4.17.29](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41729)
 
     * [02 October 2026, Version 4.17.0 - 4.17.28](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41728)
 
@@ -8836,6 +8878,8 @@ subcollection: openshift
     * [04 February 2025, Version 4.17.0 - 4.17.1](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4171)
 
 * [Version 4.16.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16.0)
+
+    * [22 October 2026, Version 4.16.0 - 4.16.36](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41636)
 
     * [02 October 2026, Version 4.16.0 - 4.16.35](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41635)
 
@@ -9011,11 +9055,15 @@ subcollection: openshift
 
 * [Version 4.22](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.22)
 
+    * [27 October 2026, Version 4.22 - v1.0.12_4.22_381687865](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_422_381687865)
+
     * [22 October 2026, Version 4.22 - v1.0.12_4.22_380378239](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_422_380378239)
 
     * [14 September 2026, Version 4.22 - v1.0.10_4.22_368659156](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1010_422_368659156)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [27 October 2026, Version 4.21 - v1.0.12_4.21_381687865](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_421_381687865)
 
     * [22 October 2026, Version 4.21 - v1.0.12_4.21_380378239](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v1012_421_380378239)
 

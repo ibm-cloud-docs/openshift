@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-10-26"
 
 
 keywords: ingress, configure ingress, annotations, customize ingress, ingress controller, source IP
@@ -24,7 +24,7 @@ Learn how you can configure your Ingress setup to meet your workload needs.
 ## Preserving the source IP address
 {: #ingress-configure-source-ip}
 
-To preserve source IP addresses, you can enable the PROXY protocol for VPC clusters. This option is available for clusters that run version 4.13 or later. 
+To preserve source IP addresses, you can enable the PROXY protocol for VPC clusters.
 
 The PROXY protocol provides a convenient way to transport connection information, such as a client's address, across multiple layers of NAT or TCP proxies. For more information on the PROXY protocol, see the [HAProxy specification](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt){: external}. 
 

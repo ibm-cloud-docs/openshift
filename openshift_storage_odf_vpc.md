@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -374,7 +374,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
 1. Enable the `openshift-data-foundation` add-on. If you want to override any of the default parameters, specify the `--param "key=value"` option for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    Example command to deploy add-on version 4.10 with the default storage cluster settings, the `performance` resource profile, and encryption with {{site.data.keyword.hscrypto}} enabled.
+    Example command to deploy the add-on with the default storage cluster settings, the `performance` resource profile, and encryption with {{site.data.keyword.hscrypto}} enabled.
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version 4.15.0 --param "odfDeploy=true" --param "resourceProfile=performance" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
     ```

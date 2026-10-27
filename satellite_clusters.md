@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -63,7 +63,7 @@ In RHCOS enabled locations, when you want to add worker pools to your cluster, y
 
 Infrastructure topology
 :   - **Highly available**: Choose this option for most use cases. Create at least 3 worker nodes for high availability. 
-:   - **Single replica**: Single-node clusters are recommended only in specific circumstances, and should only be used in resource-constrained edge locations that have multiple redundant locations running the same workload. If you are running your {{site.data.keyword.openshiftlong_notm}} cluster on {{site.data.keyword.satelliteshort}} infrastructure in a remote, resource-constrained edge location with limited resources, such as a small data center in a mobile tower, running a data plane with a smaller foot print might be beneficial for your setup. While typical {{site.data.keyword.openshiftlong_notm}} clusters require at least three worker nodes for high availability, you have the option to create a cluster that runs a single worker node. Single-node clusters have several limitations and should only be used in specific circumstances. Single-node clusters lack high availability. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload. Single node clusters must run on a {{site.data.keyword.satelliteshort}} location with [CoreOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). Control plane hosts on your location and the host you assign to your single-node cluster must run either the RHEL 8 or RHCOS operating systems. Only supported for {{site.data.keyword.satelliteshort}} clusters that run version 4.11 or later. See the [Limitations](/docs/openshift?topic=openshift-limitations#satellite_limits) section for more information.
+:   - **Single replica**: Single-node clusters are recommended only in specific circumstances, and should only be used in resource-constrained edge locations that have multiple redundant locations running the same workload. If you are running your {{site.data.keyword.openshiftlong_notm}} cluster on {{site.data.keyword.satelliteshort}} infrastructure in a remote, resource-constrained edge location with limited resources, such as a small data center in a mobile tower, running a data plane with a smaller foot print might be beneficial for your setup. While typical {{site.data.keyword.openshiftlong_notm}} clusters require at least three worker nodes for high availability, you have the option to create a cluster that runs a single worker node. Single-node clusters have several limitations and should only be used in specific circumstances. Single-node clusters lack high availability. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload. Single node clusters must run on a {{site.data.keyword.satelliteshort}} location with [CoreOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). Control plane hosts on your location and the host you assign to your single-node cluster must run either the RHEL 8 or RHCOS operating systems. See the [Limitations](/docs/openshift?topic=openshift-limitations#satellite_limits) section for more information.
 
 Default worker pool
 :   Configure the details for your default worker pool.

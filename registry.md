@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -1731,7 +1731,7 @@ Do not replace the global pull secret with a pull secret that does not have cred
 ## Updating an {{site.data.keyword.containerlong_notm}} containerd custom registry configuration
 {: #update_containerd_registry_config}
 
-With Kubernetes version 1.22 or later, you can use containerd configuration files on worker nodes to configure pulling from a container registry. You can use a daemonset to update the configurations across all nodes in a cluster, which prevents configurations from being wiped when worker nodes reload or when new workers are added. 
+You can use containerd configuration files on worker nodes to configure pulling from a container registry. You can use a daemonset to update the configurations across all nodes in a cluster, which prevents configurations from being wiped when worker nodes reload or when new workers are added.
 
 ### Example daemonset to update a containerd custom registry configuration 
 {: #ds-example-registry}

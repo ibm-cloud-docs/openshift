@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-07"
+lastupdated: "2026-10-26"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -59,6 +59,21 @@ Review the version history for Cluster autoscaler.
 
 ## Version 2.0.0
 {: #cl-add-ons-cluster-autoscaler-2.0.0}
+
+
+### 26 October 2026, Version 2.0.0 - v200-21-0_380175534
+{: #cl-add-ons-cluster-autoscaler-v200-21-0_380175534}
+
+- Resolves the following CVEs: [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}, and [CVE-2026-78667](https://nvd.nist.gov/vuln/detail/cve-2026-78667){: external}.
+- Updates Go to version `1.25.13`.
+- Updated the Storage Secret Sidecar to version 1.3.72. 
+- `1.30.7-v200-21`
+- `1.31.5-v200-21`
+- `1.32.7-v200-21`
+- `1.33.6-v200-21`
+- `1.34.5-v200-21`
+- `1.35.2-v200-21`
+- `1.36.1-v200-21`
 
 
 ### 07 October 2026, Version 2.0.0 - v200-20-0_374701188
@@ -251,6 +266,21 @@ Review the version history for Cluster autoscaler.
 
 ## Version 1.2.4
 {: #cl-add-ons-cluster-autoscaler-1.2.4}
+
+
+### 26 October 2026, Version 1.2.4 - v124-18-0_380208188
+{: #cl-add-ons-cluster-autoscaler-v124-18-0_380208188}
+
+- Resolves the following CVEs: [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
+- Updates Go to version `1.25.13`.
+- Updated the Storage Secret Sidecar to version 1.3.72. 
+- `1.30.7-v124-18`
+- `1.31.5-v124-18`
+- `1.32.7-v124-18`
+- `1.33.6-v124-18`
+- `1.34.5-v124-18`
+- `1.35.2-v124-18`
+- `1.36.1-v124-18`
 
 
 ### 07 July 2026, Version 1.2.4 - v124-13-0_351834855

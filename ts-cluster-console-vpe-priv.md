@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, console, web, connect, private
@@ -49,11 +49,11 @@ Verify that your VPC and cluster are properly configured. An incorrect configura
 
 2. Ensure that the client system has access to the public service endpoints for IAM, which are accessible through `iam.cloud.ibm.com` and `login.ibm.com`.
 
-3. For clusters that run version 4.13:
-    - If your cluster uses the default 4.13 Oauth configuration or if you have set your cluster to use the VPE Gateway for Oauth, ensure that your client is using the private DNS for the VPC and that this DNS traffic is routed through the VPN to the VPC. The private DNS is typically `161.26.0.7` and `161.26.0.8`, unless you use a custom DNS resolver. This is required so that the VPE Gateway for the `apiserver` and `Oauth`, which does not exist in any public DNS, can be found in the VPC's private DNS. 
+3. For clusters that use the VPE Gateway for OAuth:
+    - Ensure that your client is using the private DNS for the VPC and that this DNS traffic is routed through the VPN to the VPC. The private DNS is typically `161.26.0.7` and `161.26.0.8`, unless you use a custom DNS resolver. This is required so that the VPE Gateway for the `apiserver` and `OAuth`, which does not exist in any public DNS, can be found in the VPC's private DNS.
 
-4. For clusters that run any supported version other than 4.13:
-    -  If you are using the default Oauth cluster settings, ensure that routes exist in the VPN configuration so that all `166.8.0.0/14` traffic is routed through either the same VPN or another VPN that connects to IBM Cloud. This is required to connect to the cluster's API server and OAuth server ports.
+4. For clusters that use the Private Service Endpoint for OAuth:
+    - Ensure that routes exist in the VPN configuration so that all `166.8.0.0/14` traffic is routed through either the same VPN or another VPN that connects to IBM Cloud. This is required to connect to the cluster's API server and OAuth server ports.
 
 
 ## 3. Gather cluster data

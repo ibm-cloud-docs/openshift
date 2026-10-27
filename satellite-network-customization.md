@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-26"
 
 
 keywords: openshift, route, network, satellite
@@ -88,16 +88,11 @@ After you create your location and cluster, you can use the [**`ibmcloud ks clus
 
 [After location and cluster creation]{: tag-green}
 
-If you create a {{site.data.keyword.satelliteshort}} cluster at version 4.12 and later, there are Calico `Hostendpoint` instances that are deployed to the cluster for every worker node’s network interface.
+When you create a {{site.data.keyword.satelliteshort}} cluster, Calico `Hostendpoint` instances are deployed to the cluster for every worker node’s network interface.
 
 You can use these `Hostendpoint` instances to define global network policies with the help of the `“ibm-cloud.kubernetes.io/interface-name: <network_interface_name>”` label that is added to each `Hostendpoint` instance.
 
 In addition to this label, all the worker node’s labels are added for additional customization options.
-
-These `Hostendpoints` have the `“projectcalico-default-allow"` profile, which means these `Hostendpoints` might change the previously expected behavior when you update to 4.12.
-{: important}
-
-Before updating to 4.12, make sure all the previously expected networking rules, policies, `Hostendpoints` work the same after the update as well.
 
 For more information, see the [Calico documentation](https://docs.tigera.io/calico/latest/reference/resources/hostendpoint){: external}.
 
@@ -144,12 +139,6 @@ Incorrectly configuring the `node-port-addresses` might isolate your services fr
     oc apply -f updated-network-config.yaml
     ```
     {: pre}
-
-1. For cluster version 4.10.x and earlier, set the management state of the cluster network operator to `Unmanaged`.
-
-   ```sh
-    oc patch network.operator.openshift.io cluster --type=merge --patch  '{"spec": {"managementState": "Unmanaged"}}'
-   ```
 
 1. Restart the `kube-proxy` DaemonSet to apply the changes. This operation is not disruptive.
 

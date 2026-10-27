@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,26 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2026
 {: #openshift-oct26}
+
+
+### 27 October 2026
+{: #openshift-oct2726}
+{: release-note}
+
+OpenShift Virtualization cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+ACM cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-acm).
+
+
+
+### 26 October 2026
+{: #openshift-oct2626}
+{: release-note}
+
+Cluster autoscaler cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 ### 23 October 2026
 {: #openshift-oct2326}
@@ -60,6 +80,10 @@ IBM Storage Operator cluster add-on patch updates.
 
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
 
 
 ### 20 October 2026

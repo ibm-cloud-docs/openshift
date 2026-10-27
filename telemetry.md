@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-09-16"
+lastupdated: "2026-10-26"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -31,20 +31,29 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
 **For version 4.14 clusters created on or after 29 Feb 2024**: Continue with the following steps.
 
 1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external}.
-1. Navigate to **Downloads** > **Tokens > Pull Secret** and download the pull secret as a JSON file.
+1. Navigate to **Downloads** > **Tokens** > **Pull Secret** and download the pull secret as a JSON file. Save this file as `pull-secret-rh.json`.
 
 1. [Access your cluster in the CLI](/docs/openshift?topic=openshift-access_cluster).
 
-1. Get your current pull secret and store it in a JSON file. Consider naming the JSON file something like `pull-secret-original.json`.
+1. Get your current cluster pull secret and save it to a JSON file named `pull-secret-original.json`.
     ```sh
     oc get secrets pull-secret -n openshift-config -o template='{{index .data ".dockerconfigjson"}}' | base64 -d > pull-secret-original.json
     ```
     {: pre}
 
-1. Update the secret on your cluster with the pull secret.
+1. Merge the Red Hat pull secret (`pull-secret-rh.json`) you downloaded in step 2 with the cluster pull secret (`pull-secret-original.json`) you retrieved in step 4. The merged file contains the `auths` entries from both files and is used in the next step. Run the following command to create a merged file named `pull-secret-merged.json`.
+    ```sh
+    jq -s '.[0] * .[1]' pull-secret-original.json pull-secret-rh.json > pull-secret-merged.json
+    ```
+    {: pre}
+
+    If `jq` is not installed, install it from [jq downloads](https://jqlang.org/download/){: external} before you run this command.
+    {: note}
+
+1. Update the secret on your cluster with the merged pull secret.
 
     ```sh
-    oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=./pull-secret-original.json
+    oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=./pull-secret-merged.json
     ```
     {: pre}
 
