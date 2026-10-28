@@ -176,13 +176,18 @@ keyword:
   openshift_49_release_date: 09 February 2022
   openshift_49_unsupported_certainty: tentative
   openshift_49_unsupported_date: 30 September 2023
+  openshift_50_deprecated: None
+  openshift_50_kube_version: None
+  openshift_50_release_date: None
+  openshift_50_unsupported_certainty: None
+  openshift_50_unsupported_date: None
   openshift_default_deprecated: 'False'
   openshift_default_docs: /docs/openshift?topic=openshift-openshift_changelog_421
   openshift_default_release_date: 13 May 2026
   openshift_default_unsupported_certainty: tentative
   openshift_default_unsupported_date: 22 March 2028
   openshift_default_version: '4.21'
-  openshift_latest_deprecated: 'False'
+  openshift_latest_deprecated: false
   openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_422
   openshift_latest_release_date: 28 September 2026
   openshift_latest_unsupported_certainty: tentative
@@ -289,13 +294,19 @@ keyword:
   satellite_49_release_date: 09 February 2022
   satellite_49_unsupported_certainty: tentative
   satellite_49_unsupported_date: 30 September 2023
+  satellite_50_RHEL_8_unsupported_date: None
+  satellite_50_deprecated: None
+  satellite_50_kube_version: None
+  satellite_50_release_date: None
+  satellite_50_unsupported_certainty: None
+  satellite_50_unsupported_date: None
   satellite_default_deprecated: 'False'
   satellite_default_docs: /docs/openshift?topic=openshift-openshift_changelog_421
   satellite_default_release_date: 04 February 2026
   satellite_default_unsupported_certainty: tentative
   satellite_default_unsupported_date: 19 January 2028
   satellite_default_version: '4.21'
-  satellite_latest_deprecated: 'False'
+  satellite_latest_deprecated: false
   satellite_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_422
   satellite_latest_release_date: 28 September 2026
   satellite_latest_unsupported_certainty: tentative

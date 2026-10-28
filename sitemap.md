@@ -536,8 +536,6 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
-* [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
-
     * [28 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2826)
 
         * Openshift AI cluster add-on patch updates.
