@@ -8667,6 +8667,8 @@ subcollection: openshift
 
 * [Version 2.2](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2.2)
 
+    * [28 October 2026, Version 2.2 - 2.2.60](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2260)
+
     * [27 August 2026, Version 2.2 - 2.2.59](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2259)
 
     * [15 August 2026, Version 2.2 - 2.2.58](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2258)
