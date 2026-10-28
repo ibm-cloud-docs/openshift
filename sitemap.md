@@ -9851,6 +9851,8 @@ subcollection: openshift
 
 [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
 
+[Why is my Classic-to-VPC migration stuck in global resource migration?](/docs/openshift?topic=openshift-ts-migrate-lb-quota#ts-migrate-lb-quota)
+
 [Why can't I create or renew my CA cert?](/docs/openshift?topic=openshift-ts-cert-failed#ts-cert-failed)
 
 [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
