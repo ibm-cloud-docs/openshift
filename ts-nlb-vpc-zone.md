@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, vpc nlb
@@ -38,4 +38,4 @@ You can change the zone specified by the `service.kubernetes.io/ibm-load-balance
 {: note}
 
 Change the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation back to the original zone that was specified when you created the load balancer. If you still need to change the NLB's zone, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service. For more information, see [Changing a load balancer's subnet or zone](/docs/openshift?topic=openshift-vpclb_manage#lbaas_change_subnets). 
-{: tsRemedy}
+{: tsResolve}

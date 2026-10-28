@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift, storage
@@ -19,7 +19,7 @@ content-type: troubleshoot
 
 
 When you run `oc describe noobaa` or `oc describe ocscluster <ocscluster_name>`, the status is stuck at `Progressing`.
-{: tsSymptoms} 
+{: tsSymptoms}
 
 
 To determine why your storage cluster status is stuck, describe your storage cluster resources and review the `Status`.
