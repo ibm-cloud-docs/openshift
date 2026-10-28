@@ -247,8 +247,6 @@ The recommended way to generate a `sosreport` for an OpenShift Container Platfor
 
 
 
-
-
 ## Open a support case
 {: #support-case}
 
