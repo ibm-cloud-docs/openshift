@@ -31,14 +31,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+
 ### 28 October 2026
 {: #openshift-oct2826}
 {: release-note}
 
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
-
-
 
 
 
