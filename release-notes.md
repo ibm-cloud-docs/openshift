@@ -46,6 +46,8 @@ Openshift AI cluster add-on patch updates.
 {: #openshift-oct2726}
 {: release-note}
 
+
+
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
 
