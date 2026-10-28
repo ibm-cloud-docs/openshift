@@ -577,6 +577,7 @@ toc:
               - ts-cluster-debug-ocp.md
               - ts-webhook-debug.md
               - ts-cluster-master-upgrade.md
+              - ts-migrate-lb-quota.md
               - ts-cert-failed.md
               - ts-cluster-version-downlevel.md
               - ts-cluster-cli.md

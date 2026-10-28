@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift
@@ -30,7 +30,7 @@ Troubleshoot network load balancer (NLB) connectivity issues when your app canno
 
 
 You exposed your app by creating an NLB service in your classic cluster.
-{: tsSymptoms} 
+{: tsSymptoms}
 
 When you tried to connect to your app by using the public IP address of the NLB, the connection failed or timed out.
 

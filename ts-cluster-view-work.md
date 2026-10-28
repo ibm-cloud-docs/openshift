@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-10-28"
 
 
 keywords: kubernetes, openshift
@@ -34,7 +34,7 @@ You can't find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is 
 
 
 In {{site.data.keyword.cloud_notm}}, each resource must be in a resource group. For example, cluster `mycluster` might exist in the `default` resource group.
-{: tsCauses} 
+{: tsCauses}
 
 When the account owner gives you access to resources by assigning you an {{site.data.keyword.cloud_notm}} IAM platform access role, the access can be to a specific resource or to the resource group. When you are given access to a specific resource, you don't have access to the resource group. In this case, you don't need to target a resource group to work with the clusters you have access to. If you target a different resource group than the group that the cluster is in, actions against that cluster can fail. Conversely, when you are given access to a resource as part of your access to a resource group, you must target a resource group to work with a cluster in that group. If you don't target your CLI session to the resource group that the cluster is in, actions against that cluster can fail.
 

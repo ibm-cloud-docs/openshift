@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift
@@ -538,6 +538,10 @@ subcollection: openshift
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
+    * [28 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2826)
+
+        * Openshift AI cluster add-on patch updates.
+
     * [27 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2726)
 
         * OpenShift Virtualization cluster add-on patch updates.
@@ -545,6 +549,8 @@ subcollection: openshift
         * ACM cluster add-on patch updates.
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
 
     * [26 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2626)
 
@@ -6250,6 +6256,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_422#changelog_overview_422)
 
+* [27 October 2026, Worker node fix pack 4.22.18_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42218_1528_openshift_W)
+
 * [20 October 2026, Worker node fix pack 4.22.18_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42218_1527_openshift_W)
 
 * [06 October 2026, Worker node fix pack 4.22.16_1523_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42216_1523_openshift_W)
@@ -6370,6 +6378,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_421#changelog_overview_421)
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
+
+* [27 October 2026, Worker node fix pack 4.21.37_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42137_1539_openshift_W)
 
 * [20 October 2026, Worker node fix pack 4.21.37_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42137_1538_openshift_W)
 
@@ -6519,6 +6529,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+* [27 October 2026, Worker node fix pack 4.20.42_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42042_1570_openshift_W)
 
 * [20 October 2026, Worker node fix pack 4.20.42_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42042_1569_openshift_W)
 
@@ -6676,6 +6688,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+* [27 October 2026, Worker node fix pack 4.19.51_1601_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41951_1601_openshift_W)
 
 * [20 October 2026, Worker node fix pack 4.19.51_1600_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41951_1600_openshift_W)
 
@@ -6867,6 +6881,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+* [27 October 2026, Worker node fix pack 4.18.57_1615_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41857_1615_openshift_W)
 
 * [20 October 2026, Worker node fix pack 4.18.57_1614_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41857_1614_openshift_W)
 
@@ -7958,11 +7974,15 @@ subcollection: openshift
 
     * [`node`](/docs/openshift?topic=openshift-cs-graphql-api#node)
 
+    * [`resourceGroup`](/docs/openshift?topic=openshift-cs-graphql-api#resourcegroup)
+
     * [`satelliteConnectors`](/docs/openshift?topic=openshift-cs-graphql-api#satelliteconnectors)
 
 * [Mutations](/docs/openshift?topic=openshift-cs-graphql-api#mutations)
 
     * [`addVirtualNetworkInterfaceToBareMetalNode`](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnode)
+
+    * [`addVirtualNetworkInterfaceToVirtualNode`](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetovirtualnode)
 
     * [`createKubernetesWorkloadMigrationPlan`](/docs/openshift?topic=openshift-cs-graphql-api#createkubernetesworkloadmigrationplan)
 
@@ -7978,6 +7998,8 @@ subcollection: openshift
 
     * [`removeVirtualNetworkInterfaceFromNode`](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnode)
 
+    * [`setKubernetesClusterTrustedProfile`](/docs/openshift?topic=openshift-cs-graphql-api#setkubernetesclustertrustedprofile)
+
     * [`startKubernetesWorkloadMigration`](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigration)
 
     * [`updateSatelliteLocation`](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocation)
@@ -7987,6 +8009,8 @@ subcollection: openshift
     * [Account](/docs/openshift?topic=openshift-cs-graphql-api#account)
 
     * [AddVirtualNetworkInterfaceToBareMetalNodePayload](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnodepayload)
+
+    * [AddVirtualNetworkInterfaceToVirtualNodePayload](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetovirtualnodepayload)
 
     * [BareMetalNetworkAttachmentByVLAN](/docs/openshift?topic=openshift-cs-graphql-api#baremetalnetworkattachmentbyvlan)
 
@@ -8007,6 +8031,8 @@ subcollection: openshift
     * [CreateVPCKubernetesClusterFromTemplatePayload](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclusterfromtemplatepayload)
 
     * [CreateVPCKubernetesClusterTemplatePayload](/docs/openshift?topic=openshift-cs-graphql-api#createvpckubernetesclustertemplatepayload)
+
+    * [InstanceNetworkAttachment](/docs/openshift?topic=openshift-cs-graphql-api#instancenetworkattachment)
 
     * [KeyValuePair](/docs/openshift?topic=openshift-cs-graphql-api#keyvaluepair)
 
@@ -8042,9 +8068,17 @@ subcollection: openshift
 
     * [SecurityGroup](/docs/openshift?topic=openshift-cs-graphql-api#securitygroup)
 
+    * [SetKubernetesClusterTrustedProfilePayload](/docs/openshift?topic=openshift-cs-graphql-api#setkubernetesclustertrustedprofilepayload)
+
+    * [SetResourceGroupDefaultTrustedProfileInput](/docs/openshift?topic=openshift-cs-graphql-api#setresourcegroupdefaulttrustedprofileinput)
+
+    * [SetResourceGroupDefaultTrustedProfilePayload](/docs/openshift?topic=openshift-cs-graphql-api#setresourcegroupdefaulttrustedprofilepayload)
+
     * [StartKubernetesWorkloadMigrationPayload](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigrationpayload)
 
     * [Subnet](/docs/openshift?topic=openshift-cs-graphql-api#subnet)
+
+    * [TrustedProfile](/docs/openshift?topic=openshift-cs-graphql-api#trustedprofile)
 
     * [UpdateSatelliteLocationPayload](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocationpayload)
 
@@ -8092,6 +8126,10 @@ subcollection: openshift
 
     * [VPCMigrationStorageClassNameMapping](/docs/openshift?topic=openshift-cs-graphql-api#vpcmigrationstorageclassnamemapping)
 
+    * [VPCVirtualKubernetesNode](/docs/openshift?topic=openshift-cs-graphql-api#vpcvirtualkubernetesnode)
+
+    * [VirtualServerVirtualNetworkInterface](/docs/openshift?topic=openshift-cs-graphql-api#virtualservervirtualnetworkinterface)
+
 * [Interface types](/docs/openshift?topic=openshift-cs-graphql-api#interface-types)
 
     * [KubernetesNode](/docs/openshift?topic=openshift-cs-graphql-api#kubernetesnode)
@@ -8110,6 +8148,8 @@ subcollection: openshift
 
     * [AddVirtualNetworkInterfaceToBareMetalNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetobaremetalnodeinput)
 
+    * [AddVirtualNetworkInterfaceToVirtualNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#addvirtualnetworkinterfacetovirtualnodeinput)
+
     * [CreateKubernetesWorkloadMigrationPlanInput](/docs/openshift?topic=openshift-cs-graphql-api#createkubernetesworkloadmigrationplaninput)
 
     * [CreateSatelliteConnectorInput](/docs/openshift?topic=openshift-cs-graphql-api#createsatelliteconnectorinput)
@@ -8127,6 +8167,8 @@ subcollection: openshift
     * [RemoveSatelliteConnectorInput](/docs/openshift?topic=openshift-cs-graphql-api#removesatelliteconnectorinput)
 
     * [RemoveVirtualNetworkInterfaceFromNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnodeinput)
+
+    * [SetKubernetesClusterTrustedProfileInput](/docs/openshift?topic=openshift-cs-graphql-api#setkubernetesclustertrustedprofileinput)
 
     * [StartKubernetesWorkloadMigrationInput](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigrationinput)
 
@@ -8637,6 +8679,8 @@ subcollection: openshift
 
 * [Version 2.2](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2.2)
 
+    * [28 October 2026, Version 2.2 - 2.2.60](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2260)
+
     * [27 August 2026, Version 2.2 - 2.2.59](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2259)
 
     * [15 August 2026, Version 2.2 - 2.2.58](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2258)
@@ -8655,6 +8699,8 @@ subcollection: openshift
 
 * [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
 
+    * [28 October 2026, Version 420 - 420.0.5_380560911](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42005_380560911)
+
     * [17 September 2026, Version 420 - 420.0.4_3370991846](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42004_3370991846)
 
     * [10 August 2026, Version 420 - v420.0.3_361259361](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42003_361259361)
@@ -8664,6 +8710,8 @@ subcollection: openshift
     * [08 July 2026, Version 420 - 420.0.0_349689605](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42000_349689605)
 
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
+
+    * [28 October 2026, Version 419 - 419.1.4_380560732](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41914_380560732)
 
     * [17 September 2026, Version 419 - 419.1.3_370991899](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41913_370991899)
 
@@ -8681,6 +8729,8 @@ subcollection: openshift
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
 
+    * [28 October 2026, Version 418 - 418.1.6_380560874](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41816_380560874)
+
     * [17 September 2026, Version 418 - 418.1.5_370992078](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41815_370992078)
 
     * [10 August 2026, Version 418 - v418.1.4_361259339](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41814_361259339)
@@ -8696,6 +8746,8 @@ subcollection: openshift
     * [11 November 2025, Version 418 - v418.0.0_295927267](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
+
+    * [28 October 2026, Version 417 - 417.1.6_380560813](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41716_380560813)
 
     * [17 September 2026, Version 417 - 417.1.5_370985594](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41715_370985594)
 
@@ -9812,6 +9864,8 @@ subcollection: openshift
 * [Disabling or removing a webhook](/docs/openshift?topic=openshift-ts-webhook-debug#webhook-disable-rm)
 
 [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
+
+[Why is my Classic-to-VPC migration stuck in global resource migration?](/docs/openshift?topic=openshift-ts-migrate-lb-quota#ts-migrate-lb-quota)
 
 [Why can't I create or renew my CA cert?](/docs/openshift?topic=openshift-ts-cert-failed#ts-cert-failed)
 

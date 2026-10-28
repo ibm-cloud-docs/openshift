@@ -1,9 +1,9 @@
 ---
 
-copyright:
+copyright: 
   years: 2014, 2026
+lastupdated: "2026-10-28"
 
-lastupdated: "2026-10-05"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
 
@@ -27,8 +27,6 @@ Classic cluster creation is restricted for accounts that do not already have a c
 
 
 
-<!--<qna:considerations>-->
-
 ## Prerequisites
 {: #classic-cluster-prereqs}
 
@@ -51,8 +49,8 @@ Location details
 :    - **Resource group**: A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group.
 :    - **Geography**: Select an area to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Metro** values that you can select in the console.
 :    - **Availability**: A cluster can be created with a **Single zone** or **Multizone** configuration. A multizone cluster provides high availability, with the {{site.data.keyword.redhat_openshift_notm}} master deployed in a multizone-capable zone and three replicas of the master spread across different zones.
-        - For multizone clusters, choose a **Metro** location. For the best performance, select the region that is physically closest to you. Your **Worker zones** are based on the region you choose. You can select which worker zones to apply, and your worker nodes are spread across your zones for high availability. Each worker zone has a public and private **VLAN**. If you do not have VLANs in that zone, they are created for you. 
-        - For single zone clusters, choose a single **Worker zone** to host your cluster in. For the best performance, select a zone in the city that is physically closest to you. Each worker zone has a public and private **VLAN**. If you do not have a VLANs in that zone, they are created for you.<!--</qna:considerations>-->
+        - For multizone clusters, choose a **Metro** location. For the best performance, select the region that is physically closest to you. Your **Worker zones** are based on the region you choose. You can select which worker zones to apply, and your worker nodes are spread across your zones for high availability. Each worker zone has a public and private **VLAN**. If you do not have VLANs in that zone, they are created for you.
+        - For single zone clusters, choose a single **Worker zone** to host your cluster in. For the best performance, select a zone in the city that is physically closest to you. Each worker zone has a public and private **VLAN**. If you do not have a VLANs in that zone, they are created for you.
 
 Kubernetes version
 :    By default, clusters are created with the default Kubernetes version. You can specify a different [supported version](/docs/containers?topic=containers-cs_versions#cs_versions_available). 

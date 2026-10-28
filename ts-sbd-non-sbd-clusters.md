@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-10-28"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quota, limitations
 
@@ -27,7 +27,7 @@ Troubleshoot issues with non-satellite clusters when using Satellite storage.
 {: shortdesc}
 
 You use only custom security groups and you see worker creation failures and image pull errors in other clusters within your VPC after creating a version 4.15 cluster.
-{: tsSymtpoms}
+{: tsSymptoms}
 
 The following steps apply only in scenarios where you have opted out of using managed security groups and are instead using your own custom security groups.
 
@@ -52,7 +52,7 @@ Any existing or future non-secure by default cluster that does NOT use the manag
 {: tsSymptoms}
 
 To correct this problem add an inbound security group rule on the shared VPE gateway security group from one of your customer defined security groups.
-{: tsResolve}  
+{: tsResolve}
 
 1. Find the security group IDs for both your security group and the `kube-vpegw-<vpcID>` security group.
 

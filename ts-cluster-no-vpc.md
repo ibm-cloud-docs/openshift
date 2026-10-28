@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-10-28"
 
 
 keywords: kubernetes, openshift
@@ -29,7 +29,7 @@ Troubleshoot issues when your cluster does not have a VPC network configured.
 **Infrastructure provider**: VPC
 
 You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/containers/cluster-management/catalog/create){: external}.
-{: tsSymptoms} 
+{: tsSymptoms}
 
 You have an existing [VPC](https://cloud.ibm.com/vpc){: external} in your account, but when you try to select an existing **Virtual Private Cloud** to create the cluster in, you see the following error message:
 ```sh

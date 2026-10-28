@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift
@@ -41,7 +41,7 @@ However, if an operator or built-in template has a build component that must pul
 
 
 Set up the build with access to the image, either by pulling the image from the private registry or by importing the image from the private registry into the internal registry.
-{: tsResolve} 
+{: tsResolve}
 
 For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/builds_using_buildconfig/creating-build-inputs){: external}.
 

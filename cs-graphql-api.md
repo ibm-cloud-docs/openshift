@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-10-28"
 
 keywords: containers, kubernetes, satellite, graphql, api, reference
 
@@ -66,6 +66,54 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 ```
 
 
+### `resourceGroup`
+{: #resourcegroup}
+
+Get the details for a resource group by specifying its ID.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Returns | `ResourceGroup` | |
+| Argument | `externalID` (`String!`) *(required)* | The ID of this resource group. |
+{: caption="Returns and arguments for resourceGroup" caption-side="bottom"}
+
+
+#### Example request
+{: #example-request-resourcegroup}
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "query resourceGroup($externalID: String!) {\n  resourceGroup(externalID: $externalID) {\n    # ... select your fields here\n  }\n}",
+  "variables": {
+    "externalID": "example-value"
+  }
+}'
+```
+
+
+#### Example response
+{: #example-response-resourcegroup}
+
+```json
+{
+  "data": {
+    "resourceGroup": {
+      "defaultKubernetesClusterTrustedProfile": {
+        "externalID": "example-value"
+      },
+      "externalID": "example-value",
+      "id": "abc123",
+      "name": "example-value"
+    }
+  }
+}
+```
+
+
 ### `satelliteConnectors`
 {: #satelliteconnectors}
 
@@ -122,6 +170,7 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
               "name": "..."
             },
             "resourceGroup": {
+              "defaultKubernetesClusterTrustedProfile": "...",
               "externalID": "...",
               "id": "...",
               "name": "..."
@@ -184,6 +233,49 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 {
   "data": {
     "addVirtualNetworkInterfaceToBareMetalNode": {
+      "networkAttachment": "<NetworkAttachment>"
+    }
+  }
+}
+```
+
+
+### `addVirtualNetworkInterfaceToVirtualNode`
+{: #addvirtualnetworkinterfacetovirtualnode}
+
+Adds a virtual network interface (VNI) to a virtual Kubernetes worker node.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Returns | `AddVirtualNetworkInterfaceToVirtualNodePayload` | |
+| Argument | `input` (`AddVirtualNetworkInterfaceToVirtualNodeInput!`) *(required)* | Input parameters for adding the VNI to a virtual node. |
+{: caption="Returns and arguments for addVirtualNetworkInterfaceToVirtualNode" caption-side="bottom"}
+
+
+#### Example request
+{: #example-request-addvirtualnetworkinterfacetovirtualnode}
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation addVirtualNetworkInterfaceToVirtualNode($input: AddVirtualNetworkInterfaceToVirtualNodeInput!) {\n  addVirtualNetworkInterfaceToVirtualNode(input: $input) {\n    # ... select your fields here\n  }\n}",
+  "variables": {
+    "input": "<AddVirtualNetworkInterfaceToVirtualNodeInput>"
+  }
+}'
+```
+
+
+#### Example response
+{: #example-response-addvirtualnetworkinterfacetovirtualnode}
+
+```json
+{
+  "data": {
+    "addVirtualNetworkInterfaceToVirtualNode": {
       "networkAttachment": "<NetworkAttachment>"
     }
   }
@@ -284,6 +376,9 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
           "name": "example-value"
         },
         "resourceGroup": {
+          "defaultKubernetesClusterTrustedProfile": {
+            "externalID": "..."
+          },
           "externalID": "example-value",
           "id": "abc123",
           "name": "example-value"
@@ -527,6 +622,9 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
           "name": "example-value"
         },
         "resourceGroup": {
+          "defaultKubernetesClusterTrustedProfile": {
+            "externalID": "..."
+          },
           "externalID": "example-value",
           "id": "abc123",
           "name": "example-value"
@@ -662,6 +760,51 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 ```
 
 
+### `setKubernetesClusterTrustedProfile`
+{: #setkubernetesclustertrustedprofile}
+
+Sets the trusted-profile for a Kubernetes cluster.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Returns | `SetKubernetesClusterTrustedProfilePayload` | |
+| Argument | `input` (`SetKubernetesClusterTrustedProfileInput!`) *(required)* |  |
+{: caption="Returns and arguments for setKubernetesClusterTrustedProfile" caption-side="bottom"}
+
+
+#### Example request
+{: #example-request-setkubernetesclustertrustedprofile}
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation setKubernetesClusterTrustedProfile($input: SetKubernetesClusterTrustedProfileInput!) {\n  setKubernetesClusterTrustedProfile(input: $input) {\n    # ... select your fields here\n  }\n}",
+  "variables": {
+    "input": "<SetKubernetesClusterTrustedProfileInput>"
+  }
+}'
+```
+
+
+#### Example response
+{: #example-response-setkubernetesclustertrustedprofile}
+
+```json
+{
+  "data": {
+    "setKubernetesClusterTrustedProfile": {
+      "trustedProfile": {
+        "externalID": "example-value"
+      }
+    }
+  }
+}
+```
+
+
 ### `startKubernetesWorkloadMigration`
 {: #startkubernetesworkloadmigration}
 
@@ -783,6 +926,18 @@ Response payload for adding a VNI to a bare metal node.
 | --- | --- | --- |
 | Field | `networkAttachment` (`NetworkAttachment!`) | The created network attachment with its properties. |
 {: caption="Fields for AddVirtualNetworkInterfaceToBareMetalNodePayload" caption-side="bottom"}
+
+
+### AddVirtualNetworkInterfaceToVirtualNodePayload
+{: #addvirtualnetworkinterfacetovirtualnodepayload}
+
+Response payload for adding a VNI to a virtual node.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `networkAttachment` (`NetworkAttachment!`) | The created network attachment with its properties. |
+{: caption="Fields for AddVirtualNetworkInterfaceToVirtualNodePayload" caption-side="bottom"}
 
 
 ### BareMetalNetworkAttachmentByVLAN
@@ -935,6 +1090,20 @@ Generate VPC meta data mutation response payload
 | Field | `classic` (`ClassicKubernetesClusterTemplate!`) | Classic cluster meta data |
 | Field | `vpc` (`VPCKubernetesClusterTemplate!`) | VPC meta data |
 {: caption="Fields for CreateVPCKubernetesClusterTemplatePayload" caption-side="bottom"}
+
+
+### InstanceNetworkAttachment
+{: #instancenetworkattachment}
+
+Network attachment for virtual server instances.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Implements | `NetworkAttachment` | |
+| Field | `attachedTo` (`NetworkAttachable!`) | The virtual node this interface is attached to. |
+| Field | `virtualNetworkInterface` (`VirtualNetworkInterface!`) | The virtual network interface that is attached. |
+{: caption="Fields for InstanceNetworkAttachment" caption-side="bottom"}
 
 
 ### KeyValuePair
@@ -1142,6 +1311,7 @@ A ResourceGroup is a way for you to organize your account resources in customiza
 | Type | Name | Description |
 | --- | --- | --- |
 | Implements | `Node` | |
+| Field | `defaultKubernetesClusterTrustedProfile` (`TrustedProfile`) | The trusted-profile associated with the Kubernetes resource-group, used to control access and permissions to all of the group's resources.  \n **Arguments for `defaultKubernetesClusterTrustedProfile`**  \n * `regionName` (`String!`) *(required)* — The name of the region in which this trusted profile is the default for newly created Kubernetes clusters. |
 | Field | `externalID` (`String!`) | The resource group's IBM Cloud ID. |
 | Field | `id` (`ID!`) | The resource group's Node ID. |
 | Field | `name` (`String`) | The resource group's name. |
@@ -1194,6 +1364,43 @@ Represents a VPC security group.
 {: caption="Fields for SecurityGroup" caption-side="bottom"}
 
 
+### SetKubernetesClusterTrustedProfilePayload
+{: #setkubernetesclustertrustedprofilepayload}
+
+Output for SetKubernetesClusterTrustedProfilePayload mutation, if no trusted-profile is set, then returns empty.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `trustedProfile` (`TrustedProfile`) |  |
+{: caption="Fields for SetKubernetesClusterTrustedProfilePayload" caption-side="bottom"}
+
+
+### SetResourceGroupDefaultTrustedProfileInput
+{: #setresourcegroupdefaulttrustedprofileinput}
+
+Input to SetResourceGroupDefaultTrustedProfile mutation.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `regionName` (`String!`) | The region to which the resource-group belongs to. |
+| Field | `resourceGroupID` (`String!`) | The resource-group to update with a new default trusted-profile. |
+{: caption="Fields for SetResourceGroupDefaultTrustedProfileInput" caption-side="bottom"}
+
+
+### SetResourceGroupDefaultTrustedProfilePayload
+{: #setresourcegroupdefaulttrustedprofilepayload}
+
+Output for SetResourceGroupDefaultTrustedProfile mutation, if no trusted-profile is set, then returns empty.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `trustedProfile` (`TrustedProfile`) |  |
+{: caption="Fields for SetResourceGroupDefaultTrustedProfilePayload" caption-side="bottom"}
+
+
 ### StartKubernetesWorkloadMigrationPayload
 {: #startkubernetesworkloadmigrationpayload}
 
@@ -1219,6 +1426,18 @@ Represents a VPC subnet.
 | --- | --- | --- |
 | Field | `externalID` (`String!`) | The VPC resource ID of this subnet. |
 {: caption="Fields for Subnet" caption-side="bottom"}
+
+
+### TrustedProfile
+{: #trustedprofile}
+
+An IAM trusted-profile.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `externalID` (`String!`) | The trustedProfileID for that compute resource(resource-group/cluster). |
+{: caption="Fields for TrustedProfile" caption-side="bottom"}
 
 
 ### UpdateSatelliteLocationPayload
@@ -1549,6 +1768,42 @@ ReplatformStorage class name mapping (classic → VPC).
 {: caption="Fields for VPCMigrationStorageClassNameMapping" caption-side="bottom"}
 
 
+### VPCVirtualKubernetesNode
+{: #vpcvirtualkubernetesnode}
+
+Represents a virtual Kubernetes worker node in IBM Cloud VPC.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Implements | `KubernetesNode` | |
+| Implements | `NetworkAttachable` | |
+| Implements | `Node` | |
+| Field | `id` (`ID!`) | Globally unique identifier for this worker node. |
+| Field | `networkAttachments` (`NetworkAttachmentConnection`) | Network attachments for this virtual node.  \n **Arguments for `networkAttachments`**  \n * `after` (`String`) — Cursor to start fetching from. \n * `first` (`Int`) — Maximum number of items to return. |
+| Field | `region` (`Region`) |  |
+{: caption="Fields for VPCVirtualKubernetesNode" caption-side="bottom"}
+
+
+### VirtualServerVirtualNetworkInterface
+{: #virtualservervirtualnetworkinterface}
+
+Virtual network interface attached to a virtual server instance.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Implements | `VirtualNetworkInterface` | |
+| Field | `autoDelete` (`Boolean`) | Whether the VNI should be automatically deleted when detached. |
+| Field | `externalID` (`String!`) | The VPC resource ID of this VNI. |
+| Field | `macAddress` (`MACAddress`) | MAC address assigned to this network interface. |
+| Field | `name` (`String`) | Human-readable name of the VNI. |
+| Field | `primaryIPAddress` (`IPv4Address`) | Primary IPv4 address assigned to this network interface. |
+| Field | `securityGroups` (`SecurityGroupConnection`) | Security groups applied to this network interface.  \n **Arguments for `securityGroups`**  \n * `after` (`String`) — Cursor to start fetching from. \n * `first` (`Int`) — Maximum number of items to return. |
+| Field | `subnet` (`Subnet!`) | The VPC subnet this network interface is connected to. |
+{: caption="Fields for VirtualServerVirtualNetworkInterface" caption-side="bottom"}
+
+
 ## Interface types
 {: #interface-types}
 
@@ -1565,6 +1820,7 @@ A Kubernetes Node runs your workload.
 | --- | --- | --- |
 | Implementation | `KubernetesNode` | |
 | Implementation | `VPCBareMetalKubernetesNode` | |
+| Implementation | `VPCVirtualKubernetesNode` | |
 | Field | `id` (`ID!`) | The resource's unique identifier. |
 | Field | `region` (`Region`) |  |
 {: caption="Fields for KubernetesNode" caption-side="bottom"}
@@ -1609,6 +1865,7 @@ Represents a network interface attachment to a node.
 | Type | Name | Description |
 | --- | --- | --- |
 | Implementation | `BareMetalNetworkAttachmentByVLAN` | |
+| Implementation | `InstanceNetworkAttachment` | |
 | Implementation | `NetworkAttachment` | |
 | Field | `attachedTo` (`NetworkAttachable!`) | The node this network interface is attached to. |
 | Field | `virtualNetworkInterface` (`VirtualNetworkInterface!`) | The virtual network interface that is attached. |
@@ -1632,6 +1889,7 @@ Fetches an object given its ID.
 | Implementation | `SatelliteConnector` | |
 | Implementation | `SatelliteLocation` | |
 | Implementation | `VPCBareMetalKubernetesNode` | |
+| Implementation | `VPCVirtualKubernetesNode` | |
 | Field | `id` (`ID!`) | The globally unique object ID. |
 {: caption="Fields for Node" caption-side="bottom"}
 
@@ -1647,6 +1905,7 @@ Can be attached to bare metal or virtual server instances.
 | --- | --- | --- |
 | Implementation | `BareMetalVirtualNetworkInterface` | |
 | Implementation | `VirtualNetworkInterface` | |
+| Implementation | `VirtualServerVirtualNetworkInterface` | |
 | Field | `autoDelete` (`Boolean`) | Whether the VNI should be automatically deleted when detached. |
 | Field | `externalID` (`String!`) | The VPC resource ID of this virtual network interface. |
 | Field | `macAddress` (`MACAddress`) | MAC address assigned to this network interface. |
@@ -1677,6 +1936,20 @@ Input for adding a VNI to a bare metal node.
 | Field | `virtualNetworkInterfaceID` (`String!`) *(required)* | The VPC resource ID of the virtual network interface to attach. |
 | Field | `vlanID` (`Int!`) *(required)* | VLAN ID for the attachment (2-500). VLAN 1 is reserved for the primary network interface. |
 {: caption="Input fields for AddVirtualNetworkInterfaceToBareMetalNodeInput" caption-side="bottom"}
+
+
+### AddVirtualNetworkInterfaceToVirtualNodeInput
+{: #addvirtualnetworkinterfacetovirtualnodeinput}
+
+Input for adding a VNI to a virtual node.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `autoDelete` (`Boolean`) | Whether to automatically delete the VNI from VPC when it is detached. Defaults to false if not specified. |
+| Field | `node` (`ID!`) *(required)* | Node ID (required). |
+| Field | `virtualNetworkInterfaceID` (`String!`) *(required)* | The VPC resource ID of the virtual network interface to attach. |
+{: caption="Input fields for AddVirtualNetworkInterfaceToVirtualNodeInput" caption-side="bottom"}
 
 
 ### CreateKubernetesWorkloadMigrationPlanInput
@@ -1790,6 +2063,19 @@ Input for removing a VNI from a node.
 | Field | `node` (`ID`) | Node ID. Either cluster or node must be specified, but not both. |
 | Field | `virtualNetworkInterfaceID` (`String!`) *(required)* | The VPC resource ID of the virtual network interface to remove. |
 {: caption="Input fields for RemoveVirtualNetworkInterfaceFromNodeInput" caption-side="bottom"}
+
+
+### SetKubernetesClusterTrustedProfileInput
+{: #setkubernetesclustertrustedprofileinput}
+
+Input for the SetKubernetesClusterTrustedProfile mutation, used to update the trusted profile associated with a Kubernetes cluster.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `id` (`ID!`) *(required)* | The cluster's ID on which the trusted-profile needs to be set upon. |
+| Field | `trustedProfileID` (`String!`) *(required)* | The ID of the new trusted profile to associate with the Kubernetes cluster. |
+{: caption="Input fields for SetKubernetesClusterTrustedProfileInput" caption-side="bottom"}
 
 
 ### StartKubernetesWorkloadMigrationInput

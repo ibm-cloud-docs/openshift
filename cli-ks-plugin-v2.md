@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-28"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -4810,7 +4810,7 @@ ibmcloud ks credential unset --region REGION
 ## Experimental commands
 {: #experimental-cli}
 
-[Expires on 2026-11-01] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
+[Expires on 2027-01-28] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 
 
 ### `ibmcloud ks experimental cluster help`
@@ -4923,7 +4923,7 @@ ibmcloud ks experimental help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-[Expires on 2026-10-21] Get the default trusted profile for clusters created in a resource-group.
+[Expires on 2027-01-28] Get the default trusted profile for clusters created in a resource-group.
 
 ```sh
 ibmcloud ks experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
@@ -4949,7 +4949,7 @@ ibmcloud ks experimental trusted-profile default get --region REGION --resource-
 #### Examples
 {: #experimental-trusted-profile-default-get-examples}
 
-[Expires on 2026-10-21] Get the default trusted profile for clusters created in a resource-group
+[Expires on 2027-01-28] Get the default trusted profile for clusters created in a resource-group
 
 ```sh
 ibmcloud ks experimental trusted-profile default get --region REGION --resource-group GROUP
@@ -4985,7 +4985,7 @@ ibmcloud ks experimental trusted-profile default help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-[Expires on 2026-10-21] Set the default trusted profile for clusters created in a resource-group.
+[Expires on 2027-01-28] Set the default trusted profile for clusters created in a resource-group.
 
 ```sh
 ibmcloud ks experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
@@ -5014,7 +5014,7 @@ ibmcloud ks experimental trusted-profile default set --region REGION --resource-
 #### Examples
 {: #experimental-trusted-profile-default-set-examples}
 
-[Expires on 2026-10-21] Set the default trusted profile for clusters created in a resource-group
+[Expires on 2027-01-28] Set the default trusted profile for clusters created in a resource-group
 
 ```sh
 ibmcloud ks experimental trusted-profile default set \
@@ -5030,7 +5030,7 @@ ibmcloud ks experimental trusted-profile default set \
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-[Expires on 2026-10-21] Get trusted profile for a cluster.
+[Expires on 2027-01-28] Get trusted profile for a cluster.
 
 ```sh
 ibmcloud ks experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
@@ -5053,7 +5053,7 @@ ibmcloud ks experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 #### Examples
 {: #experimental-trusted-profile-get-examples}
 
-[Expires on 2026-10-21] Get trusted profile for a cluster
+[Expires on 2027-01-28] Get trusted profile for a cluster
 
 ```sh
 ibmcloud ks experimental trusted-profile get --cluster CLUSTER
@@ -5089,7 +5089,7 @@ ibmcloud ks experimental trusted-profile help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-[Expires on 2026-10-21] Set trusted profile on a cluster.
+[Expires on 2027-01-28] Set trusted profile on a cluster.
 
 ```sh
 ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
@@ -5115,7 +5115,7 @@ ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile
 #### Examples
 {: #experimental-trusted-profile-set-examples}
 
-[Expires on 2026-10-21] Set trusted profile on a cluster
+[Expires on 2027-01-28] Set trusted profile on a cluster
 
 ```sh
 ibmcloud ks experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE

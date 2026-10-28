@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift, version, update, upgrade
@@ -61,6 +61,8 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 
 
 
+
+
 ### VPC clusters
 {: #os-vpc-gen2}
 
@@ -72,6 +74,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 |4.19 (Kubernetes 1.32)|3 September 2025|28 July 2027†|Red Hat CoreOS,  \nRHEL 9*| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
 |4.18 (Kubernetes 1.31)|23 May 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9*| - [4.18 details and update actions](/docs/openshift?topic=openshift-cs_versions_418)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_418)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes){: external}|
 {: caption="Available versions for VPC clusters" caption-side="bottom"}
+
 
 
 ### Classic clusters
@@ -87,6 +90,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 {: caption="Available versions for Classic clusters" caption-side="bottom"}
 
 
+
 ### Clusters in Satellite locations
 {: #os-sat}
 
@@ -98,6 +102,7 @@ RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does n
 |4.19 (Kubernetes 1.32)|3 September 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
 |4.18 (Kubernetes 1.31)|23 May 2025|24 March 2027†|Red Hat CoreOS,  \nRHEL 9| - [4.18 details and update actions](/docs/openshift?topic=openshift-cs_versions_418)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_418)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes){: external}|
 {: caption="Available versions for clusters in Satellite locations" caption-side="bottom"}
+
 
 
 

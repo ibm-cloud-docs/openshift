@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-10-28"
 
 
 keywords: openshift
@@ -27,18 +27,12 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
-This troubleshooting topic applies to only {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
-{: note}
-
-
-
-
 When you create a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog, the Portworx installation in your cluster fails and the service instance shows a status of **Provision failure**.
 {: tsSymptoms}
 
 
 Before Portworx is installed in your cluster, a number of checks are performed to verify the information that you provided on the Portworx service page of the {{site.data.keyword.cloud_notm}} catalog.
-{: tsCauses} 
+{: tsCauses}
 
 If one of these checks fails, the status of the Portworx service is changed to **Provision failure**. You can't see the details of what check failed or what information is missing to complete the installation.
 
