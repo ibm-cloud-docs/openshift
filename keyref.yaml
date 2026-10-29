@@ -61,7 +61,7 @@ keyword:
   kubernetes_136_unsupported_date: 01 August 2027
   kubernetes_137_deprecated: None
   kubernetes_137_release_date: None
-  kubernetes_137_unsupported_certainty: None
+  kubernetes_137_unsupported_certainty: tentative
   kubernetes_137_unsupported_date: None
   kubernetes_default_deprecated: 'False'
   kubernetes_default_docs: /docs/containers?topic=containers-changelog_136
@@ -69,12 +69,12 @@ keyword:
   kubernetes_default_unsupported_certainty: tentative
   kubernetes_default_unsupported_date: 01 August 2027
   kubernetes_default_version: '1.36'
-  kubernetes_latest_deprecated: 'False'
-  kubernetes_latest_docs: /docs/containers?topic=containers-changelog_136
-  kubernetes_latest_release_date: 26 June 2026
+  kubernetes_latest_deprecated: None
+  kubernetes_latest_docs: /docs/containers?topic=containers-changelog_137
+  kubernetes_latest_release_date: None
   kubernetes_latest_unsupported_certainty: tentative
-  kubernetes_latest_unsupported_date: 01 August 2027
-  kubernetes_latest_version: '1.36'
+  kubernetes_latest_unsupported_date: None
+  kubernetes_latest_version: '1.37'
   openshift_410_RHEL_7_unsupported_date: 6 December 2022
   openshift_410_RHEL_8_unsupported_date: ''
   openshift_410_deprecated: 'True'

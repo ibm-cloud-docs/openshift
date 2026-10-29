@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-28"
+lastupdated: "2026-10-29"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -252,8 +252,9 @@ Review the version history for Cluster autoscaler.
 
 ### 02 December 2025, Version 2.0.0 - v200-2_302959219
 {: #cl-add-ons-cluster-autoscaler-v200-2_302959219}
+
 - Updates Go to version `1.25.4`.
-- Updates storage secret sidecar 1.3.37.
+- Updates storage secret sidecar 1.3.37. 
 - Adds support for scale down to 0.
 - Adds support for cluster version 1.34.
 - `1.30.7-v200-2`
@@ -834,7 +835,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 02 April 2024, Version 1.0.9 - 1.0.9_411
 {: #cl-add-ons-cluster-autoscaler-109_411}
 
-- Updates the storage-secret-sidecar image to v1.2.33.
+- Updates the storage-secret-sidecar image to v1.2.33. 
 - `1.22.0-109-3`
 - `1.23.0-109-3`
 - `1.24.0-109-3`
@@ -853,8 +854,8 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### 21 February 2024, Version 1.0.9 - 1.0.9_377
 {: #cl-add-ons-cluster-autoscaler-109_377}
 
-- Updates the storage-secret-sidecar image to v1.2.31.
-- Fixes naming issues with the nodeDeleteDelayAfterTaint and maxNodesTotal parameters.
+- Updates the storage-secret-sidecar image to v1.2.31. 
+- Fixes naming issues with the nodeDeleteDelayAfterTaint and maxNodesTotal parameters. 
 - `1.22.0-109-3`
 - `1.23.0-109-3`
 - `1.24.0-109-3`
@@ -875,8 +876,8 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 {: #cl-add-ons-cluster-autoscaler-109_328}
 
 - Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
-- Updates the storage-secret-sidecar image to v1.2.30.
-- Fixes an issue while updating custom variables via add-on.
+- Updates the storage-secret-sidecar image to v1.2.30. 
+- Fixes an issue while updating custom variables via add-on. 
 
 
 ### 16 January 2024, Version patch update 1.0.9_328
@@ -891,7 +892,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 {: #cl-add-ons-cluster-autoscaler-109_290}
 
 - Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
-- Updates the storage-secret-sidecar image to v1.2.29.
+- Updates the storage-secret-sidecar image to v1.2.29. 
 - `1.22.0-109-2`
 - `1.23.0-109-2`
 - `1.24.0-109-2`
@@ -912,8 +913,8 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 {: #cl-add-ons-cluster-autoscaler-109_195}
 
 - Updates Go to version `1.20.10`.
-- Updates the storage-secret-sidecar image to v1.2.28.
-- Updates Golang to 1.20.10.
+- Updates the storage-secret-sidecar image to v1.2.28. 
+- Updates Golang to 1.20.10. 
 - `1.22.0-109-2`
 - `1.23.0-109-2`
 - `1.24.0-109-2`

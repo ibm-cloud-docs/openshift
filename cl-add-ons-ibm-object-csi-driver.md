@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-15"
+lastupdated: "2026-10-29"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -59,10 +59,19 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### 15 October 2026, Version 1.0 - v1.0.30_379049185
-{: #cl-add-ons-ibm-object-csi-driver-v1030_379049185}
+### 29 October 2026, Version 1.0 - v1.0.31_379588168
+{: #cl-add-ons-ibm-object-csi-driver-v1031_379588168}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-111943](https://nvd.nist.gov/vuln/detail/cve-2026-111943){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-114437](https://nvd.nist.gov/vuln/detail/cve-2026-114437){: external}, and [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}.
+- Updates Go to version `1.26.10`.
+- Update rclone parameters classification logic to differentiate between config and cli params 
+- Use restart instead of start on upgrade so cos-csi-mounter picks up the new binary 
+
+
+### 15 October 2026, Version 1.0 - v1.0.30_379049185
+{: #cl-add-ons-ibm-object-csi-driver-v1030_379049185}
 
 - Resolves the following CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}, [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, [CVE-2026-78667](https://nvd.nist.gov/vuln/detail/cve-2026-78667){: external}, [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}, [CVE-2026-40467](https://nvd.nist.gov/vuln/detail/cve-2026-40467){: external}, [CVE-2026-40468](https://nvd.nist.gov/vuln/detail/cve-2026-40468){: external}, and [CVE-2026-40553](https://nvd.nist.gov/vuln/detail/cve-2026-40553){: external}.
 - Updates Go to version `1.26.9`.
