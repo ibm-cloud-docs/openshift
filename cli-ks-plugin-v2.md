@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-10-29"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -2640,7 +2640,7 @@ ibmcloud ks cluster create satellite --location LOCATION --name NAME --version V
 :    Specify the name of the operating system.
 
 `--pod-network-interface-selection`
-:    The method for selecting the node network interface for the internal pod network. This option can be used only if the Satellite location that you specify has Red Hat CoreOS enabled. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
+:    The method for selecting the node network interface for the internal pod network. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
 
 `--pod-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be at least `/23` or larger. For more info, see [https://ibm.biz/cluster-create-satellite](https://ibm.biz/cluster-create-satellite). Default value: `172.30.0.0/16`

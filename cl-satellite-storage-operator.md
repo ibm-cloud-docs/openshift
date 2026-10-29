@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-09-29"
+lastupdated: "2026-10-29"
 
 
 keywords: change log, version history, Satellite Storage Operator
@@ -29,10 +29,17 @@ Review the version history for Satellite Storage Operator.
 {: #cl-satellite-storage-operator-1.0}
 
 
-### 29 September 2026, Version 1.0 - 1.0.88
-{: #cl-satellite-storage-operator-1088}
+### 29 October 2026, Version 1.0 - 1.0.89
+{: #cl-satellite-storage-operator-1089}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, and [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}.
+- Updates Go to version `1.26.10`.
+
+
+### 29 September 2026, Version 1.0 - 1.0.88
+{: #cl-satellite-storage-operator-1088}
 
 - Resolves the following CVEs: [CVE-2026-85731](https://nvd.nist.gov/vuln/detail/cve-2026-85731){: external}, [CVE-2026-85732](https://nvd.nist.gov/vuln/detail/cve-2026-85732){: external}, [CVE-2026-84304](https://nvd.nist.gov/vuln/detail/cve-2026-84304){: external}, and [CVE-2026-84445](https://nvd.nist.gov/vuln/detail/cve-2026-84445){: external}.
 - Updates Go to version `1.26.8`.
