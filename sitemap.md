@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-10-29"
 
 
 keywords: openshift
@@ -535,8 +535,6 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
-
-* [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
     * [28 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2826)
 
@@ -8564,6 +8562,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-supported-versions)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [29 October 2026, Version 1.0 - v1.0.31_379588168](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1031_379588168)
 
     * [15 October 2026, Version 1.0 - v1.0.30_379049185](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1030_379049185)
 
