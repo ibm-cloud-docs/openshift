@@ -493,6 +493,45 @@ subcollection: openshift
 * [Troubleshoot](/docs/openshift?topic=openshift-learning-path-virt#virt-path-troubleshoot)
 
 
+## Classic to VPC migration
+{: #sitemap_classic_to_vpc_migration}
+
+
+[Migrating Classic clusters to VPC overview](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview)
+
+* [Why should I migrate from Classic to VPC?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-why)
+
+* [What do I need before I start?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-prereqs)
+
+* [Which clusters are eligible for migration?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-cluster)
+
+* [What is migrated automatically and what is not?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations)
+
+    * [Which add-ons are migrated?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-addons)
+
+    * [Which network policies are migrated?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-networking)
+
+    * [What happens to my storage?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-storage)
+
+    * [What workload considerations should I know about?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-workloads)
+
+* [How does the migration work?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-how)
+
+* [What are the migration steps?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phases)
+
+* [What happens to my IAM and access configuration?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-iam)
+
+* [How does BRS copy my data?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-brs)
+
+* [How do I cut over traffic and delete the Classic cluster?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-cutover)
+
+* [Is my Classic cluster affected while migration is in progress?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-classic-impact)
+
+* [Does migration affect my pricing or license?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-pricing)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-next)
+
+
 ## Important notices
 {: #sitemap_important_notices}
 
@@ -535,6 +574,16 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
+
+    * [29 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2926)
+
+        * New! Migrate Classic clusters to VPC by using the migration wizard.
+
+        * CLI version 1.0.901 is available.
+
+        * IBM Object CSI Driver cluster add-on patch updates.
 
     * [28 October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2826)
 
@@ -2221,6 +2270,25 @@ subcollection: openshift
 [Migrate a VM using the Migration Toolkit for Virtualization](https://docs.redhat.com/en/documentation/migration_toolkit_for_virtualization){: external}
 
 
+## Classic to VPC migration
+{: #sitemap_classic_to_vpc_migration1}
+
+
+[Migration wizard quickstart guide](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-prereqs)
+
+* [Step 1: Open the migration wizard](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-open)
+
+    * [Open the wizard from the Migration hub](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-hub)
+
+    * [Open the wizard from the Containers page](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-containers)
+
+* [Step 2: Follow the migration wizard](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-wizard)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-next)
+
+
 ## Before you begin
 {: #sitemap_before_you_begin}
 
@@ -2826,6 +2894,353 @@ subcollection: openshift
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-remove#satcluster-rm)
 
 * [Next steps](/docs/openshift?topic=openshift-remove#cluster-remove-next-steps)
+
+
+## Migrate clusters from Classic to VPC
+{: #sitemap_migrate_clusters_from_classic_to_vpc}
+
+
+
+### Migration wizard
+{: #sitemap_migration_wizard}
+
+
+[Migration wizard overview](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview)
+
+* [Why should I migrate from Classic to VPC?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-why)
+
+* [What do I need before I start?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-prereqs)
+
+* [Which clusters are eligible for migration?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-cluster)
+
+* [What is migrated automatically and what is not?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations)
+
+    * [Which add-ons are migrated?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-addons)
+
+    * [Which network policies are migrated?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-networking)
+
+    * [What happens to my storage?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-storage)
+
+    * [What workload considerations should I know about?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-limitations-workloads)
+
+* [How does the migration work?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-how)
+
+* [What are the migration steps?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-phases)
+
+* [What happens to my IAM and access configuration?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-iam)
+
+* [How does BRS copy my data?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-brs)
+
+* [How do I cut over traffic and delete the Classic cluster?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-cutover)
+
+* [Is my Classic cluster affected while migration is in progress?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-classic-impact)
+
+* [Does migration affect my pricing or license?](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-faq-pricing)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-overview#vpc-migrate-overview-next)
+
+[Assessing your Classic cluster](/docs/openshift?topic=openshift-vpc-migrate-assess#vpc-migrate-assess)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-assess#vpc-migrate-assess-prereqs)
+
+* [Generate VPC metadata](/docs/openshift?topic=openshift-vpc-migrate-assess#vpc-migrate-assess-generate)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=ui#vpc-migrate-assess-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=cli#vpc-migrate-assess-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=api#vpc-migrate-assess-api)
+
+* [Review add-on compatibility](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=api#vpc-migrate-assess-addons)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=ui#vpc-migrate-assess-addons-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=cli#vpc-migrate-assess-addons-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=api#vpc-migrate-assess-addons-api)
+
+* [Review persistent storage](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=api#vpc-migrate-assess-storage)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=ui#vpc-migrate-assess-storage-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=cli#vpc-migrate-assess-storage-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=api#vpc-migrate-assess-storage-api)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-assess&interface=api#vpc-migrate-assess-next)
+
+[Planning your VPC environment](/docs/openshift?topic=openshift-vpc-migrate-plan#vpc-migrate-plan)
+
+* [Step 1: Confirm the VPC and subnets](/docs/openshift?topic=openshift-vpc-migrate-plan#vpc-migrate-plan-vpc)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=ui#vpc-migrate-plan-vpc-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=cli#vpc-migrate-plan-vpc-cli)
+
+* [Step 2: Confirm worker pool flavors](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=cli#vpc-migrate-plan-flavors)
+
+* [Step 3: Review your network policies](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=cli#vpc-migrate-plan-network-policies)
+
+* [Step 4: Plan private connectivity](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=cli#vpc-migrate-plan-connectivity)
+
+* [Step 5: Plan the Ingress migration](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=cli#vpc-migrate-plan-ingress)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-plan&interface=cli#vpc-migrate-plan-next)
+
+[Creating your target VPC cluster](/docs/openshift?topic=openshift-vpc-migrate-create#vpc-migrate-create)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-create#vpc-migrate-create-prereqs)
+
+* [Create the VPC cluster](/docs/openshift?topic=openshift-vpc-migrate-create#vpc-migrate-create-cluster)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-create&interface=ui#vpc-migrate-create-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-create&interface=cli#vpc-migrate-create-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-create&interface=api#vpc-migrate-create-api)
+
+* [Monitor cluster provisioning](/docs/openshift?topic=openshift-vpc-migrate-create&interface=api#vpc-migrate-create-wait)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-create&interface=ui#vpc-migrate-create-wait-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-create&interface=cli#vpc-migrate-create-wait-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-create&interface=api#vpc-migrate-create-wait-api)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-create&interface=api#vpc-migrate-create-next)
+
+[Monitoring global resource migration](/docs/openshift?topic=openshift-vpc-migrate-global-resources#vpc-migrate-global-resources)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-global-resources#vpc-migrate-global-prereqs)
+
+* [What is migrated automatically](/docs/openshift?topic=openshift-vpc-migrate-global-resources#vpc-migrate-global-auto)
+
+* [Monitor migration status](/docs/openshift?topic=openshift-vpc-migrate-global-resources#vpc-migrate-global-monitor)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=ui#vpc-migrate-global-monitor-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=cli#vpc-migrate-global-monitor-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=api#vpc-migrate-global-monitor-api)
+
+* [Understanding network policy migration](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=api#vpc-migrate-global-network-policies)
+
+* [Troubleshoot a failed sub-operation](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=api#vpc-migrate-global-troubleshoot)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=ui#vpc-migrate-global-troubleshoot-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=cli#vpc-migrate-global-troubleshoot-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=api#vpc-migrate-global-troubleshoot-api)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=api#vpc-migrate-global-next)
+
+[Migrating workloads](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads-prereqs)
+
+* [Workload migration prerequisites](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads-prereqs-workload)
+
+* [Preparing a worker pool for BRS connectors](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads-prereqs-brs-pool)
+
+    * [Option 1: Create a dedicated worker pool (recommended)](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-brs-pool-dedicated)
+
+    * [Option 2: Use an existing worker pool](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-brs-pool-existing)
+
+* [Step 1: Select a backup and recovery instance](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads-brs)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-brs-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=cli#vpc-migrate-workloads-brs-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-brs-api)
+
+* [Step 2: List namespaces](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-namespaces)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-ns-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=cli#vpc-migrate-workloads-ns-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-ns-api)
+
+* [Step 3: Create a migration plan](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-plan)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-plan-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=cli#vpc-migrate-workloads-plan-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-plan-api)
+
+* [Step 4: Review the migration plan](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-review-plan)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-review-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=cli#vpc-migrate-workloads-review-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-review-api)
+
+* [Step 5: Start workload migration](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-start)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-start-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=cli#vpc-migrate-workloads-start-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-start-api)
+
+* [Step 6: Verify workloads](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-verify)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-verify-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=cli#vpc-migrate-workloads-verify-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-verify-api)
+
+* [Re-running a migration](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=api#vpc-migrate-workloads-rerun)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-rerun-ui)
+
+* [Migrating cluster-scoped resources](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-cluster-scoped)
+
+    * [Step 1: Log in to the Classic cluster](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-cluster-scoped-login-classic)
+
+    * [Step 2: Discover cluster-scoped resource types](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-cluster-scoped-discover)
+
+    * [Step 3: Identify and export resources](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-cluster-scoped-export)
+
+    * [Step 4: Log in to the target VPC cluster](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-cluster-scoped-login-vpc)
+
+    * [Step 5: Apply manifests to the target VPC cluster](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-cluster-scoped-apply)
+
+    * [Step 6: Verify resource creation](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-cluster-scoped-verify)
+
+* [Cleaning up Backup and Recovery Service (BRS) registrations](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-brs-cleanup)
+
+    * [Step 1: Delete the protection group in the BRS dashboard](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-brs-cleanup-protection-group)
+
+    * [Step 2: Deregister the data source in the BRS dashboard](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-brs-cleanup-deregister)
+
+    * [Step 3: Remove the connector in the BRS dashboard](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-brs-cleanup-remove-connector)
+
+    * [Step 4: Uninstall the BRS Helm chart from the cluster](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-brs-cleanup-helm)
+
+    * [Step 5: Delete BRS-labeled namespaces and connector namespace](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-brs-cleanup-namespaces)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-workloads&interface=ui#vpc-migrate-workloads-next)
+
+[Cutting over to VPC](/docs/openshift?topic=openshift-vpc-migrate-cutover#vpc-migrate-cutover)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-cutover#vpc-migrate-cutover-prereqs)
+
+* [Step 1: Perform a final data sync](/docs/openshift?topic=openshift-vpc-migrate-cutover#vpc-migrate-cutover-sync)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=ui#vpc-migrate-cutover-sync-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=cli#vpc-migrate-cutover-sync-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-sync-api)
+
+* [Step 2: Get the VPC cluster Ingress ALB addresses](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-alb)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=ui#vpc-migrate-cutover-alb-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=cli#vpc-migrate-cutover-alb-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-alb-api)
+
+* [Step 3: Redirect DNS](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-dns)
+
+    * [Transfer custom domains](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=ui#vpc-migrate-cutover-dns-domains)
+
+* [Step 4: Validate workloads](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=ui#vpc-migrate-cutover-validate)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=ui#vpc-migrate-cutover-validate-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=cli#vpc-migrate-cutover-validate-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-validate-api)
+
+* [Step 5: Stabilization period](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-stabilize)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=ui#vpc-migrate-cutover-stabilize-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=cli#vpc-migrate-cutover-stabilize-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-stabilize-api)
+
+* [Step 6: Restore DNS TTLs](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-ttl)
+
+* [Step 7: Finish migration](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-finish)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-cutover&interface=api#vpc-migrate-cutover-next)
+
+[Deleting Classic clusters](/docs/openshift?topic=openshift-vpc-migrate-decommission#vpc-migrate-decommission)
+
+* [Before you begin](/docs/openshift?topic=openshift-vpc-migrate-decommission#vpc-migrate-decommission-prereqs)
+
+* [Step 1: Verify no active traffic on the Classic cluster](/docs/openshift?topic=openshift-vpc-migrate-decommission#vpc-migrate-decommission-verify)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=ui#vpc-migrate-decommission-verify-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=cli#vpc-migrate-decommission-verify-cli)
+
+* [Step 2: Remove any remaining Classic-specific resources](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=cli#vpc-migrate-decommission-cleanup)
+
+* [Step 3: Delete the Classic cluster](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=cli#vpc-migrate-decommission-delete)
+
+    * [From the console](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=ui#vpc-migrate-decommission-delete-ui)
+
+    * [From the CLI](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=cli#vpc-migrate-decommission-delete-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=api#vpc-migrate-decommission-delete-api)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-decommission&interface=api#vpc-migrate-decommission-next)
+
+[Classic-to-VPC concept mapping](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map)
+
+* [Networking](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-networking)
+
+* [Load balancers](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-lb)
+
+* [Storage](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-storage)
+
+    * [Storage class name mapping](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-storage-classes)
+
+* [Regions and zones](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-regions)
+
+* [Cluster infrastructure](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-cluster)
+
+* [IAM and access](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-iam)
+
+* [CLI commands](/docs/openshift?topic=openshift-vpc-migrate-concept-map#vpc-migrate-concept-map-cli)
+
+
+### Manual migration
+{: #sitemap_manual_migration}
+
+
+[Migrating manually without the wizard](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual)
+
+* [Step 1: Assess your Classic environment](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-assess)
+
+* [Step 2: Create a VPC environment](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-vpc-env)
+
+* [Step 3: Configure VPC security groups](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-sg)
+
+* [Step 4: Create the VPC cluster](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-create)
+
+* [Step 5: Set up your deployment and replicate data](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-deploy)
+
+* [Step 6: Configure load balancers](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-lb)
+
+* [Step 7: Validate and test](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-validate)
+
+* [Step 8: Update DNS and routing](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-dns)
+
+* [Step 9: Cut over to VPC](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-cutover)
+
+* [Step 10: Monitor and optimize](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-monitor)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-next)
 
 
 ## Security and access
@@ -7854,6 +8269,8 @@ subcollection: openshift
     * [`ibmcloud ks zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
+
+* [Version v1.0.901](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01901)
 
 * [Version v1.0.899](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01899)
 

@@ -26,8 +26,20 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## October 2026
+{: #openshift-oct26}
 
 
+### 29 October 2026
+{: #openshift-oct2926}
+{: release-note}
+
+
+New! Migrate Classic clusters to VPC by using the migration wizard.
+:   Use the migration wizard to move your {{site.data.keyword.openshiftlong_notm}} workloads from Classic infrastructure to VPC. VPC provides improved security, networking flexibility, and better performance, including private worker nodes, VPC Application Load Balancer integration with Ingress, and encrypted VPC Block Storage. For more information, see [Migrating from Classic to VPC](/docs/openshift?topic=openshift-vpc-migrate-overview).
+
+CLI version 1.0.901 is available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -25,6 +25,12 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 
 Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
+
+## Version v1.0.901
+{: #cli-01901}
+
+Version 1.0.901 of the CLI was released on 29 October 2026.
+- Extends the expiration date of the experimental [`ibmcloud ks experimental cluster master update-versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cluster-master-update-versions-cli) command.
 
 ## Version v1.0.899
 {: #cli-01899}
