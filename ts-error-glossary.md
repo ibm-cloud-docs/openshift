@@ -3,7 +3,7 @@
 copyright:
   years: 2025, 2026
 
-lastupdated: "2026-09-08"
+lastupdated: "2026-10-30"
 
 keywords: openshift, error messages, error codes, troubleshooting reference
 
@@ -223,6 +223,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 | --- | --- |
 | `pvc:...:can't access bucket <bucket_name>: NotFound: Not Found` | [Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails) |
 | `Error: symlink ... helm-ibmc: file exists` | [Why does installing the Object storage Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails) |
+| `ERROR: Helm v2 is not supported by ibmc v2.0.14 and later.` | [Why does installing the Object storage Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails) |
 | `d--------- 1 root root 0 Jan 1 1970 <file_name>` (non-root user cannot access files) | [Resolving non-root user access issues to files in IBM Cloud](/docs/openshift?topic=openshift-cos_nonroot_access) |
 | `EPERM: operation not permitted` | [Why does my app pod fail with an `Operation not permitted` error?](/docs/openshift?topic=openshift-cos_operation_not_permitted) |
 | `chown: changing ownership of '<volume_mount_path>': Input/output error` | [Why can't the ownership of the mount path be changed?](/docs/openshift?topic=openshift-cos_mountpath_error) |

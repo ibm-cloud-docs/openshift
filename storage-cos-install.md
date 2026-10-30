@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-10-30"
 
 
 keywords: kubernetes, openshift
@@ -68,7 +68,7 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-kubernetes-service-cli#worker-reload-cli) to safely reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage-plan).
 1. Review the change log and verify support for your [cluster version and architecture](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
-1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 or 4 Helm client on your local machine.
 
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.
     {: note}
@@ -95,16 +95,19 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 1. Download the Helm charts and unpack the charts in your current directory.
 
     ```sh
-    helm fetch --untar ibm-helm/ibm-object-storage-plugin
+    helm pull --untar ibm-helm/ibm-object-storage-plugin
     ```
     {: pre}
 
-    If the output shows `Error: failed to untar: a file or directory with the name ibm-object-storage-plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm fetch` command.
+    If the output shows `Error: failed to untar: a file or directory with the name ibm-object-storage-plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm pull` command.
     {: tip}
 
-1. If your are installing the plug-in for the first time, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in automatically retrieves your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, skip this step.
+1. If you are installing the plug-in for the first time, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in automatically retrieves your cluster location and sets the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, skip this step.
 
     The `ibmc` plug-in is not supported on Windows.
+    {: note}
+
+    The `ibmc` Helm plug-in version 2.0.14 and later supports Helm versions 3 and 4. Helm version 2 is not supported. If you run a `helm ibmc` command with Helm version 2, the command exits with the error message `Helm v2 is not supported by ibmc v2.0.14 and later`.
     {: note}
 
     1. Install the Helm plug-in.
@@ -121,7 +124,7 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
         Example output
         ```sh
-        Helm version: v3.13.1+g3547a4b
+        Helm version: v3.13.1
         Install or upgrade Helm charts in IBM K8S Service(IKS)
         Usage:
         helm ibmc [command]
@@ -270,10 +273,33 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
     ```
     {: pre}
 
+1. Verify that your Helm client is version 3 or later. The `ibmc` plug-in version 2.0.14 and later doesn't support Helm version 2. If you update the plug-in while you still use Helm version 2, every `helm ibmc` command fails until you upgrade your Helm client.
+
+    ```sh
+    helm version --template '{{.Version}}'
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    v3.17.3
+    ```
+    {: screen}
+
+    If the output starts with `v2`, or if the command fails with an error such as `Error: could not find tiller`, you are using Helm version 2. [Upgrade your Helm client to version 3 or later](/docs/openshift?topic=openshift-helm#install_v3) before you continue.
+    {: important}
+
 1. Update the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in to the most recent version.
 
     ```sh
     helm ibmc --update
+    ```
+    {: pre}
+
+1. Verify that the `ibmc` plug-in is updated to version 2.0.14 or later.
+
+    ```sh
+    helm plugin list
     ```
     {: pre}
 

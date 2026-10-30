@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-10-30"
 
 
 keywords: file, debug, help
@@ -278,7 +278,7 @@ To update the Helm chart from any older version, perform the following steps.
 
     ```sh
     helm plugin uninstall ibmc
-    helm fetch --untar ibm-helm/ibm-object-storage-plugin && cd ibm-object-storage-plugin
+    helm pull --untar ibm-helm/ibm-object-storage-plugin && cd ibm-object-storage-plugin
     helm plugin install ./ibm-object-storage-plugin/helm-ibmc
     helm ibmc --help
     ```
