@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-29"
+lastupdated: "2026-10-30"
 
 
 keywords: openshift
@@ -7767,6 +7767,8 @@ subcollection: openshift
 
     * [`ibmcloud ks vni attach help`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-help-cli)
 
+    * [`ibmcloud ks vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-virtual-cli)
+
     * [`ibmcloud ks vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
 
     * [`ibmcloud ks vni help`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-help-cli)
@@ -9426,10 +9428,6 @@ subcollection: openshift
     * [10 January 2024, Version 1.2.5_107](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.5_107_is_file_relnote)
 
     * [27 November 2023, Version 1.2.3_97](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.2.3_97_is_file_relnote)
-
-    * [31 October 2023, Version version 1.2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#0120_is_file)
-
-* [Version 1.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#011_is_file)
 
     * [27 November 2023, Version 1.1.10_93](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.10_93_is_file_relnote)
 

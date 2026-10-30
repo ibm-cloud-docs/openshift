@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-29"
+lastupdated: "2026-10-30"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -10495,6 +10495,48 @@ Show help
 
 ```sh
 ibmcloud ks vni attach help
+```
+{: pre}
+
+
+### `ibmcloud ks vni attach virtual`
+{: #vni-attach-virtual-cli}
+
+
+
+Attach a Virtual Network Interface to a virtual worker node.
+
+```sh
+ibmcloud ks vni attach virtual --vni VNI --worker WORKER [--auto-delete] [--output OUTPUT] [-q]
+```
+
+#### Command options
+{: #vni-attach-virtual-options}
+
+
+`--auto-delete`
+:    Automatically delete the VNI when it is removed from the cluster.
+
+`--output`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--vni`
+:    The ID of the Virtual Network Interface to attach. You must specify VNIs without any current target resource. To list all the VNIs, run `ibmcloud is vnis`. To check if a specific VNI is already attached to a resource, check for the "Target" field in 'ibmcloud is vni <VNI_ID>.
+
+`-w`, `--worker`
+:    The ID of the worker node.
+
+
+#### Examples
+{: #vni-attach-virtual-examples}
+
+Attach a Virtual Network Interface to a virtual worker node
+
+```sh
+ibmcloud ks vni attach virtual --vni VNI --worker WORKER_ID
 ```
 {: pre}
 

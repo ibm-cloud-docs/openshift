@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-10-30"
 
 keywords: kubernetes, openshift
 
@@ -191,7 +191,7 @@ Set and unset credentials that allow you to access the IBM Cloud classic infrast
 
 * **`experimental cluster`**: [Expires on 2026-11-01] View and modify cluster and cluster service settings.
 * **`experimental trusted-profile`**: [Expires on 2027-01-28] View and set the trusted profile on a cluster or the default trusted profile for clusters created in a resource-group.
-* **`experimental vni`**: [Deactivated on 2026-05-20! Use `ibmcloud ks vni` instead] Attach, detach, and list Virtual Network Interfaces on worker nodes.
+* **`experimental vni`**: [Deactivated on 2026-08-20! Use `ibmcloud ks vni` instead] Attach, detach, and list Virtual Network Interfaces on worker nodes.
     * [`ibmcloud ks experimental cluster help`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-cluster-help-cli)
     * [`ibmcloud ks experimental cluster master help`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-cluster-master-help-cli)
     * [`ibmcloud ks experimental cluster master update-versions`](/docs/containers?topic=containers-kubernetes-service-cli#experimental-cluster-master-update-versions-cli)
@@ -482,6 +482,7 @@ Attach, detach, and list Virtual Network Interfaces on worker nodes.
 * **`vni attach`**: Attach a Virtual Network Interface to a worker node.
     * [`ibmcloud ks vni attach baremetal`](/docs/containers?topic=containers-kubernetes-service-cli#vni-attach-baremetal-cli)
     * [`ibmcloud ks vni attach help`](/docs/containers?topic=containers-kubernetes-service-cli#vni-attach-help-cli)
+    * [`ibmcloud ks vni attach virtual`](/docs/containers?topic=containers-kubernetes-service-cli#vni-attach-virtual-cli)
     * [`ibmcloud ks vni detach`](/docs/containers?topic=containers-kubernetes-service-cli#vni-detach-cli)
     * [`ibmcloud ks vni help`](/docs/containers?topic=containers-kubernetes-service-cli#vni-help-cli)
     * [`ibmcloud ks vni ls`](/docs/containers?topic=containers-kubernetes-service-cli#vni-ls-cli)
