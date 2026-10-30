@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-10-30"
 
 
 keywords: change log, version history, 4.21_openshift
@@ -101,7 +101,7 @@ RHEL 9 (VPC) 5.14.0-687.56.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.56.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.56.1.el9_8
@@ -117,7 +117,7 @@ Red Hat CoreOS 4.21.37
 
 
 HAProxy a0d552a2759d3396f874ee765dc912055898f8bb
-:   
+:   New version contains updates and security fixes.
 
 
 ## 20 October 2026, Worker node fix pack 4.21.37_1538_openshift
@@ -131,7 +131,7 @@ RHEL 9 (VPC) 5.14.0-687.56.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.56.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.56.1.el9_8
@@ -161,7 +161,7 @@ RHEL 9 (VPC) 5.14.0-687.53.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.53.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.53.1.el9_8
@@ -191,7 +191,7 @@ RHEL 9 (VPC) 5.14.0-687.47.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.47.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.47.1.el9_8
@@ -263,7 +263,7 @@ RHEL 9 (VPC) 5.14.0-687.42.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.42.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.42.1.el9_8
@@ -293,7 +293,7 @@ RHEL 9 (VPC) 5.14.0-687.39.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.39.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.39.1.el9_8
@@ -323,7 +323,7 @@ RHEL 9 (VPC) 5.14.0-687.34.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.34.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.34.1.el9_8
@@ -383,7 +383,7 @@ RHEL 9 (VPC) 5.14.0-570.128.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.128.1.el9_6
@@ -455,7 +455,7 @@ RHEL 9 (VPC) 5.14.0-570.125.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.125.1.el9_6
@@ -485,7 +485,7 @@ RHEL 9 (VPC) 5.14.0-570.123.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.123.1.el9_6
@@ -553,11 +553,11 @@ RHEL 9 (VPC) 5.14.0-570.116.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.116.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.21.19
@@ -583,7 +583,7 @@ RHEL 9 (VPC) 5.14.0-570.116.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.116.1.el9_6
@@ -643,7 +643,7 @@ RHEL 9 (Classic) [5.14.0-570.112.1.el9_6](/docs/openshift?topic=openshift-opensh
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.21.15
