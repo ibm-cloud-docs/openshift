@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-15"
+lastupdated: "2026-10-30"
 
 keywords: object storage, openshift, cos, FlexVolume, CSI, migrate, migration, cos-flex-to-csi, flex-to-csi, csi driver, object storage migration
 
@@ -25,7 +25,7 @@ The `cos-flex-to-csi` tool discovers your existing FlexVolume-based PVCs and rel
 ## Why migrate to the CSI driver?
 {: #cos-flex-to-csi-why}
 
-The legacy FlexVolume driver is tentatively planned to be unsupported by the end of 2027. Plan to migrate your workloads to the CSI driver before support ends.
+Because the {{site.data.keyword.cos_full_notm}} CSI driver add-on is available for VPC clusters, the legacy FlexVolume driver is tentatively planned to be unsupported on VPC clusters only by the end of 2027. Plan to migrate your COS Flex workloads to the CSI driver before support ends. The FlexVolume driver continues to be supported on Classic clusters.
 {: important}
 
 Kubernetes has deprecated the FlexVolume specification across the industry in favor of the Container Storage Interface (CSI) standard. Migrating your storage resources to the {{site.data.keyword.cos_full_notm}} CSI driver provides the following benefits:
@@ -460,7 +460,7 @@ To resolve a PVC that failed to bind, complete the following steps.
 
 The following scenarios are not supported in the current version of the migration tool.
 
-- **Classic infrastructure clusters** are not supported. The {{site.data.keyword.cos_full_notm}} CSI driver add-on is available only on VPC Gen 2 clusters, so migration is not possible on Classic clusters.
+- **Classic infrastructure clusters** are not supported. The {{site.data.keyword.cos_full_notm}} CSI driver add-on is available only on VPC Gen 2 clusters, so migration is not possible on Classic clusters. The FlexVolume driver continues to be supported on Classic clusters.
 - **Cleanup of original FlexVolume resources** is not automated. You must manually remove the original PVCs and secrets after verifying the migration and updating your workloads. Because an original secret can be in a different namespace than the PVC and can be used by other PVCs, check that no other PVC still uses a secret before you delete it.
 - **Unsupported node operating systems:** At least one worker node in the cluster must run Ubuntu or Red Hat CoreOS (RHCOS). Clusters with only RHEL nodes are not supported.
 - **Air-gapped environments:** The automatic self-upgrade feature requires outbound internet access to GitHub. Use the `--no-upgrade` flag on the `migrate` command to skip the upgrade check in air-gapped environments. Do not run `./cos-flex-to-csi --upgrade` in air-gapped environments. Instead, manually download a specific verified release.
