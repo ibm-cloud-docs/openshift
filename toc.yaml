@@ -49,6 +49,11 @@ toc:
             navtitle: OpenShift Virtualization on IBM Cloud
           - path-virt.md
       - topicgroup:
+          label: Classic to VPC migration
+          topics:
+          - topic: vpc-migrate-overview.md
+            navtitle: Migrating Classic clusters to VPC overview
+      - topicgroup:
           label: Important notices
           topics:
           - rhel-deprecation.md
@@ -79,6 +84,11 @@ toc:
           - link:
               label: Migrate a VM using the Migration Toolkit for Virtualization
               href: https://docs.redhat.com/en/documentation/migration_toolkit_for_virtualization
+      - topicgroup:
+          label: Classic to VPC migration
+          topics:
+          - topic: vpc-migrate-quickstart.md
+            navtitle: Migration wizard quickstart guide
   - navgroup:
       id: howto
       topics:
@@ -168,6 +178,35 @@ toc:
               label: Removing clusters
               topics:
               - cluster-remove.md
+      - topicgroup:
+          label: Migrate clusters from Classic to VPC
+          topics:
+          - topicgroup:
+              label: Migration wizard
+              topics:
+              - topic: vpc-migrate-overview.md
+                navtitle: Migration wizard overview
+              - topic: vpc-migrate-assess.md
+                navtitle: Assessing your Classic cluster
+              - topic: vpc-migrate-plan.md
+                navtitle: Planning your VPC environment
+              - topic: vpc-migrate-create.md
+                navtitle: Creating your target VPC cluster
+              - topic: vpc-migrate-global-resources.md
+                navtitle: Monitoring global resource migration
+              - topic: vpc-migrate-workloads.md
+                navtitle: Migrating workloads
+              - topic: vpc-migrate-cutover.md
+                navtitle: Cutting over to VPC
+              - topic: vpc-migrate-decommission.md
+                navtitle: Deleting Classic clusters
+              - topic: vpc-migrate-concept-map.md
+                navtitle: Classic-to-VPC concept mapping
+          - topicgroup:
+              label: Manual migration
+              topics:
+              - topic: vpc-migrate-manual.md
+                navtitle: Migrating manually without the wizard
       - topicgroup:
           label: Security and access
           topics:
