@@ -316,7 +316,7 @@ After DNS has propagated, validate each application from outside the cluster.
 ## Step 5: Stabilization period
 {: #vpc-migrate-cutover-stabilize}
 
-Keep the Classic cluster running but idle for a stabilization period of at least [VERIFY: confirm recommended stabilization duration with engineering] hours. Do not delete the Classic cluster until you are confident that:
+Keep the Classic cluster running but idle. Do not delete the Classic cluster until you are confident that:
 
 - All traffic is flowing through the VPC cluster
 - Application metrics, error rates, and performance are normal
@@ -395,7 +395,7 @@ When you are ready to close out the migration, click **Finish migration** in the
 - Completed the final data sync
 - Deregistered the domain from the Classic cluster and registered it with the VPC cluster
 - Validated all workloads on the VPC cluster
-- Kept the Classic cluster running for the recommended stabilization period [VERIFY: confirm recommended duration with engineering]
+- Kept the Classic cluster running.
 - Restored DNS TTLs to their original values
 - Using `nslookup`, confirmed the domain points to the VPC ALB or NLB and all features work
 

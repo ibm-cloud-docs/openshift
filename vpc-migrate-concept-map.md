@@ -82,9 +82,9 @@ In Classic infrastructure, data centers (such as `dal10`, `dal12`, and `dal13`) 
 | `jp-tok` (`jp-tok`) | `tok02`, `tok04`, `tok05` | `jp-tok` | `jp-tok-1`, `jp-tok-2`, `jp-tok-3` |
 | `jp-osa` (`jp-osa`) | `osa21`, `osa22`, `osa23` | `jp-osa` | `jp-osa-1`, `jp-osa-2`, `jp-osa-3` |
 | `au-syd` (`au-syd`) | `syd01`, `syd04`, `syd05` | `au-syd` | `au-syd-1`, `au-syd-2`, `au-syd-3` |
-| `in-che` (`in-che`) | [VERIFY: Classic data centers for Chennai] | `in-che` | `in-che-1`, `in-che-2`, `in-che-3` |
-| `in-mum` (`in-mum`) | [VERIFY: Classic data centers for Mumbai] | `in-mum` | `in-mum-1`, `in-mum-2`, `in-mum-3` |
-| `eu-es` (`eu-es`) | [VERIFY: Classic data centers for Madrid] | `eu-es` | `eu-es-1`, `eu-es-2`, `eu-es-3` |
+| `in-che` (`in-che`) | | `in-che` | `in-che-1`, `in-che-2`, `in-che-3` |
+| `in-mum` (`in-mum`) | | `in-mum` | `in-mum-1`, `in-mum-2`, `in-mum-3` |
+| `eu-es` (`eu-es`) | | `eu-es` | `eu-es-1`, `eu-es-2`, `eu-es-3` |
 {: caption="Classic-to-VPC region and zone mapping" caption-side="bottom"}
 
 ## Cluster infrastructure
