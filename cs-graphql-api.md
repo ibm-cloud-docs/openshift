@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-02"
 
 keywords: containers, kubernetes, satellite, graphql, api, reference
 
@@ -805,6 +805,51 @@ curl -X POST https://containers.cloud.ibm.com/graphql \
 ```
 
 
+### `setResourceGroupDefaultTrustedProfile`
+{: #setresourcegroupdefaulttrustedprofile}
+
+Sets the default trusted-profile for a Kubernetes resource-group.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Returns | `SetResourceGroupDefaultTrustedProfilePayload` | |
+| Argument | `input` (`SetResourceGroupDefaultTrustedProfileInput!`) *(required)* |  |
+{: caption="Returns and arguments for setResourceGroupDefaultTrustedProfile" caption-side="bottom"}
+
+
+#### Example request
+{: #example-request-setresourcegroupdefaulttrustedprofile}
+
+```sh
+curl -X POST https://containers.cloud.ibm.com/graphql \
+  -H "Authorization: Bearer $IAM_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "query": "mutation setResourceGroupDefaultTrustedProfile($input: SetResourceGroupDefaultTrustedProfileInput!) {\n  setResourceGroupDefaultTrustedProfile(input: $input) {\n    # ... select your fields here\n  }\n}",
+  "variables": {
+    "input": "<SetResourceGroupDefaultTrustedProfileInput>"
+  }
+}'
+```
+
+
+#### Example response
+{: #example-response-setresourcegroupdefaulttrustedprofile}
+
+```json
+{
+  "data": {
+    "setResourceGroupDefaultTrustedProfile": {
+      "trustedProfile": {
+        "externalID": "example-value"
+      }
+    }
+  }
+}
+```
+
+
 ### `startKubernetesWorkloadMigration`
 {: #startkubernetesworkloadmigration}
 
@@ -1374,19 +1419,6 @@ Output for SetKubernetesClusterTrustedProfilePayload mutation, if no trusted-pro
 | --- | --- | --- |
 | Field | `trustedProfile` (`TrustedProfile`) |  |
 {: caption="Fields for SetKubernetesClusterTrustedProfilePayload" caption-side="bottom"}
-
-
-### SetResourceGroupDefaultTrustedProfileInput
-{: #setresourcegroupdefaulttrustedprofileinput}
-
-Input to SetResourceGroupDefaultTrustedProfile mutation.
-{: shortdesc}
-
-| Type | Name | Description |
-| --- | --- | --- |
-| Field | `regionName` (`String!`) | The region to which the resource-group belongs to. |
-| Field | `resourceGroupID` (`String!`) | The resource-group to update with a new default trusted-profile. |
-{: caption="Fields for SetResourceGroupDefaultTrustedProfileInput" caption-side="bottom"}
 
 
 ### SetResourceGroupDefaultTrustedProfilePayload
@@ -2076,6 +2108,20 @@ Input for the SetKubernetesClusterTrustedProfile mutation, used to update the tr
 | Field | `id` (`ID!`) *(required)* | The cluster's ID on which the trusted-profile needs to be set upon. |
 | Field | `trustedProfileID` (`String!`) *(required)* | The ID of the new trusted profile to associate with the Kubernetes cluster. |
 {: caption="Input fields for SetKubernetesClusterTrustedProfileInput" caption-side="bottom"}
+
+
+### SetResourceGroupDefaultTrustedProfileInput
+{: #setresourcegroupdefaulttrustedprofileinput}
+
+Input to SetResourceGroupDefaultTrustedProfile mutation.
+{: shortdesc}
+
+| Type | Name | Description |
+| --- | --- | --- |
+| Field | `regionName` (`String!`) *(required)* | The region to which the resource-group belongs to. |
+| Field | `resourceGroupID` (`String!`) *(required)* | The resource-group to update with a new default trusted-profile. |
+| Field | `trustedProfileID` (`String!`) *(required)* | The new default trustedProfileID to use on Kubernetes Clusters created in the resource-group. |
+{: caption="Input fields for SetResourceGroupDefaultTrustedProfileInput" caption-side="bottom"}
 
 
 ### StartKubernetesWorkloadMigrationInput

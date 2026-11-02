@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-02"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -996,12 +996,6 @@ Review the version history for OpenShift Data Foundation.
 - Fixes a bug with uninstalling.
 
 
-### 02 November 2023, Version 4.13.7
-{: #cl-add-ons-openshift-data-foundation-4.13.7}
-
-- Updates the UBI image to `8.8-10721697`.
-
-
 
 
 ### 03 August 2024, Version 4.12.21
@@ -1056,12 +1050,6 @@ Review the version history for OpenShift Data Foundation.
 - Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/cve-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/cve-2023-45284){: external}.
 
 
-### 02 November 2023, Version 4.12.12
-{: #cl-add-ons-openshift-data-foundation-4.12.12}
-
-- Updates the UBI to`8.8-1072.1697`.
-
-
 
 
 ### 04 March 2024, Version 4.11.21
@@ -1090,12 +1078,6 @@ Review the version history for OpenShift Data Foundation.
 - Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/cve-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/cve-2023-45284){: external}.
 
 
-### 02 November 2023, Version 4.11.17
-{: #cl-add-ons-openshift-data-foundation-4.11.17}
-
-- Updates the UBI image to `8.9-10721697`.
-
-
 
 
 ### 29 November 2023, Version 4.10.32 
@@ -1110,9 +1092,3 @@ Review the version history for OpenShift Data Foundation.
 {: #cl-add-ons-openshift-data-foundation-4.10.14}
 
 Updates the UBI.
-
-
-### 02 November 2023, Version 4.10.31
-{: #cl-add-ons-openshift-data-foundation-4.10.31}
-
-- Updates the UBI image to `8.8-10721697`.

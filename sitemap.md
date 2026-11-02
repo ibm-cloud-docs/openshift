@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-02"
 
 
 keywords: openshift
@@ -8028,6 +8028,8 @@ subcollection: openshift
 
     * [`setKubernetesClusterTrustedProfile`](/docs/openshift?topic=openshift-cs-graphql-api#setkubernetesclustertrustedprofile)
 
+    * [`setResourceGroupDefaultTrustedProfile`](/docs/openshift?topic=openshift-cs-graphql-api#setresourcegroupdefaulttrustedprofile)
+
     * [`startKubernetesWorkloadMigration`](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigration)
 
     * [`updateSatelliteLocation`](/docs/openshift?topic=openshift-cs-graphql-api#updatesatellitelocation)
@@ -8097,8 +8099,6 @@ subcollection: openshift
     * [SecurityGroup](/docs/openshift?topic=openshift-cs-graphql-api#securitygroup)
 
     * [SetKubernetesClusterTrustedProfilePayload](/docs/openshift?topic=openshift-cs-graphql-api#setkubernetesclustertrustedprofilepayload)
-
-    * [SetResourceGroupDefaultTrustedProfileInput](/docs/openshift?topic=openshift-cs-graphql-api#setresourcegroupdefaulttrustedprofileinput)
 
     * [SetResourceGroupDefaultTrustedProfilePayload](/docs/openshift?topic=openshift-cs-graphql-api#setresourcegroupdefaulttrustedprofilepayload)
 
@@ -8197,6 +8197,8 @@ subcollection: openshift
     * [RemoveVirtualNetworkInterfaceFromNodeInput](/docs/openshift?topic=openshift-cs-graphql-api#removevirtualnetworkinterfacefromnodeinput)
 
     * [SetKubernetesClusterTrustedProfileInput](/docs/openshift?topic=openshift-cs-graphql-api#setkubernetesclustertrustedprofileinput)
+
+    * [SetResourceGroupDefaultTrustedProfileInput](/docs/openshift?topic=openshift-cs-graphql-api#setresourcegroupdefaulttrustedprofileinput)
 
     * [StartKubernetesWorkloadMigrationInput](/docs/openshift?topic=openshift-cs-graphql-api#startkubernetesworkloadmigrationinput)
 
@@ -9101,8 +9103,6 @@ subcollection: openshift
 
     * [23 January 2024, Version 4.13.9](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.9)
 
-    * [02 November 2023, Version 4.13.7](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.7)
-
     * [03 August 2024, Version 4.12.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.21)
 
     * [15 July 2024, Version 4.12.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.20)
@@ -9119,8 +9119,6 @@ subcollection: openshift
 
     * [29 November 2023, Version 4.12.13](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.13)
 
-    * [02 November 2023, Version 4.12.12](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.12)
-
     * [04 March 2024, Version 4.11.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.21)
 
     * [14 February 2024, Version 4.11.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.20)
@@ -9129,13 +9127,9 @@ subcollection: openshift
 
     * [29 November 2023, Version 4.11.18](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.18)
 
-    * [02 November 2023, Version 4.11.17](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.17)
-
     * [29 November 2023, Version 4.10.32](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.32)
 
     * [17 November 2023, Version 4.10.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.14)
-
-    * [02 November 2023, Version 4.10.31](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.31)
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
