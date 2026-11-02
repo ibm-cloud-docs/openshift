@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-29"
+lastupdated: "2026-10-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -25,6 +25,16 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 
 Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
+
+## Version v1.0.904
+{: #cli-01904}
+
+Version 1.0.904 of the CLI was released on 30 October 2026.
+- Adds the [`ibmcloud ks vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-virtual-cli) command. Use this command to attach a Virtual Network Interface (VNI) to a VPC virtual server worker node.
+- Updates the [`ibmcloud ks flavor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-cli) command to display an `Insufficient Capacity` field in the output when the flavor does not have sufficient capacity in the specified zone. [VERIFY: confirm the field description with the development team]
+- Hides the `--coreos-enabled` option of the `ibmcloud sat location create` command. When you don't specify the option, the CLI no longer sends a value and the service applies the default.
+- Removes the requirement to enable Red Hat CoreOS to use the `--pod-network-interface-selection`, `--pod-subnet`, and `--service-subnet` options of the `ibmcloud sat location create` command.
+- Updates the description of the `ibmcloud ks cluster master satellite-service-endpoint allowlist` commands to no longer state that the Satellite cluster must have CoreOS enabled.
 
 ## Version v1.0.901
 {: #cli-01901}

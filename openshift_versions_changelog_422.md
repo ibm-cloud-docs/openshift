@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-10-30"
 
 
 keywords: change log, version history, 4.22_openshift
@@ -94,7 +94,7 @@ RHEL 9 (VPC) 5.14.0-687.56.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.56.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.56.1.el9_8
@@ -110,11 +110,11 @@ Red Hat CoreOS 4.22.18
 
 
 HAProxy a0d552a2759d3396f874ee765dc912055898f8bb
-:   
+:   New version contains updates and security fixes.
 
 
 HAProxy (VPC) a0d552a2759d3396f874ee765dc912055898f8bb
-:   
+:   New version contains updates and security fixes.
 
 
 ## 20 October 2026, Worker node fix pack 4.22.18_1527_openshift
@@ -128,7 +128,7 @@ RHEL 9 (VPC) 5.14.0-687.56.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.56.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.56.1.el9_8
@@ -162,7 +162,7 @@ RHEL 9 (VPC) 5.14.0-687.53.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.53.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.53.1.el9_8

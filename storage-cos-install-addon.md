@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-30"
 
 
 keywords: kubernetes, openshift, object storage add-on, cos
@@ -18,7 +18,7 @@ subcollection: openshift
 # Installing the {{site.data.keyword.cos_full_notm}} cluster add-on
 {: #storage-cos-install-addon}
 
-You can enable the {{site.data.keyword.cos_full_notm}} add-on from the {{site.data.keyword.cloud_notm}} console or the CLI.
+You can enable the {{site.data.keyword.cos_full_notm}} add-on from the {{site.data.keyword.cloud_notm}} console or the CLI. The add-on is available for VPC clusters only.
 {: shortdesc}
 
 Prerequisites:

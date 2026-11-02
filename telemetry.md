@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-30"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -31,7 +31,7 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
 **For version 4.14 clusters created on or after 29 Feb 2024**: Continue with the following steps.
 
 1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external}.
-1. Navigate to **Downloads** > **Tokens** > **Pull Secret** and download the pull secret as a JSON file. Save this file as `pull-secret-rh.json`.
+1. Navigate to **Resources** > **Downloads** > **Tokens** > **Pull Secret** and download the pull secret as a JSON file. Save this file as `pull-secret-rh.json`.
 
 1. [Access your cluster in the CLI](/docs/openshift?topic=openshift-access_cluster).
 

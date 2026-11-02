@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-30"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -488,21 +488,6 @@ Review the version history for VPC File CSI Driver.
 - Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://access.redhat.com/security/cve/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
-### 31 October 2023, Version version 1.2.0
-{: #0120_is_file}
-
-
-- Tiered and custom profile storage classes are no longer supported. Update your PVCs to use a `dp2` storage classes.
-- Adds support for granular authorization via the Virtual Network Interface VNI (Elastic Network Interface ENI).
-- Adds support for cross zone mounting by default. Pods can now mount storage volumes across zones.
-- Allows you to bring your own security group to control granular authorization at the worker node, zone, or worker pool level.
-- Adds bring your own subnet support to control which subnet the virtual network interface (VNI) IP for storage is assigned and created in.
-- Adds bring your own IP support existing `PrimaryIP` which the VNI will assign.
-- Allows you to set a custom `PrimaryIPAddress` within the subnet range where the VNI IP is assigned and created.
-
-
-## Version 1.1
-{: #011_is_file}
 
 
 ### 27 November 2023, Version 1.1.10_93

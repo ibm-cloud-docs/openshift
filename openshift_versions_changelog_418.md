@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-10-30"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -93,7 +93,7 @@ RHEL 9 (VPC) 5.14.0-687.56.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.56.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.56.1.el9_8
@@ -109,7 +109,7 @@ Red Hat CoreOS 4.18.57
 
 
 HAProxy a0d552a2759d3396f874ee765dc912055898f8bb
-:   
+:   New version contains updates and security fixes.
 
 
 ## 20 October 2026, Worker node fix pack 4.18.57_1614_openshift
@@ -123,7 +123,7 @@ RHEL 9 (VPC) 5.14.0-687.56.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.56.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.56.1.el9_8
@@ -153,7 +153,7 @@ RHEL 9 (VPC) 5.14.0-687.53.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.53.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.53.1.el9_8
@@ -183,7 +183,7 @@ RHEL 9 (VPC) 5.14.0-687.47.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.47.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.47.1.el9_8
@@ -255,7 +255,7 @@ RHEL 9 (VPC) 5.14.0-687.42.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.42.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.42.1.el9_8
@@ -285,7 +285,7 @@ RHEL 9 (VPC) 5.14.0-687.39.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.39.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.39.1.el9_8
@@ -315,7 +315,7 @@ RHEL 9 (VPC) 5.14.0-687.34.1.el9_8
 
 
 RHEL 9 (Satellite) 5.14.0-687.34.1.el9_8
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-687.34.1.el9_8
@@ -387,7 +387,7 @@ RHEL 9 (VPC) 5.14.0-570.128.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.128.1.el9_6
@@ -447,7 +447,7 @@ RHEL 9 (VPC) 5.14.0-570.125.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.125.1.el9_6
@@ -477,7 +477,7 @@ RHEL 9 (VPC) 5.14.0-570.123.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.123.1.el9_6
@@ -545,11 +545,11 @@ RHEL 9 (VPC) 5.14.0-570.116.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.116.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.43
@@ -575,7 +575,7 @@ RHEL 9 (VPC) 5.14.0-570.116.1.el9_6
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.116.1.el9_6
@@ -643,7 +643,7 @@ RHEL 9 (Classic) [5.14.0-570.112.1.el9_6](/docs/openshift?topic=openshift-opensh
 
 
 RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6
-:   Kernel updates.
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.41
@@ -745,11 +745,11 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 (VPC) 5.14.0-570.62.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.62.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.37
@@ -797,11 +797,11 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 (VPC) 5.14.0-570.62.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.62.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.35
@@ -823,11 +823,11 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 (VPC) 5.14.0-570.62.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 RHEL 9 (Classic) 5.14.0-570.62.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.34
@@ -905,7 +905,7 @@ RHEL 9 (VPC) 5.14.0-570.60.1.el9_6
 
 
 RHEL 9 (Classic) 5.14.0-570.60.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.31
@@ -951,7 +951,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 5.14.0-570.60.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.30
@@ -963,7 +963,7 @@ Red Hat CoreOS 4.18.30
 
 
 HAProxy d04e61c5b29aa5328bc72455edb95e08e8f6d85c
-:   
+:   New version contains updates and security fixes.
 
 
 ## 29 December 2025, Worker node fix pack 4.18.30_1573_openshift
@@ -973,7 +973,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 5.14.0-570.60.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.30
@@ -995,7 +995,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 5.14.0-570.60.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.30
@@ -1007,7 +1007,7 @@ Red Hat CoreOS 4.18.30
 
 
 HAProxy 03b74b82b63cd53403b6b587b84233c93edef18d
-:   
+:   New version contains updates and security fixes.
 
 
 ## Master fix pack 4.18.28_1571_openshift, released 10 December 2025
@@ -1037,7 +1037,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL 9 5.14.0-570.60.1.el9_6
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift 4.18.29
@@ -1071,7 +1071,7 @@ Red Hat CoreOS 4.18.27
 
 
 HAProxy fbe9b8146f23bbd12b2566a79fa897d5981e7273
-:   
+:   New version contains updates and security fixes.
 
 
 ## Master fix pack 4.18.27_1568_openshift, released 15 November 2025
@@ -1145,7 +1145,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.25
@@ -1153,7 +1153,7 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.25
 
 
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
-:   
+:   New version contains updates and security fixes.
 
 
 ## Master fix pack 4.18.24_1563_openshift, released 07 October 2025
@@ -1187,7 +1187,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.24
@@ -1195,7 +1195,7 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.24
 
 
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
-:   
+:   New version contains updates and security fixes.
 
 
 ## 15 September 2025, Worker node fix pack 4.18.23_1558_openshift
@@ -1213,7 +1213,7 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.23
 
 
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
-:   
+:   New version contains updates and security fixes.
 
 
 ## 09 September 2025, Worker node fix pack 4.18.23_1557_openshift
@@ -1223,7 +1223,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.23
@@ -1241,7 +1241,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.22
@@ -1277,7 +1277,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.21
@@ -1327,7 +1327,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.20
@@ -1345,7 +1345,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.19
@@ -1363,7 +1363,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.18
@@ -1371,7 +1371,7 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.18
 
 
 HAProxy 951efd90b46e95a54751966c644ac37c4c901f92
-:   
+:   New version contains updates and security fixes.
 
 
 ## Master fix pack 4.18.11_1547_openshift, released 18 June 2025
@@ -1401,7 +1401,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.17
@@ -1419,7 +1419,7 @@ The following list shows the components included in the worker node fix pack 4.1
 {: shortdesc}
 
 RHEL_9 5.14.0-503.40.1.el9_5
-:   
+:   New version contains updates and security fixes.
 
 
 Red Hat OpenShift and Red Hat CoreOS 4.18.15
@@ -1427,7 +1427,7 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.15
 
 
 HAProxy 978e3c26ee7634e39a940696aaf57d9e374db5ce
-:   
+:   New version contains updates and security fixes.
 
 
 ## Master fix pack 4.18.11_1543_openshift, released 28 May 2025
