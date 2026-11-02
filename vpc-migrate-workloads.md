@@ -58,7 +58,7 @@ The {{site.data.keyword.cloud_notm}} Backup and Recovery Service (BRS) connector
 ### Option 1: Create a dedicated worker pool (recommended)
 {: #vpc-migrate-brs-pool-dedicated}
 
-1. Create a dedicated worker pool for the BRS connectors. [VERIFY: minimum worker pool size and flavor requirements for the BRS connectors.]
+1. Create a dedicated worker pool for the BRS connectors.
 
    - On a Classic cluster:
      ```sh

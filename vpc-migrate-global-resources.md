@@ -173,7 +173,7 @@ If a sub-operation reports `failed`, review the error details and resolve the is
    Example output showing a failure:
    ```text
    Sub-operation                  Status       Message
-   policy-migration               failed       [VERIFY: example error message]
+   policy-migration               failed      
    addon-migration                completed    Add-on migration complete.
    global-resources-migration     completed    Global resources migration complete.
    ```
