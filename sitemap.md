@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-03"
 
 
 keywords: openshift
@@ -586,6 +586,8 @@ subcollection: openshift
     * [2 November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0226)
 
         * New! Migrate Classic clusters to VPC by using the migration wizard.
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
 
 * [October 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct26)
 
@@ -6687,6 +6689,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_422#changelog_overview_422)
 
+* [02 November 2026, Worker node fix pack 4.22.20_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42220_1529_openshift_W)
+
 * [29 October 2026, Master fix pack 4.22.16_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms_master-42216_1526_openshift_M)
 
 * [27 October 2026, Worker node fix pack 4.22.18_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_422#cl-boms-42218_1528_openshift_W)
@@ -6811,6 +6815,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_421#changelog_overview_421)
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
+
+* [02 November 2026, Worker node fix pack 4.21.40_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42140_1540_openshift_W)
 
 * [29 October 2026, Master fix pack 4.21.35_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42135_1537_openshift_M)
 
@@ -6964,6 +6970,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+* [02 November 2026, Worker node fix pack 4.20.44_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42044_1571_openshift_W)
 
 * [29 October 2026, Master fix pack 4.20.41_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42041_1568_openshift_M)
 
@@ -7125,6 +7133,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+* [02 November 2026, Worker node fix pack 4.19.53_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41953_1602_openshift_W)
 
 * [29 October 2026, Master fix pack 4.19.49_1599_openshift](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41949_1599_openshift_M)
 
@@ -7320,6 +7330,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+* [02 November 2026, Worker node fix pack 4.18.59_1616_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41859_1616_openshift_W)
 
 * [29 October 2026, Master fix pack 4.18.56_1613_openshift](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41856_1613_openshift_M)
 
