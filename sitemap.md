@@ -6183,6 +6183,8 @@ subcollection: openshift
 
     * [Monitoring component health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor-components)
 
+    * [Understanding expected alerts](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-expected-alerts)
+
     * [Viewing cluster logs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-logs)
 
 * [Managing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vms)
