@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-03"
 
 keywords: openshift, classic, vpc, migrate, workloads, migration plan, createMigrationPlan, startWorkloadMigration, BRS, storage class
 
@@ -58,7 +58,7 @@ The {{site.data.keyword.cloud_notm}} Backup and Recovery Service (BRS) connector
 ### Option 1: Create a dedicated worker pool (recommended)
 {: #vpc-migrate-brs-pool-dedicated}
 
-1. Create a dedicated worker pool for the BRS connectors.
+1. Create a dedicated worker pool for the BRS connectors. Use a flavor with 4 vCPUs and 16 GB of memory (4x16).
 
    - On a Classic cluster:
      ```sh
