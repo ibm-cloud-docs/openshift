@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-04"
 
 
 keywords: openshift
@@ -8911,6 +8911,12 @@ subcollection: openshift
     * [13 November 2023, Version patch update 1.0.7_185](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
 
 [Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
+
+* [Version 20261102-02-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261102-02-hardened)
+
+    * [03 November 2026, Version 20261102-02-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261102-02-hardened)
+
+    * [03 November 2026, Version 20261102-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261102-02)
 
 * [Version 20261021-03-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20261021-03-hardened)
 
