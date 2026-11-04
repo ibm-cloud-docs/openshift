@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-11-04"
 
 
 keywords: kubernetes, openshift
@@ -44,5 +44,5 @@ Some services in {{site.data.keyword.cloud_notm}}, such as {{site.data.keyword.k
 
 
 
-To integrate services that don't support service keys, check if the service provides an API that you can use to access the service directly from your app. For example, if you want to use {{site.data.keyword.keymanagementservicelong}}, see the [API reference](https://cloud.ibm.com/apidocs/key-protect){: external}.
+To integrate services that don't support service keys, check if the service provides an API that you can use to access the service directly from your app. For example, if you want to use {{site.data.keyword.keymanagementservicelong}}, see the [API reference](/docs/apis/key-protect).
 {: tsResolve}

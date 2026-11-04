@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-18"
+lastupdated: "2026-11-04"
 
 
 keywords: openshift
@@ -71,7 +71,7 @@ If corporate network policies prevent access from your local system to public en
 
 5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your allowlist. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
-6. Verify your connection by [listing your container registry namespaces](/apidocs/container-registry#list-namespaces){: external}.
+6. Verify your connection by [listing your container registry namespaces](/docs/apis/container-registry#list-namespaces).
 
 ### Running `oc` commands from behind an allowlist
 {: #firewall_kubectl}

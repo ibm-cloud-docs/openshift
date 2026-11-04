@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-04"
 
 keywords: openshift, classic, vpc, migrate, create cluster, provision, createCluster
 
@@ -154,14 +154,14 @@ Call the `createCluster` mutation. To use the generated defaults, pass only the 
 ## Monitor cluster provisioning
 {: #vpc-migrate-create-wait}
 
-After the cluster creation is submitted, the VPC cluster is provisioning. Monitor the worker node status until all workers show a state of `normal`. If workers do not reach `normal` state after 30 minutes, run the following command to check the current worker state and status before consulting the [cluster state](/docs/openshift?topic=openshift-states-cluster) and [worker node state](/docs/openshift?topic=openshift-states-workers) reference topics:
+After the cluster creation is submitted, the VPC cluster is provisioning. Monitor the worker node status until all workers show a state of `normal`. If workers do not reach `normal` state after 30 minutes, run the following command to check the current worker state and status before consulting the [cluster state](/docs/openshift?topic=openshift-cluster-states-reference) and [worker node state](/docs/openshift?topic=openshift-worker-node-state-reference) reference topics:
 
 ```sh
 ibmcloud oc worker get --cluster VPC_CLUSTER_NAME --worker WORKER_ID
 ```
 {: pre}
 
-Review the `State` and `Status` fields in the output. A state of `critical`, `unknown`, or `provision_failed` indicates a provisioning problem. See [Worker node states](/docs/openshift?topic=openshift-states-workers) for the resolution steps for each state.
+Review the `State` and `Status` fields in the output. A state of `critical`, `unknown`, or `provision_failed` indicates a provisioning problem. See [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference) for the resolution steps for each state.
 
 After all workers reach `normal` state, the background infrastructure sub-operations begin automatically. For full monitoring instructions, retry guidance, and troubleshooting for those sub-operations, see [Monitor global resource migration](/docs/openshift?topic=openshift-vpc-migrate-global-resources).
 

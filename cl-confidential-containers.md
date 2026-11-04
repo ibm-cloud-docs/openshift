@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-26"
+lastupdated: "2026-11-04"
 
 
 keywords: change log, version history, Confidential containers
@@ -23,6 +23,24 @@ subcollection: openshift
 
 Review the version history for Confidential containers.
 {: shortdesc}
+
+
+## Version 20261102-02-hardened
+{: #cl-confidential-containers-20261102-02-hardened}
+
+
+### 03 November 2026, Version 20261102-02-hardened
+{: #cl-confidential-containers-20261102-02-hardened}
+
+- Fixes scratch-space (ENOSPC) bug that limited the size of containers that can run on the PodVM. The previous latest images (20261021-03 standard and hardened) have this limit; this image removes it and permits much larger container pulls (over 6 GB uncompressed). Hardened image: SSH masked and disabled; all 7 hardened tests passed
+- `rhel9-podvm-hardened-20261102-02.qcow2`
+
+
+### 03 November 2026, Version 20261102-02
+{: #cl-confidential-containers-20261102-02}
+
+- Fixes scratch-space (ENOSPC) bug that limited the size of containers that can run on the PodVM. The previous latest images (20261021-03 standard and hardened) have this limit; this image removes it and permits much larger container pulls (over 6 GB uncompressed). Uptycs 5.22.1.14 TLS enrollment and CDH attestation confirmed; payload=1.10.3; SSH enabled for debugging; 22 PASS / 0 FAIL / 1 SKIP (dm-verity expected)
+- `rhel9-podvm-20261102-02.qcow2`
 
 
 ## Version 20261021-03-hardened

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-11-04"
 
 keywords: openshift, classic, cluster, create, restriction, blocked, vpc
 
@@ -33,7 +33,7 @@ Accounts that already have at least one classic cluster in a region are not affe
 ## Why does this restriction exist?
 {: #classic-create-restriction-why}
 
-Classic infrastructure is a legacy compute platform. {{site.data.keyword.openshiftlong_notm}} is investing in VPC infrastructure as the strategic direction for new workloads. VPC clusters provide improved security, networking flexibility, and a better overall experience. To learn more, see [Overview of Classic and VPC infrastructure](/docs/openshift?topic=openshift-infrastructure_providers).
+Classic infrastructure is a legacy compute platform. {{site.data.keyword.openshiftlong_notm}} is investing in VPC infrastructure as the strategic direction for new workloads. VPC clusters provide improved security, networking flexibility, and a better overall experience. To learn more, see [Overview of Classic and VPC infrastructure](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered).
 
 ## What error do I see when classic cluster creation is blocked?
 {: #classic-create-restriction-error}
