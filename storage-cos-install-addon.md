@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-04"
 
 
 keywords: kubernetes, openshift, object storage add-on, cos
@@ -323,6 +323,18 @@ You can configure `maxVolumesPerNode` when you enable the add-on, or update it l
             #max_background=1000
 
             # Review or update the following default rclone mount options
+
+            # rclone CLI mount flags (defined with leading '--')
+            #--vfs-cache-mode=full
+            #--vfs-cache-max-size=10G
+            #--vfs-cache-max-age=24h
+            #--dir-cache-time=5m
+            #--buffer-size=32Mi
+            #--transfers=8
+            #--retries=5
+            #--log-level=INFO
+
+            # rclone backend config parameters (multi-word keys use underscores '_')
             #acl=private
             #bucket_acl=private
             #upload_cutoff=100Mi
@@ -375,7 +387,12 @@ You can configure `maxVolumesPerNode` when you enable the add-on, or update it l
     :   Optional. Set to `"true"` to enforce a hard storage quota on the bucket. When enabled, the bucket quota is set equal to the `storage` size requested in the PVC. If the quota is reached, write operations to the bucket fail until data is deleted. Requires `resourceConfigApiKey` to be set. Defaults to `"false"`. Must be a string value.
 
     `mountOptions`
-    :   You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. To run as a non-root user, uncomment and set `uid=<value>` to match the `runAsUser` field in the `securityContext` of your pod spec. Align the options that you specify with the storage class that your PVC uses. To review the default values for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
+    :   You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. Specify newline-separated key-value pairs for each option you want to configure. To run as a non-root user, uncomment and set `uid=<value>` to match the `runAsUser` field in the `securityContext` of your pod spec. Align the options that you specify with the storage class that your PVC uses. To review the default values for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
+
+    When configuring `rclone` mount options:
+    - **CLI mount flags** must begin with leading double dashes (`--`), such as `--vfs-cache-mode=full`, `--dir-cache-time=5m`, or `--buffer-size=32Mi`.
+    - **Backend config file parameters** do not use leading dashes, and multi-word keys must be separated with underscores (`_`), such as `chunk_size=16Mi`, `upload_concurrency=8`, or `disable_checksum=true`.
+    {: note}
 
     Currently, the add-on is enabled to support a fixed set of mount options with proper validation for each mount option. If you want to use any other mount options that are not in the validation list, contact support to enable those options.
     {: note}
@@ -641,17 +658,17 @@ If you have many FlexVolume-based persistent volume claims (PVCs) to migrate on 
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: cos-csi-pvc1
-    namespace: <namespace> # The namespace where you want to create the PVC.
-    annotations:
+      name: cos-csi-pvc1
+      namespace: <namespace> # The namespace where you want to create the PVC.
+      annotations:
         cos.csi.driver/secret: "cos-secret-1"  # Secret created in step 4
     spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
+      accessModes:
+      - ReadWriteOnce
+      resources:
         requests:
-        storage: 256Mi
-    storageClassName: <storage_class_name> # The storage class you picked based on old storage class mapping.
+          storage: 256Mi
+      storageClassName: <storage_class_name> # The storage class you picked based on old storage class mapping.
     ```
     {: codeblock}
 
