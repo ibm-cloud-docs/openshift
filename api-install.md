@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-11-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, ic, ks, kubectl, api
@@ -40,8 +40,8 @@ API endpoint prefix
 :    v3 API: `https://containers.cloud.ibm.com/global/v3`
 
 API reference docs
-:    [v1 and v2 API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
-:    [v3 API](https://cloud.ibm.com/apidocs/kubernetes/containers-v3){: external}.
+:    [v1 and v2 API](/docs/apis/kubernetes/containers-v1-v2)
+:    [v3 API](/docs/apis/kubernetes/containers-v3).
 
 API architectural style
 :    v1 API: Representational state transfer (REST) that focuses on resources that you interact with through HTTP methods such as `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`.
@@ -78,7 +78,7 @@ Cluster, worker node, and worker-pool responses
 You can use the {{site.data.keyword.openshiftlong_notm}} API to automate the creation, deployment, and management of your {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
-The {{site.data.keyword.openshiftlong_notm}} API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}.
+The {{site.data.keyword.openshiftlong_notm}} API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [{{site.data.keyword.openshiftlong_notm}} API documentation](/docs/apis/kubernetes/containers-v1-v2).
 
 To authenticate with {{site.data.keyword.openshiftlong_notm}}, you must provide an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) token that is generated with your {{site.data.keyword.cloud_notm}} credentials and that includes the {{site.data.keyword.cloud_notm}} account ID where the cluster was created. Depending on the way you authenticate with {{site.data.keyword.cloud_notm}}, you can choose between the following options to automate the creation of your {{site.data.keyword.cloud_notm}} IAM token.
 
@@ -240,7 +240,7 @@ Federated ID
     Header
     :    `Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).
 
-5. Review the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} to find a list of supported APIs.
+5. Review the [{{site.data.keyword.openshiftlong_notm}} API documentation](/docs/apis/kubernetes/containers-v1-v2) to find a list of supported APIs.
 
 When you use the API for automation, be sure to rely on the responses from the API, not files within those responses. For example, the Kubernetes configuration file for your cluster context is subject to change, so don't build automation based on specific contents of this file when you use the `GET /v1/clusters/{idOrName}/config` call.
 {: note}
@@ -288,4 +288,4 @@ Use the following steps if you want to obtain a new {{site.data.keyword.cloud_no
 
     You can find your new {{site.data.keyword.cloud_notm}} IAM token in the `access_token` field of your API output.
 
-2. Continue working with the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} by using the token from the previous step.
+2. Continue working with the [{{site.data.keyword.openshiftlong_notm}} API documentation](/docs/apis/kubernetes/containers-v1-v2) by using the token from the previous step.

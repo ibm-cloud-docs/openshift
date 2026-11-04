@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-04"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -61,7 +61,7 @@ For virtualization workloads, consider [OpenShift Virtualization Service](/docs/
 1. **Firewall**: If you have corporate firewalls, make sure that you [open the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#corporate) to work with {{site.data.keyword.openshiftlong_notm}}.
 2. **CLI and API**:
     1. [Set up the CLIs](/docs/openshift?topic=openshift-cli-install) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-    2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/){: external}.
+    2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](/docs/apis/kubernetes/containers-v1-v2) and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/){: external}.
 3. **Cluster deployment**:
     1. [Create the cluster](/docs/openshift?topic=openshift-clusters). For virtualization workloads, see [Creating a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-getting-started).
     2. After the cluster is ready, [access your cluster](/docs/containers?topic=containers-access_cluster).

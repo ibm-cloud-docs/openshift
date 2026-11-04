@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-04"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -163,8 +163,12 @@ Cluster autoscaler cluster add-on patch updates.
 New CLI version `1.0.899` available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
+
+
 Add-on OpenShift AI version `421` is available.
-:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons).
+:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 
 ### 22 October 2026
 {: #openshift-oct2226}
@@ -769,8 +773,12 @@ VPC File CSI Driver cluster add-on patch updates.
 {: #openshift-aug0426}
 {: release-note}
 
+
+
 ACM cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-acm).
+
+
 
 ### 3 August 2026
 {: #openshift-aug0326}

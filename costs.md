@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-11-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -177,7 +177,7 @@ To choose the correct storage solution, see [Planning highly available persisten
 ### {{site.data.keyword.cloud_notm}} services
 {: #services}
 
-Each service that you integrate with your cluster has its own pricing model. Review each product documentation and use the {{site.data.keyword.cloud_notm}} console to [estimate costs](/docs/account?topic=account-cost#cost).
+Each service that you integrate with your cluster has its own pricing model. Review each product documentation and use the {{site.data.keyword.cloud_notm}} console to [estimate costs](https://cloud.ibm.com/estimator){: external}.
 {: shortdesc}
 
 ### Operators and other third-party integrations
@@ -206,7 +206,7 @@ Sustained usage discounts
 ## Estimating costs
 {: #costs-estimate}
 
-See [Estimating your costs](/docs/account?topic=account-cost#cost).
+See [Estimating your costs](https://cloud.ibm.com/estimator){: external}.
 
 Keep in mind that some charges are not reflected in the estimate, such as tiered pricing for increased hourly usage. For more information, see [Understanding costs for your clusters](#costs-for-clusters).
 
@@ -225,7 +225,7 @@ The following steps present a general process to manage costs for your {{site.da
     * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy).
     * [Consider the availability that you want for your cluster](/docs/openshift?topic=openshift-strategy). For example, a basic high availability setup is one multizone cluster with two worker nodes in each of three zones, for a minimum total of 6 worker nodes.
 3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
-4. [Estimate your costs](/docs/account?topic=account-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.containerlong_notm}}: Pricing](https://www.ibm.com/products/openshift){: external}.
+4. [Estimate your costs](https://cloud.ibm.com/estimator){: external} and review detailed pricing information for the service, see [{{site.data.keyword.containerlong_notm}}: Pricing](https://www.ibm.com/products/openshift){: external}.
 5. Manage the lifecycle of your cluster to control costs.
     * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to automatically add or remove worker nodes in response to your cluster workload resource requests.
     * Manually resize your worker pool to remove worker nodes that you don't need. Keep in mind that you can't scale a worker pool down to zero worker nodes.
@@ -243,7 +243,7 @@ The following steps present a general process to manage costs for your {{site.da
 Review the table for information about charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
 {: shortdesc}
 
-Looking for an estimate? Try the [Cost estimator](/docs/account?topic=account-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite){: external}
+Looking for an estimate? Try the [Cost estimator](https://cloud.ibm.com/estimator){: external} or review the [Pricing model](https://www.ibm.com/products/satellite){: external}
 {: tip}
 
 | Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |

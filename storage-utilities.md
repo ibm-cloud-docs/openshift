@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-11-04"
 
 
 keywords: kubernetes, openshift
@@ -434,7 +434,7 @@ To attach the block storage device to a non-SDS worker node, you must create a p
                     ibm.io/lunid=0
                     ibm.io/mpath=3600a09803830445455244c4a38754c66
                     ibm.io/nodeip=10.176.48.67
-                    ibm.io/password=R6lqLBj9al6e2lbp
+                    ibm.io/password=<password>
                     ibm.io/targetip=161.26.98.114
                     ibm.io/username=IBM02SU1543159-I106288771
                     kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"v1","kind":"PersistentVolume","metadata":{"annotations":{"ibm.io/iqn":"iqn.2018-09.com.ibm:ibm02su1543159-i106288771","ibm.io/lunid":"0"...
@@ -467,7 +467,7 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 ## VPC: Adding raw {{site.data.keyword.block_storage_is_short}} to VPC worker nodes by using the API
 {: #vpc_api_attach}
 
-You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} to a worker node in your VPC cluster.
+You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](/docs/apis/kubernetes/containers-v1-v2) to a worker node in your VPC cluster.
 {: shortdesc}
 
 You can attach a volume to one worker node only. Ensure that the volume is in the same zone as the worker node for the attachment to succeed.

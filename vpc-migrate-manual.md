@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-04"
 
 keywords: openshift, classic, vpc, migrate, migration, manual, single-zone
 
@@ -48,7 +48,7 @@ Create the VPC networking infrastructure to mirror your Classic network topology
 1. Create a VPC in the same region as your Classic cluster.
 2. Create one subnet per zone, sized to accommodate your worker nodes and future growth.
 3. Create a VPE (Virtual Private Endpoint) gateway per zone for any IBM Cloud services your workloads use (for example, {{site.data.keyword.cos_full_notm}}, {{site.data.keyword.registrylong_notm}}).
-4. If your Classic cluster connects to on-premises networks by using Classic VPN or Direct Link 1.0, set up the equivalent VPC connectivity now. The migration does not migrate these connections. See [Setting up VPC VPN](/docs/openshift?topic=openshift-vpn-onprem) or [Direct Link 2.0](/docs/dl).
+4. If your Classic cluster connects to on-premises networks by using Classic VPN or Direct Link 1.0, set up the equivalent VPC connectivity now. The migration does not migrate these connections. See [Setting up VPC VPN](/docs/vpc?topic=vpc-vpn-onprem-example) or [Direct Link 2.0](/docs/dl).
 
 ## Step 3: Configure VPC security groups
 {: #vpc-migrate-manual-sg}

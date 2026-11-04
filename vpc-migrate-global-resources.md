@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-04"
 
 keywords: openshift, classic, vpc, migrate, global resources, IAM policies, add-ons, clusterMigrationStatus
 
@@ -179,7 +179,7 @@ If a sub-operation reports `failed`, review the error details and resolve the is
    ```
    {: screen}
 
-2. Resolve the issue, then re-trigger the failed sub-operation using the API or console — CLI retry is not available in this release. See [From the API](#vpc-migrate-global-troubleshoot-api) below.
+2. Resolve the issue, then re-trigger the failed sub-operation using the API or console — CLI retry is not available in this release. See [From the API](/docs/openshift?topic=openshift-vpc-migrate-global-resources&interface=api#vpc-migrate-global-troubleshoot-api) below.
 
 3. Run the status command again every 60 seconds until all sub-operations report `completed`.
 

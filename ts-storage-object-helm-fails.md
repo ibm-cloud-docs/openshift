@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-04"
 
 
 keywords: openshift, ibmc, helm
@@ -114,7 +114,7 @@ Review the following steps based on the error type.
         ```
         {: pre}
 
-    2. If the output starts with `v2`, or if the command fails with an error such as `Error: could not find tiller`, you are using Helm version 2. [Upgrade your Helm client to version 3 or later](/docs/openshift?topic=openshift-helm#install_v3). If you have existing Helm version 2 releases, see the [Helm v2 to v3 migration guide](https://helm.sh/docs/topics/v2_v3_migration/){: external}.
+    2. If the output starts with `v2`, or if the command fails with an error such as `Error: could not find tiller`, you are using Helm version 2. [Upgrade your Helm client to version 3 or later](/docs/openshift?topic=openshift-helm#install_v3). If you have existing Helm version 2 releases, see the [Helm v2 to v3 migration guide](https://helm.sh/docs/v3/topics/v2_v3_migration/){: external}.
 
     3. Verify that the `ibmc` plug-in is at version 2.0.14 or later.
 
