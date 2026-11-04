@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-04"
 
 keywords: containers, kubernetes, satellite, graphql, api, reference
 
