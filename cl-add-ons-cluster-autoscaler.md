@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-05"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -59,6 +59,20 @@ Review the version history for Cluster autoscaler.
 
 ## Version 2.0.0
 {: #cl-add-ons-cluster-autoscaler-2.0.0}
+
+
+### 05 November 2026, Version 2.0.0 - v200-22-0_380357599
+{: #cl-add-ons-cluster-autoscaler-v200-22-0_380357599}
+
+- Updates Go to version `1.25.13`.
+- Fixed an issue that could cause worker scaling operations to fail when a large number of workers in the same worker pool were scaled simultaneously. 
+- `1.30.7-v200-22`
+- `1.31.5-v200-22`
+- `1.32.7-v200-22`
+- `1.33.6-v200-22`
+- `1.34.5-v200-22`
+- `1.35.2-v200-22`
+- `1.36.1-v200-22`
 
 
 ### 26 October 2026, Version 2.0.0 - v200-21-0_380175534

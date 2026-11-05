@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-05"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -57,6 +57,17 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### 05 November 2026, Version 2.0 - v2.0.60_381677618
+{: #cl-add-ons-vpc-file-csi-driver-v2060_381677618}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-89157](https://nvd.nist.gov/vuln/detail/cve-2026-89157){: external}, [CVE-2026-86145](https://nvd.nist.gov/vuln/detail/cve-2026-86145){: external}, [CVE-2026-60000](https://nvd.nist.gov/vuln/detail/cve-2026-60000){: external}, [CVE-2026-103111](https://nvd.nist.gov/vuln/detail/cve-2026-103111){: external}, [CVE-2026-89156](https://nvd.nist.gov/vuln/detail/cve-2026-89156){: external}, [CVE-2026-89161](https://nvd.nist.gov/vuln/detail/cve-2026-89161){: external}, [CVE-2026-59998](https://nvd.nist.gov/vuln/detail/cve-2026-59998){: external}, [CVE-2026-59997](https://nvd.nist.gov/vuln/detail/cve-2026-59997){: external}, [CVE-2026-89160](https://nvd.nist.gov/vuln/detail/cve-2026-89160){: external}, and [CVE-2026-89158](https://nvd.nist.gov/vuln/detail/cve-2026-89158){: external}.
+- {'Added new capacity roundoff storage classes': 'ibmc-vpc-file-metro-roundsize-3000-iops, ibmc-vpc-file-metro-roundsize-5000-iops, ibmc-vpc-file-metro-roundsize-retain-3000-iops and ibmc-vpc-file-metro-roundsize-retain-5000-iops'}
+- `armada-storage-secret:v1.3.73`
+- `stunnel:0.1.0.build-43`
 
 
 ### 22 October 2026, Version 2.0 - v2.0.57_379023073

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-28"
+lastupdated: "2026-11-05"
 
 
 keywords: change log, version history, Object Storage plug in
@@ -27,6 +27,14 @@ Review the version history for Object Storage plug in.
 
 ## Version 2.2
 {: #cl-object-storage-plug-in-2.2}
+
+
+### 02 November 2026, Version 2.2 - 2.2.61
+{: #cl-object-storage-plug-in-2261}
+
+- Updates Go to version `1.26.10`.
+- Support the ibm.io/kernel-cache PVC annotation to override the storage class value 
+- s3fs fuse updated to 1.95 
 
 
 ### 28 October 2026, Version 2.2 - 2.2.60
