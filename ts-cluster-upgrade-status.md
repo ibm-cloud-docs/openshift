@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-27"
+  years: 2024, 2026
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, troubleshooting, upgrade, update, update status
@@ -21,8 +21,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. This command provides details regarding the update status so you can determine if the update is proceeding normally or if intervention is required. If intervention is required, the command provides details of the issue as well as links to relevant documentation to help resolve the issue. For more information, see the {{site.data.keyword.redhat_openshift_notm}} documentation
+For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. This command provides details regarding the update status so you can determine if the update is proceeding normally or if intervention is required.
 {: shortdesc}
+
+If intervention is required, the command provides details of the issue as well as links to relevant documentation to help resolve the issue. For more information, see the {{site.data.keyword.redhat_openshift_notm}} documentation.
 
 The `oc adm upgrade status` command is available as a technology preview from {{site.data.keyword.redhat_openshift_notm}}.
 {: note}

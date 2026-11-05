@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, version, update, upgrade, 4.21, update openshift
@@ -54,6 +54,8 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.21. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
 
+When you are ready to update, see [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update).
+
 The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.21 clusters are now the same regardless of the location being RHEL non-CoreOS or RHEL CoreOS based. The requirements for the location nodes should now follow those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing).
 {: important}
 
@@ -64,7 +66,7 @@ The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-loc
 ### Update before master
 {: #421_before}
 
-The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
+The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update-master).
 {: shortdesc}
 
 For clusters that run version 4.21 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](/docs/openshift?topic=openshift-upgrade-status).

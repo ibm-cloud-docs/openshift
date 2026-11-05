@@ -144,10 +144,23 @@ toc:
               - add-workers-vpc.md
               - add-workers-classic.md
           - topicgroup:
-              label: Updating and maintaining worker nodes
+              label: Changing worker pools
               topics:
-              - worker-os-check.md
+              - update-flavors.md
+              - worker-pool-scaledown.md
+          - topicgroup:
+              label: Updating clusters and worker nodes
+              topics:
               - update.md
+              - worker-os-check.md
+              - update-prepare.md
+              - update-master.md
+              - update-workers-classic.md
+              - update-workers-vpc.md
+              - update-components.md
+          - topicgroup:
+              label: Maintaining worker nodes
+              topics:
               - dedicated-hosts.md
               - rhel_migrate.md
               - rhel_migrate_sat.md

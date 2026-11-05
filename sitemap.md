@@ -2629,9 +2629,40 @@ subcollection: openshift
 * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
 
 
-### Updating and maintaining worker nodes
-{: #sitemap_updating_and_maintaining_worker_nodes}
+### Changing worker pools
+{: #sitemap_changing_worker_pools}
 
+
+[Updating flavors (machine types)](/docs/openshift?topic=openshift-update-flavors#update-flavors)
+
+* [Before you begin](/docs/openshift?topic=openshift-update-flavors#machine-type-prereqs)
+
+* [Updating the flavor](/docs/openshift?topic=openshift-update-flavors#machine-type-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-update-flavors#update-flavors-next)
+
+* [Related links](/docs/openshift?topic=openshift-update-flavors#update-flavors-related)
+
+[How worker pools are scaled down](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-logic)
+
+* [Related links](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-related)
+
+
+### Updating clusters and worker nodes
+{: #sitemap_updating_clusters_and_worker_nodes}
+
+
+[Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
+
+* [Update checklist](/docs/openshift?topic=openshift-update#update-checklist)
+
+* [Other update tasks](/docs/openshift?topic=openshift-update#update-other-tasks)
+
+* [Troubleshooting update problems](/docs/openshift?topic=openshift-update#update-troubleshooting)
+
+* [Next steps](/docs/openshift?topic=openshift-update#update-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-update#update-related-links)
 
 [Checking your cluster version, operating system, and Kubernetes server version](/docs/openshift?topic=openshift-flavor-os-check#flavor-os-check)
 
@@ -2645,45 +2676,80 @@ subcollection: openshift
 
 * [Checking your worker node operating system in the CLI](/docs/openshift?topic=openshift-flavor-os-check&interface=cli#worker-os-check)
 
-[Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
+* [Next steps](/docs/openshift?topic=openshift-flavor-os-check&interface=cli#flavor-os-check-next)
 
-* [Updating the master](/docs/openshift?topic=openshift-update#master)
+[Preparing to update your cluster](/docs/openshift?topic=openshift-update-prepare#update-prepare)
 
-    * [Steps to update the cluster master](/docs/openshift?topic=openshift-update#master-steps)
+* [Before you begin](/docs/openshift?topic=openshift-update-prepare#update-prepare-permissions)
 
-* [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node)
+* [Reviewing version changes and backing up](/docs/openshift?topic=openshift-update-prepare#update-prepare-steps)
 
-    * [Prerequisites](/docs/openshift?topic=openshift-update#worker-up-prereqs)
+* [Checking add-ons](/docs/openshift?topic=openshift-update-prepare#update-prepare-addons)
 
-    * [Updating classic worker nodes in the CLI with a configmap](/docs/openshift?topic=openshift-update#worker-up-configmap)
+* [Checking plug-ins](/docs/openshift?topic=openshift-update-prepare#update-prepare-plugins)
 
-    * [Updating classic worker nodes in the console](/docs/openshift?topic=openshift-update#worker_up_console)
+* [Next steps](/docs/openshift?topic=openshift-update-prepare#update-prepare-next)
 
-* [Updating VPC worker nodes](/docs/openshift?topic=openshift-update#vpc_worker_node)
+* [Related links](/docs/openshift?topic=openshift-update-prepare#update-prepare-related)
 
-    * [Prerequisites](/docs/openshift?topic=openshift-update#vpc_worker_prereqs)
+[Updating the cluster master](/docs/openshift?topic=openshift-update-master#update-master)
 
-    * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update&interface=cli#vpc_worker_cli)
+* [How master updates work](/docs/openshift?topic=openshift-update-master#master-update-faq)
 
-    * [Firmware updates during VPC bare metal worker reload](/docs/openshift?topic=openshift-update&interface=cli#vpc_bm_firmware)
+* [Steps to update the cluster master](/docs/openshift?topic=openshift-update-master#master-steps)
 
-    * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update&interface=ui#vpc_worker_ui)
+* [Next steps](/docs/openshift?topic=openshift-update-master#update-master-next)
 
-* [Updating flavors (machine types)](/docs/openshift?topic=openshift-update&interface=ui#machine_type)
+* [Related links](/docs/openshift?topic=openshift-update-master#update-master-related)
 
-    * [Before you begin](/docs/openshift?topic=openshift-update&interface=ui#machine-type-prereqs)
+[Updating classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic#update-workers-classic)
 
-    * [To update flavors](/docs/openshift?topic=openshift-update&interface=ui#machine-type-steps)
+* [How classic worker node updates work](/docs/openshift?topic=openshift-update-workers-classic#classic-worker-faq)
 
-* [How are worker pools scaled down?](/docs/openshift?topic=openshift-update&interface=ui#worker-scaledown-logic)
+* [Prerequisites](/docs/openshift?topic=openshift-update-workers-classic#worker-up-prereqs)
 
-* [Updating cluster components](/docs/openshift?topic=openshift-update&interface=ui#components)
+* [Updating classic worker nodes in the CLI with a ConfigMap](/docs/openshift?topic=openshift-update-workers-classic&interface=cli#worker-up-configmap)
 
-    * [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update&interface=ui#logging-up)
+* [Updating classic worker nodes in the console](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#worker-up-console)
 
-    * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update&interface=ui#alb)
+* [Next steps](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#classic-worker-next-steps)
 
-* [Updating managed add-ons](/docs/openshift?topic=openshift-update&interface=ui#addons-update)
+* [Related links](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#classic-worker-related)
+
+[Updating VPC worker nodes](/docs/openshift?topic=openshift-update-workers-vpc#update-workers-vpc)
+
+* [How VPC worker node updates work](/docs/openshift?topic=openshift-update-workers-vpc#vpc-worker-faq)
+
+* [Prerequisites](/docs/openshift?topic=openshift-update-workers-vpc#vpc-worker-prereqs)
+
+* [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update-workers-vpc&interface=cli#vpc-worker-cli)
+
+* [Firmware updates during VPC bare metal worker reload](/docs/openshift?topic=openshift-update-workers-vpc&interface=cli#vpc-bm-firmware)
+
+* [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update-workers-vpc&interface=ui#vpc-worker-ui)
+
+* [Next steps](/docs/openshift?topic=openshift-update-workers-vpc&interface=ui#vpc-worker-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-update-workers-vpc&interface=ui#vpc-worker-related)
+
+[Updating cluster components and managed add-ons](/docs/openshift?topic=openshift-update-components#update-components)
+
+* [Understanding cluster components](/docs/openshift?topic=openshift-update-components#components)
+
+* [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update-components#logging-up)
+
+* [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update-components#alb)
+
+* [Updating managed add-ons](/docs/openshift?topic=openshift-update-components#addons-update)
+
+* [Next steps](/docs/openshift?topic=openshift-update-components#update-components-next)
+
+* [Related links](/docs/openshift?topic=openshift-update-components#update-components-related)
+
+
+### Maintaining worker nodes
+{: #sitemap_maintaining_worker_nodes}
+
 
 [Creating and managing dedicated hosts on VPC infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
 
@@ -2699,7 +2765,7 @@ subcollection: openshift
 
 * [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate#upgrade-cluster-rhcos)
 
-* [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
+* [Step 2: Create a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
 
 * [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#rhcos-add-worker-nodes)
 
@@ -2713,7 +2779,7 @@ subcollection: openshift
 
 * [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate_sat#upgrade-cluster-rhcos)
 
-* [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate_sat#create-pool-rhcos)
+* [Step 2: Create a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate_sat#create-pool-rhcos)
 
 * [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate_sat#rhcos-add-worker-nodes)
 
@@ -6651,6 +6717,8 @@ subcollection: openshift
     * [Clusters in Satellite locations](/docs/openshift?topic=openshift-openshift_versions#os-sat)
 
 * [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#release_lifecycle)
+
+* [Update types](/docs/openshift?topic=openshift-openshift_versions#update-types)
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
 

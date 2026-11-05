@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
@@ -57,7 +57,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 [Major update]{: tag-red}
 
 
-1. If you are updating your worker nodes to a new major version, such as from `4.11` to `4.12`, update the cluster master first. 
+1. If you are updating your worker nodes to a new major version, such as from `4.11` to `4.12`, update the cluster master first.
     ```sh
     ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-q]
     ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-11-05"
 
 
 keywords: kubernetes, worker nodes, state
@@ -126,7 +126,7 @@ The master update failed. IBM Support is notified and works to resolve the issue
 ## Updating
 {: #cluster-state-updating}
 
-The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you can still access and change the cluster. However, you cannot initiate concurrent master operations, such as enabling API server auditing. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node). If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.
+The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you can still access and change the cluster. However, you cannot initiate concurrent master operations, such as enabling API server auditing. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/openshift?topic=openshift-update#update-checklist). If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.
 
 ## Update canceled
 {: #cluster-state-canceled}

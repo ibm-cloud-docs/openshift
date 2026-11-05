@@ -2,13 +2,14 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, allowlist, operating system, rhel, ubuntu
 
 subcollection: openshift
 
+content-type: howto
 
 ---
 
@@ -130,7 +131,7 @@ You can also log in to your cluster to check the operating system of the worker 
     Roles:              <none>
     Labels:             arch=amd64
                         ...
-                        ibm-cloud.kubernetes.io/os=UBUNTU_20_64
+                        ibm-cloud.kubernetes.io/os=UBUNTU_24_64
                         ...
                         kubernetes.io/arch=amd64
                         kubernetes.io/hostname=10.189.33.198
@@ -143,3 +144,9 @@ You can also log in to your cluster to check the operating system of the worker 
         ...
     ```
     {: screen}
+
+
+## Next steps
+{: #flavor-os-check-next}
+
+If a worker node version update is available, go to [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update) to complete the update checklist.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift
@@ -105,7 +105,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
     *  If your cluster does **not** have a subdomain, see [No Ingress subdomain exists after cluster creation](/docs/openshift?topic=openshift-ingress_subdomain).
     *  If your cluster does have a subdomain, continue to the next step.
 3. Verify that your cluster runs the latest patch **Version**. If your cluster does not run the latest patch version, update the cluster and worker nodes.
-    1. [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest patch version for your cluster major and minor version.
+    1. [Update the cluster master](/docs/openshift?topic=openshift-update-master) to the latest patch version for your cluster major and minor version.
         ```sh
         ibmcloud oc cluster master update -c CLUSTER_NAME_OR_ID --version MAJOR.MINOR_openshift-f
         ```
@@ -117,7 +117,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
         ```
         {: pre}
 
-    3. [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
+    3. [Update the worker nodes](/docs/openshift?topic=openshift-update#update-checklist) to match the cluster master version.
         ```sh
         ibmcloud oc worker update -c CLUSTER_NAME_OR_ID -w WORKER1_ID -w WORKER2_ID -w WORKER3_ID
         ```

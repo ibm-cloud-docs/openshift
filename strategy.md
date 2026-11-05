@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-11-05"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -276,7 +276,7 @@ After your cluster is running, follow these best practices to keep it secure and
 ### Keep your cluster environment up to date
 {: #bp-1}
 
-Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node). Make sure to [update your cluster](/docs/openshift?topic=openshift-update) regularly to remain on a supported version of {{site.data.keyword.redhat_openshift_notm}}.
+Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#update-checklist). Make sure to [update your cluster](/docs/openshift?topic=openshift-update) regularly to remain on a supported version of {{site.data.keyword.redhat_openshift_notm}}.
 
 ### Keep your command line tools up to date
 {: #bp-2}

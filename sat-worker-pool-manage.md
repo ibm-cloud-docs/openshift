@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-09-28"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
@@ -118,7 +118,7 @@ In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables
 ## Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-update}
 
-Follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+Follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic).
 
 
 ## Adding zones to a {{site.data.keyword.satelliteshort}} worker pool

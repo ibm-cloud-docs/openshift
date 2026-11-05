@@ -2,12 +2,13 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-11-05"
 
 
 keywords: rhel, os, operating system, rhel 9, 418, migration, vpc, rhcos
 
 subcollection: openshift
+content-type: howto
 
 ---
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-11-04"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -98,7 +98,7 @@ When you estimate the cost of a new cluster or worker node, the OCP licenses are
 ##### How can I migrate from the old to new OCP licenses?
 {: #licenses-on-demand-migrate}
 
-You can follow the same procedure to [update flavors](/docs/openshift?topic=openshift-update#machine_type) by adding new worker pools and removing the old worker pools. If you use bare metal, make sure that you use the latest series 4 flavors. Many existing bare metal flavors don't support the new OCP licenses.
+You can follow the same procedure to [update flavors](/docs/openshift?topic=openshift-update-flavors) by adding new worker pools and removing the old worker pools. If you use bare metal, make sure that you use the latest series 4 flavors. Many existing bare metal flavors don't support the new OCP licenses.
 
 You can check the new rates in the pricing estimate when you create a cluster or worker pool in the console. The OCP licenses are no longer a separate line item in the estimate, but instead are in the cost of the worker nodes.
 
