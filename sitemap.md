@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-11-05"
+lastupdated: "2026-11-06"
 
 
 keywords: openshift
@@ -2608,46 +2608,6 @@ subcollection: openshift
 
 
 
-### Adding worker nodes
-{: #sitemap_adding_worker_nodes}
-
-
-[Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc#add-workers-vpc)
-
-* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize-pool-vpc)
-
-* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool)
-
-* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
-
-[Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic#add-workers-classic)
-
-* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool)
-
-* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-classic#resize-pool)
-
-* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
-
-
-### Changing worker pools
-{: #sitemap_changing_worker_pools}
-
-
-[Updating flavors (machine types)](/docs/openshift?topic=openshift-update-flavors#update-flavors)
-
-* [Before you begin](/docs/openshift?topic=openshift-update-flavors#machine-type-prereqs)
-
-* [Updating the flavor](/docs/openshift?topic=openshift-update-flavors#machine-type-steps)
-
-* [Next steps](/docs/openshift?topic=openshift-update-flavors#update-flavors-next)
-
-* [Related links](/docs/openshift?topic=openshift-update-flavors#update-flavors-related)
-
-[How worker pools are scaled down](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-logic)
-
-* [Related links](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-related)
-
-
 ### Updating clusters and worker nodes
 {: #sitemap_updating_clusters_and_worker_nodes}
 
@@ -2747,9 +2707,44 @@ subcollection: openshift
 * [Related links](/docs/openshift?topic=openshift-update-components#update-components-related)
 
 
+### Adding worker nodes
+{: #sitemap_adding_worker_nodes}
+
+
+[Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc#add-workers-vpc)
+
+* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize-pool-vpc)
+
+* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool)
+
+* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
+
+[Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic#add-workers-classic)
+
+* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool)
+
+* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-classic#resize-pool)
+
+* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
+
+
 ### Maintaining worker nodes
 {: #sitemap_maintaining_worker_nodes}
 
+
+[Updating flavors (machine types)](/docs/openshift?topic=openshift-update-flavors#update-flavors)
+
+* [Before you begin](/docs/openshift?topic=openshift-update-flavors#machine-type-prereqs)
+
+* [Updating the flavor](/docs/openshift?topic=openshift-update-flavors#machine-type-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-update-flavors#update-flavors-next)
+
+* [Related links](/docs/openshift?topic=openshift-update-flavors#update-flavors-related)
+
+[How worker pools are scaled down](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-logic)
+
+* [Related links](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-related)
 
 [Creating and managing dedicated hosts on VPC infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
 
@@ -2944,8 +2939,6 @@ subcollection: openshift
 * [Pricing for clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-costs#satcluster-pricing)
 
 [Reservations for classic worker node costs](/docs/openshift?topic=openshift-reservations#reservations)
-
-* [Deprecation timeline](/docs/openshift?topic=openshift-reservations#reservations-deprecation-timeline)
 
 * [Migrating workloads from reservations](/docs/openshift?topic=openshift-reservations#reservations-deprecation-migrate)
 

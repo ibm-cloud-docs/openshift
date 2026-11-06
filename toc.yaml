@@ -139,16 +139,6 @@ toc:
           label: Cluster management
           topics:
           - topicgroup:
-              label: Adding worker nodes
-              topics:
-              - add-workers-vpc.md
-              - add-workers-classic.md
-          - topicgroup:
-              label: Changing worker pools
-              topics:
-              - update-flavors.md
-              - worker-pool-scaledown.md
-          - topicgroup:
               label: Updating clusters and worker nodes
               topics:
               - update.md
@@ -159,8 +149,15 @@ toc:
               - update-workers-vpc.md
               - update-components.md
           - topicgroup:
+              label: Adding worker nodes
+              topics:
+              - add-workers-vpc.md
+              - add-workers-classic.md
+          - topicgroup:
               label: Maintaining worker nodes
               topics:
+              - update-flavors.md
+              - worker-pool-scaledown.md
               - dedicated-hosts.md
               - rhel_migrate.md
               - rhel_migrate_sat.md
