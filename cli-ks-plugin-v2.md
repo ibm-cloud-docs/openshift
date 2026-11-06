@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-06"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -3580,7 +3580,7 @@ The `cluster master private-service-endpoint allowlist add` command is deprecate
 Add subnets to a cluster's private service endpoint allowlist.
 
 ```sh
-ibmcloud ks cluster master private-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist add --cluster CLUSTER (--subnet SUBNET ...) [-q]
 ```
 
 #### Command options
@@ -3756,7 +3756,7 @@ The `cluster master private-service-endpoint allowlist rm` command is deprecated
 Remove subnets from a cluster's private service endpoint allowlist.
 
 ```sh
-ibmcloud ks cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist rm --cluster CLUSTER (--subnet SUBNET ...) [-f] [-q]
 ```
 
 #### Command options
@@ -3991,7 +3991,7 @@ ibmcloud ks cluster master refresh --cluster CLUSTER
 Add subnets to a Satellite cluster's service endpoint allowlist.
 
 ```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+ibmcloud ks cluster master satellite-service-endpoint allowlist add --cluster CLUSTER (--subnet SUBNET ...) [-q]
 ```
 
 #### Command options
@@ -4157,7 +4157,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist help
 Remove subnets from a Satellite cluster's service endpoint allowlist.
 
 ```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
+ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLUSTER (--subnet SUBNET ...) [-f] [-q]
 ```
 
 #### Command options
@@ -7748,7 +7748,7 @@ ibmcloud ks ingress status-report help
 Suppress warnings from Ingress status reports for a cluster.
 
 ```sh
-ibmcloud ks ingress status-report ignored-errors add --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report ignored-errors add --cluster CLUSTER (--code CODE ...) [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -7846,7 +7846,7 @@ ibmcloud ks ingress status-report ignored-errors ls --cluster CLUSTER
 Remove warnings that are currently ignored by Ingress status for a cluster.
 
 ```sh
-ibmcloud ks ingress status-report ignored-errors rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+ibmcloud ks ingress status-report ignored-errors rm --cluster CLUSTER (--code CODE ...) [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8865,7 +8865,7 @@ Create and manage host names for network load balancer (NLB) IP addresses in a c
 Add an NLB IP to an existing host name that you created with `ibmcloud ks nlb-dns create`.
 
 ```sh
-ibmcloud ks nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST [--output OUTPUT] [-q]
+ibmcloud ks nlb-dns add --cluster CLUSTER (--ip IP ...) --nlb-host HOST [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -8907,7 +8907,7 @@ ibmcloud ks nlb-dns add --cluster CLUSTER --ip IP --nlb-host HOST
 Create a DNS host name to register one or more NLB IPs in a classic cluster.
 
 ```sh
-ibmcloud ks nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
+ibmcloud ks nlb-dns create classic --cluster CLUSTER (--ip IP ...) [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
 ```
 
 #### Command options
@@ -11048,7 +11048,7 @@ ibmcloud ks worker ls --cluster CLUSTER
 Restart a worker node.
 
 ```sh
-ibmcloud ks worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [--hard] [-q] [--skip-master-health]
+ibmcloud ks worker reboot --cluster CLUSTER (--worker WORKER ...) [-f] [--hard] [-q] [--skip-master-health]
 ```
 
 #### Command options
@@ -11093,7 +11093,7 @@ ibmcloud ks worker reboot --cluster CLUSTER --worker WORKER_ID
 Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes, bare metal VPC nodes, and VPC virtual server nodes in clusters that run Kubernetes 1.37 or later or Red Hat OpenShift 4.23 or later are supported. For other VPC virtual server nodes, use the `worker replace` command.
 
 ```sh
-ibmcloud ks worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--skip-master-health]
+ibmcloud ks worker reload (--worker WORKER ...) [-f] [-q] [--skip-master-health]
 ```
 
 #### Command options
@@ -11174,7 +11174,7 @@ ibmcloud ks worker replace --cluster CLUSTER --worker WORKER_ID
 Remove a worker node from a cluster.
 
 ```sh
-ibmcloud ks worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
+ibmcloud ks worker rm --cluster CLUSTER (--worker WORKER ...) [-f] [-q]
 ```
 
 #### Command options
@@ -11213,7 +11213,7 @@ ibmcloud ks worker rm --cluster CLUSTER --worker WORKER_ID
 Update one or more worker nodes in a classic cluster to a new Kubernetes version. During the update, the worker node is updated with the latest image and data is permanently deleted if not stored on persistent storage.
 
 ```sh
-ibmcloud ks worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
+ibmcloud ks worker update --cluster CLUSTER (--worker WORKER ...) [-f] [-q]
 ```
 
 #### Command options
@@ -11345,7 +11345,7 @@ ibmcloud ks worker-pool create help
 Add a worker pool to an IBM Cloud Satellite cluster. No worker nodes are created until zones are added to the worker pool.
 
 ```sh
-ibmcloud ks worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME --size-per-zone SIZE --zone ZONE [--entitlement ENTITLEMENT] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
+ibmcloud ks worker-pool create satellite --cluster CLUSTER (--host-label LABEL ...) --name NAME --size-per-zone SIZE --zone ZONE [--entitlement ENTITLEMENT] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -11671,7 +11671,7 @@ ibmcloud ks worker-pool label rm --cluster CLUSTER --worker-pool POOL
 Set custom Kubernetes labels for all worker nodes in a worker pool.
 
 ```sh
-ibmcloud ks worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL ...] --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool label set --cluster CLUSTER (--label LABEL ...) --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -11993,7 +11993,7 @@ ibmcloud ks worker-pool taint rm --cluster CLUSTER --worker-pool POOL
 Set Kubernetes taints for all worker nodes in a worker pool. Taints prevent pods without matching tolerations from running on the worker nodes.
 
 ```sh
-ibmcloud ks worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT ...] --worker-pool POOL [-f] [-q]
+ibmcloud ks worker-pool taint set --cluster CLUSTER (--taint TAINT ...) --worker-pool POOL [-f] [-q]
 ```
 
 #### Command options
@@ -12080,7 +12080,7 @@ List availability zones and modify the zones attached to a worker pool.
 Add a zone to one or more worker pools in a classic cluster.
 
 ```sh
-ibmcloud ks zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [--private-vlan VLAN] [-q] (--private-only | --public-vlan VLAN)
+ibmcloud ks zone add classic --cluster CLUSTER (--worker-pool POOL ...) --zone ZONE [--output OUTPUT] [--private-vlan VLAN] [-q] (--private-only | --public-vlan VLAN)
 ```
 
 #### Command options
@@ -12154,7 +12154,7 @@ ibmcloud ks zone add help
 Add a zone to one or more worker pools in a Satellite cluster.
 
 ```sh
-ibmcloud ks zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [-q]
+ibmcloud ks zone add satellite --cluster CLUSTER (--worker-pool POOL ...) --zone ZONE [--output OUTPUT] [-q]
 ```
 
 #### Command options
@@ -12354,7 +12354,7 @@ ibmcloud ks zone ls --provider PROVIDER
 Set the network metadata in a specific zone for the given worker pools in a classic cluster.
 
 ```sh
-ibmcloud ks zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q] (--private-only | --public-vlan VLAN)
+ibmcloud ks zone network-set --cluster CLUSTER --private-vlan VLAN (--worker-pool POOL ...) --zone ZONE [-f] [-q] (--private-only | --public-vlan VLAN)
 ```
 
 #### Command options
@@ -12410,7 +12410,7 @@ ibmcloud ks zone network-set \
 Remove a zone from one or more worker pools in a cluster.
 
 ```sh
-ibmcloud ks zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q]
+ibmcloud ks zone rm --cluster CLUSTER (--worker-pool POOL ...) --zone ZONE [-f] [-q]
 ```
 
 #### Command options
