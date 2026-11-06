@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-11-06"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -55,7 +55,7 @@ Built-in {{site.data.keyword.redhat_openshift_notm}} audit logging tools
 {: #openshift_logging}
 
 The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, [Deploying the Logging agent for OpenShift clusters](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy) and [Monitoring a Red Hat OpenShift cluster](/docs/monitoring?topic=monitoring-openshift_cluster).
-{: unsupported}
+{: important}
 
 You can no longer use the `ob` plug-in, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance.
 
