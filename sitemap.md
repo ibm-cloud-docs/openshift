@@ -2315,8 +2315,8 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-vpc-migrate-quickstart#vpc-migrate-quickstart-next)
 
 
-## Before you begin
-{: #sitemap_before_you_begin}
+## Prepare to create clusters
+{: #sitemap_prepare_to_create_clusters}
 
 
 [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
@@ -2353,8 +2353,8 @@ subcollection: openshift
     * [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-iam-platform-access-roles#classic-rbac-suggested)
 
 
-## Setting up your tools
-{: #sitemap_setting_up_your_tools}
+## Set up your tools
+{: #sitemap_set_up_your_tools}
 
 
 [Installing the CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
@@ -2390,8 +2390,8 @@ subcollection: openshift
 * [Refreshing IAM access tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 
-## Cluster creation
-{: #sitemap_cluster_creation}
+## Create clusters
+{: #sitemap_create_clusters}
 
 
 [Creating VPC clusters (recommended)](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
@@ -2487,8 +2487,8 @@ subcollection: openshift
 * [Creating the deployable architecture](/docs/openshift?topic=openshift-roks_da#roks_da_creation)
 
 
-## Cluster access
-{: #sitemap_cluster_access}
+## Access clusters
+{: #sitemap_access_clusters}
 
 
 [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-access_cluster#access_cluster)
@@ -2603,8 +2603,8 @@ subcollection: openshift
 * [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
 
 
-## Cluster management
-{: #sitemap_cluster_management}
+## Manage clusters
+{: #sitemap_manage_clusters}
 
 
 
@@ -2662,20 +2662,6 @@ subcollection: openshift
 
 * [Related links](/docs/openshift?topic=openshift-update-master#update-master-related)
 
-[Updating classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic#update-workers-classic)
-
-* [How classic worker node updates work](/docs/openshift?topic=openshift-update-workers-classic#classic-worker-faq)
-
-* [Prerequisites](/docs/openshift?topic=openshift-update-workers-classic#worker-up-prereqs)
-
-* [Updating classic worker nodes in the CLI with a ConfigMap](/docs/openshift?topic=openshift-update-workers-classic&interface=cli#worker-up-configmap)
-
-* [Updating classic worker nodes in the console](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#worker-up-console)
-
-* [Next steps](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#classic-worker-next-steps)
-
-* [Related links](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#classic-worker-related)
-
 [Updating VPC worker nodes](/docs/openshift?topic=openshift-update-workers-vpc#update-workers-vpc)
 
 * [How VPC worker node updates work](/docs/openshift?topic=openshift-update-workers-vpc#vpc-worker-faq)
@@ -2691,6 +2677,20 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-update-workers-vpc&interface=ui#vpc-worker-next-steps)
 
 * [Related links](/docs/openshift?topic=openshift-update-workers-vpc&interface=ui#vpc-worker-related)
+
+[Updating classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic#update-workers-classic)
+
+* [How classic worker node updates work](/docs/openshift?topic=openshift-update-workers-classic#classic-worker-faq)
+
+* [Prerequisites](/docs/openshift?topic=openshift-update-workers-classic#worker-up-prereqs)
+
+* [Updating classic worker nodes in the CLI with a ConfigMap](/docs/openshift?topic=openshift-update-workers-classic&interface=cli#worker-up-configmap)
+
+* [Updating classic worker nodes in the console](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#worker-up-console)
+
+* [Next steps](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#classic-worker-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-update-workers-classic&interface=ui#classic-worker-related)
 
 [Updating cluster components and managed add-ons](/docs/openshift?topic=openshift-update-components#update-components)
 
@@ -2728,8 +2728,8 @@ subcollection: openshift
 * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
 
 
-### Maintaining worker nodes
-{: #sitemap_maintaining_worker_nodes}
+### Managing worker pools
+{: #sitemap_managing_worker_pools}
 
 
 [Updating flavors (machine types)](/docs/openshift?topic=openshift-update-flavors#update-flavors)
@@ -2746,15 +2746,24 @@ subcollection: openshift
 
 * [Related links](/docs/openshift?topic=openshift-worker-scaledown-logic#worker-scaledown-related)
 
-[Creating and managing dedicated hosts on VPC infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
+[Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
 
-* [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli)
+* [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-create-labels)
 
-* [Removing worker nodes from a dedicated host in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-worker-nodes-cli)
+* [Resizing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-resize)
 
-* [Removing dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-hosts-cli)
+* [Rebalancing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-rebalance)
 
-* [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
+* [Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-update)
+
+* [Adding zones to a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-addzone)
+
+* [Removing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-remove)
+
+
+### Migrating worker node operating systems
+{: #sitemap_migrating_worker_node_operating_systems}
+
 
 [Migrating VPC worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
@@ -2810,19 +2819,20 @@ subcollection: openshift
 
 [Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-migrate-rhel-9#migrate-rhel-9)
 
-[Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
 
-* [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-create-labels)
+### Managing worker node hosts
+{: #sitemap_managing_worker_node_hosts}
 
-* [Resizing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-resize)
 
-* [Rebalancing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-rebalance)
+[Creating and managing dedicated hosts on VPC infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
 
-* [Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-update)
+* [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli)
 
-* [Adding zones to a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-addzone)
+* [Removing worker nodes from a dedicated host in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-worker-nodes-cli)
 
-* [Removing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-remove)
+* [Removing dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-hosts-cli)
+
+* [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
 
 [Preparing IBM Cloud host maintenance updates security enhancements](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
 
@@ -2833,6 +2843,11 @@ subcollection: openshift
     * [Workers in Classic clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-classic)
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
+
+
+### Managing worker node resources
+{: #sitemap_managing_worker_node_resources}
+
 
 [Tagging and labeling clusters and services](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
@@ -3330,8 +3345,8 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-vpc-migrate-manual#vpc-migrate-manual-next)
 
 
-## Security and access
-{: #sitemap_security_and_access}
+## Secure clusters and manage access
+{: #sitemap_secure_clusters_and_manage_access}
 
 
 
@@ -3620,8 +3635,8 @@ subcollection: openshift
 * [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
 
 
-## Images and registries
-{: #sitemap_images_and_registries}
+## Manage images and registries
+{: #sitemap_manage_images_and_registries}
 
 
 [Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
@@ -3756,8 +3771,8 @@ subcollection: openshift
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
 
 
-## Networking
-{: #sitemap_networking}
+## Configure networking
+{: #sitemap_configure_networking}
 
 
 
@@ -4120,8 +4135,8 @@ subcollection: openshift
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
 
 
-## App deployment
-{: #sitemap_app_deployment}
+## Deploy apps
+{: #sitemap_deploy_apps}
 
 
 [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy#plan_deploy)
@@ -4739,10 +4754,6 @@ subcollection: openshift
 
     * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
-[Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
-
-* [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
-
 [Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
 
 * [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
@@ -4750,6 +4761,10 @@ subcollection: openshift
 * [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
 
 * [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
+
+[Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
 
 [Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
 
@@ -4766,8 +4781,8 @@ subcollection: openshift
 * [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
 
 
-## Autoscaling
-{: #sitemap_autoscaling}
+## Autoscale clusters
+{: #sitemap_autoscale_clusters}
 
 
 [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
@@ -4843,8 +4858,8 @@ subcollection: openshift
 [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-ca_update_worker_node_pool#ca_update_worker_node_pool)
 
 
-## Storage
-{: #sitemap_storage}
+## Set up storage
+{: #sitemap_set_up_storage}
 
 
 [Storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
@@ -5886,8 +5901,8 @@ subcollection: openshift
 * [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-file_storage#file-classic-trusted-profile)
 
 
-## Add-ons and operators
-{: #sitemap_add-ons_and_operators}
+## Install add-ons and operators
+{: #sitemap_install_add-ons_and_operators}
 
 
 [Add-ons for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-addons#addons)
@@ -5969,8 +5984,8 @@ subcollection: openshift
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
 
 
-## OpenShift AI
-{: #sitemap_openshift_ai}
+## Deploy OpenShift AI
+{: #sitemap_deploy_openshift_ai}
 
 
 [About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
@@ -6040,8 +6055,8 @@ subcollection: openshift
 * [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
 
 
-## Advanced Cluster Management
-{: #sitemap_advanced_cluster_management}
+## Use Advanced Cluster Management
+{: #sitemap_use_advanced_cluster_management}
 
 
 [About the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm-about#acm-about)
@@ -6097,8 +6112,8 @@ subcollection: openshift
 * [Deleting the ACM add-on](/docs/openshift?topic=openshift-acm&interface=cli#delete)
 
 
-## OpenShift Virtualization
-{: #sitemap_openshift_virtualization}
+## Use OpenShift Virtualization
+{: #sitemap_use_openshift_virtualization}
 
 
 [OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
@@ -6534,8 +6549,8 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-next-steps)
 
 
-## Observability
-{: #sitemap_observability}
+## Set up observability
+{: #sitemap_set_up_observability}
 
 
 [Logging for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-logging#logging)

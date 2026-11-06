@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-11-05"
+lastupdated: "2026-11-06"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -443,7 +443,7 @@ No, you cannot move cluster to a different account from the one it was created i
 - Make sure that your cluster always runs a [supported {{site.data.keyword.redhat_openshift_notm}} version](/docs/openshift?topic=openshift-openshift_versions).
 - When a new {{site.data.keyword.redhat_openshift_notm}} minor version is released, an older version is shortly deprecated after and then becomes unsupported.
 
-For more information, see [Updating the master](/docs/openshift?topic=openshift-update-master), [Classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic), and [VPC worker nodes](/docs/openshift?topic=openshift-update-workers-vpc).
+For more information, see [Updating the master](/docs/openshift?topic=openshift-update-master), [VPC worker nodes](/docs/openshift?topic=openshift-update-workers-vpc), and [Classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic).
 
 ## What operations are blocked if my cluster is running an unsupported operating system?
 {: #unsupported_os}
