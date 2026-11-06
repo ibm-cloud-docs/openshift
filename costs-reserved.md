@@ -46,7 +46,6 @@ Before you begin
 {: #ri-review}
 
 You can review your {{site.data.keyword.openshiftlong_notm}} reservation usage and billing details.
-{: shortdesc}
 
 Before you begin, make sure that you have the following roles in {{site.data.keyword.cloud_notm}} IAM.
 * **Viewer** platform access role for **Kubernetes Service** to view reservation usage details.

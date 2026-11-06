@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-11-06"
 
 keywords: openshift, clusters, access, vpe, virtual private endpoint, vpc, cross-account
 
@@ -57,7 +57,7 @@ For clusters that run version [4.13]{: tag-red}: If you enabled only the private
 {: #protect-service-endpoints-with-cbr}
 
 Private service endpoint allowlists are no longer supported.  Migrate from private service endpoint allowlists to context based restrictions as soon as possible. For specific migration steps, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
-{: unsupported}
+{: important}
 
 Control access to your public and private service endpoints using context based restriction (CBR) rules.
 {: shortdesc}

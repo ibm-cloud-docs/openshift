@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-07-07"
+  years: 2024, 2026
+lastupdated: "2026-11-06"
 
 keywords: monitoring, openshift, observability, metrics
 
@@ -76,7 +76,7 @@ With {{site.data.keyword.mon_full_notm}}, you can collect cluster and pod metric
 {: #migrating-new-agent}
 
 The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. You can now manage your logging and monitoring integrations from the console or through the Helm charts.
-{: unsupported}
+{: important}
 
 For more information, see the following links.
 - [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-kubernetes_cluster).

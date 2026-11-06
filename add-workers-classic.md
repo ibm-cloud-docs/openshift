@@ -35,7 +35,7 @@ If you have a multizone cluster, keep its worker node resources balanced. Make s
 
 
 Reservations for classic worker nodes are no longer supported, and you can't create new reservations. Existing reservations continue to work until their contracts expire. If you have an existing reservation contract that is due to expire, you must create a new worker pool that does not use a reservation and migrate your workloads before the contract expiration date. For more information, see [Reservations for classic worker node costs](/docs/openshift?topic=openshift-reservations).
-{: unsupported}
+{: important}
 
 ## Creating a new worker pool
 {: #add_pool}
