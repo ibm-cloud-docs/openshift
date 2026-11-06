@@ -2957,8 +2957,6 @@ subcollection: openshift
 
 * [Migrating workloads from reservations](/docs/openshift?topic=openshift-reservations#reservations-deprecation-migrate)
 
-* [About reservations](/docs/openshift?topic=openshift-reservations#ri-about)
-
 * [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
 
 * [Next steps](/docs/openshift?topic=openshift-reservations#reservations-next)

@@ -21,13 +21,14 @@ Review information about existing reservations for classic infrastructure worker
 {: shortdesc}
 
 Reservations for classic infrastructure worker nodes are no longer supported. You can't create new reservations or request access to reservations. Existing reservations and their contracts continue to work, and you can still view them, until each contract expires.
-{: unsupported}
+{: important}
 
 ## Migrating workloads from reservations
 {: #reservations-deprecation-migrate}
 
-To prevent loss of service, you must create non-reserved worker pools and migrate your workloads before each reservation contract expires. If a contract expires while you have more worker nodes in use than the remaining reservation capacity, worker nodes that exceed the capacity are deleted automatically.
-{: important}
+
+Before you begin
+:   To prevent loss of service, you must create non-reserved worker pools and migrate your workloads before each reservation contract expires. If a contract expires while you have more worker nodes in use than the remaining reservation capacity, worker nodes that exceed the capacity are deleted automatically.
 
 1. Find your active reservation contracts and note the expiration date of each one. The expiration date is your deadline for migrating any workloads that use that contract's worker nodes.
    1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
@@ -40,19 +41,6 @@ To prevent loss of service, you must create non-reserved worker pools and migrat
 3. Migrate your workloads from the reserved worker pool to the new worker pool. Use labels or node selectors to reschedule your existing workloads to the new worker pool.
 
 4. Delete the worker pools that use reservations after workload migration is complete.
-
-## About reservations
-{: #ri-about}
-
-A reservation is an {{site.data.keyword.cloud_notm}} resource that describes the flavor, location, and other details of worker nodes that you purchased. Contracts associated with a reservation are agreements to pay a fixed monthly amount for a set number of worker nodes for a 1 or 3 year term.
-
-Reservations were available only for classic infrastructure worker nodes in multizone regions (MZRs). Worker pools that use reservations cannot use the cluster autoscaler add-on.
-{: note}
-
-When a contract expires, your reservation is checked against remaining capacity from other active contracts. If you have more worker nodes in use than the remaining capacity, worker nodes that exceed the total capacity are deleted. To avoid unexpected deletions, scale down your worker pools before a contract ends to match the remaining reservation capacity.
-{: important}
-
-You cannot modify the terms of a contract, such as the duration, number of worker nodes, or flavor. You can remove unneeded worker nodes from your clusters, but you cannot get a refund for unused capacity.
 
 ## Reviewing reservation usage
 {: #ri-review}
