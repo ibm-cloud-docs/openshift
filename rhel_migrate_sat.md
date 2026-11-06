@@ -2,12 +2,13 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-11-05"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, satellite
 
 subcollection: openshift
+content-type: howto
 
 ---
 
@@ -32,11 +33,11 @@ To migrate to RHCOS, you must provision a new worker pool, then delete the previ
 Run the following command to update the master.
 
 ```sh
-ibmcloud ks cluster master update --cluster CLUSTERNAMEORID --version 4.18_openshift
+ibmcloud oc cluster master update --cluster CLUSTERNAMEORID --version 4.18_openshift
 ```
 {: pre}
 
-## Step 2: Creating a new RHCOS worker pool
+## Step 2: Create a new RHCOS worker pool
 {: #create-pool-rhcos}
 
 - Make sure to specify `RHCOS` as the `--operating-system` of the new pool.
@@ -99,7 +100,7 @@ For more information about rescheduling workloads, see [Safely Drain a Node](htt
 
 * Migrate per worker pool by deleting your entire RHEL worker pool.
     ```sh
-    ibmcloud ks worker-pool rm --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
+    ibmcloud oc worker-pool rm --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
     ```
     {: pre}
 

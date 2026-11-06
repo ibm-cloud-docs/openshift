@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-11-05"
 
 
 keywords: openshift, version, update, upgrade
@@ -29,7 +29,7 @@ Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} 
 
 Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Change log entries that address other security vulnerabilities but don't also refer to an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
 
-Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. Before you update, see [Preparing to update your cluster](/docs/openshift?topic=openshift-update-prepare). For steps to update your cluster, see [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update).
 
 For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the {{site.data.keyword.redhat_openshift_notm}} release notes.
 
@@ -47,10 +47,6 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 
 RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does not support RHEL 8. If you have RHEL 8 worker nodes, migrate them to RHEL 9 or RHCOS before you upgrade to version 4.18. For more information, see [Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation).
 {: important}
-
-- `†` Indicates dates that are tentative and subject to change.
-- `*` Indicates operating systems that are deprecated.
-
 
 
 
@@ -149,13 +145,42 @@ Estimated days and versions are provided for general understanding. Actual avail
 
 
 
+## Update types
+{: #update-types}
 
+Your cluster has three types of updates: major, minor, and patch. As updates become available, you are notified when you view information about the cluster master or worker nodes, such as with the `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get` commands.
+{: shortdesc}
 
 IBM provides bi-weekly worker node fix packs. IBM's goal is to remediate detected, legitimate vulnerabilities within an appropriate time for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
 
 For {{site.data.keyword.redhat_openshift_notm}}, fix packs are applied to the latest minor release and patch for the targeted operating system.
 
 To keep your nodes secure, you must install worker node fix packs as soon as possible. You can subscribe to notifications to be alerted when a new update is available.
+
+|Update type|Examples of version labels|Updated by|Impact|
+|-----|-----|-----|-----|
+|Major|4.x.x|You|Operation changes for clusters, including scripts or deployments.|
+|Minor|x.22.x|You|Operation changes for clusters, including scripts or deployments.|
+|Patch|4.x.z_1510_openshift|IBM and you|{{site.data.keyword.redhat_openshift_notm}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
+{: caption="Impacts of {{site.data.keyword.redhat_openshift_notm}} updates" caption-side="bottom"}
+
+Major and minor updates (4.x)
+:   First, [update your master node](/docs/openshift?topic=openshift-update-master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#update-checklist).
+    - You can't update a {{site.data.keyword.redhat_openshift_notm}} master two or more minor versions ahead (n+2). For example, if your current master is version 4.15 and you want to update to 4.17, you must update to 4.16 first.
+    - Worker nodes can't run a {{site.data.keyword.redhat_openshift_notm}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only up to one version behind the master version (`n-1`).
+    - If you use a `oc` CLI version that does not match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-cli-install) up-to-date.
+
+Patch updates (4.x.z_1510_openshift)
+:   Changes across patches are documented in the change log of each version. Master patches are applied automatically, but you initiate worker node patches and updates. Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`.
+:   Patches can be for worker nodes, masters, or both.
+    - **Worker node patches**: Check monthly to see whether an update is available. The command to use depends on your cluster infrastructure type and worker node flavor.
+        - **Classic clusters**: Use the [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli) or [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) command. During an update or reload, the worker node machine is reimaged and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage-plan).
+        
+        - **VPC virtual server instance (VSI) workers**: Use the [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) command. The old worker node is deleted and a new one is provisioned in its place. Data is deleted if not stored outside the worker node.
+        - **VPC bare metal workers**: Use the [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) command. The node is reloaded in place and retains its IP address. Data on local disks is deleted if not stored outside the worker node.
+        
+        
+    - **Master patches**: Master patches are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, as noted in the change log, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can choose to safely use the [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply.
 
 ## Archive
 {: #version-archive}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-11-05"
 
 
 keywords: portworx, kubernetes, openshift
@@ -19,7 +19,7 @@ subcollection: openshift
 # Updating Portworx in your cluster
 {: #storage_portworx_update}
 
-If you use Portworx in a classic cluster, see [Updating Classic worker nodes](/docs/openshift?topic=openshift-update&interface=ui#worker_node). The following steps focus on VPC worker node updates.
+If you use Portworx in a classic cluster, see [Updating Classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic). The following steps focus on VPC worker node updates.
 
 
 ## VPC: Updating worker nodes with Portworx volumes
@@ -36,7 +36,7 @@ Update only one worker node at a time. After the worker node update is complete,
 
 1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-enterprise/operations/troubleshooting/enter-maintenance-mode){: external}.
 
-2. [Update your VPC worker nodes](/docs/openshift?topic=openshift-update#vpc_worker_node).
+2. [Update your VPC worker nodes](/docs/openshift?topic=openshift-update-workers-vpc).
 
 3. [Attach raw {{site.data.keyword.block_storage_is_short}} to your worker nodes](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
 

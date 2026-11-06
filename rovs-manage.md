@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-05"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -268,9 +268,7 @@ Healthy Virtualization Service clusters show two informational OpenShift alerts.
 :   Severity: Info. The alert reports an unsafe modification of the `kubevirt.kubevirt.io/jsonpatch` annotation in the `HyperConverged` resource.
 
 `ODFNodeMTULessThan9000`
-:   Severity: Info. The alert reports that at least one node in the cluster has a network interface, excluding virtual interfaces, with an MTU less than 9000. ODF recommends an MTU of 9000 or greater for the storage network.
-
-[VERIFY: Reason that each alert is expected on healthy Virtualization Service clusters, for example, that the add-on sets the annotation and that the OVN MTU is fixed at 8900.]
+:   Severity: Info. The alert reports that at least one node in the cluster has a network interface, excluding virtual interfaces, with an MTU less than 9000. ODF recommends an MTU of 9000 or greater for the storage network. This alert is expected because Virtualization Service clusters use a fixed OVN MTU of 8900, which is less than 9000. You must not change the pre-configured MTU settings. For more information, see [Virtualization Service limitations](/docs/openshift?topic=openshift-rovs-limitations).
 
 ### Viewing cluster logs
 {: #rovs-manage-logs}

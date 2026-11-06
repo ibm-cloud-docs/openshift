@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-11-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools
@@ -60,8 +60,6 @@ To create a cluster in a resource group other than the default, you need at leas
 {: step}
 
 If you know what kind of cluster you need already, you can start thinking about what kind of cluster-specific setup tasks you might complete. If you don't know what kind of cluster you need yet, no worries! You can make these decisions later.
-
-1. **Classic clusters only**: Consider [creating a reservation](/docs/openshift?topic=openshift-reservations) to lock in a discount over 1 or 3 year terms for your worker nodes. After you create the cluster, add worker pools that use the reserved instances. Typical savings range between 30-50% compared to regular worker node costs.
 
 1. **VPC clusters only**: Set up your IBM Cloud infrastructure networking to allow worker-to-master and user-to-master communication. Your VPC clusters are created with a public and a private cloud service endpoint by default. **Optional**: If you want your VPC clusters to communicate with classic clusters over the private network interface, you can choose to set up classic infrastructure access from the VPC that your cluster is in. Note that you can set up classic infrastructure access for only one VPC per region and [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) is required in your {{site.data.keyword.cloud_notm}} account. For more information, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure).
 

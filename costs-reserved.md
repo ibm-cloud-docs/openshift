@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-11-06"
 
-keywords: openshift, reservations, worker node, deprecated, end of support
+keywords: openshift, reservations, worker node, unsupported, end of support
 
 subcollection: openshift
 
@@ -17,20 +17,11 @@ subcollection: openshift
 
 [Classic infrastructure]{: tag-classic-inf}
 
-Review information about reservations for classic infrastructure worker nodes on {{site.data.keyword.openshiftlong}}, including the deprecation timeline and steps to migrate your workloads.
+Review information about existing reservations for classic infrastructure worker nodes on {{site.data.keyword.openshiftlong}}, including how to migrate your workloads and review reservation usage.
 {: shortdesc}
 
-Reservations for classic infrastructure worker nodes are deprecated. No new reservation contracts can be created after 15 October 2026. Existing reservations and contracts continue to be supported until their contract expiration dates.
-{: deprecated}
-
-## Deprecation timeline
-{: #reservations-deprecation-timeline}
-
-| Stage | Date | Description |
-| --- | --- | --- |
-| Deprecation announcement | July 2025 | Reservations on {{site.data.keyword.openshiftlong}} are deprecated. No new reservations can be created. |
-| End of new contracts | 15 October 2026 | No new reservation contracts can be created. Existing contracts continue until their individual expiration dates. |
-{: caption="Reservations deprecation timeline" caption-side="bottom"}
+Reservations for classic infrastructure worker nodes are no longer supported. You can't create new reservations or request access to reservations. Existing reservations and their contracts continue to work, and you can still view them, until each contract expires.
+{: unsupported}
 
 ## Migrating workloads from reservations
 {: #reservations-deprecation-migrate}
@@ -55,7 +46,7 @@ To prevent loss of service, you must create non-reserved worker pools and migrat
 
 A reservation is an {{site.data.keyword.cloud_notm}} resource that describes the flavor, location, and other details of worker nodes that you purchased. Contracts associated with a reservation are agreements to pay a fixed monthly amount for a set number of worker nodes for a 1 or 3 year term.
 
-Reservations are available only for classic infrastructure worker nodes in multizone regions (MZRs). Worker pools that use reservations cannot use the cluster autoscaler add-on.
+Reservations were available only for classic infrastructure worker nodes in multizone regions (MZRs). Worker pools that use reservations cannot use the cluster autoscaler add-on.
 {: note}
 
 When a contract expires, your reservation is checked against remaining capacity from other active contracts. If you have more worker nodes in use than the remaining capacity, worker nodes that exceed the total capacity are deleted. To avoid unexpected deletions, scale down your worker pools before a contract ends to match the remaining reservation capacity.

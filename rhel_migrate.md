@@ -2,12 +2,13 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-11-05"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, vpc
 
 subcollection: openshift
+content-type: howto
 
 ---
 
@@ -49,7 +50,7 @@ Migrate your VPC clusters to use RHCOS worker nodes as soon as possible.
 
 Complete the following steps to migrate your worker nodes to RHCOS.
 
-To migrate to RHCOS, you must provision a new worker pool, then delete the previous RHEL worker pool. The new worker pool must reside in the same zone as the previous worker pool. 
+To migrate to RHCOS, you must provision a new worker pool, then delete the previous RHEL worker pool. The new worker pool must reside in the same zone as the previous worker pool.
 
 ## Step 1: Upgrade your cluster master
 {: #upgrade-cluster-rhcos}
@@ -57,11 +58,11 @@ To migrate to RHCOS, you must provision a new worker pool, then delete the previ
 Run the following command to update the master.
 
 ```sh
-ibmcloud ks cluster master update --cluster CLUSTERNAMEORID --version 4.18_openshift
+ibmcloud oc cluster master update --cluster CLUSTERNAMEORID --version 4.18_openshift
 ```
 {: pre}
 
-## Step 2: Creating a new RHCOS worker pool
+## Step 2: Create a new RHCOS worker pool
 {: #create-pool-rhcos}
 
 Before you create a new RHCOS worker pool, review the instance group quota limit. RHCOS clusters have a maximum of 12 instance groups per cluster. One instance group is created for each zone in each worker pool. For example, if you have 3 worker pools with 3 zones each, you use 9 of the 12 available instance groups. If you need more than 12 instance groups, [contact IBM Support](/docs/openshift?topic=openshift-get-help) to request an account-wide quota increase that applies to all clusters in your account.
@@ -127,7 +128,7 @@ For more information about rescheduling workloads, see [Safely Drain a Node](htt
 
 * Migrate per worker pool by deleting your entire RHEL worker pool.
     ```sh
-    ibmcloud ks worker-pool rm --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
+    ibmcloud oc worker-pool rm --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
     ```
     {: pre}
 

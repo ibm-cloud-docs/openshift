@@ -2,12 +2,13 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-11-05"
 
 
 keywords: rhel, os, operating system, rhel 9, 418, migration, classic
 
 subcollection: openshift
+content-type: howto
 
 ---
 
@@ -25,9 +26,11 @@ For RHEL 9, the `/tmp` directory is a separate partition that has the `nosuid`, 
 The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't supported. Review the [Kubernetes migration documentation for `cgroup` v2](https://kubernetes.io/docs/concepts/architecture/cgroups/#migrating-to-cgroup-v2) and verify that your applications fully support `cgroup` v2. There are known issues with older versions of Java that may cause out of memory (OOM) issues for workloads.
 {: important}
 
+To migrate to RHEL 9, you set the operating system for an existing worker pool and then update each worker node in the pool.
+
 1. Review your worker pool operating systems to find which pools you need to migrate.
     ```sh
-    ibmcloud ks worker-pools -c CLUSTER
+    ibmcloud oc worker-pools -c CLUSTER
     ```
     {: pre}
 
@@ -40,7 +43,7 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
 
 1. Update each worker node in the worker pool by running the [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli) for Classic clusters or [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) for VPC clusters. 
 
-    Make sure that you have enough worker nodes to support your workload while you update or replace the relevant worker nodes. For more information, see [Updating VPC worker nodes](/docs/containers?topic=containers-update&interface=ui#vpc_worker_node) or [Updating classic worker nodes](/docs/containers?topic=containers-update&interface=ui#worker_node).
+    Make sure that you have enough worker nodes to support your workload while you update or replace the relevant worker nodes. For more information, see [Updating VPC worker nodes](/docs/openshift?topic=openshift-update-workers-vpc) or [Updating classic worker nodes](/docs/openshift?topic=openshift-update-workers-classic).
     {: tip}
 
     Example command to update Classic worker nodes.
