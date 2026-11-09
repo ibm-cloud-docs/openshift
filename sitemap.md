@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-11-06"
+lastupdated: "2026-11-09"
 
 
 keywords: openshift
@@ -582,6 +582,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov26)
+
+    * [6 November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0626)
+
+        * CLI version 1.0.905 is available.
 
     * [5 November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0526)
 
@@ -8395,6 +8399,8 @@ subcollection: openshift
     * [`ibmcloud ks zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
+
+* [Version v1.0.905](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01905)
 
 * [Version v1.0.904](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01904)
 

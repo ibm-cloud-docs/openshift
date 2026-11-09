@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-11-04"
+lastupdated: "2026-11-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -25,6 +25,12 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 
 Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
+
+## Version v1.0.905
+{: #cli-01905}
+
+Version 1.0.905 of the CLI was released on 06 November 2026.
+- Updates the CLI command usage syntax for required, repeatable options from `--<option> <VALUE> [--<option> <VALUE> ...]` to `(--<option> <VALUE> ...)`.
 
 ## Version v1.0.904
 {: #cli-01904}
