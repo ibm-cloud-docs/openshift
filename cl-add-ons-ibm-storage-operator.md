@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-11-05"
+lastupdated: "2026-11-09"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -57,6 +57,15 @@ Review the version history for IBM Storage Operator.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
+
+
+### 09 November 2026, Version 1.0 - v1.0.69_383028708
+{: #cl-add-ons-ibm-storage-operator-v1069_383028708}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-19445](https://nvd.nist.gov/vuln/detail/cve-2026-19445){: external}, [CVE-2026-77214](https://nvd.nist.gov/vuln/detail/cve-2026-77214){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-94453](https://nvd.nist.gov/vuln/detail/cve-2026-94453){: external}, [CVE-2026-77206](https://nvd.nist.gov/vuln/detail/cve-2026-77206){: external}, [CVE-2026-97689](https://nvd.nist.gov/vuln/detail/cve-2026-97689){: external}, [CVE-2026-12345](https://nvd.nist.gov/vuln/detail/cve-2026-12345){: external}, [CVE-2026-102633](https://nvd.nist.gov/vuln/detail/cve-2026-102633){: external}, [CVE-2026-97687](https://nvd.nist.gov/vuln/detail/cve-2026-97687){: external}, [CVE-2026-77207](https://nvd.nist.gov/vuln/detail/cve-2026-77207){: external}, [CVE-2026-34743](https://nvd.nist.gov/vuln/detail/cve-2026-34743){: external}, and [CVE-2026-19553](https://nvd.nist.gov/vuln/detail/cve-2026-19553){: external}.
+- Updates Go to version `1.26.10`.
 
 
 ### 05 November 2026, Version 1.0 - v1.0.68_381690929

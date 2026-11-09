@@ -583,7 +583,13 @@ subcollection: openshift
 
 * [November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov26)
 
-    * [6 November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0626)
+    * [9 November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0926)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
 
         * CLI version 1.0.905 is available.
 
@@ -9124,6 +9130,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [09 November 2026, Version 1.0 - v1.0.32_384363918](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1032_384363918)
+
     * [29 October 2026, Version 1.0 - v1.0.31_379588168](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1031_379588168)
 
     * [15 October 2026, Version 1.0 - v1.0.30_379049185](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1030_379049185)
@@ -9161,6 +9169,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-supported-versions)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
+
+    * [09 November 2026, Version 1.0 - v1.0.69_383028708](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1069_383028708)
 
     * [05 November 2026, Version 1.0 - v1.0.68_381690929](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1068_381690929)
 
@@ -9875,6 +9885,8 @@ subcollection: openshift
 * [Supported versions](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-supported-versions)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [09 November 2026, Version 2.0 - v2.0.62_383039676](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2062_383039676)
 
     * [05 November 2026, Version 2.0 - v2.0.60_381677618](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2060_381677618)
 

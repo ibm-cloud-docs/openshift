@@ -29,12 +29,23 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2026
 {: #openshift-nov26}
 
-### 6 November 2026
-{: #openshift-nov0626}
+
+### 9 November 2026
+{: #openshift-nov0926}
 {: release-note}
+
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 CLI version 1.0.905 is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 
 ### 5 November 2026
 {: #openshift-nov0526}

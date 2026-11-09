@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-09"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -59,10 +59,19 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### 29 October 2026, Version 1.0 - v1.0.31_379588168
-{: #cl-add-ons-ibm-object-csi-driver-v1031_379588168}
+### 09 November 2026, Version 1.0 - v1.0.32_384363918
+{: #cl-add-ons-ibm-object-csi-driver-v1032_384363918}
 
 [Default version]{: tag-green}
+
+- Updates Go to version `1.26.10`.
+- Remove SCC related RBAC permissions from clusterroles in IKS clusters 
+- rclone additional cli param support 
+- s3fs updated to 1.97 
+
+
+### 29 October 2026, Version 1.0 - v1.0.31_379588168
+{: #cl-add-ons-ibm-object-csi-driver-v1031_379588168}
 
 - Resolves the following CVEs: [CVE-2026-111943](https://nvd.nist.gov/vuln/detail/cve-2026-111943){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-114437](https://nvd.nist.gov/vuln/detail/cve-2026-114437){: external}, and [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}.
 - Updates Go to version `1.26.10`.
