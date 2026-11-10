@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-11-05"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -24,7 +24,7 @@ Plan, estimate, review, and adjust your cluster environment to understand and co
 ## Understanding costs by component
 {: #costs-for-clusters}
 
-With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as {{site.data.keyword.watson}} AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/account?topic=account-charges#charges) and billed by various incremental rates such as monthly or hourly.
+With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as {{site.data.keyword.watson}} AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/account?topic=account-billing-pricing-charges) and billed by various incremental rates such as monthly or hourly.
 {: shortdesc}
 
 Monthly resources are billed based on the first of the month for usage in the preceding month. If you order a monthly resource in the middle of the month, you are charged a prorated amount for that month. However, if you cancel a resource in the middle of the month, you are still charged the full amount for the monthly resource.
@@ -45,7 +45,7 @@ When do worker nodes begin to incur charges?**
 **Virtual machines** feature greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price than bare-metal. However, VMs have a performance tradeoff when compared to bare metal specs, such as networking Gbps, RAM and memory thresholds, and storage options. Keep in mind these factors that impact your VM costs.
 * **Shared versus dedicated**: If you share the underlying hardware of the VM, the cost is less than dedicated hardware, but the physical resources are not dedicated to your VM.
 * **Hourly billing only**: Hourly billing offers more flexibility to order and cancel VMs quickly. You are charged an hourly rate that is metered for only the time that the worker node is provisioned. The time is not rounded up or down to the nearest hour, but is metered in minutes and charged at the hourly rate. For example, if your worker node is provisioned for 90 minutes, you are charged the hourly rate for 1.5 hours, not 2 hours.
-* **Tiered hours per month**: The [pricing](https://cloud.ibm.com/containers/cluster-management/catalog/about#pricing){: external} is billed hourly in [graduated tiered](/docs/account?topic=account-charges#graduated_tier). As your VM remains ordered for a tier of hours within a billing month, the hourly rate that you are charged lowers. The tiers of hours are as follows:
+* **Tiered hours per month**: The [pricing](https://cloud.ibm.com/containers/cluster-management/catalog/about#pricing){: external} is billed hourly in [graduated tiered](/docs/account?topic=account-billing-pricing-charges#graduated_tier). As your VM remains ordered for a tier of hours within a billing month, the hourly rate that you are charged lowers. The tiers of hours are as follows:
     * 0 - 150 hours
     * 151 - 290 hours
     * 291 - 540 hours
