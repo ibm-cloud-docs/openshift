@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
@@ -404,8 +404,8 @@ apiVersion: apps/v1
       app: wasliberty
   type: Opaque
   data:
-    username: dXNlcm5hbWU=
-    password: cGFzc3dvcmQ=
+    username: 111aaa111aaa
+    password: 111aaa111aaa
 ```
 {: codeblock}
 
@@ -601,8 +601,8 @@ metadata:
     app: wasliberty
 type: Opaque
 data:
-  username: dXNlcm5hbWU=
-  password: cGFzc3dvcmQ=
+  username: 111aaa111aaa
+  password: 111aaa111aaa
 ---
 
 apiVersion: v1
