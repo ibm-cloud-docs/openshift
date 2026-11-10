@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-11-10"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -183,9 +183,9 @@ The following example output shows the secret fields and their values in the `da
 ```yaml
 apiVersion: v1
 data:
-  arbitraryFVT: AAAaaAAaAAA1AAAaaAAa
-  userCredsFVT_password: aAAaa1aaaA=
-  userCredsFVT_username: aAAaaa==
+  arbitraryFVT: 111aaa111aaa111aaa11
+  userCredsFVT_password: 111aaa111a=
+  userCredsFVT_username: 111aaa==
 kind: Secret
 metadata:
   annotations:
@@ -232,9 +232,9 @@ Example fields listed in the `data` block of the secret details.
 
 ```sh
 data:
-  api_key: bmZrUHR1VS1fNVpMOExsTmIxeTdQcXFTSENMc2pTUjRsNTQyTzZkZ2ZQMkk=  # Default field type using the default `api_key` field name
-  custom_iam_name: bmZrUHR1VS1fNVpMOExsTmIxeTdQcXFTSENMc2pTUjRsNTQyTzZkZ2ZQMkk=  # Named field type using the specified `custom_iam_name` field name.
-  iam_api_key: bmZrUHR1VS1fNVpMOExsTmIxeTdQcXFTSENMc2pTUjRsNTQyTzZkZ2ZQMkk= # Prefixed field type using the `iam` name in Secrets Manager followed by the `api_key` default name.
+  api_key: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11  # Default field type using the default `api_key` field name
+  custom_iam_name: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11  # Named field type using the specified `custom_iam_name` field name.
+  iam_api_key: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11 # Prefixed field type using the `iam` name in Secrets Manager followed by the `api_key` default name.
 ```
 {: screen}
 

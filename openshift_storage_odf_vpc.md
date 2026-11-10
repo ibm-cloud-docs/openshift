@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -218,8 +218,8 @@ If you are using cluster wide encryption and storage class encryption, your API 
         ```yaml
         apiVersion: v1
         data:
-          IBM_KP_CUSTOMER_ROOT_KEY: AaAAAaZAAAAy11AAAyAAkaAaQtAAk0AAA2AzY5AjYaaa67aa # your base64 encoded root key ID
-          IBM_KP_SERVICE_API_KEY: AAAaaajAAAAAncmAAaaaaAAAAdAAId1AtVjBJRU1aAAaAeTh1aEw=AaaaA # your base64 encoded API
+          IBM_KP_CUSTOMER_ROOT_KEY: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11 # your base64 encoded root key ID
+          IBM_KP_SERVICE_API_KEY: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11 # your base64 encoded API
         kind: Secret
         metadata:
           name: ibm-hpcs-secret
