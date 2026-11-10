@@ -112,11 +112,11 @@ toc:
           topics:
           - topic: cluster-create-vpc-gen2.md
             navtitle: Creating VPC clusters (recommended)
-          - cluster-create-classic.md
           - topic: rovs-cluster-create.md
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
           - roks_da.md
+          - cluster-create-classic.md
       - topicgroup:
           label: Access clusters
           topics:
@@ -128,13 +128,13 @@ toc:
           - cluster-access-satellite.md
           - cluster-access-automation.md
           - cluster-access-admission-control.md
-          - topicgroup:
-              label: OpenShift console access
-              topics:
-              - access-type-set.md
-              - access_api_oauth_server.md
-              - cluster-access-wireguard.md
           - terraform-cluster-access.md
+      - topicgroup:
+          label: Manage OpenShift console access
+          topics:
+          - access-type-set.md
+          - access_api_oauth_server.md
+          - cluster-access-wireguard.md
       - topicgroup:
           label: Manage clusters
           topics:
@@ -262,11 +262,8 @@ toc:
           - trusted-ca.md
           - topic: tutorial-no-registry-cos.md
             navtitle: VPC cluster without a COS-backed registry
-          - topicgroup:
-              label: Satellite clusters
-              topics:
-              - satellite-clusters-registry.md
-              - satellite-registry-pull-secret.md
+          - satellite-clusters-registry.md
+          - satellite-registry-pull-secret.md
       - topicgroup:
           label: Configure networking
           topics:
@@ -467,12 +464,12 @@ toc:
           - openshift-ai-addon-install.md
           - openshift-ai-addon-manage.md
       - topicgroup:
-          label: Use Advanced Cluster Management
+          label: Advanced Cluster Management
           topics:
           - acm-about.md
           - acm-addon.md
       - topicgroup:
-          label: Use OpenShift Virtualization
+          label: OpenShift Virtualization
           topics:
           - topic: virt-overview.md
           - topicgroup:

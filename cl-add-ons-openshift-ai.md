@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-10"
 
 
 keywords: change log, version history, OpenShift AI
@@ -55,10 +55,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-420}
 
 
-### 28 October 2026, Version 420 - 420.0.5_380560911
-{: #cl-add-ons-openshift-ai-42005_380560911}
+### 10 November 2026, Version 420 - 420.0.5_383998933
+{: #cl-add-ons-openshift-ai-42005_383998933}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-78659](https://nvd.nist.gov/vuln/detail/cve-2026-78659){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-94440](https://nvd.nist.gov/vuln/detail/cve-2026-94440){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-111943](https://nvd.nist.gov/vuln/detail/cve-2026-111943){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-97030](https://nvd.nist.gov/vuln/detail/cve-2026-97030){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
+- Updates Go to version `1.27.3`.
+
+
+### 28 October 2026, Version 420 - 420.0.5_380560911
+{: #cl-add-ons-openshift-ai-42005_380560911}
 
 - Resolves the following CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
 - Updates Go to version `1.27.3`.
@@ -99,10 +106,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-419}
 
 
-### 28 October 2026, Version 419 - 419.1.4_380560732
-{: #cl-add-ons-openshift-ai-41914_380560732}
+### 10 November 2026, Version 419 - 419.1.5_383999138
+{: #cl-add-ons-openshift-ai-41915_383999138}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-78659](https://nvd.nist.gov/vuln/detail/cve-2026-78659){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-94440](https://nvd.nist.gov/vuln/detail/cve-2026-94440){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-111943](https://nvd.nist.gov/vuln/detail/cve-2026-111943){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-97030](https://nvd.nist.gov/vuln/detail/cve-2026-97030){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
+- Updates Go to version `1.27.3`.
+
+
+### 28 October 2026, Version 419 - 419.1.4_380560732
+{: #cl-add-ons-openshift-ai-41914_380560732}
 
 - Resolves the following CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
 - Updates Go to version `1.27.3`.
@@ -166,10 +180,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-418}
 
 
-### 28 October 2026, Version 418 - 418.1.6_380560874
-{: #cl-add-ons-openshift-ai-41816_380560874}
+### 10 November 2026, Version 418 - 418.1.7_383999661
+{: #cl-add-ons-openshift-ai-41817_383999661}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-78659](https://nvd.nist.gov/vuln/detail/cve-2026-78659){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-94440](https://nvd.nist.gov/vuln/detail/cve-2026-94440){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-111943](https://nvd.nist.gov/vuln/detail/cve-2026-111943){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-97030](https://nvd.nist.gov/vuln/detail/cve-2026-97030){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
+- Updates Go to version `1.27.3`.
+
+
+### 28 October 2026, Version 418 - 418.1.6_380560874
+{: #cl-add-ons-openshift-ai-41816_380560874}
 
 - Resolves the following CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
 - Updates Go to version `1.27.3`.
@@ -234,10 +255,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-417}
 
 
-### 28 October 2026, Version 417 - 417.1.6_380560813
-{: #cl-add-ons-openshift-ai-41716_380560813}
+### 10 November 2026, Version 417 - 417.1.7_383998828
+{: #cl-add-ons-openshift-ai-41717_383998828}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-78659](https://nvd.nist.gov/vuln/detail/cve-2026-78659){: external}, [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-94440](https://nvd.nist.gov/vuln/detail/cve-2026-94440){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, [CVE-2026-111943](https://nvd.nist.gov/vuln/detail/cve-2026-111943){: external}, [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}, [CVE-2026-97030](https://nvd.nist.gov/vuln/detail/cve-2026-97030){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
+- Updates Go to version `1.27.3`.
+
+
+### 28 October 2026, Version 417 - 417.1.6_380560813
+{: #cl-add-ons-openshift-ai-41716_380560813}
 
 - Resolves the following CVEs: [CVE-2026-78669](https://nvd.nist.gov/vuln/detail/cve-2026-78669){: external}, [CVE-2026-97031](https://nvd.nist.gov/vuln/detail/cve-2026-97031){: external}, [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, [CVE-2026-56866](https://nvd.nist.gov/vuln/detail/cve-2026-56866){: external}, [CVE-2026-78663](https://nvd.nist.gov/vuln/detail/cve-2026-78663){: external}, [CVE-2026-94439](https://nvd.nist.gov/vuln/detail/cve-2026-94439){: external}, [CVE-2026-94448](https://nvd.nist.gov/vuln/detail/cve-2026-94448){: external}, and [CVE-2026-97032](https://nvd.nist.gov/vuln/detail/cve-2026-97032){: external}.
 - Updates Go to version `1.27.3`.
