@@ -3,7 +3,7 @@
 copyright:
   years: 2026
 
-lastupdated: "2026-10-06"
+lastupdated: "2026-11-10"
 
 keywords: openshift, odf, openshift data foundation, virtualization, performance, osd, ceph, bulk flag, resource limits
 
@@ -61,6 +61,7 @@ ibmcloud oc cluster addon enable openshift-data-foundation \
   --param "osdStorageClassName=localblock" \
   --param "autoDiscoverDevices=true" \
   --param "resourceProfile=performance" \
+  --param "autoDetectFlexibleScaling=true" \
   --param "setDefaultStorageClassForVirtualization=true"
 ```
 {: pre}

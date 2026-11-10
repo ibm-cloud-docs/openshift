@@ -330,7 +330,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
    1. Review the add-on options for the version of the add-on that you want to deploy.
   
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.15.0
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.22.0
     ```
     {: pre}
 
@@ -340,13 +340,14 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
     {: note}
 
-    Example add-on options for version 4.15.0
+    Example add-on options for version 4.22.0
     ```sh
     Add-on Options
     Option                            Default Value
     osdStorageClassName               ibmc-vpc-block-metro-10iops-tier
     ocsUpgrade                        false
     billingType                       advanced
+    autoDetectFlexibleScaling         true
     autoDiscoverDevices               false
     hpcsBaseUrl                       <Please provide the KMS Base (public) URL>
     taintNodes                        false
@@ -377,7 +378,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
     Example command for enabling the add-on and automatically discovering local volumes, enabling the `performance` resource profile option, and enabling encryption with {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version VERSION --param "odfDeploy=true"  --param "resourceProfile=performance" --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version VERSION --param "odfDeploy=true"  --param "resourceProfile=performance" --param "autoDetectFlexibleScaling=true" --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
     ```
     {: pre}
 
@@ -461,6 +462,10 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       osdStorageClassName: localblock
       osdSize: "1"
       numOfOsd: 1
+      autoDetectFlexibleScaling: true
+      advanced:
+        hostNetwork: false
+        pgBulk: false
       billingType: advanced
       ocsUpgrade: false
       osdDevicePaths:
