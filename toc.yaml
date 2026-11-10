@@ -112,11 +112,11 @@ toc:
           topics:
           - topic: cluster-create-vpc-gen2.md
             navtitle: Creating VPC clusters (recommended)
-          - cluster-create-classic.md
           - topic: rovs-cluster-create.md
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
           - roks_da.md
+          - cluster-create-classic.md
       - topicgroup:
           label: Access clusters
           topics:
@@ -128,13 +128,13 @@ toc:
           - cluster-access-satellite.md
           - cluster-access-automation.md
           - cluster-access-admission-control.md
-          - topicgroup:
-              label: OpenShift console access
-              topics:
-              - access-type-set.md
-              - access_api_oauth_server.md
-              - cluster-access-wireguard.md
           - terraform-cluster-access.md
+      - topicgroup:
+          label: Manage OpenShift console access
+          topics:
+          - access-type-set.md
+          - access_api_oauth_server.md
+          - cluster-access-wireguard.md
       - topicgroup:
           label: Manage clusters
           topics:

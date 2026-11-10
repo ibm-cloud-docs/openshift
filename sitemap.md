@@ -2422,20 +2422,6 @@ subcollection: openshift
 
 * [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster-create-vpc-next-steps)
 
-[Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
-
-* [Prerequisites](/docs/openshift?topic=openshift-cluster-create-classic#classic-cluster-prereqs)
-
-* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic&interface=ui#clusters_ui)
-
-* [Creating a classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli#clusters_cli_steps)
-
-* [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli#cluster_create_classic)
-
-* [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster_classic_tf)
-
-* [Next steps for Classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster-create-classic-next-steps)
-
 [Creating an OpenShift Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
 
 * [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
@@ -2499,6 +2485,20 @@ subcollection: openshift
 * [Creating an API key](/docs/openshift?topic=openshift-roks_da#roks_da_api_key)
 
 * [Creating the deployable architecture](/docs/openshift?topic=openshift-roks_da#roks_da_creation)
+
+[Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
+
+* [Prerequisites](/docs/openshift?topic=openshift-cluster-create-classic#classic-cluster-prereqs)
+
+* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic&interface=ui#clusters_ui)
+
+* [Creating a classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli#clusters_cli_steps)
+
+* [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli#cluster_create_classic)
+
+* [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster_classic_tf)
+
+* [Next steps for Classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster-create-classic-next-steps)
 
 
 ## Access clusters
@@ -2585,9 +2585,15 @@ subcollection: openshift
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
 
+[Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
 
-### OpenShift console access
-{: #sitemap_openshift_console_access}
+* [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
+
+* [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
+
+
+## Manage OpenShift console access
+{: #sitemap_manage_openshift_console_access}
 
 
 [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
@@ -2609,12 +2615,6 @@ subcollection: openshift
 * [Allowing connections from VPN clients to the API server and OAuth server](/docs/openshift?topic=openshift-console-apiserver-oauthvpe#apiserver-oauth-allow)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
-
-[Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
-
-* [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
-
-* [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
 
 
 ## Manage clusters
