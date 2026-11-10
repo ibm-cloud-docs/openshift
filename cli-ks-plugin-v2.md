@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-11-06"
+lastupdated: "2026-11-10"
 
 keywords: containers, openshift, cli reference, kubernetes cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -4864,7 +4864,7 @@ ibmcloud ks experimental cluster master help
 
 
 
-[Expires on 2026-11-01] List the possible versions that the cluster master can be updated to.
+[Expires on 2026-12-01] List the possible versions that the cluster master can be updated to.
 
 ```sh
 ibmcloud ks experimental cluster master update-versions --cluster CLUSTER [--output OUTPUT] [-q]
@@ -4887,7 +4887,7 @@ ibmcloud ks experimental cluster master update-versions --cluster CLUSTER [--out
 #### Examples
 {: #experimental-cluster-master-update-versions-examples}
 
-[Expires on 2026-11-01] List the possible versions that the cluster master can be updated to
+[Expires on 2026-12-01] List the possible versions that the cluster master can be updated to
 
 ```sh
 ibmcloud ks experimental cluster master update-versions --cluster CLUSTER
