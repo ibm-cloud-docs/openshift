@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
@@ -70,6 +70,3 @@ You can use the `oc` CLI to deploy and manage resources in your {{site.data.keyw
 - For more information about the OpenShift CLI, see the following links.
     - [OpenShift CLI administrator command reference](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/cli_tools/openshift-cli-oc#cli-administrator-commands){: external}.
     - [OpenShift CLI developer command reference](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/cli_tools/openshift-cli-oc#cli-developer-commands){: external}.
-
-Red Hat OpenShift on IBM Cloud version 4.16 is now based on the RHEL 9.2 host operating system, which increases the micro-architecture requirements to x86-64-v2. As a result, host machines for IBM Cloud {{site.data.keyword.satelliteshort}} must support x86-64-v2 architecture for any location that contains a version 4.16 cluster. See [Host system requirements](/docs/satellite?topic=satellite-host-reqs) for more information. In addition, client machines used to run `oc` client version 4.16 must also support x86-64-v2 architecture. Client machines that do not meet this micro-architecture requirement must use a RHEL 8 based `oc` version 4.16 client. Refer to the list of [available `oc` version 4.16 clients](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.16/){: external}.
-{: important}
