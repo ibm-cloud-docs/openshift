@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -51,7 +51,7 @@ ODF is supported on private-only VPC clusters beginning with cluster version `4.
 ### Understanding `flexibleScaling` behavior
 {: #odf-flexible-scaling}
 
-Starting in OpenShift Data Foundation 4.21, `flexibleScaling` is automatically enabled for single-zone clusters and deployments with fewer than three availability zones. Flexible scaling allows storage clusters to scale more granularly instead of requiring scaling operations in multiples of three.
+Starting in OpenShift Data Foundation 4.21, `flexibleScaling` is automatically enabled for single-zone clusters and deployments with fewer than three availability zones if the `autoDetectFlexibleScaling` parameter is enabled, which is the default. Flexible scaling allows storage clusters to scale more granularly instead of requiring scaling operations in multiples of three.
 
 Granular expansion
 :   Scale storage by adding a single worker node or one or more OSDs, instead of scaling only in three-unit increments.
@@ -218,8 +218,8 @@ If you are using cluster wide encryption and storage class encryption, your API 
         ```yaml
         apiVersion: v1
         data:
-          IBM_KP_CUSTOMER_ROOT_KEY: AaAAAaZAAAAy11AAAyAAkaAaQtAAk0AAA2AzY5AjYaaa67aa # your base64 encoded root key ID
-          IBM_KP_SERVICE_API_KEY: AAAaaajAAAAAncmAAaaaaAAAAdAAId1AtVjBJRU1aAAaAeTh1aEw=AaaaA # your base64 encoded API
+          IBM_KP_CUSTOMER_ROOT_KEY: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11 # your base64 encoded root key ID
+          IBM_KP_SERVICE_API_KEY: 111aaa111aaa111aaa111aaa111aaa111aaa111aaa11 # your base64 encoded API
         kind: Secret
         metadata:
           name: ibm-hpcs-secret
@@ -332,20 +332,21 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Review the add-on options. 
 
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.15.0
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.22.0
     ```
     {: pre}
 
     For the best performance, it's recommended to include the `resourceProfile` option specified as `performance`. This option helps obtain enhanced performance levels based on the availability of resources during deployment. For more information on the `resourceProfile` option, see [Performance profiles](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.15/html/4.15_release_notes/new_features#performance_profiles){: external} in the Red Hat OpenShift ODF documentation
     {: tip}
 
-    Example add-on options for version 4.15.0
+    Example add-on options for version 4.22.0
     ```sh
     Add-on Options
     Option                            Default Value
     osdStorageClassName               ibmc-vpc-block-metro-10iops-tier
     ocsUpgrade                        false
     billingType                       advanced
+    autoDetectFlexibleScaling         true
     autoDiscoverDevices               false
     hpcsBaseUrl                       <Please provide the KMS Base (public) URL>
     taintNodes                        false
@@ -376,7 +377,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
     Example command to deploy the add-on with the default storage cluster settings, the `performance` resource profile, and encryption with {{site.data.keyword.hscrypto}} enabled.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version 4.15.0 --param "odfDeploy=true" --param "resourceProfile=performance" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version 4.22.0 --param "odfDeploy=true" --param "resourceProfile=performance" --param "autoDetectFlexibleScaling=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
     ```
     {: pre}
 
@@ -464,9 +465,10 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     region = "us-south" # Enter the region
 
     # For add-on deployment
-    odfVersion = "4.12.0"
+    odfVersion = "4.22.0"
 
     # For CRD Creation and Management
+    autoDetectFlexibleScaling = "true"
     autoDiscoverDevices = "false"
     billingType = "advanced"
     clusterEncryption = "false"
@@ -523,7 +525,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Create a custom resource definition called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of your storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
-    Example custom resource definition for installing ODF on all worker nodes on a 4.8 cluster.
+    Example custom resource definition for installing ODF on all worker nodes on a 4.22 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -534,12 +536,16 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       osdStorageClassName: <osdStorageClassName> # Specify an ODF storage class with a waitForFirstConsumer volume binding mode
       osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster. Use at least 250Gi OSDs for production workloads.
       numOfOsd: 1
+      autoDetectFlexibleScaling: true
+      advanced:
+        hostNetwork: false
+        pgBulk: false
       billingType: advanced
       ocsUpgrade: false
     ```
     {: codeblock}
 
-    Example custom resource definition for installing ODF only on specified worker nodes on a 4.8 cluster.
+    Example custom resource definition for installing ODF only on specified worker nodes on a 4.22 cluster.
 
     ```yaml
     apiVersion: ocs.ibm.io/v1
@@ -550,6 +556,10 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
       osdStorageClassName: <osdStorageClassName> # Specify an ODF storage class with a waitForFirstConsumer volume binding mode
       osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster. Use at least 250Gi OSDs for production workloads.
       numOfOsd: 1
+      autoDetectFlexibleScaling: true
+      advanced:
+        hostNetwork: false
+        pgBulk: false
       billingType: advanced
       ocsUpgrade: false
       workerNodes: # Specify the private IP addresses of the worker nodes where you want to install OCS.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -232,8 +232,8 @@ You can manually configure an {{site.data.keyword.cos_full_notm}} bucket for you
 
     ```sh
     [default]
-    aws_access_key_id = f1ab5fcf7XXXXXXXXXb2a14e046
-    aws_secret_access_key = 4c78ddfa763XXXXXXX23d1cc9350d1
+    aws_access_key_id = 111aaa111aaa111aaa111aaa111aaa11
+    aws_secret_access_key = 111aaa111aaa111aaa111aaa111aaa111aaa111aaa111aaa
     ```
     {: screen}
 

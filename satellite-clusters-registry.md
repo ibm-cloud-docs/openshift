@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-03-13"
+  years: 2023, 2026
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images,
@@ -71,8 +71,8 @@ Create a bucket to use when you set up your image registry. Your bucket must be 
     Example credentials to save. 
     ```sh
     "cos_hmac_keys": {
-        "access_key_id": "1111111a1111111a11aa1a111111111a11aa1a111a11a1a1",
-        "secret_access_key": "222222b222222b22bb2b22222222b22bb2b222b22b2b2"
+        "access_key_id": "111aaa111aaa111aaa111aaa111aaa11",
+        "secret_access_key": "111aaa111aaa111aaa111aaa111aaa111aaa111aaa111aaa"
     }
     ```
     {: screen}
