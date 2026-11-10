@@ -262,11 +262,8 @@ toc:
           - trusted-ca.md
           - topic: tutorial-no-registry-cos.md
             navtitle: VPC cluster without a COS-backed registry
-          - topicgroup:
-              label: Satellite clusters
-              topics:
-              - satellite-clusters-registry.md
-              - satellite-registry-pull-secret.md
+          - satellite-clusters-registry.md
+          - satellite-registry-pull-secret.md
       - topicgroup:
           label: Configure networking
           topics:
@@ -467,12 +464,12 @@ toc:
           - openshift-ai-addon-install.md
           - openshift-ai-addon-manage.md
       - topicgroup:
-          label: Use Advanced Cluster Management
+          label: Advanced Cluster Management
           topics:
           - acm-about.md
           - acm-addon.md
       - topicgroup:
-          label: Use OpenShift Virtualization
+          label: OpenShift Virtualization
           topics:
           - topic: virt-overview.md
           - topicgroup:

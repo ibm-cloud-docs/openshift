@@ -3759,11 +3759,6 @@ subcollection: openshift
 
 * [What's next?](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-next)
 
-
-### Satellite clusters
-{: #sitemap_satellite_clusters}
-
-
 [Setting up the internal image registry for {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters-registry#satellite-clusters-registry)
 
 * [Create an {{site.data.keyword.cos_full_notm}} instance that meets the requirements](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-cos-instance)
@@ -4034,7 +4029,7 @@ subcollection: openshift
 
 
 ### Satellite clusters
-{: #sitemap_satellite_clusters1}
+{: #sitemap_satellite_clusters}
 
 
 [Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
@@ -6067,8 +6062,8 @@ subcollection: openshift
 * [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
 
 
-## Use Advanced Cluster Management
-{: #sitemap_use_advanced_cluster_management}
+## Advanced Cluster Management
+{: #sitemap_advanced_cluster_management}
 
 
 [About the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm-about#acm-about)
@@ -6124,8 +6119,8 @@ subcollection: openshift
 * [Deleting the ACM add-on](/docs/openshift?topic=openshift-acm&interface=cli#delete)
 
 
-## Use OpenShift Virtualization
-{: #sitemap_use_openshift_virtualization}
+## OpenShift Virtualization
+{: #sitemap_openshift_virtualization}
 
 
 [OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
