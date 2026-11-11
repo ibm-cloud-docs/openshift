@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-11"
 
 keywords: openshift, classic, vpc, migrate, migration, quickstart, wizard
 
@@ -38,7 +38,7 @@ Make sure that you have the following items.
 - A Classic cluster. To check, go to **Containers** > **Clusters** in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and confirm that at least one cluster shows **Classic** as the infrastructure type.
 - At least the **Operator** (`containers-kubernetes.cluster.operate`) {{site.data.keyword.iamlong}} platform access role for {{site.data.keyword.openshiftlong_notm}} on both the Classic cluster and the VPC cluster. See [Assigning cluster access](/docs/openshift?topic=openshift-iam-platform-access-roles).
 - An {{site.data.keyword.cos_full_notm}} (COS) instance in the same account. The migration service uses COS to store generated metadata and migration plans.
-- An {{site.data.keyword.cloud_notm}} Backup and Recovery Service (BRS) instance in the same account and resource group as your Classic cluster. BRS is required to migrate workload and storage data.
+- An {{site.data.keyword.cloud_notm}} Backup and Recovery Service (BRS) instance in the same account as your Classic cluster. The BRS instance can be in any resource group in that account. BRS is required to migrate workload and storage data.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ## Step 1: Open the migration wizard
