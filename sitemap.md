@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-11-10"
+lastupdated: "2026-11-11"
 
 
 keywords: openshift
@@ -596,6 +596,8 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * CLI version 1.0.905 is available.
+
+        * Cluster autoscaler cluster add-on patch updates.
 
     * [5 November 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0526)
 
@@ -8833,6 +8835,8 @@ subcollection: openshift
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
+    * [09 November 2026, Version 2.0.0 - v200-23-0_383663343](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-23-0_383663343)
+
     * [05 November 2026, Version 2.0.0 - v200-22-0_380357599](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-22-0_380357599)
 
     * [26 October 2026, Version 2.0.0 - v200-21-0_380175534](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-21-0_380175534)
@@ -8866,6 +8870,8 @@ subcollection: openshift
     * [02 December 2025, Version 2.0.0 - v200-2_302959219](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-2_302959219)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
+
+    * [09 November 2026, Version 1.2.4 - v124-19-0_383663199](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-19-0_383663199)
 
     * [26 October 2026, Version 1.2.4 - v124-18-0_380208188](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-18-0_380208188)
 
@@ -9718,6 +9724,8 @@ subcollection: openshift
 [Satellite Storage Operator](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1.0)
+
+    * [10 November 2026, Version 1.0 - 1.0.91](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1091)
 
     * [29 October 2026, Version 1.0 - 1.0.89](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1089)
 
