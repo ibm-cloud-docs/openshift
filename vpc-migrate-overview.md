@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-11"
 
 keywords: openshift, classic, vpc, migrate, migration, overview, replatform, limitations, add-ons, version support, eligible clusters
 
@@ -81,7 +81,7 @@ Complete the following prerequisites before you open the migration wizard. Some 
 - Ensure that your Classic cluster runs a supported version of Kubernetes or {{site.data.keyword.openshiftshort}}. If the version is at end of support, [update it first](/docs/openshift?topic=openshift-update).
 - Install and update the {{site.data.keyword.cloud_notm}} CLI and the {{site.data.keyword.openshiftlong_notm}} plug-in. See [Installing the CLI](/docs/openshift?topic=openshift-cli-install).
 - Provision an {{site.data.keyword.cos_full_notm}} (COS) instance in the same account. The migration service uses COS to store generated metadata and migration plans.
-- Provision an {{site.data.keyword.cloud_notm}} Backup and Recovery Service (BRS) instance in the same resource group as your Classic cluster. BRS is the only supported method for migrating workload and storage data. You select the BRS instance during the workload migration step. See [Migrate workloads](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads-brs).
+- Provision an {{site.data.keyword.cloud_notm}} Backup and Recovery Service (BRS) instance in the same account as your Classic cluster. The BRS instance can be in any resource group in that account. BRS is the only supported method for migrating workload and storage data. You select the BRS instance during the workload migration step. See [Migrate workloads](/docs/openshift?topic=openshift-vpc-migrate-workloads#vpc-migrate-workloads-brs).
 - If your Classic cluster connects to on-premises networks by using Classic VPN or Direct Link 1.0, set up the equivalent VPC connectivity before you start workload migration. The migration service does not migrate these connections. See [Plan private connectivity](/docs/openshift?topic=openshift-vpc-migrate-plan#vpc-migrate-plan-connectivity).
 - Ensure that your Classic cluster is in a multizone region (MZR). If your cluster is in a single-zone region (SZR), see [Which clusters are eligible for migration?](#vpc-migrate-overview-limitations-cluster) before you continue.
 - Verify that your account has enough quota for the VPC resources that the migration creates. Check all quotas in [VPC quotas](/docs/vpc?topic=vpc-quotas){: external}.
