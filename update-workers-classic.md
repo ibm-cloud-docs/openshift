@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-11-05"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, update classic worker nodes, worker update, configmap, rolling update
@@ -206,7 +206,7 @@ Use a ConfigMap to perform a rolling update of your classic worker nodes. The Co
 After you set up the ConfigMap for the first time, you can update worker nodes by using the {{site.data.keyword.cloud_notm}} console. The console respects the unavailability rules that you defined in the ConfigMap.
 {: shortdesc}
 
-1. Complete the [prerequisite steps](#worker-up-prereqs) and [set up a ConfigMap](#worker-up-configmap) to control how your worker nodes are updated.
+1. Complete the [prerequisite steps](#worker-up-prereqs) and [set up a ConfigMap](/docs/containers?topic=containers-update-workers-classic&interface=cli#worker-up-configmap) to control how your worker nodes are updated.
 2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **Containers** > **Clusters**.
 3. From the **Clusters** page, click your cluster.
 4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.

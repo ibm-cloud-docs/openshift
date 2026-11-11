@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-10-29"
+lastupdated: "2026-11-11"
 
 
 keywords: change log, version history, Satellite Storage Operator
@@ -29,10 +29,17 @@ Review the version history for Satellite Storage Operator.
 {: #cl-satellite-storage-operator-1.0}
 
 
-### 29 October 2026, Version 1.0 - 1.0.89
-{: #cl-satellite-storage-operator-1089}
+### 10 November 2026, Version 1.0 - 1.0.91
+{: #cl-satellite-storage-operator-1091}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-116587](https://nvd.nist.gov/vuln/detail/cve-2026-116587){: external}.
+- Updates Go to version `1.26.10`.
+
+
+### 29 October 2026, Version 1.0 - 1.0.89
+{: #cl-satellite-storage-operator-1089}
 
 - Resolves the following CVEs: [CVE-2026-18374](https://nvd.nist.gov/vuln/detail/cve-2026-18374){: external}, [CVE-2026-19542](https://nvd.nist.gov/vuln/detail/cve-2026-19542){: external}, [CVE-2026-6368](https://nvd.nist.gov/vuln/detail/cve-2026-6368){: external}, [CVE-2026-6791](https://nvd.nist.gov/vuln/detail/cve-2026-6791){: external}, [CVE-2026-77117](https://nvd.nist.gov/vuln/detail/cve-2026-77117){: external}, [CVE-2026-80489](https://nvd.nist.gov/vuln/detail/cve-2026-80489){: external}, and [CVE-2026-114406](https://nvd.nist.gov/vuln/detail/cve-2026-114406){: external}.
 - Updates Go to version `1.26.10`.

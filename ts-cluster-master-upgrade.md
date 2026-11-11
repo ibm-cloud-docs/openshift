@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, cluster, upgrades,
@@ -38,7 +38,7 @@ Cannot complete cluster master upgrade because the Upgradeable status condition 
 ```
 {: screen}
 
-There are a variety of reasons why the Cluster Version Operator would report back an `Upgradeable` status of `False`.  For example, if you are upgrading from {{site.data.keyword.redhat_openshift_notm}} 4.15 to 4.16, and receive this error message, then your cluster administrators likely have not yet acknowledged that they have evaluated and removed the deprecated APIs in the corresponding Kubernetes version. For more information, see [Preparing to update to OpenShift Container Platform 4.16](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/updating_clusters/preparing-to-update-a-cluster#update-preparing-ack_updating-cluster-prepare){: external}.
+There are a variety of reasons why the Cluster Version Operator would report back an `Upgradeable` status of `False`.  For example, if you are upgrading from {{site.data.keyword.redhat_openshift_notm}} 4.15 to 4.16, and receive this error message, then your cluster administrators likely have not yet acknowledged that they have evaluated and removed the deprecated APIs in the corresponding Kubernetes version. For more information, see Preparing to update to OpenShift Container Platform 4.16.
 {: tsCauses}
 
 Run the following command to check the reason(s) that your cluster isn't in an upgradeable state.
@@ -61,7 +61,7 @@ oc get clusterversion version -o json | jq '.status.conditions[] | select(.type 
     Cluster administrators are responsible for ensuring that removed APIs are no longer being used and migration to supported APIs is completed before providing this administrator acknowledgment. IBM Cloud can assist with the evaluation, but cannot identify all possible instances where removed APIs are being used, especially in external tools and idle workloads.
     {: important}
 
-1. Follow the steps to [Provide the administrator acknowledgment](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/updating_clusters/preparing-to-update-a-cluster#update-preparing-ack_updating-cluster-prepare){: external} that you have migrated off the removed APIs.
+1. Follow the steps to Provide the administrator acknowledgment that you have migrated off the removed APIs.
 
 1. After you have completed the previous migration steps, run the following command again. Note, it might take several minutes for the `Upgradeable` status to update. If no data is returned, the `Upgradeable` status has been removed and you can retry the cluster upgrade.
     ```sh

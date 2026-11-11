@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-11-10"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -328,7 +328,7 @@ Review the outputs from the earlier section to help find the cause of your pod n
 
 - If the commands functioned normally on the test pods, but you still have networking issues with the application pods in your default namespace, there might be issues related specifically to your application.
     - You might have Calico or Kubernetes network security policies in place that restrict your networking traffic. If a networking policy is applied to a pod, *all traffic that is not specifically allowed by that policy is dropped*. For more information on networking policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
-    - If you are using Istio or Red Hat OpenShift Service Mesh, there might be service configuration issues that drop or block traffic between pods. For more information, see the troubleshooting documentation for [Istio](https://istio.io/latest/docs/ops/diagnostic-tools/){: external} and [Red Hat OpenShift Service Mesh](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/service_mesh/service-mesh-3-x){: external}. 
+    - If you are using Istio or Red Hat OpenShift Service Mesh, there might be service configuration issues that drop or block traffic between pods. For more information, see the troubleshooting documentation for [Istio](https://istio.io/latest/docs/ops/diagnostic-tools/){: external} and Red Hat OpenShift Service Mesh. 
     - The issue might be related to bugs in the application rather than your cluster, and might require your own independent trouble shooting.
 
 - If the `curl`, `ping`, or `nc` commands failed for certain pods, identify which worker nodes those pods are on. If the issue exists on only some of your worker nodes, [replace those worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) or see additional information on [worker node trouble shooting](/docs/openshift?topic=openshift-ts-critical-notready).
